@@ -1,0 +1,24 @@
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+div.border {
+	border: transparent 3px solid;
+	margin: 2px;
+	box-sizing: border-box;
+}
+
+div.border:hover {
+	border: 3px solid #cfee1d;
+}
+
+.image {
+	width: 100%;
+	opacity: 0.5;
+}
+
+.image:hover {
+	opacity: 1;
+}

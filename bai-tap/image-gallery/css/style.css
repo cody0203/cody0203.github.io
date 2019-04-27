@@ -1,0 +1,41 @@
+body {
+	background: url(../image/background.jpg);
+}
+
+.content-container {
+	max-width: 1000px;
+	margin: auto;
+}
+
+h1 {
+	color: #e4caac;
+}
+
+div.header-image {
+	box-sizing: border-box;
+	text-align: center;
+}
+
+div.header-image img {
+	max-width: 100%;
+}
+
+div.nav-item a {
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: bold;
+	color: #e4caac;
+	padding-right: 20px;
+}
+
+div.nav-item a:visited {
+	color: #e4caac;
+}
+
+div.nav-item a:active {
+	font-weight: bold;
+}
+
+div.nav-item a:hover {
+	color: #cfee1d;
+}
