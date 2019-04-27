@@ -32,10 +32,7 @@ div.nav-item a:visited {
 	color: #e4caac;
 }
 
-div.nav-item a:active {
-	font-weight: bold;
-}
-
 div.nav-item a:hover {
 	color: #cfee1d;
 }
+
