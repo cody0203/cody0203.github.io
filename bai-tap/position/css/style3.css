@@ -1,0 +1,35 @@
+div.sidebar-menu {
+	position: absolute;
+	left: 0px;
+	background-color: #5d5d5d;
+	width: 400px;
+	height: 100vh;
+	position: fixed;
+	z-index: 0;
+}
+
+div.nav-item a {
+	display: block;
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: bold;
+	color: #e4caac;
+	padding-top: 50px;
+	padding-left: 10px;
+}
+
+div.nav-item a:visited {
+	color: #e4caac;
+}
+
+div.nav-item a:hover {
+	color: #cfee1d;
+}
+
+#menu {
+	background-color: #555;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
