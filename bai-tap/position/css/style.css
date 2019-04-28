@@ -6,8 +6,8 @@ body {
 	max-width: 1000px;
 	margin: auto;
 	position: relative;
-	z-index: 1;
 	padding-left: 400px;
+	z-index: 1;
 }
 
 h1, h2 {
