@@ -1,0 +1,26 @@
+#heart {
+	margin: 11% 29% 0 43%;
+	max-width: 100%;
+}
+
+img {
+	max-width: 50%;
+	animation: heartbeat 0.8s ease, heartbeat2 0.8s 1.3s ease;
+	position: relative;
+}
+
+@keyframes heartbeat {
+	0% { transform: scale(1); }
+	25% { transform: scale(1.2); }
+	50% { transform: scale(1); }
+	75% { transform: scale(1.2); }
+	100% { transform: scale(1); }
+}
+
+@keyframes heartbeat2 {
+	0% { transform: scale(1); }
+	25% { transform: scale(1.2); }
+	50% { transform: scale(1); }
+	75% { transform: scale(1.2); }
+	100% { transform: scale(1); }
+}

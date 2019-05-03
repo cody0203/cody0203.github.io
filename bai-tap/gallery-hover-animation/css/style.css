@@ -1,0 +1,23 @@
+#gallery {
+	max-width: 1000px;
+	margin: auto;
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-gap: 5px;
+}
+
+.images {
+	border: 0.5px solid #bdbbbd;
+	padding: 5px;
+	transition: all 0.5s ease;
+	background-color: white;
+}
+
+img {
+	width: 100%;
+	display: block;
+}
+
+.images:hover {
+	transform: scale(1.5);
+}
