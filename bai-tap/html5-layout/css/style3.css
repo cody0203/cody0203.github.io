@@ -119,3 +119,26 @@ p.section-number {
 .related-item:hover a {
 	color: #cfee1d;
 }
+
+#copyright {
+	width: 1000px;
+	margin: auto;
+	overflow: hidden;
+}
+
+#created {
+	top: 100%;
+    font-size: 1.1em;
+    margin-top: 3%;
+    animation: created 5s ease infinite;
+    animation-fill-mode: both;
+    animation-delay: 2s;
+    font-weight: bold;
+    color: white;
+}
+
+@keyframes created {
+	0% { opacity: 0; transform: translateX(105%); }
+	40%, 50%, 60% { opacity: 1; transform: translateX(87%); }
+	100% { opacity: 0; transform: translateX(30%); }
+}
