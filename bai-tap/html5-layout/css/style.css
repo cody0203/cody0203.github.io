@@ -7,6 +7,11 @@ body {
 	background: url(../image/background.jpg);
 }
 
+header {
+	max-width: 1000px;
+	margin: auto;
+}
+
 .content-container {
 	max-width: 1000px;
 	margin: auto;
