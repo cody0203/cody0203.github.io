@@ -168,7 +168,7 @@ body {
 
 #column1 {
 	margin-right: 5%;
-	margin-top: 12%;
+	margin-top: 8%;
 }
 
 #box3 {
@@ -196,7 +196,7 @@ body {
 		transform: translate3d(0, 5px, 0);
 	}
 
-	to {
+	100% {
 		transform: translate3d(0, 0, 0);
 	}
 }
@@ -226,7 +226,7 @@ body {
 		transform: translate3d(0, 5px, 0);
 	}
 
-	to {
+	100% {
 		transform: translate3d(0, 0, 0);
 	}
 }
@@ -256,12 +256,16 @@ body {
 		transform: translate3d(0, 5px, 0);
 	}
 
-	to {
+	100% {
 		transform: translate3d(0, 0, 0);
 	}
 }
 
 @media only screen and (max-width: 1000px) {
+	#container {
+		margin-top: 50%;
+	}
+
 	#content {
 		flex-direction: column-reverse;
 	}
@@ -287,5 +291,9 @@ body {
 
 	#column1 #box1, #column1 #box2, #column1 #box3 {
 		margin-left: 5%;
+	}
+
+	#column1 img {
+		width: 80%;
 	}
 }
