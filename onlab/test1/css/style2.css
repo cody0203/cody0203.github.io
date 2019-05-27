@@ -74,3 +74,9 @@ p {
     bottom: 10px;
     right: 10px;
 }
+
+@media only screen and (max-width: 1000px) {
+    article {
+    margin: 50px 50px 10px 50px;
+    }
+}

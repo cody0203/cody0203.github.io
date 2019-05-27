@@ -90,6 +90,10 @@ h1 {
     flex-direction: column;
     }
 
+    #row2 {
+    margin-top: 5px;
+}
+
     #container {
     max-width: 600px;
     margin: auto;
