@@ -7,6 +7,8 @@
 
 body {
     background-color: #FFA700;
+    background-image: url(../img/1.png);
+    background-repeat: space;
 }
 
 h1 {
@@ -21,10 +23,15 @@ h1 {
     padding-top: 30px;
 }
 
-.row {
+#row1, #row2 {
     display: flex;
     justify-content: space-around;
 }
+
+#row2 {
+    margin-top: 150px;
+}
+
 .item {
     margin-top: 30px;
     position: relative;

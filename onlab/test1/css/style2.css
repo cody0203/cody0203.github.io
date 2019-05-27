@@ -7,6 +7,8 @@
 
 body {
     background-color: #FFA700;
+    background-image: url(../img/1.png);
+    background-repeat: space;
 }
 
 header {
@@ -33,7 +35,7 @@ h1 {
 #container {
     max-width: 1200px;
     margin: auto;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.95);
     border-radius: 50px;
     text-align: center;
     padding-bottom: 10px;
