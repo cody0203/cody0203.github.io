@@ -6,9 +6,7 @@
 }
 
 body {
-    background: url(../img/background.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: #FFA700;
 }
 
 header {
@@ -35,7 +33,7 @@ h1 {
 #container {
     max-width: 1200px;
     margin: auto;
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(255, 255, 255, 0.8);
     border-radius: 50px;
     text-align: center;
     padding-bottom: 10px;
@@ -46,23 +44,31 @@ article {
 }
 
 h2 {
-    padding-top: 50px;
+    padding-top: 30px;
     font-size: 2em;
     padding-bottom: 5px;
 }
 
 p {
     font-size: 1.5em;
+    text-align: justify;
 }
 
 .image {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    display: inline-block;
 }
 
 #container img {
     display: block;
-    text-align: center;
+    width: 100%;
 }
 
+#go-to-top {
+    position: relative;
+}
+
+#go-to-top img {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
