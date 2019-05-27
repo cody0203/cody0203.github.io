@@ -1,5 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&display=swap');
+
+* {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: url(../img/background-1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 h1 {
     text-align: center;
+    color: #FFECCC;
+    font-size: 3em;
 }
 
 #container {
@@ -14,10 +29,17 @@ h1 {
 .item {
     margin-top: 30px;
     position: relative;
+    overflow: hidden;
+    outline: 3px solid white;
 }
 
 .item img {
     display: block;
+    transition: 0.3s ease;
+}
+
+.image {
+    overflow: hidden;
 }
 
 .title {
@@ -27,35 +49,30 @@ h1 {
     height: 100%;
     top: 0;
     left: 0;
-    color: white;
+    color: #FFECCC;
     font-size: 1.5em;
     text-decoration: none;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
     overflow: hidden;
 }
 
 .title span {
-    z-index: 2;
-}
-
-.title::before {
-    content: "";
-    width: 130%;
-    height: 230%;
-    background-color: black;
+    z-index: 5;
+    transition: 0.3s ease;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    top: -200px;
-    left: -450px;
-    transform: rotate(30deg);
-    transition: 1s ease;
-    z-index: 1;
-    opacity: 0.3;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    background-color: #005248;
 }
 
-.title:hover:before {
-    top: -180px;
-    left: 0;
+.item:hover .title span {
+    top: 65%;
+}
+
+.item:hover .image img {
+    transform: translateY(-10px);
 }
