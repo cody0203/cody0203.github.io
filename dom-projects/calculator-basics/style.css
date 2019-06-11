@@ -1,0 +1,106 @@
+@font-face {
+  font-family: "mono";
+  src: url(./fonts/mono.woff);
+}
+
+@font-face {
+  font-family: "mono-italic";
+  src: url(./fonts/mono-italic.woff);
+}
+
+h1 {
+    text-align: center;
+}
+
+#cal {
+    max-width: 600px;
+    width: 100%;
+    max-height: 650px;
+    height: 100%;
+    background-color: #f3dba5;
+    margin: auto;
+}
+
+#row-1 #row-2 #row-3 #row-4 #row-5 button {
+    font-family: "Orbitron", sans-serif;
+    width: 100%;
+}
+
+#inputs {
+    display: grid;
+    margin: 2px;
+    padding: 2px;
+}
+
+#first-input {
+    border: 0;
+    background-color: #4a5a52;
+    color: #6ad2ab;
+    font-family: "mono-italic";
+    font-size: 40px;
+}
+
+#second-input {
+    border: 0;
+    background-color: #29493d;
+    color: #6ad2ab;
+    font-family: "mono";
+    font-size: 50px;
+}
+
+#row-1 {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 5px;
+    margin: 0 5px 0 5px;
+    padding-top: 20px;
+}
+
+#row-1 button {
+    padding: 20px;
+}
+
+#row-2 {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 5px;
+    margin: 10px 5px 0 5px;
+}
+
+#row-2 button {
+    padding: 20px;
+}
+
+#row-3 {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 5px;
+    margin: 10px 5px 0 5px;
+}
+
+#row-3 button {
+    padding: 20px;
+}
+
+#row-4 {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 5px;
+    margin: 10px 5px 0 5px;
+}
+
+#row-4 button {
+    padding: 20px;
+}
+
+#row-5 {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-gap: 5px;
+    margin: 10px 5px 0 5px;
+    padding-bottom: 20px;
+}
+
+#row-5 button {
+    padding: 20px;
+}

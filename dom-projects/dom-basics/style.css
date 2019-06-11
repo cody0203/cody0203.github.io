@@ -1,0 +1,52 @@
+h2 {
+    text-align: center;
+}
+
+#main-function {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    justify-content: space-around;
+}
+
+#main-function p {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-gap: 10px;
+    text-align: center;
+}
+
+#main-function p button {
+    width: 100px;
+    margin: auto;
+}
+
+#optional {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    justify-content: space-around;
+}
+
+#optional p {
+    display: grid;
+    grid-template-rows: auto auto auto auto auto;
+    text-align: center;
+}
+
+#optional p button, input, select {
+    width: 100px;
+    margin: auto;
+}
+
+.optional-1-and-2 input {
+    width: 150px;
+}
+
+#optional-3 select {
+    width: 150px;
+}
+
+#optional-4 input {
+    width: 165px;
+}
