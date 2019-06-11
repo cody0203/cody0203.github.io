@@ -1,11 +1,11 @@
 @font-face {
-  font-family: "mono";
-  src: url(./fonts/mono.woff);
+    font-family: "mono";
+    src: url(./fonts/mono.woff);
 }
 
 @font-face {
-  font-family: "mono-italic";
-  src: url(./fonts/mono-italic.woff);
+    font-family: "mono-italic";
+    src: url(./fonts/mono-italic.woff);
 }
 
 h1 {
@@ -13,94 +13,124 @@ h1 {
 }
 
 #cal {
-    max-width: 600px;
-    width: 100%;
-    max-height: 650px;
-    height: 100%;
+    width: 500px;
+    max-width: 100%;
+    height: 700px;
+    max-height: 100%;
     background-color: #f3dba5;
     margin: auto;
+    padding-top: 5px;
+    padding-bottom: 18px;
+    position: relative;
+    border-radius: 10px;
+    border-bottom: 10px inset #f1d596;
+    border-top: 50px outset #f1d596;
 }
 
-#row-1 #row-2 #row-3 #row-4 #row-5 button {
+#signed {
+    position: absolute;
+    top: -55px;
+    left: 20px;
+    color: #b29967;
     font-family: "Orbitron", sans-serif;
-    width: 100%;
+    font-size: 2em;
 }
 
 #inputs {
-    display: grid;
-    margin: 2px;
-    padding: 2px;
+    display: flex;
+    background-color: #000;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0 10px 0;
+    height: 21.5%;
 }
 
-#first-input {
+#sub-input {
     border: 0;
-    background-color: #4a5a52;
-    color: #6ad2ab;
+    background-color: #61766b;
+    color: #91dec1;
     font-family: "mono-italic";
     font-size: 40px;
+    max-width: 600px;
+    width: 90%;
+    padding: 10px 2% 10px;
+    border-top: 5px solid #999;
+    border-left: 5px solid #999;
+    border-right: 5px solid #999;
+    border-radius: 15px 15px 0 0;
+    text-align: right;
 }
 
-#second-input {
+#main-input {
     border: 0;
-    background-color: #29493d;
-    color: #6ad2ab;
+    background-color: #487f6a;
+    color: #91dec1;
     font-family: "mono";
     font-size: 50px;
+    max-width: 600px;
+    width: 90%;
+    padding: 20px 2% 20px;
+    border-bottom: 5px solid #999;
+    border-left: 5px solid #999;
+    border-right: 5px solid #999;
+    border-end-end-radius: 10px;
+    border-radius: 0 0 15px 15px;
+    text-align: right;
+    outline: none;
 }
 
-#row-1 {
+#special {
+    height: 15%;
+    width: 92%;
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-gap: 5px;
-    margin: 0 5px 0 5px;
-    padding-top: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 5%;
+    grid-row-gap: 3%;
+    text-align: center;
+    margin: auto;
+    margin-top: 5%;
 }
 
-#row-1 button {
-    padding: 20px;
+#special button {
+    font-family: "Orbitron", sans-serif;
+    font-size: 1em;
+    background-color: #fdf8e9;
+    border-radius: 10px;
+    border-top: 6px outset #fefdf9;
+    border-bottom: 6px outset #fffcf4;
+    border-left: 0;
+    border-right: 0;
+    text-align: center;
 }
 
-#row-2 {
+#numbers {
+    height: 55%;
+    width: 92%;
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-gap: 5px;
-    margin: 10px 5px 0 5px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 5%;
+    grid-row-gap: 1%;
+    text-align: center;
+    margin: auto;
+    margin-top: 5%;
 }
 
-#row-2 button {
-    padding: 20px;
+#numbers button {
+    font-family: "Orbitron", sans-serif;
+    font-size: 1em;
+    background-color: #fdf8e9;
+    border-radius: 10px;
+    border-top: 6px outset #fefdf9;
+    border-bottom: 6px outset #fffcf4;
+    border-left: 0;
+    border-right: 0;
+    text-align: center;
 }
 
-#row-3 {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-gap: 5px;
-    margin: 10px 5px 0 5px;
-}
-
-#row-3 button {
-    padding: 20px;
-}
-
-#row-4 {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-gap: 5px;
-    margin: 10px 5px 0 5px;
-}
-
-#row-4 button {
-    padding: 20px;
-}
-
-#row-5 {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    grid-gap: 5px;
-    margin: 10px 5px 0 5px;
-    padding-bottom: 20px;
-}
-
-#row-5 button {
-    padding: 20px;
+.red {
+    background-color: #ee5a6c !important;
+    color: #fef7ff !important;
+    border-bottom: 6px outset #f16870 !important;
+    border-top: 6px outset #f66b78 !important;
 }
