@@ -3,10 +3,21 @@
 let paragraphOne = document.getElementById("paragraph-one");
 let paragraphTwo = document.getElementById("paragraph-two");
 let paragraphThree = document.getElementById("paragraph-three");
-let getFontSizeParaOne = parseFloat(window.getComputedStyle(paragraphOne, null).getPropertyValue("font-size"));
-let getFontSizeParaTwo = parseFloat(window.getComputedStyle(paragraphTwo, null).getPropertyValue("font-size"));
-let getFontSizeParaThree = parseFloat(window.getComputedStyle(paragraphThree, null).getPropertyValue("font-size"));
+let getFontSizeParaOne = parseFloat(getComputedStyle(paragraphOne).getPropertyValue("font-size"));
+let getFontSizeParaTwo = parseFloat(getComputedStyle(paragraphTwo).getPropertyValue("font-size"));
+let getFontSizeParaThree = parseFloat(getComputedStyle(paragraphThree).getPropertyValue("font-size"));
 
+function recallGetFontSizeParaOne() {
+    getFontSizeParaOne = parseFloat(getComputedStyle(paragraphOne).getPropertyValue("font-size"));
+};
+
+function recallGetFontSizeParaTwo() {
+    getFontSizeParaTwo = parseFloat(getComputedStyle(paragraphTwo).getPropertyValue("font-size"));
+};
+
+function recallGetFontSizeParaThree() {
+    getFontSizeParaThree = parseFloat(getComputedStyle(paragraphThree).getPropertyValue("font-size"));
+};
 
 // Đổi màu chữ của 3 đoạn văn theo thứ tự xanh, vàng, đỏ
 let btnChangeParagraphsColor = document.getElementById("change-paragraph-color");
@@ -151,24 +162,27 @@ let btnIncreaseParaTwoFontSizeOption = document.getElementById("btn-increase-par
 let btnIncreaseParaThreeFontSizeOption = document.getElementById("btn-increase-para-3-font-size-optional");
 
 function increaseFontSizeOptional(button) {
-    if (getFontSizeParaOne <= 30 && getFontSizeParaTwo <= 30 && getFontSizeParaThree <= 30) {
+    if (getFontSizeParaOne <= 30 || getFontSizeParaTwo <= 30 || getFontSizeParaThree <= 30) {
         switch (button) {
             case btnIncreaseParaOneFontSizeOption:
                 paragraphOne.style.fontSize = `${getFontSizeParaOne += Number(inputIncreaseFontSizeOptional.value)}px`;
                 if (getFontSizeParaOne > 30) {
                     paragraphOne.style.fontSize = `30px`;
+                    recallGetFontSizeParaOne();
                 };
                 break;
             case btnIncreaseParaTwoFontSizeOption:
                 paragraphTwo.style.fontSize = `${getFontSizeParaTwo += Number(inputIncreaseFontSizeOptional.value)}px`;
                 if (getFontSizeParaTwo > 30) {
                     paragraphTwo.style.fontSize = `30px`;
+                    recallGetFontSizeParaTwo();
                 };
                 break;
             case btnIncreaseParaThreeFontSizeOption:
                 paragraphThree.style.fontSize = `${getFontSizeParaThree += Number(inputIncreaseFontSizeOptional.value)}px`;
                 if (getFontSizeParaThree > 30) {
                     paragraphThree.style.fontSize = `30px`;
+                    recallGetFontSizeParaThree();
                 };
                 break;
         }
@@ -187,24 +201,27 @@ let btnDecreaseParaTwoFontSizeOption = document.getElementById("btn-decrease-par
 let btnDecreaseParaThreeFontSizeOption = document.getElementById("btn-decrease-para-3-font-size-optional");
 
 function decreaseFontSizeOptional(button) {
-    if (getFontSizeParaOne > 10 && getFontSizeParaTwo > 10 && getFontSizeParaThree > 10) {
+    if (getFontSizeParaOne > 10 || getFontSizeParaTwo > 10 || getFontSizeParaThree > 10) {
         switch (button) {
             case btnDecreaseParaOneFontSizeOption:
                 paragraphOne.style.fontSize = `${getFontSizeParaOne -= Number(inputDecreaseFontSizeOptional.value)}px`;
                 if (getFontSizeParaOne < 10) {
                     paragraphOne.style.fontSize = `10px`;
+                    recallGetFontSizeParaOne();
                 };
                 break;
             case btnDecreaseParaTwoFontSizeOption:
                 paragraphTwo.style.fontSize = `${getFontSizeParaTwo -= Number(inputDecreaseFontSizeOptional.value)}px`;
                 if (getFontSizeParaTwo < 10) {
                     paragraphTwo.style.fontSize = `10px`;
+                    recallGetFontSizeParaTwo();
                 };
                 break;
             case btnDecreaseParaThreeFontSizeOption:
                 paragraphThree.style.fontSize = `${getFontSizeParaThree -= Number(inputDecreaseFontSizeOptional.value)}px`;
                 if (getFontSizeParaThree < 10) {
                     paragraphThree.style.fontSize = `10px`;
+                    recallGetFontSizeParaThree();
                 };
                 break;
         }
