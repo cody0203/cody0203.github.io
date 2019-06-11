@@ -52,5 +52,6 @@ h2 {
 }
 
 #optional-4 input {
+    width: 160px;
     max-width: 100%;
 }

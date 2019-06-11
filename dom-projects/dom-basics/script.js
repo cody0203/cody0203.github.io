@@ -3,6 +3,10 @@
 let paragraphOne = document.getElementById("paragraph-one");
 let paragraphTwo = document.getElementById("paragraph-two");
 let paragraphThree = document.getElementById("paragraph-three");
+let getFontSizeParaOne = parseFloat(window.getComputedStyle(paragraphOne, null).getPropertyValue("font-size"));
+let getFontSizeParaTwo = parseFloat(window.getComputedStyle(paragraphTwo, null).getPropertyValue("font-size"));
+let getFontSizeParaThree = parseFloat(window.getComputedStyle(paragraphThree, null).getPropertyValue("font-size"));
+
 
 // Đổi màu chữ của 3 đoạn văn theo thứ tự xanh, vàng, đỏ
 let btnChangeParagraphsColor = document.getElementById("change-paragraph-color");
@@ -50,9 +54,8 @@ btnChangeFontSize.addEventListener("click", () => { changeFontSize("20px"); }, f
 let btnIncreaseFontSize = document.getElementById("increase-font-size")
 
 function increaseFontSize(paragraph) {
-    let currentSize = parseFloat(window.getComputedStyle(paragraphOne, null).getPropertyValue("font-size"));
-    if (currentSize < 30) {
-        paragraph.style.fontSize = (++currentSize) + "px";
+    if (getFontSizeParaOne < 30) {
+        paragraph.style.fontSize = (++getFontSizeParaOne) + "px";
     }
 }
 
@@ -62,9 +65,8 @@ btnIncreaseFontSize.addEventListener("click", () => { increaseFontSize(paragraph
 let btnDecreaseFontSize = document.getElementById("decrease-font-size")
 
 function decreaseFontSize(paragraph) {
-    let currentSize = parseFloat(window.getComputedStyle(paragraphTwo, null).getPropertyValue("font-size"));
-    if (currentSize > 10) {
-        paragraph.style.fontSize = (--currentSize) + "px";
+    if (getFontSizeParaTwo > 10) {
+        paragraph.style.fontSize = (--getFontSizeParaTwo) + "px";
     }
 }
 
@@ -73,7 +75,6 @@ btnDecreaseFontSize.addEventListener("click", () => { decreaseFontSize(paragraph
 // Optional
 
 // Đổi màu chữ theo ý muốn
-
 let inputChangeParaColorOptional = document.getElementById("change-paragraph-color-optional");
 let btnParaOneColor = document.getElementById("btn-change-paragraph-color-optional-1")
 let btnParaTwoColor = document.getElementById("btn-change-paragraph-color-optional-2")
@@ -98,7 +99,6 @@ btnParaTwoColor.addEventListener("click", () => { changeParaColorOptional(btnPar
 btnParaThreeColor.addEventListener("click", () => { changeParaColorOptional(btnParaThreeColor); }, false);
 
 // Đổi màu background theo ý muốn
-
 let inputChangeBgColorOptional = document.getElementById("change-bg-color-optional");
 let btnChangeBgColorOptional = document.getElementById("btn-change-bg-color-optional");
 
@@ -130,4 +130,87 @@ function copyContentOptional(from, to) {
     }
 }
 
-btnCopyContentOptional.addEventListener("click", () => { copyContentOptional(copyContentFrom, copyContentTo);}, false)
+btnCopyContentOptional.addEventListener("click", () => { copyContentOptional(copyContentFrom, copyContentTo); }, false)
+
+// Thay đổi kích thước font chữ theo ý muốn
+let inputFontSizeOptional = document.getElementById("change-font-size-optional");
+let btnFontSizeOptional = document.getElementById("btn-change-font-size-optional");
+
+function changeFontSizeOptional(size) {
+    paragraphOne.style.fontSize = `${size.value}px`;
+    paragraphTwo.style.fontSize = `${size.value}px`;
+    paragraphThree.style.fontSize = `${size.value}px`;
+};
+
+btnFontSizeOptional.addEventListener("click", () => { changeFontSizeOptional(inputFontSizeOptional); }, false)
+
+// Tăng kích thước font chữ theo ý muốn
+let inputIncreaseFontSizeOptional = document.getElementById("increase-font-size-optional");
+let btnIncreaseParaOneFontSizeOption = document.getElementById("btn-increase-para-1-font-size-optional");
+let btnIncreaseParaTwoFontSizeOption = document.getElementById("btn-increase-para-2-font-size-optional");
+let btnIncreaseParaThreeFontSizeOption = document.getElementById("btn-increase-para-3-font-size-optional");
+
+function increaseFontSizeOptional(button) {
+    if (getFontSizeParaOne <= 30 && getFontSizeParaTwo <= 30 && getFontSizeParaThree <= 30) {
+        switch (button) {
+            case btnIncreaseParaOneFontSizeOption:
+                paragraphOne.style.fontSize = `${getFontSizeParaOne += Number(inputIncreaseFontSizeOptional.value)}px`;
+                if (getFontSizeParaOne > 30) {
+                    paragraphOne.style.fontSize = `30px`;
+                };
+                break;
+            case btnIncreaseParaTwoFontSizeOption:
+                paragraphTwo.style.fontSize = `${getFontSizeParaTwo += Number(inputIncreaseFontSizeOptional.value)}px`;
+                if (getFontSizeParaTwo > 30) {
+                    paragraphTwo.style.fontSize = `30px`;
+                };
+                break;
+            case btnIncreaseParaThreeFontSizeOption:
+                paragraphThree.style.fontSize = `${getFontSizeParaThree += Number(inputIncreaseFontSizeOptional.value)}px`;
+                if (getFontSizeParaThree > 30) {
+                    paragraphThree.style.fontSize = `30px`;
+                };
+                break;
+        }
+    }
+}
+
+btnIncreaseParaOneFontSizeOption.addEventListener("click", () => { increaseFontSizeOptional(btnIncreaseParaOneFontSizeOption); }, false)
+btnIncreaseParaTwoFontSizeOption.addEventListener("click", () => { increaseFontSizeOptional(btnIncreaseParaTwoFontSizeOption); }, false)
+btnIncreaseParaThreeFontSizeOption.addEventListener("click", () => { increaseFontSizeOptional(btnIncreaseParaThreeFontSizeOption); }, false)
+
+
+// Giảm kích thước font chữ theo ý muốn
+let inputDecreaseFontSizeOptional = document.getElementById("decrease-font-size-optional");
+let btnDecreaseParaOneFontSizeOption = document.getElementById("btn-decrease-para-1-font-size-optional");
+let btnDecreaseParaTwoFontSizeOption = document.getElementById("btn-decrease-para-2-font-size-optional");
+let btnDecreaseParaThreeFontSizeOption = document.getElementById("btn-decrease-para-3-font-size-optional");
+
+function decreaseFontSizeOptional(button) {
+    if (getFontSizeParaOne > 10 && getFontSizeParaTwo > 10 && getFontSizeParaThree > 10) {
+        switch (button) {
+            case btnDecreaseParaOneFontSizeOption:
+                paragraphOne.style.fontSize = `${getFontSizeParaOne -= Number(inputDecreaseFontSizeOptional.value)}px`;
+                if (getFontSizeParaOne < 10) {
+                    paragraphOne.style.fontSize = `10px`;
+                };
+                break;
+            case btnDecreaseParaTwoFontSizeOption:
+                paragraphTwo.style.fontSize = `${getFontSizeParaTwo -= Number(inputDecreaseFontSizeOptional.value)}px`;
+                if (getFontSizeParaTwo < 10) {
+                    paragraphTwo.style.fontSize = `10px`;
+                };
+                break;
+            case btnDecreaseParaThreeFontSizeOption:
+                paragraphThree.style.fontSize = `${getFontSizeParaThree -= Number(inputDecreaseFontSizeOptional.value)}px`;
+                if (getFontSizeParaThree < 10) {
+                    paragraphThree.style.fontSize = `10px`;
+                };
+                break;
+        }
+    }
+}
+
+btnDecreaseParaOneFontSizeOption.addEventListener("click", () => { decreaseFontSizeOptional(btnDecreaseParaOneFontSizeOption); }, false)
+btnDecreaseParaTwoFontSizeOption.addEventListener("click", () => { decreaseFontSizeOptional(btnDecreaseParaTwoFontSizeOption); }, false)
+btnDecreaseParaThreeFontSizeOption.addEventListener("click", () => { decreaseFontSizeOptional(btnDecreaseParaThreeFontSizeOption); }, false)
