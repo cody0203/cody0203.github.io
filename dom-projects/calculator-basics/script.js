@@ -48,6 +48,13 @@ function resetMainInput() {
 
 clear.addEventListener("click", resetMainInput)
 
+function resetAll() {
+    resetMainInput();
+    subInput.value = "";
+}
+
+fullClear.addEventListener("click", resetAll)
+
 function render(button) {
     mainInput.value += button.id;
 }
@@ -68,4 +75,4 @@ function cal(button) {
     }
 }
 
-equalOpe.addEventListener("click", () => { cal(plusOpe);}, false)
+equalOpe.addEventListener("click", () => { cal(plusOpe); }, false);
