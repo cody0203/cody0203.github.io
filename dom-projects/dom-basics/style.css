@@ -23,7 +23,7 @@ h2 {
     margin: auto;
 }
 
-#optional {
+#optional-function {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
@@ -32,13 +32,15 @@ h2 {
     margin: auto;
 }
 
-#optional p {
+#optional-function p {
     display: grid;
     grid-template-rows: auto auto auto auto auto;
     text-align: center;
 }
 
-#optional p button, input, select {
+#optional-function p button,
+input,
+select {
     max-width: 100%;
     margin: auto;
 }
@@ -56,6 +58,6 @@ h2 {
 }
 
 #optional-4 input {
-    width: 160px;
+    width: 170px;
     max-width: 100%;
 }

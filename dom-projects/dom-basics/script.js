@@ -1,24 +1,50 @@
 "use strict";
 
+// Một số biến và function đầu vào
+//
+//
 let paragraphOne = document.getElementById("paragraph-one");
 let paragraphTwo = document.getElementById("paragraph-two");
 let paragraphThree = document.getElementById("paragraph-three");
 let getFontSizeParaOne = parseFloat(getComputedStyle(paragraphOne).getPropertyValue("font-size"));
 let getFontSizeParaTwo = parseFloat(getComputedStyle(paragraphTwo).getPropertyValue("font-size"));
 let getFontSizeParaThree = parseFloat(getComputedStyle(paragraphThree).getPropertyValue("font-size"));
+let bodyHtml = document.getElementById("body");
 
+// Các function để gọi lại size của paragraphs
 function recallGetFontSizeParaOne() {
-    getFontSizeParaOne = parseFloat(getComputedStyle(paragraphOne).getPropertyValue("font-size"));
+    if (getFontSizeParaOne > 30) {
+        paragraphOne.style.fontSize = `30px`;
+        getFontSizeParaOne = parseFloat(getComputedStyle(paragraphOne).getPropertyValue("font-size"));
+    } else if (getFontSizeParaOne < 10) {
+        paragraphOne.style.fontSize = `10px`;
+        getFontSizeParaOne = parseFloat(getComputedStyle(paragraphOne).getPropertyValue("font-size"));
+    }
 };
 
 function recallGetFontSizeParaTwo() {
-    getFontSizeParaTwo = parseFloat(getComputedStyle(paragraphTwo).getPropertyValue("font-size"));
+    if (getFontSizeParaTwo > 30) {
+        paragraphTwo.style.fontSize = `30px`;
+        getFontSizeParaTwo = parseFloat(getComputedStyle(paragraphTwo).getPropertyValue("font-size"));
+    } else if (getFontSizeParaTwo < 10) {
+        paragraphTwo.style.fontSize = `10px`;
+        getFontSizeParaTwo = parseFloat(getComputedStyle(paragraphTwo).getPropertyValue("font-size"));
+    }
 };
 
 function recallGetFontSizeParaThree() {
-    getFontSizeParaThree = parseFloat(getComputedStyle(paragraphThree).getPropertyValue("font-size"));
+    if (getFontSizeParaThree > 30) {
+        paragraphThree.style.fontSize = `30px`;
+        getFontSizeParaThree = parseFloat(getComputedStyle(paragraphThree).getPropertyValue("font-size"));
+    } else if (getFontSizeParaThree < 10) {
+        paragraphThree.style.fontSize = `10px`;
+        getFontSizeParaThree = parseFloat(getComputedStyle(paragraphThree).getPropertyValue("font-size"));
+    }
 };
 
+// Main Function
+//
+//
 // Đổi màu chữ của 3 đoạn văn theo thứ tự xanh, vàng, đỏ
 let btnChangeParagraphsColor = document.getElementById("change-paragraph-color");
 
@@ -31,7 +57,6 @@ function changeParagraphsColor() {
 btnChangeParagraphsColor.addEventListener("click", changeParagraphsColor)
 
 // Thay đổi màu nền của trang thành màu color.
-let bodyHtml = document.getElementById("body");
 let btnChangeBgColor = document.getElementById("change-background-color")
 
 function changeBgColor(color) {
@@ -60,7 +85,6 @@ function changeFontSize(x) {
 
 btnChangeFontSize.addEventListener("click", () => { changeFontSize("20px"); }, false)
 
-
 // Tăng kích thước font chữ của đoạn văn mong muốn (paragraph, tham số truyền vào có thể là id đoạn văn) lên 1 pixel so với kích thước hiện tại, kích thước tăng lên không được vượt quá 30 pixels (Sử dụng sau khi gọi hàm changeFontSize() hoặc dùng window.getComputedStyle).
 let btnIncreaseFontSize = document.getElementById("increase-font-size")
 
@@ -83,8 +107,9 @@ function decreaseFontSize(paragraph) {
 
 btnDecreaseFontSize.addEventListener("click", () => { decreaseFontSize(paragraphTwo); }, false)
 
-// Optional
-
+// Optional Function
+//
+//
 // Đổi màu chữ theo ý muốn
 let inputChangeParaColorOptional = document.getElementById("change-paragraph-color-optional");
 let btnParaOneColor = document.getElementById("btn-change-paragraph-color-optional-1")
@@ -112,13 +137,11 @@ btnParaThreeColor.addEventListener("click", () => { changeParaColorOptional(btnP
 // Đổi màu background theo ý muốn
 let inputChangeBgColorOptional = document.getElementById("change-bg-color-optional");
 let btnChangeBgColorOptional = document.getElementById("btn-change-bg-color-optional");
-
 function changeBgColorOptional() {
     bodyHtml.style.backgroundColor = inputChangeBgColorOptional.value;
 }
 
 btnChangeBgColorOptional.addEventListener("click", changeBgColorOptional);
-
 
 // Copy đoạn văn theo ý muốn
 let copyContentFrom = document.getElementById("copy-content-from");
@@ -143,7 +166,7 @@ function copyContentOptional(from, to) {
 
 btnCopyContentOptional.addEventListener("click", () => { copyContentOptional(copyContentFrom, copyContentTo); }, false)
 
-// Thay đổi kích thước font chữ theo ý muốn
+// Thay đổi kích thước font chữ theo ý muốn 3 đoạn văn
 let inputFontSizeOptional = document.getElementById("change-font-size-optional");
 let btnFontSizeOptional = document.getElementById("btn-change-font-size-optional");
 
@@ -155,7 +178,7 @@ function changeFontSizeOptional(size) {
 
 btnFontSizeOptional.addEventListener("click", () => { changeFontSizeOptional(inputFontSizeOptional); }, false)
 
-// Tăng kích thước font chữ theo ý muốn
+// Tăng kích thước font chữ 1 đoạn văn theo ý muốn, kích thước tăng lên không được vượt quá 30 pixels
 let inputIncreaseFontSizeOptional = document.getElementById("increase-font-size-optional");
 let btnIncreaseParaOneFontSizeOption = document.getElementById("btn-increase-para-1-font-size-optional");
 let btnIncreaseParaTwoFontSizeOption = document.getElementById("btn-increase-para-2-font-size-optional");
@@ -166,24 +189,15 @@ function increaseFontSizeOptional(button) {
         switch (button) {
             case btnIncreaseParaOneFontSizeOption:
                 paragraphOne.style.fontSize = `${getFontSizeParaOne += Number(inputIncreaseFontSizeOptional.value)}px`;
-                if (getFontSizeParaOne > 30) {
-                    paragraphOne.style.fontSize = `30px`;
-                    recallGetFontSizeParaOne();
-                };
+                recallGetFontSizeParaOne();
                 break;
             case btnIncreaseParaTwoFontSizeOption:
                 paragraphTwo.style.fontSize = `${getFontSizeParaTwo += Number(inputIncreaseFontSizeOptional.value)}px`;
-                if (getFontSizeParaTwo > 30) {
-                    paragraphTwo.style.fontSize = `30px`;
-                    recallGetFontSizeParaTwo();
-                };
+                recallGetFontSizeParaTwo();
                 break;
             case btnIncreaseParaThreeFontSizeOption:
                 paragraphThree.style.fontSize = `${getFontSizeParaThree += Number(inputIncreaseFontSizeOptional.value)}px`;
-                if (getFontSizeParaThree > 30) {
-                    paragraphThree.style.fontSize = `30px`;
-                    recallGetFontSizeParaThree();
-                };
+                recallGetFontSizeParaThree();
                 break;
         }
     }
@@ -194,7 +208,7 @@ btnIncreaseParaTwoFontSizeOption.addEventListener("click", () => { increaseFontS
 btnIncreaseParaThreeFontSizeOption.addEventListener("click", () => { increaseFontSizeOptional(btnIncreaseParaThreeFontSizeOption); }, false)
 
 
-// Giảm kích thước font chữ theo ý muốn
+// Giảm kích thước font chữ 1 đoạn văn theo ý muốn, kích thước giảm xuống không vượt quá 10 pixels
 let inputDecreaseFontSizeOptional = document.getElementById("decrease-font-size-optional");
 let btnDecreaseParaOneFontSizeOption = document.getElementById("btn-decrease-para-1-font-size-optional");
 let btnDecreaseParaTwoFontSizeOption = document.getElementById("btn-decrease-para-2-font-size-optional");
@@ -205,24 +219,15 @@ function decreaseFontSizeOptional(button) {
         switch (button) {
             case btnDecreaseParaOneFontSizeOption:
                 paragraphOne.style.fontSize = `${getFontSizeParaOne -= Number(inputDecreaseFontSizeOptional.value)}px`;
-                if (getFontSizeParaOne < 10) {
-                    paragraphOne.style.fontSize = `10px`;
-                    recallGetFontSizeParaOne();
-                };
+                recallGetFontSizeParaOne();
                 break;
             case btnDecreaseParaTwoFontSizeOption:
                 paragraphTwo.style.fontSize = `${getFontSizeParaTwo -= Number(inputDecreaseFontSizeOptional.value)}px`;
-                if (getFontSizeParaTwo < 10) {
-                    paragraphTwo.style.fontSize = `10px`;
-                    recallGetFontSizeParaTwo();
-                };
+                recallGetFontSizeParaTwo();
                 break;
             case btnDecreaseParaThreeFontSizeOption:
                 paragraphThree.style.fontSize = `${getFontSizeParaThree -= Number(inputDecreaseFontSizeOptional.value)}px`;
-                if (getFontSizeParaThree < 10) {
-                    paragraphThree.style.fontSize = `10px`;
-                    recallGetFontSizeParaThree();
-                };
+                recallGetFontSizeParaThree();
                 break;
         }
     }

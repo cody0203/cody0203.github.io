@@ -102,7 +102,16 @@ h1 {
     border-left: 0;
     border-right: 0;
     text-align: center;
+    outline: none;
+    transition: all 0.5s ease;
 }
+/* 
+#special button:hover {
+    background-color: #666;
+    border-top: 6px outset #6e6e6e;
+    border-bottom: 6px outset #5e5e5e;
+    color: white;
+} */
 
 #numbers {
     height: 55%;
@@ -126,6 +135,7 @@ h1 {
     border-left: 0;
     border-right: 0;
     text-align: center;
+    outline: none;
 }
 
 .red {

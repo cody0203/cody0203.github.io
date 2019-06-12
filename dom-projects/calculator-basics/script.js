@@ -1,5 +1,7 @@
 "user strict";
 // inputs
+let buttons = document.getElementsByTagName("button");
+
 let subInput = document.getElementById("sub-input")
 let mainInput = document.getElementById("main-input")
 
@@ -59,6 +61,15 @@ function render(button) {
     mainInput.value += button.id;
 }
 
+function checkMainInputValue() {
+    if (mainInput.value === "") {
+        equalOpe.disabled = true;
+    } else {
+        equalOpe.disabled = false;
+    }
+}
+numFive.addEventListener("click", checkMainInputValue);
+
 function cal(button) {
     if (button.id == "+") {
         subInput.value = eval(subInput.value + mainInput.value);
@@ -76,3 +87,36 @@ function cal(button) {
 }
 
 equalOpe.addEventListener("click", () => { cal(plusOpe); }, false);
+
+function mouseDownBtn(button) {
+    button.style.backgroundColor = "#555";
+    button.style.borderTop = "6px outset #5e5e5e";
+    button.style.borderBottom = "6px outset #4d4d4d";
+    button.style.color = "white";
+}
+
+function mouseUpBtn(button) {
+    button.style.backgroundColor = "#fdf8e9";
+    button.style.borderTop = "6px outset #fefdf9";
+    button.style.borderBottom = "6px outset #fffcf4";
+    button.style.color = "black";
+}
+
+function mouseDown() {
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("mousedown", () => { mouseDownBtn(buttons[i]); }, false)
+    }
+}
+
+mouseDown();
+
+function mouseUp() {
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("mouseup", () => { mouseUpBtn(buttons[i]); }, false)
+    }
+}
+
+mouseUp();
+
+// buttons.addEventListener("mousedown", () => { mouseDownBtn(this);}, false)
+// buttons.addEventListener("mouseup", () => { mouseUpBtn(this); }, false)
