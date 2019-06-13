@@ -61,3 +61,7 @@ select {
     width: 170px;
     max-width: 100%;
 }
+
+p {
+    font-size: 16px;
+}
