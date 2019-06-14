@@ -56,12 +56,12 @@ btnCopyContent.addEventListener("click", () => { copyContent(paragraphOne, parag
 let btnChangeFontSize = document.getElementById("change-font-size");
 
 function changeFontSize(x) {
-    paragraphOne.style.fontSize = x;
-    paragraphTwo.style.fontSize = x;
-    paragraphThree.style.fontSize = x;
+    paragraphOne.style.fontSize = `${x}px`;
+    paragraphTwo.style.fontSize = `${x}px`;
+    paragraphThree.style.fontSize = `${x}px`;
 }
 
-btnChangeFontSize.addEventListener("click", () => { changeFontSize("20px"); }, false)
+btnChangeFontSize.addEventListener("click", () => { changeFontSize(20); }, false)
 
 // Tăng kích thước font chữ của đoạn văn mong muốn (paragraph, tham số truyền vào có thể là id đoạn văn) lên 1 pixel so với kích thước hiện tại, kích thước tăng lên không được vượt quá 30 pixels (Sử dụng sau khi gọi hàm changeFontSize() hoặc dùng window.getComputedStyle).
 let btnIncreaseFontSize = document.getElementById("increase-font-size")
