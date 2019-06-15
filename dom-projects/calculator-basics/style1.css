@@ -160,9 +160,9 @@ h1 {
 }
 
 .red:hover {
-    background-color: #487f6a !important;
-    border-top: 6px outset #4e8a73 !important;
-    border-bottom: 6px outset #427461 !important;
+    background-color: #a26951 !important;
+    border-top: 6px outset #b17b64 !important;
+    border-bottom: 6px outset #8b5a46 !important;
 }
 
 #change-theme {
