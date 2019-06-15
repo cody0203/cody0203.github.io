@@ -18,8 +18,9 @@ h1 {
     height: 700px;
     max-height: 100%;
     background-color: #f3dba5;
-    margin: 2% auto;
-    padding: 5px 0px 18px 0;
+    margin: auto;
+    padding-top: 5px;
+    padding-bottom: 18px;
     position: relative;
     border-radius: 10px;
     border-bottom: 10px inset #f1d596;
@@ -42,15 +43,15 @@ h1 {
     flex-direction: column;
     align-items: center;
     padding: 10px 0 10px 0;
-    height: 19%;
+    height: 21.5%;
 }
 
 #sub-input {
     border: 0;
     background-color: #61766b;
-    color: #95a89e;
+    color: #91dec1;
     font-family: "mono-italic";
-    font-size: 30px;
+    font-size: 40px;
     max-width: 600px;
     width: 90%;
     padding: 10px 2% 10px;
@@ -66,7 +67,7 @@ h1 {
     background-color: #487f6a;
     color: #91dec1;
     font-family: "mono";
-    font-size: 40px;
+    font-size: 50px;
     max-width: 600px;
     width: 90%;
     padding: 20px 2% 20px;
@@ -102,15 +103,15 @@ h1 {
     border-right: 0;
     text-align: center;
     outline: none;
-    transition: all 0.2s ease;
+    transition: all 0.5s ease;
 }
-
+/* 
 #special button:hover {
     background-color: #666;
     border-top: 6px outset #6e6e6e;
     border-bottom: 6px outset #5e5e5e;
     color: white;
-}
+} */
 
 #numbers {
     height: 55%;
@@ -135,14 +136,6 @@ h1 {
     border-right: 0;
     text-align: center;
     outline: none;
-    transition: all 0.2s ease;
-}
-
-#numbers button:hover {
-    background-color: #666;
-    border-top: 6px outset #6e6e6e;
-    border-bottom: 6px outset #5e5e5e;
-    color: white;
 }
 
 .red {
@@ -150,14 +143,4 @@ h1 {
     color: #fef7ff !important;
     border-bottom: 6px outset #f16870 !important;
     border-top: 6px outset #f66b78 !important;
-}
-
-.red:hover {
-    background-color: #487f6a !important;
-    border-top: 6px outset #4e8a73 !important;
-    border-bottom: 6px outset #427461 !important;
-}
-
-#change-theme {
-    grid-column: 1/4;
 }
