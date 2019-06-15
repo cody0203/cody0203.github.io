@@ -8,6 +8,15 @@
     src: url(./fonts/mono-italic.woff);
 }
 
+* {
+    transition: all 0.2s ease;
+}
+
+body {
+background: linear-gradient(122deg, rgba(71, 156, 193, 1) 0%, rgba(71, 156, 193, 1) 50%, rgba(0, 0, 0, 1) 50%, rgba(81, 180, 223, 1) 50%, rgba(81, 180, 223, 1) 100%);
+height: 100vh;
+}
+
 h1 {
     text-align: center;
 }
@@ -17,20 +26,20 @@ h1 {
     max-width: 100%;
     height: 700px;
     max-height: 100%;
-    background-color: #f3dba5;
+    background-color: #545356;
     margin: 2% auto;
     padding: 5px 0px 18px 0;
     position: relative;
     border-radius: 10px;
-    border-bottom: 10px inset #f1d596;
-    border-top: 50px outset #f1d596;
+    border-bottom: 10px inset #4c4b4d;
+    border-top: 50px outset #5c5b5f;
 }
 
 #signed {
     position: absolute;
     top: -55px;
     left: 20px;
-    color: #b29967;
+    color: #c3c2c4;
     font-family: "Orbitron", sans-serif;
     font-size: 2em;
 }
@@ -47,7 +56,7 @@ h1 {
 
 #sub-input {
     border: 0;
-    background-color: #61766b;
+    background-color: #364954;
     color: #95a89e;
     font-family: "mono-italic";
     font-size: 30px;
@@ -63,7 +72,7 @@ h1 {
 
 #main-input {
     border: 0;
-    background-color: #487f6a;
+    background-color: #5e7f92;
     color: #91dec1;
     font-family: "mono";
     font-size: 40px;
@@ -94,21 +103,20 @@ h1 {
 #special button {
     font-family: "Orbitron", sans-serif;
     font-size: 1em;
-    background-color: #fdf8e9;
+    background-color: #d7cfc7;
     border-radius: 10px;
-    border-top: 6px outset #fefdf9;
-    border-bottom: 6px outset #fffcf4;
+    border-top: 6px outset #e5e0db;
+    border-bottom: 6px outset #c9beb3;
     border-left: 0;
     border-right: 0;
     text-align: center;
     outline: none;
-    transition: all 0.2s ease;
 }
 
 #special button:hover {
-    background-color: #666;
-    border-top: 6px outset #6e6e6e;
-    border-bottom: 6px outset #5e5e5e;
+    background-color: #dcb5a9;
+    border-top: 6px outset #e6cac1;
+    border-bottom: 6px outset #d2a091;
     color: white;
 }
 
@@ -127,35 +135,34 @@ h1 {
 #numbers button {
     font-family: "Orbitron", sans-serif;
     font-size: 1em;
-    background-color: #fdf8e9;
+    background-color: #d7cfc7;
     border-radius: 10px;
-    border-top: 6px outset #fefdf9;
-    border-bottom: 6px outset #fffcf4;
+    border-top: 6px outset #e5e0db;
+    border-bottom: 6px outset #c9beb3;
     border-left: 0;
     border-right: 0;
     text-align: center;
     outline: none;
-    transition: all 0.2s ease;
 }
 
 #numbers button:hover {
-    background-color: #666;
-    border-top: 6px outset #6e6e6e;
-    border-bottom: 6px outset #5e5e5e;
+    background-color: #dcb5a9;
+    border-top: 6px outset #e6cac1;
+    border-bottom: 6px outset #d2a091;
     color: white;
 }
 
 .red {
-    background-color: #ee5a6c !important;
+    background-color: #c4816c !important;
     color: #fef7ff !important;
-    border-bottom: 6px outset #f16870 !important;
-    border-top: 6px outset #f66b78 !important;
+    border-bottom: 6px outset #ba6c54 !important;
+    border-top: 6px outset #ce9684 !important;
 }
 
 .red:hover {
-    background-color: #487f6a !important;
-    border-top: 6px outset #4e8a73 !important;
-    border-bottom: 6px outset #427461 !important;
+    background-color: #ec7e83 !important;
+    border-top: 6px outset #f09c9f !important;
+    border-bottom: 6px outset #e86067 !important;
 }
 
 #change-theme {

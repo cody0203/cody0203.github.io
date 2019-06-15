@@ -16,11 +16,11 @@ function input(button) {
         subInput.val(`Ans: ${eval(subInput.val())}`);
         mainInput.val("");
         mainInput.val(mainInput.val() + $(button).text());
-    } else if (subInput.val().startsWith(" ") && (Number(mainInput.val()) > 0)) {
+    } else if (subInput.val().startsWith(" ") && (Number(mainInput.val()) >= 0)) {
         subInput.val(`Ans: ${eval(subInput.val())}`);
         mainInput.val("");
         mainInput.val(mainInput.val() + $(button).text());
-    } if (subInput.val().startsWith(" ") && Number(mainInput.val()) <= 0) {
+    } if (subInput.val().startsWith(" ") && Number(mainInput.val()) < 0) {
         subInput.val(`Ans: ${eval(subInput.val())}`);
         mainInput.val("");
         mainInput.val(mainInput.val() + $(button).text());
@@ -380,7 +380,12 @@ $("button").on("mousedown", function () {
 })
 
 $("#change-theme").on("click", function () {
-    $(this).css({
-        "transform": "scale(1.1)",
-    });
+    let themeNumber = Number($('link').attr('href').substr($('link').attr('href').search(".css") - 1, 1));
+    if (themeNumber < 2) {
+        ++themeNumber;
+    } else {
+        themeNumber = 1;
+    }
+    $('link').attr('href', "style" + themeNumber + ".css");
+
 })
