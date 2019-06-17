@@ -13,6 +13,7 @@ let subInput = $("#sub-input");
 //     mainInput.val(" ");
 //     mainInput.val($(button).text());
 // } 
+
 function input(button) {
     let theDot = $(".dot");
     let operator = $(".operator");
@@ -42,11 +43,18 @@ function input(button) {
         subInput.val(`Ans: ${eval(newSubResult)}`);
         mainInput.val("");
         mainInput.val(mainInput.val() + $(button).text());
-    } else if (checkArrElementInInput(subInput, theDot) && checkArrElementInInput(mainInput, theDot) && checkArrElementInInput(mainInput, operator) == false) {
+    } else if (subResult.startsWith(" ") && checkArrElementInInput(subInput, theDot) && checkArrElementInInput(mainInput, theDot) && checkArrElementInInput(mainInput, operator) == false) {
         subInput.val(`Ans: ${eval(newSubResult)}`);
         mainInput.val("");
         mainInput.val(mainInput.val() + $(button).text());
-    }
+    } else if (subResult.includes(",") && checkArrElementInInput(mainInput, operator) == false) {
+        subInput.val(`Ans: ${eval(newSubResult)}`);
+        mainInput.val("");
+        mainInput.val(mainInput.val() + $(button).text());
+    } else if (eval(subResult) == mainResult && checkArrElementInInput(mainInput, operator) == false) {
+        mainInput.val("");
+        mainInput.val(mainInput.val() + $(button).text());
+    } 
 }
 
 function removeSpace(input) {
