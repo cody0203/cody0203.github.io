@@ -5,9 +5,9 @@ function input(button) {
     let theDot = $(".dot");
     let operator = $(".operator");
     let mainResult = mainInput.val();
-    let newMainResult = mainResult.replace(/×/g, "*").replace(/÷/g, "/").replace(/−/, "-");
+    let newMainResult = mainResult.replace(/×/g, "*").replace(/÷/g, "/").replace(/−/g, "-");
     let subResult = subInput.val();
-    let newSubResult = subResult.replace(/×/g, "*").replace(/÷/g, "/").replace(/−/, "-");
+    let newSubResult = subResult.replace(/×/g, "*").replace(/÷/g, "/").replace(/−/g, "-");
     mainInput.val(mainInput.val() + $(button).text());
     if (checkArrElementInInput(mainInput, operator) == false && checkArrElementInInput(subInput, operator)) {
         subInput.val(`Ans: ${eval(newSubResult)}`);
