@@ -98,7 +98,6 @@ function calculator(button) {
     let lastItem = checkLastIndex(mainInput, operator);
     let inputValToArray = mainInput.val().split("");
     let checkCal = inputValToArray.splice(lastItem, 1);
-    checkOperatorText(button);
     if (mainInput.val() == "" && $(button).attr("id") !== "-") {
         mainInput.val(0 + $(button).text());
     } else if (mainInput.val() == "" && $(button).attr("id") == "-"){
@@ -284,36 +283,24 @@ function tan(button) {
 function equal(button) {
     let mathPow = `Math.pow(`;
     let operator = $(".operator");
+    let result = mainInput.val();
+    let newResult = result.replace(/×/g, "*").replace(/÷/g, "/").replace(/−/, "-");
     if (
-        mainInput.val() == "" ||
+        result == "" ||
         checkArrElementInLastInput(mainInput, operator)
     ) {
         $(button).stop();
-    } else if (checkArrElementInInput(mainInput, operator) == false && mainInput.val().includes(mathPow) == false) {
+    } else if (checkArrElementInInput(mainInput, operator) == false && result.includes(mathPow) == false) {
         subInput.val(subInput.val());
-    } else if (mainInput.val().includes(mathPow)) {
-        mainInput.val(mainInput.val() + ")");
-        subInput.val(` Ans: ${mainInput.val()}`);
-        mainInput.val(eval(mainInput.val()));
+    } else if (result.includes(mathPow)) {
+        result(result + ")");
+        subInput.val(` Ans: ${result}`);
+        mainInput.val((eval(result)));
     } else {
-        subInput.val(`Ans: ${mainInput.val()}`);
-        mainInput.val(eval(mainInput.val()));
+        subInput.val(`Ans: ${result}`);
+        mainInput.val(eval(newResult));
     }
 }
-
-function checkOperatorText(button) {
-    switch ($(button).text()) {
-        case "−":
-        $(button).text("-");
-        break;
-        case "×":
-        $(button).text("*");
-        break;
-        case "÷":
-        $(button).text("/");
-        break;
-    }
-};
 
 let btnClear = $("#clear");
 
