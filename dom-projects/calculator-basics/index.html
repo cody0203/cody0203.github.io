@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./style.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style1.css" type="text/css">
     <title>Calculator</title>
 </head>
 
@@ -17,54 +16,56 @@
             <input type="text" id="sub-input" disabled>
             <input type="text" id="main-input">
         </div>
-        <div id="wrap">
-
-        </div>
         <div id="special">
-            <button id="squared">x<sup>n</sup></button>
-            <button id="factorial">x!</button>
-            <button id="square-root">&radic;x</button>
-            <button id="sin">sin</button>
-            <button id="cos">cos</button>
-            <button id="tan">tan</button>
-            <button id="log">log</button>
-            <button id="ln">ln</button>
+            <button id="squared" onclick="squared(this)">x<sup>n</sup></button>
+            <button id="factorial" onclick="factorial(this)">x!</button>
+            <button id="square-root" onclick="squareRoot(this)">&radic;x</button>
+            <button id="sin" onclick="sin(this)">sin</button>
+            <button id="cos" onclick="cos(this)">cos</button>
+            <button id="tan" onclick="tan(this)">tan</button>
+            <button id="exp" onclick="exp(this)">EXP</button>
+            <button id="ln" onclick="log(this)">ln</button>
         </div>
 
         <div id="numbers">
-            <button id="(" onclick="render(this)">(</button>
-            <button id=")" onclick="render(this)">)</button>
+            <button id="paren-l" class="parenthesis" onclick="parens1(this)">(</button>
+            <button id="paren-r" class="parenthesis" onclick="parens2(this)">&rpar;</button>
             <button id="clear">ce</button>
             <button id="full-clear" ">c</button>
 
-            <button id="%" onclick="render(this) ">%</button>
-            <button id="pos-neg">&plusmn;</button>
-            <button id="pi" onclick="render(this) ">&pi;</button>
-            <button id="/" class="red" onclick="render(this) ">÷</button>
+            <button id="Ans" onclick="ansBtn(this)">Ans</button>
+            <button id=" %" onclick="percent(this)">%</button>
+            <button id="e" onclick="e(this)">e</button>
+            <button id="pi" onclick="pi(this)">&pi;</button>
 
-            <button id="7" onclick=" render(this) ">7</button>
-            <button id="8" onclick=" render(this) ">8</button>
-            <button id="9" onclick=" render(this) ">9</button>
-            <button id="*" class="red" onclick="render(this) ">x</button>
+            <button id="7" class="numbers" onclick="input(this)">7</button>
+            <button id="8" class="numbers" onclick="input(this)">8</button>
+            <button id="9" class="numbers" onclick="input(this)">9</button>
+            <button id="/" class="red operator" onclick="calculator(this)">/</button>
 
-            <button id="4" onclick=" render(this) ">4</button>
-            <button id="5" onclick=" render(this) ">5</button>
-            <button id="6" onclick=" render(this) ">6</button>
-            <button id="-" class=" red " onclick="render(this) ">-</button>
+            <button id="4" class="numbers" onclick="input(this)">4</button>
+            <button id="5" class="numbers" onclick="input(this)">5</button>
+            <button id="6" class="numbers" onclick="input(this)">6</button>
+            <button id="*" class="red operator" onclick="calculator(this)">*</button>
 
-            <button id="1" onclick=" render(this) ">1</button>
-            <button id="2" onclick=" render(this) ">2</button>
-            <button id="3" onclick=" render(this) ">3</button>
-            <button id="+" class="red" onclick="render(this)">+</button>
+            <button id="1" class="numbers" onclick="input(this)">1</button>
+            <button id="2" class="numbers" onclick="input(this)">2</button>
+            <button id="3" class="numbers" onclick="input(this)">3</button>
+            <button id="-" class="red operator" onclick="calculator(this)">-</button>
 
-            <button id="0" onclick="render(this) ">0</button>
-            <button id="00" onclick="render(this) ">00</button>
-            <button id="." onclick="render(this) ">.</button>
-            <button id="=" class="red">=</button>
+
+            <button id="0" class="numbers" onclick="input(this)">0</button>
+            <button id="00" class="numbers" onclick="input(this)">00</button>
+            <button class="dot" onclick="dot(this)">.</button>
+            <button id="+" class="red operator" onclick="calculator(this)">+</button>
+
+            <button id="change-theme">Change Theme</button>
+            <button id="=" class="red" onclick="equal(this)">=</button>
         </div>
 
     </div>
     </div>
+    <script src="./jquery-3.4.1.min.js"></script>
     <script src=" ./script.js "></script>
 </body>
 

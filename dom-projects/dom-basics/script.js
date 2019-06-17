@@ -178,7 +178,6 @@ btnIncreaseParaOneFontSizeOption.addEventListener("click", () => { increaseFontS
 btnIncreaseParaTwoFontSizeOption.addEventListener("click", () => { increaseFontSizeOptional(btnIncreaseParaTwoFontSizeOption); }, false)
 btnIncreaseParaThreeFontSizeOption.addEventListener("click", () => { increaseFontSizeOptional(btnIncreaseParaThreeFontSizeOption); }, false)
 
-
 // Giảm kích thước font chữ 1 đoạn văn theo ý muốn, kích thước giảm xuống không vượt quá 10 pixels
 let inputDecreaseFontSizeOptional = document.getElementById("decrease-font-size-optional");
 let btnDecreaseParaOneFontSizeOption = document.getElementById("btn-decrease-para-1-font-size-optional");
