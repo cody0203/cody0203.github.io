@@ -8,20 +8,42 @@ let subInput = $("#sub-input");
 // Em đang bị bug ở nếu val() của mainInput là số âm thì nó nếu nhập tiếp là số nó chỉ nhập được 1 số 1 lần
 //
 //
-
+//  else if (subResult.includes("-") && mainResult.includes("-")) {
+//     subInput.val(`Ans: ${eval(newSubResult)}`);
+//     mainInput.val(" ");
+//     mainInput.val($(button).text());
+// } 
 function input(button) {
+    let theDot = $(".dot");
     let operator = $(".operator");
+    let mainResult = mainInput.val();
+    let newMainResult = mainResult.replace(/×/g, "*").replace(/÷/g, "/").replace(/−/, "-");
+    let subResult = subInput.val();
+    let newSubResult = subResult.replace(/×/g, "*").replace(/÷/g, "/").replace(/−/, "-");
+    // if (checkArrElementInInput(mainInput, operator) == false && checkArrElementInInput(subInput, operator)) {
+    //     subInput.val(`Ans: ${eval(newSubResult)}`);
+    //     mainInput.val(" ");
+    //     mainInput.val($(button).text());
+    // } else if (subResult.includes("-") && mainResult.includes("-")) {
+    //     subInput.val(`Ans: ${eval(newSubResult)}`);
+    //     mainInput.val(" ");
+    //     mainInput.val($(button).text());
+    // } else if (checkElementInLastInInput(mainInput, operator)) {
+    //     mainInput.val(mainResult + $(button).text());
+    // } else {
+    //     mainInput.val(mainResult + $(button).text()); 
+    // }
     mainInput.val(mainInput.val() + $(button).text());
-    if (checkArrElementInInput(mainInput, operator) == false && checkArrElementInInput(subInput, operator) || Number(mainInput.val()) <= 0) {
-        subInput.val(`Ans: ${eval(subInput.val())}`);
+    if (checkArrElementInInput(mainInput, operator) == false && checkArrElementInInput(subInput, operator)) {
+        subInput.val(`Ans: ${eval(newSubResult)}`);
         mainInput.val("");
         mainInput.val(mainInput.val() + $(button).text());
-    } else if (subInput.val().startsWith(" ") && (Number(mainInput.val()) >= 0)) {
-        subInput.val(`Ans: ${eval(subInput.val())}`);
+    } else if (subResult.includes("-") && mainResult.includes("-") && checkArrElementInInput(mainInput, operator) == false) {
+        subInput.val(`Ans: ${eval(newSubResult)}`);
         mainInput.val("");
         mainInput.val(mainInput.val() + $(button).text());
-    } if (subInput.val().startsWith(" ") && Number(mainInput.val()) < 0) {
-        subInput.val(`Ans: ${eval(subInput.val())}`);
+    } else if (checkArrElementInInput(subInput, theDot) && checkArrElementInInput(mainInput, theDot) && checkArrElementInInput(mainInput, operator) == false) {
+        subInput.val(`Ans: ${eval(newSubResult)}`);
         mainInput.val("");
         mainInput.val(mainInput.val() + $(button).text());
     }
@@ -283,22 +305,23 @@ function tan(button) {
 function equal(button) {
     let mathPow = `Math.pow(`;
     let operator = $(".operator");
-    let result = mainInput.val();
-    let newResult = result.replace(/×/g, "*").replace(/÷/g, "/").replace(/−/, "-");
+    let mainResult = mainInput.val();
+    let newMainResult = mainResult.replace(/×/g, "*").replace(/÷/g, "/").replace(/−/, "-");
+    let subResult = subInput.val();
     if (
-        result == "" ||
+        mainResult == "" ||
         checkArrElementInLastInput(mainInput, operator)
     ) {
         $(button).stop();
-    } else if (checkArrElementInInput(mainInput, operator) == false && result.includes(mathPow) == false) {
-        subInput.val(subInput.val());
-    } else if (result.includes(mathPow)) {
-        result(result + ")");
-        subInput.val(` Ans: ${result}`);
-        mainInput.val((eval(result)));
+    } else if (checkArrElementInInput(mainInput, operator) == false && mainResult.includes(mathPow) == false) {
+        subInput.val(subResult);
+    } else if (mainResult.includes(mathPow)) {
+        mainInput.val(mainResult + ")");
+        subInput.val(` Ans: ${mainResult}`);
+        mainInput.val((eval(newMainResult)));
     } else {
-        subInput.val(`Ans: ${result}`);
-        mainInput.val(eval(newResult));
+        subInput.val(`Ans: ${mainResult}`);
+        mainInput.val(eval(newMainResult));
     }
 }
 
