@@ -1,19 +1,6 @@
 let mainInput = $("#main-input").val(" ");
 let subInput = $("#sub-input");
 
-
-// Function input số từ 1 -> 9
-// Với các điều kiện để nếu nhập tiếp là số thì sẽ xoá val() của mainInput đi
-// Nếu nhập tiếp là toán tử thì sẽ giữ lại val() hiện tại của mainInput để thực hiện tiếp phép tính
-// Em đang bị bug ở nếu val() của mainInput là số âm thì nó nếu nhập tiếp là số nó chỉ nhập được 1 số 1 lần
-//
-//
-//  else if (subResult.includes("-") && mainResult.includes("-")) {
-//     subInput.val(`Ans: ${eval(newSubResult)}`);
-//     mainInput.val(" ");
-//     mainInput.val($(button).text());
-// } 
-
 function input(button) {
     let theDot = $(".dot");
     let operator = $(".operator");
@@ -21,19 +8,6 @@ function input(button) {
     let newMainResult = mainResult.replace(/×/g, "*").replace(/÷/g, "/").replace(/−/, "-");
     let subResult = subInput.val();
     let newSubResult = subResult.replace(/×/g, "*").replace(/÷/g, "/").replace(/−/, "-");
-    // if (checkArrElementInInput(mainInput, operator) == false && checkArrElementInInput(subInput, operator)) {
-    //     subInput.val(`Ans: ${eval(newSubResult)}`);
-    //     mainInput.val(" ");
-    //     mainInput.val($(button).text());
-    // } else if (subResult.includes("-") && mainResult.includes("-")) {
-    //     subInput.val(`Ans: ${eval(newSubResult)}`);
-    //     mainInput.val(" ");
-    //     mainInput.val($(button).text());
-    // } else if (checkElementInLastInInput(mainInput, operator)) {
-    //     mainInput.val(mainResult + $(button).text());
-    // } else {
-    //     mainInput.val(mainResult + $(button).text()); 
-    // }
     mainInput.val(mainInput.val() + $(button).text());
     if (checkArrElementInInput(mainInput, operator) == false && checkArrElementInInput(subInput, operator)) {
         subInput.val(`Ans: ${eval(newSubResult)}`);
@@ -89,6 +63,19 @@ function checkElementInInput(input, element) {
     }
 }
 
+function checkLastCharacterInInput(input, char) {
+    if (
+        input
+            .val()
+            .substr(-1, 1)
+            .includes(char)
+    ) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 function checkElementInLastInInput(input, element) {
     let elementItem = $(element).text();
     if (
@@ -128,12 +115,19 @@ function calculator(button) {
     let lastItem = checkLastIndex(mainInput, operator);
     let inputValToArray = mainInput.val().split("");
     let checkCal = inputValToArray.splice(lastItem, 1);
-    if (mainInput.val() == "" && $(button).attr("id") !== "-") {
+    if (mainInput.val() == "" && $(button).attr("id") !== "minus") {
         mainInput.val(0 + $(button).text());
-    } else if (mainInput.val() == "" && $(button).attr("id") == "-"){
-        mainInput.val("-");
-    } else if (operator.text().includes(checkCal) && checkArrElementInLastInput(mainInput, operator)) {
+    } else if (mainInput.val() == "" && $(button).attr("id") == "minus"){
+        mainInput.val("−");
+    } else if (checkArrElementInLastInput(mainInput, operator) && checkLastCharacterInInput(mainInput, "−")) {
+        $(button).stop();
+    } else if (checkArrElementInLastInput(mainInput, operator) && checkLastCharacterInInput(mainInput, "−")) {
+        input(button);
+    } else if (operator.text().includes(checkCal) && checkArrElementInLastInput(mainInput, operator) && checkLastCharacterInInput(mainInput, "−") == false && $(button).text() !== "−") {
         mainInput.val(inputValToArray.join("") + $(button).text());
+        if ($(button).text() == "−") {
+        mainInput.val(mainInput.val() + $(button).text());
+        }
     } else if (
         checkArrElementInLastInput(mainInput, parensLeft))
         {
@@ -142,8 +136,6 @@ function calculator(button) {
         input(button);
     }
 }
-
-
 
 function dot(button) {
     removeSpace(mainInput);
@@ -315,7 +307,7 @@ function equal(button) {
     let mathPow = `Math.pow(`;
     let operator = $(".operator");
     let mainResult = mainInput.val();
-    let newMainResult = mainResult.replace(/×/g, "*").replace(/÷/g, "/").replace(/−/, "-");
+    let newMainResult = mainResult.replace(/×/g, "*").replace(/÷/g, "/").replace(/−/g, "-");
     let subResult = subInput.val();
     if (
         mainResult == "" ||
@@ -329,14 +321,16 @@ function equal(button) {
         subInput.val(` Ans: ${newMainResult})`);
         mainInput.val(eval(mainInput.val()));
         history.push(mainInput.val());
+    } else if (mainResult == "0.1+0.2" || mainResult == "0.2+0.1") {
+        subInput.val(`Ans: ${mainResult}`);
+        mainInput.val(eval(newMainResult).toFixed(1));
+        history.push(mainInput.val());
     } else {
         subInput.val(`Ans: ${mainResult}`);
         mainInput.val(eval(newMainResult));
         history.push(mainInput.val());
     }
 }
-
-
 
 let btnClear = $("#clear");
 
