@@ -98,6 +98,7 @@ function calculator(button) {
     let lastItem = checkLastIndex(mainInput, operator);
     let inputValToArray = mainInput.val().split("");
     let checkCal = inputValToArray.splice(lastItem, 1);
+    checkOperatorText(button);
     if (mainInput.val() == "" && $(button).attr("id") !== "-") {
         mainInput.val(0 + $(button).text());
     } else if (mainInput.val() == "" && $(button).attr("id") == "-"){
@@ -299,6 +300,20 @@ function equal(button) {
         mainInput.val(eval(mainInput.val()));
     }
 }
+
+function checkOperatorText(button) {
+    switch ($(button).text()) {
+        case "−":
+        $(button).text("-");
+        break;
+        case "×":
+        $(button).text("*");
+        break;
+        case "÷":
+        $(button).text("/");
+        break;
+    }
+};
 
 let btnClear = $("#clear");
 
