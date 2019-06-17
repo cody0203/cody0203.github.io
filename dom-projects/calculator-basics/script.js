@@ -215,8 +215,14 @@ function factorial(button) {
 function squared(button) {
     let operator = $(".operator");
     let mathPow = `Math.pow(`;
+    let lastItem = checkLastIndex(mainInput, operator);
+    let inputValToArray = mainInput.val().split("");
+    let squareItem = inputValToArray.splice(lastItem + 1).join("");
     if (mainInput.val().includes(mathPow) || mainInput.val() == " " || checkArrElementInLastInput(mainInput, operator)) {
         $(button).stop();
+    } else if (checkArrElementInInput(mainInput, operator)) {
+        removeSpace(mainInput);
+        mainInput.val(inputValToArray.join("") + `${mathPow}${squareItem},`);
     } else {
         removeSpace(mainInput);
         mainInput.val(`${mathPow}${mainInput.val()},`);
