@@ -17,6 +17,10 @@ function input(button) {
         subInput.val(`Ans: ${eval(newSubResult)}`);
         mainInput.val("");
         mainInput.val(mainInput.val() + $(button).text());
+    } else if (subResult == " " && checkArrElementInInput(mainInput, operator) == false) {
+        mainInput.val("");
+        mainInput.val(mainInput.val() + $(button).text());
+        subInput.val(`   `);
     } else if (subResult.startsWith(" ") && checkArrElementInInput(subInput, theDot) && checkArrElementInInput(mainInput, theDot) && checkArrElementInInput(mainInput, operator) == false) {
         subInput.val(`Ans: ${eval(newSubResult)}`);
         mainInput.val("");
@@ -25,10 +29,11 @@ function input(button) {
         subInput.val(`Ans: ${eval(newSubResult)}`);
         mainInput.val("");
         mainInput.val(mainInput.val() + $(button).text());
-    } else if (eval(subResult) == mainResult && checkArrElementInInput(mainInput, operator) == false) {
-        mainInput.val("");
-        mainInput.val(mainInput.val() + $(button).text());
-    } 
+    }
+    // } else if (eval(subResult) == mainResult && checkArrElementInInput(mainInput, operator) == false) {
+    //     mainInput.val("");
+    //     mainInput.val(mainInput.val() + $(button).text());
+    // }
 }
 
 function removeSpace(input) {
@@ -158,7 +163,7 @@ function pi(button) {
     removeSpace(mainInput);
     if (mainInput.val() == " " || checkArrElementInLastInput(mainInput, operator)) {
         mainInput.val(mainInput.val() + Math.PI);
-        subInput.val(` Ans: ${mainInput.val()}`);
+        subInput.val(` `);
     } else {
         $(button).stop();
     }
@@ -169,7 +174,7 @@ function e(button) {
     removeSpace(mainInput);
     if (mainInput.val() == "" || checkArrElementInLastInput(mainInput, operator)) {
         mainInput.val(mainInput.val() + Math.E);
-        subInput.val(` Ans: ${mainInput.val()}`);
+        subInput.val(` `);
     } else {
         $(button).stop();
     }
@@ -182,7 +187,7 @@ function percent() {
     let inputValToArray = mainInput.val().split("");
     if (lastItem == -1) {
         mainInput.val(mainInput.val() / 100);
-        subInput.val(` Ans: ${mainInput.val()}`);
+        subInput.val(` `);
     } else {
         let percentItem = inputValToArray.splice(lastItem + 1).join("");
         mainInput.val(inputValToArray.join("") + (percentItem / 100));
@@ -203,7 +208,7 @@ function factorial(button) {
             num = num * i;
         }
         mainInput.val(inputValToArray.join("") + num);
-        subInput.val(` Ans: ${mainInput.val()}`);
+        subInput.val(` `);
     }
 };
 
@@ -228,7 +233,7 @@ function squareRoot(button) {
     } else {
         removeSpace(mainInput);
         mainInput.val(inputValToArray.join("") + Math.sqrt(squareRootItem));
-        subInput.val(` Ans: ${mainInput.val()}`);
+        subInput.val(` `);
     }
 }
 
@@ -242,7 +247,7 @@ function log(button) {
     } else {
         removeSpace(mainInput);
         mainInput.val(inputValToArray.join("") + Math.log(squareRootItem));
-        subInput.val(` Ans: ${mainInput.val()}`);
+        subInput.val(` `);
     }
 }
 
@@ -256,7 +261,7 @@ function exp(button) {
     } else {
         removeSpace(mainInput);
         mainInput.val(inputValToArray.join("") + Math.exp(expItem));
-        subInput.val(` Ans: ${mainInput.val()}`);
+        subInput.val(` `);
     }
 }
 
@@ -270,7 +275,7 @@ function sin(button) {
         $(button).stop();
     } else if ($(button).attr("id") == "sin") {
         mainInput.val(inputValToArray.join("") + Math.sin(items));
-        subInput.val(` Ans: ${mainInput.val()}`);
+        subInput.val(` `);
     }
 }
 
@@ -284,7 +289,7 @@ function cos(button) {
         $(button).stop();
     } else if ($(button).attr("id") == "cos") {
         mainInput.val(inputValToArray.join("") + Math.cos(items));
-        subInput.val(` Ans: ${mainInput.val()}`);
+        subInput.val(` `);
     }
 }
 
@@ -298,7 +303,7 @@ function tan(button) {
         $(button).stop();
     } else if ($(button).attr("id") == "tan") {
         mainInput.val(inputValToArray.join("") + Math.tan(items));
-        subInput.val(` Ans: ${mainInput.val()} `);
+        subInput.val(` `);
     }
 }
 let history = [];
