@@ -301,6 +301,7 @@ function tan(button) {
         subInput.val(` Ans: ${mainInput.val()} `);
     }
 }
+let history = [];
 
 function equal(button) {
     let mathPow = `Math.pow(`;
@@ -316,14 +317,18 @@ function equal(button) {
     } else if (checkArrElementInInput(mainInput, operator) == false && mainResult.includes(mathPow) == false) {
         subInput.val(subResult);
     } else if (mainResult.includes(mathPow)) {
-        mainInput.val(mainResult + ")");
-        subInput.val(` Ans: ${mainResult}`);
-        mainInput.val((eval(newMainResult)));
+        mainInput.val(newMainResult + ")");
+        subInput.val(` Ans: ${newMainResult})`);
+        mainInput.val(eval(mainInput.val()));
+        history.push(mainInput.val());
     } else {
         subInput.val(`Ans: ${mainResult}`);
         mainInput.val(eval(newMainResult));
+        history.push(mainInput.val());
     }
 }
+
+
 
 let btnClear = $("#clear");
 
