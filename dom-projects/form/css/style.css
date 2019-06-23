@@ -1,8 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
 
 * {
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Quicksand',
+    sans-serif;
 }
 
 body {
@@ -68,4 +70,13 @@ body {
 
 #register-btn {
     margin-bottom: 25px;
+}
+
+@media only screen and (max-width: 600px) {
+    #part-2 {
+        display: none;
+    }
+    #part-1 {
+        width: 100% !important;
+    }
 }

@@ -1,5 +1,9 @@
 #part-1 {
-    width: 100%;
+    width: 60% !important;
+}
+
+#part-2 {
+    width: 40% !important;
 }
 
 #header {
@@ -58,4 +62,23 @@ td {
     max-width: 65%;
     height: auto;
     word-wrap: break-word;
+}
+
+@media only screen and (max-width: 600px) {
+    #part-2 {
+        display: none;
+    }
+
+    #part-1 {
+        width: 100% !important;
+    }
+    #wrap {
+        max-height: none;
+    }
+    
+}
+@media only screen and (max-width: 330px) {
+    #header {
+        margin-top: 100px;
+    }
 }

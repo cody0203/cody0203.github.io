@@ -90,10 +90,9 @@ h1 {
 
 #footer-btn {
     width: 100%;
-    max-width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .btn {
@@ -165,5 +164,20 @@ h1 {
 
     to {
         opacity: 0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #gender-select {
+        font-size: 90%;
+    }
+    #gender-select>label {
+        margin-left: 0px;
+    }
+    #gender-select>input {
+        margin-left: 5px;
+    }
+    .birthday {
+        font-size: 70%;
     }
 }
