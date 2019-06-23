@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <link rel="stylesheet" href="../css/style2.css" type="text/css">
+    <script src="https://kit.fontawesome.com/095dd6d541.js"></script>
+
+    <title>Login</title>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="part-1">
+            <div id="header">
+                <a href="index.html" id="go-back-home"><i class="fas fa-arrow-left"></i></a>
+                <h1>Login</h1>
+            </div>
+            <form action="success.html" id="login-form">
+                <div id="wrap-input">
+                    <label class="label" for="email">Email:</label> </br>
+                    <div id="input-email">
+                        <input type="text" name="email" id="login-email" class="input first" autocomplete="off" />
+                    </div>
+                    <div class="error"></div>
+                    <label class="label" for="password">Password:</label> </br>
+                    <div id="input-password">
+                        <input type="password" name="password" id="login-password" class="input have-sibling" autocomplete="off" />
+                        <div id="hide-show-password" id="one">
+                            <i class="far fa-eye-slash"></i>
+                        </div>
+                    </div>
+                    <div class="error"></div>
+                    <button type="submit" name="submit" id="login-btn" class="input">Login</button>
+                </div>
+            </form>
+            <p id="register-message">
+                Dont' have an account? <a href="register.html">Register here</a>
+            </p>
+        </div>
+        <div id="part-2"></div>
+    </div>
+    <script src="../js/login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+#wrap-input {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    position: relative;
+}
+
+#name-1,
+#name-2,
+#input-email,
+#input-phone-number,
+#input-password {
+    margin-bottom: 30px;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    margin: 5px 0 5px 0;
+}
+
+h1 {
+    width: 80%;
+    font-size: 1.5em;
+}
+
+.fa-arrow-left {
+    width: 100%;
+    font-size: 25px;
+}
+
+#go-back-home {
+    color: black;
+    margin-left: 20px;
+}
+
+#go-back-home:visited {
+    color: black;
+}
+
+.input {
+    width: 100%;
+    padding-left: 10px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #d0d0d0;
+    font-size: 16px;
+    outline: 0;
+}
+
+#full-name {
+    display: flex;
+    justify-content: space-between;
+}
+
+#gender-select {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0 25px 0;
+    font-size: 16px;
+    align-items: center;
+}
+
+#gender-select>input {
+    width: auto;
+    height: auto;
+}
+
+#gender-select>label {
+    margin-left: -25px;
+}
+
+#birthday-select {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.birthday {
+    width: calc(100% / 3 - 35px);
+    padding-left: 10px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #d0d0d0;
+    font-size: 16px;
+}
+
+#footer-btn {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.btn {
+    width: 120px;
+    max-width: 100%;
+    border-radius: 999px;
+    background-color: #2e2a48;
+    color: white;
+    font-size: 16px;
+    height: 50px;
+    outline: 0;
+    cursor: pointer;
+}
+
+.error {
+   width: 100%;
+   height: auto;
+   margin: 10px 0 0 0;
+   background-color: #bc5461;
+   display: flex;
+   align-items: center;
+   border-radius: 3px;
+   font-size: 16px;
+   position: absolute;
+   visibility: hidden;
+   color: white;
+   padding: 10px 10px 10px 10px;
+   text-align: left;
+}
+
+.error:before {
+    content: "";
+    background-color: #bc5461;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: -5px;
+    left: 10px;
+    transform: rotate(45deg);
+}
+
+#name-1,
+#name-2,
+#last-name-error,
+#first-name-error {
+    width: 45%;
+}
+
+#last-name-error {
+    left: 55.1%;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    ;
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes disappear {
+    from {
+        opacity: 1;
+    }
+
+    ;
+
+    to {
+        opacity: 0;
+    }
+}
