@@ -61,6 +61,7 @@ function removeClass(classes, ...elements) {
 }
 
 function registerValidate(event) {
+    event.preventDefault();
     let isValid = true;
     firstName.focus();
     
@@ -71,12 +72,15 @@ function registerValidate(event) {
     checkEmail();
     checkPhoneNumber();
     checkPassword();
+    checkGender();
+    checkBirthday();
 
     if (checkFirstName() == false ||
         checkLastName() == false ||
         checkEmail() == false ||
         checkPhoneNumber() == false ||
-        checkPassword() == false) {
+        checkPassword() == false ||
+        checkGender() == false) {
         event.preventDefault();
     }
 
@@ -250,35 +254,77 @@ function fillYear() {
 };
 fillYear();
 
-// function selectedDay() {
-//     let dayArray = days.children;
-//     for (let day in dayArray) {
-//         if (dayArray[day].value == now.getDate()) {
-//             dayArray[day].setAttribute("selected", "selected");
-//         }
-//     }
-// }
+function selectedDay() {
+    let dayArray = days.children;
+    for (let day in dayArray) {
+        if (dayArray[day].value == now.getDate()) {
+            dayArray[day].setAttribute("selected", "selected");
+        }
+    }
+}
 
-// selectedDay();
+selectedDay();
 
-// function selectedMonth() {
-//     let monthArray = months.children;
-//     for (let month in monthArray) {
-//         if (monthArray[month].value == now.getMonth()) {
-//             monthArray[month].setAttribute("selected", "selected");
-//         }
-//     }
-// }
+function selectedMonth() {
+    let monthArray = months.children;
+    for (let month in monthArray) {
+        if (monthArray[month].value == now.getMonth()) {
+            monthArray[month].setAttribute("selected", "selected");
+        }
+    }
+}
 
-// selectedMonth();
+selectedMonth();
 
-// function selectedYear() {
-//     let yearArray = years.children;
-//     for (let year in yearArray) {
-//         if (yearArray[year].value == "1995") {
-//             yearArray[year].setAttribute("selected", "selected");
-//         }
-//     }
-// }
+function selectedYear() {
+    let yearArray = years.children;
+    for (let year in yearArray) {
+        if (yearArray[year].value == "1995") {
+            yearArray[year].setAttribute("selected", "selected");
+        }
+    }
+}
 
-// selectedYear();
+selectedYear();
+
+// Validate gender
+let genderSelect = document.querySelectorAll(".gender");
+
+function checkGender() {
+    let isValid = true;
+    let errorDiv = genderSelect[0].previousElementSibling.parentNode.nextElementSibling;
+        if (genderSelect[0].checked == false && genderSelect[1].checked == false && genderSelect[2].checked == false) {
+            errorDiv.style.animation = "appear 0.5s ease both";
+            errorDiv.style.visibility = "visible";
+            errorDiv.textContent = "Gender is required";
+            isValid = false;
+        } else {
+            errorDiv.style.animation = "disappear 0.5s ease both";
+            errorDiv.style.visibility = "hidden";
+            errorDiv.textContent = "";
+        }
+    return isValid;
+}
+
+genderSelect.forEach(gender => {
+    gender.addEventListener("click", checkGender)
+})
+
+// Validate birthday
+
+function checkBirthday() {
+    let isValid = true;
+    let birthdaySelect = document.querySelectorAll(".birthday");
+    let errorDiv = birthdaySelect[0].previousElementSibling.parentNode.nextElementSibling;
+        if (birthdaySelect[0].value == "" || birthdaySelect[1].value == "" || birthdaySelect[2].value == "") {
+            errorDiv.style.animation = "appear 0.5s ease both";
+            errorDiv.style.visibility = "visible";
+            errorDiv.textContent = "Birthday is required";
+            isValid = false;
+        } else {
+            errorDiv.style.animation = "disappear 0.5s ease both";
+            errorDiv.style.visibility = "hidden";
+            errorDiv.textContent = "";
+        }
+    return isValid;
+}
