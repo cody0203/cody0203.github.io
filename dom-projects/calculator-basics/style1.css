@@ -24,14 +24,13 @@ h1 {
 }
 
 #cal {
+    position: relative;
     width: 500px;
     max-width: 100%;
     height: 700px;
-    max-height: 100%;
     background-color: #f3dba5;
     margin: 2% auto;
     padding: 5px 0px 18px 0;
-    position: relative;
     border-radius: 10px;
     border-bottom: 10px inset #f1d596;
     border-top: 50px outset #f5e1b4;
@@ -44,6 +43,15 @@ h1 {
     color: #b29967;
     font-family: "Orbitron", sans-serif;
     font-size: 2em;
+}
+
+.fa-history {
+    position: absolute;
+    top: -35px;
+    left: 457px;
+    color: #c3c2c4;
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.5em;
 }
 
 #inputs {

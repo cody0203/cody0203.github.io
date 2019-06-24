@@ -42,19 +42,19 @@ let gender = document.querySelector("#gender");
 gender.textContent = findingInfo(strInfo, "gender");
 
 let birthDay = document.querySelector("#birth-day");
-// birthDay.textContent = `${findingInfo(strInfo, "day")}/${findingInfo(strInfo, "month")}/${findingInfo(strInfo, "year")}`;
+birthDay.textContent = `${findingInfo(strInfo, "day")}/${findingInfo(strInfo, "month")}/${findingInfo(strInfo, "year")}`;
 
-function birthDayDisplay(...funcs) {
-    for (let func of funcs) {
-        let date = "";
-        date += func;
-        if (date.includes(func) && func!== "") {
-            birthDay.textContent += `${func}/`;
-        }
-    }
-    if (birthDay.textContent.endsWith("/")) {
-        birthDay.textContent = birthDay.textContent.slice(0, -1);
-    }
-}
+// function birthDayDisplay(...funcs) {
+//     for (let func of funcs) {
+//         let date = "";
+//         date += func;
+//         if (date.includes(func) && func!== "") {
+//             birthDay.textContent += `${func}/`;
+//         }
+//     }
+//     if (birthDay.textContent.endsWith("/")) {
+//         birthDay.textContent = birthDay.textContent.slice(0, -1);
+//     }
+// }
 
-birthDayDisplay(findingInfo(strInfo, "day"), findingInfo(strInfo, "month"), findingInfo(strInfo, "year"));
+// birthDayDisplay(findingInfo(strInfo, "day"), findingInfo(strInfo, "month"), findingInfo(strInfo, "year"));

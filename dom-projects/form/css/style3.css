@@ -62,13 +62,16 @@ h1 {
     align-items: center;
 }
 
-#gender-select>input {
-    width: auto;
-    height: auto;
+.gender {
+    width: 20px;
+    height: 20px;
+    margin: 0;
 }
 
-#gender-select>label {
-    margin-left: -25px;
+.gender-wrap {
+    display: flex;
+    align-items: center;
+    padding: 5px;
 }
 
 #birthday-select {
@@ -93,7 +96,7 @@ h1 {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-top: 50px;
+    margin-top: 60px;
 }
 
 .btn {

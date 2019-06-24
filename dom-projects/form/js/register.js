@@ -61,10 +61,8 @@ function removeClass(classes, ...elements) {
 }
 
 function registerValidate(event) {
-    event.preventDefault();
     let isValid = true;
     firstName.focus();
-    
     addClass("show-error", firstName, lastName, phoneNumber, registerPassword, registerEmail);
 
     checkFirstName();
@@ -80,7 +78,8 @@ function registerValidate(event) {
         checkEmail() == false ||
         checkPhoneNumber() == false ||
         checkPassword() == false ||
-        checkGender() == false) {
+        checkGender() == false ||
+        checkBirthday() == false) {
         event.preventDefault();
     }
 
@@ -292,17 +291,14 @@ let genderSelect = document.querySelectorAll(".gender");
 
 function checkGender() {
     let isValid = true;
-    let errorDiv = genderSelect[0].previousElementSibling.parentNode.nextElementSibling;
+    genderSelect.forEach(gender => {
         if (genderSelect[0].checked == false && genderSelect[1].checked == false && genderSelect[2].checked == false) {
-            errorDiv.style.animation = "appear 0.5s ease both";
-            errorDiv.style.visibility = "visible";
-            errorDiv.textContent = "Gender is required";
+            gender.parentNode.style.border = "1px solid #bc5461";
             isValid = false;
         } else {
-            errorDiv.style.animation = "disappear 0.5s ease both";
-            errorDiv.style.visibility = "hidden";
-            errorDiv.textContent = "";
+            gender.parentNode.style.border = "0";
         }
+    })
     return isValid;
 }
 
@@ -316,15 +312,26 @@ function checkBirthday() {
     let isValid = true;
     let birthdaySelect = document.querySelectorAll(".birthday");
     let errorDiv = birthdaySelect[0].previousElementSibling.parentNode.nextElementSibling;
+    birthdaySelect.forEach(date => {
         if (birthdaySelect[0].value == "" || birthdaySelect[1].value == "" || birthdaySelect[2].value == "") {
+            date.style.border = "1px solid #bc5461";
             errorDiv.style.animation = "appear 0.5s ease both";
             errorDiv.style.visibility = "visible";
             errorDiv.textContent = "Birthday is required";
             isValid = false;
+        } else if (eval(now.getFullYear() - birthdaySelect[2].value) < 18) {
+            date.style.border = "1px solid #bc5461";
+            errorDiv.style.animation = "appear 0.5s ease both";
+            errorDiv.style.visibility = "visible";
+            errorDiv.textContent = "You must be 18 year old or higher";
+            isValid = false;
         } else {
+            date.style.border = "1px solid #d0d0d0";
             errorDiv.style.animation = "disappear 0.5s ease both";
             errorDiv.style.visibility = "hidden";
             errorDiv.textContent = "";
         }
+        
+    })
     return isValid;
 }

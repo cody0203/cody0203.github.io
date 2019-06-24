@@ -431,4 +431,4 @@ $("#change-theme").on("click", function () {
     }
     $('link').attr('href', "style" + themeNumber + ".css");
 
-})
+});
