@@ -345,7 +345,7 @@ function equal(button) {
         }
         findDotIndex();
         if (findDotIndex() <= 0) {
-            if (newMainResult.includes('0.1+0.2') || newMainResult.includes('0.2+0.1')) {
+            if (newMainResult.includes('0.1') || newMainResult.includes('0.2')) {
                 subInput.val(`Ans: ${mainResult}`);
                 mainInput.val(Number(eval(newMainResult).toFixed(1)));
                 history.push(mainInput.val());
