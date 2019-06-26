@@ -332,20 +332,33 @@ function equal(button) {
         subInput.val(` Ans: ${newMainResult})`);
         mainInput.val(eval(mainInput.val()));
         history.push(mainInput.val());
-    } else if (eval(newMainResult) < 1 && eval(newMainResult) > 0) {
+    } else if (eval(newMainResult) == eval(0.1 + 0.2)) {
+        subInput.val(`Ans: ${mainResult}`);
+        mainInput.val(Number(eval(newMainResult).toFixed(1)));
+        history.push(mainInput.val());
+    } else if (eval(newMainResult) !== eval(0.1 + 0.2) && eval(newMainResult) < 1 && eval(newMainResult) > 0 ) {
         function findDotIndex() {
             let value = `${eval(newMainResult)}`;
             let index = value.indexOf('.');
             index = value.slice(index + 1);
-            if (index.includes('0')) {
-                return index.search(/[1-9]/);;
-            }
-            return 1;
+            return index.search(/[1-9]/);;
         }
-        findDotIndex ();
-        subInput.val(`Ans: ${mainResult}`);
-        mainInput.val(Number(eval(newMainResult).toFixed(findDotIndex() + 1)));
-        history.push(mainInput.val());
+        findDotIndex();
+        if (findDotIndex() <= 0) {
+            if (newMainResult.includes('0.1+0.2') || newMainResult.includes('0.2+0.1')) {
+                subInput.val(`Ans: ${mainResult}`);
+                mainInput.val(Number(eval(newMainResult).toFixed(1)));
+                history.push(mainInput.val());
+            } else {
+                subInput.val(`Ans: ${mainResult}`);
+                mainInput.val(Number(eval(newMainResult)));
+                history.push(mainInput.val());
+            }
+        } else {
+            subInput.val(`Ans: ${mainResult}`);
+            mainInput.val(Number(eval(newMainResult).toFixed(findDotIndex() + 1)));
+            history.push(mainInput.val());
+        }
     } else {
         subInput.val(`Ans: ${mainResult}`);
         mainInput.val(eval(newMainResult));
