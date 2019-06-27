@@ -1,27 +1,13 @@
 "use strict";
-// console.time('Jquery ajax');
-// $.ajax({
-//     url: "https://cody-json-server.herokuapp.com/db",
-//     success: function (data) {
-//         let users = data.items;
-//         console.log(users);
-//         render(users);
-//     }
-// });
-// console.timeEnd('Jquery ajax');
 
-// console.log('=============')
-
-
-console.time('axios');
-
-axios.get('https://cody-json-server.herokuapp.com/db')
-    .then(function (response) {
-        let users = response['data']['items'];
+$.ajax({
+    url: "https://cody-json-server.herokuapp.com/db",
+    success: function (data) {
+        let users = data.items;
         console.log(users);
         render(users);
-    })
-console.timeEnd('axios');
+    }
+});
 
 function render(users) {
     const tbody = document.querySelector("tbody");
