@@ -25,6 +25,7 @@ body {
     border: 5px solid white;
     display: flex;
     background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0 14px 0;
 }
 
 #wrap>div {
@@ -101,7 +102,7 @@ body {
     color: black !important;
 }
 
-.wrap-animation {
+/* .wrap-animation {
     border-radius: 0px !important;
     border: 0 !important;
     top: 50%;
@@ -113,7 +114,7 @@ body {
 .part-2-animation {
     height: 100% !important;
     position: absolute !important;
-    animation: moveToRight 2s 1s ease both;
+    animation: moveToRight 2s 1s ease-in-out both;
     left: 0;
     top: 0;
     border-radius: 0 10px 10px 0;
@@ -132,7 +133,7 @@ body {
     to {
         transform: translateX(100%)
     }
-}
+} */
 
 @media only screen and (max-width: 600px) {
     #part-2 {
