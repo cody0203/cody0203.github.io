@@ -14,4 +14,5 @@ function redirectPage(button) {
     } else if (button.id === "register-btn") {
         window.location.assign("register.html");
     }
-}
+};
+
