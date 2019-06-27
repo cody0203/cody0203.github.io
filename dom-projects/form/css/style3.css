@@ -173,7 +173,7 @@ h1 {
 
 @media only screen and (max-width: 600px) {
     #gender-select {
-        font-size: 90%;
+        font-size: 85%;
     }
     #gender-select>label {
         margin-left: 0px;
