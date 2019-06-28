@@ -1,19 +1,25 @@
 "use strict";
 
-$.ajax({
-    url: "https://cody-json-server.herokuapp.com/db",
-    success: function (data) {
-        let users = data.items;
-        console.log(users);
-        render(users);
-    }
-});
+let users = [];
+
+function getData(url) {
+    $.ajax({
+        url: url,
+        success: function (data) {
+            users = data.items;
+            console.log(users);
+            render(data.items);
+        }
+    });    
+}
+
+getData("https://cody-json-server.herokuapp.com/db");
 
 function render(users) {
-    const tbody = document.querySelector("tbody");
+    let tr = '';
     for (let i of users) {
-        let tr = document.createElement("tr");
-        tr.innerHTML = `
+        tr += `
+        <tr>
         <td>
             <img src="${i.profile_image}" />
         </td>
@@ -37,10 +43,11 @@ function render(users) {
         <td id="creation_date">
             ${convertTime(i.creation_date)}
         </td>
+        </tr>
         `
             ;
-        tbody.append(tr);
     };
+    $('tbody').html(tr);
 };
 
 function convertTime(unixTime) {
@@ -59,28 +66,16 @@ function reConvertTime(time) {
     return new Date(...arr) / 1000;
 }
 
-function compare(v1, v2) {
-    if (v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2)) {
-        return v1 - v2
-    }
-    if (v1.includes("/") || v2.includes("/")) {
-        return reConvertTime(v1) - reConvertTime(v2)
-    }
-    else {
-        return v1.toString().localeCompare(v2);
-    }
-};
-
 function sort(n, order) {
     $('.desc').css('opacity', '0.3');
     $('.asc').css('opacity', '0.3');
-    var cellDatas = $('tbody tr td:nth-child(' + n + ')').sort(function (a, b) {
+    let cellDatas = $('tbody tr td:nth-child(' + n + ')').sort(function (a, b) {
         let aValue = a.innerText;
         let bValue = b.innerText;
         if (aValue !== '' && bValue !== '' && !isNaN(aValue) && !isNaN(bValue)) {
             return aValue - bValue
         }
-        if (aValue.includes("/") || b.innerText.includes("/")) {
+        if (aValue.includes("/") || bValue.includes("/")) {
             return reConvertTime(aValue) - reConvertTime(bValue)
         }
         else {
