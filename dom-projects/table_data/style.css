@@ -36,20 +36,20 @@ table {
 th {
     text-align: left;
     font-size: 18px;
-    cursor: pointer;
     border: 0;
     color: #5C5D61;
 }
 
 .can-sort {
     position: relative;
+    cursor: pointer;
 }
 
 .asc,
 .desc {
     position: absolute;
     top: calc(100% - 40px);
-    left: 90%;
+    margin-left: 10px;
     opacity: 0.3;
 }
 
