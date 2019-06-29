@@ -1,14 +1,15 @@
 function cardName() {
     let number = [];
-    for (let i = 1; i <= 6; i++) {
+    for (let i = 1; i <= 12; i++) {
         number.push(i);
     }
     return number;
 }
 
 let cards = cardName();
-
 let current = null;
+let count = 0;
+let remainingTime = 30;
 
 function shuffle(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;
@@ -56,6 +57,21 @@ function flip(card) {
     }
 }
 
+function normalMode() {
+    setInterval(() => {
+        remainingTime--;
+        console.log(remainingTime)
+        if (remainingTime == 0) {
+            clearInterval()
+        }
+    }, 1000);
+}
+
+$('#start').on('click', function() {
+    $('#start-box').addClass('disappear');
+    runCountDown();
+})
+
 $(function() {
     cards = cards.concat(cards);
     cards = shuffle(cards);
@@ -63,16 +79,18 @@ $(function() {
     let html = '';
     for (let i = 0; i < cards.length; i++) {
         html +=
-        `<div class="card-wrapper">
+        `
+        <div class="card-wrapper">
             <div class="card" onclick="flip($(this))" data-name="${cards[i]}">
                 <div class="front">
-                    <img src="card_design/${cards[i]}.png" alt="image-${cards[i]}" class="img-fluid">
+                    <img src="cards/back.png" alt="back-card">
                 </div>
                 <div class="back">
-                    <img src="card_design/back.png" alt="back-card" class="img-fluid">
+                    <img src="cards/c${cards[i]}.jpg" alt="image-${cards[i]}">
                 </div>
             </div>
         </div>`;
     };
+
     $('.container').html(html);
 })
