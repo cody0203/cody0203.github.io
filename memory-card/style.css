@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(https://wallpaperaccess.com/full/94706.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.card-wrapper {
+    margin-bottom: 10px;
+}
+
+.card {
+    position: relative;
+}
+
+.card img {
+    display: block;
+}
+
+.front, .back {
+    transition: all 0.3s ease;
+}
+
+.back {
+    position: absolute;
+    top:0;
+    left: 0;
+    backface-visibility: hidden;
+}
+
+.flip .back {
+    transform: rotateY(180deg);
+}
+
+.front {
+    transform: rotateY(180deg);
+}
+
+.flip .front {
+    transform: rotateY(0deg);
+}
+
+.disappear {
+    opacity: 0;
+    transition: all 0.5s;
+    cursor: default;
+}
