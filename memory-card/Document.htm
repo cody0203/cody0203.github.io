@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)http://127.0.0.1:5500/memory-card/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Document</title>
+<link rel="stylesheet" href="./Document_files/style.css"></head>
+
+<body>
+    <div id="background"></div>
+    <div id="rule">
+
+    </div>
+    <div id="start" class="disappear">
+        <div id="start-box">
+            <div class="overlay">
+                <button data-id="normal" class="difficult">
+                    Normal
+                </button>
+                <button data-id="hard" class="difficult">
+                    Hard
+                </button>
+                <button data-id="doom" class="difficult">
+                    Doom
+                </button>
+                <button id="btn-start">
+                    Start
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;">
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c14">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c14.jpg" alt="image-c14">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c11">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c11.jpg" alt="image-c11">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c7">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c7.jpg" alt="image-c7">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c9">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c9.jpg" alt="image-c9">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c16">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c16.jpg" alt="image-c16">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c2">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c2.jpg" alt="image-c2">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c3">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c3.jpg" alt="image-c3">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c12">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c12.jpg" alt="image-c12">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c12">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c12.jpg" alt="image-c12">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c5">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c5.jpg" alt="image-c5">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c11">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c11.jpg" alt="image-c11">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c2">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c2.jpg" alt="image-c2">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c6">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c6.jpg" alt="image-c6">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c1">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c1.jpg" alt="image-c1">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c16">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c16.jpg" alt="image-c16">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c13">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c13.jpg" alt="image-c13">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c4">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c4.jpg" alt="image-c4">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c15">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c15.jpg" alt="image-c15">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c10">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c10.jpg" alt="image-c10">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c14">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c14.jpg" alt="image-c14">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c18">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c18.jpg" alt="image-c18">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c15">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c15.jpg" alt="image-c15">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c17">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c17.jpg" alt="image-c17">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c8">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c8.jpg" alt="image-c8">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c13">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c13.jpg" alt="image-c13">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c5">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c5.jpg" alt="image-c5">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c3">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c3.jpg" alt="image-c3">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c18">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c18.jpg" alt="image-c18">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c4">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c4.jpg" alt="image-c4">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c8">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c8.jpg" alt="image-c8">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c7">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c7.jpg" alt="image-c7">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c9">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c9.jpg" alt="image-c9">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c6">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c6.jpg" alt="image-c6">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c1">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c1.jpg" alt="image-c1">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c10">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c10.jpg" alt="image-c10">
+                </div>
+            </div>
+        </div>
+        <div class="card-wrapper style=" opacity:="" 0"="" style="opacity: 1;">
+            <div class="card" onclick="flip($(this))" data-name="c17">
+                <div class="front">
+                    <img src="./Document_files/back.png" alt="back-card">
+                </div>
+                <div class="back">
+                    <img src="./Document_files/c17.jpg" alt="image-c17">
+                </div>
+            </div>
+        </div></div>
+    <script src="./Document_files/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="./Document_files/main.js"></script>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body><style id="igor_ext_nofollow">a[rel~='nofollow']{outline:.14em dotted red !important;outline-offset:.2em;}a[rel~='nofollow'] > img{outline:2px dotted red !important;outline-offset:.2em;}</style></html>
