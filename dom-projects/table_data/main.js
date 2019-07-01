@@ -66,9 +66,15 @@ function reConvertTime(time) {
     return new Date(...arr) / 1000;
 }
 
+let current = null;
+
 function sort(n, order) {
     $('.desc').css('opacity', '0.3');
     $('.asc').css('opacity', '0.3');
+    current = order;
+    if (order.attr('order') !== 0) {
+        $('th').not(current).attr('order', '0');
+    }
     let cellDatas = $('tbody tr td:nth-child(' + n + ')').sort(function (a, b) {
         let aValue = a.innerText;
         let bValue = b.innerText;
