@@ -195,7 +195,7 @@ body {
 }
 
 .normal {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     width: 80%;
 }
 
@@ -324,7 +324,7 @@ body {
     height: 100%;
 }
 
-#quotes {
+.quotes {
     font-size: 40px;
     position: absolute;
     top: 23%;
@@ -343,7 +343,7 @@ body {
     padding: 10px 20px;
     margin-top: 50px;
     cursor: pointer;
-    position: relative;
+    position: absolute;
 }
 
 .end-btn:nth-child(2n) {
@@ -370,4 +370,8 @@ body {
 
 .hint:hover {
     opacity: 1;
+}
+
+.hightlight-card {
+    box-shadow: white 0 0 13px 2px;
 }

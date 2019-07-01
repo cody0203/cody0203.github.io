@@ -8,7 +8,7 @@ let cardsTotal = 24;
 let run;
 let numberOfCards = '';
 let difficult = 0;
-let countHint = 6;
+let countHint = 4;
 
 function cardName() {
     let number = [];
@@ -29,7 +29,7 @@ function flip(card) {
     if (!current) {
         current = card;
         current.css('pointer-events', 'none');
-        if (current.css('box-shadow') == "rgb(255, 255, 255) 0px 0px 13px 2px") {
+        if (current.hasClass('hightlight-card')) {
             $('.hint').css('pointer-events', 'none');
         }
     }
@@ -41,7 +41,7 @@ function flip(card) {
                 current.toggleClass('flip');
                 current = null;
                 $('.card').css('pointer-events', 'auto');
-                $('.card').css('box-shadow', '');
+                $('.card').removeClass('hightlight-card');
             }, 1000);
             $('.card').css('pointer-events', 'none');
         } else {
@@ -90,14 +90,15 @@ function playMode(difficult) {
     run = setInterval(() => {
 
         if (difficult == 'normal') {
-            remainingTime--;
-            let progress = remainingTime / 60 * 100;
-            $('#bar').css('width', `${progress}%`);
-            
-        } else {
             remainingTime -= 2;
             let progress = remainingTime / 60 * 100;
             $('#bar').css('width', `${progress}%`);
+            console.log(remainingTime);
+        } else {
+            remainingTime --;
+            let progress = remainingTime / 60 * 100;
+            $('#bar').css('width', `${progress}%`);
+            console.log(remainingTime);
         }
         if (remainingTime == 0) {
             clearInterval(run);
@@ -116,7 +117,7 @@ function chooseDifficult() {
     $(document).on('click', '.difficult', function () {
         $('#choose-difficult').addClass('disappear');
         if ($(this).attr('data-id') == "normal") {
-            difficult = 6;
+            difficult = 8;
             numberOfCards = shuffle(cardName()).slice(0, difficult);
             playMode('normal');
             $('.container').addClass('normal');
@@ -125,7 +126,6 @@ function chooseDifficult() {
             numberOfCards = shuffle(cardName()).slice(0, difficult);
             playMode('hard');
             $('.container').addClass('hard');
-            hint();
         } else if ($(this).attr('data-id') == "doom") {
             difficult = 18;
             numberOfCards = shuffle(cardName()).slice(0, difficult);
@@ -143,7 +143,7 @@ function hint() {
         if (countHint <= 0) {
             $('.hint').css('pointer-events', 'none');
         } else {
-            $(`[data-name="${$(current).attr('data-name')}"]`).css('box-shadow', 'white 0 0 13px 2px');
+            $(`[data-name="${$(current).attr('data-name')}"]`).addClass('hightlight-card');
             countHint--;
             console.log(countHint);
             if (current !== null) {
@@ -192,9 +192,10 @@ $(document).on('click', '.try-again', function () {
     $('.end-background').css('display', 'none');
     $('.icon').removeClass('disappear');
     $('#bar').css('width', `100%`);
+    $('.hint').css('display', 'none');
     remainingTime = 60;
     count = 0;
     current = null;
     cardsTotal = 24;
-    countHint = 6;
+    countHint = 4;
 })
