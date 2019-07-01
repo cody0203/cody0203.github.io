@@ -10,8 +10,8 @@ body {
 
 #background {
     position: absolute;
-    animation: 100s scroll infinite linear;
-    will-change: scroll;
+    /* animation: 100s scroll infinite linear;
+    will-change: scroll; */
     top: 0;
     left: 0;
     width: 100%;
@@ -22,11 +22,11 @@ body {
     background-size: contain;
 }
 
-@keyframes scroll {
+/* @keyframes scroll {
     100% {
         background-position: -3000px 0px
     }
-}
+} */
 
 .container {
     max-width: 100%;

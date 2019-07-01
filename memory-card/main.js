@@ -8,7 +8,7 @@ let cardsTotal = 24;
 let run;
 let numberOfCards = '';
 let difficult = 0;
-let cloneCountHint = 0;
+let countHint = 0;
 
 function cardName() {
     let number = [];
@@ -21,7 +21,7 @@ let cards = cardName();
 
 function flip(card) {
     card.toggleClass('flip');
-    if (cloneCountHint <= 0) {
+    if (countHint <= 0) {
         $('.hint').css('pointer-events', 'none');
     } else {
         $('.hint').css('pointer-events', 'auto');
@@ -132,17 +132,16 @@ function chooseDifficult() {
 chooseDifficult();
 
 function hint() {
-    let countHint = 3;
-    cloneCountHint = countHint;
+    countHint += 3;
     $('.hint').css('display', 'block');
     $('.hint').on('click', () => {
-        if (cloneCountHint < 1) {
+        let cloneCountHint = countHint;
+        if (countHint < 1) {
             $('.hint').css('pointer-events', 'none');
         } else {
             $(`[data-name="${$(current).attr('data-name')}"]`).css('box-shadow', 'white 0 0 13px 2px');
-            --countHint;
-            cloneCountHint = countHint;
-            console.log(cloneCountHint);
+            countHint = cloneCountHint - 1;
+            console.log(countHint, cloneCountHint);
             if (current.css('box-shadow') == "rgb(255, 255, 255) 0px 0px 13px 2px") {
                 $('.hint').css('pointer-events', 'none');
             }
@@ -192,5 +191,5 @@ $(document).on('click', '.try-again', function () {
     count = 0;
     current = null;
     cardsTotal = 24;
-    cloneCountHint = 0;
+    countHint = 0;
 })
