@@ -8,7 +8,7 @@ let cardsTotal = 24;
 let run;
 let numberOfCards = '';
 let difficult = 0;
-let countHint = 4;
+let countHint = 6;
 
 function cardName() {
     let number = [];
@@ -21,7 +21,7 @@ let cards = cardName();
 
 function flip(card) {
     card.toggleClass('flip');
-    if (countHint <= 0) {
+    if (countHint <= 0 || current) {
         $('.hint').css('pointer-events', 'none');
     } else {
         $('.hint').css('pointer-events', 'auto');
@@ -29,13 +29,19 @@ function flip(card) {
     if (!current) {
         current = card;
         current.css('pointer-events', 'none');
-    } else {
+        if (current.css('box-shadow') == "rgb(255, 255, 255) 0px 0px 13px 2px") {
+            $('.hint').css('pointer-events', 'none');
+        }
+    }
+    else {
         if (current.attr('data-name') != card.attr('data-name')) {
+            $('.hint').css('pointer-events', 'none');
             setTimeout(() => {
                 card.toggleClass('flip');
                 current.toggleClass('flip');
                 current = null;
                 $('.card').css('pointer-events', 'auto');
+                $('.card').css('box-shadow', '');
             }, 1000);
             $('.card').css('pointer-events', 'none');
         } else {
@@ -140,7 +146,7 @@ function hint() {
             $(`[data-name="${$(current).attr('data-name')}"]`).css('box-shadow', 'white 0 0 13px 2px');
             countHint--;
             console.log(countHint);
-            if (current !== null && current.css('box-shadow') == "rgb(255, 255, 255) 0px 0px 13px 2px") {
+            if (current !== null) {
                 $('.hint').css('pointer-events', 'none');
         }
     }
@@ -190,5 +196,5 @@ $(document).on('click', '.try-again', function () {
     count = 0;
     current = null;
     cardsTotal = 24;
-    countHint = 4;
+    countHint = 6;
 })

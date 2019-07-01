@@ -48,6 +48,7 @@ body {
     position: relative;
     height: auto;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .card img {
@@ -360,8 +361,13 @@ body {
     cursor: pointer;
     display: none;
     pointer-events: none;
+    opacity: 0.5;
 }
 
 .hint:hover i {
-    filter: drop-shadow(0 0 5px white)
+    filter: drop-shadow(0 0 5px white);
+}
+
+.hint:hover {
+    opacity: 1;
 }
