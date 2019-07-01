@@ -14,7 +14,7 @@ h1 {
 #wrap {
     overflow-x: auto;
     border: 1px solid white;
-    width: 80%;
+    width: 90%;
     margin: auto;
     background-color: #f6f8fc;
 }
@@ -38,6 +38,7 @@ th {
     font-size: 18px;
     border: 0;
     color: #5C5D61;
+    min-width: 170px;
 }
 
 .can-sort {
