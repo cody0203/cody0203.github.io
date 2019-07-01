@@ -8,7 +8,7 @@ let cardsTotal = 24;
 let run;
 let numberOfCards = '';
 let difficult = 0;
-let countHint = 0;
+let countHint = 4;
 
 function cardName() {
     let number = [];
@@ -109,7 +109,6 @@ function playMode(difficult) {
 function chooseDifficult() {
     $(document).on('click', '.difficult', function () {
         $('#choose-difficult').addClass('disappear');
-        hint();
         if ($(this).attr('data-id') == "normal") {
             difficult = 6;
             numberOfCards = shuffle(cardName()).slice(0, difficult);
@@ -120,11 +119,13 @@ function chooseDifficult() {
             numberOfCards = shuffle(cardName()).slice(0, difficult);
             playMode('hard');
             $('.container').addClass('hard');
+            hint();
         } else if ($(this).attr('data-id') == "doom") {
             difficult = 18;
             numberOfCards = shuffle(cardName()).slice(0, difficult);
             playMode('doom');
             $('.container').addClass('doom');
+            hint();
         }
         renderCard();
     });
@@ -132,22 +133,20 @@ function chooseDifficult() {
 chooseDifficult();
 
 function hint() {
-    countHint += 3;
     $('.hint').css('display', 'block');
-    $('.hint').on('click', () => {
-        let cloneCountHint = countHint;
-        if (countHint < 1) {
+        if (countHint <= 0) {
             $('.hint').css('pointer-events', 'none');
         } else {
             $(`[data-name="${$(current).attr('data-name')}"]`).css('box-shadow', 'white 0 0 13px 2px');
-            countHint = cloneCountHint - 1;
-            console.log(countHint, cloneCountHint);
-            if (current.css('box-shadow') == "rgb(255, 255, 255) 0px 0px 13px 2px") {
+            countHint--;
+            console.log(countHint);
+            if (current !== null && current.css('box-shadow') == "rgb(255, 255, 255) 0px 0px 13px 2px") {
                 $('.hint').css('pointer-events', 'none');
-            }
         }
-    });
+    }
 }
+
+$('.hint').on('click', hint);
 
 function renderCard() {
     let cards = numberOfCards;
@@ -191,5 +190,5 @@ $(document).on('click', '.try-again', function () {
     count = 0;
     current = null;
     cardsTotal = 24;
-    countHint = 0;
+    countHint = 4;
 })
