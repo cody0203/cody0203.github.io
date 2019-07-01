@@ -3,56 +3,365 @@
 }
 
 body {
-    background-image: url(https://wallpaperaccess.com/full/94706.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
+    max-width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#background {
+    position: absolute;
+    animation: 100s scroll infinite linear;
+    will-change: scroll;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    user-select: none;
+    background: url(bg.jpg) repeat center center fixed;
+    background-size: contain;
+}
+
+@keyframes scroll {
+    100% {
+        background-position: -3000px 0px
+    }
 }
 
 .container {
-    max-width: 1200px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin: auto;
+    max-width: 100%;
+    display: grid;
+    align-items: center;
+    grid-gap: 30px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .card-wrapper {
-    margin-bottom: 10px;
+    width: auto;
+    height: auto;
 }
 
 .card {
     position: relative;
+    height: auto;
+    cursor: pointer;
 }
 
 .card img {
     display: block;
+    max-width: 100%;
+    height: auto;
 }
 
-.front, .back {
+.front,
+.back {
     transition: all 0.3s ease;
 }
 
 .back {
     position: absolute;
-    top:0;
+    top: 0;
     left: 0;
     backface-visibility: hidden;
+    transform: rotateY(180deg);
 }
 
 .flip .back {
-    transform: rotateY(180deg);
+    transform: rotateY(0deg);
 }
 
 .front {
-    transform: rotateY(180deg);
+    transform: rotateY(0deg);
 }
 
 .flip .front {
-    transform: rotateY(0deg);
+    transform: rotateY(180deg);
 }
 
 .disappear {
     opacity: 0;
-    transition: all 0.5s;
+    transition: all 0.3s;
     cursor: default;
+    visibility: hidden;
+}
+
+#choose-difficult {
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+}
+
+.wrap-difficult {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wrap-difficult #btn-start {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 0;
+    background: #e62429;
+    color: white;
+    padding: 10px 30px;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+}
+
+.wrap-difficult #btn-start:before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: -13px;
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border: 0;
+    transform: rotate(35deg);
+}
+
+.wrap-difficult #btn-start:after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    right: -13px;
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border: 0;
+    transform: rotate(35deg);
+}
+
+.wrap-difficult .btn {
+    width: 80%;
+    height: 50px;
+    border: 0;
+    background: #e62429;
+    color: white;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    font-size: 16px;
+}
+
+.wrap-difficult .btn.difficult:nth-child(2n) {
+    margin: 40px 0;
+}
+
+.btn:before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: -13px;
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border: 0;
+    transform: rotate(35deg);
+
+}
+
+.btn:after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    right: -13px;
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border: 0;
+    transform: rotate(35deg);
+}
+
+.normal {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: 80%;
+}
+
+.hard {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: 65%;
+}
+
+.doom {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: 85%;
+}
+
+#progress {
+    max-width: 80%;
+    margin: 50px auto;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+#progress #bar {
+    width: 100%;
+    height: 30px;
+    background-color: #e62429;
+    color: white;
+    position: relative;
+    transition: all 2s ease;
+}
+
+#progress #bar #gauntlet {
+    position: absolute;
+    left: -35px;
+    top: -30px;
+    width: auto;
+    height: auto;
+}
+
+#progress #bar #thanos {
+    position: absolute;
+    right: -30px;
+    top: -30px;
+    width: auto;
+    height: auto;
+    ;
+    animation: thanos 1s linear both infinite;
+}
+
+@keyframes thanos {
+    0% {
+        transform: rotate(-20deg);
+    }
+
+    50% {
+        transform: rotate(20deg);
+    }
+
+    100% {
+        transform: rotate(-20deg);
+    }
+}
+
+.lose {
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(30%, -50%);
+    background: #fff;
+    opacity: 1;
+    transition: all 1s ease;
+    z-index: 10;
+    display: none;
+}
+
+.lose-wrap {
+    transform: translate(-50%, -50%);
+    display: block;
+}
+
+.win {
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(30%, -50%);
+    background: #fff;
+    opacity: 1;
+    transition: all 1s ease;
+    z-index: 10;
+    display: none;
+}
+
+.win-wrap {
+    transform: translate(-50%, -50%);
+    display: block;
+}
+
+.thanos-end {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(50%, -50%);
+    transition: all 1s ease;
+    opacity: 0;
+}
+
+.end-img {
+    transform: translate(-130%, -50%);
+    opacity: 1;
+}
+
+.end-background {
+    z-index: 9;
+    background-color: #000;
+    opacity: 0.5;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#quotes {
+    font-size: 40px;
+    position: absolute;
+    top: 23%;
+    left: 44%;
+    max-width: 100%;
+    transform: translate(-8%, -50%);
+}
+
+.end-btn {
+    max-width: 100%;
+    border: 0;
+    outline: 0;
+    background-color: #e62429;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-top: 50px;
+    cursor: pointer;
+    position: relative;
+}
+
+.end-btn:nth-child(2n) {
+    background-color: white;
+    color: #e62429;
+    border: 1px solid #e62429;
+}
+
+.hint {
+    position: fixed;
+    color: white;
+    font-size: 60px;
+    bottom: 3%;
+    left: 1%;
+    cursor: pointer;
+    display: none;
+    pointer-events: none;
+}
+
+.hint:hover i {
+    filter: drop-shadow(0 0 5px white)
 }

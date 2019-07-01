@@ -6,13 +6,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+            integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <title>Document</title>
 </head>
 
 <body>
-    <div class="container">
-        
+    <div id="background"></div>
+    <div id="rule">
+        <div id="content">
+
+        </div>
     </div>
+
+    <div class="container">
+    </div>
+    <div id="choose-difficult">
+        <div class="wrap-difficult">
+            <button data-id="normal" class="btn difficult">
+                Normal
+            </button>
+            <button data-id="hard" class="btn difficult">
+                Hard
+            </button>
+            <button data-id="doom" class="btn difficult">
+                Doom
+            </button>
+        </div>
+    </div>
+    <div id="progress">
+        <div id="bar">
+            <img src="infinity-gauntlet.png" alt="infinity-gauntlet" id="gauntlet" class="icon">
+            <img src="thanos.png" alt="thanos" id="thanos" class="icon">
+        </div>
+    </div>
+    <div class="lose">
+        <img src="thanos-end.png" alt="thanos-full-gem" class="thanos-end">
+        <div id="quotes">
+            It Nearly Killed Me
+            <button class="btn end-btn try-again">
+                Try Again
+            </button>
+            <button class="end-btn">
+                Bonus
+            </button>
+        </div>
+    </div>
+    <div class="win">
+        <div id="quotes">
+            You win
+            <button class="btn end-btn try-again">
+                Play Again
+            </button>
+            <button class="end-btn">
+                Bonus
+            </button>
+        </div>
+    </div>
+    <div class="hint">
+        <i class="far fa-lightbulb"></i>
+    </div>
+    <div class="end-background"></div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="main.js"></script>

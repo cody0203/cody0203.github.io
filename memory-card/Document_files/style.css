@@ -1,0 +1,195 @@
+* {
+    box-sizing: border-box;
+}
+
+#background {
+    position: absolute;
+    animation: 100s scroll infinite linear;
+    will-change: scroll;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    user-select: none;
+    background: url(bg.jpg) repeat center center fixed;
+    background-size: contain;
+}
+
+@keyframes scroll {
+    100% {
+        background-position: -3000px 0px
+    }
+}
+
+.container {
+    width: 1600px;
+    max-width: 100%;
+    display: grid;
+    align-items: center;
+    grid-gap: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card-wrapper {
+    width: auto;
+    height: auto;
+}
+
+.card {
+    position: relative;
+    height: auto;
+    cursor: pointer;
+}
+
+.card img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.front,
+.back {
+    transition: all 0.3s ease;
+}
+
+.back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+
+.flip .back {
+    transform: rotateY(0deg);
+}
+
+.front {
+    transform: rotateY(0deg);
+}
+
+.flip .front {
+    transform: rotateY(180deg);
+}
+
+.disappear {
+    opacity: 0;
+    transition: all 0.5s;
+    cursor: default;
+    visibility: hidden;
+}
+
+#start-box {
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    transition: opacity 0.5s ease;
+}
+
+.overlay {
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.overlay #btn-start {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 0;
+    background: #e62429;
+    color: white;
+    padding: 10px 30px;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+}
+
+.overlay #btn-start:before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: -13px;
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border: 0;
+    transform: rotate(35deg);
+}
+
+.overlay #btn-start:after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    right: -13px;
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border: 0;
+    transform: rotate(35deg);
+}
+
+.overlay .difficult {
+    width: 80%;
+    height: 50px;
+    border: 0;
+    background: #e62429;
+    color: white;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    cursor: pointer;
+    position: relative;
+}
+
+.overlay .difficult:before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: -13px;
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border: 0;
+    transform: rotate(35deg);
+
+}
+
+.overlay .difficult:after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    right: -13px;
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border: 0;
+    transform: rotate(35deg);
+}
+
+#start {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
