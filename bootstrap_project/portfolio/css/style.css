@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+* {
+    font-family: 'Roboto',
+    sans-serif;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.fixed-position {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#first-part {
+    background-color: #fafafa;
+}
+
+.profile-image-wrapper {
+    width: 150px;
+    max-width: 100%;
+    height: 150px;
+    max-height: 100%;
+}
+
+.profile-image.img-thumbnail {
+    border: 1px solid #bdbdbd;
+}
+
+.typing2 {
+    font-size: 1.5rem;
+    height: 50px;
+    display: block;
+}
+
+.info:hover .contact-text {
+    color: red;
+}
+
+.info .contact-icon,
+.info .contact-text {
+    transition: all 0.3s ease;
+}
+
+.contact {
+    animation: appearText 0.5s 0.5s both linear;
+}
+
+#short-description {
+    animation: appearText 0.5s both linear;
+}
+
+@keyframes appearText {
+    0% {
+            opacity: 0;
+            -webkit-transform: translate(-25px, 0px);
+            -ms-transform: translate(-25px, 0px);
+            transform: translate(-25px, 0px);
+    }
+
+    100% {
+            opacity: 1;
+            transform: translateX(0px) translateY(0px) translateZ(0px);
+    }
+}
+
+.info {
+    display: flex;
+    align-items: center;
+}
+
+.info:hover #email-icon {
+    background-image: url(../image/gmail.png);
+}
+
+#email-icon {
+    background: url(../image/gmail-black.png);
+    width: 40px;
+    max-width: 100%;
+    height: 40px;
+    max-height: 100%;
+    display: inline-block;
+}
+
+.info:hover #phone-icon {
+    background-image: url(../image/phone.png);
+}
+
+#phone-icon {
+    background: url(../image/phone-black.png);
+    width: 40px;
+    max-width: 100%;
+    height: 40px;
+    max-height: 100%;
+    display: inline-block;
+}
+
+.info:hover #github-icon {
+    background-image: url(../image/github.png);
+}
+
+#github-icon {
+    background: url(../image/github-black.png);
+    width: 40px;
+    max-width: 100%;
+    height: 40px;
+    max-height: 100%;
+    display: inline-block;
+}
+
+.project-item {
+    padding: 65px;
+    color: white;
+}
+
+.project-item.project-one {
+    background-image: linear-gradient(180deg, #479cc0, #479cc0);
+}
+
+.project-img {
+    filter: drop-shadow(14px 13px 15px black);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.project-link {
+    cursor: pointer;
+}
+
+.project-link {
+    top: 50%;
+    left: 50%;
+    transform: translate(-60%, -50%);
+    z-index: 4;
+    color: white;
+    font-size: 3rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.project-link:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.project-item:hover .project-link {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+.overlay {
+    z-index: 3;
+    background-color: #000;
+    opacity: 0;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.project-item:hover .overlay {
+    opacity: 0.5;
+}
+
+.project-item.project-two {
+    background-image: linear-gradient(180deg, #4a4a4a, #4a4a4a);
+}
+
+.card-wrapper {
+    width: auto;
+    height: auto;
+}
+
+.card {
+    position: relative;
+    height: auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    width: 400px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card img {
+    height: auto;
+}
+
+.front,
+.back {
+    transition: all 0.3s ease;
+}
+
+.back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+
+.project-item:hover .back {
+    transform: rotateY(0deg);
+}
+
+.project-item:hover .front {
+    transform: rotateY(180deg);
+}
+
+.project-item.project-three {
+    background-image: linear-gradient(180deg, #696380, #696380);
+}
+
+.project-item.project-four {
+    background-image: linear-gradient(90deg, rgba(221, 221, 221, 1) 0%, rgba(221, 221, 221, 1) 12%, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 75%, rgba(221, 221, 221, 1) 88%, rgba(221, 221, 221, 1) 100%);
+}
+
+.project-img-four {
+    filter: none !important;
+}
+
+.project-four {
+    color: #444;
+}

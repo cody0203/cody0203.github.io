@@ -49,11 +49,11 @@ body {
     height: auto;
     cursor: pointer;
     transition: all 0.3s ease;
+    border: 0;
 }
 
 .card img {
     display: block;
-    max-width: 100%;
     height: auto;
 }
 
