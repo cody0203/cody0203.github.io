@@ -28,3 +28,79 @@ function autoTyping() {
     });
 }
 autoTyping();
+
+let programingChart = new ApexCharts(document.querySelector("#programing-chart"), {
+    chart: {
+        width: 300,
+        height: 300,
+        type: "radialBar"
+    },
+
+    series: [90, 80, 40, 30],
+
+    plotOptions: {
+        radialBar: {
+            hollow: {
+                margin: 10,
+                size: "40%"
+            },
+
+            dataLabels: {
+                showOn: "always",
+                name: {
+                    offsetY: -10,
+                    show: true,
+                    color: "#888",
+                    fontSize: "13px"
+                },
+                value: {
+                    color: "#111",
+                    fontSize: "30px",
+                    show: true
+                }
+            }
+        }
+    },
+
+    labels: ["HTML", "CSS", "Javascript", "Jquery"]
+});
+
+programingChart.render();
+
+let othersChart = new ApexCharts(document.querySelector("#others-chart"), {
+    chart: {
+        width: 300,
+        height: 300,
+        type: "radialBar"
+    },
+
+    series: [80, 50, 30],
+
+    plotOptions: {
+        radialBar: {
+            hollow: {
+                margin: 10,
+                size: "40%"
+            },
+
+            dataLabels: {
+                showOn: "always",
+                name: {
+                    offsetY: -5,
+                    show: true,
+                    color: "#888",
+                    fontSize: "13px"
+                },
+                value: {
+                    color: "#111",
+                    fontSize: "30px",
+                    show: true
+                }
+            }
+        }
+    },
+
+    labels: ["SEO", "Photoshop", "Illustrator"]
+});
+
+othersChart.render();

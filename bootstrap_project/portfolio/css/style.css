@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,900&display=swap');
 
 * {
     font-family: 'Roboto',
-    sans-serif;
+        sans-serif;
 
 }
 
@@ -18,6 +18,10 @@ html {
 
 #first-part {
     background-color: #fafafa;
+}
+
+#second-part {
+    background-color: #f4f3f3;
 }
 
 .profile-image-wrapper {
@@ -37,8 +41,16 @@ html {
     display: block;
 }
 
-.info:hover .contact-text {
-    color: red;
+.info:hover .mail {
+    color: #e85551;
+}
+
+.info:hover .phone {
+    color: #2c9688;
+}
+
+.info:hover .github {
+    color: #289fb6;
 }
 
 .info .contact-icon,
@@ -50,21 +62,21 @@ html {
     animation: appearText 0.5s 0.5s both linear;
 }
 
-#short-description {
+.text {
     animation: appearText 0.5s both linear;
 }
 
 @keyframes appearText {
     0% {
-            opacity: 0;
-            -webkit-transform: translate(-25px, 0px);
-            -ms-transform: translate(-25px, 0px);
-            transform: translate(-25px, 0px);
+        opacity: 0;
+        -webkit-transform: translate(-25px, 0px);
+        -ms-transform: translate(-25px, 0px);
+        transform: translate(-25px, 0px);
     }
 
     100% {
-            opacity: 1;
-            transform: translateX(0px) translateY(0px) translateZ(0px);
+        opacity: 1;
+        transform: translateX(0px) translateY(0px) translateZ(0px);
     }
 }
 
@@ -230,4 +242,10 @@ html {
 
 .project-four {
     color: #444;
+}
+
+.line {
+    height: 10px;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(74, 74, 74, .08)), to(rgba(74, 74, 74, .08)));
+    background-image: linear-gradient(180deg, rgba(74, 74, 74, .08), rgba(74, 74, 74, .08));
 }
