@@ -197,7 +197,7 @@ html {
     cursor: pointer;
     transition: all 0.3s ease;
     background-color: transparent;
-    width: 400px;
+    width: 288px;
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -251,6 +251,6 @@ html {
 }
 
 .chart {
-    max-width: 250px;
-    max-height: 150px;
+    max-width: 500px;
+    max-height: 500px;
 }
