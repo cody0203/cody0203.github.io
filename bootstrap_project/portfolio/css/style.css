@@ -249,3 +249,8 @@ html {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(74, 74, 74, .08)), to(rgba(74, 74, 74, .08)));
     background-image: linear-gradient(180deg, rgba(74, 74, 74, .08), rgba(74, 74, 74, .08));
 }
+
+.chart {
+    max-width: 200px;
+    max-height: 150px;
+}

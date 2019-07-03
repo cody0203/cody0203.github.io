@@ -29,78 +29,226 @@ function autoTyping() {
 }
 autoTyping();
 
-let programingChart = new ApexCharts(document.querySelector("#programing-chart"), {
-    chart: {
-        width: 300,
-        height: 300,
-        type: "radialBar"
-    },
+let drawHtmlChart = document.getElementById("html-chart").getContext('2d');
 
-    series: [90, 80, 40, 30],
+let htmlData = {
+    labels: ['HTML'],
+    datasets: [
+        {
+            label: "HTML",
+            data: [90, 10],
+            backgroundColor: [
+                "rgba(36, 112, 250, 0.7)",
+                "rgba(0, 0, 0, 0)",
+            ],
+            hoverBackgroundColor: [
+                "rgba(36, 112, 250, 1)",
+                "rgba(0, 0, 0, 0)",
+            ],
+            borderColor: [, "transparent"]
+        }]
+};
 
-    plotOptions: {
-        radialBar: {
-            hollow: {
-                margin: 10,
-                size: "40%"
-            },
+let htmlChart = new Chart(drawHtmlChart, {
+    type: 'doughnut',
+    data: htmlData,
+    plugins: [{
+        beforeDraw: function (chart) {
+            var width = chart.chart.width,
+                height = chart.chart.height,
+                ctx = chart.chart.ctx;
 
-            dataLabels: {
-                showOn: "always",
-                name: {
-                    offsetY: -10,
-                    show: true,
-                    color: "#888",
-                    fontSize: "13px"
-                },
-                value: {
-                    color: "#111",
-                    fontSize: "30px",
-                    show: true
-                }
-            }
+            ctx.restore();
+            var fontSize = (height / 150).toFixed(2);
+            ctx.font = fontSize + "em sans-serif";
+            ctx.fillStyle = "#9b9b9b";
+            ctx.textBaseline = "middle";
+
+            var text = "90%",
+                textX = Math.round((width - ctx.measureText(text).width) / 2),
+                textY = height / 2;
+
+            ctx.fillText(text, textX, textY);
+            ctx.save();
         }
-    },
-
-    labels: ["HTML", "CSS", "Javascript", "Jquery"]
+    }],
+    options: {
+        legend: {
+            display: false
+        },
+        tooltips: {
+            enabled: false
+        },
+        responsive: true,
+        maintainAspectRatio: false,
+        cutoutPercentage: 85,
+    }
 });
 
-programingChart.render();
+let drawCssChart = document.getElementById("css-chart").getContext('2d');
 
-let othersChart = new ApexCharts(document.querySelector("#others-chart"), {
-    chart: {
-        width: 300,
-        height: 300,
-        type: "radialBar"
-    },
+let cssData = {
+    labels: ['HTML'],
+    datasets: [
+        {
+            label: "HTML",
+            data: [80, 20],
+            backgroundColor: [
+                "rgba(36, 112, 250, 0.7)",
+                "rgba(0, 0, 0, 0)",
+            ],
+            hoverBackgroundColor: [
+                "rgba(36, 112, 250, 1)",
+                "rgba(0, 0, 0, 0)",
+            ],
+            borderColor: [, "transparent"]
+        }]
+};
 
-    series: [80, 50, 30],
+let cssChart = new Chart(drawCssChart, {
+    type: 'doughnut',
+    data: cssData,
+    plugins: [{
+        beforeDraw: function (chart) {
+            var width = chart.chart.width,
+                height = chart.chart.height,
+                ctx = chart.chart.ctx;
 
-    plotOptions: {
-        radialBar: {
-            hollow: {
-                margin: 10,
-                size: "40%"
-            },
+            ctx.restore();
+            var fontSize = (height / 150).toFixed(2);
+            ctx.font = fontSize + "em sans-serif";
+            ctx.fillStyle = "#9b9b9b";
+            ctx.textBaseline = "middle";
 
-            dataLabels: {
-                showOn: "always",
-                name: {
-                    offsetY: -5,
-                    show: true,
-                    color: "#888",
-                    fontSize: "13px"
-                },
-                value: {
-                    color: "#111",
-                    fontSize: "30px",
-                    show: true
-                }
-            }
+            var text = "80%",
+                textX = Math.round((width - ctx.measureText(text).width) / 2),
+                textY = height / 2;
+
+            ctx.fillText(text, textX, textY);
+            ctx.save();
         }
-    },
-
-    labels: ["SEO", "Photoshop", "Illustrator"]
+    }],
+    options: {
+        legend: {
+            display: false
+        },
+        tooltips: {
+            enabled: false
+        },
+        responsive: true,
+        maintainAspectRatio: false,
+        cutoutPercentage: 85,
+    }
 });
 
-othersChart.render();
+let drawJsChart = document.getElementById("js-chart").getContext('2d');
+
+let jsData = {
+    labels: ['JS', 'null'],
+    datasets: [
+        {
+            label: ["JS"],
+            data: [40, 60],
+            backgroundColor: [
+                "rgba(36, 112, 250, 0.7)",
+                "rgba(0, 0, 0, 0)",
+            ],
+            hoverBackgroundColor: [
+                "rgba(36, 112, 250, 1)",
+                "rgba(0, 0, 0, 0)",
+            ],
+            borderColor: [, "transparent"]
+        }]
+};
+
+let jsChart = new Chart(drawJsChart, {
+    type: 'doughnut',
+    data: jsData,
+    plugins: [{
+        beforeDraw: function (chart) {
+            var width = chart.chart.width,
+                height = chart.chart.height,
+                ctx = chart.chart.ctx;
+
+            ctx.restore();
+            var fontSize = (height / 150).toFixed(2);
+            ctx.font = fontSize + "em sans-serif";
+            ctx.fillStyle = "#9b9b9b";
+            ctx.textBaseline = "middle";
+
+            var text = '40%',
+                textX = Math.round((width - ctx.measureText(text).width) / 2),
+                textY = height / 2;
+
+            ctx.fillText(text, textX, textY);
+            ctx.save();
+        }
+    }],
+    options: {
+        legend: {
+            display: false
+        },
+        tooltips: {
+            enabled: false
+        },
+        responsive: true,
+        maintainAspectRatio: false,
+        cutoutPercentage: 85,
+    }
+});
+
+let drawJqueryChart = document.getElementById("jquery-chart").getContext('2d');
+
+let jqueryData = {
+    labels: ['Jquery', 'null'],
+    datasets: [
+        {
+            label: ["Jquery"],
+            data: [30, 70],
+            backgroundColor: [
+                "rgba(36, 112, 250, 0.7)",
+                "rgba(0, 0, 0, 0)",
+            ],
+            hoverBackgroundColor: [
+                "rgba(36, 112, 250, 1)",
+                "rgba(0, 0, 0, 0)",
+            ],
+            borderColor: [, "transparent"]
+        }]
+};
+
+let jqueryChart = new Chart(drawJqueryChart, {
+    type: 'doughnut',
+    data: jqueryData,
+    plugins: [{
+        beforeDraw: function (chart) {
+            var width = chart.chart.width,
+                height = chart.chart.height,
+                ctx = chart.chart.ctx;
+
+            ctx.restore();
+            var fontSize = (height / 150).toFixed(2);
+            ctx.font = fontSize + "em sans-serif";
+            ctx.fillStyle = "#9b9b9b";
+            ctx.textBaseline = "middle";
+
+            var text = '30%',
+                textX = Math.round((width - ctx.measureText(text).width) / 2),
+                textY = height / 2;
+
+            ctx.fillText(text, textX, textY);
+            ctx.save();
+        }
+    }],
+    options: {
+        legend: {
+            display: false
+        },
+        tooltips: {
+            enabled: false
+        },
+        responsive: true,
+        maintainAspectRatio: false,
+        cutoutPercentage: 85,
+    }
+});

@@ -15,8 +15,8 @@
 <body>
     <section class="container-fluid position-relative">
         <div class="row">
-            <div id="first-part" class="col-md-5 min-vh-100 fixed-position">
-                <nav class="navbar navbar-expand-xl navbar-light bg-light justify-content-end">
+            <div id="first-part" class="col-md-5 h-100 fixed-position">
+                <!-- <nav class="navbar navbar-expand-xl navbar-light bg-light justify-content-end">
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -32,8 +32,8 @@
                             <a class="nav-item nav-link" href="#exp">Kinh nghiệm làm việc</a>
                         </div>
                     </div>
-                </nav>
-                <div class="name text-center my-5">
+                </nav> -->
+                <div class="name text-center mt-5">
                     <h1 class="h1">
                         <span class="typing text-uppercase"></span></br>
                     </h1>
@@ -42,18 +42,18 @@
                     </div>
                 </div>
 
-                <div class="profile-image-wrapper mx-auto mb-5">
+                <div class="profile-image-wrapper mx-auto mb-3">
                     <img src="image/4.JPG" alt="profile-image"
                         class="profile-image img-fluid rounded-circle img-thumbnail">
                 </div>
-                <div class="content d-flex flex-column my-5 mh-100">
+                <div class="content d-flex flex-column my-3 mh-100">
                     <div id="short-description" class="text text-center mx-5">
                         <p>
-                            Xin chào mọi người, tôi là Phạm&nbsp;Công&nbsp;Định. Tôi là một front-end website developer
+                            Xin chào mọi người, tôi là Phạm&nbsp;Công&nbsp;Định, là một front-end website developer
                             đang học tập và sinh sống tại Hà Nội.
                         </p>
                     </div>
-                    <div class="contact mb-3 mt-5 mw-100 container">
+                    <div class="contact mb-3 mt-3 mw-100 container">
                         <a href="mailto:congdinh2395@gmail.com" class="info text-decoration-none text-dark">
                             <div id="email-icon" class="contact-icon"></div> <span
                                 class="contact-text mail ml-3">congdinh2395@gmail.com</span>
@@ -222,23 +222,38 @@
                     <h3 class="h3 text-uppercase font-weight-bold">
                         Kỹ năng.
                     </h3>
-                    <div class="infomation mt-5">
+                    <div class="infomation d-flex flex-column mt-5">
                         <div class="chart-wrapper d-flex flex-column flex-lg-row justify-content-around">
-                            <div id="chart-part-one">
-                                <div id="programing-chart"></div>
-                                <p class="text-center">Kỹ năng lập trình</p>
+                            <div class="chart chart-one my-5">
+                                <canvas id="html-chart" width="200px" height="150"></canvas>
+                                <p class="text-center mt-3">HTML</p>
                             </div>
-                            <div id="chart-part-two">
-                                <div id="others-chart"></div>
-                                <p class="text-center">Kỹ năng khác</p>
+
+                            <div class="chart chart-two my-5">
+                                <canvas id="css-chart" width="200px" height="150"></canvas>
+                                <p class="text-center mt-3">CSS</p>
+                            </div>
+
+                        </div>
+
+                        <div class="chart-wrapper d-flex flex-column flex-lg-row justify-content-around">
+                            <div class="chart chart-four my-5">
+                                <canvas id="js-chart" width="200px" height="150"></canvas>
+                                <p class="text-center mt-3">JS</p>
+                            </div>
+
+                            <div class="chart chart-five my-5">
+                                <canvas id="jquery-chart" width="250px" height="150"></canvas>
+                                <p class="text-center mt-3">Jquery</p>
                             </div>
                         </div>
                     </div>
-                    <div class="line my-5"></div>
-
                 </div>
+                <div class="line my-5"></div>
 
-                <!-- <div class="about mx-5" id="exp">
+            </div>
+
+            <!-- <div class="about mx-5" id="exp">
                     <h3 class="h3 text-uppercase font-weight-bold">
                         Kinh nghiệm.
                     </h3>
@@ -268,12 +283,13 @@
                         <div class="line my-5"></div>
                     </div>
                 </div> -->
-            </div>
+        </div>
     </section>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
     <script src="js/main.js"></script>
 </body>
 
