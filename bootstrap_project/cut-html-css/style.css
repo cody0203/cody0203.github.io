@@ -13,6 +13,21 @@
     src: url(font/ubuntu-light.woff);
 }
 
+@font-face {
+    font-family: playfairDisplayBlack;
+    src: url(font/playfairdisplay-black.woff);
+}
+
+@font-face {
+    font-family: playfairDisplayItalic;
+    src: url(font/playfairdisplay-italic.woff);
+}
+
+@font-face {
+    font-family: playfairDisplayBold;
+    src: url(font/playfairdisplay-bold.woff);
+}
+
 * {
     font-family: playfairDisplayRegular,
         sans-serif;
@@ -71,7 +86,7 @@ main {
     max-width: 100%;
 }
 
-.description h2 {
+.first-h2 {
     margin: 28px 0 34px 0;
 }
 
@@ -80,13 +95,15 @@ main {
 }
 
 .main-content .container,
-.sub-content .container {
-    padding-right: 82px;
-    padding-left: 82px;
+.sub-content .container,
+.comment .container {
+    padding-right: 80px;
+    padding-left: 80px;
 }
 
-.footer-content .container {
-    padding-left: 82px;
+.footer-content .container,
+.suggest .container {
+    padding-left: 80px;
 }
 
 .description {
@@ -123,7 +140,7 @@ a {
     cursor: pointer;
 }
 
-.sign-up-for-newsletter {
+.break-container {
     background-color: #f0f0f0;
     height: 290px;
     max-height: 100%;
@@ -170,7 +187,8 @@ a {
         padding-left: 0px;
     }
 
-    .footer-content .container {
+    .footer-content .container,
+    .suggest .container {
         padding-left: 0px;
     }
 
@@ -218,14 +236,14 @@ footer {
     margin-left: 18px
 }
 
-.social-icons {
+.footer-content .social-icons {
     margin: 0 2px 0 18px;
 }
 
-.social-icon {
-    font-size: 15px !important;
+.footer-content .social-icon {
+    font-size: 15px;
 }
 
-.social-icon:nth-child(even) {
+.footer-content .social-icon:nth-child(even) {
     margin: 0 18px 0 18px;
 }
