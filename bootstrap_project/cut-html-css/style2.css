@@ -129,7 +129,6 @@
     margin-top: 1px;
     font-family: ubuntuLight !important;
     color: #c8c8c8 !important;
-    padding-left: 33px;
     border-radius: 7px;
     outline: none;
 }
@@ -212,13 +211,14 @@
     content: "";
 }
 
-.top-posts .item .item-title {
+.top-posts .item .item-title>a {
     font-size: 16px;
 }
 
 .top-posts .item .comment-count {
     font-family: ubuntuLight;
     color: #b4ad9e !important;
+    margin-top: 14px;
 }
 
 .ads {

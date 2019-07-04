@@ -1,13 +1,18 @@
-$(window).resize(changeUiSideBar);
+$(window).resize(changeUi);
 
-function changeUiSideBar() {
+function changeUi() {
     let sideBar = $('.sidebar').addClass('small');
-    if (window.matchMedia && window.matchMedia('(max-width: 576px)').matches) {
+    if (window.matchMedia && window.matchMedia('(max-width: 768px)').matches) {
         $('.single-posts').append(sideBar);
     } else {
         sideBar.remove();
         $(sideBar).insertAfter('.main-content .container .posts-content')
         $(sideBar).removeClass('small')
     }
+    if (window.matchMedia && window.matchMedia('(max-width: 320px)').matches) {
+        $('.comment-textbox').css('padding-left', '5px');
+    } else {
+        $('.comment-textbox').css('padding-left', '33px');
+    }
 };
-changeUiSideBar();
+changeUi();
