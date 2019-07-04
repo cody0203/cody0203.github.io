@@ -229,3 +229,13 @@
    width: 90%;
    margin: 116px auto;
 }
+
+.suggest-items.small {
+    margin-right: 0;
+    margin-bottom: 40px;
+}
+
+.suggest-items.small:last-child {
+    margin-right: 0;
+    margin-bottom: 0;
+}
