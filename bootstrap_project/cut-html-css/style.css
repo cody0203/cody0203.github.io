@@ -1,0 +1,231 @@
+@font-face {
+    font-family: Inconsolata;
+    src: url(font/inconsolata.woff);
+}
+
+@font-face {
+    font-family: playfairDisplayRegular;
+    src: url(font/playfairdisplay-regular.woff);
+}
+
+@font-face {
+    font-family: ubuntuLight;
+    src: url(font/ubuntu-light.woff);
+}
+
+* {
+    font-family: playfairDisplayRegular,
+        sans-serif;
+    font-size: 14px;
+    color: #626262 !important;
+}
+
+.navbar-brand {
+    font-size: 30px;
+}
+
+.nav-link:hover {
+    color: black !important;
+}
+
+main {
+    margin-bottom: 93px;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1063px;
+    }
+}
+
+.bg-light {
+    background-color: #fff !important;
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding: 0 50px;
+    }
+}
+
+.navbar {
+    padding: 0.5rem 0;
+}
+
+.navbar-brand {
+    color: black !important;
+}
+
+.main-content {
+    margin-top: 100px;
+}
+
+.h3, .leave-comment {
+    font-family: ubuntuLight !important;
+    font-size: 14px;
+    color: #b4ad9e !important;
+}
+
+.h2 {
+    font-size: 30px;
+    max-width: 100%;
+}
+
+.description h2 {
+    margin: 28px 0 34px 0;
+}
+
+.description p {
+    margin-bottom: 52px
+}
+
+.main-content .container,
+.sub-content .container {
+    padding-right: 82px;
+    padding-left: 82px;
+}
+
+.footer-content .container {
+    padding-left: 82px;
+}
+
+.description {
+    margin-bottom: 136px;
+}
+
+.posts .col-md-6 .item .item-tag .h3 {
+    margin: 32px 0 29px 0;
+}
+
+.posts .col-md-6 .item .item-title .h2 {
+    margin-bottom: 40px;
+}
+
+.posts .col-md-6:nth-child(n) {
+    margin-bottom: 132px;
+}
+
+.posts .col-md-6:nth-child(odd) {
+    padding-right: 30px;
+}
+
+.posts .col-md-6:nth-child(even) {
+    padding-left: 30px;
+}
+
+.posts .col-md-6:nth-last-child(1),
+.posts .col-md-6:nth-last-child(2) {
+    margin-bottom: 122px;
+}
+
+a {
+    text-decoration: none !important;
+    cursor: pointer;
+}
+
+.sign-up-for-newsletter {
+    background-color: #f0f0f0;
+    height: 290px;
+    max-height: 100%;
+    margin-bottom: 103px;
+}
+
+.sign-up-for-newsletter-content h2 {
+    margin: 0 16px 0 10px;
+}
+
+.sign-up-input {
+    border: 0;
+    background-color: transparent;
+    width: 100%;
+    padding-left: 3px;
+}
+
+.sign-up-cta {
+    margin-top: 83px;
+    width: 100%;
+    border-bottom: 2px solid black;
+}
+
+.sign-up-input,
+.send-btn {
+    margin-bottom: 14px;
+    outline: none;
+}
+
+.send-btn {
+    display: inline-block;
+}
+
+.fa,
+.far,
+.fas {
+    font-family: "Font Awesome 5 Brands" !important;
+}
+
+@media (max-width: 576px) {
+    .main-content .container,
+    .sub-content .container {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+
+    .footer-content .container {
+        padding-left: 0px;
+    }
+
+    .container {
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+    }
+    .posts .col-md-6:nth-child(odd) {
+        padding-right: 15px !important;
+    }
+
+    .posts .col-md-6:nth-child(even) {
+        padding-left: 15px !important;
+    }
+}
+
+.sub-content .container .col-md-6 {
+    margin-bottom: 140px;
+}
+
+.load-more-btn {
+    width: 162px;
+    max-width: 100%;
+    height: 58px;
+    max-height: 100%;
+    background-color: white;
+    border: 1px solid #626262;
+    outline: none !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.load-more-btn:hover {
+    background-color: black;
+    color: white !important;
+}
+
+footer {
+    height: 97px;
+    max-height: 100%;
+    background-color: #f0f0f0;
+}
+
+.privacy {
+    margin-left: 18px
+}
+
+.social-icons {
+    margin: 0 2px 0 18px;
+}
+
+.social-icon {
+    font-size: 15px !important;
+}
+
+.social-icon:nth-child(even) {
+    margin: 0 18px 0 18px;
+}
