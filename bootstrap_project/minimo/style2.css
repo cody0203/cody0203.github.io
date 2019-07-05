@@ -8,7 +8,7 @@
     margin-right: 39px;
 }
 
-.posts-content .single-post-imgs:nth-child(2n) {
+.posts-content .single-post-imgs:nth-child(odd) {
     margin: 50px 0 57px 0;
 }
 
