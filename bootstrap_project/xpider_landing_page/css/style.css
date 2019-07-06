@@ -159,6 +159,18 @@ button {
     border-radius: 5px;
 }
 
+.navbar .navbar-collapse .cta-btn-get-started-now:hover {
+    background-color: #2F5BEA;
+    color: white !important;
+}
+
+
+
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover:hover {
+    color: black !important;
+}
+
 @media (min-width: 992px) {
     .navbar-expand-lg .navbar-nav .nav-link {
         padding-right: 38px;
@@ -198,6 +210,12 @@ button {
     border-radius: 5px;
     line-height: 19px;
     margin-right: 24px;
+}
+
+.blue-cta-btn-wrapper .cta-get-started:hover {
+    background-color: white !important;
+    color: #2F5BEA !important;
+    border-color: #2F5BEA;
 }
 
 .backgroundColor2F5BEA {
@@ -464,6 +482,17 @@ button {
     padding-right: 23px;
 }
 
+.white-cta-btn-wrapper .cta-get-started {
+    padding: 22px 38px;
+    border-radius: 5px;
+    line-height: 19px;
+    margin-right: 24px;
+}
+
+.white-cta-btn-wrapper .cta-get-started:hover {
+    background-color: #eee !important;
+}
+
 .pricing .option .card-body .body-card .content {
     margin-bottom: 41px;
 }
@@ -475,8 +504,19 @@ button {
     padding: 18px 45px;
 }
 
-#white-button {
+.cta-btn .button-one:hover {
+    background-color: #2F5BEA !important;
+    color: white !important;
+}
+
+
+
+.cta-btn .button-two {
     border: 0;
+}
+
+.cta-btn .button-two:hover {
+    background-color: #eee !important;
 }
 
 .pricing .option:first-child {
