@@ -224,12 +224,33 @@ button {
 }
 
 .technology .technology-tabs {
-    margin-bottom: 27px;
+    padding-bottom: 27px;
+    cursor: pointer;
 }
 
 .technology {
-    border-bottom: 2px solid #D8D8D8;
+    /* border-bottom: 2px solid #D8D8D8; */
     margin-bottom: 62px;
+}
+
+.active-tab {
+    border-bottom: 2px solid #2F5BEA;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.deactive-tab {
+    border-bottom: 2px solid transparent;
+}
+
+.technology::after {
+        content: '';
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        background: #D8D8D8;
+        bottom: 0px;
+        left: 0;
 }
 
 
@@ -239,6 +260,10 @@ button {
 
 .technology-content .technology-image {
     margin-left: 32px;
+}
+
+.technology-content {
+    transition: all 0.3s ease;
 }
 
 .technology-content .technology-image::before {
