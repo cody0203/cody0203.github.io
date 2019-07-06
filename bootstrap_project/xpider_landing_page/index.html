@@ -1,22 +1,623 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="image/logo.png">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
 
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
+  <title>Xpider Landing Page</title>
+</head>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+<body>
+  <header>
+    <div class="navbar-wrapper container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand d-flex align-items-center" href="index.html"><img src="image/logo.png" alt="logo"> <span
+            class="logo-text aileronBold">xPider</span> </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-lg-between" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link aileronRegular fontSize17px textColor7E8085" href="#">Features <span
+                  class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link aileronRegular fontSize17px textColor7E8085" href="#">Pricing</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link aileronRegular fontSize17px textColor7E8085 dropdown-toggle" href="#"
+                id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Pages
+              </a>
+              <div class="dropdown-menu backgroundColor2F5BEA" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item text-white" href="#">Page 1</a>
+                <a class="dropdown-item text-white" href="#">Page 2</a>
+                <a class="dropdown-item text-white" href="#">Page 3</a>
+              </div>
+            </li>
+          </ul>
+          <div class="header-cta-btn-wrapper">
+            <button class="cta-btn-get-started-now aileronBold fontSize17px textColor7E8085">Get started now</button>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="banner-wrapper container">
+      <div class="row">
+        <div class="banner col-lg-6">
+          <img src="image/banner.png" alt="banner" class="banner-image">
+        </div>
+
+        <div class="banner-text col-lg-6 pt-5 pt-lg-0">
+          <div class="slogan aileronBold textColor2C2E30">
+            The next generation website builder for your business.
+          </div>
+
+          <div class="slogan-description aileronSemiBold textColor7E8085 fontSize18px lineHeight34px">
+            When you need a kickstart in your business and you have no time for coding for your website, xPider will
+            take that job for you and will build a great looking website in minutes.
+          </div>
+
+          <div class="blue-cta-btn-wrapper  d-flex flex-column flex-md-row align-items-md-center ">
+            <button class="cta-get-started aileronBold fontSize16px text-white backgroundColor2F5BEA text-uppercase">Get
+              started</button>
+
+            <div class="cta-text aileronBold fontSize17px textColor7E8085 pt-3 pt-md-0">
+              Try xPider for Free
+            </div>
+          </div>
+
+          <div class="sign-in-suggest aileronRegular textColor7E8085">
+            Already using xPider? <a href="#" class="aileronSemiBold fontSize14px sign-in-anchor">Sign in.</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="introduce container">
+      <div class="row">
+        <div class="mx-auto col-md-10 text-center">
+          <div class="introduce-title aileronBold textColor2C2E30 fontSize34px">
+            xPider brings all your creativity together
+          </div>
+          <div class="introduce-description aileronSemiBold fontSize18px textColor7E8085">
+            When you need a kickstart in your business and you have no time for coding for your website, xPider will
+            take that job
+            for you and will build a great looking website in minutes.
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="technology mx-auto col-md-10 px-md-0">
+          <div class="row d-flex justify-content-md-between">
+            <div class="technology-tabs text-center col-md-3 px-0">
+              <div class="technology-text">
+                <img src="image/drag.png" alt="drag" class="img-fluid">
+              </div>
+              <div class="technology-title aileronBold fontSize21px textColor2C2E30">
+                AI Page Builder
+              </div>
+            </div>
+
+            <div class="technology-tabs text-center col-md-3 px-0">
+              <div class="technology-text">
+                <img src="image/settings.png" alt="drag" class="img-fluid">
+              </div>
+              <div class="technology-title aileronBold fontSize21px textColor2C2E30">
+                Easy to Customize
+              </div>
+            </div>
+
+            <div class="technology-tabs text-center col-md-3 px-0">
+              <div class="technology-text">
+                <img src="image/responsive.png" alt="drag" class="img-fluid">
+              </div>
+              <div class="technology-title aileronBold fontSize21px textColor2C2E30">
+                Fits with Any Device
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="technology-content col-md-12">
+          <div class="row">
+            <div class="technology-image col-md-5 mr-auto">
+              <img src="image/computer.png" alt="computer" class="img-fluid">
+            </div>
+            <div class="technology-text col-md-6 mt-5 mt-md-0">
+              <div class="technology-content-title aileronBold fontSize28px textColor2C2E30">
+                Build anything, anytime!
+              </div>
+              <div class="technology-content-description">
+                <ul>
+                  <li class="aileronRegular textColor54565A lineHeight28px">
+                    Your users are impatient. They're probably distracted too. Keep it simple and beautiful, fun and
+                    functional. By a strong
+                    concept is what we stand for.
+                  </li>
+
+                  <li class="aileronRegular textColor54565A lineHeight28px">
+                    They're probably distracted too. Keep it simple & clean, fun and functional. Clean aesthetics
+                    supported.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="customer-feedback">
+                <div class="customer-feedback-content notoSerifItalic textColor54565A lineHeight28px">
+                  “Wow. I just updated my site and it was SO SIMPLE. I am blown away. You guys truly kick ass. Thanks
+                  for being so
+                  awesome. High fives!”
+                </div>
+
+                <div class="customer-info aileronSemiBold textColor2C2E30">
+                  James Duren, CTO, Fish&co
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="how-we-work-wrapper container-fluid">
+      <div class="how-we-work-part-1 container">
+        <div class="row content text-center">
+          <div class="title col-10 mx-auto aileronBold textColor2C2E30 fontSize34px">
+            How xPider works for you?
+          </div>
+
+          <div class="description col-10 mx-auto aileronSemiBold fontSize18px textColor7E8085 lineHeight34px">
+            When you need a kickstart in your business and you have no time for coding for your website, xPider will
+            take that job
+            for you and will build a great looking website in minutes.
+          </div>
+        </div>
+
+        <div class="row step">
+          <div class="col-md-4 d-flex flex-column flex-md-row align-items-md-baseline align-items-center">
+            <div class="step-content text-center">
+              <img src="image/step-icon-1.png" alt="step-icon-1" class="step-img img-fluid">
+
+              <div class="step-title aileronBold fontSize21px textColor2C2E30">
+                Get started with xPider
+              </div>
+
+              <div class="step-description aileronRegular lineHeight28px fontSize16px textColor7E8085">
+                Login or Signup in xPider Dashboard to get started.
+              </div>
+            </div>
+
+            <div class="arrow">
+              <img src="image/stre-right.png" alt="">
+            </div>
+          </div>
+
+          <div class="col-md-4 d-flex flex-column flex-md-row align-items-md-baseline align-items-center">
+            <div class="step-content text-center">
+              <img src="image/step-icon-2.png" alt="step-icon-2" class="step-img img-fluid">
+
+              <div class="step-title aileronBold fontSize21px textColor2C2E30">
+                Build your website
+              </div>
+
+              <div class="step-description aileronRegular lineHeight28px fontSize16px textColor7E8085">
+                Using our super powerful builder, build your website.
+              </div>
+            </div>
+
+            <div class="arrow">
+              <img src="image/stre-right.png" alt="">
+            </div>
+          </div>
+
+          <div class="col-md-4 d-flex flex-md-row align-items-center">
+            <div class="step-content text-center">
+              <img src="image/step-icon-3.png" alt="step-icon-3" class="step-img img-fluid">
+
+              <div class="step-title aileronBold fontSize21px textColor2C2E30">
+                Publish when finsihed
+              </div>
+
+              <div class="step-description aileronRegular lineHeight28px fontSize16px textColor7E8085">
+                When you are done, hit the publish button&nbsp;to show the world!
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row cta-content">
+          <div class="image col-md-6">
+            <img src="image/cta-image.png" alt="cta-image">
+          </div>
+
+          <div class="cta-text offset-md-1 col-md-5">
+            <div class="title aileronBold fontSize34px textColor2C2E30">
+              Built for growth
+            </div>
+            <div class="text-1 aileronRegular fontSize16px lineHeight28px textColor54565A">
+              Use Timeline to plan projects right the first time. See how the pieces fit together so you can spot gaps
+              and overlaps
+              before you start.
+            </div>
+
+            <div class="programming-language-logo">
+              <img src="image/html-5.png" alt="html-5">
+
+              <img src="image/css-3.png" alt="css-3">
+
+              <img src="image/js.png" alt="">
+            </div>
+
+            <div class="text-2 aileronRegular fontSize16px lineHeight28px textColor54565A">
+              Big, small, online, offline, local or international. Size doesn't matter. We work on diverse projects for
+              top brands as
+              well as for cool startups. Check out some of our favorites.
+            </div>
+
+            <div class="cta-anchor-text aileronBold fontSize18px lineHeight34px textColor2F5BEA">
+              <a href="">Try xPider now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="unique-blocks container">
+      <div class="content row">
+        <div class="blocks-introduce-text col-md-5">
+          <div class="title aileronBold fontSize34px textColor2C2E30">
+            1500+ Unique Blocks
+          </div>
+
+          <div class="description aileronRegular fontSize16px lineHeight28px textColor54565A my-5 my-md-0">
+            Use Timeline to plan projects right the first time. See how the&nbsp;pieces fit together so you can spot
+            gaps and overlaps
+            before you start.
+          </div>
+
+          <div class="cta-anchor-text aileronBold textColor2F5BEA fontSize18px lineHeight34px mb-5 mb-md-0">
+            <a href="">See all blocks live</a>
+          </div>
+        </div>
+
+        <div class="blocks-introduce-image col-md-7 text-right">
+          <img src="image/Block-image.png" alt="blocks-image" class="img-fluid">
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonials-wrapper container">
+      <div class="row testimonials-introduce text-center">
+        <div class="title col-md-7 mx-auto aileronBold fontSize34px textColor2C2E30">
+          You’re in a good hand
+        </div>
+
+        <div class="description offset-md-3 col-md-6 aileronSemiBold fontSize18px lineHeight34px textColor7E8085">
+          Millions of people around the world have already made xPider the place where their dream happens.
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="testimonials-blocks col-md-4 mx-3 ml-md-0">
+          <div class="block position-relative">
+            <div class="content-block notoSerifItalic fontSize16px textColor7E8085 lineHeight28px" id="content-1">
+              Life before Company was very chaotic — we got a lot of phone calls, a lot of mistyped orders. So with
+              Company, the
+              ability to see the order directly from the customer makes it so streamlined.
+            </div>
+
+            <div class="user d-flex">
+              <div class="user-avatar">
+                <img src="image/testimonials-user-image-1.png" alt="testimonials-user-image-1" class="img-fluid">
+              </div>
+
+              <div class="user-info aileronSemiBold fontSize16px textColor2C2E30">
+                Martin Jones, Creative Cons
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonials-blocks col-md-4 mx-3 ml-md-0">
+          <div class="block position-relative">
+            <div class="content-block notoSerifItalic fontSize16px textColor7E8085 lineHeight28px" id="content-2">
+              There’s no way we could have hired these many people and gotten so much business had we not had all of
+              those back-office
+              systems figured out. It’s been easier growing our company with a system that is so easy and scalable.
+            </div>
+
+            <div class="user d-flex">
+              <div class="user-avatar">
+                <img src="image/testimonials-user-image-2.png" alt="testimonials-user-image-2" class="img-fluid">
+              </div>
+
+              <div class="user-info aileronSemiBold fontSize16px textColor2C2E30">
+                Jessia Cordon, Fashionier
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonials-blocks col-md-4 mx-3 mx-md-0">
+          <div class="block  position-relative">
+            <div class="content-block notoSerifItalic fontSize16px textColor7E8085 lineHeight28px" id="content-3">
+              Wow. I just updated my site and it was SO SIMPLE. I am blown away. You guys truly kick ass. Thanks for
+              being so awesome.
+              High fives!
+            </div>
+
+            <div class="user d-flex">
+              <div class="user-avatar">
+                <img src="image/testimonials-user-image-3.png" alt="testimonials-user-image-3" class="img-fluid">
+              </div>
+
+              <div class="user-info aileronSemiBold fontSize16px textColor2C2E30">
+                Cristina J, Journey360
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-testimonial text-center w-100 lineHeight34px fontSize18px">
+          <a href="#" class="anchor-text aileronBold">Check all testimonials</a>
+        </div>
+      </div>
+
+      <div class="customers-brands">
+        <img src="image/brands.png" alt="" class="img-fluid">
+      </div>
+    </div>
+
+    <div class="pricing-wrapper container-fluid">
+
+      <div class="pricing container">
+
+        <div class="pricing-introduce row text-center">
+          <div class="title col-md-7 mx-auto aileronBold fontSize34px textColor2C2E30">
+            Simple, Straight Pricing
+          </div>
+
+          <div class="description offset-md-3 col-md-6 aileronSemiBold fontSize18px lineHeight34px textColor7E8085">
+            Millions of people around the world have already made xPider the place where their dream happens.
+          </div>
+        </div>
+
+        <div class="option-wrapper row">
+          <div class="option billed-monthly ml-auto col-md-4 card text-center mb-5 mb-md-0 mr-0 mr-md-3">
+            <div class="card-body px-0">
+              <div class="header-card">
+                <div class="card-title notoSerifBold textColor2F5BEA">$19</div>
+                <div class="card-subtitle mb-2 text-muted aileronSemiBold fontSize18px textColor7E8085 lineHeight34px">
+                  Billed Monthly
+                </div>
+              </div>
+
+              <div class="body-card">
+                <div class="content aileronRegular fontSize16px textColor7E8085 lineHeight28px">
+                  No one cares about products. People care about ideas. Is a product an idea? Noup. Is a brand? A good
+                  one is.
+                </div>
+
+                <div class="cta-btn">
+                  <button class="aileronBold textColor54565A fontSize16px text-uppercase">Try 14 days free
+                    trial</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="option billed-monthly mr-auto col-md-4 card text-center ml-0 ml-md-3">
+            <div class="card-body px-0">
+              <div class="header-card">
+                <div class="card-title notoSerifBold text-white">$9</div>
+                <div class="card-subtitle mb-2 aileronSemiBold fontSize18px text-white lineHeight34px">
+                  Billed Anually
+                </div>
+              </div>
+
+              <div class="body-card">
+                <div class="content aileronRegular fontSize16px text-white lineHeight28px">
+                  No one cares about products. People care about ideas. Is a product an idea? Noup. Is a brand? A good
+                  one is.
+                </div>
+
+                <div class="cta-btn">
+                  <button class="aileronBold textColor2F5BEA fontSize16px text-uppercase" id="white-button">Try 14 days
+                    free
+                    trial</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="others-feature-wrapper row text-center">
+          <div class="col-md-4 mx-auto">
+            <div class="text aileronRegular fontSize18px lineHeight34px textColor7E8085">
+              Both pricings contains all of our features.
+            </div>
+
+            <div class="cta-check-out-features aileronBold fontSize18px lineHeight34px">
+              <a href="#" class="check-out-features-anchor-text textColor2C2E30">Check all our features</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-area container-fluid">
+      <div class="container">
+        <div class="cta-area-content row text-center d-flex flex-column">
+          <div class="cta-title col-md-7 mx-auto text-white aileronBold fontSize34px">
+            Try xPider for 14 days, for free!
+          </div>
+
+          <div class="cta-description  offset-md-3 col-md-6 text-white aileronSemiBold fontSize18px lineHeight34px">
+            Millions of people around the world have already made xPider the place where their dream happens.
+          </div>
+
+          <div class="blue-cta-btn-wrapper">
+            <button class="cta-get-started aileronBold fontSize16px bg-white textColor2F5BEA text-uppercase">Get
+              started</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="main-footer container-fluid">
+        <div class="footer-anchor-text-wrapper container">
+          <div class="row">
+            <div class="footer-logo col-md-1">
+              <img src="image/logo.png" alt="logo-footer">
+            </div>
+
+
+            <div class="footer-anchor-text col-md-2 offset-md-3 aileronBold textColor2C2E30 fontSize18px mt-5 mt-md-0">
+              <div class="title">
+                Company
+              </div>
+
+              <div class="anchor-text aileronRegular fontSize16px textColor54565A">
+                <a href="#" class="aileronRegular fontSize16px textColor54565A">About Us</a>
+              </div>
+
+              <div class="anchor-text aileronRegular fontSize16px textColor54565A">
+                <a href="#" class="aileronRegular fontSize16px textColor54565A">Careers</a>
+              </div>
+
+              <div class="anchor-text aileronRegular fontSize16px textColor54565A">
+                <a href="#" class="aileronRegular fontSize16px textColor54565A">Blog</a>
+              </div>
+
+              <div class="anchor-text aileronRegular fontSize16px textColor54565A">
+                <a href="#" class="aileronRegular fontSize16px textColor54565A">Press</a>
+              </div>
+
+              <div class="anchor-text ">
+                <a href="#" class="aileronRegular fontSize16px textColor54565A">Brand Guidelines</a>
+              </div>
+            </div>
+
+            <div class="footer-anchor-text col-md-2 offset-md-3 aileronBold textColor2C2E30 fontSize18px mt-5 mt-md-0">
+              <div class="title">
+                Product
+              </div>
+            
+              <div class="anchor-text aileronRegular fontSize16px textColor54565A">
+                <a href="#" class="aileronRegular fontSize16px textColor54565A">Why xPider?</a>
+              </div>
+            
+              <div class="anchor-text aileronRegular fontSize16px textColor54565A">
+                <a href="#" class="aileronRegular fontSize16px textColor54565A">Enterprise</a>
+              </div>
+            
+              <div class="anchor-text aileronRegular fontSize16px textColor54565A">
+                <a href="#" class="aileronRegular fontSize16px textColor54565A">Customer Stories</a>
+              </div>
+            
+              <div class="anchor-text aileronRegular fontSize16px textColor54565A">
+                <a href="#" class="aileronRegular fontSize16px textColor54565A">Pricing</a>
+              </div>
+            
+              <div class="anchor-text ">
+                <a href="#" class="aileronRegular fontSize16px textColor54565A">Security</a>
+              </div>
+            </div>
+
+            <div class="footer-anchor-text col-md-2 aileronBold textColor2C2E30 fontSize18px mt-5 mt-md-0">
+              <div class="title">
+                Resources
+              </div>
+            
+              <div class="anchor-text aileronRegular fontSize16px textColor54565A">
+                <a href="#" class="aileronRegular fontSize16px textColor54565A">Download</a>
+              </div>
+            
+              <div class="anchor-text aileronRegular fontSize16px textColor54565A">
+                <a href="#" class="aileronRegular fontSize16px textColor54565A">Help Center</a>
+              </div>
+            
+              <div class="anchor-text aileronRegular fontSize16px textColor54565A">
+                <a href="#" class="aileronRegular fontSize16px textColor54565A">Guides</a>
+              </div>
+            
+              <div class="anchor-text aileronRegular fontSize16px textColor54565A">
+                <a href="#" class="aileronRegular fontSize16px textColor54565A">Partners</a>
+              </div>
+            
+              <div class="anchor-text ">
+                <a href="#" class="aileronRegular fontSize16px textColor54565A">Events</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="container-fluid">
+    <div class="container">
+      <div class="row d-flex justify-content-md-between">
+        <div class="left-part col-md-4 d-flex  justify-content-center  justify-content-md-start">
+          <div class="status aileronBold fontSize14px textColor54565A">
+            Status
+          </div>
+
+          <div class="privacy aileronBold fontSize14px textColor54565A">
+            Privacy & Terms
+          </div>
+          
+          <div class="contact-us aileronBold fontSize14px textColor54565A">
+            Contact Us
+          </div>
+        </div>
+
+        <div class="right-part col-md-3 d-flex justify-content-md-end  justify-content-center">
+          <div class="flag">
+            <img src="image/flag.png" alt="flag">
+          </div>
+
+          <div class="language">
+            <a href="#" class="language-select aileronBold fontSize14px textColor54565A">English</a> 
+          </div>
+
+          <div class="social-logo">
+            <a href="#" class="facebook"><img src="image/facebook.png" alt="facebook" ></a>
+
+            <a href="#" class="twitter"><img src="image/twitter.png" alt="twitter" ></a>
+
+            <a href="#" class="dribble"><img src="image/dribble.png" alt="dribble" ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="main.js"></script>
+</body>
+
 </html>

@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif:400i&display=swap');
+
+@font-face {
+    font-family: aileronBlack;
+    src: url('fonts/aileron-black.woff');
+}
+
+@font-face {
+    font-family: aileronBold;
+    src: url('fonts/aileron-bold.woff');
+}
+
+@font-face {
+    font-family: aileronLightItalic;
+    src: url('fonts/aileron-lightitalic.woff');
+}
+
+@font-face {
+    font-family: aileronRegular;
+    src: url('fonts/aileron-regular.woff');
+}
+
+@font-face {
+    font-family: aileronSemiBold;
+    src: url('fonts/aileron-semibold.woff');
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1110px;
+    }
+}
+
+.aileronSemiBold {
+    font-family: aileronSemiBold;
+}
+
+.aileronRegular {
+    font-family: aileronRegular;
+}
+
+.aileronBlack {
+    font-family: aileronBlack;
+}
+
+.aileronBold {
+    font-family: aileronBold;
+}
+
+.aileronLightItalic {
+    font-family: aileronLightItalic;
+}
+
+.NotoSerifItalic {
+    font-family: 'Noto Serif';
+}
+
+.navbar-brand {
+    margin-right: 70px;
+}
+
+.logo-text {
+    font-size: 26px;
+    margin-left: 11px;
+}
+
+.bg-light {
+    background-color: transparent !important;
+}
+
+.textColor7E8085 {
+    color: #7E8085 !important;
+}
+
+.textColor54565A {
+    color: #54565A !important;
+}
+
+.backgroundColor2F5BEA {
+    background-color: #2F5BEA !important;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    color: #54565A !important;
+}
+
+.dropdown-toggle::after {
+    content: '\f078';
+    margin-left: 12px;
+    vertical-align: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 20px;
+}
+
+@media (min-width: 992px) {
+ .navbar-expand-lg .navbar-nav .nav-link {
+     padding-right: 38px;
+     padding-left: 38px;
+ }
+}
