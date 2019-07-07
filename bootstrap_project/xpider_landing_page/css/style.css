@@ -26,12 +26,6 @@
     src: url(../fonts/aileron-semibold.woff);
 }
 
-@media (min-width: 1200px) {
-    .container {
-        max-width: 1110px;
-    }
-}
-
 a {
     text-decoration: none !important;
 }
@@ -140,17 +134,13 @@ button {
     font-size: 28px;
 }
 
-.dropdown-toggle::after {
-    content: '\f078';
-    font-family: "Font Awesome 5 Free";
-    vertical-align: 0;
-    border-top: 0;
-    border-right: 0;
-    border-bottom: 0;
-    border-left: 0;
-    font-weight: 900;
+.drop-down-nav-icon {
     margin-left: 12px;
     font-size: 15px;
+}
+
+.dropdown-toggle::after {
+    content: none;
 }
 
 .navbar .navbar-collapse .cta-btn-get-started-now {
@@ -164,18 +154,28 @@ button {
     color: white !important;
 }
 
+.nav-link.small {
+    border-bottom: 1px solid #C9CDD5 !important;
+}
+
+.navbar-wrapper.small {
+    border-bottom: 1px solid #C9CDD5 !important;
+
+}
+
+.navbar-collapse.small {
+    padding: 10px;
+}
+
+.drop-down-nav-icon.small {
+    position: absolute;
+    right: 0;
+}
 
 
 .navbar-light .navbar-nav .nav-link:focus,
 .navbar-light .navbar-nav .nav-link:hover:hover {
     color: black !important;
-}
-
-@media (min-width: 992px) {
-    .navbar-expand-lg .navbar-nav .nav-link {
-        padding-right: 38px;
-        padding-left: 38px;
-    }
 }
 
 .banner-wrapper {
@@ -262,13 +262,13 @@ button {
 }
 
 .technology::after {
-        content: '';
-        width: 100%;
-        height: 2px;
-        position: absolute;
-        background: #D8D8D8;
-        bottom: 0px;
-        left: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    background: #D8D8D8;
+    bottom: 0px;
+    left: 0;
 }
 
 
@@ -298,6 +298,18 @@ button {
 .technology-content .technology-text {
     padding-left: 48px;
     padding-right: 27px;
+}
+
+.technology-tabs:first-child .technology-text {
+    padding-top: 5px;
+}
+
+.technology-tabs:nth-child(2) .technology-text {
+    padding-top: 7px;
+}
+
+.technology-tabs:nth-child(3) .technology-text {
+    padding-top: 5px;
 }
 
 .lineHeight28px {
@@ -429,12 +441,6 @@ button {
     margin-right: 11px;
 }
 
-@media (min-width: 768px) {
-    .testimonials-wrapper .testimonials-blocks.col-md-4 {
-        max-width: calc(33.333333% - (34px / 3));
-    }
-}
-
 .testimonials-wrapper .cta-testimonial {
     margin: 48px 0 115px 0;
 }
@@ -448,7 +454,7 @@ button {
 
 .pricing-wrapper {
     background-color: #F6F8F9;
-        padding-bottom: 136px;
+    padding-bottom: 136px;
 
 }
 
@@ -570,12 +576,6 @@ button {
     line-height: 39px;
 }
 
-@media (min-width: 768px) {
- .footer-anchor-text-wrapper .footer-anchor-text:nth-child(3) {
-     margin-left: calc(8.333333% - 15px);
- }
-}
-
 .footer-anchor-text-wrapper .footer-anchor-text:nth-child(3) {
     margin-right: 50px;
 }
@@ -596,7 +596,8 @@ footer {
     margin-right: 34px;
 }
 
-footer .left-part, footer .right-part {
+footer .left-part,
+footer .right-part {
     padding: 33px 0 25px 0;
 }
 
@@ -615,6 +616,84 @@ footer .left-part, footer .right-part {
     margin-right: 66px;
 }
 
-.facebook, .twitter {
+.facebook,
+.twitter {
     margin-right: 8px;
+}
+
+@media (min-width: 768px) {
+    .testimonials-wrapper .testimonials-blocks.col-md-4 {
+        max-width: calc(33.333333% - (34px / 3));
+    }
+
+    .footer-anchor-text-wrapper .footer-anchor-text:nth-child(3) {
+        margin-left: calc(8.333333% - 15px);
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 38px;
+        padding-left: 38px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1110px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-wrapper {
+        margin-bottom: 75px;
+    }
+
+    .banner-wrapper {
+        margin-bottom: 100px;
+    }
+
+    .introduce {
+        margin-bottom: 75px;
+    }
+
+    .how-we-work-wrapper .how-we-work-part-1 .content .title {
+        margin-top: 75px;
+    }
+
+    .step {
+        padding-bottom: 75px;
+    }
+
+    .cta-content {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+    .unique-blocks {
+        margin-top: 75px;
+        margin-bottom: 75px;
+    }
+
+    .pricing-wrapper .pricing-introduce .title {
+        padding-top: 75px;
+    }
+
+    .pricing-wrapper {
+        padding-bottom: 75px;
+    }
+
+    .footer-anchor-text-wrapper {
+        margin-top: 75px;
+    }
+
+    .main-footer {
+        margin-bottom: 75px;
+    }
+}
+
+@media (max-width: 576px) {
+    .technology-tabs .technology-title {
+        display: none;
+    }
 }

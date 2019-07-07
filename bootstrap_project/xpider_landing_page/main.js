@@ -153,6 +153,26 @@ function changeUi() {
         $('.arrow').css('transform', '');
         $('.how-we-work-wrapper .how-we-work-part-1 .description').css('padding', '0 44px 0 56px');
     }
+
+  if (window.matchMedia && window.matchMedia('(max-width: 1500px)').matches) {
+    $('.banner-image').addClass('img-fluid');
+    $('.built-for-growth-img').addClass('img-fluid');
+  } else {
+    $('.banner-image').removeClass('img-fluid');
+    $('.built-for-growth-img').removeClass('img-fluid');
+  }
+
+  if (window.matchMedia && window.matchMedia('(max-width: 768px)').matches) {
+    $('.navbar-collapse').addClass('small');
+    $('.drop-down-nav-icon').addClass('small');
+    $('.nav-link').addClass('small');
+    $('.navbar-wrapper').addClass('small');
+  } else {
+    $('.navbar-collapse').removeClass('small');
+    $('.drop-down-nav-icon').removeClass('small');
+    $('.nav-link').removeClass('small');
+    $('.navbar-wrapper').removeClass('small');
+  }
 }
 
 changeUi();
