@@ -1,9 +1,9 @@
 function activeTab() {
-    
+
 }
 
 $('.technology-tabs').on('click', function () {
-    let contentTabOne = `
+  let contentTabOne = `
           <div class="row">
             <div class="technology-image col-md-5 mr-auto">
               <img src="image/computer.png" alt="computer" class="img-fluid">
@@ -41,7 +41,7 @@ $('.technology-tabs').on('click', function () {
             </div>
           </div>`;
 
-    let contentTabTwo = `
+  let contentTabTwo = `
           <div class="row">
             <div class="technology-image col-md-5 mr-auto">
               <img src="image/browser.png" alt="computer" class="img-fluid">
@@ -79,7 +79,7 @@ $('.technology-tabs').on('click', function () {
             </div>
           </div>`;
 
-    let contentTabThree = `
+  let contentTabThree = `
           <div class="row">
             <div class="technology-image col-md-5 mr-auto">
               <img src="image/computer.png" alt="computer" class="img-fluid">
@@ -116,43 +116,43 @@ $('.technology-tabs').on('click', function () {
               </div>
             </div>
           </div>`;
-    if ($('.technology-tabs').hasClass('active-tab')) {
-        $('.technology-tabs').removeClass('active-tab');
-        $('.technology-tabs').not($(this)).addClass('deactive-tab');
-        $(this).addClass('active-tab');
-        if ($(this).hasClass('deactive-tab')) {
-            $(this).removeClass('deactive-tab');
-        }
+  if ($('.technology-tabs').hasClass('active-tab')) {
+    $('.technology-tabs').removeClass('active-tab');
+    $('.technology-tabs').not($(this)).addClass('deactive-tab');
+    $(this).addClass('active-tab');
+    if ($(this).hasClass('deactive-tab')) {
+      $(this).removeClass('deactive-tab');
     }
+  }
 
-    if (this == $('.technology-tabs')[0]) {
-        $('.technology-content').html(contentTabOne);
-    } else if (this == $('.technology-tabs')[1]) {
-        $('.technology-content').html(contentTabTwo);
-    } else {
-        $('.technology-content').html(contentTabThree);
-    }
+  if (this == $('.technology-tabs')[0]) {
+    $('.technology-content').html(contentTabOne);
+  } else if (this == $('.technology-tabs')[1]) {
+    $('.technology-content').html(contentTabTwo);
+  } else {
+    $('.technology-content').html(contentTabThree);
+  }
 });
 
 $(function () {
-    $('.nav-link').last().css('padding-right', '0');
-    $('.nav-link').first().css('padding-left', '0');
-    changeUi();
-    $('#technology-tab-1').addClass('active-tab');
+  $('.nav-link').last().css('padding-right', '0');
+  $('.nav-link').first().css('padding-left', '0');
+  changeUi();
+  $('#technology-tab-1').addClass('active-tab');
 });
 
 $(window).resize(changeUi);
 
 function changeUi() {
-    $('.content-block').height(Math.max($('#content-1').height(), $('#content-2').height(), $('#content-3').height()));
+  $('.content-block').height(Math.max($('#content-1').height(), $('#content-2').height(), $('#content-3').height()));
 
-    if (window.matchMedia && window.matchMedia('(max-width: 576px)').matches) {
-        $('.arrow').css('transform', 'rotate(90deg)');
-        $('.how-we-work-wrapper .how-we-work-part-1 .description').css('padding', '0');
-    } else {
-        $('.arrow').css('transform', '');
-        $('.how-we-work-wrapper .how-we-work-part-1 .description').css('padding', '0 44px 0 56px');
-    }
+  if (window.matchMedia && window.matchMedia('(max-width: 576px)').matches) {
+    $('.arrow').css('transform', 'rotate(90deg)');
+    $('.how-we-work-wrapper .how-we-work-part-1 .description').css('padding', '0');
+  } else {
+    $('.arrow').css('transform', '');
+    $('.how-we-work-wrapper .how-we-work-part-1 .description').css('padding', '0 44px 0 56px');
+  }
 
   if (window.matchMedia && window.matchMedia('(max-width: 1500px)').matches) {
     $('.banner-image').addClass('img-fluid');

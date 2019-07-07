@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Serif:400i,700&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Noto+Serif:400i,700&display=swap');
 
 
 @font-face {
@@ -74,7 +74,7 @@ button {
 }
 
 .logo-text {
-    font-size: 26px;
+    font-size: 1.625rem;
     margin-left: 11px;
 }
 
@@ -110,10 +110,6 @@ button {
     font-size: 1.063rem;
 }
 
-/* .fontSize16px {
-    font-size: 1rem;
-} */
-
 .fontSize18px {
     font-size: 1.125rem;
 }
@@ -136,7 +132,7 @@ button {
 
 .drop-down-nav-icon {
     margin-left: 12px;
-    font-size: 15px;
+    font-size: 0.9375rem;
 }
 
 .dropdown-toggle::after {
@@ -192,7 +188,7 @@ button {
 
 
 .banner-wrapper .banner-text .slogan {
-    font-size: 48px;
+    font-size: 3rem;
     line-height: 58px;
 }
 
@@ -206,8 +202,8 @@ button {
 }
 
 .blue-cta-btn-wrapper .cta-get-started {
-    padding: 22px 38px;
-    border-radius: 5px;
+    padding: 1.375rem 2.375rem;
+    border-radius: 0.3125rem;
     line-height: 19px;
     margin-right: 24px;
 }
@@ -225,7 +221,7 @@ button {
 .sign-in-suggest {
     line-height: 17px;
     margin-top: 17px;
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 
 .sign-in-suggest .sign-in-anchor {
@@ -247,7 +243,6 @@ button {
 }
 
 .technology {
-    /* border-bottom: 2px solid #D8D8D8; */
     margin-bottom: 62px;
 }
 
@@ -330,7 +325,7 @@ button {
     color: #b4ad9e;
     font-weight: bold;
     display: inline-block;
-    font-size: 25px;
+    font-size: 1.5625rem;
     margin: 0 11px 0 0;
 }
 
@@ -473,7 +468,7 @@ button {
 }
 
 .pricing .option .card-title {
-    font-size: 60px;
+    font-size: 3.75rem;
 }
 
 .pricing .option .card-body .header-card {
@@ -689,6 +684,706 @@ footer .right-part {
 
     .main-footer {
         margin-bottom: 75px;
+    }
+}
+
+@media (max-width: 576px) {
+    .technology-tabs .technology-title {
+        display: none;
+    }
+} */
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif:400i,700&display=swap');
+
+
+@font-face {
+    font-family: aileronBlack;
+    src: url(../fonts/aileron-black.woff);
+}
+
+@font-face {
+    font-family: aileronBold;
+    src: url(../fonts/aileron-bold.woff)
+}
+
+@font-face {
+    font-family: aileronLightItalic;
+    src: url(../fonts/aileron-lightitalic.woff);
+}
+
+@font-face {
+    font-family: aileronRegular;
+    src: url(../fonts/aileron-regular.woff);
+}
+
+@font-face {
+    font-family: aileronSemiBold;
+    src: url(../fonts/aileron-semibold.woff);
+}
+
+a {
+    text-decoration: none !important;
+}
+
+button {
+    outline: none !important;
+}
+
+.aileronSemiBold {
+    font-family: aileronSemiBold;
+}
+
+.aileronRegular {
+    font-family: aileronRegular;
+}
+
+.aileronBlack {
+    font-family: aileronBlack;
+}
+
+.aileronBold {
+    font-family: aileronBold;
+}
+
+.aileronLightItalic {
+    font-family: aileronLightItalic;
+}
+
+.notoSerifItalic {
+    font-family: 'Noto Serif';
+    font-style: italic;
+}
+
+.notoSerifBold {
+    font-family: 'Noto Serif';
+    font-weight: 700;
+}
+
+.navbar-brand {
+    margin-right: 4.375rem;
+}
+
+.navbar-wrapper {
+    margin-top: 2.0625rem;
+    margin-bottom: 8.1875rem;
+}
+
+.logo-text {
+    font-size: 1.625rem;
+    margin-left: 0.6875rem;
+}
+
+.bg-light {
+    background-color: transparent !important;
+}
+
+.textColor7E8085 {
+    color: #7E8085 !important;
+}
+
+.textColor54565A {
+    color: #54565A !important;
+}
+
+.textColor2C2E30 {
+    color: #2C2E30 !important;
+}
+
+.textColor2F5BEA {
+    color: #2F5BEA;
+}
+
+.backgroundColor2F5BEA {
+    background-color: #2F5BEA !important;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    color: #54565A !important;
+}
+
+.fontSize17px {
+    font-size: 1.063rem;
+}
+
+/* .fontSize16px {
+    font-size: 1rem;
+} */
+
+.fontSize18px {
+    font-size: 1.125rem;
+}
+
+.fontSize14px {
+    font-size: 0.875rem;
+}
+
+.fontSize34px {
+    font-size: 2.125rem;
+}
+
+.fontSize21px {
+    font-size: 1.313rem;
+}
+
+.fontSize28px {
+    font-size: 1.75rem;
+}
+
+.drop-down-nav-icon {
+    margin-left: 0.75rem;
+    font-size: 0.9375rem;
+}
+
+.dropdown-toggle::after {
+    content: none;
+}
+
+.navbar .navbar-collapse .cta-btn-get-started-now {
+    padding: 0.875rem 1.1875rem;
+    border: 0.125rem solid #C9CDD5;
+    border-radius: 0.3125rem;
+}
+
+.navbar .navbar-collapse .cta-btn-get-started-now:hover {
+    background-color: #2F5BEA;
+    color: white !important;
+}
+
+.nav-link.small {
+    border-bottom: 0.0625rem solid #C9CDD5 !important;
+}
+
+.navbar-wrapper.small {
+    border-bottom: 0.0625rem solid #C9CDD5 !important;
+
+}
+
+.navbar-collapse.small {
+    padding: 0.625rem;
+}
+
+.drop-down-nav-icon.small {
+    position: absolute;
+    right: 0;
+}
+
+
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover:hover {
+    color: black !important;
+}
+
+.banner-wrapper {
+    margin-bottom: 12.4375rem;
+}
+
+.banner-wrapper .banner {
+    padding-right: 1.4375rem;
+}
+
+.banner-wrapper .banner .banner-image {
+    float: right;
+}
+
+
+.banner-wrapper .banner-text .slogan {
+    font-size: 3rem;
+    line-height: 3.625rem;
+}
+
+.banner-wrapper .banner-text {
+    padding-left: 2.9375rem;
+}
+
+
+.banner-wrapper .banner-text .slogan-description {
+    margin: 2.5625rem 0 2.875rem 0;
+}
+
+.blue-cta-btn-wrapper .cta-get-started {
+    padding: 1.375rem 2.375rem;
+    border-radius: 0.3125rem;
+    line-height: 1.1875rem;
+    margin-right: 1.5rem;
+}
+
+.blue-cta-btn-wrapper .cta-get-started:hover {
+    background-color: white !important;
+    color: #2F5BEA !important;
+    border-color: #2F5BEA;
+}
+
+.backgroundColor2F5BEA {
+    background-color: #2F5BEA;
+}
+
+.sign-in-suggest {
+    line-height: 1.0625rem;
+    margin-top: 1.0625rem;
+    font-size: 0.875rem;
+}
+
+.sign-in-suggest .sign-in-anchor {
+    color: #FC5C42;
+}
+
+.introduce .introduce-description {
+    line-height: 2.125rem;
+    margin: 2.0625rem 0 5.375rem 0;
+}
+
+.technology .technology-tabs .technology-title {
+    margin-top: 1.1875rem;
+}
+
+.technology .technology-tabs {
+    padding-bottom: 1.6875rem;
+    cursor: pointer;
+}
+
+.technology {
+    /* border-bottom: 2px solid #D8D8D8; */
+    margin-bottom: 3.875rem;
+}
+
+.active-tab {
+    border-bottom: 0.125rem solid #2F5BEA;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.deactive-tab {
+    border-bottom: 0.125rem solid transparent;
+}
+
+.technology::after {
+    content: '';
+    width: 100%;
+    height: 0.125rem;
+    position: absolute;
+    background: #D8D8D8;
+    bottom: 0rem;
+    left: 0;
+}
+
+
+.technology .technology-tabs:last-of-type {
+    margin-top: -0.4375rem
+}
+
+.technology-content .technology-image {
+    margin-left: 2rem;
+}
+
+.technology-content {
+    transition: all 0.3s ease;
+}
+
+.technology-content .technology-image::before {
+    content: "";
+    background-image: url(../image/square-dot.png);
+    width: 9.875rem;
+    height: 9.5625rem;
+    position: absolute;
+    left: -5.125rem;
+    top: -1.3125rem;
+    z-index: -1;
+}
+
+.technology-content .technology-text {
+    padding-left: 3rem;
+    padding-right: 1.6875rem;
+}
+
+.technology-tabs:first-child .technology-text {
+    padding-top: 0.3125rem;
+}
+
+.technology-tabs:nth-child(2) .technology-text {
+    padding-top: 0.4375rem;
+}
+
+.technology-tabs:nth-child(3) .technology-text {
+    padding-top: 0.3125rem;
+}
+
+.lineHeight28px {
+    line-height: 1.75rem;
+}
+
+.lineHeight34px {
+    line-height: 2.125rem;
+}
+
+.technology-content .technology-content-description ul {
+    list-style: none;
+    padding: 0;
+}
+
+.technology-content .technology-content-description ul li::before {
+    content: "\2022";
+    color: #b4ad9e;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 1.5625rem;
+    margin: 0 0.6875rem 0 0;
+}
+
+.technology-content-description {
+    margin-bottom: 2.3125rem;
+}
+
+.technology-content .customer-feedback {
+    padding-top: 2.3125rem;
+    border-top: 0.0625rem solid #E7EAEE;
+    margin-bottom: 1.625rem;
+}
+
+.technology-content .customer-feedback .customer-feedback-content {
+    margin-bottom: 1.625rem;
+}
+
+.introduce {
+    margin-bottom: 10rem;
+}
+
+.how-we-work-wrapper {
+    background-color: #F6F8F9;
+}
+
+.how-we-work-wrapper .how-we-work-part-1 .content .title {
+    margin: 9.5rem 0 2.5625rem 0;
+}
+
+.how-we-work-wrapper .how-we-work-part-1 .description {
+    padding: 0 2.75rem 0 3.5rem;
+    margin-bottom: 5.375rem;
+}
+
+.step .step-content .step-img {
+    margin-bottom: 1.8125rem;
+}
+
+.step .step-content .step-title {
+    margin-bottom: 1.5625rem;
+}
+
+.step {
+    margin-right: 2.125rem;
+    margin-left: 1.9375rem;
+    padding-bottom: 8.4375rem;
+}
+
+.cta-content {
+    padding: 8.75rem 0 10.4375rem 0;
+    border-top: 0.0625rem solid #E7EAEE;
+}
+
+.cta-content .image img {
+    float: right;
+}
+
+.cta-content .cta-text {
+    margin-top: 2.8125rem;
+}
+
+.cta-content .cta-text .title {
+    margin-bottom: 2rem;
+}
+
+.cta-content .cta-text .text-1 {
+    margin-bottom: 1.5rem;
+}
+
+.cta-content .cta-text .programming-language-logo {
+    margin-bottom: 1.625rem;
+}
+
+.cta-content .cta-text .text-2 {
+    margin-bottom: 1.75rem;
+}
+
+.unique-blocks {
+    margin-top: 10.625rem;
+    margin-bottom: 11.125rem;
+}
+
+.unique-blocks .content .blocks-introduce-text {
+    margin-top: 3.4375rem;
+}
+
+.testimonials-wrapper {
+    margin-bottom: 4.5625rem;
+}
+
+.testimonials-wrapper .testimonials-blocks {
+    border: 0.0625rem solid #E7EAEE;
+    box-shadow: 0rem 0.125rem 0.25rem rgba(44, 46, 48, 0.0747283);
+    border-radius: 0.3125rem;
+    padding: 1.125rem 2.1875rem 0.6875rem 1.0625rem;
+    margin-top: 3.25rem;
+}
+
+.testimonials-wrapper .testimonials-blocks:nth-child(2) {
+    padding: 1.125rem 2.1875rem 0.6875rem 1.0625rem;
+}
+
+.testimonials-wrapper .testimonials-blocks .content-block {
+    margin-bottom: 2.625rem;
+}
+
+.testimonials-wrapper .testimonials-blocks .user .user-avatar {
+    margin-right: 0.6875rem;
+}
+
+.testimonials-wrapper .cta-testimonial {
+    margin: 3rem 0 7.1875rem 0;
+}
+
+.testimonials-wrapper .cta-testimonial .anchor-text::after {
+    content: '\f0da';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-left: 0.6875rem;
+}
+
+.pricing-wrapper {
+    background-color: #F6F8F9;
+    padding-bottom: 8.5rem;
+
+}
+
+.pricing-wrapper .pricing-introduce {
+    margin-bottom: 2.0625rem;
+}
+
+.pricing-wrapper .pricing-introduce .title {
+    padding-top: 7.625rem;
+    margin-bottom: 5.1875rem;
+}
+
+
+.pricing .option .card-body {
+    padding-bottom: 2.5625rem;
+}
+
+.pricing .option .card-title {
+    font-size: 3.75rem;
+}
+
+.pricing .option .card-body .header-card {
+    margin: 0 -0.9375rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 0.0625rem solid #E7EAEE;
+}
+
+.pricing .option .card-body .body-card {
+    margin-top: 2.375rem;
+    padding-left: 0.875rem;
+    padding-right: 1.4375rem;
+}
+
+.white-cta-btn-wrapper .cta-get-started {
+    padding: 1.375rem 2.375rem;
+    border-radius: 0.3125rem;
+    line-height: 1.1875rem;
+    margin-right: 1.5rem;
+}
+
+.white-cta-btn-wrapper .cta-get-started:hover {
+    background-color: #eee !important;
+}
+
+.pricing .option .card-body .body-card .content {
+    margin-bottom: 2.5625rem;
+}
+
+.pricing .option .card-body .body-card .cta-btn button {
+    background: #FFFFFF;
+    border: 0.0625rem solid #C9CDD5;
+    border-radius: 0.3125rem;
+    padding: 1.125rem 2.8125rem;
+}
+
+.cta-btn .button-one:hover {
+    background-color: #2F5BEA !important;
+    color: white !important;
+}
+
+
+
+.cta-btn .button-two {
+    border: 0;
+}
+
+.cta-btn .button-two:hover {
+    background-color: #eee !important;
+}
+
+.pricing .option:first-child {
+    border: 0.0625rem solid #E7EAEE;
+    box-shadow: 0rem 0.125rem 0.25rem rgba(44, 46, 48, 0.0504982);
+    border-radius: 0.3125rem;
+}
+
+.pricing .option:last-child {
+    background: #2F5BEA;
+    box-shadow: 0rem 0.125rem 0.25rem rgba(44, 46, 48, 0.0504982);
+    border-radius: 0.3125rem;
+}
+
+.option-wrapper {
+    margin-bottom: 3.4375rem;
+}
+
+.others-feature-wrapper .cta-check-out-features .check-out-features-anchor-text::after {
+    content: '\f0da';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-left: 0.6875rem;
+}
+
+.cta-area {
+    background-image: url(../image/cta-area.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 8.3125rem;
+    margin-bottom: 0.625rem;
+}
+
+.cta-area .cta-area-content {
+    padding-top: 7.375rem;
+}
+
+.cta-area .cta-area-content .cta-title {
+    margin-bottom: 2.0625rem;
+}
+
+.cta-area .cta-area-content .cta-description {
+    margin-bottom: 3rem;
+}
+
+.footer-anchor-text-wrapper {
+    margin-top: 8.4375rem;
+}
+
+.footer-anchor-text .anchor-text a {
+    line-height: 2.4375rem;
+}
+
+.footer-anchor-text-wrapper .footer-anchor-text:nth-child(3) {
+    margin-right: 3.125rem;
+}
+
+.main-footer {
+    margin-bottom: 9.0625rem;
+}
+
+footer {
+    background-color: #F6F8F9;
+}
+
+.status {
+    margin-right: 2.125rem;
+}
+
+.privacy {
+    margin-right: 2.125rem;
+}
+
+footer .left-part,
+footer .right-part {
+    padding: 2.0625rem 0 1.5625rem 0;
+}
+
+.flag {
+    margin-right: 0.9375rem;
+}
+
+.language-select::after {
+    content: '\f077';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-left: 0.5625rem;
+}
+
+.language {
+    margin-right: 4.125rem;
+}
+
+.facebook,
+.twitter {
+    margin-right: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .testimonials-wrapper .testimonials-blocks.col-md-4 {
+        max-width: calc(33.333333% - (2.125rem / 3));
+    }
+
+    .footer-anchor-text-wrapper .footer-anchor-text:nth-child(3) {
+        margin-left: 3.125rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 2.375rem;
+        padding-left: 2.375rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 69.375rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-wrapper {
+        margin-bottom: 4.6875rem;
+    }
+
+    .banner-wrapper {
+        margin-bottom: 6.25rem;
+    }
+
+    .introduce {
+        margin-bottom: 4.6875rem;
+    }
+
+    .how-we-work-wrapper .how-we-work-part-1 .content .title {
+        margin-top: 4.6875rem;
+    }
+
+    .step {
+        padding-bottom: 4.6875rem;
+    }
+
+    .cta-content {
+        padding-top: 4.6875rem;
+        padding-bottom: 4.6875rem;
+    }
+
+    .unique-blocks {
+        margin-top: 4.6875rem;
+        margin-bottom: 4.6875rem;
+    }
+
+    .pricing-wrapper .pricing-introduce .title {
+        padding-top: 4.6875rem;
+    }
+
+    .pricing-wrapper {
+        padding-bottom: 4.6875rem;
+    }
+
+    .footer-anchor-text-wrapper {
+        margin-top: 4.6875rem;
+    }
+
+    .main-footer {
+        margin-bottom: 4.6875rem;
     }
 }
 
