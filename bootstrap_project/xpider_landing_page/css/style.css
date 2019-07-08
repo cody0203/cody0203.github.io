@@ -1307,6 +1307,38 @@ footer .right-part {
     margin-right: 0.9375rem;
 }
 
+.line::before {
+    content: "";
+    background-image: url(../image/square-dot-2.png);
+    height: 73px;
+    width: 158px;
+    position: absolute;
+    top: 20px;
+    left: -86px;
+    z-index: -1;
+}
+
+.line::after {
+    content: "";
+    background-image: url(../image/line.png);
+    height: 55px;
+    width: 69px;
+    position: absolute;
+    bottom: 240px;
+    right: -53px;
+}
+
+.web::before {
+    content: "";
+    background-image: url(../image/big-size-logo.png);
+    background-repeat: no-repeat;
+    width: 691px;
+    height: 583px;
+    position: absolute;
+    top: -61%;
+    left: -35%;
+}
+
 .language-select::after {
     content: '\f077';
     font-family: "Font Awesome 5 Free";
@@ -1397,5 +1429,24 @@ footer .right-part {
 @media (max-width: 576px) {
     .technology-tabs .technology-title {
         display: none;
+    }
+}
+
+@media (max-width: 1228px) {
+    .line::after {
+        background-image: none;
+        content: none;
+    }
+
+    .line::before {
+        background-image: none;
+        content: none;
+    }
+}
+
+@media (max-width: 1200px) {
+    .web::before {
+        content: none;
+        background-image: none;
     }
 }
