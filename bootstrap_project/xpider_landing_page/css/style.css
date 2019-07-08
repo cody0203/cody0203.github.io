@@ -829,6 +829,10 @@ button {
     font-size: 1.75rem;
 }
 
+a:hover {
+    color: #f65c42 !important;
+}
+
 .drop-down-nav-icon {
     margin-left: 0.75rem;
     font-size: 0.9375rem;
@@ -846,6 +850,7 @@ button {
 
 .navbar .navbar-collapse .cta-btn-get-started-now:hover {
     background-color: #2F5BEA;
+    border: 0.125rem solid #2F5BEA;
     color: white !important;
 }
 
@@ -870,7 +875,7 @@ button {
 
 .navbar-light .navbar-nav .nav-link:focus,
 .navbar-light .navbar-nav .nav-link:hover:hover {
-    color: black !important;
+    color: #f65c42 !important;
 }
 
 .banner-wrapper {
@@ -905,12 +910,30 @@ button {
     border-radius: 0.3125rem;
     line-height: 1.1875rem;
     margin-right: 1.5rem;
+    border: 0.125rem solid transparent;
 }
 
-.blue-cta-btn-wrapper .cta-get-started:hover {
+.blue-cta-btn-wrapper .cta-get-started.btn-bg-white {
+    padding: 1.375rem 2.375rem;
+    border-radius: 0.3125rem;
+    line-height: 1.1875rem;
+    margin-right: 1.5rem;
+}
+
+.btn-bg-white {
+    border: 0.125rem solid #2F5BEA !important;
+}
+
+.blue-cta-btn-wrapper .cta-get-started.btn-bg-green:hover {
     background-color: white !important;
     color: #2F5BEA !important;
-    border-color: #2F5BEA;
+    border: 0.125rem solid #2F5BEA;
+}
+
+.btn-bg-white:hover {
+    background-color: #2F5BEA !important;
+    color: white !important;
+    border: 0.125rem solid white !important;
 }
 
 .backgroundColor2F5BEA {
@@ -1205,7 +1228,7 @@ button {
 
 .pricing .option .card-body .body-card .cta-btn button {
     background: #FFFFFF;
-    border: 0.0625rem solid #C9CDD5;
+    border: 0.125rem solid #C9CDD5;
     border-radius: 0.3125rem;
     padding: 1.125rem 2.8125rem;
 }
@@ -1213,6 +1236,7 @@ button {
 .cta-btn .button-one:hover {
     background-color: #2F5BEA !important;
     color: white !important;
+    border: 0.125rem solid #2F5BEA !important;
 }
 
 
@@ -1221,12 +1245,8 @@ button {
     border: 0;
 }
 
-.cta-btn .button-two:hover {
-    background-color: #eee !important;
-}
-
 .pricing .option:first-child {
-    border: 0.0625rem solid #E7EAEE;
+    border: 0.125rem solid #E7EAEE;
     -webkit-box-shadow: 0rem 0.125rem 0.25rem rgba(44, 46, 48, 0.0504982);
     box-shadow: 0rem 0.125rem 0.25rem rgba(44, 46, 48, 0.0504982);
     border-radius: 0.3125rem;
@@ -1248,6 +1268,10 @@ button {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     margin-left: 0.6875rem;
+}
+
+.check-out-features-anchor-text:hover {
+    color: #f65c42 !important;
 }
 
 .cta-area {
