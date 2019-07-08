@@ -949,6 +949,8 @@ button {
 .active-tab {
     border-bottom: 0.125rem solid #2F5BEA;
     z-index: 2;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
 
@@ -976,6 +978,8 @@ button {
 }
 
 .technology-content {
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
 
@@ -1118,6 +1122,7 @@ button {
 
 .testimonials-wrapper .testimonials-blocks {
     border: 0.0625rem solid #E7EAEE;
+    -webkit-box-shadow: 0rem 0.125rem 0.25rem rgba(44, 46, 48, 0.0747283);
     box-shadow: 0rem 0.125rem 0.25rem rgba(44, 46, 48, 0.0747283);
     border-radius: 0.3125rem;
     padding: 1.125rem 2.1875rem 0.6875rem 1.0625rem;
@@ -1222,12 +1227,14 @@ button {
 
 .pricing .option:first-child {
     border: 0.0625rem solid #E7EAEE;
+    -webkit-box-shadow: 0rem 0.125rem 0.25rem rgba(44, 46, 48, 0.0504982);
     box-shadow: 0rem 0.125rem 0.25rem rgba(44, 46, 48, 0.0504982);
     border-radius: 0.3125rem;
 }
 
 .pricing .option:last-child {
     background: #2F5BEA;
+    -webkit-box-shadow: 0rem 0.125rem 0.25rem rgba(44, 46, 48, 0.0504982);
     box-shadow: 0rem 0.125rem 0.25rem rgba(44, 46, 48, 0.0504982);
     border-radius: 0.3125rem;
 }
