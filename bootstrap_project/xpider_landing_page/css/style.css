@@ -763,6 +763,10 @@ button {
     margin-right: 4.375rem;
 }
 
+.navbar-brand:hover {
+    color: black !important;
+}
+
 .navbar-wrapper {
     margin-top: 2.0625rem;
     margin-bottom: 8.1875rem;
@@ -795,10 +799,6 @@ button {
 
 .backgroundColor2F5BEA {
     background-color: #2F5BEA !important;
-}
-
-.dropdown-menu .dropdown-item:hover {
-    color: #54565A !important;
 }
 
 .fontSize17px {
@@ -860,7 +860,6 @@ a:hover {
 
 .navbar-wrapper.small {
     border-bottom: 0.0625rem solid #C9CDD5 !important;
-
 }
 
 .navbar-collapse.small {
@@ -869,7 +868,6 @@ a:hover {
 
 .drop-down-nav-icon.small {
     position: absolute;
-    right: 0;
 }
 
 
@@ -1380,6 +1378,14 @@ footer .right-part {
     margin-right: 0.5rem;
 }
 
+.dropdown-item.active, .dropdown-item:active {
+    background-color: white;
+}
+
+.dropdown-item:hover {
+    color: #f65c42 !important;
+}
+
 @media (min-width: 768px) {
     .testimonials-wrapper .testimonials-blocks.col-md-4 {
         max-width: calc(33.333333% - (2.125rem / 3));
@@ -1451,10 +1457,15 @@ footer .right-part {
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 767px) {
     .technology-tabs .technology-title {
         display: none;
     }
+
+    .drop-down-nav-icon.small {
+        right: 0;
+    }
+    
 }
 
 @media (max-width: 1228px) {
