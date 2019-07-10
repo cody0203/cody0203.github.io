@@ -42,7 +42,7 @@ $('.add-new-task-wrapper').on('click', function (e, card, newTask) {
 
     <div class="btn">
         <button class="add-new-task-btn" onclick="addTask('${$(this).parents('.card').attr('data-id')}')">Add Task</button>
-        <i class="fas fa-times"></i>
+        <i class="fas fa-times close-add-task-box" onclick="closeAddTaskBox()"></i>
     </div>
     </div>
     `;
@@ -65,6 +65,11 @@ $(document).on('click', function (e) {
         $('.add-new-task-wrapper').css('display', 'flex');
     }
 })
+
+function closeAddTaskBox() {
+    $('.add-new-task-box').remove();
+    $('.add-new-task-wrapper').css('display', 'flex');
+}
 
 function addTask(type) {
 
