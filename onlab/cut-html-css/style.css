@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700&display=swap');
+
+
+* {
+    font-family: 'Rubik', sans-serif;
+}
+
+.bgColor2A41E8 {
+    background-color: #2A41E8;
+}
+
+.textColor2A41E8 {
+    color: #2A41E8;
+}
+
+.lineHeight18px {
+    line-height: 1.125rem;
+}
+
+.textColor4B4D4F {
+    color: #4B4D4F;
+}
+
+.fontSize28px {
+font-size: 1.75rem;
+}
+
+.fontSize14px {
+    font-size: 0.875rem;
+}
+
+.fontWeightMedium {
+    font-weight: 500 !important;
+}
+
+.bgColorFF5E14 {
+    background-color: #FF5E14;
+}
+
+.banner {
+    background-image: url(image/banner.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 100px;
+}
+
+.banner-content {
+    padding: 250px;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1254px !important;
+    }
+}
+
+.room-info {
+    border-top: 1px solid black;
+}
+
+.item {
+    margin-bottom: 50px;
+}

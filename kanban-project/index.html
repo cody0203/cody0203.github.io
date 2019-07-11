@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Kanbard</title>
 </head>
@@ -24,7 +25,7 @@
         </div>
     </header>
 
-    <main class="container">
+    <main class="container-wrapper">
         <div class="list">
             <div class="card" data-id="card-1">
                 <div class="card-content-wrapper">
@@ -32,7 +33,7 @@
                         <h4 class="title">Todo</h4>
                         <div class="counting-task">
                             <div class="square">
-                                <div class="number" data-id="card-1-count">         
+                                <div class="number" data-id="card-1-count">
                                 </div>
                             </div>
                         </div>
@@ -45,8 +46,8 @@
                             </div>
 
                             <div class="icons">
-                                <i class="fas fa-pen"></i>
-                                <i class="far fa-trash-alt"></i>
+                                <i id="trash-1" class="fas fa-pen" onclick="kanbard.editTask(this)"></i>
+                                <i class="far fa-trash-alt" onclick="kanbard.deleteTask(this)"></i>
                             </div>
                         </div>
 
@@ -66,17 +67,17 @@
                             <div class="create-time">
                                 7/9/2019, 4:31:23 PM
                             </div>
-                    
+
                             <div class="icons">
-                                <i class="fas fa-pen"></i>
-                                <i class="far fa-trash-alt"></i>
+                                <i class="fas fa-pen" ></i>
+                                <i class="far fa-trash-alt" onclick="kanbard.deleteTask(this)"></i>
                             </div>
                         </div>
-                    
+
                         <div class="task-content">
                             Mobile app login process prototype.
                         </div>
-                    
+
                         <div class="tag-wrapper">
                             <div class="tag">
                                 Low Priority
@@ -85,7 +86,7 @@
                     </div>
 
                     <div class="task-slot"></div>
-                    
+
                     <div class="add-new-task-wrapper no-drag" data-id="card-1-add-new-task">
                         <i class="fas fa-plus-circle"></i>
                         <div class="add-new-task">
@@ -102,58 +103,58 @@
                         <div class="counting-task">
                             <div class="square">
                                 <div class="number" data-id="card-2-count">
-                                    
+
                                 </div>
                             </div>
                         </div>
                     </div>
-            
+
                     <div class="task-wrapper task-slot">
                         <div class="task-header">
                             <div class="create-time">
                                 7/9/2019, 4:31:23 PM
                             </div>
-            
+
                             <div class="icons">
                                 <i class="fas fa-pen"></i>
-                                <i class="far fa-trash-alt"></i>
+                                <i class="far fa-trash-alt" onclick="kanbard.deleteTask(this)"></i>
                             </div>
                         </div>
-            
+
                         <div class="task-content">
                             Mobile app login process prototype.
                         </div>
-            
+
                         <div class="tag-wrapper">
                             <div class="tag">
                                 Low Priority
                             </div>
                         </div>
                     </div>
-            
+
                     <div class="task-wrapper task-slot">
                         <div class="task-header">
                             <div class="create-time">
                                 7/9/2019, 4:31:23 PM
                             </div>
-            
+
                             <div class="icons">
                                 <i class="fas fa-pen"></i>
-                                <i class="far fa-trash-alt"></i>
+                                <i class="far fa-trash-alt" onclick="kanbard.deleteTask(this)"></i>
                             </div>
                         </div>
-            
+
                         <div class="task-content">
                             Mobile app login process prototype.
                         </div>
-            
+
                         <div class="tag-wrapper">
                             <div class="tag">
                                 Low Priority
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="task-slot">
 
                     </div>
@@ -178,53 +179,53 @@
                             </div>
                         </div>
                     </div>
-            
+
                     <div class="task-wrapper task-slot">
                         <div class="task-header">
                             <div class="create-time">
                                 7/9/2019, 4:31:23 PM
                             </div>
-            
+
                             <div class="icons">
                                 <i class="fas fa-pen"></i>
-                                <i class="far fa-trash-alt"></i>
+                                <i class="far fa-trash-alt" onclick="kanbard.deleteTask(this)"></i>
                             </div>
                         </div>
-            
+
                         <div class="task-content">
                             Mobile app login process prototype.
                         </div>
-            
+
                         <div class="tag-wrapper">
                             <div class="tag">
                                 Low Priority
                             </div>
                         </div>
                     </div>
-            
+
                     <div class="task-wrapper task-slot">
                         <div class="task-header">
                             <div class="create-time">
                                 7/9/2019, 4:31:23 PM
                             </div>
-            
+
                             <div class="icons">
                                 <i class="fas fa-pen"></i>
-                                <i class="far fa-trash-alt"></i>
+                                <i class="far fa-trash-alt" onclick="kanbard.deleteTask(this)"></i>
                             </div>
                         </div>
-            
+
                         <div class="task-content">
                             Mobile app login process prototype.
                         </div>
-            
+
                         <div class="tag-wrapper">
                             <div class="tag">
                                 Low Priority
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="task-slot"></div>
 
                     <div class="add-new-task-wrapper" data-id="card-3-add-new-task">
@@ -247,23 +248,23 @@
                             </div>
                         </div>
                     </div>
-            
+
                     <div class="task-wrapper task-slot">
                         <div class="task-header">
                             <div class="create-time">
                                 7/9/2019, 4:31:23 PM
                             </div>
-            
+
                             <div class="icons">
                                 <i class="fas fa-pen"></i>
                                 <i class="far fa-trash-alt"></i>
                             </div>
                         </div>
-            
+
                         <div class="task-content">
                             Mobile app login process prototype.
                         </div>
-            
+
                         <div class="tag-wrapper">
                             <div class="tag">
                                 Low Priority
@@ -276,17 +277,17 @@
                             <div class="create-time">
                                 7/9/2019, 4:31:23 PM
                             </div>
-                    
+
                             <div class="icons">
                                 <i class="fas fa-pen"></i>
-                                <i class="far fa-trash-alt"></i>
+                                <i class="far fa-trash-alt" onclick="kanbard.deleteTask(this)"></i>
                             </div>
                         </div>
-                    
+
                         <div class="task-content">
                             Mobile app login process prototype.
                         </div>
-                    
+
                         <div class="tag-wrapper">
                             <div class="tag">
                                 Low Priority
@@ -299,24 +300,24 @@
                             <div class="create-time">
                                 7/9/2019, 4:31:23 PM
                             </div>
-            
+
                             <div class="icons">
                                 <i class="fas fa-pen"></i>
-                                <i class="far fa-trash-alt"></i>
+                                <i class="far fa-trash-alt" onclick="kanbard.deleteTask(this)"></i>
                             </div>
                         </div>
-            
+
                         <div class="task-content">
                             Mobile app login process prototype.
                         </div>
-            
+
                         <div class="tag-wrapper">
                             <div class="tag">
                                 Low Priority
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="task-slot"></div>
 
                     <div class="add-new-task-wrapper" data-id="card-4-add-new-task">
@@ -356,10 +357,21 @@
                 </div>
             </div>
         </div>
+
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4>Delete confirm</h4>
+                <p>Are you sure to delete this task?</p>
+            </div>
+            <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-gray btn-flat gray">Cancel</a>
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat green  darken-3" id="modal-delete-btn">Delete</a>
+            </div>
+        </div>
     </main>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="js/jquery.clickout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="main.js"></script>
 </body>
 

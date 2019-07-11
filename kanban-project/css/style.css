@@ -230,7 +230,7 @@ main {
 }
 
 .add-new-task-box,
-.new-task-content {
+.new-task-content, .edit-content {
     width: 100%;
     border: 0;
     border-radius: 5px;
@@ -242,21 +242,26 @@ main {
     height: auto;
 }
 
-.new-task-content {
+.new-task-content, .edit-content {
     padding: 10px;
     font-size: 1rem;
     overflow: hidden;
     overflow-wrap: break-word;
     resize: none;
     margin-bottom: 10px;
+    color: #707090;
 }
 
-.add-new-task-box .btn {
+.edit-content {
+    padding-left: 0;
+}
+
+.add-new-task-box .footer {
     display: flex;
     align-items: center;
 }
 
-.add-new-task-btn {
+.add-new-task-btn, .save-task-btn {
     border: 0;
     padding: 5px 10px;
     border-radius: 3px;
@@ -268,16 +273,24 @@ main {
     margin-right: 20px;
 }
 
-.add-new-task-btn:hover {
+.add-new-task-btn:hover, .save-task-btn:hover {
     background-color: #5aac44;
 }
 
-.add-new-task-box .btn i {
+.add-new-task-box .footer i {
     font-size: 1.5rem;
     color: #707090;
     cursor: pointer;
 }
 
-.add-new-task-box .btn i:hover {
+.add-new-task-box .footer i:hover {
     color: #83839f;
+}
+
+#modal-delete-btn {
+    color: white;
+}
+
+.new-task-content {
+    background-color: white;
 }
