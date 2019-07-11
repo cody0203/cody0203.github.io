@@ -27,7 +27,7 @@
 
     <main class="container-wrapper">
         <div class="list">
-            <div class="card" data-id="card-1">
+            <!-- <div class="card" data-id="card-1">
                 <div class="card-content-wrapper">
                     <div class="header no-drag">
                         <h4 class="title">Todo</h4>
@@ -46,30 +46,7 @@
                             </div>
 
                             <div class="icons">
-                                <i id="trash-1" class="fas fa-pen" onclick="kanbard.editTask(this)"></i>
-                                <i class="far fa-trash-alt" onclick="kanbard.deleteTask(this)"></i>
-                            </div>
-                        </div>
-
-                        <div class="task-content">
-                            Mobile app login process prototype.
-                        </div>
-
-                        <div class="tag-wrapper">
-                            <div class="tag">
-                                Low Priority
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="task-wrapper task-slot">
-                        <div class="task-header">
-                            <div class="create-time">
-                                7/9/2019, 4:31:23 PM
-                            </div>
-
-                            <div class="icons">
-                                <i class="fas fa-pen" ></i>
+                                <i class="fas fa-pen" onclick="kanbard.editTask(this)"></i>
                                 <i class="far fa-trash-alt" onclick="kanbard.deleteTask(this)"></i>
                             </div>
                         </div>
@@ -327,30 +304,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="add-new-card">
-                <i class="fas fa-plus-circle"></i>
-                <div class="add-new-task">
-                    Add new list ...
-                </div>
-            </div>
-
-            <div class="add-new-card">
-                <i class="fas fa-plus-circle"></i>
-                <div class="add-new-task">
-                    Add new list ...
-                </div>
-            </div>
-
-            <div class="add-new-card">
-                <i class="fas fa-plus-circle"></i>
-                <div class="add-new-task">
-                    Add new list ...
-                </div>
-            </div>
-
-            <div class="add-new-card">
+            <div class="add-new-card" onclick="kanbard.addNewList(event, this)">
                 <i class="fas fa-plus-circle"></i>
                 <div class="add-new-task">
                     Add new list ...
@@ -358,14 +314,31 @@
             </div>
         </div>
 
-        <div id="modal1" class="modal">
+        <div id="delete-task-modal" class="modal">
             <div class="modal-content">
                 <h4>Delete confirm</h4>
                 <p>Are you sure to delete this task?</p>
             </div>
             <div class="modal-footer">
-                    <a href="#!" class="modal-close waves-effect waves-gray btn-flat gray">Cancel</a>
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat green  darken-3" id="modal-delete-btn">Delete</a>
+                <a href="#!" class="modal-close waves-effect waves-gray btn-flat gray">Cancel</a>
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat green  darken-3"
+                    id="modal-delete-btn">Delete</a>
+            </div>
+        </div>
+
+        <div id="edit-task-modal" class="modal">
+            <div class="modal-content">
+                <h4>Edit task</h4>
+                <div class="edit-content-box">
+
+                    <textarea type="text" class="edit-content" onkeyup="newTaskContentBox(this)"
+                        autofocus value="value text"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-gray btn-flat gray">Cancel</a>
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat green  darken-3"
+                    id="modal-save-btn">Save</a>
             </div>
         </div>
     </main>

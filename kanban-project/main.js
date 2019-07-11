@@ -1,4 +1,6 @@
-$(function () {
+let countList = 1;
+
+$(function() {
     draggingTask();
     countCard();
 });
@@ -23,16 +25,22 @@ function draggingTask() {
         connectWith: '.card-content-wrapper',
         placeholder: 'task-hatch',
 
-        start: function () {
+        start: function(event, ui) {
+            $(ui.item[0]).addClass('dragging');
+
+            let taskHatch = $(this).find('.task-hatch');
+
+            $(taskHatch).height($(ui.item[0]).outerHeight());
         },
 
-        stop: function () {
+        stop: function(event, ui) {
+            $(ui.item[0]).removeClass('dragging');
             countCard();
         }
     })
 }
 
-$('.add-new-task-wrapper').on('click', function (e, card, newTask) {
+function addNewTaskBox(e) {
     let event = window.event || e;
     let inputTaskValue = `
     
@@ -55,24 +63,37 @@ $('.add-new-task-wrapper').on('click', function (e, card, newTask) {
 
 
     e.stopPropagation();
-})
+}
 
+$(document).on('click', function(e) {
 
-$(document).on('click', function (e) {
+    let addNewList = `
+                <div class="add-new-card" onclick="kanbard.addNewList(event, this)">
+                <i class="fas fa-plus-circle"></i>
+                <div class="add-new-task">
+                    Add new list ...
+                </div>
+            </div>
+    `
 
     if (!e.target.closest('.add-new-task-box') && !$(e.target).hasClass('.add-new-task-wrapper')) {
         $('.add-new-task-box').remove();
         $('.add-new-task-wrapper').css('display', 'flex');
     }
-})
+    if (!e.target.closest('.add-new-list-wrapper')) {
+        $('.add-new-list-wrapper').replaceWith(addNewList);
+    }
+});
+
+$(document).on('click', '.add-new-task-wrapper', addNewTaskBox);
 
 let kanbard = {
-    closeAddTaskBox: function () {
+    closeAddTaskBox: function() {
         $('.add-new-task-box').remove();
         $('.add-new-task-wrapper').css('display', 'flex');
 
     },
-    addNewTask: function (type) {
+    addNewTask: function(type) {
         let newTask = `
         <div class="task-wrapper task-slot">
                             <div class="task-header">
@@ -81,7 +102,7 @@ let kanbard = {
                                 </div>
                 
                                 <div class="icons">
-                                    <i class="fas fa-pen"></i>
+                                    <i class="fas fa-pen" onclick="kanbard.editTask(this)"></i>
                                     <i class="far fa-trash-alt" onclick="kanbard.deleteTask(this)"></i>
                                 </div>
                             </div>
@@ -105,61 +126,122 @@ let kanbard = {
         }
         countCard();
     },
-    deleteTask: function (target) {
-        let modal = $('#modal1');
+    deleteTask: function(target) {
+        let modal = $('#delete-task-modal');
         let task = $(target).parents('.task-wrapper');
         modal.modal();
         modal.modal('open');
 
-        $('#modal-delete-btn').on('click', function () {
+        $('#modal-delete-btn').on('click', function() {
             task.remove();
             countCard();
         })
     },
-    editTask: function (target) {
+    editTask: function(target) {
         let task = $(target).parent().parent().siblings('.task-content');
 
-        let tag = $(target).parent().parent().siblings('.tag-wrapper');
         let oldContent = $(task).text();
-        let editContent = `
-        
-        <div class="edit-content-box">
 
-            <textarea type="text" class="edit-content" onkeyup="newTaskContentBox(this)" placeholder="Enter your task"  autofocus value="value text">${oldContent.trim()}</textarea>
+        let modal = $('#edit-task-modal');
+        modal.modal();
+        modal.modal('open');
 
-            <div class="footer">
-                <button class="save-task-btn" onclick="kanbard.saveEditTask(this)">Save</button>
-                <i class="fas fa-times close-add-task-box" onclick="kanbard.closeAddTaskBox()"></i>
+        let editBox = $('.edit-content');
+        editBox.val(oldContent.trim());
+        let len = editBox.val().length;
+        editBox[0].focus();
+        editBox[0].setSelectionRange(len, len);
+
+        $('#modal-save-btn').on('click', function() {
+            $(task).text($(editBox).val())
+        })
+
+    },
+    addNewList: function(e, target) {
+        let newListBox = `
+        <div class="add-new-list-wrapper">
+            <div class="add-new-list-box">
+    
+                <textarea type="text" class="new-task-content" onkeyup="newTaskContentBox(this)" placeholder="Enter your list title" autofocus></textarea>
+
+                <div class="footer">
+                    <button class="add-new-task-btn" onclick="kanbard.addListTask()">Add List</button>
+                    <i class="fas fa-times close-add-list-box""></i>
+                </div>
             </div>
         </div>
         `;
 
-        $(task).replaceWith($(editContent));
-
-        let editBox = $('.edit-content');
-        let len = editBox.val().length;
-        editBox[0].focus();
-        editBox[0].setSelectionRange(len, len);
-        tag.hide();
+        let addNewList = `
+                <div class="add-new-card" onclick="kanbard.addNewList(event, this)">
+                <i class="fas fa-plus-circle"></i>
+                <div class="add-new-task">
+                    Add new list ...
+                </div>
+            </div>
+    `;
+        $('.add-new-list-wrapper').replaceWith(addNewList);
+        $(target).replaceWith(newListBox);
+        e.stopPropagation();
     },
-    saveEditTask: function(target) {
-        let getOldContent = $(target).parent().parent().children('.edit-content');
+    addListTask: function() {
+        let emptyList = `
+        <div class="card" data-id="card-${countList}">
+                <div class="card-content-wrapper ui-sortable">
+                    <div class="header no-drag">
+                        <h4 class="title">${$('.new-task-content').val()}</h4>
+                        <div class="counting-task">
+                            <div class="square">
+                                <div class="number" data-id="card-${countList}-count">0
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-        let editBox = $(target).parent().parent();
+                    <div class="task-slot ui-sortable-handle"></div>
 
-        let newContent = `
-        <div class="task-content">
-            ${$(getOldContent).val()}
-        </div>
+                    <div class="add-new-task-wrapper no-drag" data-id="card-${countList}-add-new-task">
+                        <i class="fas fa-plus-circle"></i>
+                        <div class="add-new-task">
+                            Add new task ...
+                        </div>
+                    </div>
+                </div>
+            </div>
         `;
-        if ($(getOldContent).val() !== "") {
-            $(editBox).replaceWith($(newContent));
-            $('.tag-wrapper').show();    
-        } else {
-            
+
+        let addNewList = `
+                    <div class="add-new-card" onclick="kanbard.addNewList(event, this)">
+                <i class="fas fa-plus-circle"></i>
+                <div class="add-new-task">
+                    Add new list ...
+                </div>
+            </div>
+        `;
+
+        if ($('.new-task-content').val() !== "") {
+            $('.add-new-list-wrapper').replaceWith(emptyList);
+            draggingTask();
+            countList++;
+            $(addNewList).insertAfter($('.card').last());
         }
+    },
+    closeAddListBox: function() {
+
+        let addNewList = `
+                    <div class="add-new-card" onclick="kanbard.addNewList(event, this)">
+                <i class="fas fa-plus-circle"></i>
+                <div class="add-new-task">
+                    Add new list ...
+                </div>
+            </div>
+        `;
+        ($(this).parents('.add-new-list-wrapper')).replaceWith(addNewList);
     }
 }
+
+$(document).on('click', '.close-add-list-box', kanbard.closeAddListBox)
+
 
 function newTaskContentBox(area) {
     area.style.height = "0px";

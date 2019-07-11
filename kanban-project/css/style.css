@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
-
 * {
     box-sizing: border-box;
-    font-family: 'Roboto',
-        sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: normal;
 }
@@ -77,7 +75,7 @@ main {
 
 .card {
     background-color: #F3F3FF;
-    min-width: 280px;
+    width: 280px;
     margin-right: 50px;
     overflow: auto;
     background: #F3F3FF;
@@ -85,11 +83,21 @@ main {
     border-radius: 5px;
     height: fit-content;
     max-height: 650px;
+    position: static;
 }
 
-/* .card:first-child {
-    margin-left: 50px;
-} */
+.add-new-list-wrapper {
+    width: 280px;
+    margin-right: 50px;
+    box-shadow: 0px 0px 10px #D2D7E0;
+    height: fit-content;
+}
+
+.add-new-list-box {
+    width: calc(100% - 20px);
+    margin: auto;
+    padding: 10px 0;
+}
 
 .add-new-card {
     min-width: 280px;
@@ -102,6 +110,7 @@ main {
     padding: 5px;
     cursor: pointer;
     margin-right: 50px;
+    margin: .5rem 0 1rem 0;
 }
 
 .add-new-card:last-child {
@@ -184,6 +193,7 @@ main {
     color: #707090;
     max-width: calc(100% - 43px);
     margin-bottom: 16px;
+    overflow-wrap: break-word;
 }
 
 .tag-wrapper {
@@ -221,6 +231,12 @@ main {
     color: rgba(50, 50, 93, 0.5);
 }
 
+.add-new-list-wrapper {
+    margin: .5rem 0 1rem 0;
+    margin-right: 50px;
+    border-radius: 5px;
+}
+
 .task-hatch {
     background-image: url(../image/hatch-bg.png);
     border: 1px solid #DBDCE3;
@@ -230,7 +246,8 @@ main {
 }
 
 .add-new-task-box,
-.new-task-content, .edit-content {
+.new-task-content,
+.edit-content {
     width: 100%;
     border: 0;
     border-radius: 5px;
@@ -238,11 +255,13 @@ main {
     outline: none;
 }
 
-.add-new-task-box {
+.add-new-task-box,
+.add-new-list-box {
     height: auto;
 }
 
-.new-task-content, .edit-content {
+.new-task-content,
+.edit-content {
     padding: 10px;
     font-size: 1rem;
     overflow: hidden;
@@ -256,12 +275,14 @@ main {
     padding-left: 0;
 }
 
-.add-new-task-box .footer {
+.add-new-task-box .footer,
+.add-new-list-box .footer {
     display: flex;
     align-items: center;
 }
 
-.add-new-task-btn, .save-task-btn {
+.add-new-task-btn,
+.save-task-btn {
     border: 0;
     padding: 5px 10px;
     border-radius: 3px;
@@ -273,24 +294,43 @@ main {
     margin-right: 20px;
 }
 
-.add-new-task-btn:hover, .save-task-btn:hover {
+.add-new-task-btn:hover,
+.save-task-btn:hover {
     background-color: #5aac44;
 }
 
-.add-new-task-box .footer i {
+.add-new-task-box .footer i,
+.add-new-list-box .footer i {
     font-size: 1.5rem;
     color: #707090;
     cursor: pointer;
 }
 
-.add-new-task-box .footer i:hover {
+.add-new-task-box .footer i:hover,
+.add-new-list-box .footer i:hover {
     color: #83839f;
 }
 
-#modal-delete-btn {
+#modal-delete-btn,
+#modal-save-btn {
     color: white;
 }
 
 .new-task-content {
     background-color: white;
+}
+
+.edit-content {
+    background-color: white;
+    padding-left: 10px;
+    min-height: 0px;
+}
+
+#edit-task-modal,
+#edit-task-modal .modal-footer {
+    background-color: #F3F3FF;
+}
+
+.card .card-content-wrapper .task-wrapper.dragging {
+    transform: rotate(5deg)
 }
