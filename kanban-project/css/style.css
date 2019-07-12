@@ -249,7 +249,8 @@ main {
 
 .add-new-task-box,
 .new-task-content,
-.edit-content {
+.edit-content,
+.new-list-title {
     width: 100%;
     border: 0;
     border-radius: 5px;
@@ -263,7 +264,8 @@ main {
 }
 
 .new-task-content,
-.edit-content {
+.edit-content,
+.new-list-title {
     padding: 10px;
     font-size: 1rem;
     overflow: hidden;
@@ -318,7 +320,8 @@ main {
     color: white;
 }
 
-.new-task-content {
+.new-task-content,
+.new-list-title {
     background-color: white;
 }
 
