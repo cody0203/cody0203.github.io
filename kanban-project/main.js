@@ -1,9 +1,64 @@
-let countList = 1;
+// function getCardData() {
+//     let list = []
+//     $(".card").map(function() { list.push($(this).attr("data-id")); }).get();
+//     COUNT_LIST.push(list.filter((item, index) => {
+//         if (list.indexOf(item) == index) {
+//             return item;
+//         }
+//     }));
+// }
+
+let DB = {
+    getListData: function() {
+        if (typeof(Storage) !== "undefined") {
+            let list;
+            try {
+                list = JSON.parse(localStorage.getItem('card')) || {};
+            } catch (error) {
+                list = {};
+            }
+
+            return list;
+        } else {
+            alert('Sorry! No Web Storage support...');
+            return {};
+        }
+    },
+    setListData: function(data) {
+        localStorage.setItem('card', JSON.stringify(data));
+    },
+    getCountData: function() {
+        if (typeof(Storage) !== "undefined") {
+            let list;
+            try {
+                list = JSON.parse(localStorage.getItem('count')) || {};
+            } catch (error) {
+                list = {};
+            }
+
+            return list;
+        } else {
+            alert('Sorry! No Web Storage support...');
+            return {};
+        }
+    },
+    setCountData: function(data) {
+        localStorage.setItem('count', JSON.stringify(data));
+    },
+}
 
 $(function() {
     draggingTask();
     countCard();
+    // getCardData();
+    kanbard.renderList(DB.getListData());
+    // COUNT_LIST = DB.getListData();
+    kanbard.countList();
+    kanbard.getList();
 });
+
+let COUNT_LIST = [];
+let countList;
 
 function countCard() {
     let listCount = $('.card').length;
@@ -88,6 +143,18 @@ $(document).on('click', function(e) {
 $(document).on('click', '.add-new-task-wrapper', addNewTaskBox);
 
 let kanbard = {
+    countList: function() {
+        if (!Number(DB.getCountData())) {
+            countList = 1;
+        } else {
+            countList = DB.getCountData();
+        }
+    },
+    getList: function() {
+        if (Object(DB.getListData()).length !== 0) {
+            COUNT_LIST = DB.getListData()
+        }
+    },
     closeAddTaskBox: function() {
         $('.add-new-task-box').remove();
         $('.add-new-task-wrapper').css('display', 'flex');
@@ -185,14 +252,15 @@ let kanbard = {
         e.stopPropagation();
     },
     addListTask: function() {
+        type = `card-${countList}`;
         let emptyList = `
-        <div class="card" data-id="card-${countList}">
+        <div class="card" data-id="${type}">
                 <div class="card-content-wrapper ui-sortable">
                     <div class="header no-drag">
                         <h4 class="title">${$('.new-task-content').val()}</h4>
                         <div class="counting-task">
                             <div class="square">
-                                <div class="number" data-id="card-${countList}-count">0
+                                <div class="number" data-id="${type}-count">0
                                 </div>
                             </div>
                         </div>
@@ -200,7 +268,7 @@ let kanbard = {
 
                     <div class="task-slot ui-sortable-handle"></div>
 
-                    <div class="add-new-task-wrapper no-drag" data-id="card-${countList}-add-new-task">
+                    <div class="add-new-task-wrapper no-drag" data-id="${type}-add-new-task">
                         <i class="fas fa-plus-circle"></i>
                         <div class="add-new-task">
                             Add new task ...
@@ -222,8 +290,11 @@ let kanbard = {
         if ($('.new-task-content').val() !== "") {
             $('.add-new-list-wrapper').replaceWith(emptyList);
             draggingTask();
+            DB.setCountData(countList);
             countList++;
             $(addNewList).insertAfter($('.card').last());
+            COUNT_LIST.push(type);
+            DB.setListData(COUNT_LIST);
         }
     },
     closeAddListBox: function() {
@@ -237,11 +308,42 @@ let kanbard = {
             </div>
         `;
         ($(this).parents('.add-new-list-wrapper')).replaceWith(addNewList);
+    },
+    renderList: function(list) {
+        let listRender = []
+        if (list !== [] || list !== "undefined") {
+            for (let i in list) {
+                listRender += `
+                <div class="card" data-id="${list[i]}">
+                    <div class="card-content-wrapper ui-sortable">
+                        <div class="header no-drag">
+                            <h4 class="title">${$('.new-task-content').val()}</h4>
+                            <div class="counting-task">
+                                <div class="square">
+                                    <div class="number" data-id="${list[i]}-count">0
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="task-slot ui-sortable-handle"></div>
+
+                        <div class="add-new-task-wrapper no-drag"   data-id="${list[i]}-add-new-task">
+                            <i class="fas fa-plus-circle"></i>
+                            <div class="add-new-task">
+                            Add new task ...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `;
+            }
+            $('.list').prepend(listRender);
+        }
     }
 }
 
 $(document).on('click', '.close-add-list-box', kanbard.closeAddListBox)
-
 
 function newTaskContentBox(area) {
     area.style.height = "0px";

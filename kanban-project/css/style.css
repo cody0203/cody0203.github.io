@@ -137,13 +137,15 @@ main {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 16px;
+    word-break: break-all;
+    align-items: end;
 }
 
 .card-content-wrapper .title {
     color: #707090;
     font-size: 1.25rem;
     text-transform: uppercase;
-    margin: 0 0 0 4px;
+    margin: 0 10px 0 4px;
 }
 
 .card-content-wrapper .square {
