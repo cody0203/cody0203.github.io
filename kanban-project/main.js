@@ -92,8 +92,16 @@ $(function () {
     kanbard.getTaskContent();
 
     COUNT_LIST.forEach(function(type) {
-        kanbard.addListToKanbard(type, LIST_TITLE[type]['title'])
-        kanbard.addTaskToList(type, LIST_TITLE[type]['task'])
+        kanbard.addListToKanbard(type, LIST_TITLE[type]['title']);
+        
+        if (LIST_TITLE[type]['task'] == undefined) {
+            LIST_TITLE[type]['task'] = [];
+        }
+        if (LIST_TITLE[type]['task'] !== undefined) {
+            for (let i in LIST_TITLE[type]['task']) {
+                kanbard.addTaskToList(type, LIST_TITLE[type]['task'][i]);
+            }
+        }
     })
 });
 
@@ -105,7 +113,7 @@ let TASK_CONTENT;
 function countCard() {
     let listCount = $('.card').length;
     for (let i = 1; i <= listCount; i++) {
-        $(`.number[data-id="card-${i}-count"]`).text($(`.card[data-id="card-${i}"] .task-wrapper`).length)
+        $(`.number[data-id="card_${i}_count"]`).text($(`.card[data-id="card_${i}"] .task-wrapper`).length)
     }
 }
 
@@ -211,9 +219,11 @@ let kanbard = {
         let taskContent = $('.new-task-content').val();
         let timeCreate = new Date();
         
-
+        if (LIST_TITLE[type]['task'] == undefined) {
+            LIST_TITLE[type]['task'] = [];
+        }
         if ($('.new-task-content').val().trim() !== "") {
-            LIST_TITLE[type]['task'] = taskContent;
+            LIST_TITLE[type]['task'].push(taskContent);
             DB.setListContent(LIST_TITLE);
             kanbard.addTaskToList(type, taskContent);
             $('.add-new-task-box').remove();
@@ -222,10 +232,12 @@ let kanbard = {
         countCard();
     },
     addTaskToList: function(type, taskContent) {
+        let createTime = new Date();
         let newTask = `
         <div class="task-wrapper task-slot" data-id="${type}">
             <div class="task-header">
                 <div class="create-time">
+                    ${createTime.toLocaleString()}
                 </div>
 
                 <div class="icons">
@@ -245,6 +257,7 @@ let kanbard = {
             </div>
         </div>`;
         $(`.add-new-task-wrapper[data-id="${type}_add_new_task"]`).before(newTask);
+        countCard();
     },
     deleteTask: function (target) {
         let modal = $('#delete-task-modal');
@@ -377,44 +390,6 @@ let kanbard = {
         `;
         ($(this).parents('.add-new-list-wrapper')).replaceWith(addNewList);
     },
-    // renderList: function (list) {
-    //     let listRender = [];
-    //     // let listTitle = DB.getListContent();
-    //     // console.log(listTitle[1].card_2);
-
-    //     if (list !== [] || list !== "undefined") {
-    //         for (let i in list) {
-
-    //             console.log(DB.getListContent()[list[i]]);
-
-    //             listRender += `
-    //             <div class="card" data-id="${list[i]}">
-    //                 <div class="card-content-wrapper ui-sortable">
-    //                     <div class="header no-drag">
-    //                         <h4 class="title">${DB.getListContent()[list[i]]["title"]}</h4>
-    //                         <div class="counting-task">
-    //                             <div class="square">
-    //                                 <div class="number" data-id="${list[i]}_count">0
-    //                                 </div>
-    //                             </div>
-    //                         </div>
-    //                     </div>
-
-    //                     <div class="task-slot ui-sortable-handle"></div>
-
-    //                     <div class="add-new-task-wrapper no-drag"   data-id="${list[i]}_add_new_task">
-    //                         <i class="fas fa-plus-circle"></i>
-    //                         <div class="add-new-task">
-    //                         Add new task ...
-    //                         </div>
-    //                     </div>
-    //                 </div>
-    //             </div>
-    //             `;
-    //         }
-    //         $('.list').prepend(listRender);
-    //     }
-    // }
 }
 
 $(document).on('click', '.close-add-list-box', kanbard.closeAddListBox)
