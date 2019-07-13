@@ -22,4 +22,10 @@ function changeUi() {
     }
 
     $('.speakers-profile .box').height(Math.max($('.speaker-one .box').height(), $('.speaker-two .box').height()));
+
+    if (window.matchMedia && window.matchMedia('(max-width: 767px)').matches) {
+        $('.team-circle img').attr('src', 'image/team3.png')
+    } else {
+        $('.team-circle img').attr('src', 'image/team2.png')
+    }
 }

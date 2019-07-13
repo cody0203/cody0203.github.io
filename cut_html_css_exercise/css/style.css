@@ -479,16 +479,6 @@ button {
     .what-will-you-learn {
         padding-top: 70px;
     }
-
-    .participant-box::before {
-        content: url(../image/line3.png);
-        position: absolute;
-        top: -77px !important;
-        left: -10px !important;
-        transform: rotate(-11deg) !important;
-        z-index: -1;
-    }
-
 }
 
 @media (max-width: 576px) {
@@ -514,27 +504,8 @@ button {
     }
 }
 
-.participant-box::before {
-    content: url(../image/line3.png);
-    position: absolute;
-    top: -111px;
-    left: -26px;
-    transform: rotate(-9deg);
-}
-
-@media (max-width: 1024px) {
-    .participant-box::before {
-        content: url(../image/line3.png);
-        position: absolute;
-        top: -108px;
-        left: -18px;
-        transform: rotate(-11deg);
-        z-index: -1;
-    }
-}
-
 @media (max-width: 767px) {
-    .participant-box::before {
-        content: none;
+    .team-circle {
+        top: 51%;
     }
 }
