@@ -163,7 +163,6 @@ main {
 
 .task-wrapper {
     width: 100%;
-    min-height: 120px;
     background: white;
     border-radius: 5px;
     padding: 14px 10px 14px 10px;
@@ -184,6 +183,7 @@ main {
 .task-wrapper .icons {
     font-size: 0.875rem;
     cursor: pointer;
+    display: none;
 }
 
 .task-wrapper .icons i:first-child {
@@ -338,4 +338,12 @@ main {
 
 .card .card-content-wrapper .task-wrapper.dragging {
     transform: rotate(5deg)
+}
+
+#edit-task-modal {
+    max-width: 500px;
+}
+
+.task-wrapper:hover .icons {
+    display: block;
 }

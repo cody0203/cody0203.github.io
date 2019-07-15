@@ -1,13 +1,3 @@
-// function getCardData() {
-//     let list = []
-//     $(".card").map(function() { list.push($(this).attr("data-id")); }).get();
-//     COUNT_LIST.push(list.filter((item, index) => {
-//         if (list.indexOf(item) == index) {
-//             return item;
-//         }
-//     }));
-// }
-
 let DB = {
     getListData: function () {
         if (typeof (Storage) !== "undefined") {
@@ -63,24 +53,6 @@ let DB = {
     setListContent: function (data) {
         localStorage.setItem('list', JSON.stringify(data));
     },
-    getTaskContent: function (data) {
-        if (typeof (Storage) !== "undefined") {
-            let list;
-            try {
-                list = JSON.parse(localStorage.getItem('task-content')) || {};
-            } catch (error) {
-                list = {};
-            }
-
-            return list;
-        } else {
-            alert('Sorry! No Web Storage support...');
-            return {};
-        }
-    },
-    setTaskContent: function (data) {
-        localStorage.setItem('task-content', JSON.stringify(data));
-    },
 }
 
 $(function () {
@@ -89,17 +61,17 @@ $(function () {
     kanbard.countList();
     kanbard.getList();
     kanbard.getListContent();
-    kanbard.getTaskContent();
+
 
     COUNT_LIST.forEach(function(type) {
         kanbard.addListToKanbard(type, LIST_TITLE[type]['title']);
-        
+
         if (LIST_TITLE[type]['task'] == undefined) {
             LIST_TITLE[type]['task'] = [];
         }
         if (LIST_TITLE[type]['task'] !== undefined) {
             for (let i in LIST_TITLE[type]['task']) {
-                kanbard.addTaskToList(type, LIST_TITLE[type]['task'][i]);
+                kanbard.addTaskToList(type, LIST_TITLE[type]['task'][i]['taskOrder'], LIST_TITLE[type]['task'][i]['time']);
             }
         }
     })
@@ -108,7 +80,6 @@ $(function () {
 let COUNT_LIST;
 let countList;
 let LIST_TITLE;
-let TASK_CONTENT;
 
 function countCard() {
     let listCount = $('.card').length;
@@ -204,12 +175,6 @@ let kanbard = {
             LIST_TITLE = DB.getListContent();
         }
     },
-    getTaskContent: function () {
-        TASK_CONTENT = [];
-        if (!Object(DB.getTaskContent()).length == 0) {
-            TASK_CONTENT = DB.getTaskContent();
-        }
-    },
     closeAddTaskBox: function () {
         $('.add-new-task-box').remove();
         $('.add-new-task-wrapper').css('display', 'flex');
@@ -217,27 +182,29 @@ let kanbard = {
     },
     addNewTask: function (type) {
         let taskContent = $('.new-task-content').val();
-        let timeCreate = new Date();
-        
+        let createTime = new Date().toLocaleString();
+
         if (LIST_TITLE[type]['task'] == undefined) {
             LIST_TITLE[type]['task'] = [];
         }
-        if ($('.new-task-content').val().trim() !== "") {
-            LIST_TITLE[type]['task'].push(taskContent);
+        if (taskContent.trim() !== "") {
+            LIST_TITLE[type]['task'].push({
+                taskOrder: taskContent,
+                time: createTime
+            });
             DB.setListContent(LIST_TITLE);
-            kanbard.addTaskToList(type, taskContent);
+            kanbard.addTaskToList(type, taskContent, createTime);
             $('.add-new-task-box').remove();
             $('.add-new-task-wrapper').css('display', 'flex');
         }
         countCard();
     },
-    addTaskToList: function(type, taskContent) {
-        let createTime = new Date();
+    addTaskToList: function(type, taskContent, createTime) {
         let newTask = `
         <div class="task-wrapper task-slot" data-id="${type}">
             <div class="task-header">
                 <div class="create-time">
-                    ${createTime.toLocaleString()}
+                    ${createTime}
                 </div>
 
                 <div class="icons">
@@ -250,11 +217,6 @@ let kanbard = {
                 ${taskContent}
             </div>
 
-            <div class="tag-wrapper">
-                <div class="tag">
-                    Low Priority
-                </div>
-            </div>
         </div>`;
         $(`.add-new-task-wrapper[data-id="${type}_add_new_task"]`).before(newTask);
         countCard();
@@ -271,7 +233,8 @@ let kanbard = {
             let dataID = $(listType).attr('data-id')
             let taskPosition = listType.index((`.task-wrapper[data-id="${dataID}"]`));
 
-            console.log(taskPosition, listType, dataID);
+            LIST_TITLE[dataID]['task'].splice(taskPosition, 1);
+            DB.setListContent(LIST_TITLE);
             task.remove();
             countCard();
         })
@@ -291,8 +254,20 @@ let kanbard = {
         editBox[0].focus();
         editBox[0].setSelectionRange(len, len);
 
+        $('#modal-save-btn').off('click')
         $('#modal-save-btn').on('click', function () {
+            let editTime = new Date().toLocaleString()
             $(task).text($(editBox).val())
+            let taskTarget = $(target).parent().parent().parent();
+            $(taskTarget).find('.create-time').text(editTime);
+            let listType = task.parent().parent().parent();
+            let dataID = $(listType).attr('data-id')
+            let taskPosition = taskTarget.index((`.task-wrapper[data-id="${dataID}"]`));
+            LIST_TITLE[dataID]['task'][taskPosition] = {
+                ['taskOrder']:  $(editBox).val(),
+                ['time']: editTime
+            };
+            DB.setListContent(LIST_TITLE);
         })
 
     },
