@@ -264,6 +264,10 @@ main {
     border-radius: 5px;
 }
 
+.task-wrapper:hover{
+    cursor: move;
+}
+
 .add-new-task-box,
 .new-task-content,
 .edit-content,

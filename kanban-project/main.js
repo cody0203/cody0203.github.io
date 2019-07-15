@@ -158,7 +158,7 @@ function addNewTaskBox(e) {
     
     <div class="add-new-task-box">
     
-        <textarea type="text" class="new-task-content" onkeyup="newTaskContentBox(this)" placeholder="Enter your task" autofocus></textarea>
+        <textarea type="text" class="new-task-content" onkeyup="newTaskContentBox(this)" placeholder="Enter your task"></textarea>
 
         <div class="footer">
             <button class="add-new-task-btn" onclick="kanbard.addNewTask('${$(this).parents('.card').attr('data-id')}')">Add Task</button>
@@ -166,17 +166,15 @@ function addNewTaskBox(e) {
         </div>
     </div>
     `;
-
     $('.add-new-task-box').remove();
     $('.add-new-task-wrapper').css('display', 'flex');
-
     $(inputTaskValue).insertAfter(this);
     $(this).css('display', 'none');
+    $('.new-task-content').focus();
     e.stopPropagation();
 }
 
 $(document).on('click', function (e) {
-
     let addNewList = `
                 <div class="add-new-card" onclick="kanbard.addNewList(event, this)">
                 <i class="fas fa-plus-circle"></i>
@@ -220,12 +218,10 @@ let kanbard = {
     closeAddTaskBox: function () {
         $('.add-new-task-box').remove();
         $('.add-new-task-wrapper').css('display', 'flex');
-
     },
     addNewTask: function (type) {
         let taskContent = $('.new-task-content').val();
         let createTime = new Date().toLocaleString();
-
         if (LIST_TITLE[type]['task'] == undefined) {
             LIST_TITLE[type]['task'] = [];
         }
@@ -307,7 +303,7 @@ let kanbard = {
             $(task).text($(editBox).val())
             let taskTarget = $(target).parent().parent().parent();
             $(taskTarget).find('.create-time').text(editTime);
-            let listType = task.parent().parent().parent();
+            let listType = task.parent().parent().parent().parent();
             let dataID = $(listType).attr('data-id')
             let taskPosition = taskTarget.index(`.task-wrapper[data-id="${dataID}"]`);
             LIST_TITLE[dataID]['task'][taskPosition] = {
@@ -315,6 +311,7 @@ let kanbard = {
                 ['time']: editTime
             };
             DB.setListContent(LIST_TITLE);
+            console.log(taskTarget, listType)
         })
 
     },
