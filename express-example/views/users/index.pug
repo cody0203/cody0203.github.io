@@ -1,0 +1,14 @@
+h1 Users
+a(href="/users/create", title="title") Create New User 
+form(action="users/search" method="GET")
+    if q
+        input(type="text" placeholder="Searching" id="search-input" name="q" value=`${q}`)
+    else
+        input(type="text" placeholder="Searching" id="search-input" name="q")
+    button Search
+ul
+each user in users
+    li= user.name
+
+if !existedName && q
+    p Not found
