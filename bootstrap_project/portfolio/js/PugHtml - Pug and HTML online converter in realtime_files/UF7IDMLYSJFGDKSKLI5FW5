@@ -1,0 +1,33 @@
+function _adroll__(){
+
+    var rnd = Math.random(); var r = rnd*10000000000000000;
+    var randomNo = new String(rnd); var randomNoString = randomNo.substring(2, 11);
+
+    var content = unescape('%3cdiv%20class%3d%22adroll-block%22%3e%0a%20%20%20%20%0a%3cscript%3e%0a%20%20%20%20%28function%28%29%20%7b%0a%20%20%20%20%20%20%20%20//%20We%20set%20the%20clicktag%20on%20the%20window%2c%20which%20is%20then%20accessed%20by%20the%20child%20iframe%20via%20parent.window.adroll_clickTag%0a%20%20%20%20%20%20%20%20var%20_adroll_clickTag%20%3d%20__adroll.format_macros%28%22http%3a//d.adroll.com/r/ISRFVJ4CYZEJLCRYPCOWW4/7ZOAJPJYOVH23CASOPBYO2/fcf0e15e75648f4f6b8372152a5621a0.re%22%2c%20true%2c%20true%2c%20false%29%3b%0a%0a%20%20%20%20%20%20%20%20//%20ad%20file%0a%20%20%20%20%20%20%20%20var%20_src%20%3d%20%22https%3a//s.adroll.com/a/5SR/LZY/5SRLZY4L5BA6ZMK7BQHNJU/5SRLZY4L5BA6ZMK7BQHNJU.html%22%3b%0a%0a%20%20%20%20%20%20%20%20//%20dimensions%0a%20%20%20%20%20%20%20%20var%20_width%20%3d%20728%3b%0a%20%20%20%20%20%20%20%20var%20_height%20%3d%2090%3b%0a%0a%20%20%20%20%20%20%20%20document.write%28%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22%3ciframe%20src%3d%5c%22%22%20%2b%20_src%20%2b%20%22%3fclickTag%3d%22%20%2b%20encodeURIComponent%28_adroll_clickTag%29%20%2b%20%22%5c%22%20%22%20%2b%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22width%3d%5c%22%22%20%2b%20_width%20%2b%20%22%5c%22%20%22%20%2b%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22height%3d%5c%22%22%20%2b%20_height%20%2b%20%22%5c%22%20%22%20%2b%0a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22seamless%3d%5c%22seamless%5c%22%20frameborder%3d%5c%220%5c%22%20scrolling%3d%5c%22no%5c%22%3e%3c/iframe%3e%22%0a%20%20%20%20%20%20%20%20%29%3b%0a%20%20%20%20%7d%29%28%29%3b%0a%3c/script%3e%0a%0a%0a%3cscript%3e%28function%28%29%20%7bdocument.write%28%27%3csc%27%2b%27ript%20type%3d%22text/javascript%22%20src%3d%22%27%20%2b%20%28__adroll._secure%28%29%20%3f%20%22https%3a//c.betrad.com%22%20%3a%20%22http%3a//c.betrad.com%22%29%20%2b%20%27/durly.js%3f%3bad_w%3d%5bADROLL_WIDTH%5d%3bad_h%3d%5bADROLL_HEIGHT%5d%3becaid%3d%5bECAID%5d%3bcoid%3d412%3bnid%3d890%3b%22%3e%3c/scr%27%2b%27ipt%3e%27%29%3b%7d%28%29%29%3b%3c/script%3e%0a%3c/div%3e%0a');
+    content = content.replace(/\[timestamp\]/gi, r);
+    content = content.replace(/\[randomNo\]/gi, randomNoString);
+    content = content.replace(/\[ADROLL_WIDTH\]/gi, adroll_width);
+    content = content.replace(/\[ADROLL_HEIGHT\]/gi, adroll_height);
+    content = content.replace(/\[ECAID\]/gi, "UF7IDMLYSJFGDKSKLI5FW5_5SRLZY4L5BA6ZMK7BQHNJU");
+    content = content.replace(/\[CAMPAIGN_EID\]/gi, "CSKZNGX5WRBX3LNIFVUQDY");
+    content = content.replace(/\[AD_EID\]/gi, "5SRLZY4L5BA6ZMK7BQHNJU");
+    content = content.replace(/\[ADGROUP_EID\]/gi, "UF7IDMLYSJFGDKSKLI5FW5");
+    content = content.replace(/\[PLACEMENT\]/gi, "7ZOAJPJYOVH23CASOPBYO2");
+
+    var _dynurl = __adroll.format_macros("http://d.adroll.com/r/ISRFVJ4CYZEJLCRYPCOWW4/7ZOAJPJYOVH23CASOPBYO2/fcf0e15e75648f4f6b8372152a5621a0.dy", true, true, true);
+    content = content.replace(/\[ADRClickUrl\]/gi, escape(_dynurl));
+    content = content.replace(/\[ADRClickUrl_UNESC\]/gi, _dynurl);
+    content = content.replace(/\[ADRClickUrl_ESC\]/gi, escape(_dynurl));
+
+    if (__adroll._secure()) var eurl = "http://d.adroll.com/r/ISRFVJ4CYZEJLCRYPCOWW4/7ZOAJPJYOVH23CASOPBYO2/fcf0e15e75648f4f6b8372152a5621a0.ev";
+    else var eurl = "http://d.adroll.com/r/ISRFVJ4CYZEJLCRYPCOWW4/7ZOAJPJYOVH23CASOPBYO2/fcf0e15e75648f4f6b8372152a5621a0.ev";
+    var engageurl = __adroll.format_macros(eurl, false, true, false);
+    content = content.replace(/\[ADREngageUrl\]/gi, escape(engageurl));
+    content = content.replace(/\[ADREngageUrl_UNESC\]/gi, engageurl);
+    content = content.replace(/\[ADREngageUrl_ESC\]/gi, escape(engageurl));
+
+        content = content + __adroll.generate_link(0, "https://www.adroll.com/about/partners?page=index", "Site", "728");
+        __adroll.set_cookie("ISRFVJ4CYZEJLCRYPCOWW4", "7ZOAJPJYOVH23CASOPBYO2", "UF7IDMLYSJFGDKSKLI5FW5", "5SRLZY4L5BA6ZMK7BQHNJU");
+    document.write(content);
+}
+_adroll__();
