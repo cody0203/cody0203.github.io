@@ -1,0 +1,13 @@
+extends ../../layouts/common
+
+block content
+    .container.mt-3
+        h1.text-uppercase=product.name
+        .card-deck.mt-5
+            .card
+                img.card-img-top.img-fluid(src=product.image, alt='...')
+                .card-body
+                h5.card-title=product.name
+                p.card-text=product.description
+                p.card-text
+                    small.text-muted=product.price

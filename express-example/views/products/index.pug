@@ -1,0 +1,16 @@
+extends ../../layouts/common
+
+block content
+    .container.mt-3
+        h1 Products
+            a.btn.btn-primary.ml-3(href="products/create") Create new product
+        .card-deck.mt-5.row
+            each product in products
+                a.col-md-3(href=`/products/${product.id}`)
+                    .card
+                        img.card-img-top.img-fluid(src=product.image, alt='...')
+                        .card-body
+                        h5.card-title=product.name
+                        p.card-text=product.description
+                        p.card-text
+                            small.text-muted=product.price

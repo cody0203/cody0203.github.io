@@ -12,5 +12,35 @@
       "phone": "0913214568",
       "id": "RZWgNb7R0"
     }
+  ],
+  "products": [
+    {
+      "name": "Cat 1",
+      "image": "http://placekitten.com/g/1000/1200",
+      "description": "It's a cat",
+      "price": "10",
+      "id": "XkKdoytV5"
+    },
+    {
+      "name": "Cat 2",
+      "image": "http://placekitten.com/g/1000/1200",
+      "description": "It's another cat",
+      "price": "20",
+      "id": "qm82NZdKI"
+    },
+    {
+      "name": "Cat 3",
+      "image": "http://placekitten.com/g/1000/1200",
+      "description": "It's another another cat",
+      "price": "30",
+      "id": "I-7lSzwYL"
+    },
+    {
+      "name": "Cat 4",
+      "image": "http://placekitten.com/g/1000/1200",
+      "description": "It's another another another cat",
+      "price": "40",
+      "id": "QwES6hA8E"
+    }
   ]
 }
