@@ -38,8 +38,10 @@ module.exports = {
         })
     },
     postCreate: (req, res) => {
-        req.body.id = shortid.generate();
-        db.get('users').push(req.body).write();
+        let request = req;
+        request.body.id = shortid.generate();
+        request.body.avatar = request.file.path.split("/").slice(1).join("/");
+        db.get('users').push(request.body).write();
         res.redirect('/users');
     }
 };

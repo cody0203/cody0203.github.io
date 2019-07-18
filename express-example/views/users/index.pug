@@ -10,14 +10,21 @@ block content
                 button.btn.btn-primary.ml-3 Search
             table.table.table-hover
                 thead.thead-light
+                    th Avatar
                     th Name
                     th Phone
                     th Action
                 tbody
                 each user in users
                     tr
+                        if user.avatar
+                            td
+                                img.img-fluid(src=user.avatar, alt="avatar", width="30")
+                        else
+                            td
+                                img.img-fluid(src="/image/default-avatar.png", alt="avatar", width="30")
                         td= user.name
-                        td=user.phone
+                        td= user.phone
                         td
                             a(href=`/users/${user.id}`) View
         if !existedName && q
