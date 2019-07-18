@@ -3,29 +3,36 @@ extends ../../layouts/common
 block content
     .container.mt-3
         h1 Users
-        a.btn.btn-primary.mb-3(href="/users/create", title="title") Create New User 
-        form(action="users/search" method="GET")
-            .form-group.d-flex
-                input.form-control(type="text" placeholder="Searching" id="search-input" name="q" value=q ? q : "")
-                button.btn.btn-primary.ml-3 Search
-            table.table.table-hover
-                thead.thead-light
-                    th Avatar
-                    th Name
-                    th Phone
-                    th Action
-                tbody
-                each user in users
-                    tr
-                        if user.avatar
-                            td
-                                img.img-fluid(src=user.avatar, alt="avatar", width="30")
-                        else
-                            td
-                                img.img-fluid(src="/image/default-avatar.png", alt="avatar", width="30")
-                        td= user.name
-                        td= user.phone
+        a.btn.btn-primary.mb-3(href="/users/create", title="title") Create New User
+        if searched
+            form(action="search" method="GET")
+                .form-group.d-flex
+                    input.form-control(type="text" placeholder="Searching" id="search-input" name="q" value=q ? q : "")
+                    button.btn.btn-primary.ml-3(id="search-btn") Search
+        else
+            form(action="users/search" method="GET")
+                .form-group.d-flex
+                    input.form-control(type="text" placeholder="Searching" id="search-input" name="q" value=q ? q : "")
+                    button.btn.btn-primary.ml-3(id="search-btn") Search
+
+        table.table.table-hover
+            thead.thead-light
+                th Avatar
+                th Name
+                th Phone
+                th Action
+            tbody
+            each user in users
+                tr
+                    if user.avatar
                         td
-                            a(href=`/users/${user.id}`) View
+                            img.img-fluid(src= `/${user.avatar}`, alt="avatar", width="30")
+                    else
+                        td
+                            img.img-fluid(src="/image/default-avatar.png", alt="avatar", width="30")
+                    td= user.name
+                    td= user.phone
+                    td
+                        a(href=`/users/${user.id}`) View
         if !existedName && q
             p Not found

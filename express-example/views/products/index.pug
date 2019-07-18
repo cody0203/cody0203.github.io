@@ -4,16 +4,19 @@ block content
     .container.mt-3
         h1 Products
             a.btn.btn-primary.ml-3(href="products/create") Create new product
-        .card-deck.mt-5.row
+        .row.mt-5
             each product in products
-                a.col-md-3.mb-3(href=`/products/${product.id}`)
-                    .card
-                        img.card-img-top.img-fluid(src=product.image, alt='...')
+                .col-md-3.col-12
+                    .card.px-0.mb-5
+                        img.card-img-top(src=product.image, alt='...')
                         .card-body
                             h5.card-title=product.name
                             p.card-text=product.description
+                            a.btn.btn-primary(href="#") Add to cart
+                        .card-footer
                             p.card-text
                                 small.text-muted Price: #{product.price}
+                        
         nav(aria-label='Page navigation example')
             ul.pagination.justify-content-end
                 if page == 1

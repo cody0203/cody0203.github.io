@@ -10,7 +10,7 @@ module.exports = {
     search: (req, res) => {
         let q = req.query.q;
         let existedName;
-        let disabled;
+        let searched = false;
         let matchedUsers = db.get('users').value().filter(user => {
             return user.name.toLowerCase().indexOf(q.toLowerCase()) !== -1;
         })
@@ -19,11 +19,20 @@ module.exports = {
         } else {
             existedName = false;
         }
+
+        if (matchedUsers) {
+            searched = true;
+        } else {
+            searched = false;
+        }
+
         res.render('users/index', {
             users: matchedUsers,
             q,
-            existedName
+            existedName,
+            searched
         })
+        console.log(matchedUsers)
     },
     getCreate: (req, res) => {
         res.render("users/create")
