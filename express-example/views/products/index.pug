@@ -6,11 +6,56 @@ block content
             a.btn.btn-primary.ml-3(href="products/create") Create new product
         .card-deck.mt-5.row
             each product in products
-                a.col-md-3(href=`/products/${product.id}`)
+                a.col-md-3.mb-3(href=`/products/${product.id}`)
                     .card
                         img.card-img-top.img-fluid(src=product.image, alt='...')
                         .card-body
-                        h5.card-title=product.name
-                        p.card-text=product.description
-                        p.card-text
-                            small.text-muted=product.price
+                            h5.card-title=product.name
+                            p.card-text=product.description
+                            p.card-text
+                                small.text-muted Price: #{product.price}
+        nav(aria-label='Page navigation example')
+            ul.pagination.justify-content-end
+                if page == 1
+                    li.page-item.disabled
+                        a.page-link(href='#', tabindex='-1', aria-disabled='true') Previous
+                else
+                    li.page-item
+                        a.page-link(href=`products?page=${page - 1}`, tabindex='-1', aria-disabled='true') Previous
+
+                if page == 1
+                    li.page-item.active(aria-current="page")
+                        span.page-link(href='#')=page
+                else if page == maxPage
+                    li.page-item
+                        a.page-link(href=`products?page=${page - 2}`)=page - 2
+                else
+                    li.page-item
+                        a.page-link(href=`products?page=${page - 1}`)=page - 1
+
+                if page == 1
+                    li.page-item
+                        a.page-link(href=`products?page=${page + 1}`)=page + 1
+                else if page == maxPage
+                    li.page-item
+                        a.page-link(href=`products?page=${page - 1}`)=page - 1
+                else
+                    li.page-item.active(aria-current="page")
+                        span.page-link(href='#')=page
+    
+                if page == maxPage     
+                    li.page-item.active(aria-current="page")
+                        span.page-link(href='#')=maxPage
+                else if page == 1
+                    li.page-item
+                        a.page-link(href=`products?page=${page + 2}`)=page + 2
+                else
+                    li.page-item
+                        a.page-link(href=`products?page=${page + 1}`)=page + 1
+
+                if page == maxPage
+                    li.page-item.disabled
+                        a.page-link(href='#', aria-disabled='true') Next
+                else
+                    li.page-item
+                    a.page-link(href=`products?page=${page + 1}`, aria-disabled='true') Next
