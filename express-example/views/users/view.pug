@@ -3,6 +3,10 @@ extends ../../layouts/common
 block content
     .container
         H1 User Info
+        if user.avatar
+            img.img-fluid(src= `/${user.avatar}`, alt="avatar", width="100")
+        else
+            img.img-fluid(src="/image/default-avatar.png", alt="avatar", width="100")
         p.font-weight-bold Name:&nbsp;
             span.font-weight-normal= user.name
         p.font-weight-bold Phone:&nbsp;
