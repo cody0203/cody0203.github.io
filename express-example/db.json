@@ -730,5 +730,19 @@
       "description": "elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in",
       "price": 15
     }
+  ],
+  "sessions": [
+    {
+      "id": "pfokj7Qj1",
+      "cart": {
+        "b24f4f0c-789d-4da8-a87c-18eecf185bdb": 2,
+        "b44c936b-d443-474b-a974-32c3e5d1fba4": 3,
+        "4786bf10-484a-40ee-841a-b1ca2feef1d3": 7,
+        "a882054e-e9f4-4511-949c-da28bd836c54": 5,
+        "37dff91c-521e-4aab-84f6-fc3c49ab9b06": 1,
+        "3e5de4a0-7003-4316-9bc0-c3fd1f6ec2b2": 1,
+        "f62fc84f-6585-493d-84ef-f534a043f6ac": 1
+      }
+    }
   ]
 }

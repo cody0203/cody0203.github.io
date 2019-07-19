@@ -14,6 +14,7 @@ module.exports = {
             page: page,
             maxPage: maxPage
         });
+        console.log(res.locals)
     },
     view: (req, res) => {
         let id = req.params.id;
