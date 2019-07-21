@@ -1,17 +1,18 @@
-const db = require('../db')
-const shortid = require('shortid');
+const User = require("../Models/users.model")
 
 module.exports = {
-    index: (req, res) => {
+    index: async (req, res) => {
+        let users = await User.find();
         res.render('users/index', {
-            users: db.get('users').value()
+            users: users
         })
     },
-    search: (req, res) => {
+    search: async (req, res) => {
         let q = req.query.q;
         let existedName;
         let searched = false;
-        let matchedUsers = db.get('users').value().filter(user => {
+        let users = await User.find();
+        let matchedUsers = users.filter(user => {
             return user.name.toLowerCase().indexOf(q.toLowerCase()) !== -1;
         })
         if (matchedUsers.some(item => item !== {})) {
@@ -37,20 +38,18 @@ module.exports = {
     getCreate: (req, res) => {
         res.render("users/create")
     },
-    view: (req, res) => {
+    view: async (req, res) => {
         let id = req.params.id;
-        let user = db.get('users')
-            .find({ id: id })
-            .value()
+        let users = await User.find({ _id: id });
+        let user = users[0];
         res.render("users/view", {
             user: user
         })
     },
-    postCreate: (req, res) => {
+    postCreate: async(req, res) => {
         let request = req;
-        request.body.id = shortid.generate();
         request.body.avatar = request.file.path.split("/").slice(1).join("/");
-        db.get('users').push(request.body).write();
+        await User.create(request.body);
         res.redirect('/users');
     }
 };

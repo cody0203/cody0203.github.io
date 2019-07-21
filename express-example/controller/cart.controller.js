@@ -1,7 +1,7 @@
-let db = require("../db");
+const Session = require("../Models/sessions.model");
 
 module.exports = {
-    addToCart: function(req, res) {
+    addToCart: async function (req, res) {
         let productId = req.params.productId;
         let sessionId = req.signedCookies.sessionId;
         if (!sessionId) {
@@ -9,14 +9,10 @@ module.exports = {
             return
         }
 
-        let count = db.get("sessions")
-        .find({ id: sessionId })
-            .get(`cart.${productId}`, 0)
+        let count = await Session.findByIdAndUpdate(sessionId, { $push: {"cart": { productId: 0 } } }, { safe: true, upsert: true, new: true});
 
-        db.get("sessions")
-        .find({ id: sessionId })
-            .set(`cart.${productId}`, count + 1)
-        .write();
+        // Session
+        //     .findByIdAndUpdate(sessionId, { $inc: { [productId]: 1 } });
 
         res.redirect("/products");
     }

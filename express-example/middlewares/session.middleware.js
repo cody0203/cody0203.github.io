@@ -1,16 +1,14 @@
-let shortId = require("shortid");
-let db = require("../db")
+let Session = require("../Models/sessions.model");
+// let shortId = require("shortId");
+// let db = require("../db")
 
-module.exports = function (req, res, next) {
+module.exports = async function (req, res, next) {
     if (!req.signedCookies.sessionId) {
-        let sessionId = shortId.generate();
-        res.cookie("sessionId", sessionId, {
+        await Session.create({});
+        let sessionId = await Session.distinct("_id");
+        res.cookie("sessionId", sessionId[0].toString(), {
             signed: true
         })
-        db.get("sessions").push({
-            id: sessionId
-        }).write();
     }
-    console.log(req.signedCookies.sessionId)
     next();
 }

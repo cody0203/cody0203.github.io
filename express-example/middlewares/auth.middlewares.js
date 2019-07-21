@@ -1,15 +1,15 @@
-let db = require("../db");
+let User = require("../Models/users.model");
 
-module.exports.authRequired = function(req, res, next) {
+module.exports.authRequired = async function(req, res, next) {
     let cookies = req.signedCookies.userId;
-    let user = db.get("users").find({ id: cookies }).value();
+    let user = await User.find({ _id: cookies });
 
     if (!cookies) {
         res.redirect("/auth/login");
         return;
     }
 
-    if (!user) {
+    if (!user[0]) {
         res.redirect("/auth/login");
         return;
     }

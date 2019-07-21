@@ -5,6 +5,11 @@ const app = express();
 const port = 3000;
 
 var cookieParser = require('cookie-parser');
+let mongoose = require("mongoose");
+var Int32 = require('mongoose-int32');
+
+mongoose.connect(process.env.MONGO_URL, {useNewUrlParser: true});
+
 let usersRoute = require('./routes/users.route');
 let authRoute = require('./routes/auth.route');
 let productsRoute = require('./routes/products.route');
