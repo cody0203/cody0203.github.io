@@ -9,10 +9,12 @@ module.exports = {
             return
         }
 
-        let count = await Session.findByIdAndUpdate(sessionId, { $push: {"cart": { productId: 0 } } }, { safe: true, upsert: true, new: true});
+        await Session.findByIdAndUpdate(sessionId, { cart: {[productId]: 0} }, { upsert: true });
+        // Session.findById(sessionId, function (err, res) {
 
-        // Session
-        //     .findByIdAndUpdate(sessionId, { $inc: { [productId]: 1 } });
+        // })
+        await Session
+            .findByIdAndUpdate(sessionId, { $inc: { [productId]: 0 } }, { upsert: true });
 
         res.redirect("/products");
     }
