@@ -395,6 +395,11 @@ footer .footer-link .item:hover {
 .latest-news .title {
     margin-bottom: 1.25rem;
   }
+  .products-showcase .product-row,
+.categories-showcase .product-row,
+.latest-news .product-row {
+    margin-right: 0.3125rem;
+  }
 
   .break-banner {
     margin: 1.25rem 0px;
