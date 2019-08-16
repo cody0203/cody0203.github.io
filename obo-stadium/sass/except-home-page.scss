@@ -44,8 +44,6 @@ main {
     }
 
     & .arrow {
-        @extend %fa-icon;
-        @extend .fas;
         margin: $zero-pixel $five-pixel;
     }
 }

@@ -1,18 +1,18 @@
 function changeUiHomePage() {
     if (window.matchMedia && window.matchMedia('(max-width: 768px)').matches) {
-        $('#promo-banner-1').attr("src", "../image/promo-banner-1-1.png");
-        $('#promo-banner-2').attr("src", "../image/promo-banner-1-2.png");
-        $('#promo-banner-3').attr("src", "../image/promo-banner-1-3.png");
+        $('#promo-banner-1').attr("src", "./image/banner/promo-banner-1-md.png");
+        $('#promo-banner-2').attr("src", "./image/banner/promo-banner-2-md.png");
+        $('#promo-banner-3').attr("src", "./image/banner/promo-banner-3-md.png");
     } else {
-        $('#promo-banner-1').attr("src", "../image/promo-banner-1.png");
-        $('#promo-banner-2').attr("src", "../image/promo-banner-2.png");
-        $('#promo-banner-3').attr("src", "../image/promo-banner-3.png");
+        $('#promo-banner-1').attr("src", "./image/banner/promo-banner-1-lg.png");
+        $('#promo-banner-2').attr("src", "./image/banner/promo-banner-2-lg.png");
+        $('#promo-banner-3').attr("src", "./image/banner/promo-banner-3-lg.png");
     }
 
     if (window.matchMedia && window.matchMedia('(max-width: 576px)').matches) {
-        $('#promo-banner-1').attr("src", "../image/promo-banner-1-1-1.png");
-        $('#promo-banner-2').attr("src", "../image/promo-banner-1-2-1.png");
-        $('#promo-banner-3').attr("src", "../image/promo-banner-1-3-1.png");
+        $('#promo-banner-1').attr("src", "./image/banner/promo-banner-1-sm.png");
+        $('#promo-banner-2').attr("src", "./image/banner/promo-banner-2-sm.png");
+        $('#promo-banner-3').attr("src", "./image/banner/promo-banner-3-sm.png");
     }
 
     if (window.matchMedia && window.matchMedia('(max-width: 765px)').matches) {

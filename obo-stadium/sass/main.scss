@@ -66,11 +66,13 @@ header {
         padding-top: $fifty-pixel;
         line-height: 2.9375rem;
         text-align: center;
+        color: $text-white;
     }
 
     & .sub-title {
         margin: $twenty-pixel $zero-pixel;
         text-align: center;
+        color: $text-white;
     }
 
     & .newsletter-form {
