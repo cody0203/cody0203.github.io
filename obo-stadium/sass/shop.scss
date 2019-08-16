@@ -155,7 +155,7 @@ body {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             justify-items: center;
-            grid-gap: $ten-pixel $ten-pixel;
+            grid-gap: $sixteen-pixel $sixteen-pixel;
 
             & .product {
                 width: 100%;
