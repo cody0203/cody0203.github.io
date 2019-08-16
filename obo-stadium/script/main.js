@@ -1,4 +1,4 @@
-function changeUi() {
+function changeUiHomePage() {
     if (window.matchMedia && window.matchMedia('(max-width: 768px)').matches) {
         $('#promo-banner-1').attr("src", "../image/promo-banner-1-1.png");
         $('#promo-banner-2').attr("src", "../image/promo-banner-1-2.png");
@@ -29,12 +29,12 @@ function changeUi() {
 }
 
 $(function () {
-    changeUi();
+    changeUiHomePage();
     carousel();
     $('.slick-arrow').remove();
 })
 
-$(window).resize(changeUi);
+$(window).resize(changeUiHomePage);
 
 function carousel() {
     $('.carousel').slick({

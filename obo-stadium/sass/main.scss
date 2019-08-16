@@ -1,45 +1,4 @@
-$text-dark: #333333;
-$text-white: #ffffff;
-$main-color: #F04E40;
-$lighter-grey-color: #D5D6D6;
-$dark-main-color: #C1554E;
-$product-border-color: #FAFAFA;
-$hover-white-color: #eeeeee;
-$hover-main-color: #CE2E2F;
-$product-content-background-color: #FAFAFA;
-$product-text-grey: #767676;
-
-$main-font: 'Roboto',
-sans-serif;
-
-$bold-size: bold;
-
-$small-devices-width: 576px;
-$medium-devices-width: 767px;
-$max-width-container: 1230px;
-$zero-pixel: 0px;
-$fifty-pixel: 3.125rem;
-$forty-pixel: 2.5rem;
-$thirty-six-pixel: 2.25rem;
-$thirty-pixel: 1.875rem;
-
-$twenty-six-pixel: 1.625rem;
-$twenty-four-pixel: 1.5rem;
-$twenty-pixel: 1.25rem;
-$nineteen-pixel: 1.1875rem;
-$fifteen-pixel: 0.9375rem;
-$twelve-pixel: 0.75rem;
-$eleven-pixel: 0.6875rem;
-$ten-pixel: 0.625rem;
-$six-pixel: 0.5rem;
-$five-pixel: 0.3125rem;
-
-$sixteen-pixel: 1rem;
-
-$one-hundred-percent: 100%;
-
-
-$none: none;
+@import "./root.scss";
 
 @mixin background-image-banner($image, $repeat, $position) {
     background: $image $repeat $position;
@@ -56,29 +15,6 @@ $none: none;
 $header-image: url(../image/header-banner.png);
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
-
-* {
-    font-family: $main-font;
-    outline: $none;
-    font-size: $sixteen-pixel;
-}
-
-a {
-    text-decoration: $none !important;
-}
-
-.btn-primary {
-    &:focus {
-        outline: $none;
-        box-shadow: $none;
-    }
-
-    &:active {
-        background-color: $main-color !important;
-        outline: $none !important;
-        box-shadow: $none !important;
-    }
-}
 
 header {
     @include background-image-banner($header-image, no-repeat, center top);
@@ -151,26 +87,6 @@ header {
     }
 }
 
-footer {
-    background-color: $text-dark;
-    margin-top: $fifty-pixel;
-}
-
-footer .row {
-    padding-top: $forty-pixel;
-    padding-bottom: $forty-pixel;
-}
-
-footer .footer-link .item {
-    color: $text-white;
-    text-decoration: none;
-    padding-left: $thirty-pixel;
-
-    &:hover {
-        color: $hover-white-color;
-    }
-}
-
 // Override Bootstrap
 
 .navbar-light .navbar-nav .nav-link {
@@ -200,30 +116,7 @@ footer .footer-link .item {
     border-color: white;
 }
 
-.form-control {
-    color: #B6B6B6;
-    height: auto;
-
-    &:focus {
-        color: #B6B6B6;
-        outline: $none;
-        box-shadow: $none;
-        border-color: inherit;
-    }
-
-    &::placeholder {
-        color: #B6B6B6;
-    }
-}
-
 .btn-primary {
-    background-color: $main-color;
-    border: $none;
-
-    &:hover {
-        background-color: $hover-main-color;
-    }
-
     font-weight: $bold-size;
 }
 
@@ -402,10 +295,6 @@ footer .footer-link .item {
 }
 
 @media (min-width: $max-width-container) {
-    .container {
-        max-width: $max-width-container;
-    }
-
     .products-showcase,
     .categories-showcase,
     .latest-news {
@@ -416,24 +305,6 @@ footer .footer-link .item {
 }
 
 @media (max-width: $medium-devices-width) {
-    footer .footer-link .item {
-        padding-left: $zero-pixel;
-        padding-top: $five-pixel;
-    }
-
-    footer .row {
-        padding: $thirty-pixel;
-    }
-
-    footer .footer-link {
-        padding-top: $ten-pixel;
-    }
-
-    .navbar {
-        padding-left: $zero-pixel;
-        padding-right: $zero-pixel;
-    }
-
     .newsletter {
         & .newsletter-form {
             & .form-control {

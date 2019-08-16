@@ -1,0 +1,244 @@
+@import "./root.scss";
+@import "./except-home-page.scss";
+
+body {
+    color: $text-dark;
+}
+
+@mixin flex-title-filter {
+    display: flex;
+    justify-content: $between;
+    align-items: center;
+}
+
+;
+
+@mixin flex-align-baseline {
+    display: flex;
+    align-items: baseline;
+}
+
+;
+
+@mixin flex-align-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+};
+
+.pretty input:checked~.state.p-success label:after,
+.pretty.p-toggle .state.p-success label:after {
+    background-color: $main-color !important;
+}
+
+.shop-content-wrapper {
+    & .filter-bar {
+
+        & .content {
+            padding: $zero-pixel $fifteen-pixel;
+
+            & .title {
+                @include flex-title-filter;
+                margin-bottom: $twenty-pixel;
+            }
+
+            & .select-filter {
+                & .item {
+                    margin-bottom: $ten-pixel;
+                }
+            }
+        }
+
+        & .break-line {
+            width: 100%;
+            border-top: 1px solid $lighter-grey-color;
+            margin: $twenty-pixel $zero-pixel;
+        }
+
+        & .header {
+            display: flex;
+            justify-content: $between;
+            align-items: center;
+
+            & .left-side {
+                color: $text-lighter-white;
+            }
+
+            & .fa-sliders-h {
+                transform: rotate(90deg);
+                margin-right: $ten-pixel;
+            }
+
+            & .btn-primary.clear-filter {
+                border: $none;
+                background-color: $text-dark;
+                color: $text-white;
+                padding: $five-pixel $fifteen-pixel;
+                line-height: $nineteen-pixel;
+                text-transform: uppercase;
+
+                &:active {
+                    background-color: $text-dark !important;
+                }
+            }
+        }
+
+        & .see-more {
+            color: $text-lighter-white;
+            cursor: pointer;
+        }
+
+        & .size {
+            & .select-filter {
+                @include flex-title-filter;
+                flex-flow: wrap;
+
+                & .item {
+                    font-size: $twelve-pixel;
+                    width: calc(100% / 4 - 10px);
+                    text-align: center;
+                    border: 1px solid $text-dark;
+                    border-radius: $two-pixel;
+                    @include flex-align-center;
+                    cursor: pointer;
+                }
+            }
+
+        }
+
+        & .price {
+            & .price-input {
+                width: 100%;
+                margin-bottom: $ten-pixel;
+                color: $text-dark;
+            }
+
+            & .apply-price.btn-primary {
+                text-transform: uppercase;
+            }
+        }
+
+        & .release-date {
+            & .date-row {
+                @include flex-title-filter;
+                margin-bottom: $ten-pixel;
+
+                & .pretty {
+                    margin: $zero-pixel;
+                }
+            }
+        }
+
+    }
+
+    & .product-showing {
+        & .sort {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: $twenty-pixel;
+
+            & .sort-content {
+                cursor: pointer;
+                border: 1px solid $text-dark;
+                padding: $twelve-pixel $twenty-pixel;
+
+                & .sort-name {
+                    font-weight: $bold-size;
+                    margin: $zero-pixel $thirty-six-pixel $zero-pixel $twenty-pixel;
+                }
+            }
+        }
+
+        & .product-row {
+            flex-flow: wrap;
+
+            & .product {
+                width: 208px;
+                margin-bottom: $ten-pixel;
+                display: flex;
+                justify-content: center;
+                flex: 0 0 auto;
+                align-items: flex-end;
+            }
+
+            & .card {
+                border: 2px solid $product-border-color;
+            }
+
+            & .card-img-top {
+                padding: $zero-pixel 11px $zero-pixel 11px;
+            }
+
+            & .card-body {
+                padding: 11px 25px 11px 11px;
+                background-color: $product-content-background-color;
+
+                & .card-title {
+                    font-size: $fourteen-pixel;
+                    font-weight: 500;
+                    line-height: 20px;
+                    color: $text-dark;
+                    margin-bottom: 0.6875rem;
+                    height: 2.5rem;
+                }
+
+                & .card-text {
+                    color: $product-text-grey;
+                    margin-bottom: 0.375rem;
+                }
+
+                & .price-desc {
+                    font-size: $fourteen-pixel;
+                }
+
+                & .price {
+                    font-size: $twenty-pixel;
+                    font-weight: $bold-size;
+                    color: $text-dark;
+                    margin-bottom: $five-pixel;
+                }
+
+                & .sold {
+                    margin-bottom: $zero-pixel;
+                    font-size: $fourteen-pixel;
+                }
+            }
+
+            & .shadow {
+                width: 90%;
+                height: $twenty-four-pixel;
+                z-index: -1;
+                background: #C4C4C4;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.13) !important;
+            }
+        }
+
+        & .pagination-wrapper {
+            @include flex-align-center;
+            margin-top: $fifty-pixel;
+        }
+    }
+}
+
+
+@media (max-width: 346px) {
+    .shop-content-wrapper {
+        & .filter-bar {
+            & .size {
+                & .select-filter {
+                    & .item {
+                        width: calc(100% / 2 - 10px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Js used class
+
+.size-choose {
+    background-color: $main-color;
+    color: $text-white;
+    border: $none !important;
+}
