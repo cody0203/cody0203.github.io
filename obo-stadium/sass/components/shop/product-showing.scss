@@ -1,0 +1,75 @@
+@import "../../root.scss";
+
+//Sort
+
+.sort {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: $twenty-pixel;
+}
+
+.sort-content {
+    cursor: pointer;
+    border: 1px solid $text-dark;
+    padding: $twelve-pixel $twenty-pixel;
+}
+
+.sort-name {
+    font-weight: $bold-size;
+    margin: $zero-pixel $thirty-six-pixel $zero-pixel $twenty-pixel;
+}
+
+// Products grid
+
+.product-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    grid-gap: $sixteen-pixel $sixteen-pixel;
+}
+
+// Override products.scss
+
+.product,
+.product-link,
+.card {
+    max-width: 100%;
+    width: 100%;
+}
+
+.card-title {
+    font-size: $fourteen-pixel;
+}
+
+.price-desc {
+    font-size: $fourteen-pixel;
+}
+
+.price {
+    font-size: $twenty-pixel;
+}
+
+.sold {
+    font-size: $fourteen-pixel;
+}
+
+@media (max-width: 1200px) {
+    .product-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .product-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 453px) {
+    .product-row {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

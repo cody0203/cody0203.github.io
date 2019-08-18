@@ -1,0 +1,32 @@
+@import "../../root.scss";
+
+.category {
+    text-align: center;
+    margin-bottom: 2.125rem;
+}
+
+.category-wrap {
+    position: relative;
+    display: inline-block;
+    color: $text-dark;
+}
+
+.tag {
+    text-transform: uppercase;
+    background-color: $text-white;
+    position: absolute;
+    font-size: $eleven-pixel;
+    bottom: $six-pixel;
+    left: $six-pixel;
+    padding: $five-pixel $ten-pixel;
+}
+
+@media (max-width: $small-devices-width) {
+    .category {
+        margin-bottom: $fifteen-pixel;
+    }
+
+    #last-category {
+        margin-bottom: $zero-pixel;
+    }
+}

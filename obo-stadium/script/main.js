@@ -31,7 +31,6 @@ function changeUiHomePage() {
 $(function () {
     changeUiHomePage();
     carousel();
-    $('.slick-arrow').remove();
 })
 
 $(window).resize(changeUiHomePage);
@@ -41,6 +40,7 @@ function carousel() {
         slidesToShow: 3,
         slidesToScroll: 1,
         dots: true,
+        arrows: false,
         centerMode: true,
         focusOnSelect: true,
         variableWidth: true,

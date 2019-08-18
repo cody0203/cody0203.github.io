@@ -1,0 +1,64 @@
+@import "../root.scss";
+
+.news {
+    width: 285px !important;
+    display: flex !important;
+    align-items: flex-end;
+    justify-content: center;
+    flex: 0 0 auto;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    & .card-img-top {
+        padding: $zero-pixel;
+    }
+
+    & .card-body {
+        padding: $sixteen-pixel $twenty-pixel $twenty-pixel $ten-pixel;
+        background-color: $text-white;
+    }
+
+    & .card-title {
+        margin-bottom: $sixteen-pixel;
+        line-height: $nineteen-pixel;
+    }
+
+    & .news-short-desc {
+        color: $text-dark;
+        line-height: $nineteen-pixel;
+    }
+
+    & .author,
+    .author .name {
+        color: $text-dark;
+        font-size: $twelve-pixel;
+
+        & .name {
+            font-weight: $bold-size;
+        }
+    }
+}
+
+.slick-dotted.slick-slider {
+    margin-bottom: $zero-pixel;
+}
+
+.carousel {
+    & .slick-track {
+        margin-bottom: $ten-pixel;
+    }
+
+    & .slick-dots {
+        position: static;
+
+        & li button:before {
+            font-size: $ten-pixel;
+        }
+
+        & .slick-active {
+            & button:before {
+                color: $main-color;
+            }
+        }
+    }
+}

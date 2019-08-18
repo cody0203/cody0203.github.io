@@ -1,0 +1,189 @@
+@import "../../root.scss";
+
+// Header - common info
+
+.common-info {
+    margin-bottom: $fifty-pixel;
+
+    & .brand {
+        color: $product-text-grey;
+        margin-bottom: $fifteen-pixel;
+    }
+
+    & .name {
+        font-weight: 500;
+        font-size: $forty-pixel;
+        line-height: $forty-seven-pixel;
+        margin-bottom: $fifteen-pixel;
+    }
+}
+
+// Product image
+
+.img-zoom-container {
+    cursor: zoom-in;
+}
+
+.slider-for {
+    margin-bottom: $ten-pixel;
+}
+
+.slider-nav {
+    .slick-slide {
+        margin: $zero-pixel $five-pixel;
+        cursor: pointer;
+    }
+}
+
+// Product Info
+
+.title.h3,
+.desc,
+.desc-sub {
+    margin-bottom: $twenty-pixel;
+}
+
+.desc-sub-title {
+    font-weight: $bold-size;
+}
+
+// Buttons
+
+.btns {
+    & .btn-primary {
+        width: 100%;
+        margin-bottom: $twenty-pixel;
+        padding: $twelve-pixel $twenty-pixel;
+    }
+
+    & .sell:last-child {
+        margin-bottom: $zero-pixel;
+    }
+
+    .size.btn-primary {
+        padding: $twenty-pixel;
+        background-color: $text-white;
+        border: 1px solid $lighter-grey-color;
+        @include flex-center-between;
+
+
+        &:active {
+            background-color: $text-white !important;
+            border-color: $lighter-grey-color;
+            color: $text-dark !important;
+        }
+
+        &:hover {
+            background-color: $text-white !important;
+            border-color: $text-dark;
+            color: $text-dark !important;
+        }
+    }
+
+    .buy.btn-primary {
+        background-color: $green;
+        @include flex-center-between;
+
+        &:hover {
+            background-color: $dark-green;
+        }
+
+        &:active {
+            background-color: $green !important;
+        }
+
+        & .sub-content {
+            color: $light-green;
+        }
+    }
+
+    .sell.btn-primary {
+        @include flex-center-between;
+
+        & .sub-content {
+            color: $light-main-color;
+        }
+    }
+
+    .size-details,
+    .main-content {
+        font-size: $thirty-six-pixel;
+        font-weight: $bold-size;
+        line-height: $forty-two-pixel;
+    }
+
+    .size-text,
+    .dropdown-arrow {
+        font-size: $twenty-four-pixel;
+        color: $text-lighter-white;
+        line-height: $twenty-eight-pixel;
+    }
+
+    .size-details {
+        color: $text-dark;
+    }
+
+    .left-content,
+    .right-content {
+        text-align: left;
+        color: $text-white;
+    }
+
+    .left-content {
+        width: 55%;
+        border-right: 1px solid $text-white;
+    }
+
+    .right-content {
+        width: 45%;
+        padding-left: $twenty-pixel;
+    }
+}
+
+.break-section {
+    background-color: $product-content-background-color;
+    height: $fifteen-pixel;
+    margin: $fifty-pixel $zero-pixel;
+    border-top: 1px solid $lighter-grey-color;
+}
+
+.products-showcase {
+    margin-top: $zero-pixel;
+
+    & .title {
+        margin-bottom: $twenty-pixel;
+    }
+}
+
+@media (max-width: 768px) {
+    .common-info {
+        margin-bottom: $twenty-pixel;
+    }
+
+    .break-section {
+        margin: $thirty-pixel $zero-pixel;
+    }
+}
+
+@media (max-width: 465px) {
+    .btns .size-text,
+    .btns .dropdown-arrow {
+        font-size: $sixteen-pixel;
+    }
+
+    .btns .size-details,
+    .btns .main-content {
+        font-size: $twenty-four-pixel;
+    }
+}
+
+@media (max-width: 375px) {
+    .btns .size-details,
+    .btns .main-content {
+        font-size: $twenty-pixel;
+    }
+
+    .sub-content {
+        font-size: $twelve-pixel;
+    }
+}

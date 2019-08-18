@@ -8,12 +8,22 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="./vendor/bootstrap/css/bootstrap.min.css" />
-        
+
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" type="text/css" href="./vendor/fontawesome/css/all.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
-    <link rel="stylesheet" href="./css/shop.css">
+
+    <!-- Components CSS -->
+    <link rel="stylesheet" type="text/css" href="./css/components/header.css">
+    <link rel="stylesheet" type="text/css" href="./css/components/products.css">
+    <link rel="stylesheet" type="text/css" href="./css/components/shop/filter-bar.css">
+    <link rel="stylesheet" type="text/css" href="./css/components/shop/product-showing.css">
+
+    <!-- Common CSS -->
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link rel="stylesheet" type="text/css" href="./css/except-home-page.css">
+    <link rel="stylesheet" type="text/css" href="./css/used-in-js.css">
     <title>Hello, world!</title>
 </head>
 
@@ -49,14 +59,15 @@
     </header>
 
     <main>
-        <div class="breadcrum container">
-            <a href="./index.html">Trang chủ</a> <i class="fas fa-chevron-right arrow"></i> <span class="current-page">Sản phẩm</span>
+        <div class="breadcrumb container">
+            <a href="./index.html" class="previous-page">Trang chủ</a> <i class="fas fa-chevron-right arrow"></i> <span
+                class="current-page">Sản phẩm</span>
         </div>
 
         <div class="shop-content-wrapper container">
             <div class="row">
                 <div class="filter-bar col-lg-3 col-md-5 col-sm-7 col-9">
-                    <div class="header content">
+                    <div class="filter-header content">
                         <div class="left-side d-flex align-items-center">
                             <i class="fas fa-sliders-h"></i>
 
@@ -243,7 +254,7 @@
 
                     <div class="break-line"></div>
 
-                    <div class="price content">
+                    <div class="price-range content">
                         <div class="title">
                             <div class="text">
                                 Khoảng giá
@@ -284,8 +295,8 @@
                                         <label class="checkbox-label" for="nike">2019</label>
                                     </div>
                                 </div>
-                            
-                            
+
+
                             </div>
 
                             <div class="item">
@@ -300,8 +311,8 @@
                                         <label class="checkbox-label" for="nike">2018</label>
                                     </div>
                                 </div>
-                            
-                            
+
+
                             </div>
                         </div>
 
@@ -318,10 +329,10 @@
                                         <label class="checkbox-label" for="nike">2017</label>
                                     </div>
                                 </div>
-                        
-                        
+
+
                             </div>
-                        
+
                             <div class="item">
                                 <div class="pretty p-svg p-curve">
                                     <input class="filter-checkbox" type="checkbox" name="nike" id="nike /">
@@ -334,8 +345,8 @@
                                         <label class="checkbox-label" for="nike">2016</label>
                                     </div>
                                 </div>
-                        
-                        
+
+
                             </div>
                         </div>
 
@@ -352,10 +363,10 @@
                                         <label class="checkbox-label" for="nike">2015</label>
                                     </div>
                                 </div>
-                        
-                        
+
+
                             </div>
-                        
+
                             <div class="item">
                                 <div class="pretty p-svg p-curve">
                                     <input class="filter-checkbox" type="checkbox" name="nike" id="nike /">
@@ -368,8 +379,8 @@
                                         <label class="checkbox-label" for="nike">2014</label>
                                     </div>
                                 </div>
-                        
-                        
+
+
                             </div>
                         </div>
 
@@ -386,10 +397,10 @@
                                         <label class="checkbox-label" for="nike">2013</label>
                                     </div>
                                 </div>
-                        
-                        
+
+
                             </div>
-                        
+
                             <div class="item">
                                 <div class="pretty p-svg p-curve">
                                     <input class="filter-checkbox" type="checkbox" name="nike" id="nike /">
@@ -402,8 +413,8 @@
                                         <label class="checkbox-label" for="nike">2012</label>
                                     </div>
                                 </div>
-                        
-                        
+
+
                             </div>
                         </div>
 
@@ -421,11 +432,11 @@
                     </div>
 
                     <div class="product-row">
-                        <a href="./product-page.html" class="product-link">
+                        <a href="./product-details.html" class="product-link">
                             <div class="product position-relative">
                                 <div class="card">
-                                    <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png" class="card-img-top"
-                                        alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                    <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                        class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
                                     <div class="card-body">
                                         <h5 class="card-title">Adidas Yeezy Boost 350
                                             V2 Lundmark (Non</h5>
@@ -437,12 +448,12 @@
                                 <div class="shadow mx-auto position-absolute"></div>
                             </div>
                         </a>
-                        
-                    
+
+
                         <div class="product position-relative">
                             <div class="card">
-                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png" class="card-img-top"
-                                    alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
                                 <div class="card-body">
                                     <h5 class="card-title">Jordan 4 Retro Cool Grey (2019)</h5>
                                     <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
@@ -452,11 +463,11 @@
                             </div>
                             <div class="shadow mx-auto position-absolute"></div>
                         </div>
-                    
+
                         <div class="product position-relative">
                             <div class="card">
-                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png" class="card-img-top"
-                                    alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
                                 <div class="card-body">
                                     <h5 class="card-title">Jordan 1 Retro Low OG SP Travis Scott</h5>
                                     <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
@@ -466,11 +477,11 @@
                             </div>
                             <div class="shadow mx-auto position-absolute"></div>
                         </div>
-                    
+
                         <div class="product position-relative">
                             <div class="card">
-                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png" class="card-img-top"
-                                    alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
                                 <div class="card-body">
                                     <h5 class="card-title">Air Jordan 1 Mid Yellow Toe Black</h5>
                                     <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
@@ -483,8 +494,8 @@
 
                         <div class="product position-relative">
                             <div class="card">
-                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png" class="card-img-top"
-                                    alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
                                 <div class="card-body">
                                     <h5 class="card-title">Nike SB Dunk Low Parra</h5>
                                     <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
@@ -497,8 +508,8 @@
 
                         <div class="product position-relative">
                             <div class="card">
-                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png" class="card-img-top"
-                                    alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
                                 <div class="card-body">
                                     <h5 class="card-title">Adidas Yeezy Boost 350
                                         V2 Lundmark (Non</h5>
@@ -509,11 +520,11 @@
                             </div>
                             <div class="shadow mx-auto position-absolute"></div>
                         </div>
-                        
+
                         <div class="product position-relative">
                             <div class="card">
-                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png" class="card-img-top"
-                                    alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
                                 <div class="card-body">
                                     <h5 class="card-title">Jordan 4 Retro Cool Grey (2019)</h5>
                                     <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
@@ -523,11 +534,11 @@
                             </div>
                             <div class="shadow mx-auto position-absolute"></div>
                         </div>
-                        
+
                         <div class="product position-relative">
                             <div class="card">
-                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png" class="card-img-top"
-                                    alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
                                 <div class="card-body">
                                     <h5 class="card-title">Jordan 1 Retro Low OG SP Travis Scott</h5>
                                     <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
@@ -537,11 +548,11 @@
                             </div>
                             <div class="shadow mx-auto position-absolute"></div>
                         </div>
-                        
+
                         <div class="product position-relative">
                             <div class="card">
-                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png" class="card-img-top"
-                                    alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
                                 <div class="card-body">
                                     <h5 class="card-title">Air Jordan 1 Mid Yellow Toe Black</h5>
                                     <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
@@ -551,11 +562,11 @@
                             </div>
                             <div class="shadow mx-auto position-absolute"></div>
                         </div>
-                        
+
                         <div class="product position-relative">
                             <div class="card">
-                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png" class="card-img-top"
-                                    alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
                                 <div class="card-body">
                                     <h5 class="card-title">Nike SB Dunk Low Parra</h5>
                                     <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
@@ -568,8 +579,8 @@
 
                         <div class="product position-relative">
                             <div class="card">
-                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png" class="card-img-top"
-                                    alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
                                 <div class="card-body">
                                     <h5 class="card-title">Adidas Yeezy Boost 350
                                         V2 Lundmark (Non</h5>
@@ -580,11 +591,11 @@
                             </div>
                             <div class="shadow mx-auto position-absolute"></div>
                         </div>
-                        
+
                         <div class="product position-relative">
                             <div class="card">
-                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png" class="card-img-top"
-                                    alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
                                 <div class="card-body">
                                     <h5 class="card-title">Jordan 4 Retro Cool Grey (2019)</h5>
                                     <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
@@ -594,11 +605,11 @@
                             </div>
                             <div class="shadow mx-auto position-absolute"></div>
                         </div>
-                        
+
                         <div class="product position-relative">
                             <div class="card">
-                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png" class="card-img-top"
-                                    alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
                                 <div class="card-body">
                                     <h5 class="card-title">Jordan 1 Retro Low OG SP Travis Scott</h5>
                                     <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
@@ -608,11 +619,11 @@
                             </div>
                             <div class="shadow mx-auto position-absolute"></div>
                         </div>
-                        
+
                         <div class="product position-relative">
                             <div class="card">
-                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png" class="card-img-top"
-                                    alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
                                 <div class="card-body">
                                     <h5 class="card-title">Air Jordan 1 Mid Yellow Toe Black</h5>
                                     <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
@@ -622,11 +633,11 @@
                             </div>
                             <div class="shadow mx-auto position-absolute"></div>
                         </div>
-                        
+
                         <div class="product position-relative">
                             <div class="card">
-                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png" class="card-img-top"
-                                    alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
                                 <div class="card-body">
                                     <h5 class="card-title">Nike SB Dunk Low Parra</h5>
                                     <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
@@ -639,8 +650,8 @@
 
                         <div class="product position-relative">
                             <div class="card">
-                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png" class="card-img-top"
-                                    alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
                                 <div class="card-body">
                                     <h5 class="card-title">Adidas Yeezy Boost 350
                                         V2 Lundmark (Non</h5>
@@ -651,11 +662,11 @@
                             </div>
                             <div class="shadow mx-auto position-absolute"></div>
                         </div>
-                        
+
                         <div class="product position-relative">
                             <div class="card">
-                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png" class="card-img-top"
-                                    alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
                                 <div class="card-body">
                                     <h5 class="card-title">Jordan 4 Retro Cool Grey (2019)</h5>
                                     <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
@@ -665,11 +676,11 @@
                             </div>
                             <div class="shadow mx-auto position-absolute"></div>
                         </div>
-                        
+
                         <div class="product position-relative">
                             <div class="card">
-                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png" class="card-img-top"
-                                    alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
                                 <div class="card-body">
                                     <h5 class="card-title">Jordan 1 Retro Low OG SP Travis Scott</h5>
                                     <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
@@ -679,11 +690,11 @@
                             </div>
                             <div class="shadow mx-auto position-absolute"></div>
                         </div>
-                        
+
                         <div class="product position-relative">
                             <div class="card">
-                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png" class="card-img-top"
-                                    alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
                                 <div class="card-body">
                                     <h5 class="card-title">Air Jordan 1 Mid Yellow Toe Black</h5>
                                     <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
@@ -693,11 +704,11 @@
                             </div>
                             <div class="shadow mx-auto position-absolute"></div>
                         </div>
-                        
+
                         <div class="product position-relative">
                             <div class="card">
-                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png" class="card-img-top"
-                                    alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
                                 <div class="card-body">
                                     <h5 class="card-title">Nike SB Dunk Low Parra</h5>
                                     <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
