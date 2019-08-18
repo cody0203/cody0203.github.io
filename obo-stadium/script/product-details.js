@@ -1,7 +1,6 @@
 $(function () {
     carosel();
     imageZoom();
-    instafeed();
 });
 
 function carosel() {
@@ -51,13 +50,4 @@ function imageZoom() {
     $('.img-zoom-container').zoom({
         magnify: 1.05
     });
-}
-
-function instafeed() {
-    var feed = new Instafeed({
-        get: 'tagged',
-        tagName: 'awesome',
-        clientId: '2940736713.1677ed0.31bb22b2b0f84befacc79c6afd025134'
-    });
-    feed.run();
 }
