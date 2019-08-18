@@ -43,22 +43,20 @@
     margin-bottom: $zero-pixel;
 }
 
-.carousel {
-    & .slick-track {
-        margin-bottom: $ten-pixel;
+.slick-track {
+    margin-bottom: $ten-pixel;
+}
+
+.slick-dots {
+    position: static;
+
+    & li button:before {
+        font-size: $ten-pixel;
     }
 
-    & .slick-dots {
-        position: static;
-
-        & li button:before {
-            font-size: $ten-pixel;
-        }
-
-        & .slick-active {
-            & button:before {
-                color: $main-color;
-            }
+    & .slick-active {
+        & button:before {
+            color: $main-color !important;
         }
     }
 }
