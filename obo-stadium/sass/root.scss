@@ -89,3 +89,17 @@ $between: space-between;
     align-items: center;
     justify-content: $between;
 };
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin border {
+    border: $one-pixel solid $lighter-grey-color;
+}
+
+@mixin border-w-radius {
+    border: $one-pixel solid $lighter-grey-color;
+    border-radius: $four-pixel;
+}

@@ -61,9 +61,13 @@ function instafeed() {
         resolution: 'standard_resolution',
         accessToken: '330880789.8a4b3ba.6801db3f819744bcb3a10ecf47bc4a5b',
         sortBy: 'most-recent',
-        template: '<div class="col-lg-3 instaimg"><a class="instaimg-wrap" href="{{link}}" title="{{caption}}" target="_blank"><img src="{{image}}" alt="{{caption}}" class="img-fluid"/><label class="instafeed-user">@{{model.user.username}}</label><label><i class="fas fa-heart"></i> <b>{{model.likes.count}}</b> </label></a></div>',
+        filter: function (image) {
+            return image.tags.indexOf('adidasyeezyboost700waverunner') >= 0;
+        },
+        template: '<div class="col-lg-3 instaimg"><a class="instafeed-wrap" href="{{link}}" target="_blank"><div class="instaimg-wrap"><img src="{{image}}" alt="{{caption}}" class="img-fluid insta-img"/><div class="instaimg-overlay"><div class="like-and-comment"><label><i class="fas fa-heart"></i> {{model.likes.count}}</label> <label><i class="fas fa-comment"></i></i> {{model.comments.count}}</label></div></div></div></a></div>',
         after: function () {
             caroselInstafeed();
+            $('#instafeed').addClass('grid-instafeed')
         }
     });
 
@@ -77,7 +81,9 @@ function caroselInstafeed() {
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 3,
-        arrows: false,
+        arrows: true,
+        appendArrows: $('.instagram-image .slide-btn'),
+        accessibility: false,
         centerMode: true,
         dots: true,
         responsive: [
@@ -92,7 +98,7 @@ function caroselInstafeed() {
                 breakpoint: 800,
                 settings: {
                     slidesToShow: 1,
-                    slidesToScroll: 1
+                    slidesToScroll: 1,
                 }
             },
             {
@@ -100,6 +106,7 @@ function caroselInstafeed() {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
+                    arrows: false,
                 }
             }
         ]

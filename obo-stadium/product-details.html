@@ -22,17 +22,19 @@
     <link rel="stylesheet" type="text/css" href="./css/components/header.css">
     <link rel="stylesheet" type="text/css" href="./css/components/products.css">
     <link rel="stylesheet" type="text/css" href="./css/components/index/product-showcase.css">
-    <link rel="stylesheet" type="text/css" href="./css/components/product-details/product-details.css">
     <link rel="stylesheet" type="text/css" href="./css/components/lastest-news.css">
+    <link rel="stylesheet" type="text/css" href="./css/components/product-details/product-info.css">
 
     <!-- Common CSS -->
     <link rel="stylesheet" type="text/css" href="./css/main.css">
     <link rel="stylesheet" type="text/css" href="./css/except-home-page.css">
-    
+    <link rel="stylesheet" type="text/css" href="./css/product-details.css">
     <title>Hello, world!</title>
 </head>
 
 <body>
+
+    <!-- Header Section -->
     <header class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light container">
             <a class="navbar-brand" href="#"> <img src="./image/logo-white.png" alt="logo" class="img-fluid"></a>
@@ -169,14 +171,14 @@
 
                     <div class="btns">
                         <div class="size-btn">
-                            <button class="btn btn-primary size">
+                            <button class="btn btn-primary size trans-btn">
                                 <span class="size-text">Size</span> <span class="size-details">8US | 41VN | 26CM</span>
                                 <i class="fas fa-chevron-down dropdown-arrow"></i>
                             </button>
                         </div>
 
-                        <a href="#" class="buy-btn">
-                            <button class="btn btn-primary buy">
+                        <a href="./buy-page.html" class="buy-btn">
+                            <button class="btn btn-primary buy green-btn">
                                 <div class="ask-text left-content">
                                     <div class="ask-price main-content">
                                         9.555.000 ₫
@@ -196,7 +198,7 @@
                         </a>
 
                         <a href="#" class="sell-btn">
-                            <button class="btn btn-primary sell">
+                            <button class="btn btn-primary sell red-btn">
                                 <div class="ask-text left-content">
                                     <div class="bid-price main-content">
                                         9.310.000 ₫
@@ -204,7 +206,7 @@
                                     <div class="ask-desc sub-content">Giá đặt mua cao nhất
                                     </div>
                                 </div>
-                        
+
                                 <div class="sell-text right-content">
                                     <div class="buy-now main-content">
                                         Bán ngay
@@ -222,16 +224,20 @@
         </section>
 
         <div class="break-section container-fluid"></div>
-        
+
         <div class="instagram-image container">
             <div class="row">
-                <div class="title col-12">
-                    <h2 class="h2">Hình ảnh on feet</h2>
+                <div class="col-12">
+                    <div class="title">
+                        <h2 class="h2">Hình ảnh on feet</h2>
+                        <p class="sub-title">Hãy tag chúng tôi @obostadium</p>
+                    </div>
+                    <div class="slide-btn"></div>
                 </div>
             </div>
             <div id="instafeed"></div>
         </div>
-        
+
 
         <div class="break-section container-fluid"></div>
 
@@ -256,7 +262,7 @@
                     </div>
                     <div class="shadow mx-auto position-absolute"></div>
                 </div>
-        
+
                 <div class="product position-relative">
                     <div class="card">
                         <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png" class="card-img-top"
@@ -270,7 +276,7 @@
                     </div>
                     <div class="shadow mx-auto position-absolute"></div>
                 </div>
-        
+
                 <div class="product position-relative">
                     <div class="card">
                         <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png" class="card-img-top"
@@ -284,7 +290,7 @@
                     </div>
                     <div class="shadow mx-auto position-absolute"></div>
                 </div>
-        
+
                 <div class="product position-relative">
                     <div class="card">
                         <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png" class="card-img-top"
@@ -347,9 +353,10 @@
     <!-- Instafeed Js -->
     <script type="text/javascript" src="./vendor/instafeed/instafeed.min.js"></script>
 
+
+    <!-- Common Js -->
     <script src="./script/except-home-page.js"></script>
     <script src="./script/product-details.js"></script>
-
 </body>
 
 </html>

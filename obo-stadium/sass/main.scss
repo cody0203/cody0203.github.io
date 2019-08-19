@@ -18,35 +18,74 @@ a {
     }
 }
 
-.btn-primary {
-    background-color: $main-color;
-    border: $none;
+.trans-btn {
+    color: $text-dark !important;
+    background-color: white;
+    @include border-w-radius;
 
     &:hover {
-        background-color: $hover-main-color;
+        background-color: white;
+        border-color: $text-dark
     }
 
+    &:focus {
+        background-color: white !important;
+    }
+
+    &:active {
+        background-color: white !important;
+        border-color: $text-dark
+    }
+}
+
+.btn.btn-primary {
     &:focus {
         outline: $none;
         box-shadow: $none;
     }
-
-    &:active {
-        background-color: $main-color !important;
+    &:active { 
         outline: $none !important;
         box-shadow: $none !important;
     }
 }
 
+.green-btn {
+    background-color: $green;
+    border: $none;
+    color: white !important;
+
+    &:hover {
+        background-color: $dark-green;
+    }
+
+    &:active {
+        background-color: $green !important;
+    }
+}
+
+.red-btn {
+    background-color: $main-color;
+    border: $none;
+    color: white;
+    &:hover {
+        background-color: $hover-main-color;
+    }
+
+    &:active {
+        background-color: $main-color !important;
+    }
+}
+
 .form-control {
-    color: #B6B6B6;
+    color: $text-dark;
     height: auto;
 
     &:focus {
-        color: #B6B6B6;
+        color: $text-dark;
         outline: $none;
         box-shadow: $none;
         border-color: inherit;
+        border-color: $text-dark;
     }
 
     &::placeholder {
