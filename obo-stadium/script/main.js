@@ -3,8 +3,8 @@ function changeUiHomePage() {
         $('#promo-banner-1').attr("src", "./image/banner/promo-banner-1-md.png");
         $('#promo-banner-2').attr("src", "./image/banner/promo-banner-2-md.png");
         $('#promo-banner-3').attr("src", "./image/banner/promo-banner-3-md.png");
-        $('.navbar').css("padding-bottom", "10px");
-        $('.search-form').css("padding-top", "10px");
+        $('.navbar').css("padding-bottom", "0px");
+        $('.search-form').css("padding-top", "0px");
         $('.search-form').css("padding-bottom", "20px");
 
     } else {

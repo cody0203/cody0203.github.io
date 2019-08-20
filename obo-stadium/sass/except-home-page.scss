@@ -4,6 +4,10 @@ main {
     margin-top: $fifty-pixel;
 }
 
+.search-form .btn-primary {
+    display: none;
+}
+
 .breadcrumb {
     margin-bottom: $twenty-pixel;
     background-color: $text-white;
@@ -34,5 +38,15 @@ main {
 @media (max-width: $medium-devices-width) {
     main {
         margin-top: $twenty-pixel;
+    }
+}
+
+@media (max-width: $closest-medium-devices-width) {
+    .search-form .form-control {
+        margin-bottom: 1.25rem;
+    }
+
+    .search-form .btn-primary {
+        display: block;
     }
 }
