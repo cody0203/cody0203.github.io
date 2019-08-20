@@ -91,8 +91,19 @@ header {
         & .form-control {
             margin-right: $zero-pixel;
             margin-bottom: $twenty-pixel;
+            flex: none;
+            max-width: 100%;
         }
 
+        & .btn-primary {
+            flex: none;
+            max-width: 100%;
+        }
+
+    }
+
+    .main-heading {
+        display: none;
     }
 }
 

@@ -1,0 +1,23 @@
+@import "./root.scss";
+
+header {
+    background-image: url("../image/banner/news-banner.png")
+}
+
+.search-form {
+    padding: $zero-pixel;
+}
+
+.main-heading {
+    margin: $fifty-pixel $zero-pixel 100px $zero-pixel;
+}
+
+@media (max-width: $medium-devices-width) {
+    .search-form .form-control {
+        margin-bottom: $zero-pixel;
+    }
+
+    .navbar {
+        padding: $zero-pixel;
+    }
+}

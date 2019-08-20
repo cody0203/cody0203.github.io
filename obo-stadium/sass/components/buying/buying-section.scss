@@ -84,7 +84,6 @@ input[type=radio]+label .radio-dot:before {
         width: 100%;
         margin-bottom: $twenty-pixel;
         padding: $twelve-pixel $twenty-pixel;
-        color: $text-dark
     }
 
     .sell:last-child {
@@ -142,7 +141,7 @@ input[type=radio]+label .radio-dot:before {
 
         &:hover,
         &:active {
-            border-left-color: $green !important;
+            border-left-color: transparent !important;
         }
     }
 }
