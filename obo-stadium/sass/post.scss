@@ -1,0 +1,153 @@
+@import "./root.scss";
+
+// Main content post
+
+.h1 {
+    line-height: $forty-seven-pixel;
+    margin-bottom: $ten-pixel;
+}
+
+.author,
+.h1 {
+    font-weight: bold;
+}
+
+.main-content {
+    margin-top: $fifty-pixel;
+}
+
+.img-post-wrapper {
+    text-align: center;
+    margin: $thirty-pixel auto;
+
+    & .img-post {
+        margin: auto;
+    }
+
+    & figcaption {
+        padding-top: $ten-pixel;
+        font-style: italic;
+    }
+}
+
+.img-post {
+    display: block;
+    margin: $thirty-pixel auto;
+    width: 768px;
+}
+
+.share-btn {
+    @include flex-center;
+    margin-top: $thirty-pixel;
+
+    & .btn {
+        padding: $five-pixel $twelve-pixel;
+        color: white;
+    }
+
+    & .facebook {
+        background-color: #3B5998;
+    }
+
+    & .twitter {
+        background-color: #00ACED;
+        margin: $zero-pixel $twenty-pixel;
+    }
+
+    & .pinterest {
+        background-color: #E60023;
+    }
+}
+
+// Post's Author
+
+.author-info-wrapper {
+    margin-top: $thirty-pixel;
+    margin-bottom: $thirty-pixel;
+
+    & .row {
+        @include border;
+        border-left: $zero-pixel;
+        border-right: $zero-pixel;
+        @include flex-center;
+        padding-top: $thirty-pixel;
+        padding-bottom: $thirty-pixel;
+    }
+
+    & .author {
+        font-size: $twenty-six-pixel;
+    }
+
+    & .details {
+        margin: $ten-pixel $zero-pixel;
+    }
+}
+
+.avatar {
+    text-align: left;
+}
+
+.social-info {
+    @include flex-center;
+
+    & .facebook {
+        margin: $zero-pixel $ten-pixel;
+    }
+}
+
+@media (max-width: $small-devices-width) {
+    .author-info {
+        margin-top: $twenty-pixel;
+    }
+
+    .main-content {
+        margin-top: $thirty-pixel;
+    }
+}
+
+// Lastest News Override
+
+.latest-news {
+
+    & .title {
+        @include flex-center-between;
+    }
+    & .h2 {
+        margin-bottom: $thirty-pixel;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .slick-arrow {
+        @include flex-center-between;
+    }
+}
+
+// Slick Override
+
+.slick-prev,
+.slick-next {
+    position: relative;
+    top: $zero-pixel;
+    left: $zero-pixel;
+    height: auto;
+    width: auto;
+    margin: $zero-pixel $five-pixel;
+}
+
+.slick-prev:before {
+    content: '\f053'
+}
+
+.slick-next:before {
+    content: '\f054'
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: $text-dark;
+    line-height: auto;
+    font-size: $thirty-pixel;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}

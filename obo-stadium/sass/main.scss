@@ -14,7 +14,7 @@ a {
     color: $text-dark;
 
     &:hover {
-        color: $hover-main-color;
+        color: inherit;
     }
 }
 
@@ -38,12 +38,14 @@ a {
     }
 }
 
-.btn.btn-primary {
+.btn,
+.btn-primary {
     &:focus {
         outline: $none;
         box-shadow: $none;
     }
-    &:active { 
+
+    &:active {
         outline: $none !important;
         box-shadow: $none !important;
     }
@@ -67,6 +69,7 @@ a {
     background-color: $main-color;
     border: $none;
     color: white;
+
     &:hover {
         background-color: $hover-main-color;
     }
