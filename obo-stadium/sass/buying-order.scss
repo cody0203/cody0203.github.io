@@ -1,0 +1,21 @@
+@import "./root.scss";
+
+.main-content {
+  & .nav {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: $closest-medium-devices-width) {
+  .main-content {
+    & .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow: scroll;
+    }
+
+    & .nav-item {
+      white-space: nowrap;
+    }
+  }
+}
