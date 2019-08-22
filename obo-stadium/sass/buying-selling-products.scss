@@ -1,0 +1,11 @@
+@import "./root.scss";
+
+.main-content {
+    & .nav {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    & .nav-link {
+        display: inline-block;
+    }
+}

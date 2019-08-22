@@ -89,9 +89,29 @@
 
 .social-info {
     @include flex-center;
+    font-size: $twenty-pixel;
 
     & .facebook {
         margin: $zero-pixel $ten-pixel;
+    }
+
+    & .icon {
+        width: $thirty-six-pixel;
+        height: $thirty-six-pixel;
+        @include flex-center-center;
+        color: white;
+    }
+
+    & .email {
+        background-color: $text-lighter-white;
+    }
+
+    & .facebook {
+        background-color: #3b5998;
+    }
+
+    & .twitter {
+        background-color: #00aced;
     }
 }
 

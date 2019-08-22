@@ -38,4 +38,8 @@ $(window).resize(changeUi);
 $(function () {
     render();
     changeUi()
-})
+});
+
+$('.product-link').on('click', function() {
+    localStorage.setItem('sessionsProduct', $(this).attr('id'));
+});
