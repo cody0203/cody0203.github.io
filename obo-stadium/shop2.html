@@ -1,0 +1,778 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="./vendor/bootstrap/css/bootstrap.min.css" />
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" type="text/css" href="./vendor/fontawesome/css/all.css">
+
+    <!-- Pretty Checkbox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
+
+    <!-- Components CSS -->
+    <link rel="stylesheet" type="text/css" href="./css/components/header.css">
+    <link rel="stylesheet" type="text/css" href="./css/components/products.css">
+    <link rel="stylesheet" type="text/css" href="./css/components/shop/filter-bar.css">
+    <link rel="stylesheet" type="text/css" href="./css/components/shop/product-showing.css">
+
+    <!-- Common CSS -->
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link rel="stylesheet" type="text/css" href="./css/except-home-page.css">
+    <link rel="stylesheet" type="text/css" href="./css/used-in-js.css">
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <header class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light container">
+            <a class="navbar-brand" href="#"> <img src="./image/logo-white.png" alt="logo" class="img-fluid"></a>
+
+            <div class="search-form">
+                <form>
+                    <input type="text" class="form-control" placeholder="Bạn cần tìm gì...">
+                    <button type="submit" class="btn btn-primary text-uppercase col-xl-2 col-md-3 col-12 red-btn">
+                        Tìm kiếm tất cả
+                    </button>
+                </form>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-md-end text-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./shop.html">Sản phẩm</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tin tức</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tài khoản</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="breadcrumb container">
+            <a href="./index.html" class="previous-page">Trang chủ</a> <i class="fas fa-chevron-right arrow"></i> <span
+                class="current-page">Sản phẩm</span>
+        </div>
+
+        <div class="shop-content-wrapper container">
+            <div class="row">
+                <div class="filter-bar col-lg-3 col-md-5 col-sm-7 col-9">
+                    <div class="filter-header content">
+                        <div class="left-side d-flex align-items-center">
+                            <i class="fas fa-sliders-h"></i>
+
+                            <div class="text">
+                                Lọc
+                            </div>
+                        </div>
+
+                        <button class="clear-filter btn btn-primary">
+                            Bỏ lọc
+                        </button>
+                    </div>
+
+                    <div class="break-line"></div>
+
+                    <div class="brand content">
+                        <div class="title">
+                            <div class="text">
+                                Thương hiệu
+                            </div>
+
+                            <a href="#"><i class="fas fa-chevron-up"></i></a>
+                        </div>
+
+                        <div class="select-filter">
+                            <div class="item">
+                                <div class="pretty p-svg p-curve">
+                                    <input class="filter-checkbox" type="checkbox" name="nike" id="nike /">
+                                    <div class="state p-success">
+                                        <svg class="svg svg-icon" viewBox="0 0 20 20">
+                                            <path
+                                                d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                                                style="stroke: white;fill:white;"></path>
+                                        </svg>
+                                        <label class="checkbox-label" for="nike">Nike</label>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="item">
+                                <div class="pretty p-svg p-curve">
+                                    <input class="filter-checkbox" type="checkbox" name="air-jordan" id="air-jordan /">
+                                    <div class="state p-success">
+                                        <svg class="svg svg-icon" viewBox="0 0 20 20">
+                                            <path
+                                                d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                                                style="stroke: white;fill:white;"></path>
+                                        </svg>
+                                        <label class="checkbox-label" for="air-jordan">Air Jordan</label>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="item">
+                                <div class="pretty p-svg p-curve">
+                                    <input class="filter-checkbox" type="checkbox" name="adidas" id="adidas /">
+                                    <div class="state p-success">
+                                        <svg class="svg svg-icon" viewBox="0 0 20 20">
+                                            <path
+                                                d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                                                style="stroke: white;fill:white;"></path>
+                                        </svg>
+                                        <label class="checkbox-label" for="adidas">Adidas</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="pretty p-svg p-curve">
+                                    <input class="filter-checkbox" type="checkbox" name="supreme" id="supreme /">
+                                    <div class="state p-success">
+                                        <svg class="svg svg-icon" viewBox="0 0 20 20">
+                                            <path
+                                                d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                                                style="stroke: white;fill:white;"></path>
+                                        </svg>
+                                        <label class="checkbox-label" for="supreme">Supreme</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="see-more">
+                            Xem thêm
+                        </div>
+                    </div>
+
+                    <div class="break-line"></div>
+
+                    <div class="category content">
+                        <div class="title">
+                            <div class="text">
+                                Danh mục
+                            </div>
+
+                            <a href="#"><i class="fas fa-chevron-up"></i></a>
+                        </div>
+
+                        <div class="select-filter">
+                            <div class="item">
+                                <div class="pretty p-svg p-curve">
+                                    <input class="filter-checkbox" type="checkbox" name="male" id="male /">
+                                    <div class="state p-success">
+                                        <svg class="svg svg-icon" viewBox="0 0 20 20">
+                                            <path
+                                                d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                                                style="stroke: white;fill:white;"></path>
+                                        </svg>
+                                        <label class="checkbox-label" for="male">Nam</label>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="item">
+                                <div class="pretty p-svg p-curve">
+                                    <input class="filter-checkbox" type="checkbox" name="female" id="female /">
+                                    <div class="state p-success">
+                                        <svg class="svg svg-icon" viewBox="0 0 20 20">
+                                            <path
+                                                d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                                                style="stroke: white;fill:white;"></path>
+                                        </svg>
+                                        <label class="checkbox-label" for="female">Nữ</label>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="item">
+                                <div class="pretty p-svg p-curve">
+                                    <input class="filter-checkbox" type="checkbox" name="youth" id="youth /">
+                                    <div class="state p-success">
+                                        <svg class="svg svg-icon" viewBox="0 0 20 20">
+                                            <path
+                                                d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                                                style="stroke: white;fill:white;"></path>
+                                        </svg>
+                                        <label class="checkbox-label" for="youth">Thiếu niên</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="pretty p-svg p-curve">
+                                    <input class="filter-checkbox" type="checkbox" name="toddler" id="toddler /">
+                                    <div class="state p-success">
+                                        <svg class="svg svg-icon" viewBox="0 0 20 20">
+                                            <path
+                                                d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                                                style="stroke: white;fill:white;"></path>
+                                        </svg>
+                                        <label class="checkbox-label" for="toddler">Sơ sinh</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="break-line"></div>
+
+                    <div class="size content">
+                        <div class="title">
+                            <div class="text">
+                                Size
+                            </div>
+
+                            <a href="#"><i class="fas fa-chevron-up"></i></a>
+                        </div>
+
+                        <div class="select-filter">
+                        </div>
+
+
+                    </div>
+
+                    <div class="break-line"></div>
+
+                    <div class="price-range content">
+                        <div class="title">
+                            <div class="text">
+                                Khoảng giá
+                            </div>
+                        </div>
+
+                        <input type="text" placeholder="Từ" class="form-control price-input"
+                            onkeypress="return priceInputValidate(event)">
+                        <input type="text" placeholder="Đến" class="form-control price-input" pattern="[0-9]"
+                            onkeypress="return priceInputValidate(event)">
+
+                        <button class="btn btn-primary apply-price red-btn">
+                            áp dụng
+                        </button>
+                    </div>
+
+                    <div class="break-line"></div>
+
+                    <div class="release-date content">
+                        <div class="title">
+                            <div class="text">
+                                Năm ra mắt
+                            </div>
+
+                            <a href="#"><i class="fas fa-chevron-up"></i></a>
+                        </div>
+
+                        <div class="date-row">
+                            <div class="item">
+                                <div class="pretty p-svg p-curve">
+                                    <input class="filter-checkbox" type="checkbox" name="nike" id="nike /">
+                                    <div class="state p-success">
+                                        <svg class="svg svg-icon" viewBox="0 0 20 20">
+                                            <path
+                                                d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                                                style="stroke: white;fill:white;"></path>
+                                        </svg>
+                                        <label class="checkbox-label" for="nike">2019</label>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="item">
+                                <div class="pretty p-svg p-curve">
+                                    <input class="filter-checkbox" type="checkbox" name="nike" id="nike /">
+                                    <div class="state p-success">
+                                        <svg class="svg svg-icon" viewBox="0 0 20 20">
+                                            <path
+                                                d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                                                style="stroke: white;fill:white;"></path>
+                                        </svg>
+                                        <label class="checkbox-label" for="nike">2018</label>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="date-row">
+                            <div class="item">
+                                <div class="pretty p-svg p-curve">
+                                    <input class="filter-checkbox" type="checkbox" name="nike" id="nike /">
+                                    <div class="state p-success">
+                                        <svg class="svg svg-icon" viewBox="0 0 20 20">
+                                            <path
+                                                d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                                                style="stroke: white;fill:white;"></path>
+                                        </svg>
+                                        <label class="checkbox-label" for="nike">2017</label>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="item">
+                                <div class="pretty p-svg p-curve">
+                                    <input class="filter-checkbox" type="checkbox" name="nike" id="nike /">
+                                    <div class="state p-success">
+                                        <svg class="svg svg-icon" viewBox="0 0 20 20">
+                                            <path
+                                                d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                                                style="stroke: white;fill:white;"></path>
+                                        </svg>
+                                        <label class="checkbox-label" for="nike">2016</label>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="date-row">
+                            <div class="item">
+                                <div class="pretty p-svg p-curve">
+                                    <input class="filter-checkbox" type="checkbox" name="nike" id="nike /">
+                                    <div class="state p-success">
+                                        <svg class="svg svg-icon" viewBox="0 0 20 20">
+                                            <path
+                                                d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                                                style="stroke: white;fill:white;"></path>
+                                        </svg>
+                                        <label class="checkbox-label" for="nike">2015</label>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="item">
+                                <div class="pretty p-svg p-curve">
+                                    <input class="filter-checkbox" type="checkbox" name="nike" id="nike /">
+                                    <div class="state p-success">
+                                        <svg class="svg svg-icon" viewBox="0 0 20 20">
+                                            <path
+                                                d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                                                style="stroke: white;fill:white;"></path>
+                                        </svg>
+                                        <label class="checkbox-label" for="nike">2014</label>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="date-row">
+                            <div class="item">
+                                <div class="pretty p-svg p-curve">
+                                    <input class="filter-checkbox" type="checkbox" name="nike" id="nike /">
+                                    <div class="state p-success">
+                                        <svg class="svg svg-icon" viewBox="0 0 20 20">
+                                            <path
+                                                d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                                                style="stroke: white;fill:white;"></path>
+                                        </svg>
+                                        <label class="checkbox-label" for="nike">2013</label>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="item">
+                                <div class="pretty p-svg p-curve">
+                                    <input class="filter-checkbox" type="checkbox" name="nike" id="nike /">
+                                    <div class="state p-success">
+                                        <svg class="svg svg-icon" viewBox="0 0 20 20">
+                                            <path
+                                                d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                                                style="stroke: white;fill:white;"></path>
+                                        </svg>
+                                        <label class="checkbox-label" for="nike">2012</label>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="see-more">
+                            Xem thêm
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-showing col-lg-9 col-12">
+                    <div class="sort">
+                        <div class="sort-content">
+                            Sắp xếp theo <span class="sort-name">Bán chạy</span><i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+
+                    <div class="product-row">
+                        <a href="./product-details.html" class="product-link" id="123456">
+                            <div class="product position-relative">
+                                <div class="card">
+                                    <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                        class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Adidas Yeezy Boost 350
+                                            V2 Lundmark (Non</h5>
+                                        <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
+                                        <p class="price">7.200.000 ₫</p>
+                                        <p class="card-text sold">Đã bán 1963 đôi</p>
+                                    </div>
+                                </div>
+                                <div class="shadow mx-auto position-absolute"></div>
+                            </div>
+                        </a>
+
+                        <a href="./index.html" class="product-link" id="78910">
+                            <div class="product position-relative">
+                                <div class="card">
+                                    <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png" class="card-img-top"
+                                        alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Jordan 4 Retro Cool Grey (2019)</h5>
+                                        <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
+                                        <p class="price">4.810.000 ₫</p>
+                                        <p class="card-text sold">Đã bán 1312 đôi</p>
+                                    </div>
+                                </div>
+                                <div class="shadow mx-auto position-absolute"></div>
+                            </div>
+                        </a>
+                        
+
+                        <div class="product position-relative">
+                            <div class="card">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <div class="card-body">
+                                    <h5 class="card-title">Jordan 1 Retro Low OG SP Travis Scott</h5>
+                                    <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
+                                    <p class="price">20.790.000 ₫</p>
+                                    <p class="card-text sold">Đã bán 2246 đôi</p>
+                                </div>
+                            </div>
+                            <div class="shadow mx-auto position-absolute"></div>
+                        </div>
+
+                        <div class="product position-relative">
+                            <div class="card">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <div class="card-body">
+                                    <h5 class="card-title">Air Jordan 1 Mid Yellow Toe Black</h5>
+                                    <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
+                                    <p class="price">3.740.000 ₫</p>
+                                    <p class="card-text sold">Đã bán 564 đôi</p>
+                                </div>
+                            </div>
+                            <div class="shadow mx-auto position-absolute"></div>
+                        </div>
+
+                        <div class="product position-relative">
+                            <div class="card">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <div class="card-body">
+                                    <h5 class="card-title">Nike SB Dunk Low Parra</h5>
+                                    <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
+                                    <p class="price">6.620.000 ₫</p>
+                                    <p class="card-text sold">Đã bán 1456 đôi</p>
+                                </div>
+                            </div>
+                            <div class="shadow mx-auto position-absolute"></div>
+                        </div>
+
+                        <div class="product position-relative">
+                            <div class="card">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <div class="card-body">
+                                    <h5 class="card-title">Adidas Yeezy Boost 350
+                                        V2 Lundmark (Non</h5>
+                                    <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
+                                    <p class="price">7.200.000 ₫</p>
+                                    <p class="card-text sold">Đã bán 1963 đôi</p>
+                                </div>
+                            </div>
+                            <div class="shadow mx-auto position-absolute"></div>
+                        </div>
+
+                        <div class="product position-relative">
+                            <div class="card">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <div class="card-body">
+                                    <h5 class="card-title">Jordan 4 Retro Cool Grey (2019)</h5>
+                                    <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
+                                    <p class="price">4.810.000 ₫</p>
+                                    <p class="card-text sold">Đã bán 1312 đôi</p>
+                                </div>
+                            </div>
+                            <div class="shadow mx-auto position-absolute"></div>
+                        </div>
+
+                        <div class="product position-relative">
+                            <div class="card">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <div class="card-body">
+                                    <h5 class="card-title">Jordan 1 Retro Low OG SP Travis Scott</h5>
+                                    <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
+                                    <p class="price">20.790.000 ₫</p>
+                                    <p class="card-text sold">Đã bán 2246 đôi</p>
+                                </div>
+                            </div>
+                            <div class="shadow mx-auto position-absolute"></div>
+                        </div>
+
+                        <div class="product position-relative">
+                            <div class="card">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <div class="card-body">
+                                    <h5 class="card-title">Air Jordan 1 Mid Yellow Toe Black</h5>
+                                    <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
+                                    <p class="price">3.740.000 ₫</p>
+                                    <p class="card-text sold">Đã bán 564 đôi</p>
+                                </div>
+                            </div>
+                            <div class="shadow mx-auto position-absolute"></div>
+                        </div>
+
+                        <div class="product position-relative">
+                            <div class="card">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <div class="card-body">
+                                    <h5 class="card-title">Nike SB Dunk Low Parra</h5>
+                                    <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
+                                    <p class="price">6.620.000 ₫</p>
+                                    <p class="card-text sold">Đã bán 1456 đôi</p>
+                                </div>
+                            </div>
+                            <div class="shadow mx-auto position-absolute"></div>
+                        </div>
+
+                        <div class="product position-relative">
+                            <div class="card">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <div class="card-body">
+                                    <h5 class="card-title">Adidas Yeezy Boost 350
+                                        V2 Lundmark (Non</h5>
+                                    <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
+                                    <p class="price">7.200.000 ₫</p>
+                                    <p class="card-text sold">Đã bán 1963 đôi</p>
+                                </div>
+                            </div>
+                            <div class="shadow mx-auto position-absolute"></div>
+                        </div>
+
+                        <div class="product position-relative">
+                            <div class="card">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <div class="card-body">
+                                    <h5 class="card-title">Jordan 4 Retro Cool Grey (2019)</h5>
+                                    <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
+                                    <p class="price">4.810.000 ₫</p>
+                                    <p class="card-text sold">Đã bán 1312 đôi</p>
+                                </div>
+                            </div>
+                            <div class="shadow mx-auto position-absolute"></div>
+                        </div>
+
+                        <div class="product position-relative">
+                            <div class="card">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <div class="card-body">
+                                    <h5 class="card-title">Jordan 1 Retro Low OG SP Travis Scott</h5>
+                                    <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
+                                    <p class="price">20.790.000 ₫</p>
+                                    <p class="card-text sold">Đã bán 2246 đôi</p>
+                                </div>
+                            </div>
+                            <div class="shadow mx-auto position-absolute"></div>
+                        </div>
+
+                        <div class="product position-relative">
+                            <div class="card">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <div class="card-body">
+                                    <h5 class="card-title">Air Jordan 1 Mid Yellow Toe Black</h5>
+                                    <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
+                                    <p class="price">3.740.000 ₫</p>
+                                    <p class="card-text sold">Đã bán 564 đôi</p>
+                                </div>
+                            </div>
+                            <div class="shadow mx-auto position-absolute"></div>
+                        </div>
+
+                        <div class="product position-relative">
+                            <div class="card">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <div class="card-body">
+                                    <h5 class="card-title">Nike SB Dunk Low Parra</h5>
+                                    <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
+                                    <p class="price">6.620.000 ₫</p>
+                                    <p class="card-text sold">Đã bán 1456 đôi</p>
+                                </div>
+                            </div>
+                            <div class="shadow mx-auto position-absolute"></div>
+                        </div>
+
+                        <div class="product position-relative">
+                            <div class="card">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <div class="card-body">
+                                    <h5 class="card-title">Adidas Yeezy Boost 350
+                                        V2 Lundmark (Non</h5>
+                                    <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
+                                    <p class="price">7.200.000 ₫</p>
+                                    <p class="card-text sold">Đã bán 1963 đôi</p>
+                                </div>
+                            </div>
+                            <div class="shadow mx-auto position-absolute"></div>
+                        </div>
+
+                        <div class="product position-relative">
+                            <div class="card">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <div class="card-body">
+                                    <h5 class="card-title">Jordan 4 Retro Cool Grey (2019)</h5>
+                                    <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
+                                    <p class="price">4.810.000 ₫</p>
+                                    <p class="card-text sold">Đã bán 1312 đôi</p>
+                                </div>
+                            </div>
+                            <div class="shadow mx-auto position-absolute"></div>
+                        </div>
+
+                        <div class="product position-relative">
+                            <div class="card">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <div class="card-body">
+                                    <h5 class="card-title">Jordan 1 Retro Low OG SP Travis Scott</h5>
+                                    <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
+                                    <p class="price">20.790.000 ₫</p>
+                                    <p class="card-text sold">Đã bán 2246 đôi</p>
+                                </div>
+                            </div>
+                            <div class="shadow mx-auto position-absolute"></div>
+                        </div>
+
+                        <div class="product position-relative">
+                            <div class="card">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <div class="card-body">
+                                    <h5 class="card-title">Air Jordan 1 Mid Yellow Toe Black</h5>
+                                    <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
+                                    <p class="price">3.740.000 ₫</p>
+                                    <p class="card-text sold">Đã bán 564 đôi</p>
+                                </div>
+                            </div>
+                            <div class="shadow mx-auto position-absolute"></div>
+                        </div>
+
+                        <div class="product position-relative">
+                            <div class="card">
+                                <img src="./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png"
+                                    class="card-img-top" alt="adidas-Yeezy-Boost-350-V2-Lundmark">
+                                <div class="card-body">
+                                    <h5 class="card-title">Nike SB Dunk Low Parra</h5>
+                                    <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
+                                    <p class="price">6.620.000 ₫</p>
+                                    <p class="card-text sold">Đã bán 1456 đôi</p>
+                                </div>
+                            </div>
+                            <div class="shadow mx-auto position-absolute"></div>
+                        </div>
+                    </div>   
+                    
+                    <nav aria-label="Page navigation example" class="pagination-wrapper">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="container-fluid">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="logo col-md-3 col-12 text-md-left text-center">
+                    <img src="./image/logo-white.png" alt="logo" class="img-fluid">
+                </div>
+
+                <div
+                    class="footer-link col-md-9 col-12 d-flex justify-content-md-end align-items-center flex-md-row flex-column">
+                    <a href="#" class="item">Các câu hỏi thường gặp</a>
+                    <a href="#" class="item">Điều khoản</a>
+                    <a href="#" class="item">Chính sách</a>
+                    <a href="#" class="item">Hỗ trợ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="./vendor/jquery/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="./vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="./script/except-home-page.js"></script>
+    <script src="./script/shop.js"></script>
+</body>
+
+</html>

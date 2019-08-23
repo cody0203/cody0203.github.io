@@ -1,0 +1,75 @@
+extends ./common
+
+block customizeCss
+  link(rel='stylesheet' type='text/css' href='./css/components/header.css')
+  // Common CSS
+  link(rel='stylesheet' type='text/css' href='./css/main.css')
+  link(rel='stylesheet' type='text/css' href='./css/except-home-page.css')
+  link(rel='stylesheet' type='text/css' href='./css/used-in-js.css')
+  link(rel='stylesheet' type='text/css' href='./css/account.css')
+  link(rel='stylesheet' type='text/css' href='./css/account-setting.css')
+
+block title
+  title Thông tin tài khoản
+
+block header
+  include ./template-parts/header
+
+block mainContent
+  .main-content-wrapper.container
+    .row
+      .col-lg-3
+        .left-sidebar
+          .header
+            .avatar
+              img.img-fluid(src='./image/post/avatar.png' alt='avatar')
+            .user-info
+              .user-name
+                | Cody
+              .edit-profile
+                | Ch&#x1EC9;nh s&#x1EED;a t&agrave;i kho&#x1EA3;n
+          .break-line
+          .nav-sidebar
+            a.selling-buying-products.nav-item(href='./buying-selling-products.html')
+              | Qu&#x1EA3;n l&yacute; mua/b&aacute;n s&#x1EA3;n ph&#x1EA9;m
+            a.buying-order.nav-item(href='./buying-order.html')
+              | &Dstrok;&#x1A1;n h&agrave;ng mua
+            a.selling-buying-products.nav-item
+              | &Dstrok;&#x1A1;n h&agrave;ng b&aacute;n
+            a.account.nav-item.active(href="./account.html")
+              | Qu&#x1EA3;n l&yacute; t&agrave;i kho&#x1EA3;n
+      .col-lg-9.main-content-wrapper
+        .main-content
+          .nav-tab
+            ul#pills-tab.nav.nav-pills(role='tablist')
+              li.nav-item
+                a#profile-setting-tab.nav-link.active(data-toggle='pill' href='#profile-setting' role='tab' aria-controls='profile-setting' aria-selected='true') Hồ sơ tài khoản
+              li.nav-item
+                a#sell-tab.nav-link(data-toggle='pill' href='#sell' role='tab' aria-controls='sell' aria-selected='false') Sổ địa chỉ
+              li.nav-item
+                a#sell-tab.nav-link(data-toggle='pill' href='#sell' role='tab' aria-controls='sell' aria-selected='false') Thông tin thanh toán
+          #pills-tabContent.tab-content
+            // profile-setting Section
+            #profile-setting.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='profile-setting-tab')
+              // Item
+              .profile-box
+                .full-name.item-row.col-md-10
+                  .text Họ tên
+                  input.form-control
+                .email.item-row.col-md-10
+                  .text Email
+                  input.form-control
+                .password.item-row.col-md-10
+                  .text Mật khẩu
+                  input.form-control
+                .phone.item-row.col-md-10
+                  .text Số điện thoại
+                  input.form-control
+                .phone.item-row.col-md-10
+                  .text Số điện thoại
+                  input.form-control
+block footer
+  include ./template-parts/footer
+
+block customizeScript
+  script(src="./script/except-home-page.js")

@@ -1,0 +1,21 @@
+@import "./root.scss";
+
+.nav-pills {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.profile-box {
+  @include border-w-radius;
+  padding: $thirty-pixel $forty-pixel;
+  color: $text-dark;
+  font-weight: normal;
+}
+
+.item-row {
+  @include flex-center-between;
+  margin-bottom: $twenty-pixel;
+
+  & .form-control {
+    width: 70%;
+  }
+}

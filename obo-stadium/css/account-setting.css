@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+.nav-pills {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.profile-box {
+  border: 0.0625rem solid #D5D6D6;
+  border-radius: 0.25rem;
+  padding: 1.875rem 2.5rem;
+  color: #333333;
+  font-weight: normal;
+}
+
+.item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+.item-row .form-control {
+  width: 70%;
+}
+
+/*# sourceMappingURL=account-setting.css.map */

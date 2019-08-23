@@ -1,1 +1,54 @@
-@import"https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap";@import"https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap";main{margin-top:3.125rem}.search-form .btn-primary{display:none}.breadcrumb{margin-bottom:1.25rem;background-color:#fff;display:block;padding-top:0px;padding-bottom:0px}.previous-page{color:#f04e40}.arrow{margin:0px .3125rem}.pagination-wrapper{display:flex;align-items:center;justify-content:center;margin-top:3.125rem}@media(max-width: 576px){main{margin-top:1.25rem}}@media(max-width: 768px){main{margin-top:1.25rem}}@media(max-width: 767px){.search-form .form-control{margin-bottom:1.25rem}.search-form .btn-primary{display:block}}/*# sourceMappingURL=shop.css.map */
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+main {
+  margin-top: 3.125rem;
+}
+
+.search-form .btn-primary {
+  display: none;
+}
+
+.breadcrumb {
+  margin-bottom: 1.25rem;
+  background-color: #ffffff;
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.previous-page {
+  color: #F04E40;
+}
+
+.arrow {
+  margin: 0px 0.3125rem;
+}
+
+.pagination-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3.125rem;
+}
+
+@media (max-width: 576px) {
+  main {
+    margin-top: 1.25rem;
+  }
+}
+@media (max-width: 768px) {
+  main {
+    margin-top: 1.25rem;
+  }
+}
+@media (max-width: 767px) {
+  .search-form .form-control {
+    margin-bottom: 1.25rem;
+  }
+
+  .search-form .btn-primary {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=shop.css.map */

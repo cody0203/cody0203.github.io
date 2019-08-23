@@ -1,0 +1,330 @@
+extends ./common 
+
+block customizeCss
+  // Components CSS
+  link(rel="stylesheet" type="text/css" href="./css/components/products.css")
+  link(rel="stylesheet" type="text/css" href="./css/components/lastest-news.css")
+  link(rel="stylesheet" type="text/css" href="./css/components/index/index-newsletter.css")
+  link(rel="stylesheet" type="text/css" href="./css/components/index/index-category.css")
+  link(rel="stylesheet" type="text/css" href="./css/components/index/product-showcase.css")
+
+  // Common CSS
+  link(rel="stylesheet" type="text/css" href="./css/main.css")
+  link(rel="stylesheet" type="text/css" href="./css/index.css")
+
+block title
+  title Trang Chủ
+
+block header
+  include ./template-parts/index-header
+
+block mainContent
+  section.products-showcase.container
+    .row
+      .title.col-12
+        h2.h2 S&#x1EA3;n ph&#x1EA9;m b&aacute;n ch&#x1EA1;y
+        a.see-more-btn-text.text-uppercase(href='#') Xem Th&ecirc;m
+    .row.product-row.d-flex.justify-content-md-between
+      .product.position-relative
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Adidas Yeezy Boost 350 V2 Lundmark (Non
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 7.200.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 1963 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+      .product.position-relative
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Jordan 4 Retro Cool Grey (2019)
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 4.810.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 1312 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+      .product.position-relative
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Jordan 1 Retro Low OG SP Travis Scott
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 20.790.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 2246 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+      .product.position-relative
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Air Jordan 1 Mid Yellow Toe Black
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 3.740.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 564 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+      .product.position-relative
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Nike SB Dunk Low Parra
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 6.620.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 1456 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+  // Break Banner
+  section.break-banner
+    a(href='#')
+      img#promo-banner-1.img-fluid(src='./image/banner/promo-banner-1-lg.png' alt='promo-banner-1')
+  // Staff Selects
+  section.products-showcase.container
+    .row
+      .title.col-12
+        h2.h2 S&#x1EA3;n ph&#x1EA9;m b&aacute;n ch&#x1EA1;y
+        a.see-more-btn-text.text-uppercase(href='#') Xem Th&ecirc;m
+    .row.product-row.d-flex.justify-content-md-between
+      .product.position-relative
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Adidas Yeezy Boost 350 V2 Lundmark (Non
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 7.200.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 1963 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+      .product.position-relative
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Jordan 4 Retro Cool Grey (2019)
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 4.810.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 1312 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+      .product.position-relative
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Jordan 1 Retro Low OG SP Travis Scott
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 20.790.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 2246 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+      .product.position-relative
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Air Jordan 1 Mid Yellow Toe Black
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 3.740.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 564 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+      .product.position-relative
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Nike SB Dunk Low Parra
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 6.620.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 1456 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+  // Break Banner
+  section.break-banner
+    a(href='#')
+      img#promo-banner-2.img-fluid(src='./image/banner/promo-banner-2-lg.png' alt='promo-banner-2')
+  // Under retails
+  section.products-showcase.container
+    .row
+      .title.col-12
+        h2.h2 S&#x1EA3;n ph&#x1EA9;m b&aacute;n ch&#x1EA1;y
+        a.see-more-btn-text.text-uppercase(href='#') Xem Th&ecirc;m
+    .row.product-row.d-flex.justify-content-md-between
+      .product.position-relative
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Adidas Yeezy Boost 350 V2 Lundmark (Non
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 7.200.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 1963 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+      .product.position-relative
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Jordan 4 Retro Cool Grey (2019)
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 4.810.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 1312 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+      .product.position-relative
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Jordan 1 Retro Low OG SP Travis Scott
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 20.790.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 2246 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+      .product.position-relative
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Air Jordan 1 Mid Yellow Toe Black
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 3.740.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 564 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+      .product.position-relative
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Nike SB Dunk Low Parra
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 6.620.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 1456 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+  // Break Banner
+  section.break-banner
+    a(href='#')
+      img#promo-banner-3.img-fluid(src='./image/banner/promo-banner-3-lg.png' alt='promo-banner-3')
+  // Category Section
+  section.categories-showcase.container
+    .row
+      .title.col-12
+        h2.h2 B&#x1ED9; S&#x1B0;u T&#x1EAD;p
+    .row.categories-row.d-flex.justify-content-md-between
+      .category.col-sm-4
+        a.category-wrap(href='#')
+          img.img-fluid(src='./image/categories/category-1.png' alt='category-1')
+          .tag TECH PERFORMANCE
+      .category.col-sm-4
+        a.category-wrap(href=' #')
+          img.img-fluid(src=' ./image/categories/category-2.png' alt='category-2')
+          .tag OFF-WHITE
+      .category.col-sm-4
+        a.category-wrap(href=' #')
+          img.img-fluid(src=' ./image/categories/category-3.png' alt='category-3')
+          .tag SUPREME
+      .category.col-sm-4
+        a.category-wrap(href=' #')
+          img.img-fluid(src=' ./image/categories/category-4.png' alt='category-4')
+          .tag NBA
+      .category.col-sm-4
+        a.category-wrap(href=' #')
+          img.img-fluid(src=' ./image/categories/category-5.png' alt='category-5')
+          .tag YEEZY
+      #last-category.category.col-sm-4
+        a.category-wrap(href=' #')
+          img.img-fluid(src=' ./image/categories/category-6.png' alt='category-6')
+          .tag Comme Des Gar&ccedil;ons
+  // Newsletter Section
+  section.newsletter.container-fluid.d-flex.justify-content-center
+    .newsletter-form-wrapper
+      .title &Dstrok;&abreve;ng k&yacute; nh&#x1EAD;n b&#x1EA3;n tin OBO Stadium
+      .sub-title H&atilde;y &dstrok;&abreve;ng k&yacute; &dstrok;&#x1EC3; nh&#x1EAD;n tin m&#x1EDB;i nhanh nh&#x1EA5;t qua email
+      .newsletter-form.d-flex
+        form.d-flex.w-100.justify-content-between.flex-column.flex-md-row
+          input.form-control(type='text' placeholder='Nhập địa chỉ email của bạn')
+          button.btn.btn-primary.text-uppercase.red-btn(type='submit') &dstrok;&abreve;ng k&yacute;
+  // Lastest News Section
+  section.latest-news.container
+    .row
+      .title.col-12
+        h2.h2 B&agrave;i vi&#x1EBF;t m&#x1EDB;i
+        a.see-more-btn-text.text-uppercase(href='#') Xem Th&ecirc;m
+    .carousel
+      .news.position-relative
+        .card
+          img.card-img-top(src='./image/news/news-1.jpg' alt='news-1')
+          .card-body
+            h5.card-title Jordan Brand k&#x1EF7; ni&#x1EC7;m FIBA b&#x1EB1;ng m&#x1ED9;t BST &ldquo;m&atilde;n nh&atilde;n&rdquo;
+            p.card-text.news-short-desc
+              | Jordan Brand m&#x1EDB;i &dstrok;&acirc;y &dstrok;&atilde; tung ra m&#x1ED9;t b&#x1ED9; s&#x1B0;u t&#x1EAD;p &dstrok;&#x1EB7;c bi&#x1EC7;t v&#x1EDB;i
+            p.card-text.author
+              | By 
+              span.name Cody
+              |  &middot; 27/07/2019
+        .shadow.mx-auto.position-absolute
+      .news.position-relative
+        .card
+          img.card-img-top(src='./image/news/news-2.jpg' alt='news-1')
+          .card-body
+            h5.card-title Jordan Brand k&#x1EF7; ni&#x1EC7;m FIBA b&#x1EB1;ng m&#x1ED9;t BST &ldquo;m&atilde;n nh&atilde;n&rdquo;
+            p.card-text.news-short-desc
+              | Jordan Brand m&#x1EDB;i &dstrok;&acirc;y &dstrok;&atilde; tung ra m&#x1ED9;t b&#x1ED9; s&#x1B0;u t&#x1EAD;p &dstrok;&#x1EB7;c bi&#x1EC7;t v&#x1EDB;i
+            p.card-text.author
+              | By 
+              span.name Cody
+              |  &middot; 27/07/2019
+        .shadow.mx-auto.position-absolute
+      .news.position-relative
+        .card
+          img.card-img-top(src='./image/news/news-3.jpg' alt='news-1')
+          .card-body
+            h5.card-title Jordan Brand k&#x1EF7; ni&#x1EC7;m FIBA b&#x1EB1;ng m&#x1ED9;t BST &ldquo;m&atilde;n nh&atilde;n&rdquo;
+            p.card-text.news-short-desc
+              | Jordan Brand m&#x1EDB;i &dstrok;&acirc;y &dstrok;&atilde; tung ra m&#x1ED9;t b&#x1ED9; s&#x1B0;u t&#x1EAD;p &dstrok;&#x1EB7;c bi&#x1EC7;t v&#x1EDB;i
+            p.card-text.author
+              | By 
+              span.name Cody
+              |  &middot; 27/07/2019
+        .shadow.mx-auto.position-absolute
+      .news.position-relative
+        .card
+          img.card-img-top(src='./image/news/news-4.png' alt='news-1')
+          .card-body
+            h5.card-title Jordan Brand k&#x1EF7; ni&#x1EC7;m FIBA b&#x1EB1;ng m&#x1ED9;t BST &ldquo;m&atilde;n nh&atilde;n&rdquo;
+            p.card-text.news-short-desc
+              | Jordan Brand m&#x1EDB;i &dstrok;&acirc;y &dstrok;&atilde; tung ra m&#x1ED9;t b&#x1ED9; s&#x1B0;u t&#x1EAD;p &dstrok;&#x1EB7;c bi&#x1EC7;t v&#x1EDB;i
+            p.card-text.author
+              | By 
+              span.name Cody
+              |  &middot; 27/07/2019
+        .shadow.mx-auto.position-absolute
+      .news.position-relative
+        .card
+          img.card-img-top(src='./image/news/news-5.jpg' alt='news-1')
+          .card-body
+            h5.card-title Jordan Brand k&#x1EF7; ni&#x1EC7;m FIBA b&#x1EB1;ng m&#x1ED9;t BST &ldquo;m&atilde;n nh&atilde;n&rdquo;
+            p.card-text.news-short-desc
+              | Jordan Brand m&#x1EDB;i &dstrok;&acirc;y &dstrok;&atilde; tung ra m&#x1ED9;t b&#x1ED9; s&#x1B0;u t&#x1EAD;p &dstrok;&#x1EB7;c bi&#x1EC7;t v&#x1EDB;i
+            p.card-text.author
+              | By 
+              span.name Cody
+              |  &middot; 27/07/2019
+        .shadow.mx-auto.position-absolute
+      .news.position-relative
+        .card
+          img.card-img-top(src='./image/news/news-1.jpg' alt='news-1')
+          .card-body
+            h5.card-title Jordan Brand k&#x1EF7; ni&#x1EC7;m FIBA b&#x1EB1;ng m&#x1ED9;t BST &ldquo;m&atilde;n nh&atilde;n&rdquo;
+            p.card-text.news-short-desc
+              | Jordan Brand m&#x1EDB;i &dstrok;&acirc;y &dstrok;&atilde; tung ra m&#x1ED9;t b&#x1ED9; s&#x1B0;u t&#x1EAD;p &dstrok;&#x1EB7;c bi&#x1EC7;t v&#x1EDB;i
+            p.card-text.author
+              | By 
+              span.name Cody
+              |  &middot; 27/07/2019
+        .shadow.mx-auto.position-absolute
+      .news.position-relative
+        .card
+          img.card-img-top(src='./image/news/news-1.jpg' alt='news-1')
+          .card-body
+            h5.card-title Jordan Brand k&#x1EF7; ni&#x1EC7;m FIBA b&#x1EB1;ng m&#x1ED9;t BST &ldquo;m&atilde;n nh&atilde;n&rdquo;
+            p.card-text.news-short-desc
+              | Jordan Brand m&#x1EDB;i &dstrok;&acirc;y &dstrok;&atilde; tung ra m&#x1ED9;t b&#x1ED9; s&#x1B0;u t&#x1EAD;p &dstrok;&#x1EB7;c bi&#x1EC7;t v&#x1EDB;i
+            p.card-text.author
+              | By 
+              span.name Cody
+              |  &middot; 27/07/2019
+        .shadow.mx-auto.position-absolute
+
+block footer
+  include ./template-parts/footer
+
+block customizeScript
+  // Slick JS
+  script(type="text/javascript" src="./vendor/slick/slick.min.js")
+  
+  // Common JS
+  script(type="text/javascript" src="./script/main.js")
+  script(type="text/javascript" src="./script/lastest-news.js")
+  

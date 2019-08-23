@@ -1,0 +1,286 @@
+extends ./common
+
+block customizeCss
+  // Components CSS
+  link(rel='stylesheet' type='text/css' href='./css/components/header.css')
+  // Common CSS
+  link(rel='stylesheet' type='text/css' href='./css/main.css')
+  link(rel='stylesheet' type='text/css' href='./css/except-home-page.css')
+  link(rel='stylesheet' type='text/css' href='./css/used-in-js.css')
+  link(rel='stylesheet' type='text/css' href='./css/account.css')
+  link(rel='stylesheet' type='text/css' href='./css/buying-order.css')
+
+block title
+  title Đơn hàng mua
+
+block header
+  include ./template-parts/header
+
+block mainContent
+  .container
+    .row
+      .col-lg-3.left-sidebar-wrapper
+        .left-sidebar
+          .header
+            .avatar
+              img.img-fluid(src='./image/post/avatar.png' alt='avatar')
+            .user-info
+              .user-name
+                | Cody
+              .edit-profile
+                | Ch&#x1EC9;nh s&#x1EED;a t&agrave;i kho&#x1EA3;n
+          .break-line
+          .nav-sidebar
+            a.selling-buying-products.nav-item(href='./buying-selling-products.html')
+              | Qu&#x1EA3;n l&yacute; mua/b&aacute;n s&#x1EA3;n ph&#x1EA9;m
+            a.buying-order.nav-item.active(href='./buying-order.html')
+              | &Dstrok;&#x1A1;n h&agrave;ng mua
+            a.selling-buying-products.nav-item
+              | &Dstrok;&#x1A1;n h&agrave;ng b&aacute;n
+            a.account.nav-item(href="./account.html")
+              | Qu&#x1EA3;n l&yacute; t&agrave;i kho&#x1EA3;n
+      .col-lg-9.main-content-wrapper
+        .main-content
+          .nav-tab
+            ul#pills-tab.nav.nav-pills(role='tablist')
+              li.nav-item
+                a#bid-tab.nav-link.active(data-toggle='pill' href='#bid' role='tab' aria-controls='bid' aria-selected='true') Ch&#x1EDD; l&#x1EA5;y h&agrave;ng
+              li.nav-item
+                a#sell-tab.nav-link(data-toggle='pill' href='#sell' role='tab' aria-controls='sell' aria-selected='false') &Dstrok;ang giao h&agrave;ng
+              li.nav-item
+                a#sell-tab.nav-link(data-toggle='pill' href='#sell' role='tab' aria-controls='sell' aria-selected='false') &Dstrok;&atilde; giao h&agrave;ng
+              li.nav-item
+                a#sell-tab.nav-link(data-toggle='pill' href='#sell' role='tab' aria-controls='sell' aria-selected='false') &Dstrok;&atilde; hu&#x1EF7;
+          #pills-tabContent.tab-content
+            // Bid Section
+            #bid.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='bid-tab')
+              // Item
+              .item
+                .header-item
+                  .order-number-wrapper
+                    | M&atilde; &dstrok;&#x1A1;n 
+                    a.order-number(href='./order-details.html')
+                      | #123abc
+                  a.full-details(href='./order-details.html')
+                    | Xem chi ti&#x1EBF;t
+                .item-info-wrapper
+                  .product-info-wrapper
+                    .thumbnails
+                      img.img-fluid(src='./image/product/yeezy-700-waverunner-solid-grey.jpg' alt='')
+                    .product-info
+                      a.name(href='product-details.html')
+                        | Adidas Yeezy Boost 700 Wave Runner Solid Grey
+                      .size
+                        | 8US | 41VN | 26CM
+                  .price.bid-price
+                    | 9.310.000 &#x20AB;
+              // Item Small
+              .item-small
+                .order-number-wrapper
+                  | M&atilde; &dstrok;&#x1A1;n 
+                  a.order-number(href='./order-details.html')
+                    | #123abc
+                .item-info-wrapper
+                  .product-info-wrapper
+                    .product-info
+                      a.name(href='product-details.html')
+                        | Adidas Yeezy Boost 700 Wave Runner Solid Grey
+                      .size
+                        | 8US | 41VN | 26CM
+                  .price.bid-price
+                    | 9.310.000 &#x20AB;
+              // Item
+              .item
+                .header-item
+                  .order-number-wrapper
+                    | M&atilde; &dstrok;&#x1A1;n 
+                    a.order-number(href='#')
+                      | #123abc
+                  a.full-details(href='#')
+                    | Xem chi ti&#x1EBF;t
+                .item-info-wrapper
+                  .product-info-wrapper
+                    .thumbnails
+                      img.img-fluid(src='./image/product/yeezy-700-waverunner-solid-grey.jpg' alt='')
+                    .product-info
+                      a.name(href='product-details.html')
+                        | Adidas Yeezy Boost 700 Wave Runner Solid Grey
+                      .size
+                        | 8US | 41VN | 26CM
+                  .price.bid-price
+                    | 9.310.000 &#x20AB;
+              // Item Small
+              .item-small
+                .order-number-wrapper
+                  | M&atilde; &dstrok;&#x1A1;n 
+                  a.order-number(href='#')
+                    | #123abc
+                .item-info-wrapper
+                  .product-info-wrapper
+                    .product-info
+                      a.name(href='product-details.html')
+                        | Adidas Yeezy Boost 700 Wave Runner Solid Grey
+                      .size
+                        | 8US | 41VN | 26CM
+                  .price.bid-price
+                    | 9.310.000 &#x20AB;
+              // Item
+              .item
+                .header-item
+                  .order-number-wrapper
+                    | M&atilde; &dstrok;&#x1A1;n 
+                    a.order-number(href='#')
+                      | #123abc
+                  a.full-details(href='#')
+                    | Xem chi ti&#x1EBF;t
+                .item-info-wrapper
+                  .product-info-wrapper
+                    .thumbnails
+                      img.img-fluid(src='./image/product/yeezy-700-waverunner-solid-grey.jpg' alt='')
+                    .product-info
+                      a.name(href='product-details.html')
+                        | Adidas Yeezy Boost 700 Wave Runner Solid Grey
+                      .size
+                        | 8US | 41VN | 26CM
+                  .price.bid-price
+                    | 9.310.000 &#x20AB;
+              // Item Small
+              .item-small
+                .order-number-wrapper
+                  | M&atilde; &dstrok;&#x1A1;n 
+                  a.order-number(href='#')
+                    | #123abc
+                .item-info-wrapper
+                  .product-info-wrapper
+                    .product-info
+                      a.name(href='product-details.html')
+                        | Adidas Yeezy Boost 700 Wave Runner Solid Grey
+                      .size
+                        | 8US | 41VN | 26CM
+                  .price.bid-price
+                    | 9.310.000 &#x20AB;
+            // Asks Section
+            #sell.tab-pane.fade(role='tabpanel' aria-labelledby='sell-tab')
+              // Item
+              .item
+                .header-item
+                  .order-number-wrapper
+                    | M&atilde; &dstrok;&#x1A1;n 
+                    a.order-number(href='#')
+                      | #123abc
+                  a.full-details(href='#')
+                    | Xem chi ti&#x1EBF;t
+                .item-info-wrapper
+                  .product-info-wrapper
+                    .thumbnails
+                      img.img-fluid(src='./image/product/yeezy-700-waverunner-solid-grey.jpg' alt='')
+                    .product-info
+                      a.name(href='product-details.html')
+                        | Adidas Yeezy Boost 700 Wave Runner Solid Grey
+                      .size
+                        | 8US | 41VN | 26CM
+                      .bid-count.status
+                        | L&#x1B0;&#x1EE3;t &dstrok;&#x1EB7;t mua: 3 l&#x1B0;&#x1EE3;t
+                  .price.asks-price
+                    | 9.550.000 &#x20AB;
+              // Item Small
+              .item-small
+                .order-number-wrapper
+                  | M&atilde; &dstrok;&#x1A1;n 
+                  a.order-number(href='#')
+                    | #123abc
+                .item-info-wrapper
+                  .product-info-wrapper
+                    .product-info
+                      a.name(href='product-details.html')
+                        | Adidas Yeezy Boost 700 Wave Runner Solid Grey
+                      .size
+                        | 8US | 41VN | 26CM
+                      .bid-count.status
+                        | L&#x1B0;&#x1EE3;t &dstrok;&#x1EB7;t mua: 3 l&#x1B0;&#x1EE3;t
+                  .price.asks-price
+                    | 9.550.000 &#x20AB;
+              // Item
+              .item
+                .header-item
+                  .order-number-wrapper
+                    | M&atilde; &dstrok;&#x1A1;n 
+                    a.order-number(href='#')
+                      | #123abc
+                  a.full-details(href='#')
+                    | Xem chi ti&#x1EBF;t
+                .item-info-wrapper
+                  .product-info-wrapper
+                    .thumbnails
+                      img.img-fluid(src='./image/product/yeezy-700-waverunner-solid-grey.jpg' alt='')
+                    .product-info
+                      a.name(href='product-details.html')
+                        | Adidas Yeezy Boost 700 Wave Runner Solid Grey
+                      .size
+                        | 8US | 41VN | 26CM
+                      .bid-count.status
+                        | &Dstrok;&atilde; h&#x1EE7;y &dstrok;&#x1EB7;t b&aacute;n
+                  .price.asks-price
+                    | 9.550.000 &#x20AB;
+              // Item Small
+              .item-small
+                .order-number-wrapper
+                  | M&atilde; &dstrok;&#x1A1;n 
+                  a.order-number(href='#')
+                    | #123abc
+                .item-info-wrapper
+                  .product-info-wrapper
+                    .product-info
+                      a.name(href='product-details.html')
+                        | Adidas Yeezy Boost 700 Wave Runner Solid Grey
+                      .size
+                        | 8US | 41VN | 26CM
+                      .bid-count.status
+                        | &Dstrok;&atilde; hu&#x1EF7; &dstrok;&#x1EB7;t b&aacute;n
+                  .price.asks-price
+                    | 9.550.000 &#x20AB;
+              // Item
+              .item
+                .header-item
+                  .order-number-wrapper
+                    | M&atilde; &dstrok;&#x1A1;n 
+                    a.order-number(href='#')
+                      | #123abc
+                  a.full-details(href='#')
+                    | Xem chi ti&#x1EBF;t
+                .item-info-wrapper
+                  .product-info-wrapper
+                    .thumbnails
+                      img.img-fluid(src='./image/product/yeezy-700-waverunner-solid-grey.jpg' alt='')
+                    .product-info
+                      a.name(href='product-details.html')
+                        | Adidas Yeezy Boost 700 Wave Runner Solid Grey
+                      .size
+                        | 8US | 41VN | 26CM
+                      .bid-count.status
+                        | &Dstrok;&atilde; b&aacute;n
+                  .price.asks-price
+                    | 9.550.000 &#x20AB;
+              // Item Small
+              .item-small
+                .order-number-wrapper
+                  | M&atilde; &dstrok;&#x1A1;n 
+                  a.order-number(href='#')
+                    | #123abc
+                .item-info-wrapper
+                  .product-info-wrapper
+                    .product-info
+                      a.name(href='product-details.html')
+                        | Adidas Yeezy Boost 700 Wave Runner Solid Grey
+                      .size
+                        | 8US | 41VN | 26CM
+                      .bid-count.status
+                        | &Dstrok;&atilde; b&aacute;n
+                  .price.asks-price
+                    | 9.550.000 &#x20AB;
+
+block footer
+  include ./template-parts/footer
+
+block customizeScript
+  script(src="./script/except-home-page.js")

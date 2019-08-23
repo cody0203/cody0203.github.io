@@ -1,0 +1,167 @@
+extends ./common
+
+block customizeCss
+  // Components CSS
+  link(rel='stylesheet' type='text/css' href='./css/index.css')
+  link(rel='stylesheet' type='text/css' href='./css/components/header.css')
+  // Common CSS
+  link(rel='stylesheet' type='text/css' href='./css/main.css')
+  link(rel='stylesheet' type='text/css' href='./css/except-home-page.css')
+  link(rel='stylesheet' type='text/css' href='./css/faqs.css')
+
+block title
+  title Các câu hỏi thường gặp
+
+block header
+  - var pageTitle = 'Các câu hỏi thường gặp'
+  include ./template-parts/header-w-banner
+
+block mainContent
+  .breadcrumb.container
+    a.previous-page(href='./index.html') Trang ch&#x1EE7;
+    i.fas.fa-chevron-right.arrow
+    span.current-page C&aacute;c c&acirc;u h&#x1ECF;i th&#x1B0;&#x1EDD;ng g&#x1EB7;p
+  section.main-content.container
+    .about-obo
+      h2.h2
+        | OBO Stadium l&agrave; g&igrave;?
+      p.content
+        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sodales tristique bibendum.
+        | Vestibulum feugiat auctor
+        | nunc, eu semper felis viverra a. Nam ullamcorper mi lacus. Maecenas vitae sagittis tortor. In
+        | faucibus aliquet
+        | turpis.
+        | Etiam nec consequat nisi, at porttitor ipsum. Donec quis molestie risus. In hac habitasse platea
+        | dictumst. Nunc
+        | commodo
+        | metus metus, sed ultrices metus aliquet id. In eu sapien nec tellus sodales venenatis.
+      p.content
+        | Curabitur porttitor purus aliquet nulla tempor tincidunt. Morbi scelerisque tellus ultricies neque
+        | condimentum, nec
+        | pretium nunc placerat. Vivamus felis turpis, dictum ut dui vitae, interdum suscipit ante. In enim
+        | nibh, sollicitudin
+        | in
+        | mi vitae, elementum auctor ante. Vivamus sed metus sapien. Aliquam quis mauris risus. Proin suscipit
+        | fermentum velit
+        | sit
+        | amet vehicula. Etiam bibendum et risus ut malesuada. In pulvinar velit ut nisl aliquam laoreet.
+        | Donec diam risus,
+        | varius
+        | a ipsum in, pretium vehicula elit. vestibulum laoreet tincidunt. Proin volutpat eros sed nisi
+        | posuere mattis.
+        | Curabitur
+        | ipsum arcu, tristique eu nibh vel, tempor pharetra elit. In laoreet nisi odio, eu iaculis tellus
+        | rutrum nec. Donec
+        | at
+        | feugiat dui, vel efficitur risus. Sed maximus, lectus nec egestas sodales, lectus quam condimentum
+        | purus, non
+        | dignissim
+        | ipsum odio non elit.
+    .collapse-content
+      #accordionExample.accordion
+        .card
+          #headingOne.card-header
+            h2.mb-0
+              button.btn.btn-link(type='button' data-toggle='collapse' data-target='#collapseOne' aria-expanded='false' aria-controls='collapseOne')
+                | Qu&#x1EA3;n l&yacute; t&agrave;i kho&#x1EA3;n
+                i.fas.fa-chevron-down
+          #collapseOne.collapse(aria-labelledby='headingOne' data-parent='#accordionExample')
+            .card-body
+              | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+              | squid. 3 wolf
+              | moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+              | laborum eiusmod.
+              | Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+              | assumenda
+              | shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+              | nesciunt sapiente ea
+              | proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+              | farm-to-table, raw denim
+              | aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable
+              | VHS.
+        .card
+          #headingTwo.card-header
+            h2.mb-0
+              button.btn.btn-link.collapsed(type='button' data-toggle='collapse' data-target='#collapseTwo' aria-expanded='false' aria-controls='collapseTwo')
+                | Mua h&agrave;ng tr&ecirc;n OBO Stadium
+                i.fas.fa-chevron-down
+          #collapseTwo.collapse(aria-labelledby='headingTwo' data-parent='#accordionExample')
+            .card-body
+              | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+              | squid. 3 wolf
+              | moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+              | laborum eiusmod.
+              | Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+              | assumenda
+              | shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+              | nesciunt sapiente ea
+              | proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+              | farm-to-table, raw denim
+              | aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable
+              | VHS.
+        .card
+          #headingThree.card-header
+            h2.mb-0
+              button.btn.btn-link.collapsed(type='button' data-toggle='collapse' data-target='#collapseThree' aria-expanded='false' aria-controls='collapseThree')
+                | B&aacute;n h&agrave;ng tr&ecirc;n OBO Stadium
+                i.fas.fa-chevron-down
+          #collapseThree.collapse(aria-labelledby='headingThree' data-parent='#accordionExample')
+            .card-body
+              | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+              | squid. 3 wolf
+              | moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+              | laborum eiusmod.
+              | Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+              | assumenda
+              | shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+              | nesciunt sapiente ea
+              | proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+              | farm-to-table, raw denim
+              | aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable
+              | VHS.
+        .card
+          #headingFour.card-header
+            h2.mb-0
+              button.btn.btn-link.collapsed(type='button' data-toggle='collapse' data-target='#collapseFour' aria-expanded='false' aria-controls='collapseFour')
+                | Giao nh&#x1EAD;n h&agrave;ng
+                i.fas.fa-chevron-down
+          #collapseFour.collapse(aria-labelledby='headingFour' data-parent='#accordionExample')
+            .card-body
+              | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+              | squid. 3 wolf
+              | moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+              | laborum eiusmod.
+              | Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+              | assumenda
+              | shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+              | nesciunt sapiente ea
+              | proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+              | farm-to-table, raw denim
+              | aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable
+              | VHS.
+        .card
+          #headingFive.card-header
+            h2.mb-0
+              button.btn.btn-link.collapsed(type='button' data-toggle='collapse' data-target='#collapseFive' aria-expanded='false' aria-controls='collapseFive')
+                | Ph&#x1B0;&#x1A1;ng th&#x1EE9;c thanh to&aacute;n
+                i.fas.fa-chevron-down
+          #collapseFive.collapse(aria-labelledby='headingFive' data-parent='#accordionExample')
+            .card-body
+              | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+              | squid. 3 wolf
+              | moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+              | laborum eiusmod.
+              | Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+              | assumenda
+              | shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+              | nesciunt sapiente ea
+              | proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+              | farm-to-table, raw denim
+              | aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable
+              | VHS.
+
+block footer
+  include ./template-parts/footer
+
+block customizeScript
+  script(src="./script/except-home-page.js")

@@ -74,13 +74,3 @@ header {
         display: none;
     }
 }
-
-@media (max-width: $medium-devices-width) {
-    .search-form .form-control {
-        margin-bottom: $zero-pixel;
-    }
-
-    .navbar {
-        padding: $zero-pixel;
-    }
-}

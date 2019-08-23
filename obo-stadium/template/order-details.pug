@@ -1,0 +1,135 @@
+extends ./common
+
+block customizeCss
+  // Components CSS
+  link(rel='stylesheet' type='text/css' href='./css/components/header.css')
+  // Common CSS
+  link(rel='stylesheet' type='text/css' href='./css/main.css')
+  link(rel='stylesheet' type='text/css' href='./css/except-home-page.css')
+  link(rel='stylesheet' type='text/css' href='./css/used-in-js.css')
+  link(rel='stylesheet' type='text/css' href='./css/account.css')
+  link(rel='stylesheet' type='text/css' href='./css/bid-details.css')
+  link(rel='stylesheet' type='text/css' href='./css/order-details.css')
+
+block title
+  title Thông tin đơn hàng
+
+block header
+  include ./template-parts/header
+
+block mainContent
+  .container
+    .row
+      .col-lg-3.left-sidebar-wrapper
+        .left-sidebar
+          .header
+            .avatar
+              img.img-fluid(src='./image/post/avatar.png' alt='avatar')
+            .user-info
+              .user-name
+                | Cody
+              .edit-profile
+                | Ch&#x1EC9;nh s&#x1EED;a t&agrave;i kho&#x1EA3;n
+          .break-line
+          .nav-sidebar
+            a.selling-buying-products.nav-item.active(href='./buying-selling-products.html')
+              | Qu&#x1EA3;n l&yacute; mua/b&aacute;n s&#x1EA3;n ph&#x1EA9;m
+            a.selling-buying-products.nav-item(href='./buying-order.html')
+              | &Dstrok;&#x1A1;n h&agrave;ng mua
+            .selling-buying-products.nav-item
+              | &Dstrok;&#x1A1;n h&agrave;ng b&aacute;n
+            .selling-buying-products.nav-item
+              | Qu&#x1EA3;n l&yacute; t&agrave;i kho&#x1EA3;n
+      .col-lg-9.main-content-wrapper
+        .main-content
+          .header
+            a.go-back-previous-page(href='./buying-selling-products.html')
+              i.fas.fa-chevron-left
+              |  Tr&#x1EDF; l&#x1EA1;i
+            .order-status-wrapper
+              .order-number-wrapper
+                | M&atilde; &dstrok;&#x1A1;n 
+                span.order-number #123abc
+              .status
+                | Ch&#x1EDD; l&#x1EA5;y h&agrave;ng
+          .break-line
+          .item
+            .product-info-wrapper
+              .thumbnails
+                img.img-fluid(src='./image/product/yeezy-700-waverunner-solid-grey.jpg' alt='')
+              .product-info
+                a.name(href='product-details.html')
+                  | Adidas Yeezy Boost 700 Wave Runner Solid Grey
+                .size
+                  | 8US | 41VN | 26CM
+            .price.asks-price
+              | 9.550.000 &#x20AB;
+            .shipping-and-price-wrapper
+              .shipping-wrapper
+                .title
+                  | &Dstrok;&#x1ECB;a ch&#x1EC9; giao h&agrave;ng
+                .buyer-name
+                  | Ph&#x1EA1;m C&ocirc;ng &Dstrok;&#x1ECB;nh
+                .shipping-address
+                  | 48 T&#x1ED1; H&#x1EEF;u, L&ecirc; V&abreve;n L&#x1B0;&#x1A1;ng k&eacute;o d&agrave;i, C&#x1EA7;u Gi&#x1EA5;y, H&agrave; N&#x1ED9;i
+                .phone
+                  | 036530xxxx
+              .price-wrapper
+                .sub-price-wrapper.price
+                  | T&#x1EA1;m t&iacute;nh
+                  span 9.550.000 &#x20AB;
+                .shipping-price-wrapper.price
+                  | Ph&iacute; v&#x1EAD;n chuy&#x1EC3;n
+                  span 50.000 &#x20AB;
+                .total-price-wrapper.price
+                  | Th&agrave;nh ti&#x1EC1;n
+                  span.total-price 9.600.000 &#x20AB;
+                .payment-methods
+                  | Thanh to&aacute;n khi nh&#x1EAD;n h&agrave;ng
+            button.btn.btn-primary.red-btn.cancel-btn
+              | Hu&#x1EF7; &dstrok;&#x1A1;n h&agrave;ng
+          .item-small
+            .order-number-wrapper
+              | M&atilde; &dstrok;&#x1A1;n 
+              a.order-number(href='#')
+                | #123abc
+            .item-info-wrapper
+              .product-info-wrapper
+                .product-info
+                  a.name(href='product-details.html')
+                    | Adidas Yeezy Boost 700 Wave Runner Solid Grey
+                  .size
+                    | 8US | 41VN | 26CM
+              .price.asks-price
+                | 9.550.000 &#x20AB;
+              .shipping-and-price-wrapper
+                .shipping-wrapper
+                  .title
+                    | &Dstrok;&#x1ECB;a ch&#x1EC9; giao h&agrave;ng
+                  .buyer-name
+                    | Ph&#x1EA1;m C&ocirc;ng &Dstrok;&#x1ECB;nh
+                  .shipping-address
+                    | 48 T&#x1ED1; H&#x1EEF;u, L&ecirc; V&abreve;n L&#x1B0;&#x1A1;ng k&eacute;o d&agrave;i, C&#x1EA7;u Gi&#x1EA5;y, H&agrave; N&#x1ED9;i
+                  .phone
+                    | 036530xxxx
+                .price-wrapper
+                  .sub-price-wrapper.price
+                    | T&#x1EA1;m t&iacute;nh
+                    span 9.550.000 &#x20AB;
+                  .shipping-price-wrapper.price
+                    | Ph&iacute; v&#x1EAD;n chuy&#x1EC3;n
+                    span 50.000 &#x20AB;
+                  .total-price-wrapper.price
+                    | Th&agrave;nh ti&#x1EC1;n
+                    span.total-price 9.600.000 &#x20AB;
+                  .payment-methods
+                    | Thanh to&aacute;n khi nh&#x1EAD;n h&agrave;ng
+              button.btn.btn-primary.red-btn.cancel-btn
+                | Hu&#x1EF7; &dstrok;&#x1A1;n h&agrave;ng
+
+block footer
+  include ./template-parts/footer
+
+block customizeScript
+  script(src="./script/except-home-page.js")
+  

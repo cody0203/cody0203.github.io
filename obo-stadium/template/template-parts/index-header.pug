@@ -1,0 +1,22 @@
+header.container-fluid
+  nav.navbar.navbar-expand-lg.navbar-light.container
+    a.navbar-brand(href='./')
+      img.img-fluid(src='./image/logo-white.png', alt='logo')
+    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarNav.collapse.navbar-collapse.justify-content-md-end.text-center
+      ul.navbar-nav
+        li.nav-item
+          a.nav-link(href='./shop.html') Sản phẩm
+        li.nav-item
+          a.nav-link(href='./news.html') Tin tức
+        li.nav-item
+          a.nav-link(href='./account.html') Tài khoản
+
+  .content.text-center
+      h1.slogan.main-heading.text-uppercase BEST THINGS WITH BEST OFFERS
+      .search-form.justify-content-md-center.d-flex
+        form.container
+          .row.d-flex.justify-content-center
+            input.form-control.col-md-4.col-12(type='text', placeholder='Bạn cần tìm gì...')
+            button.btn.btn-primary.text-uppercase.col-xl-2.col-md-3.col-12.red-btn(type='submit') Tìm kiếm tất cả

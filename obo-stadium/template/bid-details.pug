@@ -1,0 +1,91 @@
+extends ./common
+
+block customizeCss
+  // Components CSS
+  link(rel='stylesheet' type='text/css' href='./css/components/header.css')
+  // Common CSS
+  link(rel='stylesheet' type='text/css' href='./css/main.css')
+  link(rel='stylesheet' type='text/css' href='./css/except-home-page.css')
+  link(rel='stylesheet' type='text/css' href='./css/used-in-js.css')
+  link(rel='stylesheet' type='text/css' href='./css/account.css')
+  link(rel='stylesheet' type='text/css' href='./css/bid-details.css')
+
+block title
+  title Thông tin đấu giá
+
+block header
+  include ./template-parts/header
+
+block mainContent
+  .container
+    .row
+      .col-lg-3.left-sidebar-wrapper
+        .left-sidebar
+          .header
+            .avatar
+              img.img-fluid(src='./image/post/avatar.png' alt='avatar')
+            .user-info
+              .user-name
+                | Cody
+              .edit-profile
+                | Ch&#x1EC9;nh s&#x1EED;a t&agrave;i kho&#x1EA3;n
+          .break-line
+          .nav-sidebar
+            a.selling-buying-products.nav-item.active(href='./buying-selling-products.html')
+              | Qu&#x1EA3;n l&yacute; mua/b&aacute;n s&#x1EA3;n ph&#x1EA9;m
+            a.selling-buying-products.nav-item(href='./buying-order.html')
+              | &Dstrok;&#x1A1;n h&agrave;ng mua
+            .selling-buying-products.nav-item
+              | &Dstrok;&#x1A1;n h&agrave;ng b&aacute;n
+            .selling-buying-products.nav-item
+              | Qu&#x1EA3;n l&yacute; t&agrave;i kho&#x1EA3;n
+      .col-lg-9.main-content-wrapper
+        .main-content
+          .header
+            a.go-back-previous-page(href='./buying-selling-products.html')
+              i.fas.fa-chevron-left
+              |  Tr&#x1EDF; l&#x1EA1;i
+            .order-status-wrapper
+              div
+                | M&atilde; &dstrok;&#x1A1;n 
+                span.order-number #123abc
+              .status
+                | H&#x1EBF;t h&#x1EA1;n trong: 18 ng&agrave;y
+          .break-line
+          .item
+            .product-info-wrapper
+              .thumbnails
+                img.img-fluid(src='./image/product/yeezy-700-waverunner-solid-grey.jpg' alt='')
+              .product-info
+                a.name(href='product-details.html')
+                  | Adidas Yeezy Boost 700 Wave Runner Solid Grey
+                .size
+                  | 8US | 41VN | 26CM
+            .price.asks-price
+              | 9.550.000 &#x20AB;
+            button.btn.btn-primary.red-btn.cancel-btn
+              | Hu&#x1EF7; &dstrok;&#x1EA5;u gi&aacute;
+          .item-small
+            .order-number-wrapper
+              | M&atilde; &dstrok;&#x1A1;n 
+              a.order-number(href='#')
+                | #123abc
+            .item-info-wrapper
+              .product-info-wrapper
+                .product-info
+                  a.name(href='product-details.html')
+                    | Adidas Yeezy Boost 700 Wave Runner Solid Grey
+                  .size
+                    | 8US | 41VN | 26CM
+                  .status
+                    | H&#x1EBF;t h&#x1EA1;n trong: 18 ng&agrave;y
+              .price.asks-price
+                | 9.550.000 &#x20AB;
+              button.btn.btn-primary.red-btn.cancel-btn
+                | Hu&#x1EF7; &dstrok;&#x1EA5;u gi&aacute;
+
+block footer
+  include ./template-parts/footer
+
+block customizeScript
+  script(src="./script/except-home-page.js")

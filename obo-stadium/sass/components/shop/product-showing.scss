@@ -3,14 +3,20 @@
 //Sort
 
 .sort {
-    display: flex;
-    justify-content: flex-end;
+    @include flex-center-between;
     margin-bottom: $twenty-pixel;
+}
+
+.filter-icon {
+    padding: $twelve-pixel $sixteen-pixel;
+    background-color: $main-color;
+    color: white;
+    display: none;
 }
 
 .sort-content {
     cursor: pointer;
-    border: 1px solid $text-dark;
+    @include border;
     padding: $twelve-pixel $twenty-pixel;
 }
 
@@ -29,6 +35,10 @@
 }
 
 // Override products.scss
+
+.product {
+    margin-right: $zero-pixel;
+}
 
 .product,
 .product-link,
@@ -53,14 +63,32 @@
     font-size: $fourteen-pixel;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: $max-width-container) {
     .product-row {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: $large-devices-width) {
+    .filter-bar {
+        display: none;
+    }
+
+    .filter-icon {
+        display: block;
+    }
+}
+
+@media (max-width: $closest-medium-devices-width) {
+    .sort-content {
+        padding: $twelve-pixel $ten-pixel;
+    }
+
+    .sort-name {
+        margin: $zero-pixel $ten-pixel $zero-pixel $ten-pixel;
+    }
+
     .product-row {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
