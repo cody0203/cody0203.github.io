@@ -21,25 +21,7 @@ block mainContent
   .container
     .row
       .col-lg-3.left-sidebar-wrapper
-        .left-sidebar
-          .header
-            .avatar
-              img.img-fluid(src='./image/post/avatar.png' alt='avatar')
-            .user-info
-              .user-name
-                | Cody
-              .edit-profile
-                | Ch&#x1EC9;nh s&#x1EED;a t&agrave;i kho&#x1EA3;n
-          .break-line
-          .nav-sidebar
-            a.selling-buying-products.nav-item.active(href='./buying-selling-products.html')
-              | Qu&#x1EA3;n l&yacute; mua/b&aacute;n s&#x1EA3;n ph&#x1EA9;m
-            a.selling-buying-products.nav-item(href='./buying-order.html')
-              | &Dstrok;&#x1A1;n h&agrave;ng mua
-            .selling-buying-products.nav-item
-              | &Dstrok;&#x1A1;n h&agrave;ng b&aacute;n
-            .selling-buying-products.nav-item
-              | Qu&#x1EA3;n l&yacute; t&agrave;i kho&#x1EA3;n
+        include ./template-parts/left-sidebar-account
       .col-lg-9.main-content-wrapper
         .main-content
           .header

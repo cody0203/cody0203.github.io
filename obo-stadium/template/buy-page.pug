@@ -25,11 +25,10 @@ block mainContent
           .product-name
             | Adidas Yeezy Boost 700 Wave Runner Solid Grey
           .price-info
-            span.first-row
-              | Gi&aacute; &dstrok;&#x1EB7;t mua cao nh&#x1EA5;t: 
-              span.bid-price-info 9.310.000 &#x20AB;
+            span.first-row Giá đặt mua cao nhất:
+              span.bid-price-info 9.310.000 &#x20AB; 
             span.line |
-            span.second-line Gi&aacute; &dstrok;&#x1EB7;t b&aacute;n th&#x1EA5;p nh&#x1EA5;t: 
+            span.second-line  Giá đặt bán thấp nhất: 
               span.ask-price-info 9.550.000 &#x20AB;
           .size-info-wrapper
             | Size: 
@@ -42,10 +41,8 @@ block mainContent
         // Adress Section
         .address-info-wrapper.childs
           .header
-            .title
-              | &Dstrok;&#x1ECB;a ch&#x1EC9; nh&#x1EAD;n h&agrave;ng
-            button.btn.btn-primary.change.red-btn
-              | Thay &dstrok;&#x1ED5;i
+            .title Địa chỉ nhận hàng
+            button.btn.btn-primary.change.red-btn Thay đổi
           .info-wrapper.radio-wrapper
             input#address-info.address-radio-btn(type='radio' name='address-info' checked='')
             label(for='address-info')
@@ -54,8 +51,7 @@ block mainContent
                 .name-phone
                   b Cody
                   |  | 036530xxxx
-                .address
-                  | 48 T&#x1ED1; H&#x1EEF;u, L&ecirc; V&abreve;n L&#x1B0;&#x1A1;ng k&eacute;o d&agrave;i, T&#x1EEB; Li&ecirc;m, H&agrave; N&#x1ED9;i
+                .address 48 Tố Hữu, Lê Văn Lương kéo dài, Từ Liêm, Hà Nội
         // Pricing Section
         .pricing.childs
           .size-btn
@@ -64,49 +60,47 @@ block mainContent
               span.size-details 8US | 41VN | 26CM
               i.fas.fa-chevron-down.dropdown-arrow
           .bid-buy-btn
-            button.bid-btn.btn.btn-primary.green-btn
-              | &Dstrok;&#x1EB7;t gi&aacute; mua
+            button.bid-btn.btn.btn-primary.green-btn Đặt giá mua
             button.buy-btn.btn.btn-primary.trans-btn
               | Mua ngay
           input.price-input.form-control(type='text' placeholder='Đặt giá mua ...')
           .sub-price.price-include
-            .text
-              | Gi&aacute; s&#x1EA3;n ph&#x1EA9;m
+            .text Giá sản phẩm
             .sub-price-showing
               | 9.550.000 &#x20AB;
           .shipping-price.price-include
             .text
-              | Ph&iacute; v&#x1EAD;n chuy&#x1EC3;n
+              | Phí vận chuyển
             .sub-price-showing
               | 50.000 &#x20AB;
           .coupon.price-include
             .text
-              | M&atilde; gi&#x1EA3;m gi&aacute;
+              | Mã giảm giá
             input.form-control(type='text' placeholder='Nhập mã giảm giá ...')
           .total-price.price-include
             .text
-              | T&#x1ED5;ng thanh to&aacute;n
+              | Tổng thanh toán
             .total-price-showing
               | 9.600.000 &#x20AB;
         // Payment Methods Section
         .payment-methods.childs
           .title
-            | Ph&#x1B0;&#x1A1;ng th&#x1EE9;c thanh to&aacute;n
+            | Phương thức thanh toán
           .cod-wrapper.radio-wrapper
             input#cod.cod-radio-btn(type='radio' name='payment-methods' checked='')
             label(for='cod')
               .radio-dot
               .cod
-                | Thanh to&aacute;n khi nh&#x1EAD;n h&agrave;ng
+                | Thanh toán khi nhận hàng
           .visa-master-wrapper.radio-wrapper
             input#visa-master.cod-radio-btn(type='radio' name='payment-methods')
             label(for='visa-master')
               .radio-dot
               .visa-master
-                | Thanh to&aacute;n b&#x1EB1;ng th&#x1EBB; qu&#x1ED1;c t&#x1EBF; Visa, Master, JCB
+                | Thanh toán bằng thẻ quốc tế Visa, Master, JCB
         a(href='./congrats.html')
           button.btn.btn-primary.confirm-btn.red-btn
-            | &Dstrok;&#x1EB7;t mua
+            | Đặt mua
 
 block footer
   include ./template-parts/footer

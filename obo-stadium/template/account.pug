@@ -19,25 +19,7 @@ block mainContent
   .main-content-wrapper.container
     .row
       .col-lg-3
-        .left-sidebar
-          .header
-            .avatar
-              img.img-fluid(src='./image/post/avatar.png' alt='avatar')
-            .user-info
-              .user-name
-                | Cody
-              .edit-profile
-                | Ch&#x1EC9;nh s&#x1EED;a t&agrave;i kho&#x1EA3;n
-          .break-line
-          .nav-sidebar
-            a.selling-buying-products.nav-item(href='./buying-selling-products.html')
-              | Qu&#x1EA3;n l&yacute; mua/b&aacute;n s&#x1EA3;n ph&#x1EA9;m
-            a.buying-order.nav-item(href='./buying-order.html')
-              | &Dstrok;&#x1A1;n h&agrave;ng mua
-            a.selling-buying-products.nav-item
-              | &Dstrok;&#x1A1;n h&agrave;ng b&aacute;n
-            a.account.nav-item.active(href="./account.html")
-              | Qu&#x1EA3;n l&yacute; t&agrave;i kho&#x1EA3;n
+        include ./template-parts/left-sidebar-account
       .col-lg-9.main-content-wrapper
         .main-content
           .nav-tab
@@ -45,29 +27,98 @@ block mainContent
               li.nav-item
                 a#profile-setting-tab.nav-link.active(data-toggle='pill' href='#profile-setting' role='tab' aria-controls='profile-setting' aria-selected='true') Hồ sơ tài khoản
               li.nav-item
-                a#sell-tab.nav-link(data-toggle='pill' href='#sell' role='tab' aria-controls='sell' aria-selected='false') Sổ địa chỉ
+                a#address-setting-tab.nav-link(data-toggle='pill' href='#address-setting' role='tab' aria-controls='address-setting' aria-selected='false') Sổ địa chỉ
               li.nav-item
-                a#sell-tab.nav-link(data-toggle='pill' href='#sell' role='tab' aria-controls='sell' aria-selected='false') Thông tin thanh toán
+                a#payment-methods-setting-tab.nav-link(data-toggle='pill' href='#payment-methods-setting' role='tab' aria-controls='payment-methods-setting' aria-selected='false') Thông tin thanh toán
           #pills-tabContent.tab-content
             // profile-setting Section
             #profile-setting.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='profile-setting-tab')
               // Item
-              .profile-box
+              .setting-box
                 .full-name.item-row.col-md-10
                   .text Họ tên
-                  input.form-control
+                  input.form-control(value="Cody")
                 .email.item-row.col-md-10
                   .text Email
-                  input.form-control
+                  input.form-control(value="congdinh2395@gmail.com")
                 .password.item-row.col-md-10
                   .text Mật khẩu
-                  input.form-control
+                  .password-wrapper
+                    input.form-control(value="********")
+                    a.change-password.text-btn(href="./") Đổi mật khẩu
                 .phone.item-row.col-md-10
                   .text Số điện thoại
-                  input.form-control
-                .phone.item-row.col-md-10
-                  .text Số điện thoại
-                  input.form-control
+                  input.form-control(value="0365304675")
+                .gender.item-row.col-md-10
+                  .text Giới tính
+                  .gender-input-wrapper
+                    .gender-male-wrapper.radio-wrapper
+                      input#male.male-btn(type='radio' name='gender' checked)
+                      label(for='male')
+                        .radio-dot
+                        div
+                          .male Nam
+                    .gender-female-wrapper.radio-wrapper
+                      input#female.male-btn(type='radio' name='gender' )
+                      label(for='female')
+                        .radio-dot
+                        div
+                          .female Nữ
+                    .gender-other-wrapper.radio-wrapper
+                      input#other.male-btn(type='radio' name='gender' )
+                      label(for='other')
+                        .radio-dot
+                        div
+                          .other Khác
+                .birthday.item-row.col-md-10
+                  .text Ngày sinh
+                  .birthday-input-wrapper
+                    input.form-control.date(type="number" value="2")
+                    input.form-control.month(type="number" value="3")
+                    input.form-control.year(type="number" value="1995")
+                .update-btn-wrapper.item-row.col-md-10
+                  .btn.btn-primary.red-btn.update-btn Cập nhật
+          
+            // address-setting Section
+            #address-setting.tab-pane.fade(role='tabpanel' aria-labelledby='address-setting-tab')
+              // Item
+              .setting-box
+                .address-item
+                  .header
+                    .receive-person Cody
+                    .edit-address.text-btn Chỉnh sửa
+                  .phone 0365304675
+                  .address 48 Tố Hữu, Lê Văn Lương kéo dài, Từ Liêm, Hà Nội
+                .break-line
+                .address-item
+                  .header
+                    .receive-person Bi Villy
+                    .edit-address.text-btn Chỉnh sửa
+                  .phone 098123xxxx
+                  .address Khâm Thiên, Đống Đa, Hà Nội
+              .btn.btn-primary.red-btn.add-new-address-btn + Thêm mới
+
+            // payment-methods-setting Section
+            #payment-methods-setting.tab-pane.fade(role='tabpanel' aria-labelledby='payment-methods-setting-tab')
+              .setting-box
+                .payment-item
+                  .logo-methods
+                    img(src="./image/visa.png", alt="visa" class="img-fluid")
+                  .card-number ********1234
+                  .delete.text-btn Xoá
+                .break-line
+                .payment-item
+                  .logo-methods
+                    img(src="./image/visa.png", alt="visa" class="img-fluid")
+                  .card-number ********1234
+                  .delete.text-btn Xoá
+                .break-line
+                .payment-item
+                  .logo-methods
+                    img(src="./image/visa.png", alt="visa" class="img-fluid")
+                  .card-number ********1234
+                  .delete.text-btn Xoá
+              .btn.btn-primary.red-btn.add-new-payment-btn + Thêm mới
 block footer
   include ./template-parts/footer
 
