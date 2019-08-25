@@ -5,6 +5,7 @@
 .sort {
     @include flex-center-between;
     margin-bottom: $twenty-pixel;
+    position: relative;
 }
 
 .filter-icon {
@@ -19,6 +20,30 @@
     cursor: pointer;
     @include border;
     padding: $twelve-pixel $twenty-pixel;
+
+    // &:hover .sort-dropdown {
+    //     display: block;
+    // }
+}
+
+.sort-dropdown {
+    display: none;
+    position: absolute;
+    top: 49px;
+    left: 0;
+    z-index: 100;
+    background-color: white;
+    @include border;
+
+    & .sort-item {
+        padding: $fifteen-pixel;
+        padding-right: 150px;
+
+        &:hover {
+            background-color: $hover-main-color;
+            color: white;
+        }
+    }
 }
 
 .sort-name {

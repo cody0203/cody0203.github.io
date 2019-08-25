@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 1.25rem;
+  position: relative;
 }
 
 .filter-icon {
@@ -18,6 +19,24 @@
   cursor: pointer;
   border: 0.0625rem solid #D5D6D6;
   padding: 0.75rem 1.25rem;
+}
+
+.sort-dropdown {
+  display: none;
+  position: absolute;
+  top: 49px;
+  left: 0;
+  z-index: 100;
+  background-color: white;
+  border: 0.0625rem solid #D5D6D6;
+}
+.sort-dropdown .sort-item {
+  padding: 0.9375rem;
+  padding-right: 150px;
+}
+.sort-dropdown .sort-item:hover {
+  background-color: #CE2E2F;
+  color: white;
 }
 
 .sort-name {

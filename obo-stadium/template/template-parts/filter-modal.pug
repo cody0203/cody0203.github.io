@@ -6,15 +6,8 @@
         button.close(type='button', data-dismiss='modal', aria-label='Close')
           span(aria-hidden='true') &times;
       .modal-body
-        .filter-bar
-          .filter-header.content
-            .left-side.d-flex.align-items-center
-              i.fas.fa-sliders-h
-              .text
-                | L&#x1ECD;c
-            button.clear-filter.btn.btn-primary
-              | B&#x1ECF; l&#x1ECD;c
-          .break-line
+        .filter-bar.small-size
+
           .brand.content
             .title(data-toggle="collapse" href="#brand-collapse" role="button" aria-expanded="false" aria-controls="brand-collapse")
               .text
@@ -129,8 +122,6 @@
                 | Kho&#x1EA3;ng gi&aacute;
             input.form-control.price-input(type='text' placeholder='Từ' onkeypress='return priceInputValidate(event)')
             input.form-control.price-input(type='text' placeholder='Đến' pattern='[0-9]' onkeypress='return priceInputValidate(event)')
-            button.btn.btn-primary.apply-price.red-btn
-              | &aacute;p d&#x1EE5;ng
           .break-line
           .release-date.content
             .title(data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample")
@@ -214,6 +205,6 @@
                         path(d='M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z' style='stroke: white;fill:white;')
                       label.checkbox-label(for='2019') 2019
       .modal-footer
-        button.btn.btn-secondary(type='button', data-dismiss='modal') Close
-        button.btn.btn-primary(type='button') Save changes
+        button.btn.btn-secondary.text-uppercase(type='button', data-dismiss='modal') Close
+        button.btn.btn-primary.apply-price.red-btn Áp dụng
 |     &grave;

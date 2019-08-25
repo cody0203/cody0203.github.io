@@ -7,6 +7,7 @@ function render() {
         ${i}
     </div>
     `;
+
         $('.filter-bar .size .select-filter').append(sizeChoose);
     };
 }
@@ -20,25 +21,23 @@ function priceInputValidate(e) {
     return true;
 }
 
-$(document).on('click', function (e) {
-    if (e.target.closest('.filter-bar .size .item')) {
-        $(e.target).toggleClass('size-choose');
-    }
-});
-
 $(window).resize(changeUi);
 
 $(function () {
     render();
-    changeUi()
+    changeUi();
 });
 
 $('.product-link').on('click', function () {
     localStorage.setItem('sessionsProduct', $(this).attr('id'));
 });
 
+$('.sort-content').on('click', function () {
+    $('.sort-dropdown').toggle();
+});
+
 function changeUi() {
-    let sizeItem = $('.filter-bar .size .item');
+    let sizeItem = $('.filter-bar:not(.small-size) .size .item');
     let sizeChooseWidth = sizeItem.width();
     sizeItem.css("height", `${sizeChooseWidth}px`);
 }
@@ -68,8 +67,14 @@ $('.filter-bar .title').on('click', function () {
     }
 });
 
+
 $(document).on('click', function (e) {
     let target = e.target;
+
+    if (target.closest('.filter-bar .size .item')) {
+        $(e.target).toggleClass('size-choose');
+    }
+
     if (target.closest('.clear-filter')) {
         $('.filter-bar input').prop("checked", false);
 
@@ -81,4 +86,14 @@ $(document).on('click', function (e) {
             $('.price-input').val("")
         }
     }
-})
+
+    if (target.closest('.filter-icon')) {
+        $('.size .select-filter').html("");
+
+        render();
+    }
+
+    if (target.closest('.sort-item')) {
+        $('.sort-name').text($(target).text());
+    }
+});

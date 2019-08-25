@@ -3,5 +3,33 @@
 .modal-body {
   & .filter-bar {
     display: block;
+
+    & .size .select-filter {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-gap: $twenty-pixel;
+    }
+
+    & .size .select-filter .item {
+      width: 100%;
+      margin: $zero-pixel;
+
+      &:after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .modal-body {
+    & .filter-bar {
+
+      & .size .select-filter {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+    }
   }
 }
