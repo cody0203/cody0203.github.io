@@ -1,0 +1,30 @@
+#signInSignUp.modal.fade(tabindex='-1', role='dialog', aria-labelledby='signInSignUpLabel', aria-hidden='true')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        ul#pills-tab.nav.nav-pills(role='tablist')
+          li.nav-item
+            a#signIn-tab.nav-link.active(data-toggle='pill', href='#signIn', role='tab', aria-controls='signIn', aria-selected='true') Đăng nhập
+          li.nav-item
+            a#signUp-tab.nav-link(data-toggle='pill', href='#signUp', role='tab', aria-controls='signUp', aria-selected='false') Đăng ký
+
+      .modal-body
+        #pills-tabContent.tab-content
+          #signIn.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='signIn-tab')
+            input.form-control.email(placeholder="Email")
+            input.form-control.password(placeholder="Mật khẩu")
+            .forgot-password-wrapper
+            | Quên mật khẩu? Nhấn vào 
+            span.text-btn đây
+            .btn.btn-primary.red-btn.sign-in-btn Đăng nhập
+
+          #signUp.tab-pane.fade(role='tabpanel', aria-labelledby='signUp-tab')
+            input.form-control.full-name(placeholder="Họ và tên")
+            input.form-control.phone(placeholder="Số điện thoại")
+            input.form-control.email(placeholder="Email")
+            input.form-control.password(placeholder="Mật khẩu")
+            input.form-control.password(placeholder="Xác nhận mật khẩu")
+            .privacy-confirm
+            | Khi bạn nhấn Đăng ký, bạn đã đồng ý thực hiện mọi giao dịch mua bán theo 
+            span.text-btn điều kiện sử dụng và chính sách của OBO Stadium.
+            .btn.btn-primary.red-btn.sign-up-btn Đăng kí

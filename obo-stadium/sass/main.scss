@@ -9,9 +9,15 @@ body {
     color: $text-dark;
 }
 
+.text-btn {
+    cursor: pointer;
+    color: $main-color;
+}
+
 a {
     text-decoration: $none !important;
     color: $text-dark;
+    cursor: pointer;
 
     &:hover {
         color: inherit;

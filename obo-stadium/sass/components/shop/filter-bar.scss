@@ -6,7 +6,8 @@
 
         & .title {
             @include flex-center-between;
-            margin-bottom: $twenty-pixel;
+            padding-bottom: $fifteen-pixel;
+            cursor: pointer;
         }
 
         & .select-filter {
@@ -19,6 +20,14 @@
     & .see-more {
         color: $text-lighter-white;
         cursor: pointer;
+    }
+
+    & #see-more-dropdown {
+        display: none;
+    }
+
+    & .collapse:not(.show) {
+        display: none !important;
     }
 }
 

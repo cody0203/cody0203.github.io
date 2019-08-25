@@ -11,13 +11,6 @@ function render() {
     };
 }
 
-
-function changeUi() {
-    let sizeItem = $('.filter-bar .size .item');
-    let sizeChooseWidth = sizeItem.width();
-    sizeItem.css("height", `${sizeChooseWidth}px`);
-}
-
 function priceInputValidate(e) {
     let event = e || window.event;
     let charCode = (event.which) ? event.which : event.keyCode;
@@ -40,6 +33,52 @@ $(function () {
     changeUi()
 });
 
-$('.product-link').on('click', function() {
+$('.product-link').on('click', function () {
     localStorage.setItem('sessionsProduct', $(this).attr('id'));
 });
+
+function changeUi() {
+    let sizeItem = $('.filter-bar .size .item');
+    let sizeChooseWidth = sizeItem.width();
+    sizeItem.css("height", `${sizeChooseWidth}px`);
+}
+
+changeUi();
+
+$('.see-more').on('click', function () {
+    $(this).prev().toggle('fast', function () {
+        setTimeout(() => {
+            if ($(this).css('display') == 'block') {
+                $(this).next().text('Rút gọn');
+            } else {
+                $(this).next().text('Xem thêm');
+            }
+        }, 100);
+    });
+})
+
+$('.filter-bar .title').on('click', function () {
+
+    if ($(this).hasClass('collapsed') == false) {
+        $(this).children('i.fas').addClass('fa-chevron-down');
+        $(this).children('i.fas').removeClass('fa-chevron-up');
+    } else {
+        $(this).children('i.fas').addClass('fa-chevron-up');
+        $(this).children('i.fas').removeClass('fa-chevron-down');
+    }
+});
+
+$(document).on('click', function (e) {
+    let target = e.target;
+    if (target.closest('.clear-filter')) {
+        $('.filter-bar input').prop("checked", false);
+
+        if ($('.filter-bar input').is(":checked")) {
+            $('.filter-bar input').prop("checked", true);
+        } else if ($('.size .item').hasClass('size-choose')) {
+            $('.size .item').removeClass('size-choose')
+        } else if ($('.price-input').val() !== "") {
+            $('.price-input').val("")
+        }
+    }
+})

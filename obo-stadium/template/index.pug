@@ -7,11 +7,11 @@ block customizeCss
   link(rel="stylesheet" type="text/css" href="./css/components/index/index-newsletter.css")
   link(rel="stylesheet" type="text/css" href="./css/components/index/index-category.css")
   link(rel="stylesheet" type="text/css" href="./css/components/index/product-showcase.css")
-
+  
   // Common CSS
   link(rel="stylesheet" type="text/css" href="./css/main.css")
   link(rel="stylesheet" type="text/css" href="./css/index.css")
-
+  link(rel="stylesheet" type="text/css" href="./css/components/login-modal.css")
 block title
   title Trang Chủ
 
@@ -317,6 +317,8 @@ block mainContent
               |  &middot; 27/07/2019
         .shadow.mx-auto.position-absolute
 
+  include ./template-parts/login-modal
+
 block footer
   include ./template-parts/footer
 
@@ -325,6 +327,6 @@ block customizeScript
   script(type="text/javascript" src="./vendor/slick/slick.min.js")
   
   // Common JS
-  script(type="text/javascript" src="./script/main.js")
+  script(type="text/javascript" src="./script/index.js")
   script(type="text/javascript" src="./script/lastest-news.js")
   

@@ -71,6 +71,25 @@ block mainContent
             button.buy-btn.btn.btn-primary.trans-btn
               | B&aacute;n ngay
           input.price-input.form-control(type='text' placeholder='Đặt giá mua ...')
+          .sub-price.price-include
+            .text Giá sản phẩm
+            .sub-price-showing
+              | 9.550.000 &#x20AB;
+          .shipping-price.price-include
+            .text
+              | Phí vận chuyển
+            .sub-price-showing
+              | 50.000 &#x20AB;
+          .process-price.price-include
+            .text
+              | Phí vận hành
+            .sub-price-showing
+              | 3%
+          .total-price.price-include
+            .text
+              | Tổng thanh toán
+            .total-price-showing
+              | 9.886.500 &#x20AB;
         button.btn.btn-primary.confirm-btn.red-btn
           | &Dstrok;&#x1EB7;t b&aacute;n
 

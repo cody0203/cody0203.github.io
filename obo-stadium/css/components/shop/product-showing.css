@@ -11,6 +11,7 @@
   background-color: #F04E40;
   color: white;
   display: none;
+  cursor: pointer;
 }
 
 .sort-content {
