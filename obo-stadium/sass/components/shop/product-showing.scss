@@ -20,10 +20,6 @@
     cursor: pointer;
     @include border;
     padding: $twelve-pixel $twenty-pixel;
-
-    // &:hover .sort-dropdown {
-    //     display: block;
-    // }
 }
 
 .sort-dropdown {
@@ -40,6 +36,11 @@
         padding-right: 150px;
 
         &:hover {
+            background-color: $hover-main-color;
+            color: white;
+        }
+
+        &.active {
             background-color: $hover-main-color;
             color: white;
         }

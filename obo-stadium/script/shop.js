@@ -94,6 +94,15 @@ $(document).on('click', function (e) {
     }
 
     if (target.closest('.sort-item')) {
+        $('.sort-item').removeClass('active');
+        
         $('.sort-name').text($(target).text());
+        if ($(target).text() == $('.sort-name').text()) {
+            $(target).addClass('active');
+        }
+    }
+
+    if (!target.closest('.sort-content')) {
+        $('.sort-dropdown').css('display', 'none')
     }
 });

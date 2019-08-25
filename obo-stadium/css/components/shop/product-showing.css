@@ -38,6 +38,10 @@
   background-color: #CE2E2F;
   color: white;
 }
+.sort-dropdown .sort-item.active {
+  background-color: #CE2E2F;
+  color: white;
+}
 
 .sort-name {
   font-weight: bold;
