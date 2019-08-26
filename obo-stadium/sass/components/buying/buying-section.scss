@@ -22,6 +22,7 @@
     & button {
         padding: $six-pixel $twenty-five-pixel;
     }
+
     & .btns {
         display: none;
 
@@ -42,19 +43,6 @@
     @include border-w-radius;
 }
 
-// Address Info
-
-.radio-wrapper {
-    margin-top: $twenty-pixel;
-
-    & label {
-        margin: $zero-pixel;
-        line-height: $nineteen-pixel;
-        display: grid;
-        grid-template-columns: auto 1fr;
-        align-items: center;
-    }
-}
 
 // Payment methods 
 
@@ -94,5 +82,81 @@
 
     .buying .title {
         font-size: $twenty-pixel;
+    }
+}
+
+// New Shipping Modal
+
+#addNewShipping {
+
+    & .modal-header,
+    .modal-body,
+    .modal-footer {
+        padding: $thirty-pixel;
+        padding-bottom: $zero-pixel;
+    }
+
+    & .modal-header,
+    .modal-footer {
+        border: $zero-pixel;
+    }
+
+    & .modal-footer {
+        padding-bottom: $thirty-pixel;
+    }
+
+    & .nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+    }
+
+    & .nav-link {
+        border-radius: $zero-pixel;
+        background-color: $lighter-grey-color;
+        text-align: center;
+        padding: $twenty-pixel $zero-pixel;
+        text-transform: uppercase;
+
+        &.active {
+            background-color: white;
+            color: $text-dark;
+        }
+    }
+
+    & .tab-pane {
+        margin: $twenty-pixel $thirty-pixel;
+    }
+
+    & .form-control,
+    .custom-select {
+        margin-top: $twenty-pixel;
+    }
+
+    & .form-control {
+        &:first-child {
+            margin-top: $zero-pixel;
+        }
+    }
+
+    & .make-default-wrapper {
+        margin-top: $twenty-pixel;
+    }
+
+    & .btn {
+        padding: $ten-pixel $fifty-pixel;
+    }
+
+    & .address {
+        resize: none;
+    }
+
+}
+
+
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 420px;
     }
 }

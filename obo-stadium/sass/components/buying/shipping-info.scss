@@ -1,0 +1,15 @@
+@import "../../root.scss";
+
+// Shipping Info
+
+.radio-wrapper {
+  margin-top: $twenty-pixel;
+
+  & label {
+    margin: $zero-pixel;
+    line-height: $nineteen-pixel;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+  }
+}

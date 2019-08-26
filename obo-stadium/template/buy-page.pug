@@ -6,6 +6,7 @@ block customizeCss
   link(rel='stylesheet' type='text/css' href='./css/components/buying/product-info.css')
   link(rel='stylesheet' type='text/css' href='./css/components/buying/buying-section.css')
   link(rel='stylesheet' type='text/css' href='./css/components/buying/pricing.css')
+  link(rel='stylesheet' type='text/css' href='./css/components/buying/shipping-info.css')
   
   link(rel="stylesheet" type="text/css" href="./css/components/product-details/size-choose.css")
   link(rel="stylesheet" type="text/css" href="./css/components/product-details/size-guide-table.css")
@@ -62,7 +63,7 @@ block mainContent
                 .address 48 Tố Hữu, Lê Văn Lương kéo dài, Từ Liêm, Hà Nội
           .btns
             button.btn.btn-primary.complete.red-btn Hoàn thành
-            button.btn.btn-primary.complete.trans-btn Trở lại
+            button.btn.btn-primary.cancel.trans-btn Trở lại
         // Pricing Section
         .pricing.childs
           .size-btn(data-toggle="modal" data-target="#sizeChooseModal")
@@ -71,29 +72,7 @@ block mainContent
               span.size-details 8US | 41VN | 25.4CM
               i.fas.fa-chevron-down.dropdown-arrow
           .bid-buy-btn
-            //- button.bid-btn.btn.btn-primary.green-btn Đặt giá mua
-            //- button.buy-btn.btn.btn-primary.trans-btn
-            //-   | Mua ngay
             include ./template-parts/price-counting
-          
-          //- input.price-input.form-control(type='text' placeholder='Đặt giá mua ...' onkeypress="return priceInputValidate(event)")
-          //- .invalid-feedback Giá đặt mua phải lớn hơn 100,000 ₫
-          //- .sub-price.price-include
-          //-   .text Giá sản phẩm
-          //-   .sub-price-showing
-          //- .shipping-price.price-include
-          //-   .text
-          //-     | Phí vận chuyển
-          //-   .shipping-price-showing
-          //-     | 50,000 &#x20AB;
-          //- .coupon.price-include
-          //-   .text
-          //-     | Mã giảm giá
-          //-   input.form-control(type='text' placeholder='Nhập mã giảm giá ...')
-          //- .total-price.price-include
-          //-   .text
-          //-     | Tổng thanh toán
-          //-   .total-price-showing 
         // Payment Methods Section
         .payment-methods.childs
           .title
@@ -132,4 +111,4 @@ block customizeScript
   script(src="./script/size-render.js")
   script(src="./script/size-choose.js")
   script(src="./script/buy-page.js")
-  script(src="./script/buy-page.js")
+  script(src="./script/address-select.js")

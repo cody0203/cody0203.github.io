@@ -24,6 +24,13 @@ a {
     }
 }
 
+.custom-select {
+    &:focus {
+        border-color: $text-dark;
+        box-shadow: none;
+    }
+}
+
 .trans-btn {
     color: $text-dark !important;
     background-color: white !important;

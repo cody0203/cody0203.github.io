@@ -78,16 +78,24 @@ $(document).on('click', function (e) {
   // Shipping info change
 
   if (target.closest('.change')) {
-    $(target).text('+ Thêm Mới');
-    $(target).removeClass('change');
-    $(target).addClass('add-new');
+    let addNewBtn = `
+    <button class="btn btn-primary red-btn add-new" data-toggle="modal" data-target="#addNewShipping">+ Thêm Mới</button>
+    `;
+    $(target).replaceWith(addNewBtn);
 
     $('.btns').css('display', 'block');
   }
 
-  // Add new shipping info
-  if (target.closest('.add-new')) {
-    $(target).attr('data-toggle', 'modal');
-    $(target).attr('data-target', '#exampleModal');
+  if (target.closest('.complete') || target.closest('.cancel')) {
+    let changeBtn = `
+    <button class="btn btn-primary change red-btn">Thay đổi</button>
+    `;
+    $('.btns').css('display', 'none');
+    $('.add-new').replaceWith(changeBtn);
   }
+})
+
+$('.address').on('keyup', function() {
+  this.style.height = "0px";
+  this.style.height = (16 + this.scrollHeight) + "px";
 })
