@@ -1,0 +1,17 @@
+#exampleModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        h5#exampleModalLabel.modal-title Thêm địa chỉ mới
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') &times;
+      .modal-body
+        input.form-control.full-name(placeholder="Họ và tên")
+        input.form-control.phone(placeholder="Số điện thoại")
+        input.form-control.email(placeholder="Email")
+        input.form-control.password(placeholder="Mật khẩu")
+        input.form-control.password(placeholder="Xác nhận mật khẩu")
+        .privacy-confirm
+      .modal-footer
+        button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+        button.btn.btn-primary(type='button') Save changes

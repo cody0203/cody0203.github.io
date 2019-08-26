@@ -1,1 +1,8 @@
-@import"https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap";.size-choose{background-color:#f04e40;color:#fff;border:none !important}/*# sourceMappingURL=used-in-js.css.map */
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+.size-choose {
+  background-color: #F04E40;
+  color: #ffffff;
+  border: none !important;
+}
+
+/*# sourceMappingURL=used-in-js.css.map */

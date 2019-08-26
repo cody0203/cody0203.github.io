@@ -105,14 +105,3 @@
         margin: $zero-pixel;
     }
 }
-
-
-@media (max-width: 346px) {
-    .size {
-        & .select-filter {
-            & .item {
-                width: calc(100% / 2 - 10px);
-            }
-        }
-    }
-}

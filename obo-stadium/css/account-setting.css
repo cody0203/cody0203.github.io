@@ -10,7 +10,7 @@
 }
 
 .setting-box {
-  border: 0.0625rem solid #D5D6D6;
+  border: 0.0625rem solid #D5D6D6 !important;
   border-radius: 0.25rem;
   padding: 1.875rem 2.5rem;
   color: #333333;

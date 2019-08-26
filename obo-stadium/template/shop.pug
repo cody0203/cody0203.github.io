@@ -7,12 +7,11 @@ block customizeCss
   link(rel="stylesheet" type="text/css" href="./css/components/shop/filter-bar.css")
   link(rel="stylesheet" type="text/css" href="./css/components/shop/product-showing.css")
   link(rel="stylesheet" type="text/css" href="./css/components/shop/filter-bar-small.css")
-
   // Common CSS
   link(rel="stylesheet" type="text/css" href="./css/main.css")
   link(rel="stylesheet" type="text/css" href="./css/except-home-page.css")
   link(rel="stylesheet" type="text/css" href="./css/used-in-js.css")
-  
+
 block title
   title Sản phẩm
 
@@ -240,7 +239,7 @@ block mainContent
             span.sort-name B&aacute;n ch&#x1EA1;y
             i.fas.fa-chevron-down
             include ./template-parts/sort-dropdown
-          
+
           .filter-icon(data-toggle="modal" data-target="#filterModal")
             i.fas.fa-filter
         .product-row
@@ -449,11 +448,11 @@ block mainContent
               a.page-link(href='#' aria-label='Next')
                 span(aria-hidden='true') &raquo;
   include ./template-parts/filter-modal
-  
+
 block footer
   include ./template-parts/footer
-  
+
 block customizeScript
   script(src="./script/except-home-page.js")
+  script(src="./script/size-render.js")
   script(src="./script/shop.js")
-  

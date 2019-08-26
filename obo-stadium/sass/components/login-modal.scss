@@ -1,10 +1,6 @@
 @import "../root.scss";
 
 #signInSignUp {
-  & .modal-dialog {
-    margin-top: 10%;
-  }
-
   & .modal-header {
     padding: $zero-pixel;
     border: $zero-pixel;

@@ -100,6 +100,6 @@ $between: space-between;
 }
 
 @mixin border-w-radius {
-    border: $one-pixel solid $lighter-grey-color;
+    border: $one-pixel solid $lighter-grey-color !important;
     border-radius: $four-pixel;
 }

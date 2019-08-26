@@ -6,11 +6,14 @@ block customizeCss
   link(rel="stylesheet" type="text/css" href="./css/components/products.css")
   link(rel="stylesheet" type="text/css" href="./css/components/index/product-showcase.css")
   link(rel="stylesheet" type="text/css" href="./css/components/product-details/product-info.css")
-
+  link(rel="stylesheet" type="text/css" href="./css/components/product-details/size-choose.css")
+  link(rel="stylesheet" type="text/css" href="./css/components/product-details/size-guide-table.css")
+  
   // Common CSS
   link(rel="stylesheet" type="text/css" href="./css/main.css")
   link(rel="stylesheet" type="text/css" href="./css/except-home-page.css")
   link(rel="stylesheet" type="text/css" href="./css/product-details.css")
+  link(rel="stylesheet" type="text/css" href="./css/used-in-js.css")
 
 block title
   title Chi tiết sản phẩm
@@ -82,10 +85,8 @@ block mainContent
             | &dstrok;&ocirc;i gi&agrave;y n&agrave;y t&#x1EEB; s&aacute;ng &dstrok;&#x1EBF;n t&#x1ED1;i
             | m&agrave; kh&ocirc;ng h&#x1EC1; c&oacute; c&#x1EA3;m gi&aacute;c kh&oacute; ch&#x1ECB;u hay bi&#x301; ba&#x301;ch. Kh&ocirc;ng nh&#x1EEF;ng hype m&agrave; c&ograve;n comfy n&#x1EEF;a.
         .desc-sub
-          span.desc-sub-title Ph&#x1ED1;i m&agrave;u:
-          span
-            | Solid grey/Chalk white/Core
-            | black
+          span.desc-sub-title Ph&#x1ED1;i m&agrave;u: 
+          span Solid grey/Chalk white/Core black
         .desc-sub
           span.desc-sub-title Gi&aacute; b&aacute;n l&#x1EBB; khi ra m&#x1EAF;t:
           span &nbsp;7.350.000&#x20AB;
@@ -93,10 +94,10 @@ block mainContent
           span.desc-sub-title Ng&agrave;y ra m&#x1EAF;t:
           span &nbsp;11/01/2017
         .btns
-          .size-btn
+          .size-btn(data-toggle="modal" data-target="#sizeChooseModal")
             button.btn.btn-primary.size.trans-btn
               span.size-text Size
-              span.size-details 8US | 41VN | 26CM
+              span.size-details 8US | 41VN | 25.4CM
               i.fas.fa-chevron-down.dropdown-arrow
           a.buy-btn(href='./buy-page.html')
             button.btn.btn-primary.buy.green-btn
@@ -185,6 +186,10 @@ block mainContent
             p.card-text.sold &Dstrok;&atilde; b&aacute;n 1456 &dstrok;&ocirc;i
         .shadow.mx-auto.position-absolute
 
+  // Modals
+  include ./template-parts/size-choose-modal
+  include ./template-parts/size-guide-modal
+
 block footer
   include ./template-parts/footer
 
@@ -200,4 +205,6 @@ block customizeScript
 
   // Common Js
   script(src="./script/except-home-page.js")
+  script(src="./script/size-render.js")
+  script(src="./script/size-choose.js")
   script(src="./script/product-details.js")

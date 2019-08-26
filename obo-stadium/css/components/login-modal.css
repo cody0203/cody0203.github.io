@@ -1,7 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
-#signInSignUp .modal-dialog {
-  margin-top: 10%;
-}
 #signInSignUp .modal-header {
   padding: 0px;
   border: 0px;

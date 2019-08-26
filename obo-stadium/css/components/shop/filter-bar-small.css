@@ -2,16 +2,16 @@
 .modal-body .filter-bar {
   display: block;
 }
-.modal-body .filter-bar .size .select-filter {
+.modal-body .size .select-filter {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 1.25rem;
 }
-.modal-body .filter-bar .size .select-filter .item {
+.modal-body .size .select-filter .item {
   width: 100%;
   margin: 0px;
 }
-.modal-body .filter-bar .size .select-filter .item:after {
+.modal-body .size .select-filter .item:after {
   content: "";
   display: block;
   padding-bottom: 100%;

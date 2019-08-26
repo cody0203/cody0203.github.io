@@ -18,6 +18,24 @@
     }
 }
 
+.address-info-wrapper {
+    & button {
+        padding: $six-pixel $twenty-five-pixel;
+    }
+    & .btns {
+        display: none;
+
+        margin-top: $thirty-pixel;
+
+        & button {
+            &:last-child {
+                margin-left: $twenty-pixel;
+            }
+        }
+
+    }
+}
+
 .childs {
     padding: $thirty-pixel;
     padding-top: $twenty-five-pixel;
@@ -36,165 +54,6 @@
         grid-template-columns: auto 1fr;
         align-items: center;
     }
-}
-
-input[type=radio] {
-    /* Hide original inputs */
-    visibility: hidden;
-    position: absolute;
-}
-
-input[type=radio]+label .radio-dot {
-    height: $sixteen-pixel;
-    width: $sixteen-pixel;
-    border: 1px solid $main-color;
-    margin-right: $ten-pixel;
-    border-radius: 50%;
-    position: relative;
-}
-
-input[type=radio]+label .radio-dot:before {
-    height: $ten-pixel;
-    width: $ten-pixel;
-    content: "";
-    display: inline-block;
-    vertical-align: baseline;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-input[type=radio]:checked+label .radio-dot:before {
-    background: $main-color;
-    padding: $five-pixel;
-}
-
-/* CUSTOM RADIO AND CHECKBOX STYLES */
-input[type=radio]+label .radio-dot:before {
-    border-radius: 50%;
-}
-
-// Pricing
-
-.pricing {
-    margin-top: $thirty-pixel;
-
-    .btn-primary {
-        width: 100%;
-        margin-bottom: $twenty-pixel;
-        padding: $twelve-pixel $twenty-pixel;
-    }
-
-    .sell:last-child {
-        margin-bottom: $zero-pixel;
-    }
-
-    .size.btn-primary {
-        padding: $twenty-pixel;
-        background-color: $text-white;
-        border: 1px solid $lighter-grey-color;
-        @include flex-center-between;
-
-
-        &:active {
-            background-color: $text-white !important;
-            border-color: $lighter-grey-color;
-            color: $text-dark !important;
-        }
-
-        &:hover {
-            background-color: $text-white !important;
-            border-color: $text-dark;
-            color: $text-dark !important;
-        }
-    }
-
-    .size-text,
-    .dropdown-arrow {
-        color: $text-lighter-white;
-        line-height: $twenty-eight-pixel;
-    }
-
-    .size-details {
-        color: $text-dark;
-        font-weight: $bold-size;
-    }
-}
-
-.bid-buy-btn {
-    display: flex;
-
-    & .btn {
-        padding: $twenty-pixel;
-        font-weight: $bold-size;
-    }
-
-    & .bid-btn {
-        border-bottom-right-radius: $zero-pixel;
-        border-top-right-radius: $zero-pixel;
-    }
-
-    & .buy-btn {
-        border-bottom-left-radius: $zero-pixel;
-        border-top-left-radius: $zero-pixel;
-
-        &:hover,
-        &:active {
-            border-left-color: transparent !important;
-        }
-    }
-}
-
-// Price Input
-
-.price-input {
-    line-height: $twenty-four-pixel;
-    padding: $twelve-pixel;
-    padding-left: $twenty-pixel;
-}
-
-// Sub Price
-
-.price-include {
-    margin-top: $twenty-five-pixel;
-    @include flex-center-between;
-    line-height: $twenty-four-pixel;
-    padding-bottom: $twenty-five-pixel;
-    border-bottom: 1px solid $lighter-grey-color;
-
-    & .sub-price-showing {
-        font-weight: $bold-size;
-    }
-}
-
-.coupon {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-
-    & .form-control {
-        border: $none;
-        border-bottom: 1px solid transparent;
-        text-align: right;
-        padding-right: $zero-pixel;
-
-        border-radius: $zero-pixel;
-        &:focus {
-            border-bottom: 1px solid $lighter-grey-color;
-        }
-    }
-}
-
-.total-price {
-    border: $none;
-    padding: $zero-pixel;
-}
-
-.total-price-showing {
-    font-size: $twenty-four-pixel;
-    line-height: $twenty-four-pixel;
-    color: $main-color;
-    font-weight: $bold-size;
 }
 
 // Payment methods 
@@ -226,7 +85,7 @@ input[type=radio]+label .radio-dot:before {
     }
 
     .total-price-showing {
-        font-size: $twenty-four-pixel;
+        font-size: $nineteen-pixel;
     }
 
     .childs {

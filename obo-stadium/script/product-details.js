@@ -2,6 +2,9 @@ $(function () {
     caroselProductImage();
     imageZoom();
     instafeed();
+    render();
+    activeSize();
+    sizeGuideRender();
 });
 
 function caroselProductImage() {

@@ -1,1 +1,58 @@
-@import"https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap";.product{max-width:230px;display:flex;align-items:flex-end;justify-content:center;flex:0 0 auto;margin-right:.9375rem;margin-bottom:.625rem}.card{border:2px solid #fafafa}.card-img-top{padding:0px .6875rem 0px .6875rem}.card-body{padding:.6875rem 1.5625rem .6875rem .6875rem;background-color:#fafafa}.card-title{font-size:1rem;font-weight:500;line-height:1.25rem;color:#333;margin-bottom:.6875rem;height:2.5rem}.card-text{color:#767676;margin-bottom:.375rem}.price{font-size:1.5rem;font-weight:bold;color:#333;margin-bottom:.3125rem}.sold{margin-bottom:0px}.shadow{width:90%;height:1.5rem;z-index:-1;background:#c4c4c4;box-shadow:0px .25rem .625rem rgba(0,0,0,.13) !important}/*# sourceMappingURL=products.css.map */
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+.product {
+  max-width: 230px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex: 0 0 auto;
+  margin-right: 0.9375rem;
+  margin-bottom: 0.625rem;
+}
+
+.card {
+  border: 2px solid #FAFAFA;
+}
+
+.card-img-top {
+  padding: 0px 0.6875rem 0px 0.6875rem;
+}
+
+.card-body {
+  padding: 0.6875rem 1.5625rem 0.6875rem 0.6875rem;
+  background-color: #FAFAFA;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  color: #333333;
+  margin-bottom: 0.6875rem;
+  height: 2.5rem;
+}
+
+.card-text {
+  color: #767676;
+  margin-bottom: 0.375rem;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 0.3125rem;
+}
+
+.sold {
+  margin-bottom: 0px;
+}
+
+.shadow {
+  width: 90%;
+  height: 1.5rem;
+  z-index: -1;
+  background: #C4C4C4;
+  box-shadow: 0px 0.25rem 0.625rem rgba(0, 0, 0, 0.13) !important;
+}
+
+/*# sourceMappingURL=products.css.map */

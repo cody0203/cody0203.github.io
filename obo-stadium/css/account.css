@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
 .left-sidebar {
-  border: 0.0625rem solid #D5D6D6;
+  border: 0.0625rem solid #D5D6D6 !important;
   border-radius: 0.25rem;
 }
 .left-sidebar .header {
@@ -53,7 +53,7 @@
 
 .main-content .nav-tab {
   border-bottom: 1px solid #D5D6D6;
-  border: 0.0625rem solid #D5D6D6;
+  border: 0.0625rem solid #D5D6D6 !important;
   border-radius: 0.25rem;
 }
 .main-content .nav {
@@ -78,7 +78,7 @@
 .main-content .item,
 .main-content .item-small {
   padding: 1rem 2.5rem;
-  border: 0.0625rem solid #D5D6D6;
+  border: 0.0625rem solid #D5D6D6 !important;
   border-radius: 0.25rem;
   color: #333333;
   font-weight: normal;
