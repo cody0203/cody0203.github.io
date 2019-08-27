@@ -45,27 +45,17 @@ $(document).on('click', function (e) {
 
     if (isValid == true) {
       $('.invalid-feedback').css('display', 'none');
-      let account = false;
-      let checkAccount = DB.getAccountData().filter(accountData => {
-        return accountData[0].includes(signUpEmailValue);
-      })
 
-      if (checkAccount !== "") {
-        account = checkAccount;
+      if (!$.isEmptyObject(DB.getAccountData())) {
+        let checkAccount = DB.getAccountData().filter(accountData => {
+          return accountData[0].includes(signUpEmailValue);
+        })
+
+        if (checkAccount !== "") {
+          account = checkAccount;
+        }
       }
 
-      // for (let i = 0; i < DB.getAccountData().length; i++) {
-        // if ($.inArray(signUpEmailValue, DB.getAccountData()[i]) !== -1) {
-        //   account = DB.getAccountData()[i];
-        // } else {
-        //   account = false;
-        // }
-        // if (DB.getAccountData()[i].indexOf(signUpEmailValue) !== -1) {
-        //   account = this;
-        // } else {
-        //   account = false;
-        // }
-      // }
 
       if (account == false) {
         signUpEmailInvalid.css('display', 'block');
@@ -80,6 +70,7 @@ $(document).on('click', function (e) {
           $('.modal').modal('hide');
           signed = true;
           DB.setSignedStatus(signed);
+          DB.setSignedAccount(account);
           signedValidate(signed);
         }
         if (signUpPasswordValue !== account[0][1]) {
@@ -97,51 +88,64 @@ $(document).on('click', function (e) {
     let phoneFormat = new RegExp(/((09|03|07|08|05)+([0-9]{8})\b)/g);
     let emailFormat = new RegExp(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/);
 
+    let fullName = $('.full-name');
+    let fullNameValue = fullName.val();
+    let fullNameInvalid = fullName.next();
     let phone = $('.phone');
-    let phoneInvalid = $('.phone').next();
+    let phoneValue = phone.val();
+    let phoneInvalid = phone.next();
     let email = $('.email');
-    let emailInvalid = $('.email').next();
+    let emailValue = email.val();
+    let emailInvalid = email.next();
     let password = $('.password');
-    let passwordInvalid = $('.password').next();
+    let passwordValue = password.val();
+    let passwordInvalid = password.next();
     let confirmPassword = $('.confirm-password');
-    let confirmPasswordInvalid = $('.confirm-password').next();
+    let confirmPasswordValue = confirmPassword.val();
+    let confirmPasswordInvalid = confirmPassword.next();
 
+    // Validate name
+    if (fullNameValue == "") {
+      fullNameInvalid.css('display', 'block');
+      fullNameInvalid.html('Vui lòng nhập họ tên');
+      isValid = false;
+    }
 
     // Validate phone
-    if (phone.val() == "") {
+    if (phoneValue == "") {
       phoneInvalid.css('display', 'block');
       phoneInvalid.html('Vui lòng nhập số điện thoại');
       isValid = false;
-    } else if (!phoneFormat.test(phone.val())) {
+    } else if (!phoneFormat.test(phoneValue)) {
       phoneInvalid.css('display', 'block');
       phoneInvalid.html('Số điện thoại không hợp lệ');
       isValid = false;
     }
 
     // Validate email
-    if (email.val() == "") {
+    if (emailValue == "") {
       emailInvalid.css('display', 'block');
       emailInvalid.html('Vui lòng nhập email');
       isValid = false;
-    } else if (!emailFormat.test(email.val())) {
+    } else if (!emailFormat.test(emailValue)) {
       emailInvalid.css('display', 'block');
       emailInvalid.html('Email không hợp lệ');
       isValid = false;
     }
 
     // Validate password
-    if (password.val() == "") {
+    if (passwordValue == "") {
       passwordInvalid.css('display', 'block');
       passwordInvalid.html('Vui lòng nhập password');
       isValid = false;
     }
 
     // Validate confirm password
-    if (confirmPassword.val() == "") {
+    if (confirmPasswordValue == "") {
       confirmPasswordInvalid.css('display', 'block');
       confirmPasswordInvalid.html('Vui lòng xác nhận lại password');
       isValid = false;
-    } else if (confirmPassword.val() !== password.val()) {
+    } else if (confirmPasswordValue !== passwordValue) {
       confirmPasswordInvalid.css('display', 'block');
       confirmPasswordInvalid.html('Mật khẩu và xác nhận mật khẩu không giống nhau');
       isValid = false;
@@ -154,7 +158,7 @@ $(document).on('click', function (e) {
         SIGNUP_DATA = DB.getAccountData()
       };
 
-      SIGNUP_DATA.push([email.val(), password.val(), phone.val()])
+      SIGNUP_DATA.push([emailValue, passwordValue, phoneValue, fullNameValue])
       DB.setAccountData(SIGNUP_DATA);
       $('.modal').modal('hide');
     }
@@ -163,7 +167,7 @@ $(document).on('click', function (e) {
 
 let SIGNUP_DATA = [];
 let signed = false;
-
+let account = false;
 // Local storage
 
 let DB = {
@@ -207,6 +211,26 @@ let DB = {
   setSignedStatus: function (data) {
     localStorage.setItem('signed', data);
   },
+
+  getSignedAccount: function () {
+    if (typeof (Storage) !== "undefined") {
+      let data;
+      try {
+        data = JSON.parse(localStorage.getItem('signed-account')) || {};
+      } catch (error) {
+        data = {};
+      }
+
+      return data;
+    } else {
+      alert('Sorry! No Web Storage support...');
+      return {};
+    }
+  },
+
+  setSignedAccount: function (data) {
+    localStorage.setItem('signed-account', JSON.stringify(data));
+  },
 }
 
 // Reset form after close modal
@@ -214,18 +238,20 @@ let DB = {
 function resetModal() {
   $('.modal').on('hidden.bs.modal', function () {
     $(this).find('form').trigger('reset');
+    $('.invalid-feedback').css('display', 'none');
   })
 }
 
 function signedValidate(status = false) {
-  let signedLink = `
-  <a class="nav-link account-setting" href="./account.html">Xin chào</a>`;
-  let notSignedLink = `
-  <a class="nav-link account-setting" href="" data-toggle="modal" data-target="#signInSignUp">Tài khoản</a>
-  `;
   if (status == true) {
+    let signedLink = `
+  <a class="nav-link account-setting" href="./account.html">Xin chào ${DB.getSignedAccount()[0][3]}</a>`;
+
     $('.account-setting').replaceWith(signedLink);
   } else {
+    let notSignedLink = `
+  <a class="nav-link account-setting" href="" data-toggle="modal" data-target="#signInSignUp">Tài khoản</a>
+  `;
     $('.account-setting').replaceWith(notSignedLink);
   }
 }
