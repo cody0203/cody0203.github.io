@@ -1,5 +1,39 @@
 $(function () {
   addressSelectRender();
+  if (DB_ADDRESS.getShippingInfoCount() !== "") {
+    shippingInfoCount = DB_ADDRESS.getShippingInfoCount();
+  };
+
+  if (!Object(DB_ADDRESS.getDefaultShippingInfo()).length == 0) {
+    let defaultShippingData = DB_ADDRESS.getDefaultShippingInfo();
+
+    let defaultShippingInfo = `
+    <div class="info-choose radio-wrapper" id="${defaultShippingData[0]['id']}">
+      <input class="address-radio-btn" id="${defaultShippingData[0]['name']}-address" type="radio" name="address-info" checked="" />
+      <label for="${defaultShippingData[0]['name']}-address">
+        <div class="radio-dot"></div>
+        <div class="shipping-data">
+          <div class="name-phone">
+            <span class="shipping-name">
+              <b>${defaultShippingData[0]['name']}</b>
+            </span>
+            |
+            <span class="shipping-phone">${defaultShippingData[0]['phone']}</span>
+          </div>
+          <div class="address">
+            <span class="shipping-adress">${defaultShippingData[0]['address']}, </span>
+            <span class="shipping-ward">${defaultShippingData[0]['ward']}, </span>
+            <span class="shipping-district">${defaultShippingData[0]['district']}, </span>
+            <span class="shipping-city">${defaultShippingData[0]['city']}</span>
+          </div>
+        </div>
+      </label>
+    </div>
+    `;
+
+    $('.info-wrapper').prepend(defaultShippingInfo);
+  };
+  changeUi();
 });
 
 // UI
@@ -193,6 +227,10 @@ $('.save').on('click', function () {
   let addressValue = address.val();
   let addressInvalid = address.next();
 
+  if (!Object(DB_ADDRESS.getShippingData()).length == 0) {
+    NEW_SHIPPING_DATA = DB_ADDRESS.getShippingData();
+  };
+
   $('.invalid-feedback').css('display', 'none');
 
   // Validate fullName
@@ -245,27 +283,19 @@ $('.save').on('click', function () {
 
   // Config Data
   if (isValid == true) {
-    let getNewShippingDataLocal = DB_ADDRESS.getShippingData();
-
+    shippingInfoCount++;
+    $('.btns').css('display', 'block');
     // Set shipping data
-    if (!Object(getNewShippingDataLocal).length == 0) {
-      NEW_SHIPPING_DATA = getNewShippingDataLocal;
-    };
-    NEW_SHIPPING_DATA.push({ 'name': fullNameValue, 'phone': phoneValue, 'address': addressValue, 'district': districtValue, 'ward': wardValue, 'city': cityValue, 'checked': false });
+
+    NEW_SHIPPING_DATA.push({ 'name': fullNameValue, 'phone': phoneValue, 'address': addressValue, 'district': districtValue, 'ward': wardValue, 'city': cityValue, 'id': `shipping-info-${shippingInfoCount}` });
     DB_ADDRESS.setShippingData(NEW_SHIPPING_DATA)
     $('.modal').modal('hide');
 
     let getNewShippingData = NEW_SHIPPING_DATA.slice(-1);
 
     // Get shipping data
-    let shippingInfoCount = 1;
-
-    if (!Object(DB_ADDRESS.getShippingInfoCount()).length == 0) {
-      shippingInfoCount = DB_ADDRESS.getShippingInfoCount();
-    };
-
     let newShippingElement = `
-    <div class="info-choose radio-wrapper" id="${shippingInfoCount}">
+    <div class="info-choose radio-wrapper" id="shipping-info-${shippingInfoCount}">
       <input class="address-radio-btn" id="${getNewShippingData[0]['name']}-address" type="radio" name="address-info" checked="" />
       <label for="${getNewShippingData[0]['name']}-address">
         <div class="radio-dot"></div>
@@ -289,13 +319,15 @@ $('.save').on('click', function () {
     `;
 
     $('.info-wrapper').append(newShippingElement);
+
     DB_ADDRESS.setShippingInfoCount(shippingInfoCount);
-    ++shippingInfoCount;
   }
 });
 
 $(document).on('click', function (e) {
   let target = e.target;
+
+  let checkedShippingInfoId = $('input[name=address-info]:checked').parent()
 
   if (target.closest('.complete')) {
     let changeBtn = `
@@ -303,22 +335,23 @@ $(document).on('click', function (e) {
     `;
     $('.btns').css('display', 'none');
     $('.add-new').replaceWith(changeBtn);
-    // let selectedShippingInfo = $('input[name=address-info]:checked').parent();
-    // let checkedShippingName = $('input[name=address-info]:checked').parent().find('.shipping-name').text().trim();
-    // let checkedShippingPhone = $('input[name=address-info]:checked').parent().find('.shipping-phone').text().trim();
-    // let checkedShippingAddress = $('input[name=address-info]:checked').parent().find('.shipping-address').text().trim().replace(',', '');
-    // let checkedShippingWard = $('input[name=address-info]:checked').parent().find('.shipping-ward').text().trim().replace(',', '');
-    // let checkedShippingDistrict = $('input[name=address-info]:checked').parent().find('.shipping-district').text().trim().replace(',', '');
-    // let checkedShippingCity = $('input[name=address-info]:checked').parent().find('.shipping-city').text().trim();
-
-    // let checkedShippingInfo = DB_ADDRESS.getShippingData().findIndex(shippingData => {
-    //   // shippingData['name'] == checkedShippingName, shippingData['phone'] == checkedShippingPhone, shippingData['address'] == checkedShippingAddress, shippingData['district'] == checkedShippingDistrict, shippingData['ward'] == checkedShippingWard, shippingData['city'] == checkedShippingCity
-    //   return shippingData['name'] == checkedShippingName
-    // });
-    // console.log(checkedShippingInfo);
+    let selectedShippingInfo = $('input[name=address-info]:checked').parent();
 
     $('.info-choose').remove();
     $('.info-wrapper').append(selectedShippingInfo);
+
+    let checkedShippingInfoIndex;
+    if (!Object(DB_ADDRESS.getShippingData()).length == 0) {
+      checkedShippingInfoIndex = DB_ADDRESS.getShippingData().findIndex(shippingData =>
+        shippingData['id'] == checkedShippingInfoId.attr('id')
+      );
+    };
+
+    let checkedShippingInfo = NEW_SHIPPING_DATA.splice(checkedShippingInfoIndex, 1);
+
+    DB_ADDRESS.setDefaultShippingInfo(checkedShippingInfo);
+
+    DB_ADDRESS.setShippingData(NEW_SHIPPING_DATA);
   }
 
   if (target.closest('.change')) {
@@ -327,10 +360,22 @@ $(document).on('click', function (e) {
     `;
     $(target).replaceWith(addNewBtn);
     $('.btns').css('display', 'block');
+
+    $('.info-choose').remove();
+    $('.info-wrapper').prepend(checkedShippingInfoId);
+  }
+  
+  if (target.closest('.cancel')) {
+    let changeBtn = `
+    <button class="btn btn-primary change red-btn">Thay đổi</button>
+    `;
+    $('.btns').css('display', 'none');
+    $('.add-new').replaceWith(changeBtn);
   }
 })
 
 let NEW_SHIPPING_DATA = [];
+let shippingInfoCount = 0;
 
 let DB_ADDRESS = {
   getShippingData: function () {
@@ -353,31 +398,11 @@ let DB_ADDRESS = {
     localStorage.setItem('address', JSON.stringify(data));
   },
 
-  getCurrentShippingData: function () {
-    if (typeof (Storage) !== "undefined") {
-      let data;
-      try {
-        data = JSON.parse(localStorage.getItem('current-address')) || {};
-      } catch (error) {
-        data = {};
-      }
-
-      return data;
-    } else {
-      alert('Sorry! No Web Storage support...');
-      return {};
-    }
-  },
-
-  setCurrentShippingData: function (data) {
-    localStorage.setItem('current-address', JSON.stringify(data));
-  },
-
   getShippingInfoCount: function () {
     if (typeof (Storage) !== "undefined") {
       let data;
       try {
-        data = JSON.parse(localStorage.getItem('shipping-info-count')) || {};
+        data = JSON.parse(localStorage.getItem('shipping-info-count')) || "";
       } catch (error) {
         data = {};
       }
@@ -390,6 +415,40 @@ let DB_ADDRESS = {
   },
 
   setShippingInfoCount: function (data) {
-    localStorage.setItem('shipping-info-count', JSON.stringify(data));
+    localStorage.setItem('shipping-info-count', data);
+  },
+
+  getDefaultShippingInfo: function () {
+    if (typeof (Storage) !== "undefined") {
+      let data;
+      try {
+        data = JSON.parse(localStorage.getItem('default-address')) || {};
+      } catch (error) {
+        data = {};
+      }
+
+      return data;
+    } else {
+      alert('Sorry! No Web Storage support...');
+      return {};
+    }
+  },
+
+  setDefaultShippingInfo: function (data) {
+    localStorage.setItem('default-address', JSON.stringify(data));
   },
 };
+
+function changeUi() {
+  if ($('.info-wrapper').html() == "") {
+    let addNewBtn = `
+    <button class="btn btn-primary red-btn add-new" data-toggle="modal" data-target="#addNewShipping">+ Thêm Mới</button>
+    `;
+    $(('.change')).replaceWith(addNewBtn);
+  } else {
+    let changeBtn = `
+    <button class="btn btn-primary change red-btn">Thay đổi</button>
+    `;
+    $('.add-new').replaceWith(changeBtn);
+  }
+}
