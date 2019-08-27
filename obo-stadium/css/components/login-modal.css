@@ -23,12 +23,16 @@
   margin: 1.25rem 1.875rem;
 }
 #signInSignUp .form-control {
-  margin-bottom: 1.25rem;
+  margin-top: 1.25rem;
 }
 #signInSignUp .btn-primary {
   width: 100%;
   text-transform: uppercase;
   margin-top: 1.875rem;
+}
+#signInSignUp .forgot-password-wrapper,
+#signInSignUp .privacy-confirm {
+  margin-top: 1.25rem;
 }
 
 @media (min-width: 576px) {

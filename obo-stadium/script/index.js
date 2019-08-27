@@ -30,7 +30,3 @@ function changeUiHomePage() {
 }
 
 $(window).resize(changeUiHomePage);
-
-$('#myModal').on('shown.bs.modal', function () {
-    $('#myInput').trigger('focus')
-})

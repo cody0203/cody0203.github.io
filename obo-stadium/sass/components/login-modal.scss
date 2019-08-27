@@ -30,13 +30,18 @@
   }
 
   & .form-control {
-    margin-bottom: $twenty-pixel;
+    margin-top: $twenty-pixel;
   }
 
   & .btn-primary {
     width: 100%;
     text-transform: uppercase;
     margin-top: $thirty-pixel;
+  }
+
+  & .forgot-password-wrapper,
+  .privacy-confirm {
+    margin-top: $twenty-pixel;
   }
 }
 

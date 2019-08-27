@@ -17,6 +17,9 @@ html(lang="en")
 
     // Pretty Checkbox CSS
     link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css")
+    
+    // Login Modal
+    link(rel="stylesheet" type="text/css" href="./css/components/login-modal.css")
 
     block customizeCss
     
@@ -28,9 +31,15 @@ html(lang="en")
     main
       block mainContent
 
+      // Modals
+      include ./template-parts/login-modal
+
     block footer
 
     script(type="text/javascript" src="./vendor/jquery/jquery-3.4.1.min.js")
     script(type="text/javascript" src="./vendor/bootstrap/js/bootstrap.min.js")
 
+    // Main Js
+    script(type="text/javascript" src="./script/main.js")
+    script(type="text/javascript" src="./script/account.js")
     block customizeScript
