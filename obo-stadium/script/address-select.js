@@ -362,7 +362,6 @@ $(document).on('click', function (e) {
     $('.btns').css('display', 'block');
 
     $('.info-choose').remove();
-    // $('.info-wrapper').prepend(checkedShippingInfoId);
     let getData = DB_ADDRESS.getShippingData();
     let unCheckedShippingElement = "";
     let checkedShippingElement = "";
