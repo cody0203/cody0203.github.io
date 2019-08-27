@@ -328,6 +328,7 @@ $(document).on('click', function (e) {
   let target = e.target;
 
   let checkedShippingInfoId = $('input[name=address-info]:checked').parent()
+  let selectedShippingInfo = $('input[name=address-info]:checked').parent();
 
   if (target.closest('.complete')) {
     let changeBtn = `
@@ -335,23 +336,22 @@ $(document).on('click', function (e) {
     `;
     $('.btns').css('display', 'none');
     $('.add-new').replaceWith(changeBtn);
-    let selectedShippingInfo = $('input[name=address-info]:checked').parent();
 
     $('.info-choose').remove();
     $('.info-wrapper').append(selectedShippingInfo);
 
     let checkedShippingInfoIndex;
     if (!Object(DB_ADDRESS.getShippingData()).length == 0) {
+      NEW_SHIPPING_DATA = DB_ADDRESS.getShippingData();
       checkedShippingInfoIndex = DB_ADDRESS.getShippingData().findIndex(shippingData =>
         shippingData['id'] == checkedShippingInfoId.attr('id')
       );
     };
 
-    let checkedShippingInfo = NEW_SHIPPING_DATA.splice(checkedShippingInfoIndex, 1);
-
-    DB_ADDRESS.setDefaultShippingInfo(checkedShippingInfo);
-
-    DB_ADDRESS.setShippingData(NEW_SHIPPING_DATA);
+    if (checkedShippingInfoIndex !== -1) {
+      let checkedShippingInfo = NEW_SHIPPING_DATA.splice(checkedShippingInfoIndex, 1);
+      DB_ADDRESS.setDefaultShippingInfo(checkedShippingInfo);
+    }
   }
 
   if (target.closest('.change')) {
@@ -362,15 +362,74 @@ $(document).on('click', function (e) {
     $('.btns').css('display', 'block');
 
     $('.info-choose').remove();
-    $('.info-wrapper').prepend(checkedShippingInfoId);
+    // $('.info-wrapper').prepend(checkedShippingInfoId);
+    let getData = DB_ADDRESS.getShippingData();
+    let unCheckedShippingElement = "";
+    let checkedShippingElement = "";
+    for (let i = 0; i < getData.length; i++) {
+      if (getData[i]['id'] == checkedShippingInfoId.attr('id')) {
+        checkedShippingElement += `
+    <div class="info-choose radio-wrapper" id="${getData[i]['id']}">
+      <input class="address-radio-btn" id="${getData[i]['name']}-address" type="radio" name="address-info" checked />
+      <label for="${getData[i]['name']}-address">
+        <div class="radio-dot"></div>
+        <div class="shipping-data">
+          <div class="name-phone">
+            <span class="shipping-name">
+              <b>${getData[i]['name']}</b>
+            </span>
+            |
+            <span class="shipping-phone">${getData[i]['phone']}</span>
+          </div>
+          <div class="address">
+            <span class="shipping-adress">${getData[i]['address']}, </span>
+            <span class="shipping-ward">${getData[i]['ward']}, </span>
+            <span class="shipping-district">${getData[i]['district']}, </span>
+            <span class="shipping-city">${getData[i]['city']}</span>
+          </div>
+        </div>
+      </label>
+    </div>
+    `;
+      } else {
+        unCheckedShippingElement += `
+    <div class="info-choose radio-wrapper" id="${getData[i]['id']}">
+      <input class="address-radio-btn" id="${getData[i]['name']}-address" type="radio" name="address-info" />
+      <label for="${getData[i]['name']}-address">
+        <div class="radio-dot"></div>
+        <div class="shipping-data">
+          <div class="name-phone">
+            <span class="shipping-name">
+              <b>${getData[i]['name']}</b>
+            </span>
+            |
+            <span class="shipping-phone">${getData[i]['phone']}</span>
+          </div>
+          <div class="address">
+            <span class="shipping-adress">${getData[i]['address']}, </span>
+            <span class="shipping-ward">${getData[i]['ward']}, </span>
+            <span class="shipping-district">${getData[i]['district']}, </span>
+            <span class="shipping-city">${getData[i]['city']}</span>
+          </div>
+        </div>
+      </label>
+    </div>
+    `;
+      }
+    }
+    $('.info-wrapper').prepend(checkedShippingElement);
+    $('.info-wrapper').append(unCheckedShippingElement);
   }
-  
+
   if (target.closest('.cancel')) {
     let changeBtn = `
     <button class="btn btn-primary change red-btn">Thay đổi</button>
     `;
     $('.btns').css('display', 'none');
     $('.add-new').replaceWith(changeBtn);
+    $('.info-choose').remove();
+    $('.info-wrapper').append(selectedShippingInfo);
+
   }
 })
 
