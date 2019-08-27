@@ -32,8 +32,18 @@ $('.price-input').on('change', function (e) {
   $('.invalid-feedback').css('display', 'none')
   if (currency(convertPrice).value < currency('100,000')) {
     $('.invalid-feedback').text('Giá đặt mua phải lớn hơn 100,000 ₫');
+    $('.sub-price-showing:not(.buy-now)').text("");
     $('.invalid-feedback').css('display', 'block');
     $('.total-price-showing:not(.buy-now)').text("");
+  } else if (currency(convertPrice).value > currency($('.ask-price-info').text())) {
+    $('button[href="#profile"]').tab('show');
+    $('#home').trigger('reset');
+    $('.bid:not(.shipping-price-showing)').text("");
+    $('.bid-btn').removeClass('green-btn');
+    $('.bid-btn').addClass('trans-btn');
+
+    $('.buy-btn').removeClass('trans-btn');
+    $('.buy-btn').addClass('green-btn');
   }
 })
 

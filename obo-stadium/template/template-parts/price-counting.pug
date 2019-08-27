@@ -4,7 +4,7 @@ ul#myTab.nav.nav-tabs(role='tablist')
   li.nav-item
     button.buy-btn.btn.btn-primary.trans-btn#buy-now.nav-link(data-toggle='tab', href='#profile', role='tab', aria-controls='profile', aria-selected='false') Mua ngay
 #myTabContent.tab-content
-  #home.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='bid')
+  form#home.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='bid')
     input.price-input.form-control(type='text' placeholder='Đặt giá mua ...' onkeypress="return priceInputValidate(event)" maxlength="10")
     .invalid-feedback 
     .sub-price.price-include
