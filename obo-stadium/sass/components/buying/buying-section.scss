@@ -20,7 +20,7 @@
 
 .address-info-wrapper {
     & button {
-        padding: $six-pixel $twenty-five-pixel;
+        padding: $six-pixel $ten-pixel;
     }
 
     & .btns {
@@ -158,5 +158,15 @@
 @media (min-width: 576px) {
     .modal-dialog {
         max-width: 420px;
+    }
+}
+
+// Override Bootstrap modal
+
+@media (min-width: 576px) {
+    #addNewShipping {
+        .modal-dialog-scrollable {
+            max-height: calc(100% - 17rem);
+        }
     }
 }

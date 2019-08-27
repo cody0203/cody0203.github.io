@@ -14,7 +14,7 @@
 }
 
 .address-info-wrapper button {
-  padding: 0.375rem 1.5625rem;
+  padding: 0.375rem 0.625rem;
 }
 .address-info-wrapper .btns {
   display: none;
@@ -120,6 +120,11 @@
 @media (min-width: 576px) {
   .modal-dialog {
     max-width: 420px;
+  }
+}
+@media (min-width: 576px) {
+  #addNewShipping .modal-dialog-scrollable {
+    max-height: calc(100% - 17rem);
   }
 }
 

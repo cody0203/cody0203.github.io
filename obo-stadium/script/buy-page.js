@@ -76,23 +76,6 @@ $(document).on('click', function (e) {
   }
 
   // Shipping info change
-
-  if (target.closest('.change')) {
-    let addNewBtn = `
-    <button class="btn btn-primary red-btn add-new" data-toggle="modal" data-target="#addNewShipping">+ Thêm Mới</button>
-    `;
-    $(target).replaceWith(addNewBtn);
-
-    $('.btns').css('display', 'block');
-  }
-
-  if (target.closest('.complete') || target.closest('.cancel')) {
-    let changeBtn = `
-    <button class="btn btn-primary change red-btn">Thay đổi</button>
-    `;
-    $('.btns').css('display', 'none');
-    $('.add-new').replaceWith(changeBtn);
-  }
 })
 
 $('.address').on('keyup', function() {
