@@ -88,19 +88,19 @@ $(document).on('click', function (e) {
     let phoneFormat = new RegExp(/((09|03|07|08|05)+([0-9]{8})\b)/g);
     let emailFormat = new RegExp(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/);
 
-    let fullName = $('.full-name');
+    let fullName = $('.sign-up-full-name');
     let fullNameValue = fullName.val();
     let fullNameInvalid = fullName.next();
-    let phone = $('.phone');
+    let phone = $('.sign-up-phone');
     let phoneValue = phone.val();
     let phoneInvalid = phone.next();
-    let email = $('.email');
+    let email = $('.sign-up-email');
     let emailValue = email.val();
     let emailInvalid = email.next();
-    let password = $('.password');
+    let password = $('.sign-up-password');
     let passwordValue = password.val();
     let passwordInvalid = password.next();
-    let confirmPassword = $('.confirm-password');
+    let confirmPassword = $('.sign-up-confirm-password');
     let confirmPasswordValue = confirmPassword.val();
     let confirmPasswordInvalid = confirmPassword.next();
 
@@ -123,9 +123,20 @@ $(document).on('click', function (e) {
     }
 
     // Validate email
-    let checkExistedEmail = DB.getAccountData().map(accountData => {
-      return $.inArray('123@gmail.com', accountData)
-    });
+    let checkExistedEmail;
+
+    if (!Object(DB.getAccountData()).length == 0) {
+      SIGNUP_DATA = DB.getAccountData();
+      checkExistedEmail = DB.getAccountData().map(accountData => {
+        return $.inArray('123@gmail.com', accountData)
+      });
+
+      if (checkExistedEmail.includes(0)) {
+        emailInvalid.css('display', 'block');
+        emailInvalid.html('Email đã tồn tại, vui lòng chọn email khác');
+        isValid = false;
+      }
+    }
 
     if (emailValue == "") {
       emailInvalid.css('display', 'block');
@@ -134,10 +145,6 @@ $(document).on('click', function (e) {
     } else if (!emailFormat.test(emailValue)) {
       emailInvalid.css('display', 'block');
       emailInvalid.html('Email không hợp lệ');
-      isValid = false;
-    } else if (checkExistedEmail.includes(0)) {
-      emailInvalid.css('display', 'block');
-      emailInvalid.html('Email đã tồn tại, vui lòng chọn email khác');
       isValid = false;
     }
 
@@ -162,9 +169,6 @@ $(document).on('click', function (e) {
     // Save to localStorage
 
     if (isValid == true) {
-      if (!Object(DB.getAccountData()).length == 0) {
-        SIGNUP_DATA = DB.getAccountData()
-      };
 
       SIGNUP_DATA.push([emailValue, passwordValue, phoneValue, fullNameValue])
       DB.setAccountData(SIGNUP_DATA);
