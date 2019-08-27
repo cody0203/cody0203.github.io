@@ -123,6 +123,10 @@ $(document).on('click', function (e) {
     }
 
     // Validate email
+    let checkExistedEmail = DB.getAccountData().map(accountData => {
+      return $.inArray('123@gmail.com', accountData)
+    });
+
     if (emailValue == "") {
       emailInvalid.css('display', 'block');
       emailInvalid.html('Vui lòng nhập email');
@@ -130,6 +134,10 @@ $(document).on('click', function (e) {
     } else if (!emailFormat.test(emailValue)) {
       emailInvalid.css('display', 'block');
       emailInvalid.html('Email không hợp lệ');
+      isValid = false;
+    } else if (checkExistedEmail.includes(0)) {
+      emailInvalid.css('display', 'block');
+      emailInvalid.html('Email đã tồn tại, vui lòng chọn email khác');
       isValid = false;
     }
 
