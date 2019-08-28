@@ -1,5 +1,6 @@
 $(function () {
   resetModal();
+  SIGNUP_DATA = DB.getAccountData();
   if (DB.getSignedStatus() == true) {
     signedValidate(DB.getSignedStatus());
   } else {
@@ -18,64 +19,58 @@ $(document).on('click', function (e) {
     let emailFormat = new RegExp(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/);
 
     let isValid = true;
-    let signUpEmail = $('.sign-in-email');
-    let signUpEmailValue = signUpEmail.val();
-    let signUpEmailInvalid = $('.sign-in-email').next();
-    let signUpPassword = $('.sign-in-password');
-    let signUpPasswordValue = signUpPassword.val();
-    let signUpPasswordInvalid = $('.sign-in-password').next();
+    let signInEmail = $('.sign-in-email');
+    let signInEmailValue = signInEmail.val();
+    let signInEmailInvalid = $('.sign-in-email').next();
+    let signInPassword = $('.sign-in-password');
+    let signInPasswordValue = signInPassword.val();
+    let signInPasswordInvalid = $('.sign-in-password').next();
 
 
-    if (signUpEmailValue == "") {
-      signUpEmailInvalid.css('display', 'block');
-      signUpEmailInvalid.html('Vui lòng nhập email');
+    if (signInEmailValue == "") {
+      signInEmailInvalid.css('display', 'block');
+      signInEmailInvalid.html('Vui lòng nhập email');
       isValid = false;
-    } else if (!emailFormat.test(signUpEmailValue)) {
-      signUpEmailInvalid.css('display', 'block');
-      signUpEmailInvalid.html('Email không hợp lệ');
+    } else if (!emailFormat.test(signInEmailValue)) {
+      signInEmailInvalid.css('display', 'block');
+      signInEmailInvalid.html('Email không hợp lệ');
       isValid = false;
     }
-    if (signUpPasswordValue == "") {
-      signUpPasswordInvalid.css('display', 'block');
-      signUpPasswordInvalid.html('Vui lòng nhập password')
+    if (signInPasswordValue == "") {
+      signInPasswordInvalid.css('display', 'block');
+      signInPasswordInvalid.html('Vui lòng nhập password')
       isValid = false;
     }
 
     // Get data from localStorage
-
+    
     if (isValid == true) {
       $('.invalid-feedback').css('display', 'none');
-
+        let checkAccount
       if (!$.isEmptyObject(DB.getAccountData())) {
-        let checkAccount = DB.getAccountData().filter(accountData => {
-          return accountData[0].includes(signUpEmailValue);
-        })
+        checkAccount = DB.getAccountData()['accounts'].hasOwnProperty(signInEmailValue)
 
-        if (checkAccount !== "") {
-          account = checkAccount;
+        if (checkAccount) {
+          account = DB.getAccountData()['accounts'][signInEmailValue][0]['account-details'];
         }
       }
 
-
-      if (account == false) {
-        signUpEmailInvalid.css('display', 'block');
-        signUpEmailInvalid.html('Email không đúng');
-
-        signUpPasswordInvalid.css('display', 'block');
-        signUpPasswordInvalid.html('Password không đúng');
+      if (checkAccount == false) {
+        signInEmailInvalid.css('display', 'block');
+        signInEmailInvalid.html('Email không tồn tại');
 
         isValid = false;
       } else {
-        if (signUpEmailValue == account[0][0] && signUpPasswordValue == account[0][1]) {
+        if (signInEmailValue == account['email'] && signInPasswordValue == account['password']) {
           $('.modal').modal('hide');
           signed = true;
           DB.setSignedStatus(signed);
           DB.setSignedAccount(account);
           signedValidate(signed);
         }
-        if (signUpPasswordValue !== account[0][1]) {
-          signUpPasswordInvalid.css('display', 'block');
-          signUpPasswordInvalid.html('Password không đúng');
+        if (signInPasswordValue !== account['password']) {
+          signInPasswordInvalid.css('display', 'block');
+          signInPasswordInvalid.html('Password không đúng');
         }
       }
     }
@@ -124,15 +119,17 @@ $(document).on('click', function (e) {
 
     // Validate email
     let checkExistedEmail = true;
-    
-    if (!Object(DB.getAccountData()).length == 0) {
-      SIGNUP_DATA = DB.getAccountData();
-      let currentExistedEmail = []
 
-      for (let i = 0; i < SIGNUP_DATA.length; i++) {
-        currentExistedEmail.push(SIGNUP_DATA[i][0]);
-        if (currentExistedEmail.includes(emailValue) ) {
-          checkExistedEmail == false;
+    if (DB.getAccountData()['current-email'] !== {}) {
+      // SIGNUP_DATA = DB.getAccountData();
+      let currentExistedEmail = []
+      let currentEmail = SIGNUP_DATA['current-email'];
+
+      for (let i = 0; i < currentEmail.length; i++) {
+        currentExistedEmail.push(currentEmail[i]);
+        if (currentExistedEmail.includes(emailValue)) {
+          checkExistedEmail = false;
+          break;
         }
       }
 
@@ -174,15 +171,24 @@ $(document).on('click', function (e) {
     // Save to localStorage
 
     if (isValid == true) {
+      if (SIGNUP_DATA['accounts'] == undefined) {
+        SIGNUP_DATA['accounts'] = {};
+        SIGNUP_DATA['current-email'] = [];
+      }
+      SIGNUP_DATA['accounts'][emailValue] = [];
 
-      SIGNUP_DATA.push([emailValue, passwordValue, phoneValue, fullNameValue])
+      let accounts = { 'email': emailValue, 'password': passwordValue, 'phone': phoneValue, 'full-name': fullNameValue };
+      
+      SIGNUP_DATA['accounts'][emailValue].push({'account-details': accounts});
+      SIGNUP_DATA['current-email'].push(emailValue)
       DB.setAccountData(SIGNUP_DATA);
       $('.modal').modal('hide');
     }
   }
 })
 
-let SIGNUP_DATA = [];
+let SIGNUP_DATA = {};
+
 let signed = false;
 let account = false;
 // Local storage
@@ -262,7 +268,7 @@ function resetModal() {
 function signedValidate(status = false) {
   if (status == true) {
     let signedLink = `
-  <a class="nav-link account-setting" href="./account.html">Xin chào ${DB.getSignedAccount()[0][3]}</a>`;
+  <a class="nav-link account-setting" href="./account.html">Xin chào ${DB.getSignedAccount()['full-name']}</a>`;
 
     $('.account-setting').replaceWith(signedLink);
   } else {
