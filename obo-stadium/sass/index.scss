@@ -86,6 +86,20 @@ header {
     margin: $fifty-pixel $zero-pixel;
 }
 
+@media (max-width: $large-devices-width) {
+    .main-heading {
+        display: none;
+    }
+
+    .search-form {
+
+        & .btn-primary {
+            white-space: nowrap;
+        }
+
+    }
+}
+
 @media (max-width: $medium-devices-width) {
     .search-form {
         & .form-control {
@@ -100,10 +114,6 @@ header {
             max-width: 100%;
         }
 
-    }
-
-    .main-heading {
-        display: none;
     }
 }
 

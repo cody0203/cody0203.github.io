@@ -74,6 +74,15 @@ header {
   margin: 3.125rem 0px;
 }
 
+@media (max-width: 992px) {
+  .main-heading {
+    display: none;
+  }
+
+  .search-form .btn-primary {
+    white-space: nowrap;
+  }
+}
 @media (max-width: 768px) {
   .search-form .form-control {
     margin-right: 0px;
@@ -84,10 +93,6 @@ header {
   .search-form .btn-primary {
     flex: none;
     max-width: 100%;
-  }
-
-  .main-heading {
-    display: none;
   }
 }
 @media (max-width: 576px) {

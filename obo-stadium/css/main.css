@@ -100,6 +100,9 @@ a:hover {
   color: #B6B6B6;
 }
 
+.navbar-light .navbar-nav .nav-link {
+  white-space: nowrap;
+}
 .navbar-light .navbar-nav .nav-link:focus {
   color: #ffffff;
 }
@@ -162,7 +165,7 @@ footer .footer-link .item:hover {
 }
 
 .modal-dialog {
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .pretty input:checked ~ .state.p-success label:after,

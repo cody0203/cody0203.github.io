@@ -115,9 +115,14 @@ a {
     }
 }
 
-.navbar-light .navbar-nav .nav-link:focus {
-    color: $text-white;
+.navbar-light .navbar-nav .nav-link {
+    white-space: nowrap;
+
+    &:focus {
+        color: $text-white;
+    }
 }
+
 
 .h2 {
     font-size: $twenty-six-pixel;
@@ -184,7 +189,7 @@ footer .footer-link .item {
 }
 
 .modal-dialog {
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 // Override Pretty checkbox
