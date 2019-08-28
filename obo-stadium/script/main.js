@@ -6,6 +6,13 @@ $(function () {
   } else {
     signedValidate();
   }
+
+  if (!$.isEmptyObject(DB.getSignedAccount())) {
+    CURRENT_ACCOUNT_DETAILS = DB.getSignedAccount()['current-account-details']['account-details']['email'];
+
+    CURRENT_SIGNED_ACCOUNT = DB.getSignedAccount();
+    CURRENT_SIGNED_ACCOUNT['addresses'] = [];
+  }
 })
 
 // Login/Sign up validate
@@ -51,7 +58,8 @@ $(document).on('click', function (e) {
         checkAccount = DB.getAccountData()['accounts'].hasOwnProperty(signInEmailValue)
 
         if (checkAccount) {
-          account = DB.getAccountData()['accounts'][signInEmailValue][0]['account-details'];
+          account = DB.getAccountData()['accounts'][signInEmailValue][0];
+          accountDetails = DB.getAccountData()['accounts'][signInEmailValue][0]['account-details'];
         }
       }
 
@@ -61,14 +69,16 @@ $(document).on('click', function (e) {
 
         isValid = false;
       } else {
-        if (signInEmailValue == account['email'] && signInPasswordValue == account['password']) {
+        if (signInEmailValue == accountDetails['email'] && signInPasswordValue == accountDetails['password']) {
           $('.modal').modal('hide');
           signed = true;
           DB.setSignedStatus(signed);
-          DB.setSignedAccount(account);
+          CURRENT_SIGNED_ACCOUNT['current-account-details'] = account;
+
+          DB.setSignedAccount(CURRENT_SIGNED_ACCOUNT);
           signedValidate(signed);
         }
-        if (signInPasswordValue !== account['password']) {
+        if (signInPasswordValue !== accountDetails['password']) {
           signInPasswordInvalid.css('display', 'block');
           signInPasswordInvalid.html('Password không đúng');
         }
@@ -120,7 +130,7 @@ $(document).on('click', function (e) {
     // Validate email
     let checkExistedEmail = true;
 
-    if (DB.getAccountData()['current-email'] !== {}) {
+    if (DB.getAccountData()['current-email'] !== undefined) {
       // SIGNUP_DATA = DB.getAccountData();
       let currentExistedEmail = []
       let currentEmail = SIGNUP_DATA['current-email'];
@@ -188,7 +198,9 @@ $(document).on('click', function (e) {
 })
 
 let SIGNUP_DATA = {};
-
+let CURRENT_SIGNED_ACCOUNT = {
+};
+let CURRENT_ACCOUNT_DETAILS;
 let signed = false;
 let account = false;
 // Local storage
@@ -268,7 +280,7 @@ function resetModal() {
 function signedValidate(status = false) {
   if (status == true) {
     let signedLink = `
-  <a class="nav-link account-setting" href="./account.html">Xin chào ${DB.getSignedAccount()['full-name']}</a>`;
+  <a class="nav-link account-setting" href="./account.html">Xin chào ${DB.getSignedAccount()['current-account-details']['account-details']['full-name']}</a>`;
 
     $('.account-setting').replaceWith(signedLink);
   } else {

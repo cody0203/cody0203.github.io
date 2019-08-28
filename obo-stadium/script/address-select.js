@@ -227,9 +227,10 @@ $('.save').on('click', function () {
   let addressValue = address.val();
   let addressInvalid = address.next();
 
-  if (!Object(DB_ADDRESS.getShippingData()).length == 0) {
-    NEW_SHIPPING_DATA = DB_ADDRESS.getShippingData();
-  };
+  if (SIGNUP_DATA["accounts"][CURRENT_ACCOUNT_DETAILS][0]['addresses'] == undefined) {
+    SIGNUP_DATA["accounts"][CURRENT_ACCOUNT_DETAILS][0]['addresses'] = [];
+    CURRENT_SIGNED_ACCOUNT['addresses'] = [];
+  }
 
   $('.invalid-feedback').css('display', 'none');
 
@@ -288,7 +289,13 @@ $('.save').on('click', function () {
     // Set shipping data
 
     NEW_SHIPPING_DATA.push({ 'name': fullNameValue, 'phone': phoneValue, 'address': addressValue, 'district': districtValue, 'ward': wardValue, 'city': cityValue, 'id': `shipping-info-${shippingInfoCount}` });
-    DB_ADDRESS.setShippingData(NEW_SHIPPING_DATA)
+
+    SIGNUP_DATA["accounts"][CURRENT_ACCOUNT_DETAILS][0]['addresses'].push(NEW_SHIPPING_DATA[0]);
+    CURRENT_SIGNED_ACCOUNT['addresses'].push(NEW_SHIPPING_DATA[0]);
+
+    // DB.setAccountData(SIGNUP_DATA);
+
+    // DB_ADDRESS.setShippingData(NEW_SHIPPING_DATA)
     $('.modal').modal('hide');
 
     let getNewShippingData = NEW_SHIPPING_DATA.slice(-1);
@@ -321,6 +328,7 @@ $('.save').on('click', function () {
     $('.info-wrapper').append(newShippingElement);
 
     DB_ADDRESS.setShippingInfoCount(shippingInfoCount);
+    NEW_SHIPPING_DATA = [];
   }
 });
 
