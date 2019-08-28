@@ -123,15 +123,20 @@ $(document).on('click', function (e) {
     }
 
     // Validate email
-    let checkExistedEmail;
-
+    let checkExistedEmail = true;
+    
     if (!Object(DB.getAccountData()).length == 0) {
       SIGNUP_DATA = DB.getAccountData();
-      checkExistedEmail = DB.getAccountData().map(accountData => {
-        return $.inArray('123@gmail.com', accountData)
-      });
+      let currentExistedEmail = []
 
-      if (checkExistedEmail.includes(0)) {
+      for (let i = 0; i < SIGNUP_DATA.length; i++) {
+        currentExistedEmail.push(SIGNUP_DATA[i][0]);
+        if (currentExistedEmail.includes(emailValue) ) {
+          checkExistedEmail == false;
+        }
+      }
+
+      if (!checkExistedEmail) {
         emailInvalid.css('display', 'block');
         emailInvalid.html('Email đã tồn tại, vui lòng chọn email khác');
         isValid = false;
