@@ -107,6 +107,12 @@ a:hover {
   color: #ffffff;
 }
 
+.modal-sub-title {
+  font-size: 0.75rem;
+  color: #ABACAD;
+  font-weight: normal;
+}
+
 .h2 {
   font-size: 1.625rem;
   margin-bottom: 0px;

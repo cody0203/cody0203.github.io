@@ -1,16 +1,26 @@
 $(function () {
   addressSelectRender();
+
   if (!$.isEmptyObject(CURRENT_SIGNED_ACCOUNT)) {
     if (CURRENT_SIGNED_ACCOUNT["current-account-details"]['shipping-info-count'] !== undefined) {
       shippingInfoCount = CURRENT_SIGNED_ACCOUNT["current-account-details"]['shipping-info-count'];
     };
+
+    if (!$.isEmptyObject(CURRENT_SIGNED_ACCOUNT['current-account-details']['default-address']) || CURRENT_SIGNED_ACCOUNT['current-account-details']['default-address'] !== undefined) {
+
+      $('.info-wrapper').prepend(renderDefaultAddress());
+    };
   }
 
-  if (!$.isEmptyObject(CURRENT_SIGNED_ACCOUNT['current-account-details']['default-address']) || CURRENT_SIGNED_ACCOUNT['current-account-details']['default-address'] !== undefined) {
-
-    $('.info-wrapper').prepend(renderDefaultAddress());
-  };
   changeUi();
+
+  if ($('.info-wrapper').html() == "" && !$.isEmptyObject(CURRENT_SIGNED_ACCOUNT) ) {
+    $('#addNewShipping').modal('show');
+    let text = `
+    <div class="modal-sub-title">Để đặt hàng, vui lòng thêm địa chỉ nhận hàng</div>
+    `
+    $('.modal-title').append(text)
+  }
 });
 
 // UI

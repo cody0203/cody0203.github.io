@@ -88,6 +88,17 @@ $(document).on('click', function (e) {
   // Shipping info change
 })
 
+function paymentMethodsRender() {
+  
+}
+
+$('#visa-master').on('change', function() {
+  if (this.checked) {
+    $('#paymentMethods').modal('show');
+    console.log('haha')
+  }
+})
+
 $('.address').on('keyup', function() {
   this.style.height = "0px";
   this.style.height = (16 + this.scrollHeight) + "px";

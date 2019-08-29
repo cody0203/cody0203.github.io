@@ -87,7 +87,8 @@
 
 // New Shipping Modal
 
-#addNewShipping {
+#addNewShipping,
+#paymentMethods {
 
     & .modal-header,
     .modal-body,
@@ -151,13 +152,32 @@
         resize: none;
     }
 
+    & .pivacy-text {
+        margin-top: $twenty-pixel;
+    }
 }
 
+#paymentMethods {
+    .cvv-wrapper {
+        @include flex-center-between;
+        margin-top: $twenty-pixel;
+
+        & .form-control {
+            max-width: 80%;
+        }
+    }
+}
 
 
 @media (min-width: 576px) {
     .modal-dialog {
         max-width: 420px;
+    }
+
+    #paymentMethods {
+        .modal-dialog {
+            max-width: 500px;
+        }
     }
 }
 
@@ -168,5 +188,29 @@
         .modal-dialog-scrollable {
             max-height: calc(100% - 17rem);
         }
+    }
+}
+
+@media (max-width: $small-devices-width) {
+    .cvv-wrapper {
+        & .form-control {
+            width: 70%;
+        }
+    }
+}
+
+@media (max-width: 320px) {
+
+    #addNewShipping,
+    #paymentMethods {
+        & .btn {
+            padding: $ten-pixel $thirty-pixel;
+        }
+    }
+}
+
+@media (max-width: 323px) {
+    .address-info-wrapper button {
+        font-size: $twelve-pixel;
     }
 }

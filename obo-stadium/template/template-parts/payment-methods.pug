@@ -1,0 +1,20 @@
+#paymentMethods.modal.fade(tabindex='-1', role='dialog', aria-labelledby='paymentMethodsLabel', aria-hidden='true')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        h5#paymentMethodsLabel.modal-title Thêm thẻ tín dụng/ghi nợ mới
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') &times;
+      .modal-body
+        form
+          .payment-methods-wrapper
+            input.form-control.payment-method-full-name(placeholder="Họ và tên chủ thẻ")
+            input.form-control.payment-method-card-number(placeholder="Số thẻ tín dụng/ghi nợ")
+            input.form-control.payment-method-month(placeholder="Ngày hết hạn MM/YYY")
+            .cvv-wrapper
+              input.form-control.payment-method-month(placeholder="Mã bảo mật VD: 123")
+              img(src="./image/cvv-hint.png", alt="" class="img-fluid")
+          .pivacy-text Chúng tôi hợp tác với CyberSouce, công ty thuộc tổ chức thẻ VISA, nhằm đảm bảo thông tin thẻ Tín dụng/Ghi nợ của bạn luôn được bảo mật và an toàn. OBO Stadium không có quyền truy cập vào bất cứ thông tin nào.
+      .modal-footer
+        button.btn.payment-methods-close(type='button', data-dismiss='modal') Huỷ bỏ
+        button.btn.btn-primary.payment-methods-save.red-btn(type='button') Lưu

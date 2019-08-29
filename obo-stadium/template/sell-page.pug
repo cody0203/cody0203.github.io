@@ -93,8 +93,17 @@ block mainContent
         button.btn.btn-primary.confirm-btn.red-btn
           | &Dstrok;&#x1EB7;t b&aacute;n
 
+  // Modals
+  include ./template-parts/size-choose-modal
+  include ./template-parts/size-guide-modal
+  include ./template-parts/shipping-info
+
 block footer
   include ./template-parts/footer
 
 block customizeScript
+  // Currency
+  script(type="text/javascript" src="./vendor/currency/currency.min.js")
+
+  // Common
   script(src="./script/except-home-page.js")
