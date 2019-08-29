@@ -1,37 +1,14 @@
 $(function () {
   addressSelectRender();
-  if (DB_ADDRESS.getShippingInfoCount() !== "") {
-    shippingInfoCount = DB_ADDRESS.getShippingInfoCount();
-  };
+  if (!$.isEmptyObject(CURRENT_SIGNED_ACCOUNT)) {
+    if (CURRENT_SIGNED_ACCOUNT["current-account-details"]['shipping-info-count'] !== undefined) {
+      shippingInfoCount = CURRENT_SIGNED_ACCOUNT["current-account-details"]['shipping-info-count'];
+    };
+  }
 
-  if (!Object(DB_ADDRESS.getDefaultShippingInfo()).length == 0) {
-    let defaultShippingData = DB_ADDRESS.getDefaultShippingInfo();
+  if (!$.isEmptyObject(CURRENT_SIGNED_ACCOUNT['current-account-details']['default-address']) || CURRENT_SIGNED_ACCOUNT['current-account-details']['default-address'] !== undefined) {
 
-    let defaultShippingInfo = `
-    <div class="info-choose radio-wrapper" id="${defaultShippingData[0]['id']}">
-      <input class="address-radio-btn" id="${defaultShippingData[0]['name']}-address" type="radio" name="address-info" checked="" />
-      <label for="${defaultShippingData[0]['name']}-address">
-        <div class="radio-dot"></div>
-        <div class="shipping-data">
-          <div class="name-phone">
-            <span class="shipping-name">
-              <b>${defaultShippingData[0]['name']}</b>
-            </span>
-            |
-            <span class="shipping-phone">${defaultShippingData[0]['phone']}</span>
-          </div>
-          <div class="address">
-            <span class="shipping-adress">${defaultShippingData[0]['address']}, </span>
-            <span class="shipping-ward">${defaultShippingData[0]['ward']}, </span>
-            <span class="shipping-district">${defaultShippingData[0]['district']}, </span>
-            <span class="shipping-city">${defaultShippingData[0]['city']}</span>
-          </div>
-        </div>
-      </label>
-    </div>
-    `;
-
-    $('.info-wrapper').prepend(defaultShippingInfo);
+    $('.info-wrapper').prepend(renderDefaultAddress());
   };
   changeUi();
 });
@@ -229,7 +206,7 @@ $('.save').on('click', function () {
 
   if (SIGNUP_DATA["accounts"][CURRENT_ACCOUNT_DETAILS][0]['addresses'] == undefined) {
     SIGNUP_DATA["accounts"][CURRENT_ACCOUNT_DETAILS][0]['addresses'] = [];
-    CURRENT_SIGNED_ACCOUNT['addresses'] = [];
+    CURRENT_SIGNED_ACCOUNT['current-account-details']['addresses'] = [];
   }
 
   $('.invalid-feedback').css('display', 'none');
@@ -291,34 +268,34 @@ $('.save').on('click', function () {
     NEW_SHIPPING_DATA.push({ 'name': fullNameValue, 'phone': phoneValue, 'address': addressValue, 'district': districtValue, 'ward': wardValue, 'city': cityValue, 'id': `shipping-info-${shippingInfoCount}` });
 
     SIGNUP_DATA["accounts"][CURRENT_ACCOUNT_DETAILS][0]['addresses'].push(NEW_SHIPPING_DATA[0]);
-    CURRENT_SIGNED_ACCOUNT['addresses'].push(NEW_SHIPPING_DATA[0]);
+    CURRENT_SIGNED_ACCOUNT['current-account-details']['addresses'].push(NEW_SHIPPING_DATA[0]);
 
-    // DB.setAccountData(SIGNUP_DATA);
+    DB.setAccountData(SIGNUP_DATA);
+    DB.setSignedAccount(CURRENT_SIGNED_ACCOUNT);
 
-    // DB_ADDRESS.setShippingData(NEW_SHIPPING_DATA)
     $('.modal').modal('hide');
 
-    let getNewShippingData = NEW_SHIPPING_DATA.slice(-1);
+    let getNewShippingData = NEW_SHIPPING_DATA[0];
 
     // Get shipping data
     let newShippingElement = `
     <div class="info-choose radio-wrapper" id="shipping-info-${shippingInfoCount}">
-      <input class="address-radio-btn" id="${getNewShippingData[0]['name']}-address" type="radio" name="address-info" checked="" />
-      <label for="${getNewShippingData[0]['name']}-address">
+      <input class="address-radio-btn" id="${getNewShippingData['name']}-address" type="radio" name="address-info" checked="" />
+      <label for="${getNewShippingData['name']}-address">
         <div class="radio-dot"></div>
         <div class="shipping-data">
           <div class="name-phone">
             <span class="shipping-name">
-              <b>${getNewShippingData[0]['name']}</b>
+              <b>${getNewShippingData['name']}</b>
             </span>
             |
-            <span class="shipping-phone">${getNewShippingData[0]['phone']}</span>
+            <span class="shipping-phone">${getNewShippingData['phone']}</span>
           </div>
           <div class="address">
-            <span class="shipping-adress">${getNewShippingData[0]['address']}, </span>
-            <span class="shipping-ward">${getNewShippingData[0]['ward']}, </span>
-            <span class="shipping-district">${getNewShippingData[0]['district']}, </span>
-            <span class="shipping-city">${getNewShippingData[0]['city']}</span>
+            <span class="shipping-adress">${getNewShippingData['address']}, </span>
+            <span class="shipping-ward">${getNewShippingData['ward']}, </span>
+            <span class="shipping-district">${getNewShippingData['district']}, </span>
+            <span class="shipping-city">${getNewShippingData['city']}</span>
           </div>
         </div>
       </label>
@@ -327,7 +304,12 @@ $('.save').on('click', function () {
 
     $('.info-wrapper').append(newShippingElement);
 
-    DB_ADDRESS.setShippingInfoCount(shippingInfoCount);
+    SIGNUP_DATA["accounts"][CURRENT_ACCOUNT_DETAILS][0]['shipping-info-count'] = shippingInfoCount;
+
+    CURRENT_SIGNED_ACCOUNT["current-account-details"]['shipping-info-count'] = shippingInfoCount;
+
+    DB.setAccountData(SIGNUP_DATA);
+    DB.setSignedAccount(CURRENT_SIGNED_ACCOUNT);
     NEW_SHIPPING_DATA = [];
   }
 });
@@ -349,16 +331,23 @@ $(document).on('click', function (e) {
     $('.info-wrapper').append(selectedShippingInfo);
 
     let checkedShippingInfoIndex;
-    if (!Object(DB_ADDRESS.getShippingData()).length == 0) {
-      NEW_SHIPPING_DATA = DB_ADDRESS.getShippingData();
-      checkedShippingInfoIndex = DB_ADDRESS.getShippingData().findIndex(shippingData =>
+    if (CURRENT_SIGNED_ACCOUNT["current-account-details"]['addresses'].length !== 0) {
+      NEW_SHIPPING_DATA = DB.getSignedAccount()["current-account-details"]['addresses'];
+
+      checkedShippingInfoIndex = NEW_SHIPPING_DATA.findIndex(shippingData =>
         shippingData['id'] == checkedShippingInfoId.attr('id')
       );
     };
 
     if (checkedShippingInfoIndex !== -1) {
       let checkedShippingInfo = NEW_SHIPPING_DATA.splice(checkedShippingInfoIndex, 1);
-      DB_ADDRESS.setDefaultShippingInfo(checkedShippingInfo);
+
+      SIGNUP_DATA["accounts"][CURRENT_ACCOUNT_DETAILS][0]['default-address'] = checkedShippingInfo[0];
+
+      CURRENT_SIGNED_ACCOUNT['current-account-details']['default-address'] = checkedShippingInfo[0];
+
+      DB.setAccountData(SIGNUP_DATA);
+      DB.setSignedAccount(CURRENT_SIGNED_ACCOUNT);
     }
   }
 
@@ -370,7 +359,7 @@ $(document).on('click', function (e) {
     $('.btns').css('display', 'block');
 
     $('.info-choose').remove();
-    let getData = DB_ADDRESS.getShippingData();
+    let getData = CURRENT_SIGNED_ACCOUNT["current-account-details"]["addresses"];
     let unCheckedShippingElement = "";
     let checkedShippingElement = "";
     for (let i = 0; i < getData.length; i++) {
@@ -432,78 +421,16 @@ $(document).on('click', function (e) {
     let changeBtn = `
     <button class="btn btn-primary change red-btn">Thay đổi</button>
     `;
+    
     $('.btns').css('display', 'none');
     $('.add-new').replaceWith(changeBtn);
     $('.info-choose').remove();
-    $('.info-wrapper').append(selectedShippingInfo);
-
+    $('.info-wrapper').append(renderDefaultAddress());
   }
 })
 
 let NEW_SHIPPING_DATA = [];
 let shippingInfoCount = 0;
-
-let DB_ADDRESS = {
-  getShippingData: function () {
-    if (typeof (Storage) !== "undefined") {
-      let data;
-      try {
-        data = JSON.parse(localStorage.getItem('address')) || {};
-      } catch (error) {
-        data = {};
-      }
-
-      return data;
-    } else {
-      alert('Sorry! No Web Storage support...');
-      return {};
-    }
-  },
-
-  setShippingData: function (data) {
-    localStorage.setItem('address', JSON.stringify(data));
-  },
-
-  getShippingInfoCount: function () {
-    if (typeof (Storage) !== "undefined") {
-      let data;
-      try {
-        data = JSON.parse(localStorage.getItem('shipping-info-count')) || "";
-      } catch (error) {
-        data = {};
-      }
-
-      return data;
-    } else {
-      alert('Sorry! No Web Storage support...');
-      return {};
-    }
-  },
-
-  setShippingInfoCount: function (data) {
-    localStorage.setItem('shipping-info-count', data);
-  },
-
-  getDefaultShippingInfo: function () {
-    if (typeof (Storage) !== "undefined") {
-      let data;
-      try {
-        data = JSON.parse(localStorage.getItem('default-address')) || {};
-      } catch (error) {
-        data = {};
-      }
-
-      return data;
-    } else {
-      alert('Sorry! No Web Storage support...');
-      return {};
-    }
-  },
-
-  setDefaultShippingInfo: function (data) {
-    localStorage.setItem('default-address', JSON.stringify(data));
-  },
-};
 
 function changeUi() {
   if ($('.info-wrapper').html() == "") {
@@ -517,4 +444,33 @@ function changeUi() {
     `;
     $('.add-new').replaceWith(changeBtn);
   }
+}
+
+function renderDefaultAddress() {
+  let defaultShippingData = DB.getSignedAccount()['current-account-details']['default-address'];
+
+  let defaultShippingInfo = `
+    <div class="info-choose radio-wrapper" id="${defaultShippingData['id']}">
+      <input class="address-radio-btn" id="${defaultShippingData['name']}-address" type="radio" name="address-info" checked="" />
+      <label for="${defaultShippingData['name']}-address">
+        <div class="radio-dot"></div>
+        <div class="shipping-data">
+          <div class="name-phone">
+            <span class="shipping-name">
+              <b>${defaultShippingData['name']}</b>
+            </span>
+            |
+            <span class="shipping-phone">${defaultShippingData['phone']}</span>
+          </div>
+          <div class="address">
+            <span class="shipping-adress">${defaultShippingData['address']}, </span>
+            <span class="shipping-ward">${defaultShippingData['ward']}, </span>
+            <span class="shipping-district">${defaultShippingData['district']}, </span>
+            <span class="shipping-city">${defaultShippingData['city']}</span>
+          </div>
+        </div>
+      </label>
+    </div>
+    `;
+  return defaultShippingInfo;
 }

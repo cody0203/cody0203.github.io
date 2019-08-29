@@ -1,6 +1,8 @@
 $(function () {
   resetModal();
   SIGNUP_DATA = DB.getAccountData();
+  CURRENT_SIGNED_ACCOUNT = DB.getSignedAccount();
+
   if (DB.getSignedStatus() == true) {
     signedValidate(DB.getSignedStatus());
   } else {
@@ -9,9 +11,6 @@ $(function () {
 
   if (!$.isEmptyObject(DB.getSignedAccount())) {
     CURRENT_ACCOUNT_DETAILS = DB.getSignedAccount()['current-account-details']['account-details']['email'];
-
-    CURRENT_SIGNED_ACCOUNT = DB.getSignedAccount();
-    CURRENT_SIGNED_ACCOUNT['addresses'] = [];
   }
 })
 
@@ -52,8 +51,12 @@ $(document).on('click', function (e) {
     // Get data from localStorage
     
     if (isValid == true) {
+
+      CURRENT_ACCOUNT_DETAILS = signInEmailValue;
+
       $('.invalid-feedback').css('display', 'none');
-        let checkAccount
+        let checkAccount;
+      
       if (!$.isEmptyObject(DB.getAccountData())) {
         checkAccount = DB.getAccountData()['accounts'].hasOwnProperty(signInEmailValue)
 
@@ -181,6 +184,7 @@ $(document).on('click', function (e) {
     // Save to localStorage
 
     if (isValid == true) {
+
       if (SIGNUP_DATA['accounts'] == undefined) {
         SIGNUP_DATA['accounts'] = {};
         SIGNUP_DATA['current-email'] = [];
