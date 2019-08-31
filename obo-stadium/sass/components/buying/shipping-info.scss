@@ -5,11 +5,18 @@
 .radio-wrapper {
   margin-top: $twenty-pixel;
 
-  & label {
+  & label:not(.card) {
     margin: $zero-pixel;
     line-height: $nineteen-pixel;
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
+  }
+
+  & label.card {
+    margin: $zero-pixel;
+    line-height: $nineteen-pixel;
+    flex-direction: row;
+    border: $zero-pixel;
   }
 }

@@ -166,17 +166,23 @@
             max-width: 80%;
         }
     }
+
+    & .card-wrapper {
+        display: flex;
+    }
+
+    & .jp-card-container {
+        display: flex;
+        justify-content: center;
+        transform: scale(0.8)
+    }
 }
 
 
 @media (min-width: 576px) {
-    .modal-dialog {
-        max-width: 420px;
-    }
-
     #paymentMethods {
-        .modal-dialog {
-            max-width: 500px;
+        & .modal-dialog {
+            max-width: 500px !important;
         }
     }
 }
@@ -199,7 +205,7 @@
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 382px) {
 
     #addNewShipping,
     #paymentMethods {
@@ -212,5 +218,11 @@
 @media (max-width: 323px) {
     .address-info-wrapper button {
         font-size: $twelve-pixel;
+    }
+
+    #paymentMethods {
+        .jp-card-container {
+            transform: scale(0.7)
+        }
     }
 }

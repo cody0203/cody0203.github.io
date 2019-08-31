@@ -6,14 +6,12 @@
         button.close(type='button', data-dismiss='modal', aria-label='Close')
           span(aria-hidden='true') &times;
       .modal-body
-        form
-          .payment-methods-wrapper
-            input.form-control.payment-method-full-name(placeholder="Họ và tên chủ thẻ")
-            input.form-control.payment-method-card-number(placeholder="Số thẻ tín dụng/ghi nợ")
-            input.form-control.payment-method-month(placeholder="Ngày hết hạn MM/YYY")
-            .cvv-wrapper
-              input.form-control.payment-method-month(placeholder="Mã bảo mật VD: 123")
-              img(src="./image/cvv-hint.png", alt="" class="img-fluid")
+        .card-wrapper
+        form.payment-methods-form
+          input.form-control.payment-method-card-number(placeholder="Số thẻ tín dụng/ghi nợ" name="number")
+          input.form-control.payment-method-full-name(placeholder="Họ và tên chủ thẻ" name="name")
+          input.form-control.payment-method-expiry(placeholder="Ngày hết hạn: MM/YYY" name="expiry")
+          input.form-control.payment-method-cvc(placeholder="Mã bảo mật VD: 123" name="cvc" maxlength="3")
           .pivacy-text Chúng tôi hợp tác với CyberSouce, công ty thuộc tổ chức thẻ VISA, nhằm đảm bảo thông tin thẻ Tín dụng/Ghi nợ của bạn luôn được bảo mật và an toàn. OBO Stadium không có quyền truy cập vào bất cứ thông tin nào.
       .modal-footer
         button.btn.payment-methods-close(type='button', data-dismiss='modal') Huỷ bỏ

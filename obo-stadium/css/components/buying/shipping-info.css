@@ -2,12 +2,18 @@
 .radio-wrapper {
   margin-top: 1.25rem;
 }
-.radio-wrapper label {
+.radio-wrapper label:not(.card) {
   margin: 0px;
   line-height: 1.1875rem;
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
+}
+.radio-wrapper label.card {
+  margin: 0px;
+  line-height: 1.1875rem;
+  flex-direction: row;
+  border: 0px;
 }
 
 /*# sourceMappingURL=shipping-info.css.map */

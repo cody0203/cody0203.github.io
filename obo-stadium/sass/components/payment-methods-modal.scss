@@ -1,1 +1,8 @@
 @import "../root.scss";
+
+.visa-master-wrapper {
+  &.added {
+    padding-bottom: $thirty-pixel;
+    border-bottom: 1px solid $lighter-grey-color;
+  }
+}

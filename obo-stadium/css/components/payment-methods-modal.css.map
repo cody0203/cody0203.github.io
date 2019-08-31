@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../../sass/root.scss"],"names":[],"mappings":"AAAQ","file":"payment-methods-modal.css"}
+{"version":3,"sourceRoot":"","sources":["../../sass/root.scss","../../sass/components/payment-methods-modal.scss"],"names":[],"mappings":"AAAQ;ACGN;EACE,gBDgCW;EC/BX","file":"payment-methods-modal.css"}

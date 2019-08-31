@@ -88,14 +88,15 @@ $(document).on('click', function (e) {
   // Shipping info change
 })
 
-function paymentMethodsRender() {
-  
-}
-
 $('#visa-master').on('change', function() {
   if (this.checked) {
     $('#paymentMethods').modal('show');
-    console.log('haha')
+  }
+})
+
+$('#cod').on('change', function () {
+  if (this.checked) {
+    $('.visa-master-wrapper').removeClass('added');
   }
 })
 

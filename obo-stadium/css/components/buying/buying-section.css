@@ -146,14 +146,18 @@
 #paymentMethods .cvv-wrapper .form-control {
   max-width: 80%;
 }
+#paymentMethods .card-wrapper {
+  display: flex;
+}
+#paymentMethods .jp-card-container {
+  display: flex;
+  justify-content: center;
+  transform: scale(0.8);
+}
 
 @media (min-width: 576px) {
-  .modal-dialog {
-    max-width: 420px;
-  }
-
   #paymentMethods .modal-dialog {
-    max-width: 500px;
+    max-width: 500px !important;
   }
 }
 @media (min-width: 576px) {
@@ -166,7 +170,7 @@
     width: 70%;
   }
 }
-@media (max-width: 320px) {
+@media (max-width: 382px) {
   #addNewShipping .btn,
 #paymentMethods .btn {
     padding: 0.625rem 1.875rem;
@@ -175,6 +179,10 @@
 @media (max-width: 323px) {
   .address-info-wrapper button {
     font-size: 0.75rem;
+  }
+
+  #paymentMethods .jp-card-container {
+    transform: scale(0.7);
   }
 }
 

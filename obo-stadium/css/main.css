@@ -170,10 +170,6 @@ footer .footer-link .item:hover {
   border-color: inherit;
 }
 
-.modal-dialog {
-  margin-top: 5%;
-}
-
 .pretty input:checked ~ .state.p-success label:after,
 .pretty.p-toggle .state.p-success label:after {
   background-color: #F04E40 !important;

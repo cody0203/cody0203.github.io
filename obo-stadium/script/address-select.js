@@ -145,6 +145,8 @@ $(document).on('change', function (e) {
     `
       };
       $('.district').html(option);
+    } else {
+      $('.district').html("")
     }
   }
 
@@ -181,6 +183,8 @@ $(document).on('change', function (e) {
     `
       };
       $('.ward').html(option);
+    } else {
+      $('.ward').html("")
     }
   }
 })

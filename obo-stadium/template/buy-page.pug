@@ -12,7 +12,7 @@ block customizeCss
   link(rel='stylesheet' type='text/css' href='./css/components/buying/buying-section.css')
   link(rel="stylesheet" type="text/css" href="./css/components/product-details/size-guide-table.css")
   link(rel="stylesheet" type="text/css" href="./css/components/input-radio.css")
-  
+  link(rel="stylesheet" type="text/css" href="./css/components/payment-methods-modal.css")
 
   // Common CSS
   link(rel='stylesheet' type='text/css' href='./css/main.css')
@@ -82,6 +82,7 @@ block mainContent
               .radio-dot
               .visa-master
                 | Thanh toán bằng thẻ quốc tế Visa, Master, JCB
+          .card-place
         a(href='./congrats.html')
           button.btn.btn-primary.confirm-btn.red-btn
             | Đặt mua
@@ -99,9 +100,13 @@ block customizeScript
   // Currency
   script(type="text/javascript" src="./vendor/currency/currency.min.js")
 
+  // Card
+  script(type="text/javascript" src="./vendor/card/jquery.card.js")
+
   // Common
   script(src="./script/except-home-page.js")
   script(src="./script/size-render.js")
   script(src="./script/size-choose.js")
   script(src="./script/buy-sell-page.js")
   script(src="./script/address-select.js")
+  script(src="./script/payment-methods.js")
