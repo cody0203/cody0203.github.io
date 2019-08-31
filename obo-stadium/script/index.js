@@ -1,6 +1,7 @@
 $(function () {
     changeUiHomePage();
     carousel();
+    render();
 })
 
 
@@ -30,3 +31,82 @@ function changeUiHomePage() {
 }
 
 $(window).resize(changeUiHomePage);
+
+function render() {
+    // Get data
+    let data = dataDB.product;
+    // Render best seller
+    let bestSellerData = dataDB.sort((a, b) => {
+        return b['total_sold'] - a['total_sold']
+    });
+    let bestSeller = "";
+
+    // Render Staffs Choose
+    let staffChooseData = dataDB.filter(item => {
+        return item['status'] == "Staff Choose"
+    });
+    let staffChoose = "";
+    // Render Under Retail
+
+    let underRetailData = dataDB.filter(item => {
+        return item['status'] == "Under Retails"
+    });
+    let underRetail = "";
+
+    for (let i = 0; i < 5; i++) {
+        // Best Seller Elements
+        bestSeller += `
+            <a class="product product-link position-relative" id="${bestSellerData[i]['id']}" href="./product-details.html">
+                <div class="card">
+                    <img src="${bestSellerData[i]['thumbnail']}" class="card-img-top"
+                        alt="${bestSellerData[i]['name']}">
+                    <div class="card-body">
+                        <h5 class="card-title">${bestSellerData[i]['name']}</h5>
+                        <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
+                        <p class="price">${currency(bestSellerData[i]['sell_price'], { separator: ',', precision: 0 }).format()} ₫</p>
+                        <p class="card-text sold">Đã bán ${bestSellerData[i]['total_sold']} đôi</p>
+                    </div>
+                </div>
+                <div class="shadow mx-auto position-absolute"></div>
+            </a>
+        `;
+
+        // Staff Choose Elements
+        staffChoose += `
+            <a class="product product-link position-relative" id="${staffChooseData[i]['id']}" href="./product-details.html">
+                <div class="card">
+                    <img src="${staffChooseData[i]['thumbnail']}" class="card-img-top"
+                        alt="${staffChooseData[i]['name']}">
+                    <div class="card-body">
+                        <h5 class="card-title">${staffChooseData[i]['name']}</h5>
+                        <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
+                        <p class="price">${currency(staffChooseData[i]['sell_price'], { separator: ',', precision: 0 }).format()} ₫</p>
+                        <p class="card-text sold">Đã bán ${staffChooseData[i]['total_sold']} đôi</p>
+                    </div>
+                </div>
+                <div class="shadow mx-auto position-absolute"></div>
+            </a>
+        `;
+
+        // Under Retail Elements
+        underRetail += `
+            <a class="product product-link position-relative" id="${underRetailData[i]['id']}" href="./product-details.html">
+                <div class="card">
+                    <img src="${underRetailData[i]['thumbnail']}" class="card-img-top"
+                        alt="${underRetailData[i]['name']}">
+                    <div class="card-body">
+                        <h5 class="card-title">${underRetailData[i]['name']}</h5>
+                        <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
+                        <p class="price">${currency(underRetailData[i]['sell_price'], { separator: ',', precision: 0 }).format()} ₫</p>
+                        <p class="card-text sold">Đã bán ${underRetailData[i]['total_sold']} đôi</p>
+                    </div>
+                </div>
+                <div class="shadow mx-auto position-absolute"></div>
+            </a>
+        `;
+    }
+
+    $('.best-seller .product-row').html(bestSeller);
+    $('.staffs-choose .product-row').html(staffChoose);
+    $('.under-retail .product-row').html(underRetail);
+}

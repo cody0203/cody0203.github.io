@@ -199,6 +199,15 @@ $(document).on('click', function (e) {
       $('.modal').modal('hide');
     }
   }
+
+  if (target.closest('.product-link')) {
+    localStorage.setItem('sessionsProduct', $(this).attr('id'));
+    
+    if (target !== $('.product-link')) {
+      let productId = $(target).parents('.product-link').attr('id');
+      localStorage.setItem('sessionsProduct', productId);
+    }
+  }
 })
 
 let SIGNUP_DATA = {};
@@ -269,6 +278,26 @@ let DB = {
 
   setSignedAccount: function (data) {
     localStorage.setItem('signed-account', JSON.stringify(data));
+  },
+
+  getCurrentProduct: function () {
+    if (typeof (Storage) !== "undefined") {
+      let data;
+      try {
+        data = JSON.parse(localStorage.getItem('current-product')) || {};
+      } catch (error) {
+        data = {};
+      }
+
+      return data;
+    } else {
+      alert('Sorry! No Web Storage support...');
+      return {};
+    }
+  },
+
+  setCurrentProduct: function (data) {
+    localStorage.setItem('current-product', data);
   },
 }
 

@@ -29,6 +29,7 @@
   color: #333333;
   margin-bottom: 0.6875rem;
   height: 2.5rem;
+  overflow: hidden;
 }
 
 .card-text {

@@ -18,7 +18,7 @@ block header
   include ./template-parts/index-header
 
 block mainContent
-  section.products-showcase.container
+  section.products-showcase.best-seller.container
     .row
       .title.col-12
         h2.h2 S&#x1EA3;n ph&#x1EA9;m b&aacute;n ch&#x1EA1;y
@@ -74,10 +74,10 @@ block mainContent
     a(href='#')
       img#promo-banner-1.img-fluid(src='./image/banner/promo-banner-1-lg.png' alt='promo-banner-1')
   // Staff Selects
-  section.products-showcase.container
+  section.products-showcase.staffs-choose.container
     .row
       .title.col-12
-        h2.h2 S&#x1EA3;n ph&#x1EA9;m b&aacute;n ch&#x1EA1;y
+        h2.h2 OBO LỰA CHỌN
         a.see-more-btn-text.text-uppercase(href='#') Xem Th&ecirc;m
     .row.product-row.d-flex.justify-content-md-between
       .product.position-relative
@@ -130,10 +130,10 @@ block mainContent
     a(href='#')
       img#promo-banner-2.img-fluid(src='./image/banner/promo-banner-2-lg.png' alt='promo-banner-2')
   // Under retails
-  section.products-showcase.container
+  section.products-showcase.under-retail.container
     .row
       .title.col-12
-        h2.h2 S&#x1EA3;n ph&#x1EA9;m b&aacute;n ch&#x1EA1;y
+        h2.h2 THẤP HƠN “GIÁ HÃNG”
         a.see-more-btn-text.text-uppercase(href='#') Xem Th&ecirc;m
     .row.product-row.d-flex.justify-content-md-between
       .product.position-relative
@@ -322,6 +322,9 @@ block footer
 block customizeScript
   // Slick JS
   script(type="text/javascript" src="./vendor/slick/slick.min.js")
+
+  // Currency
+  script(type="text/javascript" src="./vendor/currency/currency.min.js")
   
   // Common JS
   script(type="text/javascript" src="./script/index.js")
