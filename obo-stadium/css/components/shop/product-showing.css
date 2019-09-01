@@ -41,6 +41,7 @@
 .sort-dropdown .sort-item.active {
   background-color: #CE2E2F;
   color: white;
+  pointer-events: none;
 }
 
 .sort-name {

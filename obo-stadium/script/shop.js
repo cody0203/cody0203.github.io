@@ -3,15 +3,9 @@ $(window).resize(changeUi);
 $(function () {
     render();
     changeUi();
-    renderProduct();
-    $('.product-row').paginate({
-        scope: $('.product-link'),
-        perPage: 20,
-        containerTag: 'nav',
-        paginationTag: 'ul',
-        itemTag: 'li',
-        linkTag: 'a',
-    });
+    sortNewArrival();
+    pagination();
+    DB.setProducts(productData);
 });
 
 $('.sort-content').on('click', function () {
@@ -51,12 +45,41 @@ $('.filter-bar .title').on('click', function () {
     }
 });
 
+// Filter function
+
+$(document).on('change', function (e) {
+    let target = e.target;
+
+    if ($('.filter-bar input').is(":checked") || $('.size .item').hasClass('size-choose') || $('.price-input').val() !== "") {
+        $('.clear-filter').removeAttr('disabled')
+    } else {
+        $('.clear-filter').attr('disabled', 'disabled')
+    }
+})
+
+let filterData = {
+    'size': [],
+    'brand': [],
+    'gender': [],
+    'price': [],
+    'release-date': []
+};
 
 $(document).on('click', function (e) {
     let target = e.target;
 
+    // if (target.closest('.filter-checkbox')) {
+    //     filterData.push($(target).attr('id'))
+    // }
+
     if (target.closest('.filter-bar .size .item')) {
         $(e.target).toggleClass('size-choose');
+        if ($('.size .item').hasClass('size-choose')) {
+            $('.clear-filter').removeAttr('disabled')
+            filterData['size'].push($(target).attr('id'))
+        } else {
+            $('.clear-filter').attr('disabled', 'disabled');
+        }
     }
 
     if (target.closest('.clear-filter')) {
@@ -69,6 +92,15 @@ $(document).on('click', function (e) {
         } else if ($('.price-input').val() !== "") {
             $('.price-input').val("")
         }
+
+        $('.clear-filter').attr('disabled', 'disabled');
+        filterData = {
+            'size': [],
+            'brand': [],
+            'gender': [],
+            'price': [],
+            'release-date': []
+        };
     }
 
     if (target.closest('.filter-icon')) {
@@ -89,22 +121,79 @@ $(document).on('click', function (e) {
     if (!target.closest('.sort-content')) {
         $('.sort-dropdown').css('display', 'none')
     }
+
+    // if (target.closest('#nike')) {
+    //     let data = DB.getProducts();
+    //     let nikeBrandData = data.filter(item => {
+    //         return item['brand'] == "Nike"
+    //     });
+
+    //     $('.product-row').html("");
+    //     $('.product-row').html(productElements(nikeBrandData));
+    // }
 });
 
-function renderProduct() {
+function sortNewArrival() {
+    let data = DB.getProducts();
+    let newArrivalData = data.sort((a, b) => {
+        if (b['release_date'] - a['release_date']) {
+            return -1
+        }
+        if (a['release_date'] - b['release_date']) {
+            return 1
+        }
+        return 0
+    });
+
+    $('.product-row').html("");
+    $('.product-row').html(productElements(newArrivalData));
+};
+
+function bestSeller() {
+    let data = DB.getProducts();
+    let bestSellerData = data.sort((a, b) => {
+        return b['total_sold'] - a['total_sold']
+    });
+
+    $('.product-row').html("");
+    $('.product-row').html(productElements(bestSellerData));
+};
+
+function lowToHighPrice() {
+    let data = DB.getProducts();
+    let lowToHighPriceData = data.sort((a, b) => {
+        return a['sell_price'] - b['sell_price']
+    });
+
+    $('.product-row').html("");
+    $('.product-row').html(productElements(lowToHighPriceData));
+};
+
+function highToLowPrice() {
+    let data = DB.getProducts();
+    let highToLowData = data.sort((a, b) => {
+        return b['sell_price'] - a['sell_price']
+    });
+
+    $('.product-row').html("");
+    $('.product-row').html(productElements(highToLowData));
+};
+
+function productElements(data) {
     let productItem = "";
-    for (let i = 0; i < productData.length; i++) {
+
+    for (let i = 0; i < data.length; i++) {
         productItem += `
-    <a href="./product-details.html" class="product-link" id="${productData[i]['id']}">
+    <a href="./product-details.html" class="product-link" id="${data[i]['id']}">
         <div class="product position-relative">
             <div class="card">
-                <img src="${productData[i]['thumbnail']}"
-                    class="card-img-top" alt="${productData[i]['name']}">
+                <img src="${data[i]['thumbnail']}"
+                    class="card-img-top" alt="${data[i]['name']}">
                 <div class="card-body">
-                    <h5 class="card-title">${productData[i]['name']}</h5>
+                    <h5 class="card-title">${data[i]['name']}</h5>
                     <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
-                    <p class="price">${currency(productData[i]['sell_price'], { separator: ',', precision: 0 }).format()} ₫</p>
-                    <p class="card-text sold">Đã bán ${productData[i]['total_sold']} đôi</p>
+                    <p class="price">${currency(data[i]['sell_price'], { separator: ',', precision: 0 }).format()} ₫</p>
+                    <p class="card-text sold">Đã bán ${data[i]['total_sold']} đôi</p>
                 </div>
             </div>
             <div class="shadow mx-auto position-absolute"></div>
@@ -112,9 +201,43 @@ function renderProduct() {
     </a>
     `;
     }
+    return productItem;
+}
 
-    $('.product-row').html("");
-    $('.product-row').html(productItem);
+$(document).on('click', function (e) {
+    let target = e.target;
+
+    if (target.closest('.sort-item')) {
+        $('.product-row').data('paginate').kill();
+        pagination();
+        $('.product-row').data('paginate').switchPage(1)
+    }
+})
+
+$('.new-arrival').on('click', function () {
+    sortNewArrival();
+})
+
+$('.best-seller').on('click', function () {
+    bestSeller();
+})
+
+$('.low-to-high-price').on('click', function () {
+    lowToHighPrice();
+})
+
+$('.high-to-low-price').on('click', function () {
+    highToLowPrice();
+})
+
+function pagination() {
+    $('.product-row').paginate({
+        scope: $('.product-link'),
+        perPage: 16,
+        containerTag: 'nav',
+        paginationTag: 'ul',
+        itemTag: 'li',
+        linkTag: 'a',
+    });
 };
-
 

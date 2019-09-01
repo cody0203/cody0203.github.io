@@ -43,6 +43,7 @@
         &.active {
             background-color: $hover-main-color;
             color: white;
+            pointer-events: none;
         }
     }
 }

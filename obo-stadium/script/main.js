@@ -299,6 +299,26 @@ let DB = {
   setCurrentProduct: function (data) {
     localStorage.setItem('current-product', data);
   },
+
+  getProducts: function () {
+    if (typeof (Storage) !== "undefined") {
+      let data;
+      try {
+        data = JSON.parse(localStorage.getItem('products')) || {};
+      } catch (error) {
+        data = {};
+      }
+
+      return data;
+    } else {
+      alert('Sorry! No Web Storage support...');
+      return {};
+    }
+  },
+
+  setProducts: function (data) {
+    localStorage.setItem('products', JSON.stringify(data));
+  }
 }
 
 // Reset form after close modal

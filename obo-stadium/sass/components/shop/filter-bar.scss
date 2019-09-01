@@ -58,6 +58,10 @@
     &:active {
         background-color: $text-dark !important;
     }
+
+    &:disabled {
+        cursor: not-allowed;
+    }
 }
 
 .break-line {

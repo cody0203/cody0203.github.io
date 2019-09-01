@@ -47,6 +47,9 @@
 .btn-primary.clear-filter:active {
   background-color: #333333 !important;
 }
+.btn-primary.clear-filter:disabled {
+  cursor: not-allowed;
+}
 
 .break-line {
   width: 100%;
