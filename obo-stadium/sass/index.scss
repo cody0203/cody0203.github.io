@@ -25,8 +25,14 @@ header {
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
-    padding: $zero-pixel;
-    padding-left: $thirty-pixel;
+    padding: $zero-pixel $fifteen-pixel $fifteen-pixel $fifteen-pixel;
+    margin: $zero-pixel $ten-pixel;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+
+    &:hover {
+        border-bottom: 3px solid white;
+    }
 }
 
 .navbar-light .navbar-toggler-icon {

@@ -1,4 +1,4 @@
-let dataDB = [
+let productData = [
   {
     "id": "b4b377ea-8688-4650-be3e-8580d554c6f2",
     "sell_price": 18600000,
@@ -476,7 +476,7 @@ let dataDB = [
   },
   {
     "id": "1e5c6c12-5d30-4197-9b96-d33a22b71370",
-    "sell_price": 11988637,
+    "sell_price": 2588637,
     "buy_price": 4312611,
     "total_sold": 142,
     "release_date": "14/02/2015",
@@ -583,7 +583,7 @@ let dataDB = [
     "retail_price": 4289584,
     "brand": "Converse",
     "gender": "Male",
-    "status": "Under Retails",
+    "status": "Best Seller",
     "available_size": [
       39,
       40.5,
@@ -958,7 +958,7 @@ let dataDB = [
     "retail_price": 4902091,
     "brand": "Air Jordan",
     "gender": "Male",
-    "status": "Under Retails",
+    "status": "Staffs Choose",
     "available_size": [
       50.5,
       43,
@@ -983,7 +983,7 @@ let dataDB = [
     "retail_price": 3183204,
     "brand": "Air Jordan",
     "gender": "Female",
-    "status": "Under Retails",
+    "status": "Staffs Choose",
     "available_size": [
       42,
       47.5,
@@ -997,7 +997,7 @@ let dataDB = [
       44.5
     ],
     "thumbnail": "./image/product/air-jordan/Air-Jordan-11-Retro-Low-Snake-Navy-2019-Product.jpg",
-    "name": "Jordan 4 Retro Cool Grey (2019)"
+    "name": "Jordan 11 Retro Low Snake Navy (2019)"
   },
   {
     "id": "e0e93361-dcf7-4f8c-a77b-1bfdd3530e69",
@@ -1283,7 +1283,7 @@ let dataDB = [
     "retail_price": 5665657,
     "brand": "Air Jordan",
     "gender": "Male",
-    "status": "Under Retails",
+    "status": "Best Seller",
     "available_size": [
       40.5,
       50.5,

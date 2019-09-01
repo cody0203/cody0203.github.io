@@ -1,17 +1,19 @@
 extends ./common 
 
 block customizeCss
+  //Vendor
+  link(rel="stylesheet" type="text/css" href="./vendor/pagination/jquery.paginate.css")
+
   // Components CSS
   link(rel="stylesheet" type="text/css" href="./css/components/header.css")
   link(rel="stylesheet" type="text/css" href="./css/components/products.css")
   link(rel="stylesheet" type="text/css" href="./css/components/shop/filter-bar.css")
   link(rel="stylesheet" type="text/css" href="./css/components/shop/product-showing.css")
   link(rel="stylesheet" type="text/css" href="./css/components/shop/filter-bar-small.css")
-  
+
   // Common CSS
   link(rel="stylesheet" type="text/css" href="./css/main.css")
   link(rel="stylesheet" type="text/css" href="./css/except-home-page.css")
-  link(rel="stylesheet" type="text/css" href="./css/used-in-js.css")
 
 block title
   title Sản phẩm
@@ -243,217 +245,19 @@ block mainContent
 
           .filter-icon(data-toggle="modal" data-target="#filterModal")
             i.fas.fa-filter
-        .product-row
-          a#123456.product-link(href='./product-details.html')
-            .product.position-relative
-              .card
-                img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
-                .card-body
-                  h5.card-title
-                    | Adidas Yeezy Boost 350
-                    | V2 Lundmark (Non
-                  p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
-                  p.price 7.200.000 &#x20AB;
-                  p.card-text.sold &Dstrok;&atilde; b&aacute;n 1963 &dstrok;&ocirc;i
-              .shadow.mx-auto.position-absolute
-          a#78910.product-link(href='./index.html')
-            .product.position-relative
-              .card
-                img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
-                .card-body
-                  h5.card-title Jordan 4 Retro Cool Grey (2019)
-                  p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
-                  p.price 4.810.000 &#x20AB;
-                  p.card-text.sold &Dstrok;&atilde; b&aacute;n 1312 &dstrok;&ocirc;i
-              .shadow.mx-auto.position-absolute
-          .product.position-relative
-            .card
-              img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
-              .card-body
-                h5.card-title Jordan 1 Retro Low OG SP Travis Scott
-                p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
-                p.price 20.790.000 &#x20AB;
-                p.card-text.sold &Dstrok;&atilde; b&aacute;n 2246 &dstrok;&ocirc;i
-            .shadow.mx-auto.position-absolute
-          .product.position-relative
-            .card
-              img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
-              .card-body
-                h5.card-title Air Jordan 1 Mid Yellow Toe Black
-                p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
-                p.price 3.740.000 &#x20AB;
-                p.card-text.sold &Dstrok;&atilde; b&aacute;n 564 &dstrok;&ocirc;i
-            .shadow.mx-auto.position-absolute
-          .product.position-relative
-            .card
-              img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
-              .card-body
-                h5.card-title Nike SB Dunk Low Parra
-                p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
-                p.price 6.620.000 &#x20AB;
-                p.card-text.sold &Dstrok;&atilde; b&aacute;n 1456 &dstrok;&ocirc;i
-            .shadow.mx-auto.position-absolute
-          .product.position-relative
-            .card
-              img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
-              .card-body
-                h5.card-title
-                  | Adidas Yeezy Boost 350
-                  | V2 Lundmark (Non
-                p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
-                p.price 7.200.000 &#x20AB;
-                p.card-text.sold &Dstrok;&atilde; b&aacute;n 1963 &dstrok;&ocirc;i
-            .shadow.mx-auto.position-absolute
-          .product.position-relative
-            .card
-              img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
-              .card-body
-                h5.card-title Jordan 4 Retro Cool Grey (2019)
-                p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
-                p.price 4.810.000 &#x20AB;
-                p.card-text.sold &Dstrok;&atilde; b&aacute;n 1312 &dstrok;&ocirc;i
-            .shadow.mx-auto.position-absolute
-          .product.position-relative
-            .card
-              img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
-              .card-body
-                h5.card-title Jordan 1 Retro Low OG SP Travis Scott
-                p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
-                p.price 20.790.000 &#x20AB;
-                p.card-text.sold &Dstrok;&atilde; b&aacute;n 2246 &dstrok;&ocirc;i
-            .shadow.mx-auto.position-absolute
-          .product.position-relative
-            .card
-              img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
-              .card-body
-                h5.card-title Air Jordan 1 Mid Yellow Toe Black
-                p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
-                p.price 3.740.000 &#x20AB;
-                p.card-text.sold &Dstrok;&atilde; b&aacute;n 564 &dstrok;&ocirc;i
-            .shadow.mx-auto.position-absolute
-          .product.position-relative
-            .card
-              img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
-              .card-body
-                h5.card-title Nike SB Dunk Low Parra
-                p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
-                p.price 6.620.000 &#x20AB;
-                p.card-text.sold &Dstrok;&atilde; b&aacute;n 1456 &dstrok;&ocirc;i
-            .shadow.mx-auto.position-absolute
-          .product.position-relative
-            .card
-              img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
-              .card-body
-                h5.card-title
-                  | Adidas Yeezy Boost 350
-                  | V2 Lundmark (Non
-                p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
-                p.price 7.200.000 &#x20AB;
-                p.card-text.sold &Dstrok;&atilde; b&aacute;n 1963 &dstrok;&ocirc;i
-            .shadow.mx-auto.position-absolute
-          .product.position-relative
-            .card
-              img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
-              .card-body
-                h5.card-title Jordan 4 Retro Cool Grey (2019)
-                p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
-                p.price 4.810.000 &#x20AB;
-                p.card-text.sold &Dstrok;&atilde; b&aacute;n 1312 &dstrok;&ocirc;i
-            .shadow.mx-auto.position-absolute
-          .product.position-relative
-            .card
-              img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
-              .card-body
-                h5.card-title Jordan 1 Retro Low OG SP Travis Scott
-                p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
-                p.price 20.790.000 &#x20AB;
-                p.card-text.sold &Dstrok;&atilde; b&aacute;n 2246 &dstrok;&ocirc;i
-            .shadow.mx-auto.position-absolute
-          .product.position-relative
-            .card
-              img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
-              .card-body
-                h5.card-title Air Jordan 1 Mid Yellow Toe Black
-                p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
-                p.price 3.740.000 &#x20AB;
-                p.card-text.sold &Dstrok;&atilde; b&aacute;n 564 &dstrok;&ocirc;i
-            .shadow.mx-auto.position-absolute
-          .product.position-relative
-            .card
-              img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
-              .card-body
-                h5.card-title Nike SB Dunk Low Parra
-                p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
-                p.price 6.620.000 &#x20AB;
-                p.card-text.sold &Dstrok;&atilde; b&aacute;n 1456 &dstrok;&ocirc;i
-            .shadow.mx-auto.position-absolute
-          .product.position-relative
-            .card
-              img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
-              .card-body
-                h5.card-title
-                  | Adidas Yeezy Boost 350
-                  | V2 Lundmark (Non
-                p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
-                p.price 7.200.000 &#x20AB;
-                p.card-text.sold &Dstrok;&atilde; b&aacute;n 1963 &dstrok;&ocirc;i
-            .shadow.mx-auto.position-absolute
-          .product.position-relative
-            .card
-              img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
-              .card-body
-                h5.card-title Jordan 4 Retro Cool Grey (2019)
-                p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
-                p.price 4.810.000 &#x20AB;
-                p.card-text.sold &Dstrok;&atilde; b&aacute;n 1312 &dstrok;&ocirc;i
-            .shadow.mx-auto.position-absolute
-          .product.position-relative
-            .card
-              img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
-              .card-body
-                h5.card-title Jordan 1 Retro Low OG SP Travis Scott
-                p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
-                p.price 20.790.000 &#x20AB;
-                p.card-text.sold &Dstrok;&atilde; b&aacute;n 2246 &dstrok;&ocirc;i
-            .shadow.mx-auto.position-absolute
-          .product.position-relative
-            .card
-              img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
-              .card-body
-                h5.card-title Air Jordan 1 Mid Yellow Toe Black
-                p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
-                p.price 3.740.000 &#x20AB;
-                p.card-text.sold &Dstrok;&atilde; b&aacute;n 564 &dstrok;&ocirc;i
-            .shadow.mx-auto.position-absolute
-          .product.position-relative
-            .card
-              img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
-              .card-body
-                h5.card-title Nike SB Dunk Low Parra
-                p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
-                p.price 6.620.000 &#x20AB;
-                p.card-text.sold &Dstrok;&atilde; b&aacute;n 1456 &dstrok;&ocirc;i
-            .shadow.mx-auto.position-absolute
-        nav.pagination-wrapper(aria-label='Page navigation example')
-          ul.pagination
-            li.page-item
-              a.page-link(href='#' aria-label='Previous')
-                span(aria-hidden='true') &laquo;
-            li.page-item
-              a.page-link(href='#') 1
-            li.page-item
-              a.page-link(href='#') 2
-            li.page-item
-              a.page-link(href='#') 3
-            li.page-item
-              a.page-link(href='#' aria-label='Next')
-                span(aria-hidden='true') &raquo;
+        .product-row       
   include ./template-parts/filter-modal
 
 block footer
   include ./template-parts/footer
 
 block customizeScript
+  // Pagination Js
+  script(type="text/javascript" src="./vendor/pagination/jquery.paginate.js")
+
+  // Currency
+  script(type="text/javascript" src="./vendor/currency/currency.min.js")
+
   script(src="./script/except-home-page.js")
   script(src="./script/size-render.js")
   script(src="./script/shop.js")

@@ -161,6 +161,12 @@ footer .footer-link .item {
     }
 }
 
+@media (max-width: $medium-devices-width) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        border-bottom: transparent !important;
+    }
+}
+
 @media (max-width: $closest-medium-devices-width) {
     footer .footer-link .item {
         padding-left: $zero-pixel;

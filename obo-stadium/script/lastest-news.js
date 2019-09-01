@@ -5,7 +5,6 @@ function carousel() {
         dots: true,
         arrows: true,
         appendArrows: $('.latest-news .title .slick-arrow'),
-        centerMode: true,
         focusOnSelect: true,
         variableWidth: true,
         touchThreshold: 6,
@@ -16,7 +15,6 @@ function carousel() {
                     slidesToShow: 3,
                     slidesToScroll: 1,
                     infinite: true,
-                    centerMode: true,
                     dots: true
                 }
             },

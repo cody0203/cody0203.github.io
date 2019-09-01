@@ -5,6 +5,7 @@ $(function () {
     render();
     activeSize();
     sizeGuideRender();
+    changeUi();
 });
 
 function caroselProductImage() {
@@ -114,4 +115,8 @@ function caroselInstafeed() {
             }
         ]
     });
+}
+
+function changeUi() {
+    $(".nav-link#shop").addClass('active-nav');
 }

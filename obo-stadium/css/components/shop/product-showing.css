@@ -82,6 +82,23 @@
   font-size: 0.875rem;
 }
 
+.paginate-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+.paginate-pagination ul li a.page {
+  height: 2.5rem;
+  width: 2.5rem;
+  line-height: 2.5rem;
+}
+.paginate-pagination ul li a.page.active {
+  pointer-events: none;
+  color: #F04E40;
+  opacity: 1;
+}
+
 @media (max-width: 1230px) {
   .product-row {
     display: grid;

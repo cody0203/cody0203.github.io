@@ -142,6 +142,11 @@ footer .footer-link .item:hover {
     max-width: 1230px;
   }
 }
+@media (max-width: 768px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    border-bottom: transparent !important;
+  }
+}
 @media (max-width: 767px) {
   footer .footer-link .item {
     padding-left: 0px;

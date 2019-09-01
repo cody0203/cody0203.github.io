@@ -5,4 +5,8 @@
   border: none !important;
 }
 
+.active-nav {
+  border-bottom: 3px solid white !important;
+}
+
 /*# sourceMappingURL=used-in-js.css.map */

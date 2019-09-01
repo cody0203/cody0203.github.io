@@ -10,8 +10,13 @@ header {
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
-  padding: 0px;
-  padding-left: 1.875rem;
+  padding: 0px 0.9375rem 0.9375rem 0.9375rem;
+  margin: 0px 0.625rem;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+.navbar-expand-lg .navbar-nav .nav-link:hover {
+  border-bottom: 3px solid white;
 }
 
 .navbar-light .navbar-toggler-icon {

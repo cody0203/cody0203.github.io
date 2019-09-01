@@ -33,22 +33,20 @@ function changeUiHomePage() {
 $(window).resize(changeUiHomePage);
 
 function render() {
-    // Get data
-    let data = dataDB.product;
     // Render best seller
-    let bestSellerData = dataDB.sort((a, b) => {
+    let bestSellerData = productData.sort((a, b) => {
         return b['total_sold'] - a['total_sold']
     });
     let bestSeller = "";
 
     // Render Staffs Choose
-    let staffChooseData = dataDB.filter(item => {
+    let staffChooseData = productData.filter(item => {
         return item['status'] == "Staff Choose"
     });
     let staffChoose = "";
     // Render Under Retail
 
-    let underRetailData = dataDB.filter(item => {
+    let underRetailData = productData.filter(item => {
         return item['status'] == "Under Retails"
     });
     let underRetail = "";
