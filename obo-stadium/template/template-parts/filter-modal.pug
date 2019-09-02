@@ -106,8 +106,8 @@
             .title
               .text
                 | Kho&#x1EA3;ng gi&aacute;
-            input.form-control.price-input(type='text' placeholder='Từ' onkeypress='return priceInputValidate(event)')
-            input.form-control.price-input(type='text' placeholder='Đến' pattern='[0-9]' onkeypress='return priceInputValidate(event)')
+            input.form-control.price-input#from-price(type='text' placeholder='Từ' onkeypress='return priceInputValidate(event)')
+            input.form-control.price-input#to-price(type='text' placeholder='Đến' pattern='[0-9]' onkeypress='return priceInputValidate(event)')
           .break-line
           .release-date.content
             .title(data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample")

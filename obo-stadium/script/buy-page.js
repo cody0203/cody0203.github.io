@@ -75,14 +75,17 @@ $(document).on('click', function (e) {
   // Buttons add class
   if (target.closest('.bid-btn')) {
     $('.bid-btn').addClass('green-btn');
-
+    $('.bid-btn').removeClass('trans-btn');
     $('.buy-btn').addClass('trans-btn');
     $('.buy-btn').removeClass('green-btn');
+    $('#home').trigger('reset');
+    $('.bid:not(.shipping-price-showing)').text("");
   } else if (target.closest('.buy-btn')) {
     $('.bid-btn').removeClass('green-btn');
     $('.bid-btn').addClass('trans-btn');
 
     $('.buy-btn').addClass('green-btn');
+    $('.buy-btn').removeClass('trans-btn');
   }
 
   // Shipping info change

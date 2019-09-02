@@ -4,12 +4,18 @@ block customizeCss
   // Components CSS
   link(rel="stylesheet" type="text/css" href="./css/components/header.css")
   link(rel="stylesheet" type="text/css" href="./css/components/buying/product-info.css")
-  link(rel="stylesheet" type="text/css" href="./css/components/buying/buying-section.css")
+  link(rel='stylesheet' type='text/css' href='./css/components/buying/pricing.css')
+  link(rel='stylesheet' type='text/css' href='./css/components/buying/shipping-info.css')
+
+  link(rel="stylesheet" type="text/css" href="./css/components/product-details/size-choose.css")
+  link(rel='stylesheet' type='text/css' href='./css/components/buying/buying-section.css')
+  link(rel="stylesheet" type="text/css" href="./css/components/product-details/size-guide-table.css")
+  link(rel="stylesheet" type="text/css" href="./css/components/input-radio.css")
 
   // Common CSS
   link(rel="stylesheet" type="text/css" href="./css/main.css")
   link(rel="stylesheet" type="text/css" href="./css/except-home-page.css")
-  link(rel="stylesheet" type="text/css" href="./css/buying.css")
+  link(rel="stylesheet" type="text/css" href="./css/used-in-js.css")
 
 block title
   title Bán sản phẩm
@@ -26,13 +32,11 @@ block mainContent
           .product-name
             | Adidas Yeezy Boost 700 Wave Runner Solid Grey
           .price-info
-            span.first-row
-              | Gi&aacute; &dstrok;&#x1EB7;t mua cao nh&#x1EA5;t: 
-              span.bid-price-info 9.310.000 &#x20AB;
-            span.line |
-            span.second-line
-              | Gi&aacute; &dstrok;&#x1EB7;t b&aacute;n th&#x1EA5;p nh&#x1EA5;t: 
-              span.ask-price-info 9.550.000 &#x20AB;
+            span.first-row Giá đặt mua cao nhất: 
+              span.bid-price-info 9,310,000 &#x20AB; 
+            span.line | 
+            span.second-line  Giá đặt bán thấp nhất: 
+              span.ask-price-info 9,550,000 &#x20AB;
           .size-info-wrapper
             | Size: 
             span.size-info
@@ -44,52 +48,21 @@ block mainContent
         // Adress Section
         .address-info-wrapper.childs
           .header
-            .title
-              | &Dstrok;&#x1ECB;a ch&#x1EC9; giao h&agrave;ng
-            button.btn.btn-primary.change.red-btn
-              | Thay &dstrok;&#x1ED5;i
-          .info-wrapper.radio-wrapper
-            input#address-info.address-radio-btn(type='radio' name='address-info' checked='')
-            label(for='address-info')
-              .radio-dot
-              div
-                .name-phone
-                  b Cody
-                  |  | 036530xxxx
-                .address
-                  | 48 T&#x1ED1; H&#x1EEF;u, L&ecirc; V&abreve;n L&#x1B0;&#x1A1;ng k&eacute;o d&agrave;i, T&#x1EEB; Li&ecirc;m, H&agrave; N&#x1ED9;i
+            .title Địa chỉ giao hàng
+            button.btn.btn-primary.change.red-btn Thay đổi
+          .info-wrapper
+          .btns
+            button.btn.btn-primary.complete.red-btn Hoàn thành
+            button.btn.btn-primary.cancel.trans-btn Trở lại
         // Pricing Section
         .pricing.childs
-          .size-btn
+          .size-btn(data-toggle="modal" data-target="#sizeChooseModal")
             button.btn.btn-primary.size.trans-btn
               span.size-text Size
-              span.size-details 8US | 41VN | 26CM
+              span.size-details 8US | 41VN | 25.4CM
               i.fas.fa-chevron-down.dropdown-arrow
-          .bid-buy-btn
-            button.bid-btn.btn.btn-primary.red-btn
-              | &Dstrok;&#x1EB7;t gi&aacute; b&aacute;n
-            button.buy-btn.btn.btn-primary.trans-btn
-              | B&aacute;n ngay
-          input.price-input.form-control(type='text' placeholder='Đặt giá mua ...')
-          .sub-price.price-include
-            .text Giá sản phẩm
-            .sub-price-showing
-              | 9.550.000 &#x20AB;
-          .shipping-price.price-include
-            .text
-              | Phí vận chuyển
-            .sub-price-showing
-              | 50.000 &#x20AB;
-          .process-price.price-include
-            .text
-              | Phí vận hành
-            .sub-price-showing
-              | 3%
-          .total-price.price-include
-            .text
-              | Tổng thanh toán
-            .total-price-showing
-              | 9.886.500 &#x20AB;
+          .asks-sell-btn
+            include ./template-parts/sell-price-counting
         button.btn.btn-primary.confirm-btn.red-btn
           | &Dstrok;&#x1EB7;t b&aacute;n
 
@@ -107,3 +80,7 @@ block customizeScript
 
   // Common
   script(src="./script/except-home-page.js")
+  script(src="./script/size-render.js")
+  script(src="./script/size-choose.js")
+  script(src="./script/sell-page.js")
+  script(src="./script/address-select.js")

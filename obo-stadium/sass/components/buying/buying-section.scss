@@ -68,7 +68,8 @@
 }
 
 @media (max-width: $small-devices-width) {
-    .bid-buy-btn .btn {
+    .bid-buy-btn .btn, 
+    .asks-sell-btn .btn {
         padding: $twelve-pixel;
     }
 

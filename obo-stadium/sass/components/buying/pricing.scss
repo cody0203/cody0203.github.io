@@ -47,18 +47,19 @@
   }
 }
 
-.bid-buy-btn {
+.bid-buy-btn,
+.asks-sell-btn {
   & .btn {
     padding: $twenty-pixel;
     font-weight: $bold-size;
   }
 
-  & .bid-btn {
+  & .bid-btn, & .asks-btn {
     border-bottom-right-radius: $zero-pixel;
     border-top-right-radius: $zero-pixel;
   }
 
-  & .buy-btn {
+  & .buy-btn, & .sell-btn {
     border-bottom-left-radius: $zero-pixel;
     border-top-left-radius: $zero-pixel;
 

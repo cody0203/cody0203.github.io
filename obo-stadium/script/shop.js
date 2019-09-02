@@ -18,6 +18,12 @@ function changeUi() {
     sizeItem.css("height", `${sizeChooseWidth}px`);
 
     $(".nav-link#shop").addClass('active-nav');
+
+    if ($('.price-input#from-price').val() == "" && $('.price-input#to-price').val() == "") {
+        $('.apply-price').attr('disabled', 'disabled')
+    } else {
+        $('.apply-price').removeAttr('disabled')
+    }
 }
 
 changeUi();
@@ -55,22 +61,36 @@ $(document).on('change', function (e) {
     } else {
         $('.clear-filter').attr('disabled', 'disabled')
     }
+
+    if ($('.price-input#from-price').val() == "" && $('.price-input#to-price').val() == "") {
+        $('.apply-price').attr('disabled', 'disabled')
+    } else {
+        $('.apply-price').removeAttr('disabled')
+    }
 })
 
 let filterData = {
     'size': [],
     'brand': [],
     'gender': [],
-    'price': [],
+    'price': {},
     'release-date': []
 };
 
 $(document).on('click', function (e) {
     let target = e.target;
 
-    // if (target.closest('.filter-checkbox')) {
-    //     filterData.push($(target).attr('id'))
-    // }
+    if (target.closest('.brand .filter-checkbox')) {
+        filterData['brand'].push($(target).attr('id'))
+    }
+
+    if (target.closest('.category .filter-checkbox')) {
+        filterData['gender'].push($(target).attr('id'))
+    }
+
+    if (target.closest('.release-date .filter-checkbox')) {
+        filterData['release-date'].push($(target).attr('id'))
+    }
 
     if (target.closest('.filter-bar .size .item')) {
         $(e.target).toggleClass('size-choose');
@@ -98,7 +118,7 @@ $(document).on('click', function (e) {
             'size': [],
             'brand': [],
             'gender': [],
-            'price': [],
+            'price': {},
             'release-date': []
         };
     }
@@ -122,15 +142,10 @@ $(document).on('click', function (e) {
         $('.sort-dropdown').css('display', 'none')
     }
 
-    // if (target.closest('#nike')) {
-    //     let data = DB.getProducts();
-    //     let nikeBrandData = data.filter(item => {
-    //         return item['brand'] == "Nike"
-    //     });
-
-    //     $('.product-row').html("");
-    //     $('.product-row').html(productElements(nikeBrandData));
-    // }
+    if (target.closest('.apply-price')) {
+        filterData['price']['from'] = $('.price-input#from-price').val();
+        filterData['price']['to'] = $('.price-input#to-price').val();
+    }
 });
 
 function sortNewArrival() {

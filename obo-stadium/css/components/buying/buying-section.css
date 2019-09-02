@@ -52,7 +52,8 @@
   }
 }
 @media (max-width: 576px) {
-  .bid-buy-btn .btn {
+  .bid-buy-btn .btn,
+.asks-sell-btn .btn {
     padding: 0.75rem;
   }
 

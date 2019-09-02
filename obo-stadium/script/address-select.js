@@ -334,6 +334,15 @@ $(document).on('click', function (e) {
   let checkedShippingInfoId = $('input[name=address-info]:checked').parent()
   let selectedShippingInfo = $('input[name=address-info]:checked').parent();
 
+  if (target.closest('.add-new')) {
+    if (CURRENT_ACCOUNT_DETAILS == undefined) {
+      $('#signInSignUp').modal('show');
+    } else {
+      $(target).attr('data-toggle', 'modal');
+      $(target).attr('data-target', '#addNewShipping');
+    }
+  }
+
   if (target.closest('.complete')) {
     let changeBtn = `
     <button class="btn btn-primary change red-btn">Thay đổi</button>
@@ -449,7 +458,7 @@ let shippingInfoCount = 0;
 function changeUi() {
   if ($('.info-wrapper').html() == "") {
     let addNewBtn = `
-    <button class="btn btn-primary red-btn add-new" data-toggle="modal" data-target="#addNewShipping">+ Thêm Mới</button>
+    <button class="btn btn-primary red-btn add-new">+ Thêm Mới</button>
     `;
     $(('.change')).replaceWith(addNewBtn);
   } else {

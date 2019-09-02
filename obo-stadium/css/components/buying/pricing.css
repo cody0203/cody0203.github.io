@@ -38,25 +38,36 @@
   font-weight: bold;
 }
 
-.bid-buy-btn .btn {
+.bid-buy-btn .btn,
+.asks-sell-btn .btn {
   padding: 1.25rem;
   font-weight: bold;
 }
-.bid-buy-btn .bid-btn {
+.bid-buy-btn .bid-btn, .bid-buy-btn .asks-btn,
+.asks-sell-btn .bid-btn,
+.asks-sell-btn .asks-btn {
   border-bottom-right-radius: 0px;
   border-top-right-radius: 0px;
 }
-.bid-buy-btn .buy-btn {
+.bid-buy-btn .buy-btn, .bid-buy-btn .sell-btn,
+.asks-sell-btn .buy-btn,
+.asks-sell-btn .sell-btn {
   border-bottom-left-radius: 0px;
   border-top-left-radius: 0px;
 }
-.bid-buy-btn .buy-btn:hover, .bid-buy-btn .buy-btn:active {
+.bid-buy-btn .buy-btn:hover, .bid-buy-btn .buy-btn:active, .bid-buy-btn .sell-btn:hover, .bid-buy-btn .sell-btn:active,
+.asks-sell-btn .buy-btn:hover,
+.asks-sell-btn .buy-btn:active,
+.asks-sell-btn .sell-btn:hover,
+.asks-sell-btn .sell-btn:active {
   border-left-color: transparent !important;
 }
-.bid-buy-btn .nav-item {
+.bid-buy-btn .nav-item,
+.asks-sell-btn .nav-item {
   width: 50%;
 }
-.bid-buy-btn .nav-tabs {
+.bid-buy-btn .nav-tabs,
+.asks-sell-btn .nav-tabs {
   border: 0px;
 }
 
