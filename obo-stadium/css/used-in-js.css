@@ -9,4 +9,25 @@
   border-bottom: 3px solid white !important;
 }
 
+.cross {
+  position: relative;
+  background-color: #fff;
+  color: #333333;
+  pointer-events: none;
+}
+.cross:after, .cross:before {
+  position: absolute;
+  content: " ";
+  height: 100%;
+  width: 2px;
+  background-color: #D5D6D6;
+  opacity: 1;
+}
+.cross:after {
+  transform: rotate(-45deg);
+}
+.cross:before {
+  transform: rotate(45deg);
+}
+
 /*# sourceMappingURL=used-in-js.css.map */

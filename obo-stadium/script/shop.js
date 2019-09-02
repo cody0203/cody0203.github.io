@@ -5,7 +5,6 @@ $(function () {
     changeUi();
     sortNewArrival();
     pagination();
-    DB.setProducts(productData);
 });
 
 $('.sort-content').on('click', function () {

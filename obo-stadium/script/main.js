@@ -2,7 +2,7 @@ $(function () {
   resetModal();
   SIGNUP_DATA = DB.getAccountData();
   CURRENT_SIGNED_ACCOUNT = DB.getSignedAccount();
-
+  DB.setProducts(productData);
   if (DB.getSignedStatus() == true) {
     signedValidate(DB.getSignedStatus());
   } else {

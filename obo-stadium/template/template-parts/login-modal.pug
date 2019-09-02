@@ -12,9 +12,9 @@
         #pills-tabContent.tab-content
           #signIn.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='signIn-tab')
             form
-              input.form-control.sign-in-email(placeholder="Email")
+              input.form-control.sign-in-email(placeholder="Email" autocomplete)
               .invalid-feedback 
-              input.form-control.sign-in-password(type="password" placeholder="Mật khẩu")
+              input.form-control.sign-in-password(type="password" placeholder="Mật khẩu" autocomplete)
               .invalid-feedback 
               .forgot-password-wrapper
               | Quên mật khẩu? Nhấn vào 
@@ -23,15 +23,15 @@
 
           #signUp.tab-pane.fade(role='tabpanel' aria-labelledby='signUp-tab')
             form
-              input.form-control.sign-up-full-name(placeholder="Họ và tên *")
+              input.form-control.sign-up-full-name(placeholder="Họ và tên *" autocomplete)
               .invalid-feedback 
-              input.form-control.sign-up-phone(placeholder="Số điện thoại *")
+              input.form-control.sign-up-phone(placeholder="Số điện thoại *" autocomplete)
               .invalid-feedback 
-              input.form-control.sign-up-email(placeholder="Email *")
+              input.form-control.sign-up-email(placeholder="Email *" autocomplete)
               .invalid-feedback 
-              input.form-control.sign-up-password(type="password" placeholder="Mật khẩu *")
+              input.form-control.sign-up-password(type="password" placeholder="Mật khẩu *" autocomplete)
               .invalid-feedback 
-              input.form-control.sign-up-confirm-password(type="password" placeholder="Xác nhận mật khẩu *")
+              input.form-control.sign-up-confirm-password(type="password" placeholder="Xác nhận mật khẩu *" autocomplete)
               .invalid-feedback 
               .privacy-confirm
               | Khi bạn nhấn Đăng ký, bạn đã đồng ý thực hiện mọi giao dịch mua bán theo 
