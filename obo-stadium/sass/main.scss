@@ -84,6 +84,49 @@ a {
     }
 }
 
+.search-result {
+    position: absolute;
+    top: 50px;
+    width: 50%;
+    max-height: 50vh;
+    overflow-y: scroll;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px 2px;
+    z-index: 100;
+
+    & .product-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        padding: $twenty-pixel;
+        text-align: left;
+        grid-gap: $twenty-pixel;
+        align-items: center;
+        border-bottom: 1px solid $lighter-grey-color;
+    }
+
+    & .search-product-brand {
+        color: $product-text-grey;
+    }
+
+    & .search-product-name {
+        font-size: $twenty-pixel;
+        font-weight: 500;
+        line-height: 1.25rem;
+        color: #333333;
+        margin: $ten-pixel $zero-pixel;
+    }
+
+    & .search-products-sell .price-showing {
+        color: $main-color;
+        font-weight: bold;
+    }
+
+    & .search-products-buy .price-showing {
+        color: $green;
+        font-weight: bold;
+    }
+}
+
 .red-btn {
     background-color: $main-color !important;
     border-color: $main-color !important;
@@ -91,6 +134,7 @@ a {
 
     &:hover {
         background-color: $hover-main-color !important;
+        border-color: $hover-main-color !important;
     }
 
     &:active {
@@ -206,3 +250,5 @@ footer .footer-link .item {
 .pretty.p-toggle .state.p-success label:after {
     background-color: $main-color !important;
 }
+
+@media (max-width: $medium-devices-width) {}

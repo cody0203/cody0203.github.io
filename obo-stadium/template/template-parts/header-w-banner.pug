@@ -4,8 +4,9 @@ header.container-fluid
       img.img-fluid(src='./image/logo-white.png' alt='logo')
     .search-form
       form
-        input.form-control(type='text' placeholder='Bạn cần tìm gì...')
-        button.btn.btn-primary.text-uppercase.col-xl-2.col-md-3.col-12.red-btn(type='submit') Tìm kiếm tất cả
+        input.form-control.search-input(type='text' placeholder='Bạn cần tìm gì...')
+        button.btn.btn-primary.text-uppercase.red-btn.search-button(type='submit')
+          i.fas.fa-search
     button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
       span.navbar-toggler-icon
     #navbarNav.collapse.navbar-collapse.justify-content-md-end.text-center

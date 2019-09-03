@@ -49,14 +49,14 @@ $(document).on('click', function (e) {
     }
 
     // Get data from localStorage
-    
+
     if (isValid == true) {
 
       CURRENT_ACCOUNT_DETAILS = signInEmailValue;
 
       $('.invalid-feedback').css('display', 'none');
-        let checkAccount;
-      
+      let checkAccount;
+
       if (!$.isEmptyObject(DB.getAccountData())) {
         checkAccount = DB.getAccountData()['accounts'].hasOwnProperty(signInEmailValue)
 
@@ -192,8 +192,8 @@ $(document).on('click', function (e) {
       SIGNUP_DATA['accounts'][emailValue] = [];
 
       let accounts = { 'email': emailValue, 'password': passwordValue, 'phone': phoneValue, 'full-name': fullNameValue };
-      
-      SIGNUP_DATA['accounts'][emailValue].push({'account-details': accounts});
+
+      SIGNUP_DATA['accounts'][emailValue].push({ 'account-details': accounts });
       SIGNUP_DATA['current-email'].push(emailValue)
       DB.setAccountData(SIGNUP_DATA);
       $('.modal').modal('hide');
@@ -202,10 +202,71 @@ $(document).on('click', function (e) {
 
   if (target.closest('.product-link')) {
     localStorage.setItem('sessionsProduct', $(this).attr('id'));
-    
+
     if (target !== $('.product-link')) {
       let productId = $(target).parents('.product-link').attr('id');
       localStorage.setItem('sessionsProduct', productId);
+    }
+  }
+
+  // Close search result
+
+  if (!target.closest('.search-result')) {
+    $('.search-result').css('display', 'none');
+  }
+
+  if (target.closest('.search-input')) {
+    $('.search-result').css('display', 'block');
+  }
+})
+
+function convertPrice(currency) {
+  let convert = new Intl.NumberFormat('vn-VN', {
+    minimumFractionDigits: 0
+  }).format(currency);
+
+  return convert;
+}
+
+$(document).on('keyup', function (e) {
+  let target = e.target;
+
+  if (target.closest('.search-input')) {
+    let isExisted = false;
+    let result = DB.getProducts().filter(data => {
+      return data['name'].toLowerCase().indexOf($(target).val()) !== -1;
+    });
+
+    if (result.length >= 1) {
+      isExisted = true;
+    }
+
+    if ($(target).val() == "") {
+      $('.search-result').css('display', 'none')
+    } else {
+      $('.search-result').css('display', 'block')
+    }
+
+    if (isExisted == true) {
+      let searchedProduct = "";
+      for (let i = 0; i < result.length; i++) {
+        searchedProduct += `
+    <a class="product-wrapper" href="./product-details.html">
+      <img class="img-fluid search-product-image" src="${result[i]['thumbnail']}" alt="${result[i]['name']}" />
+      <div class="search-product-details">
+          <div class="search-product-brand">${result[i]['brand']}</div>
+          <div class="search-product-name">${result[i]['name']}</div>
+          <div class="search-products-prices">
+              <div class="search-products-buy"><span class="text">Giá đặt bán thấp nhất: </span><span class="price-showing">${convertPrice(result[i]['sell_price'])} ₫</span></div>
+              <div class="search-products-sell"><span class="text">Giá đặt mua cao nhất: </span><span class="price-showing">${convertPrice(result[i]['buy_price'])} ₫</span></div>
+          </div>
+      </div>
+    </a>
+    `;
+      }
+      $('.search-result').html(searchedProduct);
+    } else {
+      $('.search-result').html(`Không tìm thấy kết quả`);
     }
   }
 })

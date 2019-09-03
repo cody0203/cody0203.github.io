@@ -17,6 +17,9 @@ header.container-fluid
       h1.slogan.main-heading.text-uppercase BEST THINGS WITH BEST OFFERS
       .search-form.justify-content-md-center.d-flex
         form.container
-          .row.d-flex.justify-content-center
-            input.form-control.col-md-4.col-12(type='text', placeholder='Bạn cần tìm gì...')
-            button.btn.btn-primary.text-uppercase.col-xl-2.col-md-3.col-12.red-btn(type='submit') Tìm kiếm tất cả
+          .row.justify-content-center
+            .search-input-wrapper
+              input.form-control.search-input.col-sm-5(type='text', placeholder='Bạn cần tìm gì...')
+              button.btn.btn-primary.text-uppercase.red-btn.search-button(type='submit')
+                i.fas.fa-search
+              .search-result
