@@ -146,6 +146,17 @@ a:hover {
   color: #ffffff;
 }
 
+.back-to-top {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  z-index: 105;
+  display: none;
+}
+.back-to-top img {
+  border-radius: 0.25rem;
+}
+
 .modal-sub-title {
   font-size: 0.75rem;
   color: #ABACAD;

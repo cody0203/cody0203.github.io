@@ -93,7 +93,7 @@ a {
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px 2px;
     z-index: 100;
-
+    
     & .product-wrapper {
         display: grid;
         grid-template-columns: 1fr 2fr;
@@ -164,6 +164,18 @@ a {
 
     &:focus {
         color: $text-white;
+    }
+}
+
+.back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 105;
+    display: none;
+    
+    & img {
+    border-radius: $four-pixel;
     }
 }
 

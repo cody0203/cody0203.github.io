@@ -25,7 +25,7 @@ block mainContent
       .col-lg-9.main-content-wrapper
         .main-content
           .header
-            a.go-back-previous-page(href='./buying-selling-products.html')
+            a.go-back-previous-page(href='./buying-order.html')
               i.fas.fa-chevron-left
               |  Tr&#x1EDF; l&#x1EA1;i
             .order-status-wrapper
@@ -113,5 +113,6 @@ block footer
   include ./template-parts/footer
 
 block customizeScript
+  script(src="./script/buying-order.js")
   script(src="./script/except-home-page.js")
   

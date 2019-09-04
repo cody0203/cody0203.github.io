@@ -6,6 +6,8 @@ $(function () {
 
 
 function changeUiHomePage() {
+    $(".nav-link").removeClass('active-nav');
+
     if (window.matchMedia && window.matchMedia('(max-width: 768px)').matches) {
         $('#promo-banner-1').attr("src", "./image/banner/promo-banner-1-md.png");
         $('#promo-banner-2').attr("src", "./image/banner/promo-banner-2-md.png");

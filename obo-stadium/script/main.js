@@ -12,6 +12,18 @@ $(function () {
   if (!$.isEmptyObject(DB.getSignedAccount())) {
     CURRENT_ACCOUNT_DETAILS = DB.getSignedAccount()['current-account-details']['account-details']['email'];
   }
+
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+      $('.back-to-top').fadeIn();
+    } else {
+      $('.back-to-top').fadeOut();
+    }
+  });
+  $('.back-to-top').click(function () {
+    $("html, body").animate({ scrollTop: 0 }, 600);
+    return false;
+  }); 
 })
 
 // Login/Sign up validate
@@ -265,8 +277,11 @@ $(document).on('keyup', function (e) {
     `;
       }
       $('.search-result').html(searchedProduct);
+      $('.search-result').css('padding', '0')
     } else {
       $('.search-result').html(`Không tìm thấy kết quả`);
+      $('.search-result').css('padding', '20px 0');
+      $('.search-result').css('overflow-y', 'auto');
     }
   }
 })
@@ -394,7 +409,7 @@ function resetModal() {
 function signedValidate(status = false) {
   if (status == true) {
     let signedLink = `
-  <a class="nav-link account-setting" href="./account.html">Xin chào ${DB.getSignedAccount()['current-account-details']['account-details']['full-name']}</a>`;
+  <a id="account-setting" class="nav-link account-setting" href="./account.html">Xin chào ${DB.getSignedAccount()['current-account-details']['account-details']['full-name']}</a>`;
 
     $('.account-setting').replaceWith(signedLink);
   } else {

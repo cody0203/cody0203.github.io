@@ -4,6 +4,7 @@
   margin: 1rem 2.5rem;
   padding: 0px;
   padding-bottom: 1.25rem;
+  border: 0px !important;
 }
 
 .main-content .item {
