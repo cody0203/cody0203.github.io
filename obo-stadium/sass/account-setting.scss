@@ -238,3 +238,50 @@ input[type=radio]+label .radio-dot:before {
     }
   }
 }
+
+#changePassword {
+  & .item-row:last-child {
+    margin: $zero-pixel;
+  }
+}
+
+#changePassword,
+#confirmDelete {
+
+  & .modal-header,
+  .modal-body,
+  .modal-footer {
+    padding: $thirty-pixel;
+    padding-bottom: $zero-pixel;
+  }
+
+  & .modal-header,
+  .modal-footer {
+    border: $zero-pixel;
+  }
+
+  & .modal-footer {
+    padding-bottom: $thirty-pixel;
+  }
+
+  & .item-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 576px) {
+  #changePassword {
+    .modal-dialog {
+      max-width: 500px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  #changePassword {
+    & .item-row {
+      grid-template-columns: 1fr;
+      padding: 0px;
+    }
+  }
+}

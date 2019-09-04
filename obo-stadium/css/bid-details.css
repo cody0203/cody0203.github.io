@@ -17,13 +17,20 @@
   width: 50%;
   justify-self: flex-end;
 }
+.main-content .btns {
+  grid-column: 2/2;
+  display: grid;
+  grid-gap: 0.625rem;
+  margin-top: 1.25rem;
+}
+.main-content .btns .cancel-btn {
+  grid-column: 0;
+  width: auto;
+  justify-self: normal;
+}
 .main-content .item-small {
   display: none;
   margin: 0px;
-}
-.main-content .item-small .cancel-btn {
-  margin-top: 1.25rem;
-  width: auto;
 }
 .main-content .header {
   display: grid;

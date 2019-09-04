@@ -16,4 +16,73 @@
   border: 0px;
 }
 
+#addNewShipping .modal-header,
+#addNewShipping .modal-body,
+#addNewShipping .modal-footer,
+#paymentMethods .modal-header,
+#paymentMethods .modal-body,
+#paymentMethods .modal-footer {
+  padding: 1.875rem;
+  padding-bottom: 0px;
+}
+#addNewShipping .modal-header,
+#addNewShipping .modal-footer,
+#paymentMethods .modal-header,
+#paymentMethods .modal-footer {
+  border: 0px;
+}
+#addNewShipping .modal-footer,
+#paymentMethods .modal-footer {
+  padding-bottom: 1.875rem;
+}
+#addNewShipping .nav,
+#paymentMethods .nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+#addNewShipping .nav-link,
+#paymentMethods .nav-link {
+  border-radius: 0px;
+  background-color: #D5D6D6;
+  text-align: center;
+  padding: 1.25rem 0px;
+  text-transform: uppercase;
+}
+#addNewShipping .nav-link.active,
+#paymentMethods .nav-link.active {
+  background-color: white;
+  color: #333333;
+}
+#addNewShipping .tab-pane,
+#paymentMethods .tab-pane {
+  margin: 1.25rem 1.875rem;
+}
+#addNewShipping .form-control,
+#addNewShipping .custom-select,
+#paymentMethods .form-control,
+#paymentMethods .custom-select {
+  margin-top: 1.25rem;
+}
+#addNewShipping .form-control:first-child,
+#paymentMethods .form-control:first-child {
+  margin-top: 0px;
+}
+#addNewShipping .make-default-wrapper,
+#paymentMethods .make-default-wrapper {
+  margin-top: 1.25rem;
+}
+#addNewShipping .btn,
+#paymentMethods .btn {
+  padding: 0.625rem 3.125rem;
+}
+#addNewShipping .address,
+#paymentMethods .address {
+  resize: none;
+}
+#addNewShipping .pivacy-text,
+#paymentMethods .pivacy-text {
+  margin-top: 1.25rem;
+}
+
 /*# sourceMappingURL=shipping-info.css.map */

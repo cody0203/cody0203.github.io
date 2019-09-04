@@ -20,3 +20,75 @@
     border: $zero-pixel;
   }
 }
+
+// New Shipping Modal
+
+#addNewShipping,
+#paymentMethods {
+
+  & .modal-header,
+  .modal-body,
+  .modal-footer {
+    padding: $thirty-pixel;
+    padding-bottom: $zero-pixel;
+  }
+
+  & .modal-header,
+  .modal-footer {
+    border: $zero-pixel;
+  }
+
+  & .modal-footer {
+    padding-bottom: $thirty-pixel;
+  }
+
+  & .nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+
+  & .nav-link {
+    border-radius: $zero-pixel;
+    background-color: $lighter-grey-color;
+    text-align: center;
+    padding: $twenty-pixel $zero-pixel;
+    text-transform: uppercase;
+
+    &.active {
+      background-color: white;
+      color: $text-dark;
+    }
+  }
+
+  & .tab-pane {
+    margin: $twenty-pixel $thirty-pixel;
+  }
+
+  & .form-control,
+  .custom-select {
+    margin-top: $twenty-pixel;
+  }
+
+  & .form-control {
+    &:first-child {
+      margin-top: $zero-pixel;
+    }
+  }
+
+  & .make-default-wrapper {
+    margin-top: $twenty-pixel;
+  }
+
+  & .btn {
+    padding: $ten-pixel $fifty-pixel;
+  }
+
+  & .address {
+    resize: none;
+  }
+
+  & .pivacy-text {
+    margin-top: $twenty-pixel;
+  }
+}

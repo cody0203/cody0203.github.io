@@ -103,7 +103,7 @@ header {
     white-space: nowrap;
   }
 }
-.form-control:focus {
+.form-control.search-input:focus {
   border-color: white !important;
 }
 

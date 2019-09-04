@@ -212,5 +212,44 @@ input[type=radio] + label .radio-dot:before {
     border: 0px;
   }
 }
+#changePassword .item-row:last-child {
+  margin: 0px;
+}
+
+#changePassword .modal-header,
+#changePassword .modal-body,
+#changePassword .modal-footer,
+#confirmDelete .modal-header,
+#confirmDelete .modal-body,
+#confirmDelete .modal-footer {
+  padding: 1.875rem;
+  padding-bottom: 0px;
+}
+#changePassword .modal-header,
+#changePassword .modal-footer,
+#confirmDelete .modal-header,
+#confirmDelete .modal-footer {
+  border: 0px;
+}
+#changePassword .modal-footer,
+#confirmDelete .modal-footer {
+  padding-bottom: 1.875rem;
+}
+#changePassword .item-row,
+#confirmDelete .item-row {
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (min-width: 576px) {
+  #changePassword .modal-dialog {
+    max-width: 500px;
+  }
+}
+@media (max-width: 767px) {
+  #changePassword .item-row {
+    grid-template-columns: 1fr;
+    padding: 0px;
+  }
+}
 
 /*# sourceMappingURL=account-setting.css.map */

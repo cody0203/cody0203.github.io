@@ -6,3 +6,69 @@
     border-bottom: 1px solid $lighter-grey-color;
   }
 }
+
+#paymentMethods {
+  .cvv-wrapper {
+    @include flex-center-between;
+    margin-top: $twenty-pixel;
+
+    & .form-control {
+      max-width: 80%;
+    }
+  }
+
+  & .card-wrapper {
+    display: flex;
+  }
+
+  & .jp-card-container {
+    display: flex;
+    justify-content: center;
+    transform: scale(0.8)
+  }
+}
+
+
+@media (min-width: 576px) {
+  #paymentMethods {
+    & .modal-dialog {
+      max-width: 500px !important;
+    }
+  }
+}
+
+// Override Bootstrap modal
+
+@media (min-width: 576px) {
+  #addNewShipping {
+    .modal-dialog-scrollable {
+      max-height: calc(100% - 17rem);
+    }
+  }
+}
+
+@media (max-width: $small-devices-width) {
+  .cvv-wrapper {
+    & .form-control {
+      width: 70%;
+    }
+  }
+}
+
+@media (max-width: 382px) {
+
+  #addNewShipping,
+  #paymentMethods {
+    & .btn {
+      padding: $ten-pixel $thirty-pixel;
+    }
+  }
+}
+
+@media (max-width: 323px) {
+  #paymentMethods {
+    .jp-card-container {
+      transform: scale(0.7)
+    }
+  }
+}

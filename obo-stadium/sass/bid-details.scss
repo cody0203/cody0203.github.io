@@ -20,14 +20,21 @@
     justify-self: flex-end;
   }
 
+  & .btns {
+    grid-column: 2/2;
+    display: grid;
+    grid-gap: $ten-pixel;
+    margin-top: $twenty-pixel;
+      & .cancel-btn {
+        grid-column: 0;
+        width: auto;
+        justify-self: normal;
+      }
+  }
+
   .item-small {
     display: none;
     margin: $zero-pixel;
-
-    & .cancel-btn {
-      margin-top: $twenty-pixel;
-      width: auto;
-    }
   }
 
   .header {

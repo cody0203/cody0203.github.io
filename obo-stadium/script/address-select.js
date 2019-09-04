@@ -19,7 +19,7 @@ $(function () {
     let text = `
     <div class="modal-sub-title">Để đặt hàng, vui lòng thêm địa chỉ nhận hàng</div>
     `
-    $('.modal-title').append(text)
+    $('#addNewShipping .modal-title').append(text)
   }
 });
 

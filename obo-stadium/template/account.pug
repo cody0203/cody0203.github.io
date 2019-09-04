@@ -1,7 +1,11 @@
 extends ./common
 
 block customizeCss
+  // Components CSS
   link(rel='stylesheet' type='text/css' href='./css/components/header.css')
+  link(rel='stylesheet' type='text/css' href='./css/components/buying/shipping-info.css')
+  link(rel="stylesheet" type="text/css" href="./css/components/payment-methods-modal.css")
+
   // Common CSS
   link(rel='stylesheet' type='text/css' href='./css/main.css')
   link(rel='stylesheet' type='text/css' href='./css/except-home-page.css')
@@ -45,7 +49,7 @@ block mainContent
                   .text Mật khẩu
                   .password-wrapper
                     input.form-control(type="password", disabled, autocomplete="autocomplete")
-                    a.change-password.text-btn(href="./") Đổi mật khẩu
+                    a.change-password.text-btn(href="", data-toggle="modal", data-target="#changePassword") Đổi mật khẩu
                 .phone.item-row.col-md-10
                   .text Số điện thoại
                   input.form-control
@@ -86,7 +90,7 @@ block mainContent
                 .address-item
                   .header
                     .receive-person Cody
-                    .edit-address.text-btn Chỉnh sửa
+                    .edit-address.text-btn(data-toggle="modal" data-target="#addNewShipping") Chỉnh sửa
                   .phone 0365304675
                   .address 48 Tố Hữu, Lê Văn Lương kéo dài, Từ Liêm, Hà Nội
                 .break-line
@@ -96,7 +100,7 @@ block mainContent
                     .edit-address.text-btn Chỉnh sửa
                   .phone 098123xxxx
                   .address Khâm Thiên, Đống Đa, Hà Nội
-              .btn.btn-primary.red-btn.add-new-address-btn + Thêm mới
+              .btn.btn-primary.red-btn.add-new-address-btn(data-toggle="modal" data-target="#addNewShipping")  + Thêm mới
 
             // payment-methods-setting Section
             #payment-methods-setting.tab-pane.fade(role='tabpanel' aria-labelledby='payment-methods-setting-tab')
@@ -105,22 +109,30 @@ block mainContent
                   .logo-methods
                     img(src="./image/visa.png", alt="visa" class="img-fluid")
                   .card-number ********1234
-                  .delete.text-btn Xoá
+                  .delete.text-btn(data-toggle="modal" data-target="#confirmDelete") Xoá
                 .break-line
                 .payment-item
                   .logo-methods
                     img(src="./image/visa.png", alt="visa" class="img-fluid")
                   .card-number ********1234
-                  .delete.text-btn Xoá
-                .break-line
-                .payment-item
-                  .logo-methods
-                    img(src="./image/visa.png", alt="visa" class="img-fluid")
-                  .card-number ********1234
-                  .delete.text-btn Xoá
-              .btn.btn-primary.red-btn.add-new-payment-btn + Thêm mới
+                  .delete.text-btn(data-toggle="modal" data-target="#confirmDelete") Xoá
+                
+              .btn.btn-primary.red-btn.add-new-payment-btn(data-toggle="modal" data-target="#paymentMethods") + Thêm mới
+  // Modal 
+  include ./template-parts/change-password-modal
+  include ./template-parts/shipping-info
+  include ./template-parts/payment-methods
+  include ./template-parts/confirm-delete-modal
+
 block footer
   include ./template-parts/footer
 
 block customizeScript
+  // Card
+  script(type="text/javascript" src="./vendor/card/jquery.card.js")
+
+  
   script(src="./script/except-home-page.js")
+  script(src="./script/address-select.js")
+  script(src="./script/payment-methods.js")
+  script(src="./script/account.js")
