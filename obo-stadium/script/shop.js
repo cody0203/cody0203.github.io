@@ -95,7 +95,7 @@ $(document).on('click', function (e) {
         $(e.target).toggleClass('size-choose');
         if ($('.size .item').hasClass('size-choose')) {
             $('.clear-filter').removeAttr('disabled')
-            filterData['size'].push($(target).attr('id'))
+            filterData['size'].push(Number($(target).attr('id')))
         } else {
             $('.clear-filter').attr('disabled', 'disabled');
         }
@@ -147,6 +147,21 @@ $(document).on('click', function (e) {
         filterData['price']['to'] = $('.price-input#to-price').val();
     }
 });
+
+function renderFilterData() {
+    let b = DB.getProducts();
+    let a = b.filter(item => {
+        return filterData['size'].every(size => {
+            return item['available_size'].indexOf(size) > -1;
+        })
+    })
+    console.log(a);
+    // let a = [];
+    // for (let i = 0; i < b.length; i++) {
+    //     a.push(b[i]['available_size'].includes(filterData['size'][i]))
+    // }
+    // console.log(a);
+}
 
 function sortNewArrival() {
     let data = DB.getProducts();
