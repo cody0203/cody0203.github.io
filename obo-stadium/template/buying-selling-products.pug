@@ -26,9 +26,9 @@ block mainContent
           .nav-tab
             ul#pills-tab.nav.nav-pills(role='tablist')
               li.nav-item
-                a#bid-tab.nav-link.active(data-toggle='pill' href='#bid' role='tab' aria-controls='bid' aria-selected='true') H&agrave;ng &dstrok;&#x1EA5;u gi&aacute;
+                a#bid-tab.nav-link.active(data-toggle='pill' href='#bid' role='tab' aria-controls='bid' aria-selected='true') Hàng đấu giá
               li.nav-item
-                a#sell-tab.nav-link(data-toggle='pill' href='#sell' role='tab' aria-controls='sell' aria-selected='false') H&agrave;ng &dstrok;&#x1EB7;t b&aacute;n
+                a#sell-tab.nav-link(data-toggle='pill' href='#sell' role='tab' aria-controls='sell' aria-selected='false') Hàng đặt bán
           #pills-tabContent.tab-content
             // Bid Section
             #bid.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='bid-tab')
@@ -36,11 +36,11 @@ block mainContent
               .item
                 .header-item
                   .order-number-wrapper
-                    | M&atilde; &dstrok;&#x1A1;n 
+                    | Mã đơn 
                     a.order-number(href='./bid-details.html')
                       | #123abc
                   a.full-details(href='./bid-details.html')
-                    | Xem chi ti&#x1EBF;t
+                    | Xem chi tiết
                 .item-info-wrapper
                   .product-info-wrapper
                     .thumbnails
@@ -50,14 +50,13 @@ block mainContent
                         | Adidas Yeezy Boost 700 Wave Runner Solid Grey
                       .size
                         | 8US | 41VN | 26CM
-                      .bid-status.status
-                        | L&#x1B0;&#x1EE3;t &dstrok;&#x1EA5;u gi&aacute; h&#x1EBF;t h&#x1EA1;n trong: 18 ng&agrave;y
+                      .bid-status.status.pending Lượt đấu giá hết hạn trong: 18 ngày
                   .price.bid-price
                     | 9.310.000 &#x20AB;
               // Item Small
               .item-small
                 .order-number-wrapper
-                  | M&atilde; &dstrok;&#x1A1;n 
+                  | Mã đơn 
                   a.order-number(href='./bid-details.html')
                     | #123abc
                 .item-info-wrapper
@@ -67,19 +66,18 @@ block mainContent
                         | Adidas Yeezy Boost 700 Wave Runner Solid Grey
                       .size
                         | 8US | 41VN | 26CM
-                      .bid-status.status
-                        | L&#x1B0;&#x1EE3;t &dstrok;&#x1EA5;u gi&aacute; h&#x1EBF;t h&#x1EA1;n trong: 18 ng&agrave;y
+                      .bid-status.status.pending Lượt đấu giá hết hạn trong: 18 ngày
                   .price.bid-price
                     | 9.310.000 &#x20AB;
               // Item
               .item
                 .header-item
                   .order-number-wrapper
-                    | M&atilde; &dstrok;&#x1A1;n 
+                    | Mã đơn 
                     a.order-number(href='#')
                       | #123abc
                   a.full-details(href='#')
-                    | Xem chi ti&#x1EBF;t
+                    | Xem chi tiết
                 .item-info-wrapper
                   .product-info-wrapper
                     .thumbnails
@@ -89,14 +87,13 @@ block mainContent
                         | Adidas Yeezy Boost 700 Wave Runner Solid Grey
                       .size
                         | 8US | 41VN | 26CM
-                      .bid-status.status
-                        | &Dstrok;&atilde; hu&#x1EF7; &dstrok;&#x1EA5;u gi&aacute;
+                      .bid-status.status.cancel Đã huỷ đấu giá
                   .price.bid-price
                     | 9.310.000 &#x20AB;
               // Item Small
               .item-small
                 .order-number-wrapper
-                  | M&atilde; &dstrok;&#x1A1;n 
+                  | Mã đơn 
                   a.order-number(href='#')
                     | #123abc
                 .item-info-wrapper
@@ -106,19 +103,18 @@ block mainContent
                         | Adidas Yeezy Boost 700 Wave Runner Solid Grey
                       .size
                         | 8US | 41VN | 26CM
-                      .bid-status.status
-                        | &Dstrok;&atilde; h&#x1EE7;y &dstrok;&#x1EA5;u gi&aacute;
+                      .bid-status.status.cancel Đã huỷ đấu giá
                   .price.bid-price
                     | 9.310.000 &#x20AB;
               // Item
               .item
                 .header-item
                   .order-number-wrapper
-                    | M&atilde; &dstrok;&#x1A1;n 
+                    | Mã đơn 
                     a.order-number(href='#')
                       | #123abc
                   a.full-details(href='#')
-                    | Xem chi ti&#x1EBF;t
+                    | Xem chi tiết
                 .item-info-wrapper
                   .product-info-wrapper
                     .thumbnails
@@ -128,14 +124,13 @@ block mainContent
                         | Adidas Yeezy Boost 700 Wave Runner Solid Grey
                       .size
                         | 8US | 41VN | 26CM
-                      .bid-status.status
-                        | &Dstrok;&#x1EA5;u gi&aacute; th&agrave;nh c&ocirc;ng
+                      .bid-status.status.successfully Đấu giá thành công
                   .price.bid-price
                     | 9.310.000 &#x20AB;
               // Item Small
               .item-small
                 .order-number-wrapper
-                  | M&atilde; &dstrok;&#x1A1;n 
+                  | Mã đơn 
                   a.order-number(href='#')
                     | #123abc
                 .item-info-wrapper
@@ -145,8 +140,7 @@ block mainContent
                         | Adidas Yeezy Boost 700 Wave Runner Solid Grey
                       .size
                         | 8US | 41VN | 26CM
-                      .bid-status.status
-                        | &Dstrok;&#x1EA5;u gi&aacute; th&agrave;nh c&ocirc;ng
+                      .bid-status.status.successfully Đấu giá thành công
                   .price.bid-price
                     | 9.310.000 &#x20AB;
             // Asks Section
@@ -155,11 +149,11 @@ block mainContent
               .item
                 .header-item
                   .order-number-wrapper
-                    | M&atilde; &dstrok;&#x1A1;n 
+                    | Mã đơn 
                     a.order-number(href='#')
                       | #123abc
                   a.full-details(href='#')
-                    | Xem chi ti&#x1EBF;t
+                    | Xem chi tiết
                 .item-info-wrapper
                   .product-info-wrapper
                     .thumbnails
@@ -169,14 +163,13 @@ block mainContent
                         | Adidas Yeezy Boost 700 Wave Runner Solid Grey
                       .size
                         | 8US | 41VN | 26CM
-                      .bid-count.status
-                        | L&#x1B0;&#x1EE3;t &dstrok;&#x1EB7;t mua: 3 l&#x1B0;&#x1EE3;t
+                      .bid-count.status.pending Lượt đặt mua: 3 lượt
                   .price.asks-price
                     | 9.550.000 &#x20AB;
               // Item Small
               .item-small
                 .order-number-wrapper
-                  | M&atilde; &dstrok;&#x1A1;n 
+                  | Mã đơn 
                   a.order-number(href='#')
                     | #123abc
                 .item-info-wrapper
@@ -186,19 +179,18 @@ block mainContent
                         | Adidas Yeezy Boost 700 Wave Runner Solid Grey
                       .size
                         | 8US | 41VN | 26CM
-                      .bid-count.status
-                        | L&#x1B0;&#x1EE3;t &dstrok;&#x1EB7;t mua: 3 l&#x1B0;&#x1EE3;t
+                      .bid-count.status.pending Lượt đặt mua: 3 lượt
                   .price.asks-price
                     | 9.550.000 &#x20AB;
               // Item
               .item
                 .header-item
                   .order-number-wrapper
-                    | M&atilde; &dstrok;&#x1A1;n 
+                    | Mã đơn 
                     a.order-number(href='#')
                       | #123abc
                   a.full-details(href='#')
-                    | Xem chi ti&#x1EBF;t
+                    | Xem chi tiết
                 .item-info-wrapper
                   .product-info-wrapper
                     .thumbnails
@@ -208,14 +200,13 @@ block mainContent
                         | Adidas Yeezy Boost 700 Wave Runner Solid Grey
                       .size
                         | 8US | 41VN | 26CM
-                      .bid-count.status
-                        | &Dstrok;&atilde; h&#x1EE7;y &dstrok;&#x1EB7;t b&aacute;n
+                      .bid-count.status.cancel Đã hủy đặt bán
                   .price.asks-price
                     | 9.550.000 &#x20AB;
               // Item Small
               .item-small
                 .order-number-wrapper
-                  | M&atilde; &dstrok;&#x1A1;n 
+                  | Mã đơn 
                   a.order-number(href='#')
                     | #123abc
                 .item-info-wrapper
@@ -225,19 +216,18 @@ block mainContent
                         | Adidas Yeezy Boost 700 Wave Runner Solid Grey
                       .size
                         | 8US | 41VN | 26CM
-                      .bid-count.status
-                        | &Dstrok;&atilde; hu&#x1EF7; &dstrok;&#x1EB7;t b&aacute;n
+                      .bid-count.status.cancel Đã hủy đặt bán
                   .price.asks-price
                     | 9.550.000 &#x20AB;
               // Item
               .item
                 .header-item
                   .order-number-wrapper
-                    | M&atilde; &dstrok;&#x1A1;n 
+                    | Mã đơn 
                     a.order-number(href='#')
                       | #123abc
                   a.full-details(href='#')
-                    | Xem chi ti&#x1EBF;t
+                    | Xem chi tiết
                 .item-info-wrapper
                   .product-info-wrapper
                     .thumbnails
@@ -247,14 +237,13 @@ block mainContent
                         | Adidas Yeezy Boost 700 Wave Runner Solid Grey
                       .size
                         | 8US | 41VN | 26CM
-                      .bid-count.status
-                        | &Dstrok;&atilde; b&aacute;n
+                      .bid-count.status.successfully Đã bán
                   .price.asks-price
                     | 9.550.000 &#x20AB;
               // Item Small
               .item-small
                 .order-number-wrapper
-                  | M&atilde; &dstrok;&#x1A1;n 
+                  | Mã đơn 
                   a.order-number(href='#')
                     | #123abc
                 .item-info-wrapper
@@ -264,8 +253,7 @@ block mainContent
                         | Adidas Yeezy Boost 700 Wave Runner Solid Grey
                       .size
                         | 8US | 41VN | 26CM
-                      .bid-count.status
-                        | &Dstrok;&atilde; b&aacute;n
+                      .bid-count.status.successfully Đã bán
                   .price.asks-price
                     | 9.550.000 &#x20AB;
 

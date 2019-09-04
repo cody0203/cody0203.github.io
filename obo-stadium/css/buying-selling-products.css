@@ -5,5 +5,15 @@
 .main-content .nav-link {
   display: inline-block;
 }
+.main-content .pending {
+  color: #C1554E;
+}
+.main-content .cancel {
+  color: #ABACAD;
+  text-decoration: line-through;
+}
+.main-content .successfully {
+  color: #12B76D;
+}
 
 /*# sourceMappingURL=buying-selling-products.css.map */

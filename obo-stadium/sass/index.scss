@@ -60,14 +60,11 @@ header {
 .search-form {
     padding: $fifty-pixel $zero-pixel;
 
-    & .row {
-        position: relative;
-    }
-
     & .search-input-wrapper {
         display: grid;
         grid-template-columns: 2fr auto;
         width: 50%;
+        position: relative;
     }
 
     & .search-input {

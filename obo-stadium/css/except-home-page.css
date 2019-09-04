@@ -10,6 +10,7 @@ main {
 .search-input-wrapper {
   display: grid;
   grid-template-columns: 2fr auto;
+  position: relative;
 }
 
 .search-input {

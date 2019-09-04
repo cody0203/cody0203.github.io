@@ -11,6 +11,10 @@ header {
   margin: 3.125rem 0px 150px 0px;
 }
 
+.question {
+  font-weight: bold;
+}
+
 .main-content {
   margin-top: 3.125rem;
 }

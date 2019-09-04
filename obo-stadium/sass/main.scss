@@ -87,7 +87,8 @@ a {
 .search-result {
     position: absolute;
     top: 50px;
-    width: 50%;
+    width: 100%;
+    text-align: center;
     max-height: 50vh;
     overflow-y: scroll;
     background-color: white;
@@ -173,9 +174,9 @@ a {
     bottom: 30px;
     z-index: 105;
     display: none;
-    
+
     & img {
-    border-radius: $four-pixel;
+    border-radius: $five-pixel;
     }
 }
 

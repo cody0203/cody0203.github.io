@@ -19,9 +19,9 @@ function changeUi() {
     $(".nav-link#shop").addClass('active-nav');
 
     if ($('.price-input#from-price').val() == "" && $('.price-input#to-price').val() == "") {
-        $('.apply-price').attr('disabled', 'disabled')
+        $('.apply-price:not(.small)').attr('disabled', 'disabled')
     } else {
-        $('.apply-price').removeAttr('disabled')
+        $('.apply-price:not(.small)').removeAttr('disabled')
     }
 }
 
@@ -55,16 +55,16 @@ $('.filter-bar .title').on('click', function () {
 $(document).on('change', function (e) {
     let target = e.target;
 
-    if ($('.filter-bar input').is(":checked") || $('.size .item').hasClass('size-choose') || $('.price-input').val() !== "") {
+    if ($('.filter-bar input').is(":checked") || $('.size .item').hasClass('size-choose') || $('.price-input').val() !== "" || $('.price-input.small').val() !== "") {
         $('.clear-filter').removeAttr('disabled')
     } else {
         $('.clear-filter').attr('disabled', 'disabled')
     }
 
     if ($('.price-input#from-price').val() == "" && $('.price-input#to-price').val() == "") {
-        $('.apply-price').attr('disabled', 'disabled')
+        $('.apply-price:not(.small)').attr('disabled', 'disabled')
     } else {
-        $('.apply-price').removeAttr('disabled')
+        $('.apply-price:not(.small)').removeAttr('disabled')
     }
 })
 
@@ -108,8 +108,9 @@ $(document).on('click', function (e) {
             $('.filter-bar input').prop("checked", true);
         } else if ($('.size .item').hasClass('size-choose')) {
             $('.size .item').removeClass('size-choose')
-        } else if ($('.price-input').val() !== "") {
+        } else if ($('.price-input').val() !== "" || $('.price-input.small').val() !== "") {
             $('.price-input').val("")
+            $('.price-input.small').val("")
         }
 
         $('.clear-filter').attr('disabled', 'disabled');

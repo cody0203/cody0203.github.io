@@ -15,13 +15,15 @@ $('.sign-out-btn').on('click', function() {
 });
 
 function accountDetailsRender() {
-  let getDetails = DB.getSignedAccount()['current-account-details']['account-details'];
+  if (!$.isEmptyObject(DB.getSignedAccount())) {
+    let getDetails = DB.getSignedAccount()['current-account-details']['account-details'];
 
-  $('.full-name .form-control').val(getDetails['full-name']);
+    $('.full-name .form-control').val(getDetails['full-name']);
 
-  $('.email .form-control').val(getDetails['email']);
+    $('.email .form-control').val(getDetails['email']);
 
-  $('.password .form-control').val(getDetails['password']);
+    $('.password .form-control').val(getDetails['password']);
 
-  $('.phone .form-control').val(getDetails['phone']);
+    $('.phone .form-control').val(getDetails['phone']);
+  }
 }

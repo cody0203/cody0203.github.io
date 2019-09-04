@@ -76,7 +76,8 @@ a:hover {
 .search-result {
   position: absolute;
   top: 50px;
-  width: 50%;
+  width: 100%;
+  text-align: center;
   max-height: 50vh;
   overflow-y: scroll;
   background-color: white;
@@ -154,7 +155,7 @@ a:hover {
   display: none;
 }
 .back-to-top img {
-  border-radius: 0.25rem;
+  border-radius: 0.3125rem;
 }
 
 .modal-sub-title {

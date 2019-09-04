@@ -5,10 +5,14 @@
     display: block; 
   }
 
-  .size .select-filter {
+  & .size .select-filter {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-gap: $twenty-pixel;
+  }
+
+  & .clear-filter {
+    height: auto;
   }
 
   .size .select-filter .item {

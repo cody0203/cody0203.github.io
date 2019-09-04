@@ -34,7 +34,7 @@ block mainContent
             // profile-setting Section
             #profile-setting.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='profile-setting-tab')
               // Item
-              .setting-box
+              form.setting-box
                 .full-name.item-row.col-md-10
                   .text Họ tên
                   input.form-control
@@ -44,7 +44,7 @@ block mainContent
                 .password.item-row.col-md-10
                   .text Mật khẩu
                   .password-wrapper
-                    input.form-control(type="password", disabled)
+                    input.form-control(type="password", disabled, autocomplete="autocomplete")
                     a.change-password.text-btn(href="./") Đổi mật khẩu
                 .phone.item-row.col-md-10
                   .text Số điện thoại

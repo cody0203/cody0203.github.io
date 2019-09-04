@@ -5,11 +5,6 @@
   border: none !important;
 }
 
-.active {
-  color: #F04E40;
-  font-weight: bold;
-}
-
 .active-nav {
   border-bottom: 3px solid white !important;
 }

@@ -47,13 +47,11 @@ header {
 .search-form {
   padding: 3.125rem 0px;
 }
-.search-form .row {
-  position: relative;
-}
 .search-form .search-input-wrapper {
   display: grid;
   grid-template-columns: 2fr auto;
   width: 50%;
+  position: relative;
 }
 .search-form .search-input {
   max-width: 100%;

@@ -7,6 +7,9 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 1.25rem;
 }
+.modal-body .clear-filter {
+  height: auto;
+}
 .modal-body .size .select-filter .item {
   width: 100%;
   margin: 0px;

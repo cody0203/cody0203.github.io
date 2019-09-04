@@ -8,4 +8,17 @@
     & .nav-link {
         display: inline-block;
     }
+
+    & .pending {
+        color: $dark-main-color;
+    }
+
+    & .cancel {
+        color: $text-lighter-white;
+        text-decoration: line-through;
+    }
+
+    & .successfully {
+        color: $green;
+    }
 }
