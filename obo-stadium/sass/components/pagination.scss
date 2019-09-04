@@ -1,0 +1,23 @@
+@import "../root.scss";
+
+.paginate-pagination {
+  @include flex-center-center;
+  margin-top: $twenty-pixel;
+
+  & ul {
+    & li {
+      & a.page {
+        height: $forty-pixel;
+        width: $forty-pixel;
+        line-height: $forty-pixel;
+
+      }
+
+      & a.page.active {
+        pointer-events: none;
+        color: $main-color;
+        opacity: 1;
+      }
+    }
+  }
+}

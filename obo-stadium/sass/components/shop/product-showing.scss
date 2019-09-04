@@ -93,28 +93,6 @@
 
 // Pagination Override
 
-.paginate-pagination {
-    @include flex-center-center;
-    margin-top: $twenty-pixel;
-
-    & ul {
-        & li {
-            & a.page {
-                height: $forty-pixel;
-                width: $forty-pixel;
-                line-height: $forty-pixel;
-
-            }
-
-            & a.page.active {
-                pointer-events: none;
-                color: $main-color;
-                opacity: 1;
-            }
-        }
-    }
-}
-
 @media (max-width: $max-width-container) {
     .product-row {
         display: grid;
