@@ -113,7 +113,7 @@ function getFilterData() {
 
 $(document).on('click', function (e) {
     let target = e.target;
-    
+
     if (target.closest('.filter-bar .size .item')) {
         $(e.target).toggleClass('size-choose');
         if ($('.size .item').hasClass('size-choose')) {
@@ -125,6 +125,9 @@ $(document).on('click', function (e) {
 
     if (target.closest('.clear-filter')) {
         $('.filter-bar input').prop("checked", false);
+        $('.clear-filter').attr('disabled', 'disabled');
+        $('.product-link').show();
+        brandArray = [];
 
         if ($('.filter-bar input').is(":checked")) {
             $('.filter-bar input').prop("checked", true);
@@ -134,9 +137,6 @@ $(document).on('click', function (e) {
             $('.price-input').val("")
             $('.price-input.small').val("")
         }
-
-        $('.clear-filter').attr('disabled', 'disabled');
-        $(`.product-link`).show();
     }
 
     if (target.closest('.filter-icon')) {
@@ -182,7 +182,7 @@ function renderFilterData() {
         $(`.product-link`).hide();
         $.each($(brandArray), function (i, val) {
             if ($.isArray(brandArray)) {
-                $(`.product-link[data-brand="${val}"`).show();
+                $(`.product-link[data-brand="${val}"]`).show();
             } else {
                 $(`.product-link`).show();
             }
