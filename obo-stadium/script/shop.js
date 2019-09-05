@@ -52,9 +52,24 @@ $('.filter-bar .title').on('click', function () {
 
 // Filter function
 
+let brand = [];
+let gender = [];
+let size = [];
+let price = [{
+    
+}];
+let releaseDate = [];
 $(document).on('change', function (e) {
     let target = e.target;
 
+    brand = $('.brand .select-filter .filter-checkbox:checked');
+    gender = $('.category .select-filter .filter-checkbox:checked');
+    price['from'] = $('#from-price').val();
+    price['to'] = $('#to-price').val();
+    releaseDate = $('.release-date .select-filter .filter-checkbox:checked');
+
+
+    
     if ($('.filter-bar input').is(":checked") || $('.size .item').hasClass('size-choose') || $('.price-input').val() !== "" || $('.price-input.small').val() !== "") {
         $('.clear-filter').removeAttr('disabled')
     } else {
@@ -68,34 +83,30 @@ $(document).on('change', function (e) {
     }
 })
 
-let filterData = {
-    'size': [],
-    'brand': [],
-    'gender': [],
-    'price': {},
-    'release-date': []
-};
+$(document).on('mousemove', function() {
+    size = $('.size .select-filter .item.size-choose');
+})
+
+function getFilterData() {
+    let brandArray = Array.from(brand).map(item => {
+        return $(item).attr('data-id');
+    });
+    let genderArray = Array.from(gender).map(item => {
+        return $(item).attr('data-id');
+    });
+    let sizeArray = Array.from(size).map(item => {
+        return $(item).attr('data-id');
+    });
+    console.log(brandArray, genderArray, sizeArray)
+}
 
 $(document).on('click', function (e) {
     let target = e.target;
-
-    if (target.closest('.brand .filter-checkbox')) {
-        filterData['brand'].push($(target).attr('id'))
-    }
-
-    if (target.closest('.category .filter-checkbox')) {
-        filterData['gender'].push($(target).attr('id'))
-    }
-
-    if (target.closest('.release-date .filter-checkbox')) {
-        filterData['release-date'].push($(target).attr('id'))
-    }
 
     if (target.closest('.filter-bar .size .item')) {
         $(e.target).toggleClass('size-choose');
         if ($('.size .item').hasClass('size-choose')) {
             $('.clear-filter').removeAttr('disabled')
-            filterData['size'].push(Number($(target).attr('id')))
         } else {
             $('.clear-filter').attr('disabled', 'disabled');
         }
@@ -114,13 +125,6 @@ $(document).on('click', function (e) {
         }
 
         $('.clear-filter').attr('disabled', 'disabled');
-        filterData = {
-            'size': [],
-            'brand': [],
-            'gender': [],
-            'price': {},
-            'release-date': []
-        };
     }
 
     if (target.closest('.filter-icon')) {
@@ -141,27 +145,32 @@ $(document).on('click', function (e) {
     if (!target.closest('.sort-content')) {
         $('.sort-dropdown').css('display', 'none')
     }
-
-    if (target.closest('.apply-price')) {
-        filterData['price']['from'] = $('.price-input#from-price').val();
-        filterData['price']['to'] = $('.price-input#to-price').val();
-    }
 });
 
-function renderFilterData() {
-    let b = DB.getProducts();
-    let a = b.filter(item => {
-        return filterData['size'].every(size => {
-            return item['available_size'].indexOf(size) > -1;
-        })
-    })
-    console.log(a);
-    // let a = [];
-    // for (let i = 0; i < b.length; i++) {
-    //     a.push(b[i]['available_size'].includes(filterData['size'][i]))
-    // }
-    // console.log(a);
-}
+// function renderFilterData() {
+//     let b = DB.getProducts();
+//     let a = b.filter(item => {
+//         let c = filterData['size'].every(size => {
+//             return item['available_size'].indexOf(size) < 0;
+//         })
+
+//         if (c == false) {
+//             return false
+//         } else if (item['gender'] !== filterData['gender']) {
+//             return false
+//         } else if (item['brand'] == filterData['brand']) {
+//             return false
+//         }
+//         return true;
+//     })
+//     console.log(a);
+
+//     // let a = [];
+//     // for (let i = 0; i < b.length; i++) {
+//     //     a.push(b[i]['available_size'].includes(filterData['size'][i]))
+//     // }
+//     // console.log(a);
+// }
 
 function sortNewArrival() {
     let data = DB.getProducts();

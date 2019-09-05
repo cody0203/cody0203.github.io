@@ -7,7 +7,7 @@ function render() {
 
   for (let i = 0; i < sizeVn.length; i++) {
     let sizeChoose = `
-    <div class="item" data-size="${sizeUs[i]}US | ${sizeVn[i]}VN | ${sizeCm[i]}CM" id="${sizeVn[i]}">
+    <div class="item" data-size="${sizeUs[i]}US | ${sizeVn[i]}VN | ${sizeCm[i]}CM" data-id="${sizeVn[i]}">
         ${sizeVn[i]}
     </div>
     `;
