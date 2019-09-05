@@ -82,6 +82,9 @@
     display: block;
     padding: 1rem 1.25rem;
   }
+  .main-content .cancel-btn {
+    margin-top: 0.625rem;
+  }
 }
 
 /*# sourceMappingURL=bid-details.css.map */

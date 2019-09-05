@@ -143,6 +143,12 @@ a {
     }
 }
 
+button {
+    &:disabled {
+        cursor: not-allowed;
+    }
+}
+
 .form-control {
     color: $text-dark;
     height: auto;
