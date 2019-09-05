@@ -6,7 +6,7 @@ function activeSize() {
   })
 
   for (let i = 0; i < getActiveProduct['available_size'].length; i++) {
-    $(`.item[id='${getActiveProduct['available_size'][i]}']`).addClass('cross');
+    $(`.item[data-id='${getActiveProduct['available_size'][i]}']`).addClass('cross');
   }
 }
 
