@@ -56,21 +56,23 @@ let brand = [];
 let gender = [];
 let size = [];
 let price = [{
-    
+
 }];
 let releaseDate = [];
+let dataSorted;
 $(document).on('change', function (e) {
     let target = e.target;
-
     brand = $('.brand .select-filter .filter-checkbox:checked');
     gender = $('.category .select-filter .filter-checkbox:checked');
     price['from'] = $('#from-price').val();
     price['to'] = $('#to-price').val();
     releaseDate = $('.release-date .select-filter .filter-checkbox:checked');
 
+    if ($('.brand .select-filter .filter-checkbox').is(':checked') == false) {
+        $(`.product-link`).show();
+    }
 
-    
-    if ($('.filter-bar input').is(":checked") || $('.size .item').hasClass('size-choose') || $('.price-input').val() !== "" || $('.price-input.small').val() !== "") {
+    if ($('.filter-bar input').is(":checked") || $('.size .item').hasClass('size-choose') || $('.price-input').val() !== "" || $('#filterModal .price-input').val() !== "") {
         $('.clear-filter').removeAttr('disabled')
     } else {
         $('.clear-filter').attr('disabled', 'disabled')
@@ -83,26 +85,35 @@ $(document).on('change', function (e) {
     }
 })
 
-$(document).on('mousemove', function() {
+$(document).on('mousemove', function () {
     size = $('.size .select-filter .item.size-choose');
+    renderFilterData();
 })
 
+let brandArray;
+let genderArray;
+let sizeArray;
+let releaseDateArray;
+
 function getFilterData() {
-    let brandArray = Array.from(brand).map(item => {
+    brandArray = Array.from(brand).map(item => {
         return $(item).attr('data-id');
     });
-    let genderArray = Array.from(gender).map(item => {
+    genderArray = Array.from(gender).map(item => {
         return $(item).attr('data-id');
     });
-    let sizeArray = Array.from(size).map(item => {
+    sizeArray = Array.from(size).map(item => {
+        return Number($(item).attr('data-id'));
+    });
+
+    releaseDateArray = Array.from(releaseDate).map(item => {
         return $(item).attr('data-id');
     });
-    console.log(brandArray, genderArray, sizeArray)
 }
 
 $(document).on('click', function (e) {
     let target = e.target;
-
+    
     if (target.closest('.filter-bar .size .item')) {
         $(e.target).toggleClass('size-choose');
         if ($('.size .item').hasClass('size-choose')) {
@@ -125,6 +136,7 @@ $(document).on('click', function (e) {
         }
 
         $('.clear-filter').attr('disabled', 'disabled');
+        $(`.product-link`).show();
     }
 
     if (target.closest('.filter-icon')) {
@@ -147,34 +159,40 @@ $(document).on('click', function (e) {
     }
 });
 
-// function renderFilterData() {
-//     let b = DB.getProducts();
-//     let a = b.filter(item => {
-//         let c = filterData['size'].every(size => {
-//             return item['available_size'].indexOf(size) < 0;
-//         })
+function convertTime(time) {
+    return new Date(time * 1000).toLocaleDateString();
+}
 
-//         if (c == false) {
-//             return false
-//         } else if (item['gender'] !== filterData['gender']) {
-//             return false
-//         } else if (item['brand'] == filterData['brand']) {
-//             return false
-//         }
-//         return true;
-//     })
-//     console.log(a);
+function renderFilterData() {
+    getFilterData();
+    // let a = dataSorted.filter(item => {
+    //     // return sizeArray.every(size => {
+    //     //     return item['available_size'].indexOf(size) > -1;
+    //     // }) && item['gender'].includes(genderArray) && item['brand'].includes(brandArray);
+    //     return sizeArray.every(size => {
+    //         return item['available_size'].indexOf(size) > -1;
+    //     }) && genderArray.every(gender => {
+    //         return item['gender'].includes(gender);
+    //     })
+    // })
+    // console.log(a);
+    //  && convertTime(item['release_date']).slice(-4) == releaseDateArray
 
-//     // let a = [];
-//     // for (let i = 0; i < b.length; i++) {
-//     //     a.push(b[i]['available_size'].includes(filterData['size'][i]))
-//     // }
-//     // console.log(a);
-// }
+    if (brandArray.length > 0) {
+        $(`.product-link`).hide();
+        $.each($(brandArray), function (i, val) {
+            if ($.isArray(brandArray)) {
+                $(`.product-link[data-brand="${val}"`).show();
+            } else {
+                $(`.product-link`).show();
+            }
+        });
+    }
+}
 
 function sortNewArrival() {
-    let data = DB.getProducts();
-    let newArrivalData = data.sort((a, b) => {
+    dataSorted = DB.getProducts();
+    let newArrivalData = dataSorted.sort((a, b) => {
         if (b['release_date'] - a['release_date']) {
             return -1
         }
@@ -189,8 +207,8 @@ function sortNewArrival() {
 };
 
 function bestSeller() {
-    let data = DB.getProducts();
-    let bestSellerData = data.sort((a, b) => {
+    dataSorted = DB.getProducts();
+    let bestSellerData = dataSorted.sort((a, b) => {
         return b['total_sold'] - a['total_sold']
     });
 
@@ -199,8 +217,8 @@ function bestSeller() {
 };
 
 function lowToHighPrice() {
-    let data = DB.getProducts();
-    let lowToHighPriceData = data.sort((a, b) => {
+    dataSorted = DB.getProducts();
+    let lowToHighPriceData = dataSorted.sort((a, b) => {
         return a['sell_price'] - b['sell_price']
     });
 
@@ -209,8 +227,8 @@ function lowToHighPrice() {
 };
 
 function highToLowPrice() {
-    let data = DB.getProducts();
-    let highToLowData = data.sort((a, b) => {
+    dataSorted = DB.getProducts();
+    let highToLowData = dataSorted.sort((a, b) => {
         return b['sell_price'] - a['sell_price']
     });
 
@@ -223,7 +241,7 @@ function productElements(data) {
 
     for (let i = 0; i < data.length; i++) {
         productItem += `
-    <a href="./product-details.html" class="product-link" id="${data[i]['id']}">
+    <a href="./product-details.html" class="product-link" id="${data[i]['id']}" data-brand="${data[i]['brand']}">
         <div class="product position-relative">
             <div class="card">
                 <img src="${data[i]['thumbnail']}"

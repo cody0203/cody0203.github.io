@@ -1181,7 +1181,7 @@ let productData = [
     "total_sold": 312,
     "release_date": "1442204294",
     "retail_price": 7818040,
-    "brand": "Adidas",
+    "brand": "Nike",
     "gender": "Male",
     "status": "Best Seller",
     "available_size": [
@@ -1281,7 +1281,7 @@ let productData = [
     "total_sold": 546,
     "release_date": "1481926282",
     "retail_price": 5665657,
-    "brand": "Air Jordan",
+    "brand": "Nike",
     "gender": "Male",
     "status": "Best Seller",
     "available_size": [
