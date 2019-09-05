@@ -92,14 +92,21 @@ $(document).on('click', function (e) {
 })
 
 $('#visa-master').on('change', function() {
-  if (this.checked) {
+  $('.add-new-payment-methods').css('display', 'none')
+  if (this.checked && $('.card-place').html() == "") {
     $('#paymentMethods').modal('show');
+  } else {
+    $('.add-new-payment-methods').css('display', 'block')
+    $('.visa-master-wrapper').addClass('added');
+    $('.card-place').show();
   }
 })
 
 $('#cod').on('change', function () {
+  $('.add-new-payment-methods').css('display', 'none')
   if (this.checked) {
     $('.visa-master-wrapper').removeClass('added');
+    $('.card-place').hide()
   }
 })
 

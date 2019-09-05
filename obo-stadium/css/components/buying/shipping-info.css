@@ -16,6 +16,11 @@
   border: 0px;
 }
 
+.add-new-payment-methods {
+  display: none;
+  margin-top: 1.25rem;
+}
+
 #addNewShipping .modal-header,
 #addNewShipping .modal-body,
 #addNewShipping .modal-footer,

@@ -29,6 +29,7 @@ $(document).on('click', function (e) {
       `;
       $('#visa-master').attr('checked', 'true');
       $('.card-place').append(cardInfo);  
+      $('.add-new-payment-methods').css('display', 'block');
     }
   }
 })
