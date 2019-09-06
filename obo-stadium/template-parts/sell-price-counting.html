@@ -1,1 +1,51 @@
-<ul class="nav nav-tabs" id="sellTab" role="tablist"><li class="nav-item"><button class="asks-btn btn btn-primary red-btn nav-link active" id="bid" data-toggle="tab" href="#asks" role="tab" aria-controls="asks" aria-selected="true">Đặt giá bán</button></li><li class="nav-item"><button class="sell-btn btn btn-primary trans-btn nav-link" id="buy-now" data-toggle="tab" href="#sell" role="tab" aria-controls="sell" aria-selected="false">Bán ngay</button></li></ul><div class="tab-content" id="sellTabContent"><form class="tab-pane fade show active" id="asks" role="tabpanel" aria-labelledby="bid"><input class="price-input form-control" type="text" placeholder="Đặt giá mua ..." onkeypress="return priceInputValidate(event)" maxlength="10"/><div class="invalid-feedback"> </div><div class="sub-price price-include"><div class="text">Giá sản phẩm</div><div class="sub-price-showing asks"> </div></div><div class="shipping-price price-include"><div class="text">Phí vận chuyển</div><div class="shipping-price-showing asks">50,000 &#x20AB;</div></div><div class="process-price price-include"><div class="text">Phí vận hành <i class="fas fa-question-circle" data-toggle="tooltip" data-placement="top" title="Phí vận hành bằng 3% giá bán của sản phẩm"></i></div><div class="process-price-showing asks"> </div></div><div class="total-price price-include"><div class="text">Tổng thanh toán</div><div class="total-price-showing asks"> </div></div></form><div class="tab-pane fade" id="sell" role="tabpanel" aria-labelledby="sell-now"><input class="price-input sell-now form-control sell-now" type="text" disabled="true"/><div class="invalid-feedback">Giá đặt mua phải lớn hơn 100,000 ₫</div><div class="sub-price price-include"><div class="text">Giá sản phẩm</div><div class="sub-price-showing sell-now"> </div></div><div class="shipping-price price-include"><div class="text">Phí vận chuyển</div><div class="shipping-price-showing sell-now">50.000 &#x20AB;</div></div><div class="process-price price-include"><div class="text">Phí vận hành <i class="fas fa-question-circle" data-toggle="tooltip" data-placement="top" title="Phí vận hành bằng 3% giá bán của sản phẩm"></i></div><div class="process-price-showing sell-now"> </div></div><div class="total-price price-include"><div class="text">Tổng thanh toán</div><div class="total-price-showing sell-now"> </div></div></div></div>
+
+<ul class="nav nav-tabs" id="sellTab" role="tablist">
+  <li class="nav-item">
+    <button class="asks-btn btn btn-primary red-btn nav-link active" id="bid" data-toggle="tab" href="#asks" role="tab" aria-controls="asks" aria-selected="true">Đặt giá bán</button>
+  </li>
+  <li class="nav-item">
+    <button class="sell-btn btn btn-primary trans-btn nav-link" id="buy-now" data-toggle="tab" href="#sell" role="tab" aria-controls="sell" aria-selected="false">Bán ngay</button>
+  </li>
+</ul>
+<div class="tab-content" id="sellTabContent">
+  <form class="tab-pane fade show active" id="asks" role="tabpanel" aria-labelledby="bid">
+    <input class="price-input form-control" type="text" placeholder="Đặt giá mua ..." onkeypress="return priceInputValidate(event)" maxlength="10"/>
+    <div class="invalid-feedback"> </div>
+    <div class="sub-price price-include">
+      <div class="text">Giá sản phẩm</div>
+      <div class="sub-price-showing asks"> </div>
+    </div>
+    <div class="shipping-price price-include">
+      <div class="text">Phí vận chuyển</div>
+      <div class="shipping-price-showing asks">50,000 &#x20AB;</div>
+    </div>
+    <div class="process-price price-include">
+      <div class="text">Phí vận hành <i class="fas fa-question-circle" data-toggle="tooltip" data-placement="top" title="Phí vận hành bằng 3% giá bán của sản phẩm"></i></div>
+      <div class="process-price-showing asks"> </div>
+    </div>
+    <div class="total-price price-include">
+      <div class="text">Tổng thanh toán</div>
+      <div class="total-price-showing asks"> </div>
+    </div>
+  </form>
+  <div class="tab-pane fade" id="sell" role="tabpanel" aria-labelledby="sell-now">
+    <input class="price-input sell-now form-control sell-now" type="text" disabled="true"/>
+    <div class="invalid-feedback">Giá đặt mua phải lớn hơn 100,000 ₫</div>
+    <div class="sub-price price-include">
+      <div class="text">Giá sản phẩm</div>
+      <div class="sub-price-showing sell-now"> </div>
+    </div>
+    <div class="shipping-price price-include">
+      <div class="text">Phí vận chuyển</div>
+      <div class="shipping-price-showing sell-now">50.000 &#x20AB;</div>
+    </div>
+    <div class="process-price price-include">
+      <div class="text">Phí vận hành <i class="fas fa-question-circle" data-toggle="tooltip" data-placement="top" title="Phí vận hành bằng 3% giá bán của sản phẩm"></i></div>
+      <div class="process-price-showing sell-now"> </div>
+    </div>
+    <div class="total-price price-include">
+      <div class="text">Tổng thanh toán</div>
+      <div class="total-price-showing sell-now"> </div>
+    </div>
+  </div>
+</div>

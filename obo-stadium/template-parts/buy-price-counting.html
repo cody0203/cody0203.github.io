@@ -1,1 +1,51 @@
-<ul class="nav nav-tabs" id="buyTab" role="tablist"><li class="nav-item"><button class="bid-btn btn btn-primary green-btn nav-link active" id="bid" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Đặt giá mua</button></li><li class="nav-item"><button class="buy-btn btn btn-primary trans-btn nav-link" id="buy-now" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Mua ngay</button></li></ul><div class="tab-content" id="buyTabContent"><form class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="bid"><input class="price-input form-control" type="text" placeholder="Đặt giá mua ..." onkeypress="return priceInputValidate(event)" maxlength="10"/><div class="invalid-feedback"> </div><div class="sub-price price-include"><div class="text">Giá sản phẩm</div><div class="sub-price-showing bid"></div></div><div class="shipping-price price-include"><div class="text">Phí vận chuyển</div><div class="shipping-price-showing bid">50,000 &#x20AB;</div></div><div class="coupon price-include"><div class="text">Mã giảm giá</div><input class="form-control" type="text" placeholder="Nhập mã giảm giá ..."/></div><div class="total-price price-include"><div class="text">Tổng thanh toán</div><div class="total-price-showing bid"></div></div></form><div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="buy-now"><input class="price-input buy-now form-control" type="text" disabled="true"/><div class="invalid-feedback">Giá đặt mua phải lớn hơn 100,000 ₫</div><div class="sub-price price-include"><div class="text">Giá sản phẩm</div><div class="sub-price-showing buy-now"></div></div><div class="shipping-price price-include"><div class="text">Phí vận chuyển</div><div class="shipping-price-showing buy-now">50,000 &#x20AB;</div></div><div class="coupon price-include"><div class="text">Mã giảm giá</div><input class="form-control" type="text" placeholder="Nhập mã giảm giá ..."/></div><div class="total-price price-include"><div class="text">Tổng thanh toán</div><div class="total-price-showing buy-now"> </div></div></div></div>
+
+<ul class="nav nav-tabs" id="buyTab" role="tablist">
+  <li class="nav-item">
+    <button class="bid-btn btn btn-primary green-btn nav-link active" id="bid" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Đặt giá mua</button>
+  </li>
+  <li class="nav-item">
+    <button class="buy-btn btn btn-primary trans-btn nav-link" id="buy-now" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Mua ngay</button>
+  </li>
+</ul>
+<div class="tab-content" id="buyTabContent">
+  <form class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="bid">
+    <input class="price-input form-control" type="text" placeholder="Đặt giá mua ..." onkeypress="return priceInputValidate(event)" maxlength="10"/>
+    <div class="invalid-feedback"> </div>
+    <div class="sub-price price-include">
+      <div class="text">Giá sản phẩm</div>
+      <div class="sub-price-showing bid"></div>
+    </div>
+    <div class="shipping-price price-include">
+      <div class="text">Phí vận chuyển</div>
+      <div class="shipping-price-showing bid">50,000 &#x20AB;</div>
+    </div>
+    <div class="coupon price-include">
+      <div class="text">Mã giảm giá</div>
+      <input class="form-control" type="text" placeholder="Nhập mã giảm giá ..."/>
+    </div>
+    <div class="total-price price-include">
+      <div class="text">Tổng thanh toán</div>
+      <div class="total-price-showing bid"></div>
+    </div>
+  </form>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="buy-now">
+    <input class="price-input buy-now form-control" type="text" disabled="true"/>
+    <div class="invalid-feedback">Giá đặt mua phải lớn hơn 100,000 ₫</div>
+    <div class="sub-price price-include">
+      <div class="text">Giá sản phẩm</div>
+      <div class="sub-price-showing buy-now"></div>
+    </div>
+    <div class="shipping-price price-include">
+      <div class="text">Phí vận chuyển</div>
+      <div class="shipping-price-showing buy-now">50,000 &#x20AB;</div>
+    </div>
+    <div class="coupon price-include">
+      <div class="text">Mã giảm giá</div>
+      <input class="form-control" type="text" placeholder="Nhập mã giảm giá ..."/>
+    </div>
+    <div class="total-price price-include">
+      <div class="text">Tổng thanh toán</div>
+      <div class="total-price-showing buy-now"> </div>
+    </div>
+  </div>
+</div>
