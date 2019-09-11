@@ -1,0 +1,61 @@
+@import "./root.scss";
+
+header {
+    background-image: url("../image/banner/news-banner.png")
+}
+
+.search-form {
+    padding: $zero-pixel;
+}
+
+.main-heading {
+    margin: $fifty-pixel $zero-pixel 150px $zero-pixel;
+}
+
+.news {
+    background-color: $news-background;
+    display: block;
+    margin-bottom: $fifty-pixel;
+
+    & .row {
+        @include flex-center;
+    }
+
+    & .details {
+        padding-top: $twenty-six-pixel;
+        padding-bottom: $twenty-six-pixel;
+    }
+
+    & .details-small {
+        padding: $twenty-six-pixel $forty-pixel;
+        display: none;
+    }
+
+    & .title {
+        font-size: $twenty-six-pixel;
+        font-weight: bold;
+        margin: $twenty-six-pixel $zero-pixel;
+        margin-top: $ten-pixel;
+        text-transform: capitalize;
+    }
+}
+
+@media (max-width: $medium-devices-width) {
+    .search-form .form-control {
+        margin-bottom: $zero-pixel;
+    }
+
+    .navbar {
+        padding: $zero-pixel;
+    }
+}
+
+@media (max-width: $large-devices-width) {
+    .news .details {
+        display: none;
+    }
+
+    .news .details-small {
+        display: block;
+    }
+}

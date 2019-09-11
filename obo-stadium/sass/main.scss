@@ -1,0 +1,277 @@
+@import "./root.scss";
+
+html {
+    font-size: 16px;
+}
+
+* {
+    font-family: $main-font;
+    outline: $none;
+}
+
+body {
+    color: $text-dark;
+}
+
+.text-btn {
+    cursor: pointer;
+    color: $main-color;
+}
+
+a {
+    text-decoration: $none !important;
+    color: $text-dark;
+    cursor: pointer;
+
+    &:hover {
+        color: inherit;
+    }
+}
+
+.custom-select {
+    &:focus {
+        border-color: $text-dark;
+        box-shadow: none;
+    }
+}
+
+.trans-btn {
+    color: $text-dark !important;
+    background-color: white !important;
+    @include border-w-radius;
+
+    &:hover {
+        background-color: white !important;
+        border-color: $text-dark !important;
+    }
+
+    &:focus {
+        background-color: white !important;
+    }
+
+    &:active {
+        background-color: white !important;
+        border-color: $text-dark !important;
+    }
+}
+
+.btn,
+.btn-primary {
+    &:focus {
+        outline: $none !important;
+        box-shadow: $none !important;
+    }
+
+    &:active {
+        outline: $none !important;
+        box-shadow: $none !important;
+    }
+}
+
+.green-btn {
+    background-color: $green !important;
+    border-color: $green !important;
+    color: white !important;
+
+    &:hover {
+        background-color: $dark-green !important;
+    }
+
+    &:active {
+        background-color: $green !important;
+    }
+
+    &:focus {
+        background-color: $green !important;
+        border-color: $green !important;
+        color: white !important;
+    }
+}
+
+.search-result {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    text-align: center;
+    max-height: 50vh;
+    overflow-y: scroll;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px 2px;
+    z-index: 100;
+    
+    & .product-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        padding: $twenty-pixel;
+        text-align: left;
+        grid-gap: $twenty-pixel;
+        align-items: center;
+        border-bottom: 1px solid $lighter-grey-color;
+    }
+
+    & .search-product-brand {
+        color: $product-text-grey;
+    }
+
+    & .search-product-name {
+        font-size: $twenty-pixel;
+        font-weight: 500;
+        line-height: 1.25rem;
+        color: #333333;
+        margin: $ten-pixel $zero-pixel;
+    }
+
+    & .search-products-sell .price-showing {
+        color: $main-color;
+        font-weight: bold;
+    }
+
+    & .search-products-buy .price-showing {
+        color: $green;
+        font-weight: bold;
+    }
+}
+
+.red-btn {
+    background-color: $main-color !important;
+    border-color: $main-color !important;
+    color: white !important;
+
+    &:hover {
+        background-color: $hover-main-color !important;
+        border-color: $hover-main-color !important;
+    }
+
+    &:active {
+        background-color: $main-color !important;
+    }
+}
+
+button {
+    &:disabled {
+        cursor: not-allowed;
+    }
+}
+
+.form-control {
+    color: $text-dark;
+    height: auto;
+
+    &:focus {
+        color: $text-dark;
+        outline: $none;
+        box-shadow: $none;
+        border-color: inherit;
+        border-color: $text-dark;
+    }
+
+    &::placeholder {
+        color: #B6B6B6;
+    }
+}
+
+.navbar-light .navbar-nav .nav-link {
+    white-space: nowrap;
+
+    &:focus {
+        color: $text-white;
+    }
+}
+
+.back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 105;
+    display: none;
+
+    & img {
+    border-radius: $five-pixel;
+    }
+}
+
+.modal-sub-title {
+    font-size: $twelve-pixel;
+    color: $text-lighter-white;
+    font-weight: normal;
+}
+
+
+.h2 {
+    font-size: $twenty-six-pixel;
+    margin-bottom: $zero-pixel;
+}
+
+footer {
+    background-color: $text-dark;
+    margin-top: $fifty-pixel;
+}
+
+footer .row {
+    padding-top: $forty-pixel;
+    padding-bottom: $forty-pixel;
+}
+
+footer .footer-link .item {
+    color: $text-white;
+    text-decoration: none;
+    padding-left: $thirty-pixel;
+
+    &:hover {
+        color: $hover-white-color;
+    }
+}
+
+@media (min-width: $max-width-container) {
+    .container {
+        max-width: $max-width-container;
+    }
+}
+
+@media (max-width: $medium-devices-width) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        border-bottom: transparent !important;
+    }
+}
+
+@media (max-width: $closest-medium-devices-width) {
+    footer .footer-link .item {
+        padding-left: $zero-pixel;
+        padding-top: $five-pixel;
+    }
+
+    footer .row {
+        padding: $thirty-pixel;
+    }
+
+    footer .footer-link {
+        padding-top: $ten-pixel;
+    }
+
+    .navbar {
+        padding-left: $zero-pixel;
+        padding-right: $zero-pixel;
+    }
+}
+
+@media (max-width: $small-devices-width) {
+    footer {
+        margin-top: $twenty-pixel;
+    }
+}
+
+
+// Override Bootstap
+
+.btn-primary:not(:disabled):not(.disabled):active {
+    border-color: inherit;
+}
+
+// Override Pretty checkbox
+
+.pretty input:checked~.state.p-success label:after,
+.pretty.p-toggle .state.p-success label:after {
+    background-color: $main-color !important;
+}
+
+@media (max-width: $medium-devices-width) {}

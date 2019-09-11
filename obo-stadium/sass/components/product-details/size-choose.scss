@@ -1,0 +1,50 @@
+@import "../../root.scss";
+
+#sizeChooseModal,
+#sizeGuideModal {
+
+  a:hover {
+    color: $dark-main-color;
+  }
+
+  & .modal-header,
+  & .modal-body {
+    padding: $thirty-pixel;
+    border: $zero-pixel;
+  }
+
+  .size .select-filter {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: $twenty-pixel;
+  }
+
+  .size .select-filter .item {
+    width: 100%;
+    margin: $zero-pixel;
+    text-align: center;
+    border: 1px solid $text-dark;
+    border-radius: $two-pixel;
+    @include flex-center-center;
+    cursor: pointer;
+
+    &:after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+}
+
+body.modal1-on,
+body.modal2-on {
+  overflow: hidden;
+}
+
+// Override Bootstap
+
+@media (min-width: 576px) {
+  .modal-dialog-scrollable {
+    max-height: calc(100% - 25rem);
+  }
+}

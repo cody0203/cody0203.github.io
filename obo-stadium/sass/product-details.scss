@@ -1,0 +1,174 @@
+@import "./root.scss";
+
+.break-section {
+    background-color: $product-border-color;
+    height: $fifteen-pixel;
+    margin: $fifty-pixel $zero-pixel;
+    border-top: 1px solid $lighter-grey-color;
+}
+
+.products-showcase,
+.instagram-image {
+    margin-top: $zero-pixel;
+
+    & .title {
+        margin-bottom: $twenty-pixel;
+        text-transform: uppercase;
+    }
+
+    & .col-12 {
+        flex-wrap: nowrap;
+        @include flex-center-between;
+    }
+
+    & .slide-btn {
+        @include flex-center-between;
+    }
+}
+
+// Override Instafeed
+
+.grid-instafeed {
+    display: grid;
+    align-items: center;
+}
+
+.insta-img {
+    transition: all 0.3s ease;
+}
+
+.instafeed-wrap {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    &:hover {
+        color: inherit;
+
+        & .instaimg-overlay {
+            background-color: rgba($color: #000000, $alpha: 0.5);
+            display: block;
+        }
+
+        & .insta-img {
+            transform: scale(1.1)
+        }
+    }
+}
+
+.instaimg-wrap {
+    position: relative;
+}
+
+.instaimg-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: $zero-pixel;
+    left: $zero-pixel;
+    display: none;
+
+    .like-and-comment {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 50%;
+        @include flex-center-center;
+        justify-content: space-around;
+    }
+
+    & label {
+        color: white;
+        display: flex;
+        @include flex-center-center;
+    }
+
+    & i {
+        font-size: $twenty-pixel;
+        margin-right: $five-pixel;
+    }
+}
+
+.sub-title {
+    font-size: $twelve-pixel;
+    color: $product-text-grey;
+}
+
+
+// Override Slick
+
+.slick-prev,
+.slick-next {
+    position: relative;
+    top: $zero-pixel;
+    left: $zero-pixel;
+    height: auto;
+    width: auto;
+    margin: $zero-pixel $five-pixel;
+}
+
+.slick-prev:before {
+    content: '\f053'
+}
+
+.slick-next:before {
+    content: '\f054'
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: $text-dark;
+    line-height: auto;
+    font-size: $thirty-pixel;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+@media (max-width: 768px) {
+    .common-info {
+        margin-bottom: $thirty-pixel;
+    }
+
+    .break-section {
+        margin: $thirty-pixel $zero-pixel;
+    }
+
+    .product-image {
+        margin-bottom: $thirty-pixel;
+    }
+}
+
+.slick-track {
+    margin-bottom: $zero-pixel;
+}
+
+.slick-list {
+    margin-bottom: $ten-pixel;
+}
+
+@media (max-width: 465px) {
+
+    .btns .size-text,
+    .btns .dropdown-arrow {
+        font-size: $sixteen-pixel;
+    }
+
+    .btns .size-details,
+    .btns .main-content {
+        font-size: $twenty-four-pixel;
+    }
+}
+
+@media (max-width: 375px) {
+
+    .btns .size-details,
+    .btns .main-content {
+        font-size: $sixteen-pixel;
+    }
+
+    .sub-content {
+        font-size: $twelve-pixel;
+    }
+}

@@ -1,0 +1,51 @@
+@import "../../root.scss";
+
+.newsletter {
+    margin-top: $sixteen-pixel;
+    margin-bottom: $fifty-pixel;
+    background-color: #2F4858;
+    color: $text-white;
+
+    & .title {
+        font-size: $forty-pixel;
+        font-weight: $bold-size;
+        padding-top: $fifty-pixel;
+        line-height: 2.9375rem;
+        text-align: center;
+        color: $text-white;
+    }
+
+    & .sub-title {
+        margin: $twenty-pixel $zero-pixel;
+        text-align: center;
+        color: $text-white;
+    }
+}
+
+.newsletter-form {
+    margin-bottom: $fifty-pixel;
+
+    & .form-control {
+        width: calc(100% - 160px);
+        margin-right: $twenty-pixel;
+    }
+
+    & .btn-primary {
+        padding: $ten-pixel $thirty-pixel;
+    }
+}
+
+@media (max-width: $medium-devices-width) {
+    .newsletter-form {
+        & .form-control {
+            width: 100%;
+            margin-bottom: $twenty-pixel;
+        }
+    }
+}
+
+@media (max-width: $small-devices-width) {
+    .newsletter {
+        margin: $twenty-pixel $zero-pixel;
+    }
+}

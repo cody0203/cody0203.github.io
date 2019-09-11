@@ -1,0 +1,54 @@
+@import "../root.scss";
+
+#signInSignUp {
+  & .modal-header {
+    padding: $zero-pixel;
+    border: $zero-pixel;
+  }
+
+  & .nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+
+  & .nav-link {
+    border-radius: $zero-pixel;
+    background-color: $lighter-grey-color;
+    text-align: center;
+    padding: $twenty-pixel $zero-pixel;
+    text-transform: uppercase;
+
+    &.active {
+      background-color: white;
+      color: $text-dark;
+    }
+  }
+
+  & .tab-pane {
+    margin: $twenty-pixel $thirty-pixel;
+  }
+
+  & .form-control {
+    margin-top: $twenty-pixel;
+  }
+
+  & .btn-primary {
+    width: 100%;
+    text-transform: uppercase;
+    margin-top: $thirty-pixel;
+  }
+
+  & .forgot-password-wrapper,
+  .privacy-confirm {
+    margin-top: $twenty-pixel;
+  }
+}
+
+
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 420px;
+  }
+}

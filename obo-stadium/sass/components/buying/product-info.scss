@@ -1,0 +1,46 @@
+@import "../../root.scss";
+
+.product-info {
+    text-align: center;
+}
+
+.product-name {
+    font-size: $forty-pixel;
+    font-weight: 500;
+    line-height: $forty-seven-pixel;
+}
+
+.price-info,
+.size-info-wrapper {
+    line-height: $nineteen-pixel;
+    margin: $twenty-pixel $zero-pixel;
+
+    & .bid-price-info,
+    .ask-price-info,
+    .size-info {
+        font-weight: $bold-size;
+    }
+}
+
+.bid-price-info {
+    color: $main-color;
+}
+
+.ask-price-info {
+    color: $green;
+}
+
+@media (max-width: $medium-devices-width) {
+    .price-info {
+        display: flex;
+        flex-flow: column;
+
+        & .first-row {
+            margin-bottom: $ten-pixel;
+        }
+
+        & .line {
+            display: none;
+        }
+    }
+}

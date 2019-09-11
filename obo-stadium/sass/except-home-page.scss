@@ -1,0 +1,87 @@
+@import "./root.scss";
+
+main {
+    margin-top: $fifty-pixel;
+}
+
+.search-form .btn-primary {
+    display: none;
+}
+
+.search-input-wrapper {
+    display: grid;
+    grid-template-columns: 2fr auto;
+    position: relative;
+}
+
+.search-input {
+    max-width: 100%;
+    border-radius: .25rem;
+}
+
+
+.breadcrumb {
+    margin-bottom: $twenty-pixel;
+    background-color: $text-white;
+    display: block;
+    padding-top: $zero-pixel;
+    padding-bottom: $zero-pixel;
+}
+
+.previous-page {
+    color: $main-color;
+}
+
+.arrow {
+    margin: $zero-pixel $five-pixel;
+}
+
+.pagination-wrapper {
+    @include flex-center-center;
+    margin-top: $fifty-pixel;
+}
+
+@media (max-width: $small-devices-width) {
+    main {
+        margin-top: $twenty-pixel;
+    }
+}
+
+@media (max-width: $medium-devices-width) {
+    main {
+        margin-top: $twenty-pixel;
+    }
+
+    .navbar {
+        margin-bottom: $twenty-pixel;
+    }
+
+    .search-input-wrapper {
+        width: 100%;
+    }
+
+    .search-result {
+        width: 100%;
+    }
+}
+
+@media (max-width: $closest-medium-devices-width) {
+    .search-form {
+        & form {
+            display: flex;
+            flex-flow: nowrap;
+        }
+
+        & .form-control {
+            border-top-right-radius: $zero-pixel;
+            border-bottom-right-radius: $zero-pixel;
+        }
+
+        & .btn-primary {
+            display: block;
+            padding: $twelve-pixel $twenty-four-pixel;
+            border-top-left-radius: $zero-pixel;
+            border-bottom-left-radius: $zero-pixel;
+        }
+    }
+}

@@ -1,0 +1,80 @@
+@import "./root.scss";
+
+header {
+    background-image: url("../image/banner/fqas-banner.png")
+}
+
+.search-form {
+    padding: $zero-pixel;
+}
+
+.main-heading {
+    margin: $fifty-pixel $zero-pixel 150px $zero-pixel;
+}
+
+.question {
+    font-weight: bold;
+}
+
+.main-content {
+    margin-top: $fifty-pixel;
+}
+
+.h2 {
+    font-size: $forty-pixel;
+    line-height: $forty-seven-pixel;
+    text-transform: uppercase;
+    font-weight: $bold-size;
+    margin-bottom: $thirty-pixel;
+    text-align: center;
+}
+
+
+.about-obo {
+    margin-bottom: $fifty-pixel;
+}
+
+// Override Bootstap
+
+.card {
+    border-radius: $zero-pixel;
+    border-left: $zero-pixel;
+    border-right: $zero-pixel;
+}
+
+.card-header {
+    background-color: $text-white;
+    padding-left: $zero-pixel;
+    padding-right: $zero-pixel;
+
+    & .btn-link {
+        width: 100%;
+        padding: $twenty-pixel $zero-pixel;
+
+        @include flex-center-between;
+        text-decoration: none;
+        color: $text-dark;
+        font-size: $twenty-four-pixel;
+        font-weight: bold;
+    }
+}
+
+@media (max-width: $small-devices-width) {
+    .main-content {
+        margin-top: $thirty-pixel;
+    }
+
+    .about-obo {
+        margin-bottom: $thirty-pixel;
+    }
+
+    .card-header .btn-link {
+        font-size: $twenty-pixel;
+    }
+}
+
+@media (max-width: $medium-devices-width) {
+    header .content {
+        display: none;
+    }
+}

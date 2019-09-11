@@ -1,0 +1,132 @@
+@import "../../root.scss";
+
+//Sort
+
+.sort {
+    @include flex-center-between;
+    margin-bottom: $twenty-pixel;
+    position: relative;
+}
+
+.filter-icon {
+    padding: $twelve-pixel $sixteen-pixel;
+    background-color: $main-color;
+    color: white;
+    display: none;
+    cursor: pointer;
+}
+
+.sort-content {
+    cursor: pointer;
+    @include border;
+    padding: $twelve-pixel $twenty-pixel;
+}
+
+.sort-dropdown {
+    display: none;
+    position: absolute;
+    top: 49px;
+    left: 0;
+    z-index: 100;
+    background-color: white;
+    @include border;
+
+    & .sort-item {
+        padding: $fifteen-pixel;
+        padding-right: 150px;
+
+        &:hover {
+            color: $main-color;
+        }
+
+        &.active {
+            background-color: $hover-main-color;
+            color: white;
+            pointer-events: none;
+        }
+    }
+}
+
+.sort-name {
+    font-weight: $bold-size;
+    margin: $zero-pixel $thirty-six-pixel $zero-pixel $twenty-pixel;
+}
+
+// Products grid
+
+.product-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    grid-gap: $sixteen-pixel $sixteen-pixel;
+}
+
+// Override products.scss
+
+.product {
+    margin-right: $zero-pixel;
+}
+
+.product,
+.product-link,
+.card {
+    max-width: 100%;
+    width: 100%;
+}
+
+.card-title {
+    font-size: $fourteen-pixel;
+}
+
+.price-desc {
+    font-size: $fourteen-pixel;
+}
+
+.price {
+    font-size: $twenty-pixel;
+}
+
+.sold {
+    font-size: $fourteen-pixel;
+}
+
+// Pagination Override
+
+@media (max-width: $max-width-container) {
+    .product-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: $large-devices-width) {
+    .filter-bar {
+        display: none;
+    }
+
+    .filter-icon {
+        display: block;
+    }
+}
+
+@media (max-width: $closest-medium-devices-width) {
+    .sort-content {
+        padding: $twelve-pixel $ten-pixel;
+    }
+
+    .sort-name {
+        margin: $zero-pixel $ten-pixel $zero-pixel $ten-pixel;
+    }
+
+    .product-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 453px) {
+    .product-row {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

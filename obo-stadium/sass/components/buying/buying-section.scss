@@ -1,0 +1,93 @@
+@import "../../root.scss";
+
+// Common
+
+.buying {
+    & .header {
+        @include flex-center-between;
+    }
+
+    & .title {
+        font-size: $twenty-four-pixel;
+        font-weight: $bold-size;
+        line-height: $twenty-eight-pixel;
+    }
+
+    & .change.btn-primary {
+        line-height: $nineteen-pixel;
+    }
+}
+
+.address-info-wrapper {
+    & button {
+        padding: $six-pixel $ten-pixel;
+    }
+
+    & .btns {
+        display: none;
+
+        margin-top: $thirty-pixel;
+
+        & button {
+            &:last-child {
+                margin-left: $twenty-pixel;
+            }
+        }
+
+    }
+}
+
+.childs {
+    padding: $thirty-pixel;
+    padding-top: $twenty-five-pixel;
+    @include border-w-radius;
+}
+
+
+// Payment methods 
+
+.payment-methods {
+    margin-top: $thirty-pixel;
+}
+
+.visa-master-wrapper {
+    margin-top: $ten-pixel;
+}
+
+.confirm-btn {
+    margin-top: $thirty-pixel;
+    padding: $ten-pixel $twenty-five-pixel;
+    font-size: $twenty-four-pixel;
+    line-height: $twenty-four-pixel;
+}
+
+@media (max-width: $medium-devices-width) {
+    .buying {
+        margin-top: $thirty-pixel;
+    }
+}
+
+@media (max-width: $small-devices-width) {
+    .bid-buy-btn .btn, 
+    .asks-sell-btn .btn {
+        padding: $twelve-pixel;
+    }
+
+    .total-price-showing {
+        font-size: $nineteen-pixel;
+    }
+
+    .childs {
+        padding: $twenty-pixel $twelve-pixel;
+    }
+
+    .buying .title {
+        font-size: $twenty-pixel;
+    }
+}
+
+@media (max-width: 323px) {
+    .address-info-wrapper button {
+        font-size: $twelve-pixel;
+    }
+}

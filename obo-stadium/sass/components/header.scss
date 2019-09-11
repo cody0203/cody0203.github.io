@@ -1,0 +1,50 @@
+@import "../root.scss";
+
+header {
+    background-color: $text-dark;
+    padding: $twenty-pixel $zero-pixel;
+}
+
+.navbar {
+    padding-top: $zero-pixel;
+    padding-bottom: $zero-pixel;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: $text-white;
+
+    &:hover {
+        color: $hover-white-color;
+    }
+}
+
+.search-form {
+    margin: $zero-pixel $ten-pixel;
+    margin: auto;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding: $zero-pixel $fifteen-pixel $fifteen-pixel $fifteen-pixel;
+    margin: $zero-pixel $ten-pixel;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+
+    &:hover {
+        border-bottom: 3px solid white;
+    }
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    color: white;
+}
+
+.navbar-light .navbar-toggler {
+    border-color: white;
+}
+
+@media (max-width: $large-devices-width) {
+    .navbar-brand {
+            margin-right: $zero-pixel;
+        }
+}
