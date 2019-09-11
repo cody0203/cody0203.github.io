@@ -6,6 +6,7 @@ $(function () {
     activeSize();
     sizeGuideRender();
     changeUi();
+    relatedProductRender()
 });
 
 function caroselProductImage() {
@@ -119,4 +120,32 @@ function caroselInstafeed() {
 
 function changeUi() {
     $(".nav-link#shop").addClass('active-nav');
+}
+
+function relatedProductRender() {
+    let relatedProductData = productData.filter(item => {
+        return item['name'].toLowerCase().includes('yeezy')
+    });
+    let relatedProduct = "";
+
+    for (let i = 0; i < 5; i++) {
+        // Best Seller Elements
+        relatedProduct += `
+            <a class="product product-link position-relative" id="${relatedProductData[i]['id']}" href="./product-details.html">
+                <div class="card">
+                    <img src="${relatedProductData[i]['thumbnail']}" class="card-img-top"
+                        alt="${relatedProductData[i]['name']}">
+                    <div class="card-body">
+                        <h5 class="card-title">${relatedProductData[i]['name']}</h5>
+                        <p class="card-text price-desc">Giá thấp nhất hiện tại</p>
+                        <p class="price">${currency(relatedProductData[i]['sell_price'], { separator: ',', precision: 0 }).format()} ₫</p>
+                        <p class="card-text sold">Đã bán ${relatedProductData[i]['total_sold']} đôi</p>
+                    </div>
+                </div>
+                <div class="shadow mx-auto position-absolute"></div>
+            </a>
+        `;
+    }
+
+    $('.products-showcase .product-row').html(relatedProduct);
 }
