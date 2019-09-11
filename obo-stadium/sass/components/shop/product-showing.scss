@@ -36,8 +36,7 @@
         padding-right: 150px;
 
         &:hover {
-            background-color: $hover-main-color;
-            color: white;
+            color: $main-color;
         }
 
         &.active {
