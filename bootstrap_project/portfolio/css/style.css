@@ -99,11 +99,11 @@ html {
 }
 
 .info:hover #phone-icon {
-    background-image: url(../image/phone.png);
+    background-image: url(../image/call.svg);
 }
 
 #phone-icon {
-    background: url(../image/phone-black.png);
+    background: url(../image/call-black.svg);
     width: 40px;
     max-width: 100%;
     height: 40px;

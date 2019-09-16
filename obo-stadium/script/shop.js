@@ -25,6 +25,11 @@ function changeUi() {
     }
 }
 
+$('.price-input').on('keydown', function () {
+    let inputValue = $(this).val().replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    $(this).val(inputValue);
+})
+
 changeUi();
 
 $('.see-more').on('click', function () {

@@ -253,42 +253,42 @@ autoTyping();
 //     }
 // });
 
-var ctx = document.getElementById('myChart').getContext('2d');
+// var ctx = document.getElementById('myChart').getContext('2d');
 
 
-var color = Chart.helpers.color;
-var config = {
-    type: 'radar',
-    data: {
-        labels: ['HTML', 'CSS', 'JavaScript', 'Jquery', 'Bootstrap', 'SEO', ['Photoshop', 'Illustrator'], ['English', 'Reading'], ['English', 'Listening']],
-        datasets: [{
-            label: ['Skills'],
-            backgroundColor: 'rgba(36, 112, 250, 0.3)',
-            borderColor: 'rgba(36, 112, 250, 0.7)',
-            pointBackgroundColor: 'rgba(36, 112, 250, 0.7)',
-            data: [
-                90, 80, 50, 40, 40, 70, 50, 60, 60
-            ],
-        }]
-    },
-    options: {
-        legend: {
-            display: false  ,
-        },
-        scale: {
-            ticks: {
-                beginAtZero: true
-            }
-        },
-        tooltips: {
-            enabled: true,
-            callbacks: {
-                label: function (tooltipItem, data) {
-                    return ` ${data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index]}%`;
-                }
-            }
-        },
-    }
-};
+// var color = Chart.helpers.color;
+// var config = {
+//     type: 'radar',
+//     data: {
+//         labels: ['HTML', 'CSS', 'JavaScript', 'Jquery', 'Bootstrap', 'SEO', ['Photoshop', 'Illustrator'], ['English', 'Reading'], ['English', 'Listening']],
+//         datasets: [{
+//             label: ['Skills'],
+//             backgroundColor: 'rgba(36, 112, 250, 0.3)',
+//             borderColor: 'rgba(36, 112, 250, 0.7)',
+//             pointBackgroundColor: 'rgba(36, 112, 250, 0.7)',
+//             data: [
+//                 90, 80, 50, 40, 40, 70, 50, 60, 60
+//             ],
+//         }]
+//     },
+//     options: {
+//         legend: {
+//             display: false  ,
+//         },
+//         scale: {
+//             ticks: {
+//                 beginAtZero: true
+//             }
+//         },
+//         tooltips: {
+//             enabled: true,
+//             callbacks: {
+//                 label: function (tooltipItem, data) {
+//                     return ` ${data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index]}%`;
+//                 }
+//             }
+//         },
+//     }
+// };
 
-var chart = new Chart(ctx, config);
+// var chart = new Chart(ctx, config);

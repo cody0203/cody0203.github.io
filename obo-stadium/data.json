@@ -1298,5 +1298,30 @@ let productData = [
     ],
     "thumbnail": "./image/product/nike/Nike-Air-Max-90-Off-White-Product.jpg",
     "name": "Air Max 90 OFF-WHITE"
+  },
+  {
+    "id": "6def4562-78a7-4032-a113-2d2b1e0381c1",
+    "sell_price": 12015122,
+    "buy_price": 33808275,
+    "total_sold": 159,
+    "release_date": "1545593027",
+    "retail_price": 6507508,
+    "brand": "Adidas",
+    "gender": "Female",
+    "status": "Staffs Choose",
+    "available_size": [
+      40.5,
+      50.5,
+      46,
+      51.5,
+      49.5,
+      39,
+      47.5,
+      42.5,
+      41,
+      43
+    ],
+    "thumbnail": "./image/product/adidas/Adidas-Yeezy-Boost-350-V2-Core-Black-Red-Product.jpg",
+    "name": "Adidas Yeezy Boost 350 V2 Core Black Red"
   }
 ]
