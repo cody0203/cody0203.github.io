@@ -205,6 +205,10 @@ button {
 footer {
     background-color: $text-dark;
     margin-top: $fifty-pixel;
+
+    & .social-icons {
+        color: $text-white;
+    }
 }
 
 footer .row {

@@ -17,7 +17,7 @@ $('.price-input').on('change', function (e) {
   $('.sub-price-showing:not(.sell-now)').text(`${convertPrice(subPrice)} ₫`);
 
   // Processing asks price
-  $('.process-price-showing:not(.sell-now)').text(`${convertPrice(subPrice * 0.03)} ₫`)
+  $('.process-price-showing:not(.sell-now)').text(`${convertPrice(subPrice * 0.05)} ₫`)
 
   // Count total price
   let totalPrice = currency($('.sub-price-showing:not(.sell-now)').text()).value - currency($('.process-price-showing:not(.sell-now)').text()).value + currency($('.shipping-price-showing:not(.sell-now)').text()).value;
@@ -46,13 +46,13 @@ $('.price-input').on('change', function (e) {
 
 function sellNowRender() {
   // Input render
-  $('.price-input.sell-now').val($('.ask-price-info').text());
+  $('.price-input.sell-now').val($('.bid-price-info').text());
 
   // Subtotal render
-  $('.sub-price-showing.sell-now').text($('.ask-price-info').text())
+  $('.sub-price-showing.sell-now').text($('.bid-price-info').text())
 
   // Process price render
-  $('.process-price-showing.sell-now').text(`${convertPrice(Number($('.sub-price-showing.sell-now').text().slice(0, -2).replace(/,/g, "")) * 0.03)} ₫`);
+  $('.process-price-showing.sell-now').text(`${convertPrice(Number($('.sub-price-showing.sell-now').text().slice(0, -2).replace(/,/g, "")) * 0.05)} ₫`);
 
   //Total Price render
   let totalPrice = currency($('.sub-price-showing:not(.asks)').text()).value - currency($('.process-price-showing.sell-now').text()).value + currency($('.shipping-price-showing.sell-now').text()).value;
