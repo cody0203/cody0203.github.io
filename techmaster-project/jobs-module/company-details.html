@@ -15,6 +15,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
   <link rel="stylesheet" href="./resources/css/main.css">
+  <link rel="stylesheet" href="./resources/css/job-item.css">
   <style>
     .container-fluid {
       margin-top: 50px;
@@ -25,61 +26,73 @@
     }
 
     .short-details-wrapper .container {
-      padding: 37px 40px;
-      text-align: center;
-      padding: 102px 0;
+      padding: 29px 24px;
+      display: flex;
+      align-items: center;
     }
 
-    .title {
-      font-weight: bold;
-      font-size: 30px;
-      line-height: 35px;
+    .short-details-wrapper .company-logo {
+      max-width: 200px;
+      margin-right: 50px;
     }
 
-    .job-link {
+    .short-details-wrapper .company-website {
+      display: block;
       color: #3C78E8;
     }
 
-    .job-link:hover {
-      color: #1855c8;
+    .short-details-wrapper .company-short-details-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      width: 100%;
+      flex-flow: wrap;
     }
 
-    .blue-line {
-      border-bottom: 3px solid #3C78E8;
-      width: 100px;
-      margin: auto;
-      margin-top: 20px;
+    .short-details-wrapper .company-short-details {
+      margin-bottom: 10px;
     }
 
-    .apply-form-wrapper {
-      margin-top: 50px;
-      background-color: white;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-      border-radius: 4px;
-      padding: 50px 0;
-    }
-
-    #cvFile {
-      position: absolute;
-      display: none;
-    }
-
-    .upload-cv {
-      background: #F4F4F4;
-      border: 1px solid #DDDDDD;
-      border-radius: 4px;
-      padding: 6px 20px;
+    .short-details-wrapper .apply-btn {
       font-size: 16px;
       line-height: 19px;
-      cursor: pointer;
+      font-weight: bold;
+      padding: 15px 62px;
     }
 
-    .apply-btn {
-      padding: 15px 0;
-      width: 100%;
-      text-align: center;
+    .short-details-wrapper .company-name {
+      font-size: 25.6px;
+      line-height: 30px;
+      font-weight: bold;
+    }
+
+    .short-details-wrapper .company-website,
+    .short-details-wrapper .company-type {
+      font-size: 16px;
       line-height: 19px;
-      cursor: pointer;
+      margin: 10px 0;
+    }
+
+    .short-details-wrapper .social-icons {
+      display: flex;
+      font-size: 30px;
+      line-height: 34px;
+    }
+
+    .short-details-wrapper .facebook {
+      color: #3578E5;
+      margin-right: 10px;
+    }
+
+    .short-details-wrapper .linkedin {
+      color: #0073B0;
+      margin-right: 10px;
+    }
+
+    @media (max-width: 606px) {
+      .short-details-wrapper .container {
+        flex-flow: wrap;
+      }
     }
   </style>
   <title>Jobs Details</title>
@@ -88,43 +101,37 @@
 <body>
   <div class="container-fluid short-details-wrapper">
     <div class="container">
-      <div class="title">
-        Nộp CV cho việc làm <a href="./jobs-details.html" class="job-link"> UI-UX Designer (HTML5/JavaScript)</a> tại
-        IncepIT
+      <div class="company-logo">
+        <img src="./resources/image/incepit-logo.jpg" alt="company-logo" class="img-fluid">
       </div>
 
-      <div class="blue-line"></div>
-    </div>
-  </div>
+      <div class="company-short-details-wrapper">
+        <div class="company-short-details">
+          <div class="company-name">
+            IncepIT
+          </div>
 
-  <div class="container">
-    <div class="apply-form-wrapper col-lg-10 mx-auto">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-10 mx-auto">
-            <form action="">
-              <div class="form-group">
-                <label for="candidateName">Họ tên *</label>
-                <input type="text" class="form-control" id="candidateName">
-              </div>
+          <div class="company-type">
+            Software development
+          </div>
 
-              <div class="form-group">
-                <label for="candidateEmail">Email *</label>
-                <input type="email" class="form-control" id="candidateEmail">
-              </div>
+          <a href="https://incepit.com" class="company-website">
+            https://incepit.com
+          </a>
 
-              <div class="form-group">
-                Tải hồ sơ từ máy tính của bạn <label class="upload-cv" for="cvFile"><i class="fas fa-upload"></i> Chọn
-                  tệp</label> <input type="file" id="cvFile"> <i>(File đính kèm dạng doc, docx, pdf, dung lượng &lt;=
-                  2 MB)</i>
-              </div>
+          <div class="social-icons">
+            <div class="facebook">
+              <a href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i></a>
+            </div>
 
-              <button type="submit" class="apply-btn button blue-btn">
-                Nộp CV
-              </button>
-            </form>
+            <div class="linkedin">
+              <a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a>
+            </div>
           </div>
         </div>
+        <button class="apply-btn button blue-btn">
+          Theo dõi
+        </button>
       </div>
     </div>
   </div>
