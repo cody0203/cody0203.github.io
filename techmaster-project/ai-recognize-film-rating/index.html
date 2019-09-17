@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>IMDB Sentinent Analysis</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    h1,
+    h2 {
+      text-align: center;
+    }
+
+    h2 {
+      margin-top: 20px;
+    }
+
+    .content-wrapper {
+      max-width: 1200px;
+      margin: auto;
+      margin-top: 0px;
+      height: auto;
+      padding: 0px 20px 0px 20px;
+    }
+
+    #review-content {
+      width: 80%;
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      padding: 10px;
+      font-size: 1rem;
+      font-family: auto;
+    }
+
+    .btns {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+    }
+
+    .btn {
+      padding: 15px;
+      font-size: 1rem;
+      cursor: pointer;
+      border: transparent;
+    }
+
+    .submit-btn {
+      background-color: #3C78E8;
+      color: white;
+    }
+
+    .reset-btn {
+      margin-top: 20px;
+      background-color: #bbb;
+      color: white;
+    }
+
+    .field-wrapper {
+      display: flex;
+      justify-content: flex-start;
+      margin-top: 10px;
+      align-items: flex-start;
+    }
+
+    .emotion {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .emotion-icon {
+      width: 60px;
+      height: 60px;
+      opacity: 0.2;
+    }
+
+    .emotion-icon:nth-child(even) {
+      margin: 0 20px;
+    }
+
+    .sample-content {
+      margin: 20px 0;
+    }
+
+    .sample-content-item {
+      font-size: 1rem;
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      padding: 24px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: block;
+      text-decoration: none;
+      color: black;
+      font-style: italic;
+    }
+
+    .sample-content-item:nth-child(even) {
+      margin: 10px 0;
+    }
+
+    .hate {
+      background-image: url('img/hate-bw.svg');
+    }
+
+    .hate.active {
+      background-image: url('img/hate.svg');
+    }
+
+    .dislike {
+      background-image: url('img/dislike-bw.svg');
+    }
+
+    .dislike.active {
+      background-image: url('img/dislike.svg');
+    }
+
+    .normal {
+      background-image: url('img/normal-bw.svg');
+    }
+
+    .normal.active {
+      background-image: url('img/normal.svg');
+    }
+
+    .like {
+      background-image: url('img/like-bw.svg');
+    }
+
+    .like.active {
+      background-image: url('img/like.svg');
+    }
+
+    .love {
+      background-image: url('img/love-bw.svg');
+    }
+
+    .love.active {
+      background-image: url('img/love.svg');
+    }
+  </style>
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+  crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="content-wrapper">
+
+    <label for="review-content">
+      Viết đánh giá bằng tiếng Anh cho một bộ phim:
+    </label>
+
+    <div class="field-wrapper">
+      <textarea name="review-content" id="review-content" rows="10"></textarea>
+
+      <div class="btns">
+        <button class="submit-btn btn" onclick="submit_review()">Gửi đánh giá</button>
+
+        <button type="reset" class="reset-btn btn">Xóa</button>
+      </div>
+    </div>
+
+
+    <div class="emotion">
+
+      <div class="emotion-icon hate">
+      </div>
+
+      <div class="emotion-icon dislike">
+      </div>
+
+      <div class="emotion-icon normal">
+      </div>
+
+      <div class="emotion-icon like">
+      </div>
+
+      <div class="emotion-icon love">
+      </div>
+
+      </div>
+
+    </div>
+
+    <div class="sample-content">
+      <h2>Thử vài đánh giá có sẵn đỡ phải gõ nhé</h2>
+      <a href="#" class="sample-content-item">The movie is so so. Plot are bad. But actors are handsome. Actress is sexy. I see a lot of sex scenes in this movie</a>
+      <a href="#" class="sample-content-item">Average film. Not bad but not good. I feel sleepy in almost time but the last scene is very good</a>
+      <a href="#" class="sample-content-item">Truly a masterpiece, Best film of 2019, one of the best films of the century, second best DC film after The Dark Knight. 10 out of 10 to Direction and Acting. Joaquin Phoenix goes inside the character's head & forgets his true self. The best thing is we feel empathy for a psychopath who DOES NOT feel empathy for anyone, that is so deep character, that no one can hate. Also the cinematography, background score, songs and runtime are all impressive. I wouldn't be surprised to see Most Oscar Nominations and Wins this year.</a>
+      <a href="#" class="sample-content-item">Didn't laugh once. The story, acting and directing was terrible. I usually don't find these sorts of romantic comedies that bad and I laugh very easily but the humour was just so forced and lame. 100% Wouldn't recommend watching it in cinemas. Shouldn't even be rated R as their is no nudity, foul language or heavy violence.</a>
+      <a href="#" class="sample-content-item">I love the way this movie is portrayed and told. It's very cool to watch movies from other decades and understand how everything in the movie is dated back in the 70s. All the small details are what makes this movie good. Seeing Rick and Cliff together was always exciting because they just make a good duo. As good as the movie is there was some things I personally couldn't get such as the references and I do know some of the history behind the Manson murders but everything else just flew right over my head. Highly recommend the movie!</a>
+      <a href="#" class="sample-content-item">The Layover is an R-rated comedy starring Kate Upton and Alexandra Daddrio. The film has its moments but it's clear from its trailers what to expect. Being largely panned from critics, one should have low expectations when watching. At most, the Layover, the film feels like a teenage sitcom or something in which twins Mary-Kate and Ashley Olsen have done in their time back then.</a>
+      <a href="#" class="sample-content-item">The comedy isn't too forced but it really isn't funny in many ways. Predictable and television type humor. The film isn't too long which passes time quickly, though other than most there is some entertainment watching both leads interact with one another. It's a light hearted comedy, perhaps some critics are being too harsh. It's what to expect.</a>
+      <a href="#" class="sample-content-item">Absolutely horrible.Terrible plot. Attempt at humor: someone farting in the car and the others characters' reactions.Their hot air balloon falls on a kids birthday cake.Kate Upton is a terrible actress-she f bombs her way through the plot on one emotionless level. An absolute waste of time.</a>
+      <a href="#" class="sample-content-item">Two women who have known each other since school find themselves down on their luck. One is impulsive and care-free the other responsible and considered. A spontaneous trip away sees them stranded with a hot guy they are both interested in.
+        This is a pretty well used format, but normally with two guys chasing a pretty girl. With the genders flipped it means the knob gags are switched for boob gags and the girls try to out-flirt each other rather than out- impress each other.</a>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script>
+    $('.sample-content-item').on('click', function () {
+      $(".emotion-icon").removeClass("active");
+      let itemContent = $(this).text().replace(/\s\s+/g, ' ');
+      $('#review-content').val(itemContent);
+    })
+
+    $('.reset-btn').on('click', function() {
+      $(".emotion-icon").removeClass("active");
+      $('#review-content').val("");
+    })
+
+    function submit_review() {
+       $.ajax({
+            type: "POST",
+            url: "/analyze_review",
+            data: {
+                review: $("#review-content").val()
+            }
+        }).done(function(result) {
+            console.log(result);
+            sentiment = parseFloat(result);
+            console.log(sentiment);
+            $(".emotion-icon").css("opacity", "0.2");
+            $(".emotion-icon").removeClass("active");
+
+            switch (true) {
+              case (sentiment < 0.2):  //Hate
+                $(".hate").addClass("active");
+                $(".hate").css("opacity", "1");
+                break;
+              case (sentiment < 0.4):
+                $(".dislike").addClass("active");
+                $(".dislike").css("opacity", "1");
+                break;
+              case (sentiment < 0.6):
+                $(".normal").addClass("active");
+                $(".normal").css("opacity", "1");
+                break;
+              case (sentiment < 0.8):
+                $(".like").addClass("active");
+                $(".like").css("opacity", "1");
+                break;
+              case (sentiment < 1.0):   //Love
+                $(".love").addClass("active");
+                $(".love").css("opacity", "1");
+                break;
+              default:
+                alert("none");
+               break;
+            }
+        });
+    }
+  </script>
+</body>
+
+</html>

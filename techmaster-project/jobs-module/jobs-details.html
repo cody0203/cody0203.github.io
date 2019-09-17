@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+  <link rel="stylesheet" href="./resources/css/main.css">
+  <link rel="stylesheet" href="./resources/css/job-item.css">
+  <style>
+    .container-fluid {
+      margin-top: 50px;
+    }
+
+    .short-details-wrapper {
+      background-color: white;
+    }
+
+    .short-details-wrapper .container {
+      padding: 37px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-flow: wrap;
+    }
+
+    .short-details-wrapper .short-details>div {
+      margin-top: 10px;
+    }
+
+    .short-details-wrapper .short-details>div:first-child {
+      margin-top: 0px;
+    }
+
+    .job-name {
+      font-weight: bold;
+      font-size: 25.6px;
+      line-height: 30px;
+    }
+
+    .short-details .company-name,
+    .short-details .company-address,
+    .short-details .quantity {
+      font-size: 16px;
+      line-height: 19px;
+    }
+
+    .short-details .company-name {
+      font-weight: bold;
+    }
+
+    .salary {
+      font-size: 20px;
+      line-height: 23px;
+    }
+
+    .requirement {
+      display: flex;
+      flex-flow: wrap
+    }
+
+    .requirement .requirement-item {
+      margin-bottom: 10px;
+    }
+
+    .apply-btn {
+      padding: 15px 37px;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .main-content-wrapper {
+      margin-top: 50px;
+    }
+
+    .job-main-content {
+      background-color: white;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+      border-radius: 4px;
+      padding: 24px 37px 24px 24px;
+    }
+
+    .job-main-content .title {
+      font-size: 24px;
+      line-height: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .job-main-content .part {
+      margin-top: 30px;
+    }
+
+    .job-main-content .part:first-child {
+      margin-top: 0px;
+    }
+
+    .job-main-content .content {
+      margin-bottom: 10px;
+      padding-left: 20px;
+    }
+
+    .job-main-content .apply-btn {
+      margin-left: 20px;
+      margin-top: 30px;
+    }
+
+    .jobs-showcase-wrapper {
+      margin-top: 50px;
+    }
+
+    .company-infomation {
+      padding: 24px;
+      background: #FFFFFF;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+      border-radius: 4px;
+    }
+
+    .company-infomation .logo {
+      width: 200px;
+      margin: auto;
+      border: 1px solid rgba(0, 0, 0, 0.125);
+    }
+
+    .text-btn {
+      color: #3C78E8;
+      font-size: 16px;
+      line-height: 19px;
+      cursor: pointer;
+    }
+
+    .company-infomation .company-name {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 28px;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .company-infomation .short-description {
+      margin-bottom: 10px;
+      font-size: 16px;
+      line-height: 19px;
+    }
+
+    .company-infomation .company-size {
+      margin: 10px 0;
+    }
+
+    .company-infomation .icon .fas {
+      font-size: 16px;
+      line-height: 18px;
+      color: #3C78E8;
+      margin-right: 20px;
+    }
+
+    .email-for-jobs {
+      margin-top: 32px;
+      padding: 24px;
+      background-color: #34465C;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    .email-for-jobs .title {
+      text-align: center;
+      color: white;
+    }
+
+    .send-email-btn {
+      width: 100%;
+      padding: 15px 20px;
+      font-size: 16px;
+      line-height: 19px;
+    }
+
+    .email-input {
+      height: 50px;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .right-side {
+        margin-top: 50px;
+      }
+    }
+
+    @media (max-width: 753px) {
+      .apply-btn {
+        width: 100%;
+        margin-top: 10px;
+      }
+    }
+  </style>
+  <title>Jobs Details</title>
+</head>
+
+<body>
+  <div class="container-fluid short-details-wrapper">
+    <div class="container">
+      <div class="short-details">
+        <div class="job-name">
+          UI-UX Designer (HTML5/JavaScript)
+        </div>
+
+        <div class="company-name">
+          IncepIT
+        </div>
+
+        <div class="company-address">
+          Scetpa Building, 19a Cong Hoa Street, TP Hồ Chí Minh
+        </div>
+
+        <div class="quantity">
+          Số lượng cần tuyển: 1
+        </div>
+
+        <div class="salary">
+          Mức lương: Từ $1.000
+        </div>
+
+        <div class="requirement">
+          <div class="requirement-item">
+            UI-UX
+          </div>
+
+          <div class="requirement-item">
+            HTML5
+          </div>
+
+          <div class="requirement-item">
+            Designer
+          </div>
+
+          <div class="requirement-item">
+            Designer
+          </div>
+
+          <div class="requirement-item">
+            Designer
+          </div>
+        </div>
+      </div>
+      <a href="./apply.html">
+        <div class="apply-btn button blue-btn">
+          Ứng tuyển ngay
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="container main-content-wrapper">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="job-main-content">
+          <div class="job-description part">
+            <div class="title">
+              Mô tả công việc
+            </div>
+
+            <p class="content">
+              Web Design (Page Layout, Banner, Landing Page, Parts of a Page etc...) as request from Japan side.
+            </p>
+
+            <p class="content">
+              Main clients are big Japanese companies in various business fields.
+            </p>
+
+            <p class="content">
+              Communicate with IT Communicator and Coder team to clarify and follow client's instructions.
+            </p>
+          </div>
+
+          <div class="job-requirement part">
+            <div class="title">
+              Yêu cầu công việc
+            </div>
+
+            <p class="content">
+              At least 1 year experience of official working as Web/Mobile/App designer (not including Freelancing
+              experience)
+            </p>
+
+            <p class="content">
+              ILLUSTRATOR DRAWING OR VIDEO EDITING EXPERIENCE IS A BIG PLUS
+            </p>
+
+            <p class="content">
+              Familiar with Adobe suite (Photoshop, Illustrator, XD)
+            </p>
+
+            <p class="content">
+              Basic understanding of HTML/CSS
+            </p>
+
+            <p class="content">
+              Basic understanding and experience of digital devices such as smartphone, tablet…
+            </p>
+
+            <p class="content">
+              Nice to have: Experience of working for Japanese company or Web design project for Japanese clients.
+            </p>
+
+            <p class="content">
+              Personalities: Attention to details, Excellent time management and task planning skill, Eagerness to learn
+              new things…
+            </p>
+
+            <p class="content">
+              PORTFOLIO MUST BE ATTACHED TOGETHER WITH CV FOR APPLICATION
+            </p>
+          </div>
+
+          <div class="job-requirement part">
+            <div class="title">
+              Các phúc lợi dành riêng cho bạn
+            </div>
+
+            <p class="content">
+              Friendly and supportive working environment
+            </p>
+
+            <p class="content">
+              Annual company trip
+            </p>
+
+            <p class="content">
+              Free English class to support for English study
+            </p>
+
+            <p class="content">
+              Company health insurance.
+            </p>
+
+            <p class="content">
+              General company activities (birthday party, football...).
+            </p>
+
+            <p class="content">
+              Full of snacks, fruits, ... in the kitchen to help yourself during work time.
+            </p>
+
+            <p class="content">
+              Career growth opportunities.
+            </p>
+
+            <p class="content">
+              Very competitive salary
+            </p>
+
+            <p class="content">
+              13th-month salary.
+            </p>
+
+            <p class="content">
+              Salary is reviewed twice per year based on performance
+            </p>
+          </div>
+
+          <div class="apply-btn button blue-btn">
+            Ứng tuyển ngay
+          </div>
+        </div>
+
+        <div class="jobs-showcase-wrapper">
+          <div class="title">
+            <h2>
+              1000 Công việc cho UI-UX đã tìm thấy
+            </h2>
+          </div>
+          <div class="jobs-showcase">
+            <a href="./jobs-details.html" class="jobs-item">
+              <div class="company-logo">
+                <img src="./resources/image/incepit-logo.jpg" alt="company-logo">
+              </div>
+
+              <div class="jobs-content">
+                <div class="company-name">
+                  IncepIT
+                </div>
+
+                <div class="job-name">
+                  UI-UX Designer (HTML5/JavaScript)
+                </div>
+
+                <div class="salary">
+                  <i class="fas fa-dollar-sign"></i> From $1.000
+                </div>
+
+                <div class="location-company-type">
+                  Hồ Chí Minh - Outsourcing
+                </div>
+
+                <div class="end-wrapper">
+                  <div class="requirement">
+                    <div class="requirement-item">
+                      UI-UX
+                    </div>
+
+                    <div class="requirement-item">
+                      HTML5
+                    </div>
+
+                    <div class="requirement-item">
+                      Designer
+                    </div>
+                  </div>
+
+                  <div class="time-post">
+                    Đã đăng: 1 phút trước
+                  </div>
+                </div>
+
+              </div>
+            </a>
+
+            <a href="./jobs-details.html" class="jobs-item">
+              <div class="company-logo">
+                <img src="./resources/image/incepit-logo.jpg" alt="company-logo">
+              </div>
+
+              <div class="jobs-content">
+                <div class="company-name">
+                  IncepIT
+                </div>
+
+                <div class="job-name">
+                  UI-UX Designer (HTML5/JavaScript)
+                </div>
+
+                <div class="salary">
+                  <i class="fas fa-dollar-sign"></i> From $1.000
+                </div>
+
+                <div class="location-company-type">
+                  Hồ Chí Minh - Outsourcing
+                </div>
+
+                <div class="end-wrapper">
+                  <div class="requirement">
+                    <div class="requirement-item">
+                      UI-UX
+                    </div>
+
+                    <div class="requirement-item">
+                      HTML5
+                    </div>
+
+                    <div class="requirement-item">
+                      Designer
+                    </div>
+                  </div>
+
+                  <div class="time-post">
+                    Đã đăng: 1 phút trước
+                  </div>
+                </div>
+
+              </div>
+            </a>
+
+            <a class="jobs-item">
+              <div class="company-logo">
+                <img src="./resources/image/incepit-logo.jpg" alt="company-logo">
+              </div>
+
+              <div class="jobs-content">
+                <div class="company-name">
+                  IncepIT
+                </div>
+
+                <div class="job-name">
+                  UI-UX Designer (HTML5/JavaScript)
+                </div>
+
+                <div class="salary">
+                  <i class="fas fa-dollar-sign"></i> From $1.000
+                </div>
+
+                <div class="location-company-type">
+                  Hồ Chí Minh - Outsourcing
+                </div>
+
+                <div class="end-wrapper">
+                  <div class="requirement">
+                    <div class="requirement-item">
+                      UI-UX
+                    </div>
+
+                    <div class="requirement-item">
+                      HTML5
+                    </div>
+
+                    <div class="requirement-item">
+                      Designer
+                    </div>
+                  </div>
+
+                  <div class="time-post">
+                    Đã đăng: 1 phút trước
+                  </div>
+                </div>
+
+              </div>
+            </a>
+
+            <a class="jobs-item">
+              <div class="company-logo">
+                <img src="./resources/image/incepit-logo.jpg" alt="company-logo">
+              </div>
+
+              <div class="jobs-content">
+                <div class="company-name">
+                  IncepIT
+                </div>
+
+                <div class="job-name">
+                  UI-UX Designer (HTML5/JavaScript)
+                </div>
+
+                <div class="salary">
+                  <i class="fas fa-dollar-sign"></i> From $1.000
+                </div>
+
+                <div class="location-company-type">
+                  Hồ Chí Minh - Outsourcing
+                </div>
+
+                <div class="end-wrapper">
+                  <div class="requirement">
+                    <div class="requirement-item">
+                      UI-UX
+                    </div>
+
+                    <div class="requirement-item">
+                      HTML5
+                    </div>
+
+                    <div class="requirement-item">
+                      Designer
+                    </div>
+                  </div>
+
+                  <div class="time-post">
+                    Đã đăng: 1 phút trước
+                  </div>
+                </div>
+
+              </div>
+            </a>
+
+            <a class="jobs-item">
+              <div class="company-logo">
+                <img src="./resources/image/incepit-logo.jpg" alt="company-logo">
+              </div>
+
+              <div class="jobs-content">
+                <div class="company-name">
+                  IncepIT
+                </div>
+
+                <div class="job-name">
+                  UI-UX Designer (HTML5/JavaScript)
+                </div>
+
+                <div class="salary">
+                  <i class="fas fa-dollar-sign"></i> From $1.000
+                </div>
+
+                <div class="location-company-type">
+                  Hồ Chí Minh - Outsourcing
+                </div>
+
+                <div class="end-wrapper">
+                  <div class="requirement">
+                    <div class="requirement-item">
+                      UI-UX
+                    </div>
+
+                    <div class="requirement-item">
+                      HTML5
+                    </div>
+
+                    <div class="requirement-item">
+                      Designer
+                    </div>
+                  </div>
+
+                  <div class="time-post">
+                    Đã đăng: 1 phút trước
+                  </div>
+                </div>
+
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="right-side">
+          <div class="company-infomation">
+            <div class="logo">
+              <img src="./resources/image/incepit-logo.jpg" alt="company-logo" class="img-fluid">
+            </div>
+
+            <div class="company-name">
+              IncepIT
+            </div>
+
+            <div class="short-description">
+              We are a young and expanding company, we're providing services for Software development like Web, Mobile,
+              Enterprise applications to companies globally. Our team has just more than 20 people with highly skilled,
+              and most having work experience in diverse areas of Software development. We have been providing the best
+              works and success to our customer, their success is our happiness in working.
+            </div>
+
+            <div class="company-type icon">
+              <i class="fas fa-cog fa-fw"></i> Outsourcing
+            </div>
+
+            <div class="company-size icon">
+              <i class="fas fa-users fa-fw"></i> 10 - 24 người
+            </div>
+
+            <div class="company-day-working icon">
+              <i class="fas fa-calendar-alt fa-fw"></i> Thứ 2 - Thứ 6
+            </div>
+          </div>
+
+          <div class="email-for-jobs">
+            <h2 class="title">
+              Nhận thông báo việc làm
+            </h2>
+
+            <input type="text" class="form-control email-input" placeholder="Để lại email của bạn">
+
+            <button class="button orange-btn send-email-btn">Nhận việc làm tương tự</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+  <script src="./resources/js/jobs-page.js"></script>
+  <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
+  <script>
+    let fullDetails = $('.short-description').text();
+    let shortDetails = $('.short-description').text().slice(0, 190);
+    $(function () {
+      let seeMoreTextBtn = `<span class="see-more text-btn">Xem thêm <i class="far fa-plus-square"></i></span>`;
+      let moreDetails = $('.short-description').text().slice(190);
+      $('.short-description').text(`${shortDetails} ... `);
+      $('.short-description').append(seeMoreTextBtn);
+    })
+
+    $(document).on('click', function (e) {
+      let target = e.target || window.event.target;
+      let lessTextBtn = `<span class="less text-btn">Rút gọn <i class="far fa-minus-square"></i></span>`;
+      let seeMoreTextBtn = `<span class="see-more text-btn">Xem thêm <i class="far fa-plus-square"></i></span>`;
+
+      if (target.closest('.see-more.text-btn')) {
+
+        $('.short-description').text(fullDetails);
+        $('.short-description').append(lessTextBtn);
+      }
+
+      if (target.closest('.less.text-btn')) {
+
+        $('.short-description').text(`${shortDetails} ... `);
+        $('.short-description').append(seeMoreTextBtn);
+      }
+    })
+  </script>
+</body>
+
+</html>

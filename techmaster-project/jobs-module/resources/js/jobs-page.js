@@ -1,6 +1,6 @@
 $(function () {
-  $('.jobs-carousel-content').slick({
-    slidesToShow: 2,
+  $('.hot-jobs-wrapper').slick({
+    slidesToShow: 1,
     slidesToScroll: 1,
     prevArrow: $('.prev-arrow'),
     nextArrow: $('.next-arrow'),
@@ -20,5 +20,12 @@ $(function () {
         }
       }
     ]
+  });
+
+  $('.jobs-showcase').infiniteScroll({
+    // options
+    path: '.pagination__next',
+    append: '.jobs-item',
+    history: false,
   });
 })  

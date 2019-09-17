@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>AI recognize film rating</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    h1,
+    h2 {
+      text-align: center;
+    }
+
+    h2 {
+      margin-top: 50px;
+    }
+
+    .content-wrapper {
+      max-width: 1200px;
+      margin: auto;
+      margin-top: 50px;
+      height: auto;
+      padding: 50px;
+    }
+
+    #review-content {
+      width: 80%;
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      padding: 10px;
+    }
+
+    .btns {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .btn {
+      padding: 15px;
+      margin-left: 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      border: transparent;
+    }
+
+    .submit-btn {
+      background-color: #3C78E8;
+      color: white;
+    }
+
+    .reset-btn {
+      margin-top: 20px;
+      background-color: #bbb;
+      color: white;
+    }
+
+    .field-wrapper {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      align-items: flex-start;
+    }
+
+    .emotion {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .emotion-icon {
+      width: 60px;
+      height: 60px;
+    }
+
+    .emotion-icon:nth-child(even) {
+      margin: 0 20px;
+    }
+
+    .sample-content {
+      margin: 50px 0;
+    }
+
+    .sample-content-item {
+      font-size: 1rem;
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      padding: 24px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .sample-content-item:nth-child(even) {
+      margin: 30px 0;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>
+    AI recognize film rating
+  </h1>
+  <div class="content-wrapper">
+    <form action="">
+      <label for="review-content">
+        Write a review:
+      </label>
+
+      <div class="field-wrapper">
+        <textarea name="review-content" id="review-content" rows="10"></textarea>
+
+        <div class="btns">
+          <button type="submit" class="submit-btn btn">Submit your review</button>
+
+          <button type="reset" class="reset-btn btn">Reset</button>
+        </div>
+      </div>
+
+    </form>
+
+    <div class="emotion">
+
+      <div class="emotion-icon hate">
+      </div>
+
+      <div class="emotion-icon dislike">
+      </div>
+
+      <div class="emotion-icon normal">
+      </div>
+
+      <div class="emotion-icon like">
+      </div>
+
+      <div class="emotion-icon love">
+      </div>
+
+    </div>
+
+    <div class="sample-content">
+      <h2>
+        Sample content
+      </h2>
+
+      <div class="sample-content-item">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+        deserunt mollit anim id est laborum."</div>
+
+      <div class="sample-content-item">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+        doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
+        vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+        consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem
+        ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut
+        labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam
+        corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit
+        qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas
+        nulla pariatur?"</div>
+
+      <div class="sample-content-item">"But I must explain to you how all this mistaken idea of denouncing pleasure and
+        praising pain was born and I will give you a complete account of the system, and expound the actual teachings of
+        the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids
+        pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally
+        encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to
+        obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain
+        can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical
+        exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to
+        enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant
+        pleasure?"</div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script>
+    $('.sample-content-item').on('click', function () {
+      let itemContent = $(this).text().replace(/\s\s+/g, ' ');
+      $('#review-content').val(itemContent);
+    })
+  </script>
+</body>
+
+</html>
