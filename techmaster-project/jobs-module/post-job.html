@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+  <link rel="stylesheet" href="./resources/css/main.css">
+  <style>
+    .container-fluid {
+      margin-top: 50px;
+    }
+
+    .short-details-wrapper {
+      background-color: white;
+    }
+
+    .short-details-wrapper .container {
+      padding: 37px 40px;
+      text-align: center;
+      padding: 102px 0;
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 30px;
+      line-height: 35px;
+    }
+
+    .job-link {
+      color: #3C78E8;
+    }
+
+    .job-link:hover {
+      color: #1855c8;
+    }
+
+    .blue-line {
+      border-bottom: 3px solid #3C78E8;
+      width: 100px;
+      margin: auto;
+      margin-top: 20px;
+    }
+
+    .main-content-wrapper {
+      margin-top: 50px;
+    }
+
+    .content-wrapper {
+      background: #FFFFFF;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+      border-radius: 4px;
+      padding: 24px 24px 60px 24px;
+    }
+
+    .common-information {
+      margin-bottom: 50px;
+    }
+
+    .sub-title {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    .input-wrapper {
+      margin-top: 50px;
+    }
+
+    .form-control {
+      font-weight: 300;
+    }
+
+    .form-group {
+      margin-bottom: 0;
+    }
+
+    .input-field {
+      margin-top: 20px;
+    }
+
+    .input-field:first-child {
+      margin: 0;
+    }
+
+    .job-multi-info-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 20px;
+    }
+
+    .right-sidebar form {
+      margin: 20px 0;
+    }
+
+    .right-sidebar button {
+      width: 100%;
+      padding: 15px 0;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 891px) {
+      .job-multi-info-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 20px;
+      }
+    }
+  </style>
+  <title>Jobs Details</title>
+</head>
+
+<body>
+  <div class="container-fluid short-details-wrapper">
+    <div class="container">
+      <div class="title">
+        Đăng tin tuyển dụng mới
+      </div>
+
+      <div class="blue-line"></div>
+    </div>
+  </div>
+
+  <div class="container main-content-wrapper">
+    <div class="row">
+      <div class="col-md-9 order-md-1 order-2">
+        <div class="common-information content-wrapper">
+          <div class="sub-title">
+            Thông tin chung
+          </div>
+
+          <div class="row">
+            <div class="col-10 mx-auto input-wrapper">
+              <div class="job-name input-field">
+                <form action="">
+                  <div class="form-group">
+                    <label for="jobName">Tên việc làm *</label>
+                    <input type="text" class="form-control" id="jobName" value="UI-UX Designer (HTML5/JavaScript)">
+                  </div>
+                </form>
+              </div>
+
+              <div class="job-address input-field">
+                <form action="">
+                  <div class="form-group">
+                    <label for="jobAddress">Địa chỉ *</label>
+                    <input type="text" class="form-control" id="jobAddress"
+                      value="Scetpa Building, 19a Cong Hoa Street, TP Hồ Chí Minh">
+                  </div>
+                </form>
+              </div>
+
+              <div class="job-multi-info-wrapper input-field">
+                <form action="">
+                  <div class="form-group">
+                    <label for="hire-number">Số lượng cần tuyển *</label>
+                    <input type="number" class="form-control" id="hire-number" value="1" min="1">
+                  </div>
+                </form>
+
+                <form action="">
+                  <div class="form-group">
+                    <label for="minSalary">Mức lương tối thiểu *</label>
+                    <input type="text" class="form-control" id="minSalary" value="$1000">
+                  </div>
+                </form>
+
+                <form action="">
+                  <div class="form-group">
+                    <label for="maxSalary">Mức lương tối đa *</label>
+                    <input type="text" class="form-control" id="maxSalary">
+                  </div>
+                </form>
+              </div>
+
+              <div class="skills-required input-field">
+                <form action="">
+                  <div class="form-group">
+                    <label for="skillsRequired">Kỹ năng cần có *</label>
+                    <input type="text" class="form-control" id="skillsRequired">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="full-details content-wrapper">
+          <div class="sub-title">
+            Chi tiết công việc
+          </div>
+
+          <div class="row">
+            <div class="col-10 mx-auto input-wrapper">
+              <div class="job-description input-field">
+                <form action="">
+                  <div class="form-group">
+                    <label for="jobDescription">Mô tả công việc *</label>
+                    <textarea class="form-control" id="jobDescription" rows="3"></textarea>
+                  </div>
+                </form>
+              </div>
+
+              <div class="job-required input-field">
+                <form action="">
+                  <div class="form-group">
+                    <label for="jobRequired">Yêu cầu công việc *</label>
+                    <textarea class="form-control" id="jobRequired" rows="3"></textarea>
+                  </div>
+                </form>
+              </div>
+
+              <div class="job-welfare input-field">
+                <form action="">
+                  <div class="form-group">
+                    <label for="jobsWelfare">Phúc lợi cho ứng viên *</label>
+                    <textarea class="form-control" id="jobsWelfare" rows="3"></textarea>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 order-md-2 order-1">
+        <div class="right-sidebar">
+          <div class="sub-title">
+            Trạng thái
+          </div>
+
+          <form action="">
+            <div class="form-group">
+              <select class="form-control" id="statusSelect">
+                <option>Công khai</option>
+                <option>Ẩn</option>
+              </select>
+            </div>
+          </form>
+
+          <button class="button orange-btn preview-job-btn">Xem thử</button>
+
+          <button class="button blue-btn post-job-btn">Đăng tin tuyển dụng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+  <script src="./resources/js/jobs-page.js"></script>
+  <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
+</body>
+
+</html>

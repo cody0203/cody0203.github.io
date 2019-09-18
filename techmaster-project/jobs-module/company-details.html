@@ -89,13 +89,181 @@
       margin-right: 10px;
     }
 
+    .main-content-wrapper {
+      margin-top: 50px;
+    }
+
+    .main-content-wrapper .title {
+      margin-bottom: 30px;
+      font-weight: bold;
+      font-size: 30px;
+      line-height: 35px;
+      text-align: center;
+    }
+
+    .main-content-wrapper .content-wrapper {
+      background: #FFFFFF;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+      border-radius: 4px;
+      padding: 24px;
+    }
+
+    .main-content-wrapper .content-wrapper.big-wrapper {
+      padding: 24px 24px 50px 24px;
+    }
+
+    .main-content-wrapper .main-content-header-blocks .content-wrapper {
+      height: 510px;
+      overflow-y: auto;
+    }
+
+
+    .main-content-wrapper .main-content-header-blocks .content-wrapper p {
+      font-size: 16px;
+      line-height: 19px;
+    }
+
+    .main-content-wrapper .main-content-header-blocks .item {
+      display: grid;
+      grid-template-columns: 0.1fr 1fr;
+      grid-column-gap: 30px;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .main-content-wrapper .main-content-header-blocks .item:last-child {
+      margin: 0;
+
+    }
+
+    .main-content-wrapper .main-content-header-blocks i {
+      font-size: 30px;
+      line-height: 34px;
+      color: #3C78E8;
+      text-align: left;
+    }
+
+    .main-content-wrapper .main-content-header-blocks .item .desc {
+      font-weight: 300;
+    }
+
+    .row {
+      margin-top: 50px;
+    }
+
+    .company-introduce .sub-title {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 28px;
+      margin-bottom: 16px;
+    }
+
+    .company-introduce .technologies-in-used-item-wrapper {
+      display: flex;
+      flex-flow: wrap;
+    }
+
+    .requirement-item {
+      padding: 2px 12px;
+      border-radius: 4px;
+      border: 1px solid #757575;
+      line-height: 1.1875rem;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+
+    .company-images-header {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .company-images-header i {
+      font-size: 24px;
+      line-height: 28px;
+      cursor: pointer;
+    }
+
+    .images-carousel {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .image-wrapper {
+      padding: 0 7px;
+    }
+
+    .jobs-showcase {
+      max-height: 500px;
+      overflow: auto;
+    }
+
+    .welfare-wrapper-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 17px;
+      grid-row-gap: 17px;
+      margin-bottom: 20px;
+    }
+
+    .welfare-item {
+      background: #FFFFFF;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+      border-radius: 4px;
+      padding: 24px 24px 50px 24px;
+      text-align: center;
+    }
+
+    .welfare-item .icon {
+      background: #3C78E8;
+      padding: 17px 23px;
+      display: inline-block;
+      border-radius: 500px;
+    }
+
+    .welfare-item i {
+      font-size: 40px;
+      line-height: 46px;
+      text-align: center;
+      color: #FFFFFF;
+    }
+
+    .welfare-item .name {
+      font-size: 24px;
+      line-height: 28px;
+      margin: 20px 0;
+    }
+
+    .welfare-item .blue-line {
+      border-bottom: 3px solid #3C78E8;
+      max-width: 100px;
+      margin: auto;
+    }
+
+    .welfare-item .content {
+      font-size: 16px;
+      line-height: 19px;
+      margin-top: 30px;
+    }
+
     @media (max-width: 606px) {
       .short-details-wrapper .container {
         flex-flow: wrap;
       }
     }
+
+    @media (max-width: 992px) {
+      .welfare-wrapper-row {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .welfare-wrapper-row {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
-  <title>Jobs Details</title>
+  <title>Company Details</title>
 </head>
 
 <body>
@@ -136,6 +304,603 @@
     </div>
   </div>
 
+  <div class="container main-content-wrapper">
+    <div class="row">
+      <div class="main-content-header-blocks common-information col-lg-4">
+        <div class="title">
+          Thông tin chung
+        </div>
+
+        <div class="content-wrapper">
+          <div class="company-size item">
+            <i class="fas fa-users fa-fw"></i>
+            <div class="content">
+              <div class="name">
+                Quy mô công ty
+              </div>
+
+              <div class="desc">
+                Từ 10 - 24 nhân viên
+              </div>
+            </div>
+          </div>
+
+          <div class="jobs-available item">
+            <i class="fas fa-briefcase fa-fw"></i>
+            <div class="content">
+              <div class="name">
+                Công việc đang tuyển dụng
+              </div>
+
+              <div class="desc">
+                100 việc
+              </div>
+            </div>
+          </div>
+
+
+          <div class="company-subscribe item">
+            <i class="fas fa-eye fa-fw"></i>
+            <div class="content">
+              <div class="name">
+                Lượt theo dõi
+              </div>
+
+              <div class="desc">
+                1000 lượt
+              </div>
+            </div>
+          </div>
+
+          <div class="company-address item">
+            <i class="fas fa-map-marker-alt fa-fw"></i>
+            <div class="content">
+              <div class="name">
+                Địa chỉ
+              </div>
+
+              <div class="desc">
+                Scetpa Building, 19a Cong Hoa Street, TP Hồ Chí Minh
+              </div>
+            </div>
+          </div>
+
+          <div class="company-type item">
+            <i class="fas fa-cog fa-fw"></i>
+            <div class="content">
+              <div class="name">
+                Mô hình hoạt động
+              </div>
+
+              <div class="desc">
+                Outsourcing
+              </div>
+            </div>
+          </div>
+
+          <div class="company-size item">
+            <i class="fas fa-calendar-alt fa-fw"></i>
+            <div class="content">
+              <div class="name">
+                Thời gian làm việc
+              </div>
+
+              <div class="desc">
+                Từ thứ 2 - thứ 6
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="main-content-header-blocks core-values col-lg-4">
+        <div class="title">
+          Giá trị cốt lõi
+        </div>
+
+        <div class="content-wrapper">
+          <p>
+            Our primary focus is our people and delivery highest quality works to our great customer. We always find the
+            best solution with highly respectful for every contribution of the individual. If you would like to find an
+            environment with mutual support, under a little supervision, our company is a good place for you to
+            experience
+            and learn more skills in your work life.
+          </p>
+
+          <p>
+            Our primary focus is our people and delivery highest quality works to our great customer. We always find the
+            best solution with highly respectful for every contribution of the individual. If you would like to find an
+            environment with mutual support, under a little supervision, our company is a good place for you to
+            experience and learn more skills in your work life.
+          </p>
+        </div>
+      </div>
+
+      <div class="main-content-header-blocks address-map col-lg-4">
+        <div class="title">
+          Bản đồ
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="company-introduce col-12">
+        <div class="title">
+          Giới thiệu công ty
+        </div>
+
+        <div class="content-wrapper big-wrapper">
+          <div class="main-introduce">
+            <div class="sub-title">
+              Just do the right thing
+            </div>
+
+            <div class="main-introduce-content">
+              <p>
+                We are a young and expanding company, we're providing services for Software development like Web,
+                Mobile,
+                Enterprise applications to companies globally. Our team has just more than 20 people with highly
+                skilled,
+                and most having work experience in diverse areas of Software development. We have been providing the
+                best
+                works and success to our customer, their success is our happiness in working.
+              </p>
+              <p>
+                Our primary focus is our people and delivery highest quality works to our great customer. We always find
+                the
+                best solution with highly respectful for every contribution of the individual. If you would like to find
+                an
+                environment with mutual support, under a little supervision, our company is a good place for you to
+                experience
+                and learn more skills in your work life.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="technologies-in-used">
+            <div class="sub-title">
+              Công nghệ sử dụng
+            </div>
+
+            <div class="technologies-in-used-item-wrapper">
+              <div class="requirement-item">
+                UI-UX
+              </div>
+
+              <div class="requirement-item">
+                HTML5
+              </div>
+
+              <div class="requirement-item">
+                Designer
+              </div>
+
+              <div class="requirement-item">
+                Designer
+              </div>
+
+              <div class="requirement-item">
+                Designer
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="company-images-wrapper col-12">
+        <div class="company-images-header">
+          <i class="fas fa-chevron-left prev-arrow"></i>
+          <div class="title">
+            Trụ sở làm việc
+          </div>
+          <i class="fas fa-chevron-right next-arrow"></i>
+        </div>
+
+        <div class="images-carousel">
+          <div class="image-wrapper">
+            <img src="./resources/image/header-banner.jpg" alt="image" class="img-fluid company-images">
+          </div>
+          <div class="image-wrapper">
+            <img src="./resources/image/header-banner.jpg" alt="image" class="img-fluid company-images">
+          </div>
+
+          <div class="image-wrapper">
+            <img src="./resources/image/header-banner.jpg" alt="image" class="img-fluid company-images">
+          </div>
+
+          <div class="image-wrapper">
+            <img src="./resources/image/header-banner.jpg" alt="image" class="img-fluid company-images">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="jobs-available col-12">
+        <div class="title">
+          Cơ hội nghề nghiệp
+        </div>
+
+        <div class="jobs-showcase">
+          <a href="./jobs-details.html" class="jobs-item">
+            <div class="company-logo">
+              <img src="./resources/image/incepit-logo.jpg" alt="company-logo">
+            </div>
+
+            <div class="jobs-content">
+              <div class="company-name">
+                IncepIT
+              </div>
+
+              <div class="job-name">
+                UI-UX Designer (HTML5/JavaScript)
+              </div>
+
+              <div class="salary">
+                <i class="fas fa-dollar-sign"></i> From $1.000
+              </div>
+
+              <div class="location-company-type">
+                Hồ Chí Minh - Outsourcing
+              </div>
+
+              <div class="end-wrapper">
+                <div class="requirement">
+                  <div class="requirement-item">
+                    UI-UX
+                  </div>
+
+                  <div class="requirement-item">
+                    HTML5
+                  </div>
+
+                  <div class="requirement-item">
+                    Designer
+                  </div>
+                </div>
+
+                <div class="time-post">
+                  Đã đăng: 1 phút trước
+                </div>
+              </div>
+
+            </div>
+          </a>
+
+          <a href="./jobs-details.html" class="jobs-item">
+            <div class="company-logo">
+              <img src="./resources/image/incepit-logo.jpg" alt="company-logo">
+            </div>
+
+            <div class="jobs-content">
+              <div class="company-name">
+                IncepIT
+              </div>
+
+              <div class="job-name">
+                UI-UX Designer (HTML5/JavaScript)
+              </div>
+
+              <div class="salary">
+                <i class="fas fa-dollar-sign"></i> From $1.000
+              </div>
+
+              <div class="location-company-type">
+                Hồ Chí Minh - Outsourcing
+              </div>
+
+              <div class="end-wrapper">
+                <div class="requirement">
+                  <div class="requirement-item">
+                    UI-UX
+                  </div>
+
+                  <div class="requirement-item">
+                    HTML5
+                  </div>
+
+                  <div class="requirement-item">
+                    Designer
+                  </div>
+                </div>
+
+                <div class="time-post">
+                  Đã đăng: 1 phút trước
+                </div>
+              </div>
+
+            </div>
+          </a>
+
+          <a class="jobs-item">
+            <div class="company-logo">
+              <img src="./resources/image/incepit-logo.jpg" alt="company-logo">
+            </div>
+
+            <div class="jobs-content">
+              <div class="company-name">
+                IncepIT
+              </div>
+
+              <div class="job-name">
+                UI-UX Designer (HTML5/JavaScript)
+              </div>
+
+              <div class="salary">
+                <i class="fas fa-dollar-sign"></i> From $1.000
+              </div>
+
+              <div class="location-company-type">
+                Hồ Chí Minh - Outsourcing
+              </div>
+
+              <div class="end-wrapper">
+                <div class="requirement">
+                  <div class="requirement-item">
+                    UI-UX
+                  </div>
+
+                  <div class="requirement-item">
+                    HTML5
+                  </div>
+
+                  <div class="requirement-item">
+                    Designer
+                  </div>
+                </div>
+
+                <div class="time-post">
+                  Đã đăng: 1 phút trước
+                </div>
+              </div>
+
+            </div>
+          </a>
+
+          <a class="jobs-item">
+            <div class="company-logo">
+              <img src="./resources/image/incepit-logo.jpg" alt="company-logo">
+            </div>
+
+            <div class="jobs-content">
+              <div class="company-name">
+                IncepIT
+              </div>
+
+              <div class="job-name">
+                UI-UX Designer (HTML5/JavaScript)
+              </div>
+
+              <div class="salary">
+                <i class="fas fa-dollar-sign"></i> From $1.000
+              </div>
+
+              <div class="location-company-type">
+                Hồ Chí Minh - Outsourcing
+              </div>
+
+              <div class="end-wrapper">
+                <div class="requirement">
+                  <div class="requirement-item">
+                    UI-UX
+                  </div>
+
+                  <div class="requirement-item">
+                    HTML5
+                  </div>
+
+                  <div class="requirement-item">
+                    Designer
+                  </div>
+                </div>
+
+                <div class="time-post">
+                  Đã đăng: 1 phút trước
+                </div>
+              </div>
+
+            </div>
+          </a>
+
+          <a class="jobs-item">
+            <div class="company-logo">
+              <img src="./resources/image/incepit-logo.jpg" alt="company-logo">
+            </div>
+
+            <div class="jobs-content">
+              <div class="company-name">
+                IncepIT
+              </div>
+
+              <div class="job-name">
+                UI-UX Designer (HTML5/JavaScript)
+              </div>
+
+              <div class="salary">
+                <i class="fas fa-dollar-sign"></i> From $1.000
+              </div>
+
+              <div class="location-company-type">
+                Hồ Chí Minh - Outsourcing
+              </div>
+
+              <div class="end-wrapper">
+                <div class="requirement">
+                  <div class="requirement-item">
+                    UI-UX
+                  </div>
+
+                  <div class="requirement-item">
+                    HTML5
+                  </div>
+
+                  <div class="requirement-item">
+                    Designer
+                  </div>
+                </div>
+
+                <div class="time-post">
+                  Đã đăng: 1 phút trước
+                </div>
+              </div>
+
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="welfare col-12">
+        <div class="title">
+          Phúc lợi nhân viên
+        </div>
+
+        <div class="welfare-wrapper-row">
+          <div class="welfare-item">
+            <div class="welfare-type">
+              <div class="icon">
+                <i class="fas fa-user-md"></i>
+
+              </div>
+
+              <div class="name">
+                Chăm sóc sức khỏe
+              </div>
+
+              <div class="blue-line"></div>
+            </div>
+
+            <div class="content">
+              Các nhân viên được nhận gói bảo hiểm cao cấp trị giá tương đương 40 triệu/năm - khám và chữa bệnh ở các
+              bệnh viện, phòng khám cao cấp. Được hưởng đầy đủ các chế độ BHXH, BHYT. IncepIT luôn đề cao tinh thần
+              "work-life balance" qua các chính sách như phụ cấp cho các câu lạc bộ đội nhóm như cầu lông, bóng chuyền;
+              ứng lương khi cần thiết.
+            </div>
+          </div>
+
+          <div class="welfare-item">
+            <div class="welfare-type">
+              <div class="icon">
+                <i class="fas fa-user-md"></i>
+
+              </div>
+
+              <div class="name">
+                Chăm sóc sức khỏe
+              </div>
+
+              <div class="blue-line"></div>
+            </div>
+
+            <div class="content">
+              Các nhân viên được nhận gói bảo hiểm cao cấp trị giá tương đương 40 triệu/năm - khám và chữa bệnh ở các
+              bệnh viện, phòng khám cao cấp. Được hưởng đầy đủ các chế độ BHXH, BHYT. IncepIT luôn đề cao tinh thần
+              "work-life balance" qua các chính sách như phụ cấp cho các câu lạc bộ đội nhóm như cầu lông, bóng chuyền;
+              ứng lương khi cần thiết.
+            </div>
+          </div>
+
+          <div class="welfare-item">
+            <div class="welfare-type">
+              <div class="icon">
+                <i class="fas fa-user-md"></i>
+
+              </div>
+
+              <div class="name">
+                Chăm sóc sức khỏe
+              </div>
+
+              <div class="blue-line"></div>
+            </div>
+
+            <div class="content">
+              Các nhân viên được nhận gói bảo hiểm cao cấp trị giá tương đương 40 triệu/năm - khám và chữa bệnh ở các
+              bệnh viện, phòng khám cao cấp. Được hưởng đầy đủ các chế độ BHXH, BHYT. IncepIT luôn đề cao tinh thần
+              "work-life balance" qua các chính sách như phụ cấp cho các câu lạc bộ đội nhóm như cầu lông, bóng chuyền;
+              ứng lương khi cần thiết.
+            </div>
+          </div>
+
+          <div class="welfare-item">
+            <div class="welfare-type">
+              <div class="icon">
+                <i class="fas fa-user-md"></i>
+
+              </div>
+
+              <div class="name">
+                Chăm sóc sức khỏe
+              </div>
+
+              <div class="blue-line"></div>
+            </div>
+
+            <div class="content">
+              Các nhân viên được nhận gói bảo hiểm cao cấp trị giá tương đương 40 triệu/năm - khám và chữa bệnh ở các
+              bệnh viện, phòng khám cao cấp. Được hưởng đầy đủ các chế độ BHXH, BHYT. IncepIT luôn đề cao tinh thần
+              "work-life balance" qua các chính sách như phụ cấp cho các câu lạc bộ đội nhóm như cầu lông, bóng chuyền;
+              ứng lương khi cần thiết.
+            </div>
+          </div>
+
+          <div class="welfare-item">
+            <div class="welfare-type">
+              <div class="icon">
+                <i class="fas fa-user-md"></i>
+
+              </div>
+
+              <div class="name">
+                Chăm sóc sức khỏe
+              </div>
+
+              <div class="blue-line"></div>
+            </div>
+
+            <div class="content">
+              Các nhân viên được nhận gói bảo hiểm cao cấp trị giá tương đương 40 triệu/năm - khám và chữa bệnh ở các
+              bệnh viện, phòng khám cao cấp. Được hưởng đầy đủ các chế độ BHXH, BHYT. IncepIT luôn đề cao tinh thần
+              "work-life balance" qua các chính sách như phụ cấp cho các câu lạc bộ đội nhóm như cầu lông, bóng chuyền;
+              ứng lương khi cần thiết.
+            </div>
+          </div>
+
+          <div class="welfare-item">
+            <div class="welfare-type">
+              <div class="icon">
+                <i class="fas fa-user-md"></i>
+
+              </div>
+
+              <div class="name">
+                Chăm sóc sức khỏe
+              </div>
+
+              <div class="blue-line"></div>
+            </div>
+
+            <div class="content">
+              Các nhân viên được nhận gói bảo hiểm cao cấp trị giá tương đương 40 triệu/năm - khám và chữa bệnh ở các
+              bệnh viện, phòng khám cao cấp. Được hưởng đầy đủ các chế độ BHXH, BHYT. IncepIT luôn đề cao tinh thần
+              "work-life balance" qua các chính sách như phụ cấp cho các câu lạc bộ đội nhóm như cầu lông, bóng chuyền;
+              ứng lương khi cần thiết.
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -149,8 +914,8 @@
     crossorigin="anonymous"></script>
   <script type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-  <script src="./resources/js/jobs-page.js"></script>
   <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
+  <script src="./resources/js/company-details.js"></script>
 </body>
 
 </html>
