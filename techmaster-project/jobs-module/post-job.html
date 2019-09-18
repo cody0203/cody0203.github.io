@@ -9,10 +9,6 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
   <link rel="stylesheet" href="./resources/css/main.css">
   <style>
@@ -139,7 +135,7 @@
           </div>
 
           <div class="row">
-            <div class="col-10 mx-auto input-wrapper">
+            <div class="col-md-10 col-12 mx-auto input-wrapper">
               <div class="job-name input-field">
                 <form action="">
                   <div class="form-group">
@@ -162,8 +158,8 @@
               <div class="job-multi-info-wrapper input-field">
                 <form action="">
                   <div class="form-group">
-                    <label for="hire-number">Số lượng cần tuyển *</label>
-                    <input type="number" class="form-control" id="hire-number" value="1" min="1">
+                    <label for="hireNumber">Số lượng cần tuyển *</label>
+                    <input type="number" class="form-control" id="hireNumber" value="1" min="1">
                   </div>
                 </form>
 
@@ -200,7 +196,7 @@
           </div>
 
           <div class="row">
-            <div class="col-10 mx-auto input-wrapper">
+            <div class="col-md-10 col-12 mx-auto input-wrapper">
               <div class="job-description input-field">
                 <form action="">
                   <div class="form-group">
@@ -233,7 +229,7 @@
       </div>
 
       <div class="col-md-3 order-md-2 order-1">
-        <div class="right-sidebar">
+        <div class="right-sidebar sticky-top">
           <div class="sub-title">
             Trạng thái
           </div>
@@ -241,8 +237,8 @@
           <form action="">
             <div class="form-group">
               <select class="form-control" id="statusSelect">
-                <option>Công khai</option>
-                <option>Ẩn</option>
+                <option value="Công khai">Công khai</option>
+                <option value="Ẩn">Ẩn</option>
               </select>
             </div>
           </form>
@@ -266,10 +262,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-  <script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
   <script src="./resources/js/jobs-page.js"></script>
-  <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
 </body>
 
 </html>

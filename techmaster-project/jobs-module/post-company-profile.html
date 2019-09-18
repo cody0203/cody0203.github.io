@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+  <link rel="stylesheet" href="./resources/css/main.css">
+  <style>
+    .container-fluid {
+      margin-top: 50px;
+    }
+
+    .short-details-wrapper {
+      background-color: white;
+    }
+
+    .short-details-wrapper .container {
+      padding: 37px 40px;
+      text-align: center;
+      padding: 102px 0;
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 30px;
+      line-height: 35px;
+    }
+
+    .job-link {
+      color: #3C78E8;
+    }
+
+    .job-link:hover {
+      color: #1855c8;
+    }
+
+    .blue-line {
+      border-bottom: 3px solid #3C78E8;
+      width: 100px;
+      margin: auto;
+      margin-top: 20px;
+    }
+
+    .main-content-wrapper {
+      margin-top: 50px;
+    }
+
+    .content-wrapper {
+      background: #FFFFFF;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+      border-radius: 4px;
+      padding: 24px 24px 60px 24px;
+    }
+
+    .content-wrapper {
+      margin-bottom: 50px;
+    }
+
+    .sub-title {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    .input-wrapper {
+      margin-top: 50px;
+    }
+
+    .form-control {
+      font-weight: 300;
+    }
+
+    .form-group {
+      margin-bottom: 0;
+    }
+
+    .input-field {
+      margin-top: 20px;
+    }
+
+    .input-field:first-child {
+      margin: 0;
+    }
+
+    .company-logo-upload-btn {
+      padding: 11px 29px;
+      margin-top: 10px
+    }
+
+    .job-multi-info-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 20px;
+    }
+
+    .right-sidebar form {
+      margin: 20px 0;
+    }
+
+    .right-sidebar button {
+      width: 100%;
+      padding: 15px 0;
+      margin-bottom: 20px;
+    }
+
+    .upload-input {
+      position: absolute;
+      display: none;
+    }
+
+    .upload-btn {
+      cursor: pointer;
+      display: inline-block;
+      padding: 11px 29px;
+      margin-top: 10px;
+    }
+
+    .welfare-wrapper {
+      margin-top: 50px;
+    }
+
+    .welfare-item {
+      border: 1px solid #E3E3E3;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+
+    .welfare-item .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 7px 20px;
+      background-color: #E3E3E3;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .welfare-item .header .name {
+      display: flex;
+      align-items: center;
+    }
+
+    .welfare-item .header .close-icon {
+      font-size: 12px;
+      line-height: 14px;
+      color: #EF5321;
+      margin-right: 20px;
+    }
+
+    .welfare-content {
+      padding: 20px;
+      display: none;
+    }
+
+    .welfare-details .form-group {
+      margin-bottom: 20px;
+    }
+
+    .delete-welfare-btn-wrapper {
+      text-align: right;
+    }
+
+    .delete-welfare-btn {
+      background-color: #EF5321;
+      padding: 11px 20px;
+      text-align: right;
+      display: inline-block;
+    }
+
+    .add-welfare {
+      padding: 11px 29px;
+    }
+
+    .welfare-item .header.showed {
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+
+    @media (max-width: 891px) {
+      .job-multi-info-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 20px;
+      }
+    }
+  </style>
+  <title>Post Company Profile</title>
+</head>
+
+<body>
+  <div class="container-fluid short-details-wrapper">
+    <div class="container">
+      <div class="title">
+        Tạo hồ sơ công ty
+      </div>
+
+      <div class="blue-line"></div>
+    </div>
+  </div>
+
+  <div class="container main-content-wrapper">
+    <div class="row">
+      <div class="col-md-9 order-md-1 order-2">
+        <div class="common-information content-wrapper">
+          <div class="sub-title">
+            Thông tin chung
+          </div>
+
+          <div class="row">
+            <div class="col-md-10 col-12 mx-auto input-wrapper">
+              <form action="">
+                <div class="job-name input-field">
+                  <div class="form-group">
+                    <label for="jobName">Tên công ty *</label>
+                    <input type="text" class="form-control" id="jobName" value="IncepIT">
+                  </div>
+                </div>
+
+                <div class="job-address input-field">
+                  <div class="form-group">
+                    <label for="jobAddress">Địa chỉ *</label>
+                    <input type="text" class="form-control" id="jobAddress"
+                      value="Scetpa Building, 19a Cong Hoa Street, TP Hồ Chí Minh">
+                  </div>
+                </div>
+
+                <div class="job-multi-info-wrapper input-field">
+                  <div class="form-group">
+                    <label for="companyType">Mô hình hoạt động *</label>
+                    <select class="form-control" id="companyType">
+                      <option value="Outsourcing">Outsourcing</option>
+                      <option value="Product">Product</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="companySize">Quy mô công ty *</label>
+                    <select class="form-control" id="companySize">
+                      <option value="Từ 0 - 25 nhân viên">Từ 0 - 25 nhân viên</option>
+                      <option value="Từ 25 - 50 nhân viên">Từ 25 - 50 nhân viên</option>
+                      <option value="Từ 50 - 100 nhân viên">Từ 50 - 100 nhân viên</option>
+                      <option value="Từ 100 - 500 nhân viên">Từ 100 - 500 nhân viên</option>
+                      <option value="Trên 500 nhân viên">Trên 500 nhân viên</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="companyWorkingDay">Thời gian làm việc *</label>
+                    <select class="form-control" id="companyWorkingDay">
+                      <option value="Từ thứ 2 - thứ 6">Từ thứ 2 - thứ 6</option>
+                      <option value="Từ thứ 2 - thứ 7">Từ thứ 2 - thứ 7</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="skills-required input-field">
+                  <div class="form-group">
+                    <label for="skillsRequired">Lĩnh vực hoạt động *</label>
+                    <input type="text" class="form-control" id="skillsRequired">
+                  </div>
+                </div>
+
+                <div class="company-logo-upload-wrapper input-field">
+                  <div class="text">Logo công ty *</div>
+                  <div class="logo-showing"></div>
+                  <label class="company-logo-upload button upload-btn blue-btn" for="companyLogo">Thêm ảnh</label>
+                  <input type="file" class="upload-input" id="companyLogo">
+                  <small class="form-text text-muted">Kích thước ảnh 300 x 300px. Định dạng jpg hoặc png.</small>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="full-details content-wrapper">
+          <div class="sub-title">
+            Chi tiết về công ty
+          </div>
+
+          <div class="row">
+            <div class="col-md-10 col-12 mx-auto input-wrapper">
+              <form action="">
+                <div class="company-description input-field">
+                  <div class="form-group">
+                    <label for="companyDescription">Giới thiệu về công ty *</label>
+                    <textarea class="form-control" id="companyDescription" rows="3"></textarea>
+                  </div>
+                </div>
+
+                <div class="company-core-values input-field">
+                  <div class="form-group">
+                    <label for="companyCoreValues">Giá trị cốt lõi *</label>
+                    <textarea class="form-control" id="companyCoreValues" rows="3"></textarea>
+                  </div>
+                </div>
+
+                <div class="company-technologies-used input-field">
+                  <div class="form-group">
+                    <label for="technologiesUsed">Công nghệ sử dụng</label>
+                    <input class="form-control" id="technologiesUsed" />
+                  </div>
+                </div>
+
+                <div class="company-image-wrapper input-field">
+                  <div class="text">Hình ảnh về công ty</div>
+                  <div class="images-showing"></div>
+                  <label class="company-images-upload button upload-btn blue-btn" for="companyImages">Thêm ảnh</label>
+                  <input type="file" class="upload-input" id="companyImages">
+                  <small class="form-text text-muted">Kích thước tối thiểu: 400 x 300px. Có thể thêm tối đa 10 ảnh. Định
+                    dạng jpg hoặc png.</small>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="welfare-details content-wrapper">
+          <div class="sub-title">
+            Phúc lợi chung cho nhân viên
+          </div>
+          <div class="row">
+            <div class="col-md-10 col-12 mx-auto welfare-wrapper">
+              <form action="" class="welfare-item-wrapper">
+                <div class="welfare-item">
+                  <div class="header">
+                    <div class="name">
+                      <i class="fas fa-times close-icon"></i> Phúc lợi 1
+                    </div>
+
+                    <i class="fas fa-chevron-down"></i>
+                  </div>
+
+                  <div class="welfare-content">
+                    <div class="form-group">
+                      <label for="welfare-type">Phúc lợi</label>
+                      <select class="form-control" id="welfare-type">
+                        <option value="Chăm sóc sức khoẻ">Chăm sóc sức khoẻ</option>
+                        <option value="Ngày phép">Ngày phép</option>
+                        <option value="Đào tạo">Đào tạo</option>
+                        <option value="Giải thưởng">Giải thưởng</option>
+                        <option value="Các hoạt động gắn kết">Các hoạt động gắn kết</option>
+                        <option value="Pantry">Pantry</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="welfareContent">Nội dung</label>
+                      <textarea class="form-control" id="welfareContent" rows="3"></textarea>
+                    </div>
+
+                    <div class="delete-welfare-btn-wrapper">
+                      <div class="button delete-welfare-btn">Xoá phúc lợi</div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+
+              <button class="button blue-btn add-welfare">Thêm phúc lợi</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 order-md-2 order-1">
+        <div class="right-sidebar sticky-top">
+          <div class="sub-title">
+            Trạng thái
+          </div>
+
+          <form action="">
+            <div class="form-group">
+              <select class="form-control" id="statusSelect">
+                <option value="Công khai">Công khai</option>
+                <option value="Ẩn">Ẩn</option>
+              </select>
+            </div>
+          </form>
+
+          <button class="button orange-btn preview-job-btn">Xem thử</button>
+
+          <button class="button blue-btn post-job-btn">Tạo hồ sơ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script>
+    $(function () {
+
+    })
+
+    $(document).on('click', function (e) {
+      let target = e.target || window.event.target;
+      let welfareContent = $(target).next('.welfare-content');
+      if (welfareContent.css('display') == "none") {
+        $('.welfare-content').hide();
+        $(target).addClass('showed')
+        welfareContent.show();
+      } else {
+        $(target).removeClass('showed')
+        welfareContent.hide();
+      }
+
+      if (target.closest('.delete-welfare-btn') || target.closest('.close-icon')) {
+        $(target).parents('.welfare-item').remove()
+      }
+    })
+
+    $('.add-welfare').on('click', function () {
+      let welfareItem = `
+      <div class="welfare-item">
+        <div class="header showed">
+          <div class="name">
+            <i class="fas fa-times close-icon"></i> Phúc lợi 1
+          </div>
+
+          <i class="fas fa-chevron-down"></i>
+        </div>
+
+        <div class="welfare-content" style="display: block">
+          <div class="form-group">
+            <label for="welfare-type">Phúc lợi</label>
+            <select class="form-control" id="welfare-type">
+              <option value="Chăm sóc sức khoẻ">Chăm sóc sức khoẻ</option>
+              <option value="Ngày phép">Ngày phép</option>
+              <option value="Đào tạo">Đào tạo</option>
+              <option value="Giải thưởng">Giải thưởng</option>
+              <option value="Các hoạt động gắn kết">Các hoạt động gắn kết</option>
+              <option value="Pantry">Pantry</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="welfareContent">Nội dung</label>
+            <textarea class="form-control" id="welfareContent" rows="3"></textarea>
+          </div>
+
+          <div class="delete-welfare-btn-wrapper">
+            <div class="button delete-welfare-btn">Xoá phúc lợi</div>
+          </div>
+        </div>
+      </div>
+      `;
+      $('.welfare-content').hide();
+      $('.welfare-item-wrapper').append(welfareItem);
+    })
+
+    // function showWelfare(target) {
+    //   if (welfareContent.css('display') == "none") {
+    //     $('.welfare-content').hide();
+    //     welfareContent.show();
+    //   } else {
+    //     welfareContent.hide();
+    //   }
+    // }
+  </script>
+</body>
+
+</html>

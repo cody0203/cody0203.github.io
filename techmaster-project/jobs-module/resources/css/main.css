@@ -45,6 +45,7 @@ li {
   color: white;
   border: transparent;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .blue-btn {
