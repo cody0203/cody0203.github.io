@@ -94,26 +94,6 @@
       margin-bottom: 30px;
     }
 
-    .data-counting-wrapper {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-column-gap: 20px;
-    }
-
-    .data-counting-item {
-      background: #FFFFFF;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-      border-radius: 4px;
-      padding: 24px;
-    }
-
-    .data-counting-number {
-      font-weight: bold;
-      font-size: 32px;
-      line-height: 37px;
-      margin-top: 20px;
-    }
-
     .sub-title {
       font-weight: bold;
       font-size: 24px;
@@ -147,11 +127,6 @@
       padding: 0.75rem;
     }
 
-    .active-sidebar {
-      font-weight: bold;
-      color: #3C78E8;
-    }
-
     .breadcrum-child {
       font-weight: bold;
     }
@@ -163,15 +138,6 @@
     .small-btn {
       padding: 10px 18px;
       margin-right: 20px;
-    }
-
-    @media (max-width: 576px) {
-      .data-counting-wrapper {
-        grid-template-columns: none;
-        grid-template-rows: 1fr 1fr 1fr;
-        grid-row-gap: 20px;
-        text-align: center;
-      }
     }
 
     .update-fields-wrapper {
@@ -204,63 +170,6 @@
       display: inline-block;
       padding: 11px 29px;
       margin-top: 10px;
-    }
-
-    .welfare-item {
-      border: 1px solid #E3E3E3;
-      border-radius: 4px;
-      margin-bottom: 30px;
-    }
-
-    .welfare-item .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 7px 20px;
-      background-color: #E3E3E3;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    .welfare-item .header .name {
-      display: flex;
-      align-items: center;
-    }
-
-    .welfare-item .header .close-icon {
-      font-size: 12px;
-      line-height: 14px;
-      color: #EF5321;
-      margin-right: 20px;
-    }
-
-    .welfare-content {
-      padding: 20px;
-      display: none;
-    }
-
-    .welfare-details .form-group {
-      margin-bottom: 20px;
-    }
-
-    .delete-welfare-btn-wrapper {
-      text-align: right;
-    }
-
-    .delete-welfare-btn {
-      background-color: #EF5321;
-      padding: 11px 20px;
-      text-align: right;
-      display: inline-block;
-    }
-
-    .add-welfare {
-      padding: 11px 29px;
-    }
-
-    .welfare-item .header.showed {
-      border-bottom-left-radius: 0px;
-      border-bottom-right-radius: 0px;
     }
 
     .fa-sync {
@@ -329,7 +238,7 @@
             </a>
 
 
-            <a href="./management-job.html" class="sidebar-menu-item management-job">
+            <a href="./management-jobs.html" class="sidebar-menu-item management-job">
               <i class="fas fa-briefcase sidebar-menu-icon fa-fw"></i> <span class="sidebar-menu-name">Quản lý việc
                 làm</span>
             </a>
@@ -351,35 +260,55 @@
         <div class="jobs-showcase-wrapper">
           <div class="jobs-showcase table-responsive-lg">
             <table class="table table-bordered table-hover">
-              <thead class="thead-light">
-                <tr>
+              <thead>
+                <tr class="thead-light">
                   <th scope="col">Công việc</th>
                   <th scope="col">Trạng thái</th>
                   <th scope="col">Ngày đăng</th>
                   <th scope="col">Số CV ứng tuyển</th>
                 </tr>
+                <tr class="header-searching">
+                  <form action="">
+                    <th scope="col">
+                      <input type="text" class="form-control" id="jobSearch">
+                    </th>
+                    <th scope="col">
+                      <select class="form-control" id="statusType">
+                        <option>Tất cả</option>
+                        <option value="Công khai">Công khai</option>
+                        <option value="Ẩn">Ẩn</option>
+                      </select>
+                    </th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                  </form>
+                </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td class="job-link-wrapper"><a href="#" class="job-link">UI-UX Designer (HTML5/JavaScript)</a></td>
+                  <td class="job-link-wrapper"><a href="./job-management.html" class="job-link">UI-UX Designer
+                      (HTML5/JavaScript)</a></td>
                   <td class="status">Công khai</td>
                   <td>14/09/2019</td>
                   <td>20</td>
                 </tr>
                 <tr>
-                  <td class="job-link-wrapper"><a href="#" class="job-link">UI-UX Designer (HTML5/JavaScript)</a></td>
+                  <td class="job-link-wrapper"><a href="./job-management.html" class="job-link">UI-UX Designer
+                      (HTML5/JavaScript)</a></td>
                   <td class="status">Công khai</td>
                   <td>14/09/2019</td>
                   <td>20</td>
                 </tr>
                 <tr>
-                  <td class="job-link-wrapper"><a href="#" class="job-link">UI-UX Designer (HTML5/JavaScript)</a></td>
+                  <td class="job-link-wrapper"><a href="./job-management.html" class="job-link">UI-UX Designer
+                      (HTML5/JavaScript)</a></td>
                   <td class="status">Công khai</td>
                   <td>14/09/2019</td>
                   <td>20</td>
                 </tr>
                 <tr>
-                  <td class="job-link-wrapper"><a href="#" class="job-link">UI-UX Designer (HTML5/JavaScript)</a></td>
+                  <td class="job-link-wrapper"><a href="./job-management.html" class="job-link">UI-UX Designer
+                      (HTML5/JavaScript)</a></td>
                   <td class="status">Ẩn</td>
                   <td>14/09/2019</td>
                   <td>20</td>
@@ -405,71 +334,9 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-
   <script>
     $(function () {
       $('.management-job').children().addClass('active-sidebar')
-    })
-
-    $(document).on('click', function (e) {
-      let target = e.target || window.event.target;
-      if (target.closest('.delete-welfare-btn') || target.closest('.close-icon')) {
-        $(target).parents('.welfare-item').remove()
-      }
-    })
-
-    function collapseWelfare(target) {
-      let welfareContent = $(target).next('.welfare-content');
-      if (welfareContent.css('display') == "none") {
-        $('.welfare-content').hide();
-        $(target).addClass('showed')
-        welfareContent.show();
-        $(target).children('.dropdown-welfare').removeClass('fa-chevron-down').addClass('fa-chevron-up')
-      } else {
-        $(target).removeClass('showed')
-        $(target).children('.dropdown-welfare').removeClass('fa-chevron-up').addClass('fa-chevron-down')
-        welfareContent.hide();
-      }
-
-    }
-
-    $('.add-welfare').on('click', function () {
-      let welfareItem = `
-      <div class="welfare-item">
-        <div class="header showed" onclick="collapseWelfare(this)">
-          <div class="name">
-            <i class="fas fa-times close-icon"></i> Phúc lợi 1
-          </div>
-
-          <i class="fas fa-chevron-up dropdown-welfare"></i>
-        </div>
-
-        <div class="welfare-content" style="display: block">
-          <div class="form-group">
-            <label for="welfare-type">Phúc lợi</label>
-            <select class="form-control" id="welfare-type">
-              <option value="Chăm sóc sức khoẻ">Chăm sóc sức khoẻ</option>
-              <option value="Ngày phép">Ngày phép</option>
-              <option value="Đào tạo">Đào tạo</option>
-              <option value="Giải thưởng">Giải thưởng</option>
-              <option value="Các hoạt động gắn kết">Các hoạt động gắn kết</option>
-              <option value="Pantry">Pantry</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="welfareContent">Nội dung</label>
-            <textarea class="form-control" id="welfareContent" rows="3"></textarea>
-          </div>
-
-          <div class="delete-welfare-btn-wrapper">
-            <div class="button delete-welfare-btn">Xoá phúc lợi</div>
-          </div>
-        </div>
-      </div>
-      `;
-      $('.welfare-content').hide();
-      $('.welfare-item-wrapper').append(welfareItem);
     })
   </script>
 </body>

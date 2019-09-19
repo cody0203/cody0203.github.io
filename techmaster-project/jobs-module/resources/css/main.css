@@ -53,6 +53,11 @@ li {
   display: block;
 }
 
+.active-sidebar {
+  font-weight: bold;
+  color: #3C78E8;
+}
+
 .orange-btn {
   background: #FF6B1E;
 }
@@ -70,4 +75,8 @@ li {
 .form-control:focus {
   outline: 0;
   box-shadow: none;
+}
+
+.table .thead-light th {
+  min-width: 145px;
 }
