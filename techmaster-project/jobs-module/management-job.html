@@ -152,6 +152,19 @@
       color: #3C78E8;
     }
 
+    .breadcrum-child {
+      font-weight: bold;
+    }
+
+    .action-btns {
+      margin-bottom: 30px;
+    }
+
+    .small-btn {
+      padding: 10px 18px;
+      margin-right: 20px;
+    }
+
     @media (max-width: 576px) {
       .data-counting-wrapper {
         grid-template-columns: none;
@@ -161,9 +174,115 @@
       }
     }
 
+    .update-fields-wrapper {
+      background: #FFFFFF;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+      border-radius: 4px;
+    }
+
+    .update-fields-wrapper .nav-link {
+      border-top-width: 3px;
+      padding: 15px 24px;
+    }
+
+    .update-fields-wrapper .tab-content {
+      padding: 50px 0;
+    }
+
+    .update-fields-wrapper .nav-link.active {
+      border-top: 3px solid #3C78E8;
+    }
+
+    .job-multi-info-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 20px;
+    }
+
+    .upload-btn {
+      cursor: pointer;
+      display: inline-block;
+      padding: 11px 29px;
+      margin-top: 10px;
+    }
+
+    .welfare-item {
+      border: 1px solid #E3E3E3;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+
+    .welfare-item .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 7px 20px;
+      background-color: #E3E3E3;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .welfare-item .header .name {
+      display: flex;
+      align-items: center;
+    }
+
+    .welfare-item .header .close-icon {
+      font-size: 12px;
+      line-height: 14px;
+      color: #EF5321;
+      margin-right: 20px;
+    }
+
+    .welfare-content {
+      padding: 20px;
+      display: none;
+    }
+
+    .welfare-details .form-group {
+      margin-bottom: 20px;
+    }
+
+    .delete-welfare-btn-wrapper {
+      text-align: right;
+    }
+
+    .delete-welfare-btn {
+      background-color: #EF5321;
+      padding: 11px 20px;
+      text-align: right;
+      display: inline-block;
+    }
+
+    .add-welfare {
+      padding: 11px 29px;
+    }
+
+    .welfare-item .header.showed {
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+
+    .fa-sync {
+      font-size: 13px;
+      line-height: 15px;
+      color: #FFFFFF;
+    }
+
+    .jobs-showcase-wrapper {
+      background: #FFFFFF;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+      border-radius: 4px;
+      padding: 24px 24px 50px 24px;
+    }
+
     @media (max-width: 768px) {
       .col-lg-9 {
         margin-top: 20px;
+      }
+
+      .job-multi-info-wrapper {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -219,51 +338,23 @@
       </div>
 
       <div class="col-lg-9">
-        <div class="breadcrum-div">Dashboard ></div>
+        <div class="breadcrum-div">Dashboard > <span class="breadcrum-child">Quản lý việc làm</span></div>
 
-        <div class="data-counting-wrapper">
-          <div class="data-counting-item">
-            <div class="data-counting-name">
-              Số công việc đang tuyển dụng
-            </div>
+        <div class="action-btns">
+          <a href="./post-job.html">
+            <button class="button green-btn preview-btn small-btn">+ Đăng tin tuyển dụng</button>
+          </a>
 
-            <div class="data-counting-number">
-              100
-            </div>
-          </div>
-
-          <div class="data-counting-item">
-            <div class="data-counting-name">
-              Số CV ứng tuyển
-            </div>
-
-            <div class="data-counting-number">
-              1000
-            </div>
-          </div>
-
-
-          <div class="data-counting-item">
-            <div class="data-counting-name">
-              Số lượt theo dõi
-            </div>
-
-            <div class="data-counting-number">
-              10000
-            </div>
-          </div>
+          <button class="button light-blue-btn update-btn small-btn"><i class="fas fa-sync"></i> Tải lại trang</button>
         </div>
 
-        <div class="newest-cv-wrapper">
-          <div class="sub-title">
-            CV mới nhận gần đây
-          </div>
-
-          <div class="newest-cv-data table-responsive-lg">
+        <div class="jobs-showcase-wrapper">
+          <div class="jobs-showcase table-responsive-lg">
             <table class="table table-bordered table-hover">
               <thead class="thead-light">
                 <tr>
                   <th scope="col">Công việc</th>
+                  <th scope="col">Trạng thái</th>
                   <th scope="col">Ngày đăng</th>
                   <th scope="col">Số CV ứng tuyển</th>
                 </tr>
@@ -271,21 +362,25 @@
               <tbody>
                 <tr>
                   <td class="job-link-wrapper"><a href="#" class="job-link">UI-UX Designer (HTML5/JavaScript)</a></td>
+                  <td class="status">Công khai</td>
                   <td>14/09/2019</td>
                   <td>20</td>
                 </tr>
                 <tr>
                   <td class="job-link-wrapper"><a href="#" class="job-link">UI-UX Designer (HTML5/JavaScript)</a></td>
+                  <td class="status">Công khai</td>
                   <td>14/09/2019</td>
                   <td>20</td>
                 </tr>
                 <tr>
                   <td class="job-link-wrapper"><a href="#" class="job-link">UI-UX Designer (HTML5/JavaScript)</a></td>
+                  <td class="status">Công khai</td>
                   <td>14/09/2019</td>
                   <td>20</td>
                 </tr>
                 <tr>
                   <td class="job-link-wrapper"><a href="#" class="job-link">UI-UX Designer (HTML5/JavaScript)</a></td>
+                  <td class="status">Ẩn</td>
                   <td>14/09/2019</td>
                   <td>20</td>
                 </tr>
@@ -293,6 +388,7 @@
             </table>
           </div>
         </div>
+
       </div>
 
     </div>
@@ -312,7 +408,68 @@
 
   <script>
     $(function () {
-      $('.dashboard').children().addClass('active-sidebar')
+      $('.management-job').children().addClass('active-sidebar')
+    })
+
+    $(document).on('click', function (e) {
+      let target = e.target || window.event.target;
+      if (target.closest('.delete-welfare-btn') || target.closest('.close-icon')) {
+        $(target).parents('.welfare-item').remove()
+      }
+    })
+
+    function collapseWelfare(target) {
+      let welfareContent = $(target).next('.welfare-content');
+      if (welfareContent.css('display') == "none") {
+        $('.welfare-content').hide();
+        $(target).addClass('showed')
+        welfareContent.show();
+        $(target).children('.dropdown-welfare').removeClass('fa-chevron-down').addClass('fa-chevron-up')
+      } else {
+        $(target).removeClass('showed')
+        $(target).children('.dropdown-welfare').removeClass('fa-chevron-up').addClass('fa-chevron-down')
+        welfareContent.hide();
+      }
+
+    }
+
+    $('.add-welfare').on('click', function () {
+      let welfareItem = `
+      <div class="welfare-item">
+        <div class="header showed" onclick="collapseWelfare(this)">
+          <div class="name">
+            <i class="fas fa-times close-icon"></i> Phúc lợi 1
+          </div>
+
+          <i class="fas fa-chevron-up dropdown-welfare"></i>
+        </div>
+
+        <div class="welfare-content" style="display: block">
+          <div class="form-group">
+            <label for="welfare-type">Phúc lợi</label>
+            <select class="form-control" id="welfare-type">
+              <option value="Chăm sóc sức khoẻ">Chăm sóc sức khoẻ</option>
+              <option value="Ngày phép">Ngày phép</option>
+              <option value="Đào tạo">Đào tạo</option>
+              <option value="Giải thưởng">Giải thưởng</option>
+              <option value="Các hoạt động gắn kết">Các hoạt động gắn kết</option>
+              <option value="Pantry">Pantry</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="welfareContent">Nội dung</label>
+            <textarea class="form-control" id="welfareContent" rows="3"></textarea>
+          </div>
+
+          <div class="delete-welfare-btn-wrapper">
+            <div class="button delete-welfare-btn">Xoá phúc lợi</div>
+          </div>
+        </div>
+      </div>
+      `;
+      $('.welfare-content').hide();
+      $('.welfare-item-wrapper').append(welfareItem);
     })
   </script>
 </body>

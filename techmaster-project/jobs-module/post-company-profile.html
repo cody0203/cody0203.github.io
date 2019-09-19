@@ -402,10 +402,6 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
   <script>
-    $(function () {
-
-    })
-
     $(document).on('click', function (e) {
       let target = e.target || window.event.target;
       if (target.closest('.delete-welfare-btn') || target.closest('.close-icon')) {
@@ -466,15 +462,6 @@
       $('.welfare-content').hide();
       $('.welfare-item-wrapper').append(welfareItem);
     })
-
-    // function showWelfare(target) {
-    //   if (welfareContent.css('display') == "none") {
-    //     $('.welfare-content').hide();
-    //     welfareContent.show();
-    //   } else {
-    //     welfareContent.hide();
-    //   }
-    // }
   </script>
 </body>
 
