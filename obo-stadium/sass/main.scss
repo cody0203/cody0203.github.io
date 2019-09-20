@@ -180,8 +180,8 @@ button {
 
 .back-to-top {
     position: fixed;
-    right: 30px;
-    bottom: 30px;
+    right: 20px;
+    bottom: 55px;
     z-index: 105;
     display: none;
 
@@ -212,8 +212,8 @@ footer {
 }
 
 footer .row {
-    padding-top: $forty-pixel;
-    padding-bottom: $forty-pixel;
+    padding-top: $twenty-four-pixel;
+    padding-bottom: $twenty-four-pixel;
 }
 
 footer .footer-link .item {
@@ -223,6 +223,32 @@ footer .footer-link .item {
 
     &:hover {
         color: $hover-white-color;
+    }
+}
+
+.top-header {
+    background-color: #1f1f1f;
+        // border-top: 1px solid $product-text-grey;
+    padding: 10px 0;
+    & .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+    }
+    & a {
+        color: white;
+    }
+    & .social-icon {
+        font-size: $twenty-pixel;
+    }
+
+    & .social-icon .fa-instagram {
+        margin: 0 10px;
+    }
+
+    & .social-icon .fa-facebook-square:hover {
+        color: $product-border-color;
     }
 }
 

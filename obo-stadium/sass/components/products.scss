@@ -8,6 +8,10 @@
     flex: 0 0 auto;
     margin-right: $fifteen-pixel;
     margin-bottom: $ten-pixel;
+
+    &:hover .shadow {
+        opacity: 1;
+    }
 }
 
 .card {
@@ -55,4 +59,6 @@
     z-index: -1;
     background: $shadow-background-color;
     box-shadow: $zero-pixel $four-pixel $ten-pixel rgba(0, 0, 0, 0.13) !important;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }

@@ -9,13 +9,17 @@
     margin-left: 10px;
     margin-right: 10px;
 
+    &:hover .shadow {
+        opacity: 1;
+    }
+
     & .card-img-top {
         padding: $zero-pixel;
     }
 
     & .card-body {
         padding: $sixteen-pixel $twenty-pixel $twenty-pixel $ten-pixel;
-        background-color: $text-white;
+        background-color: $product-border-color;
     }
 
     & .card-title {
