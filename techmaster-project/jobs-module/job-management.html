@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+  <link rel="stylesheet" href="./resources/css/main.css">
+  <style>
+    .container-fluid,
+    .container {
+      margin-top: 50px;
+    }
+
+    .short-details-wrapper {
+      background-color: white;
+    }
+
+    .short-details-wrapper .container {
+      padding: 37px 40px;
+      text-align: center;
+      padding: 102px 0;
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 30px;
+      line-height: 35px;
+    }
+
+    .blue-line {
+      border-bottom: 3px solid #3C78E8;
+      width: 100px;
+      margin: auto;
+      margin-top: 20px;
+    }
+
+    .right-sidebar {
+      background: #FFFFFF;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+      border-radius: 4px;
+      padding: 24px 0px 50px 0px;
+    }
+
+    .sidebar-content-wrapper {
+      padding: 0 24px;
+    }
+
+    .company-logo-wrapper {
+      margin-bottom: 30px;
+    }
+
+    .logo-wrapper {
+      max-width: 150px;
+      margin: auto;
+    }
+
+    .company-logo-upload-btn {
+      margin-top: 20px;
+      padding: 11px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .upload-input {
+      position: absolute;
+      display: none;
+    }
+
+    .cross-line {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    }
+
+    .sidebar-menu {
+      margin-top: 30px;
+    }
+
+    .sidebar-menu-item {
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .sidebar-menu-icon {
+      margin-right: 3px;
+      text-align: left;
+    }
+
+    .breadcrum-div {
+      margin-bottom: 30px;
+    }
+
+    .breadcrum-child {
+      font-weight: bold;
+    }
+
+    .action-field {
+      margin-bottom: 30px;
+    }
+
+    .small-btn {
+      padding: 10px 18px;
+      margin-right: 20px;
+    }
+
+    .fa-sync {
+      font-size: 13px;
+      line-height: 15px;
+      color: #FFFFFF;
+    }
+
+    .back-prev-page-btn {
+      color: #505863;
+      border: 1px solid #DDDDDD;
+    }
+
+    .update-fields-wrapper {
+      background: #FFFFFF;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+      border-radius: 4px;
+    }
+
+    .update-fields-wrapper .nav-link {
+      border-top-width: 3px;
+      padding: 15px 24px;
+    }
+
+    .update-fields-wrapper .tab-content {
+      padding: 50px 0;
+    }
+
+    .update-fields-wrapper .nav-link.active {
+      border-top: 3px solid #3C78E8;
+    }
+
+    .job-multi-info-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 20px;
+    }
+
+    .upload-btn {
+      cursor: pointer;
+      display: inline-block;
+      padding: 11px 29px;
+      margin-top: 10px;
+    }
+
+    .action-field form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: end;
+    }
+
+    .change-job-status .text {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .col-lg-9 {
+        margin-top: 20px;
+      }
+
+      .job-multi-info-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .action-field form {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: end;
+      }
+
+      .change-job-status {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+  <title>Employer Dashboard</title>
+</head>
+
+<body>
+  <div class="container-fluid short-details-wrapper">
+    <div class="container">
+      <div class="title">
+        IncepIT
+      </div>
+
+      <div class="blue-line"></div>
+    </div>
+  </div>
+
+  <div class="container main-content-wrapper">
+    <div class="row">
+
+      <div class="col-lg-3">
+        <div class="right-sidebar sticky-top">
+          <div class="company-logo-wrapper sidebar-content-wrapper">
+            <form action="">
+              <div class="logo-wrapper">
+                <img src="./resources/image/incepit-logo.jpg" alt="company-logo" class="img-fluid">
+              </div>
+
+              <label class="company-logo-upload-btn button blue-btn" for="companyLogo">+ Cập nhật logo</label>
+              <input type="file" class="upload-input" id="companyLogo">
+            </form>
+          </div>
+
+          <div class="cross-line"></div>
+
+          <div class="sidebar-menu sidebar-content-wrapper">
+            <a href="./employer-dashboard.html" class="sidebar-menu-item dashboard">
+              <i class="fas fa-tachometer-alt sidebar-menu-icon fa-fw"></i> <span
+                class="sidebar-menu-name">Dashboard</span>
+            </a>
+
+            <a href="./company-profile.html" class="sidebar-menu-item company-profile">
+              <i class="fas fa-user sidebar-menu-icon fa-fw"></i> <span class="sidebar-menu-name">Hồ sơ công ty</span>
+            </a>
+
+
+            <a href="./management-jobs.html" class="sidebar-menu-item management-job">
+              <i class="fas fa-briefcase sidebar-menu-icon fa-fw"></i> <span class="sidebar-menu-name">Quản lý việc
+                làm</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-9">
+        <div class="breadcrum-div">Dashboard > <span class="breadcrum-child">Quản lý việc làm > </span> <span
+            class="breadcrum-child">UI-UX Designer (HTML5/JavaScript)</span></div>
+        <div class="action-field">
+          <form action="">
+            <div class="action-btns order-lg-1 order-2">
+              <a href="./management-jobs.html">
+                <button class="button back-prev-page-btn small-btn"><i class="fas fa-chevron-left"></i> Quay
+                  lại</button>
+              </a>
+              <a href="./post-job.html">
+                <button class="button orange-btn preview-btn small-btn">Xem thử</button>
+              </a>
+
+              <button class="button green-btn update-btn small-btn"><i class="fas fa-sync"></i> Cập nhật</button>
+            </div>
+
+            <div class="change-job-status order-lg-2 order-1">
+              <div class="text">
+                Trạng thái
+              </div>
+
+              <select class="form-control" id="jobStatus">
+                <option value="Công khai">Công khai</option>
+                <option value="Ẩn">Ẩn</option>
+              </select>
+            </div>
+          </form>
+        </div>
+
+        <div class="update-fields-wrapper">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="commonInformation-tab" data-toggle="tab" href="#commonInformation"
+                role="tab" aria-controls="commonInformation" aria-selected="true">Thông tin chung</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="companyDetails-tab" data-toggle="tab" href="#companyDetails" role="tab"
+                aria-controls="companyDetails" aria-selected="false">Chi tiết công việc</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="welfare-tab" data-toggle="tab" href="#welfare" role="tab" aria-controls="welfare"
+                aria-selected="false">Ứng viên</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="commonInformation" role="tabpanel"
+              aria-labelledby="commonInformation-tab">
+              <div class="row">
+                <div class="col-10 mx-auto input-wrapper">
+                  <div class="job-name input-field">
+                    <form action="">
+                      <div class="form-group">
+                        <label for="jobName">Tên việc làm *</label>
+                        <input type="text" class="form-control" id="jobName" value="UI-UX Designer (HTML5/JavaScript)">
+                      </div>
+                    </form>
+                  </div>
+
+                  <div class="job-address input-field">
+                    <form action="">
+                      <div class="form-group">
+                        <label for="jobAddress">Địa chỉ *</label>
+                        <input type="text" class="form-control" id="jobAddress"
+                          value="Scetpa Building, 19a Cong Hoa Street, TP Hồ Chí Minh">
+                      </div>
+                    </form>
+                  </div>
+
+                  <div class="job-multi-info-wrapper input-field">
+                    <form action="">
+                      <div class="form-group">
+                        <label for="hireNumber">Số lượng cần tuyển *</label>
+                        <input type="number" class="form-control" id="hireNumber" value="1" min="1">
+                      </div>
+                    </form>
+
+                    <form action="">
+                      <div class="form-group">
+                        <label for="minSalary">Mức lương tối thiểu *</label>
+                        <input type="text" class="form-control" id="minSalary" value="$1000">
+                      </div>
+                    </form>
+
+                    <form action="">
+                      <div class="form-group">
+                        <label for="maxSalary">Mức lương tối đa *</label>
+                        <input type="text" class="form-control" id="maxSalary">
+                      </div>
+                    </form>
+                  </div>
+
+                  <div class="skills-required input-field">
+                    <form action="">
+                      <div class="form-group">
+                        <label for="skillsRequired">Kỹ năng cần có *</label>
+                        <input type="text" class="form-control" id="skillsRequired">
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="companyDetails" role="tabpanel" aria-labelledby="companyDetails-tab">
+              <div class="row">
+                <div class="col-10 mx-auto input-wrapper">
+                  <div class="job-description input-field">
+                    <form action="">
+                      <div class="form-group">
+                        <label for="jobDescription">Mô tả công việc *</label>
+                        <textarea class="form-control" id="jobDescription" rows="3"></textarea>
+                      </div>
+                    </form>
+                  </div>
+
+                  <div class="job-required input-field">
+                    <form action="">
+                      <div class="form-group">
+                        <label for="jobRequired">Yêu cầu công việc *</label>
+                        <textarea class="form-control" id="jobRequired" rows="3"></textarea>
+                      </div>
+                    </form>
+                  </div>
+
+                  <div class="job-welfare input-field">
+                    <form action="">
+                      <div class="form-group">
+                        <label for="jobsWelfare">Phúc lợi cho ứng viên *</label>
+                        <textarea class="form-control" id="jobsWelfare" rows="3"></textarea>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="welfare" role="tabpanel" aria-labelledby="welfare-tab">
+              <div class="row">
+                <div class="col-10 mx-auto">
+                  <div class="candidate-showcase-wrapper">
+                    <div class="candidate-showcase table-responsive-lg">
+                      <table class="table table-bordered table-hover">
+                        <thead>
+                          <tr class="thead-light">
+                            <th scope="col">Họ tên</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Ngày ứng tuyển</th>
+                            <th scope="col">CV</th>
+                          </tr>
+                          <tr class="header-searching">
+                            <form action="">
+                              <th scope="col">
+                                <input type="text" class="form-control" id="cadidateNameSearch">
+                              </th>
+                              <th scope="col">
+                                <input type="text" class="form-control" id="cadidateEmailSearch">
+                              </th>
+                              <th scope="col"></th>
+                              <th scope="col"></th>
+                            </form>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="job-link-wrapper"><a href="./job-management.html" class="job-link">Phạm Công
+                                Định</a></td>
+                            <td class="status">congdinh2395@gmail.com</td>
+                            <td>14/09/2019</td>
+                            <td><a href="#" class="cv-preview">Xem CV</a></td>
+                          </tr>
+                          <tr>
+                            <td class="job-link-wrapper"><a href="./job-management.html" class="job-link">Phạm Công
+                                Định</a></td>
+                            <td class="status">congdinh2395@gmail.com</td>
+                            <td>14/09/2019</td>
+                            <td><a href="#" class="cv-preview">Xem CV</a></td>
+                          </tr>
+                          <tr>
+                            <td class="job-link-wrapper"><a href="./job-management.html" class="job-link">Phạm Công
+                                Định</a></td>
+                            <td class="status">congdinh2395@gmail.com</td>
+                            <td>14/09/2019</td>
+                            <td><a href="#" class="cv-preview">Xem CV</a></td>
+                          </tr>
+                          <tr>
+                            <td class="job-link-wrapper"><a href="./job-management.html" class="job-link">Phạm Công
+                                Định</a></td>
+                            <td class="status">congdinh2395@gmail.com</td>
+                            <td>14/09/2019</td>
+                            <td><a href="#" class="cv-preview">Xem CV</a></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <script>
+    $(function () {
+      $('.management-job').children().addClass('active-sidebar')
+    })
+  </script>
+</body>
+
+</html>

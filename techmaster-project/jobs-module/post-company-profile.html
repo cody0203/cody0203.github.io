@@ -328,12 +328,12 @@
             <div class="col-md-10 col-12 mx-auto welfare-wrapper">
               <form action="" class="welfare-item-wrapper">
                 <div class="welfare-item">
-                  <div class="header">
+                  <div class="header" onclick="collapseWelfare(this)">
                     <div class="name">
                       <i class="fas fa-times close-icon"></i> Phúc lợi 1
                     </div>
 
-                    <i class="fas fa-chevron-down"></i>
+                    <i class="fas fa-chevron-down dropdown-welfare"></i>
                   </div>
 
                   <div class="welfare-content">
@@ -402,36 +402,37 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
   <script>
-    $(function () {
-
-    })
-
     $(document).on('click', function (e) {
       let target = e.target || window.event.target;
-      let welfareContent = $(target).next('.welfare-content');
-      if (welfareContent.css('display') == "none") {
-        $('.welfare-content').hide();
-        $(target).addClass('showed')
-        welfareContent.show();
-      } else {
-        $(target).removeClass('showed')
-        welfareContent.hide();
-      }
-
       if (target.closest('.delete-welfare-btn') || target.closest('.close-icon')) {
         $(target).parents('.welfare-item').remove()
       }
     })
 
+    function collapseWelfare(target) {
+      let welfareContent = $(target).next('.welfare-content');
+      if (welfareContent.css('display') == "none") {
+        $('.welfare-content').hide();
+        $(target).addClass('showed')
+        welfareContent.show();
+        $(target).children('.dropdown-welfare').removeClass('fa-chevron-down').addClass('fa-chevron-up')
+      } else {
+        $(target).removeClass('showed')
+        $(target).children('.dropdown-welfare').removeClass('fa-chevron-up').addClass('fa-chevron-down')
+        welfareContent.hide();
+      }
+
+    }
+
     $('.add-welfare').on('click', function () {
       let welfareItem = `
       <div class="welfare-item">
-        <div class="header showed">
+        <div class="header showed" onclick="collapseWelfare(this)">
           <div class="name">
             <i class="fas fa-times close-icon"></i> Phúc lợi 1
           </div>
 
-          <i class="fas fa-chevron-down"></i>
+          <i class="fas fa-chevron-up dropdown-welfare"></i>
         </div>
 
         <div class="welfare-content" style="display: block">
@@ -461,15 +462,6 @@
       $('.welfare-content').hide();
       $('.welfare-item-wrapper').append(welfareItem);
     })
-
-    // function showWelfare(target) {
-    //   if (welfareContent.css('display') == "none") {
-    //     $('.welfare-content').hide();
-    //     welfareContent.show();
-    //   } else {
-    //     welfareContent.hide();
-    //   }
-    // }
   </script>
 </body>
 

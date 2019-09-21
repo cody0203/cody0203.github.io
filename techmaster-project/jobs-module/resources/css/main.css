@@ -49,13 +49,25 @@ li {
 }
 
 .blue-btn {
-  color: white;
   background-color: #3C78E8;
   display: block;
 }
 
+.active-sidebar {
+  font-weight: bold;
+  color: #3C78E8;
+}
+
 .orange-btn {
   background: #FF6B1E;
+}
+
+.green-btn {
+  background: #00A65A;
+}
+
+.light-blue-btn {
+  background-color: #00C0EF;
 }
 
 /* Override Bootstrap */
@@ -63,4 +75,8 @@ li {
 .form-control:focus {
   outline: 0;
   box-shadow: none;
+}
+
+.table .thead-light th {
+  min-width: 145px;
 }
