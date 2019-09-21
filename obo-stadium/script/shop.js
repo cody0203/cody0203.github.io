@@ -1,6 +1,7 @@
 $(window).resize(changeUi);
 
 $(function () {
+    $('.price-input').simpleMoneyFormat();
     render();
     changeUi();
     sortNewArrival();
@@ -25,10 +26,10 @@ function changeUi() {
     }
 }
 
-$('.price-input').on('keydown', function () {
-    let inputValue = $(this).val().replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-    $(this).val(inputValue);
-})
+// $('.price-input').on('keydown', function () {
+//     let inputValue = $(this).val().replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+//     $(this).val(inputValue);
+// })
 
 changeUi();
 
@@ -90,31 +91,31 @@ $(document).on('change', function (e) {
     }
 })
 
-$(document).on('mousemove', function () {
-    size = $('.size .select-filter .item.size-choose');
-    renderFilterData();
-})
+// $(document).on('mousemove', function () {
+//     size = $('.size .select-filter .item.size-choose');
+//     renderFilterData();
+// })
 
-let brandArray;
-let genderArray;
-let sizeArray;
-let releaseDateArray;
+// let brandArray;
+// let genderArray;
+// let sizeArray;
+// let releaseDateArray;
 
-function getFilterData() {
-    brandArray = Array.from(brand).map(item => {
-        return $(item).attr('data-id');
-    });
-    genderArray = Array.from(gender).map(item => {
-        return $(item).attr('data-id');
-    });
-    sizeArray = Array.from(size).map(item => {
-        return Number($(item).attr('data-id'));
-    });
+// function getFilterData() {
+//     brandArray = Array.from(brand).map(item => {
+//         return $(item).attr('data-id');
+//     });
+//     genderArray = Array.from(gender).map(item => {
+//         return $(item).attr('data-id');
+//     });
+//     sizeArray = Array.from(size).map(item => {
+//         return Number($(item).attr('data-id'));
+//     });
 
-    releaseDateArray = Array.from(releaseDate).map(item => {
-        return $(item).attr('data-id');
-    });
-}
+//     releaseDateArray = Array.from(releaseDate).map(item => {
+//         return $(item).attr('data-id');
+//     });
+// }
 
 $(document).on('click', function (e) {
     let target = e.target;
