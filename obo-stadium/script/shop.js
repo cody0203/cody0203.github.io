@@ -79,9 +79,9 @@ $(document).on('change', function (e) {
     }
 
     if ($('.filter-bar input').is(":checked") || $('.size .item').hasClass('size-choose') || $('.price-input').val() !== "" || $('#filterModal .price-input').val() !== "") {
-        $('.clear-filter').removeAttr('disabled')
+        $('.clear-filter').not('.modal-footer .clear-filter').removeAttr('disabled')
     } else {
-        $('.clear-filter').attr('disabled', 'disabled')
+        $('.clear-filter').not('.modal-footer .clear-filter').attr('disabled', 'disabled')
     }
 
     if ($('.price-input#from-price').val() == "" && $('.price-input#to-price').val() == "") {
@@ -123,15 +123,15 @@ $(document).on('click', function (e) {
     if (target.closest('.filter-bar .size .item')) {
         $(e.target).toggleClass('size-choose');
         if ($('.size .item').hasClass('size-choose')) {
-            $('.clear-filter').removeAttr('disabled')
+            $('.clear-filter').not('.modal-footer .clear-filter').removeAttr('disabled')
         } else {
-            $('.clear-filter').attr('disabled', 'disabled');
+            $('.clear-filter').not('.modal-footer .clear-filter').attr('disabled', 'disabled');
         }
     }
 
     if (target.closest('.clear-filter')) {
         $('.filter-bar input').prop("checked", false);
-        $('.clear-filter').attr('disabled', 'disabled');
+        $('.clear-filter').not('.modal-footer .clear-filter').attr('disabled', 'disabled');
         $('.product-link').show();
         brandArray = [];
 
