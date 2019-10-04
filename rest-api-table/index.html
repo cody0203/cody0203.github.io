@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <title>QLSV - Danh sách học viên</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center m-4">Danh sách học viên</h1>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Họ tên</th>
+                        <th>Năm sinh</th>
+                        <th>Email</th>
+                        <th>Số điện thoại</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script>
+        let students = []
+
+        function renderContent() {
+            $.ajax({
+                url: "https://student-rest-api.firebaseapp.com/api/v1/students",
+                method: "GET"
+            }).done(function (result) {
+                students = result.students;
+                let htmlContent = '';
+
+                for (let i in students) {
+                    const s = students[i];
+
+                    htmlContent += `
+                    <tr>
+                        <td>${s.name || ''}</td>
+                        <td>${s.birthYear || ''}</td>
+                        <td>${s.email || ''}</td>
+                        <td>${s.phone || ''}</td>
+                        <td>
+                            <a href="javascript:void(0)" class="text-danger delete-text-btn" id=${s.id}>
+                                <i class="fa fa-trash-alt"></i> Xóa
+                            </a>
+                        </td>
+                    </tr>
+                `
+                }
+
+                $('tbody').html(htmlContent);
+            });
+        }
+        $(document).on('click', function (e) {
+            let target = e.target || window.event.target;
+            if (target.closest('.delete-text-btn')) {
+                let id = $(target).attr('id');
+                console.log(id)
+                if (confirm("Are you sure?")) {
+                    // Chống bấm liên tục
+                    let isLoading = true;
+
+                    $.ajax({
+                        url: `https://student-rest-api.firebaseapp.com/api/v1/students/${id}`,
+                        method: "DELETE"
+                    }).done(function (result) {
+                        isLoading = false;
+
+                        // Xóa trên giao diện
+                        $(deleteButton).parent().parent().remove();
+
+                        // Render lại giao diện
+                        // renderContent();
+                    })
+                }
+            }
+        })
+        // function deleteUser(id, deleteButton) {
+        //     if (confirm("Are you sure?")) {
+        //         // Chống bấm liên tục
+        //         let isLoading = true;
+
+        //         $.ajax({
+        //             url: "https://quan-ly-hoc-vien.herokuapp.com/users/" + id,
+        //             method: "DELETE"
+        //         }).done(function (result) {
+        //             isLoading = false;
+
+        //             // Xóa trên giao diện
+        //             $(deleteButton).parent().parent().remove();
+
+        //             // Render lại giao diện
+        //             // renderContent();
+        //         })
+        //     }
+        // }
+
+        $(function () {
+            renderContent();
+        })
+    </script>
+</body>
+
+</html>

@@ -3,6 +3,7 @@ import * as admin from 'firebase-admin';
 import * as firebaseHelper from 'firebase-functions-helper/dist';
 import * as express from 'express';
 import * as bodyParser from "body-parser";
+const ids = require('short-id');
 
 admin.initializeApp(functions.config().firebase);
 const db = admin.firestore();
@@ -15,7 +16,6 @@ main.use(bodyParser.json());
 main.use(bodyParser.urlencoded({ extended: false }));
 
 const studentsCollection = 'students';
-const
 
 export const webApi = functions.https.onRequest(main);
 
@@ -25,7 +25,10 @@ interface Student {
     email: String
     phone: String
     created: Number
+    id: String
 }
+
+const id = ids.generate()
 
 // Add new student
 app.post('/students', async (req, res) => {
@@ -36,10 +39,11 @@ app.post('/students', async (req, res) => {
             email: req.body['email'],
             phone: req.body['phone'],
             created: Math.round(+new Date()/1000),
+            id: id
         }
 
         const newDoc = firebaseHelper.firestore
-            .createDocumentWithID(db, studentsCollection, "", student);
+            .createDocumentWithID(db, studentsCollection, id, student);
         res.status(201).send(`Created a new student: ${newDoc}`);
     } catch (error) {
         res.status(400).send(`Student should only contains name, birth year, email and phone!!!`)
