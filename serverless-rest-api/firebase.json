@@ -1,0 +1,32 @@
+{
+  "functions": {
+    "predeploy": [
+      "npm --prefix functions run build"
+    ]
+  },
+  "hosting": {
+    "public": "public",
+    "headers": [
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          }
+        ]
+      }
+    ],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/api/v1/**",
+        "function": "webApi"
+      }
+    ]
+  }
+}

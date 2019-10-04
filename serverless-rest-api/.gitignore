@@ -1,0 +1,7 @@
+node_modules
+functions/*
+!functions/src
+!functions/package.json
+!functions/tsconfig.json
+!functions/tslint.json
+*.log
