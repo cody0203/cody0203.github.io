@@ -124,7 +124,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-secondary close-modal" data-dismiss="modal">Đóng</button>
                     <button type="button" class="btn btn-primary save-data" onclick="addNewStudent()">Lưu</button>
                 </div>
             </div>
@@ -146,10 +146,15 @@
         let convertedData = undefined;
         let currentId = "";
         function renderContent() {
+            let isLoading = true;
+            loadingStatus(isLoading);
+
             $.ajax({
                 url: "https://student-rest-api.firebaseapp.com/api/v1/students",
                 method: "GET"
             }).done(function (result) {
+                isLoading = false;
+                loadingStatus(isLoading)
                 rawData = result.students;
                 let htmlContent = '';
                 convertedData = convertData(rawData)
@@ -210,48 +215,154 @@
 
         function saveStudentInfo() {
             let isLoading = true;
-            $('#editStudent').modal('hide')
-            loadingStatus(isLoading)
+            let studentName = $('#studentNameEdit');
+            let studentBirthYear = $('#studentBirthYearEdit');
+            let studentEmail = $('#studentEmailEdit');
+            let studentPhone = $('#studentPhoneEdit');
+            let isValid = [];
 
-            $.ajax({
-                url: `https://student-rest-api.firebaseapp.com/api/v1/students/${currentId}`,
-                method: "PUT",
-                data: {
-                    name: $('#studentNameEdit').val(),
-                    birthYear: $('#studentBirthYearEdit').val(),
-                    email: $('#studentEmailEdit').val(),
-                    phone: $('#studentPhoneEdit').val()
-                }
-            }).done(function (result) {
-                isLoading = false;
-                loadingStatus(isLoading)
-                renderContent()
-            })
+            // Validate checking
+            isValid.push(studentBirthYearValidate(studentBirthYear),
+                studentNameValidate(studentName),
+                studentEmailValidate(studentEmail),
+                studentPhoneValidate(studentPhone))
+
+            if (!isValid.includes(false)) {
+                $('#editStudent').modal('hide')
+                loadingStatus(isLoading);
+
+                $.ajax({
+                    url: `https://student-rest-api.firebaseapp.com/api/v1/students/${currentId}`,
+                    method: "PUT",
+                    data: {
+                        name: $('#studentNameEdit').val(),
+                        birthYear: $('#studentBirthYearEdit').val(),
+                        email: $('#studentEmailEdit').val(),
+                        phone: $('#studentPhoneEdit').val()
+                    }
+                }).done(function (result) {
+                    isLoading = false;
+                    loadingStatus(isLoading)
+                    renderContent()
+                })
+            }
         }
+
+
 
         function addNewStudent() {
             let isLoading = true;
-            $('#addNewStudent').modal('hide')
-            loadingStatus(isLoading)
-            $.ajax({
-                url: `https://student-rest-api.firebaseapp.com/api/v1/students`,
-                method: "POST",
-                data: {
-                    name: $('#studentNameNew').val(),
-                    birthYear: $('#studentBirthYearNew').val(),
-                    email: $('#studentEmailNew').val(),
-                    phone: $('#studentPhoneNew').val()
-                }
-            }).done(function (result) {
-                isLoading = false;
+            let studentName = $('#studentNameNew');
+            let studentBirthYear = $('#studentBirthYearNew');
+            let studentEmail = $('#studentEmailNew');
+            let studentPhone = $('#studentPhoneNew');
+            let isValid = [];
+
+            // Validate checking
+            isValid.push(studentBirthYearValidate(studentBirthYear),
+                studentNameValidate(studentName),
+                studentEmailValidate(studentEmail),
+                studentPhoneValidate(studentPhone))
+
+            if (!isValid.includes(false)) {
+                $('#addNewStudent').modal('hide')
                 loadingStatus(isLoading)
-                renderContent()
-            })
+                $.ajax({
+                    url: `https://student-rest-api.firebaseapp.com/api/v1/students`,
+                    method: "POST",
+                    data: {
+                        name: $('#studentNameNew').val(),
+                        birthYear: $('#studentBirthYearNew').val(),
+                        email: $('#studentEmailNew').val(),
+                        phone: $('#studentPhoneNew').val()
+                    }
+                }).done(function (result) {
+                    isLoading = false;
+                    loadingStatus(isLoading)
+                    renderContent()
+                })
+            }
         }
 
         $('#addNewStudent').on('hidden.bs.modal', function () {
             $(this).find('input').val('');
+            $(this).find('.invalid-feedback').text('').hide()
         })
+
+        $('#editStudent').on('hidden.bs.modal', function () {
+            $(this).find('input').val('');
+            $(this).find('.invalid-feedback').text('').hide()
+        })
+
+        // Validates
+
+        // Student name validate
+
+        function studentNameValidate(data) {
+            let isValid = true;
+            if (data.val() == "") {
+                data.next().show()
+                data.next().text('Họ tên không được để trống')
+                isValid = false;
+            } else {
+                data.next().hide()
+                data.next().text('')
+            }
+            return isValid;
+        }
+
+        // Student birth year validate
+
+        function studentBirthYearValidate(data) {
+            let isValid = true;
+            if (data.val() == "") {
+                data.next().show()
+                data.next().text('Năm sinh không được để trống')
+                isValid = false;
+            } else {
+                data.next().hide()
+                data.next().text('')
+            }
+            return isValid;
+        }
+
+        // Student email validate
+
+        function studentEmailValidate(data) {
+            let isValid = true;
+            if (data.val() == "") {
+                data.next().show()
+                data.next().text('Email không được để trống')
+                isValid = false;
+            } else if (data.val().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/) === null) {
+                data.next().show()
+                data.next().text('Email không đúng định dạng')
+                isValid = false;
+            } else {
+                data.next().hide()
+                data.next().text('')
+            }
+            return isValid;
+        }
+
+        // Student phone validate
+
+        function studentPhoneValidate(data) {
+            let isValid = true;
+            if (data.val() == "") {
+                data.next().show()
+                data.next().text('Số điện thoại không được để trống')
+                isValid = false;
+            } else if (data.val().match(/((09|03|07|08|05)+([0-9]{8})\b)/g) === null) {
+                data.next().show()
+                data.next().text('Số điện thoại không đúng định dạng')
+                isValid = false;
+            } else {
+                data.next().hide()
+                data.next().text('')
+            }
+            return isValid;
+        }
 
 
         function loadingStatus(status) {
