@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
@@ -29,12 +29,58 @@
                         <th>Năm sinh</th>
                         <th>Email</th>
                         <th>Số điện thoại</th>
-                        <th></th>
+                        <th>Action</th>
                     </tr>
                 </thead>
 
-                <tbody></tbody>
+                <tbody>
+                </tbody>
             </table>
+            <div class="spinner text-center">
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="editStudent" tabindex="-1" role="dialog" aria-labelledby="editStudentLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editStudentLabel">Sửa thông tin</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="studentName">Họ tên</label>
+                        <input type="text" class="form-control" id="studentNameEdit">
+                        <div class="invalid-feedback"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="studentBirthYear">Năm sinh</label>
+                        <input type="text" class="form-control" id="studentBirthYearEdit">
+                        <div class="invalid-feedback"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="studentEmail">Email</label>
+                        <input type="email" class="form-control" id="studentEmailEdit">
+                        <div class="invalid-feedback"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="studentPhone">Số điện thoại</label>
+                        <input type="text" class="form-control" id="studentPhoneEdit">
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary save-data" onclick="saveStudentInfo()">Lưu</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -49,16 +95,18 @@
         crossorigin="anonymous"></script>
 
     <script>
-        let students = []
+        let rawData = []
         let convertedData = undefined;
+        let currentId = "";
         function renderContent() {
             $.ajax({
                 url: "https://student-rest-api.firebaseapp.com/api/v1/students",
                 method: "GET"
             }).done(function (result) {
-                students = result.students;
+                rawData = result.students;
                 let htmlContent = '';
-                convertedData = convertData(students)
+                convertedData = convertData(rawData)
+                students = sortByTime(convertedData)
                 for (let i in students) {
                     const s = students[i];
 
@@ -69,8 +117,11 @@
                         <td>${s.email || ''}</td>
                         <td>${s.phone || ''}</td>
                         <td>
-                            <a href="javascript:void(0)" class="text-danger delete-text-btn" id=${s.id}>
+                            <a href="javascript:void(0)" class="text-danger delete-text-btn" id=${s.id} onclick="deleteStudent(this)">
                                 <i class="fa fa-trash-alt"></i> Xóa
+                            </a>
+                            <a href="javascript:void(0)" class="text-secondary edit-text-btn ml-3" id=${s.id} onclick="editStudent(this)" data-toggle="modal" data-target="#editStudent">
+                                <i class="fa fa-pen-alt"></i> Sửa
                             </a>
                         </td>
                     </tr>
@@ -80,49 +131,65 @@
                 $('tbody').html(htmlContent);
             });
         }
-        $(document).on('click', function (e) {
-            let target = e.target || window.event.target;
-            if (target.closest('.delete-text-btn')) {
-                let id = $(target).attr('id');
-                console.log(id)
-                if (confirm("Are you sure?")) {
-                    // Chống bấm liên tục
-                    let isLoading = true;
 
-                    $.ajax({
-                        url: `https://student-rest-api.firebaseapp.com/api/v1/students/${id}`,
-                        method: "DELETE"
-                    }).done(function (result) {
-                        isLoading = false;
+        function deleteStudent(target) {
+            let id = $(target).attr('id');
+            if (confirm("Are you sure?")) {
+                // Chống bấm liên tục
+                let isLoading = true;
+                $(target).parent().parent().remove();
+                loadingStatus(isLoading)
 
-                        // Xóa trên giao diện
-                        $(deleteButton).parent().parent().remove();
-
-                        // Render lại giao diện
-                        // renderContent();
-                    })
-                }
+                $.ajax({
+                    url: `https://student-rest-api.firebaseapp.com/api/v1/students/${id}`,
+                    method: "DELETE"
+                }).done(function (result) {
+                    isLoading = false;
+                    loadingStatus(isLoading)
+                    renderContent()
+                })
             }
-        })
-        // function deleteUser(id, deleteButton) {
-        //     if (confirm("Are you sure?")) {
-        //         // Chống bấm liên tục
-        //         let isLoading = true;
+        }
 
-        //         $.ajax({
-        //             url: "https://quan-ly-hoc-vien.herokuapp.com/users/" + id,
-        //             method: "DELETE"
-        //         }).done(function (result) {
-        //             isLoading = false;
+        function editStudent(target) {
+            let id = $(target).attr('id');
+            let currentStudent = students.find(student => student['id'] == id)
+            $('#studentNameEdit').val(currentStudent['name'])
+            $('#studentBirthYearEdit').val(currentStudent['birthYear'])
+            $('#studentEmailEdit').val(currentStudent['email'])
+            $('#studentPhoneEdit').val(currentStudent['phone'])
+            currentId = id;
+        }
 
-        //             // Xóa trên giao diện
-        //             $(deleteButton).parent().parent().remove();
+        function saveStudentInfo() {
+            let isLoading = true;
+            $('#editStudent').modal('hide')
+            loadingStatus(isLoading)
 
-        //             // Render lại giao diện
-        //             // renderContent();
-        //         })
-        //     }
-        // }
+            $.ajax({
+                url: `https://student-rest-api.firebaseapp.com/api/v1/students/${currentId}`,
+                method: "PUT"
+            }).done(function (result) {
+                isLoading = false;
+                loadingStatus(isLoading)
+                renderContent()
+            })
+
+        }
+
+        function loadingStatus(status) {
+            if (status == true) {
+                let spinner = `
+                <div class="spinner-grow" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                `;
+                $('.spinner').html(spinner);
+                $('tbody').html("")
+            } else {
+                $('.spinner').html("");
+            }
+        }
 
         function convertData(source) {
             let arr = [];
@@ -135,6 +202,12 @@
                 arr[i]['id'] = key[i]
             }
             return arr;
+        }
+
+        function sortByTime(students) {
+            return students.sort((a, b) => {
+                return a['created'] - b['created']
+            })
         }
 
         $(function () {
