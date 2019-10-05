@@ -15,6 +15,13 @@
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <title>QLSV - Danh sách học viên</title>
+
+    <style>
+        .deleting {
+            background-color: rgb(243, 131, 131) !important;
+            transition: all 0.5s ease;
+        }
+    </style>
 </head>
 
 <body>
@@ -189,9 +196,12 @@
             if (confirm("Are you sure?")) {
                 // Chống bấm liên tục
                 let isLoading = true;
-                $(target).parent().parent().remove();
-                loadingStatus(isLoading)
-
+                $(target).parent().parent().addClass('deleting');
+                setTimeout(function () {
+                    $(target).parent().parent().removeClass('deleting');
+                    $(target).parent().parent().remove();
+                    loadingStatus(isLoading);
+                }, 200)
                 $.ajax({
                     url: `https://student-rest-api.firebaseapp.com/api/v1/students/${id}`,
                     method: "DELETE"
