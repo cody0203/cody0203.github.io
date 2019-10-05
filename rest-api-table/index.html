@@ -21,6 +21,13 @@
             background-color: rgb(243, 131, 131) !important;
             transition: all 0.5s ease;
         }
+        th {
+            min-width: 200px;
+        }
+        td {
+            max-width: 200px;
+            word-break: break-word;
+        }
     </style>
 </head>
 
@@ -35,7 +42,7 @@
                 <thead class="thead-dark">
                     <tr>
                         <th>Họ tên</th>
-                        <th>Năm sinh</th>
+                        <th style="min-width: 100px">Năm sinh</th>
                         <th>Email</th>
                         <th>Số điện thoại</th>
                         <th>Action</th>
@@ -172,7 +179,7 @@
                     htmlContent += `
                     <tr>
                         <td>${s.name || ''}</td>
-                        <td>${s.birthYear || ''}</td>
+                        <td style="max-width: 100px">${s.birthYear || ''}</td>
                         <td>${s.email || ''}</td>
                         <td>${s.phone || ''}</td>
                         <td>
