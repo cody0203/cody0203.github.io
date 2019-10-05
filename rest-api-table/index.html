@@ -19,8 +19,10 @@
 
 <body>
     <div class="container">
-        <h1 class="text-center m-4">Danh sách học viên</h1>
-
+        <div class="header d-flex align-items-center">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#addNewStudent">Thêm học viên +</button>
+            <h1 class="text-center m-4" style="width: 70%">Danh sách học viên</h1>
+        </div>
         <div class="table-responsive">
             <table class="table table-striped table-hover">
                 <thead class="thead-dark">
@@ -41,6 +43,7 @@
         </div>
     </div>
 
+    <!-- Edit modal -->
     <div class="modal fade" id="editStudent" tabindex="-1" role="dialog" aria-labelledby="editStudentLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -53,25 +56,25 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="studentName">Họ tên</label>
+                        <label for="studentNameEdit">Họ tên</label>
                         <input type="text" class="form-control" id="studentNameEdit">
                         <div class="invalid-feedback"></div>
                     </div>
 
                     <div class="form-group">
-                        <label for="studentBirthYear">Năm sinh</label>
+                        <label for="studentBirthYearEdit">Năm sinh</label>
                         <input type="text" class="form-control" id="studentBirthYearEdit">
                         <div class="invalid-feedback"></div>
                     </div>
 
                     <div class="form-group">
-                        <label for="studentEmail">Email</label>
+                        <label for="studentEmailEdit">Email</label>
                         <input type="email" class="form-control" id="studentEmailEdit">
                         <div class="invalid-feedback"></div>
                     </div>
 
                     <div class="form-group">
-                        <label for="studentPhone">Số điện thoại</label>
+                        <label for="studentPhoneEdit">Số điện thoại</label>
                         <input type="text" class="form-control" id="studentPhoneEdit">
                         <div class="invalid-feedback"></div>
                     </div>
@@ -79,6 +82,50 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
                     <button type="button" class="btn btn-primary save-data" onclick="saveStudentInfo()">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add new modal -->
+    <div class="modal fade" id="addNewStudent" tabindex="-1" role="dialog" aria-labelledby="addNewStudentLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addNewStudentLabel">Nhập thông tin</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="studentNameNew">Họ tên</label>
+                        <input type="text" class="form-control" id="studentNameNew">
+                        <div class="invalid-feedback"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="studentBirthYearNew">Năm sinh</label>
+                        <input type="text" class="form-control" id="studentBirthYearNew">
+                        <div class="invalid-feedback"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="studentEmailNew">Email</label>
+                        <input type="email" class="form-control" id="studentEmailNew">
+                        <div class="invalid-feedback"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="studentPhoneNew">Số điện thoại</label>
+                        <input type="text" class="form-control" id="studentPhoneNew">
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary save-data" onclick="addNewStudent()">Lưu</button>
                 </div>
             </div>
         </div>
@@ -168,14 +215,44 @@
 
             $.ajax({
                 url: `https://student-rest-api.firebaseapp.com/api/v1/students/${currentId}`,
-                method: "PUT"
+                method: "PUT",
+                data: {
+                    name: $('#studentNameEdit').val(),
+                    birthYear: $('#studentBirthYearEdit').val(),
+                    email: $('#studentEmailEdit').val(),
+                    phone: $('#studentPhoneEdit').val()
+                }
             }).done(function (result) {
                 isLoading = false;
                 loadingStatus(isLoading)
                 renderContent()
             })
-
         }
+
+        function addNewStudent() {
+            let isLoading = true;
+            $('#addNewStudent').modal('hide')
+            loadingStatus(isLoading)
+            $.ajax({
+                url: `https://student-rest-api.firebaseapp.com/api/v1/students`,
+                method: "POST",
+                data: {
+                    name: $('#studentNameNew').val(),
+                    birthYear: $('#studentBirthYearNew').val(),
+                    email: $('#studentEmailNew').val(),
+                    phone: $('#studentPhoneNew').val()
+                }
+            }).done(function (result) {
+                isLoading = false;
+                loadingStatus(isLoading)
+                renderContent()
+            })
+        }
+
+        $('#addNewStudent').on('hidden.bs.modal', function () {
+            $(this).find('input').val('');
+        })
+
 
         function loadingStatus(status) {
             if (status == true) {
