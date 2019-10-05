@@ -3,13 +3,16 @@ import * as admin from 'firebase-admin';
 import * as firebaseHelper from 'firebase-functions-helper/dist';
 import * as express from 'express';
 import * as bodyParser from "body-parser";
-const cors = require('cors')({origin: true});
+const cors = require('cors');
 
 admin.initializeApp(functions.config().firebase);
 const db = admin.firestore();
 
 const app = express();
 const main = express();
+
+app.use(cors({ origin: true }));
+main.use(cors({ origin: true }));
 
 main.use('/api/v1', app);
 main.use(bodyParser.json());
