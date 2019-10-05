@@ -50,7 +50,7 @@
 
     <script>
         let students = []
-
+        let convertedData = undefined;
         function renderContent() {
             $.ajax({
                 url: "https://student-rest-api.firebaseapp.com/api/v1/students",
@@ -58,7 +58,7 @@
             }).done(function (result) {
                 students = result.students;
                 let htmlContent = '';
-
+                convertedData = convertData(students)
                 for (let i in students) {
                     const s = students[i];
 
@@ -123,6 +123,19 @@
         //         })
         //     }
         // }
+
+        function convertData(source) {
+            let arr = [];
+            let key = []
+            for (let i in source) {
+                arr.push(source[i]);
+                key.push(i)
+            }
+            for (let i = 0; i < arr.length; i++) {
+                arr[i]['id'] = key[i]
+            }
+            return arr;
+        }
 
         $(function () {
             renderContent();

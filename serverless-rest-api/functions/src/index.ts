@@ -3,7 +3,7 @@ import * as admin from 'firebase-admin';
 import * as firebaseHelper from 'firebase-functions-helper/dist';
 import * as express from 'express';
 import * as bodyParser from "body-parser";
-const ids = require('short-id');
+const cors = require('cors')({origin: true});
 
 admin.initializeApp(functions.config().firebase);
 const db = admin.firestore();
@@ -25,15 +25,7 @@ interface Student {
     email: String
     phone: String
     created: Number
-    id: Number
 }
-
-const id = ids.generate()
-
-const increment = admin.firestore.FieldValue.increment(1);
-const decrement = admin.firestore.FieldValue.increment(-1);
-
-const countRef = db.collection('counter').doc('counterDef');
 
 // Add new student
 app.post('/students', async (req, res) => {
@@ -44,13 +36,11 @@ app.post('/students', async (req, res) => {
             email: req.body['email'],
             phone: req.body['phone'],
             created: Math.round(+new Date()/1000),
-            id: id
         }
 
-        const newDoc = firebaseHelper.firestore
-            .createDocumentWithID(db, studentsCollection, id, student);
-            countRef.update({ studentCount: increment }).then().catch();
-        res.status(201).send(`Created a new student: ${newDoc}`);
+        const newDoc = await firebaseHelper.firestore
+            .createNewDocument(db, studentsCollection, student);
+        res.status(201).send(`Created a new student: ${newDoc.id}`);
     } catch (error) {
         res.status(400).send(`Student should only contains name, birth year, email and phone!!!`)
     }        
@@ -83,7 +73,6 @@ app.get('/students', (req, res) => {
 app.delete('/students/:studentId', async (req, res) => {
     const deleteStudent = await firebaseHelper.firestore
         .deleteDocument(db, studentsCollection, req.params.studentId);
-        countRef.update({ studentCount: decrement }).then().catch();
     res.status(204).send(`Student is deleted: ${deleteStudent}`);
 })
 
