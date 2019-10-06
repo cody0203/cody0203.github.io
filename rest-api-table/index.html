@@ -253,7 +253,6 @@
                 }).done(function (result) {
                     isLoading = false;
                     loadingStatus(isLoading)
-                    renderContent()
                 })
             }
         }
@@ -372,6 +371,10 @@
                 data.next().show()
                 data.next().text('Năm sinh không được để trống')
                 isValid = false;
+            } else if (data.val().match(/^\d{4}$/) === null) {
+                data.next().show()
+                data.next().text('Ngày sinh không đúng định dạng')
+                isValid = false;
             } else {
                 data.next().hide()
                 data.next().text('')
@@ -406,10 +409,6 @@
                 data.next().show()
                 data.next().text('Số điện thoại không được để trống')
                 isValid = false;
-            } else if (data.val().match(/((09|03|07|08|05)+([0-9]{8})\b)/g) === null) {
-                data.next().show()
-                data.next().text('Số điện thoại không đúng định dạng')
-                isValid = false;
             } else {
                 data.next().hide()
                 data.next().text('')
@@ -426,9 +425,10 @@
                 </div>
                 `;
                 $('.spinner').html(spinner);
-                $('tbody').html("")
+                $('tbody').hide()
             } else {
                 $('.spinner').html("");
+                $('tbody').show()
             }
         }
 
@@ -480,9 +480,9 @@
             // Sort by Email
 
             if ($(target).hasClass('email-col') && isSorted == false) {
-                students.sort(compare('email'))
-            } else if ($(target).hasClass('email-col')) {
                 students.sort(compareReverse('email'))
+            } else if ($(target).hasClass('email-col')) {
+                students.sort(compare('email'))
             }
 
             // Sort by Phone 
