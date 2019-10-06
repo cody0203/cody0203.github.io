@@ -30,6 +30,9 @@
             min-width: 200px;
             cursor: pointer;
         }
+        th:last-child {
+            cursor: auto;
+        }
 
         td {
             max-width: 200px;
@@ -452,25 +455,31 @@
             $('.sort-icon').removeClass('active')
             $('.field-col').not(target).removeClass('sorted')
 
+            let isSorted = true;
+
+            if ($(target).hasClass('sorted') == false) {
+                isSorted = false
+            }
+
 
             // Sort by Name
-            if ($(target).hasClass('name-col') && $(target).hasClass('sorted') == false) {
+            if ($(target).hasClass('name-col') && isSorted == false) {
                 students.sort(compare('name'))
             } else if ($(target).hasClass('name-col')) {
                 students.sort(compareReverse('name'))
             }
-            
+
             // Sort by Birth Year
 
-            if ($(target).hasClass('birth-year-col') && $(target).hasClass('sorted') == false) {
+            if ($(target).hasClass('birth-year-col') && isSorted == false) {
                 students.sort(compareReverse('birthYear'))
             } else if ($(target).hasClass('birth-year-col')) {
                 students.sort(compare('birthYear'))
             }
 
             // Sort by Email
-            
-            if ($(target).hasClass('email-col') && $(target).hasClass('sorted') == false) {
+
+            if ($(target).hasClass('email-col') && isSorted == false) {
                 students.sort(compare('email'))
             } else if ($(target).hasClass('email-col')) {
                 students.sort(compareReverse('email'))
@@ -478,13 +487,13 @@
 
             // Sort by Phone 
 
-            if ($(target).hasClass('phone-col') && $(target).hasClass('sorted') == false) {
+            if ($(target).hasClass('phone-col') && isSorted == false) {
                 students.sort(compareReverse('phone'))
             } else if ($(target).hasClass('phone-col')) {
                 students.sort(compare('phone'))
             }
 
-            if ($(target).hasClass('sorted') == false) {
+            if (isSorted == false) {
                 $(target).addClass('sorted');
                 sortIconStatus(target, status = "asc")
             } else {
@@ -508,6 +517,19 @@
         const compareReverse = (type) => (a, b) => a[type] == b[type] ? 0 : a[type] < b[type] ? -1 : 1;
         const compare = (type) => (a, b) => a[type] == b[type] ? 0 : a[type] < b[type] ? 1 : -1;
 
+        function filterIt(arr, searchKey) {
+            var results = [];
+            for (var i = 0; i < arr.length; i++) {
+                for (key in arr[i]) {
+                    if (arr[i][key].indexOf(searchKey) != -1) {
+                        results.push(arr[i]);
+                        break;
+                    }
+                }
+                break;
+            }
+            return results
+        }
 
         $(function () {
             renderContent();
