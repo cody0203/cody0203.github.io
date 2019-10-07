@@ -240,6 +240,12 @@ header .count {
   border-radius: 0 2rem 2rem 0;
 }
 
+.invalid-message {
+  margin-top: 20px;
+  color: red;
+  float: left;
+}
+
 .promotion:hover>button {
   border-color: #f58551;
   background-color: #f58551;

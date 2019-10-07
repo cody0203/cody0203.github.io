@@ -27,6 +27,7 @@ class Products extends React.Component {
               data-key={product.id}
               type="number"
               className="quantity"
+              min="0"
               step={1}
               defaultValue={product.quantity}
               onChange={this.props.handleQuantity}
