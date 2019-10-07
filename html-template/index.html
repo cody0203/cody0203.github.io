@@ -59,6 +59,7 @@
             ],
           };
           this.handleQuantity = this.handleQuantity.bind(this);
+          this.removeProduct = this.removeProduct.bind(this);
         }
 
         handleQuantity = e => {
@@ -75,6 +76,16 @@
           })
         };
 
+        removeProduct = e => {
+          let id = event.target.getAttribute('data-key');
+          let products = this.state.products.filter(product => {
+            return product.id !== Number(id)
+          })
+          this.setState({
+            products: products
+          })
+        }
+
         render() {
           return (
             <main>
@@ -83,6 +94,7 @@
                 products={this.state.products}
                 totalProductsInBag={this.state.totalProductsInBag}
                 handleQuantity={this.handleQuantity}
+                removeProduct={this.removeProduct}
               />
               <Checkout />
             </main>

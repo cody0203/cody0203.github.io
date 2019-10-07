@@ -5,7 +5,7 @@ class Products extends React.Component {
 
   render() {
     const products = this.props.products;
-    const listProducts = products.map((product) => (
+    const listProducts = products.map(product => (
       <li className="row" key={product.id}>
         <div className="col left">
           <div className="thumbnail">
@@ -23,12 +23,13 @@ class Products extends React.Component {
         </div>
         <div className="col right">
           <div className="quantity">
-            <input data-key={product.id}
+            <input
+              data-key={product.id}
               type="number"
               className="quantity"
               step={1}
               defaultValue={product.quantity}
-              onChange={(e) => this.props.handleQuantity(e.target.value)}
+              onChange={this.props.handleQuantity}
             />
           </div>
           <div className="remove">
@@ -42,6 +43,8 @@ class Products extends React.Component {
               viewBox="0 0 60 60"
               enableBackground="new 0 0 60 60"
               xmlSpace="preserve"
+              data-key={product.id}
+              onClick={this.props.removeProduct}
             >
               <polygon points="38.936,23.561 36.814,21.439 30.562,27.691 24.311,21.439 22.189,23.561 28.441,29.812 22.189,36.064 24.311,38.186 30.562,31.934 36.814,38.186 38.936,36.064 32.684,29.812" />
             </svg>
