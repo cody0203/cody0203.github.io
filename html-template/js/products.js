@@ -1,40 +1,11 @@
 class Products extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      products: [
-        {
-          name: "PRODUCT ITEM NUMBER 1",
-          image: "https://via.placeholder.com/200x150",
-          description: "Description for product item number 1",
-          price: 100000,
-          quantity: 2,
-          id: 1
-        },
-        {
-          name: "PRODUCT ITEM NUMBER 2",
-          image: "https://via.placeholder.com/200x150",
-          description: "Description for product item number 2",
-          price: 250000,
-          quantity: 6,
-          id: 2
-        },
-        {
-          name: "PRODUCT ITEM NUMBER 3",
-          image: "https://via.placeholder.com/200x150",
-          description: "Description for product item number 3",
-          price: 3000000,
-          quantity: 9,
-          id: 3
-        }
-      ]
-    };
   }
 
   render() {
-    const products = this.state.products;
-
-    const listProducts = products.map(product => (
+    const products = this.props.products;
+    const listProducts = products.map((product) => (
       <li className="row" key={product.id}>
         <div className="col left">
           <div className="thumbnail">
@@ -52,11 +23,12 @@ class Products extends React.Component {
         </div>
         <div className="col right">
           <div className="quantity">
-            <input
+            <input data-key={product.id}
               type="number"
               className="quantity"
               step={1}
               defaultValue={product.quantity}
+              onChange={(e) => this.props.handleQuantity(e.target.value)}
             />
           </div>
           <div className="remove">
