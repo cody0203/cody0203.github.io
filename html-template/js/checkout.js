@@ -4,7 +4,7 @@ class Checkout extends React.Component {
     this.state = {
       promoCode: "",
       invalid: "",
-      promoDisCount: 200000
+      promoDiscount: 200000
     }
     this.isPromoCodeValid = this.isPromoCodeValid.bind(this);
     this.handleChange = this.handleChange.bind(this)
@@ -35,9 +35,9 @@ class Checkout extends React.Component {
     let totalPrice;
     if (this.state.invalid === false) {
       totalPrice = <div>
-        <li>Subtotal <span>{convertPrice(this.state.promoDisCount)}</span></li>
+        <li>Subtotal <span>{convertPrice(this.state.promoDiscount)}</span></li>
         < li className="total">
-          Total <span>{convertPrice(subTotal + tax - this.state.promoDisCount)}</span>
+          Total <span>{convertPrice(subTotal + tax - this.state.promoDiscount)}</span>
         </li>
       </div>
     } else {
