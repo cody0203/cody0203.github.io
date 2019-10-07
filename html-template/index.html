@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Shopping Cart</title>
 
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Shopping Cart</title>
 
-  <body>
-    <div id="root"></div>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <script src="https://unpkg.com/react/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script type="text/babel" src="./js/header.js"></script>
-    <script type="text/babel" src="./js/products.js"></script>
-    <script type="text/babel" src="./js/checkout.js"></script>
+<body>
+  <div id="root"></div>
 
-    <script type="text/babel">
+  <script src="https://unpkg.com/react/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel" src="./js/header.js"></script>
+  <script type="text/babel" src="./js/products.js"></script>
+  <script type="text/babel" src="./js/checkout.js"></script>
+
+  <script type="text/babel">
       function convertPrice(price) {
         return new Intl.NumberFormat("vi-VN", {
           style: "currency",
@@ -81,9 +82,11 @@
           let products = this.state.products.filter(product => {
             return product.id !== Number(id)
           })
-          this.setState({
+          if (confirm("Are you sure")) {
+            this.setState({
             products: products
           })
+          }
         }
 
         render() {
@@ -103,5 +106,6 @@
       }
       ReactDOM.render(<ShoppingCart />, document.getElementById("root"));
     </script>
-  </body>
+</body>
+
 </html>
