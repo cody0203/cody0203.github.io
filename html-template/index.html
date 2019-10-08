@@ -66,13 +66,9 @@
               Summer: 300000
             }
           };
-          this.handleQuantity = this.handleQuantity.bind(this);
-          this.removeProduct = this.removeProduct.bind(this);
-          this.isPromoCodeValid = this.isPromoCodeValid.bind(this);
-          this.handleChange = this.handleChange.bind(this);
         }
 
-        handleQuantity = e => {
+        handleQuantity = event => {
           let { value, min, max } = event.target;
           let id = event.target.getAttribute("data-key");
           if (value < 0) event.target.value = 0;
@@ -90,7 +86,7 @@
           });
         };
 
-        removeProduct = e => {
+        removeProduct = event => {
           let id = event.target.getAttribute("data-key");
           let products;
           if (confirm("Are you sure")) {
@@ -109,17 +105,17 @@
           });
         }
 
-        handleChange(e) {
+        handleChange = event => {
           this.setState({
             input: event.target.value
           });
-        }
+        };
 
-        isPromoCodeValid() {
+        isPromoCodeValid = () => {
           this.setState({
             promoCode: this.state.input
           });
-        }
+        };
 
         render() {
           return (

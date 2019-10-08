@@ -1,46 +1,63 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 // Import React Hooks useState
 // import React, { useState } from 'react';
 
-import './App.css';
-import Person from './Person/Person';
+import "./App.css";
+import Person from "./Person/Person";
 
 class App extends Component {
   state = {
-    persons: [
-      {name: "Cody", age: 24},
-      {name: "Bi Villy", age: 25}
-    ],
-    otherState: "Some other value"
-  }
+    persons: [{ name: "Cody", age: 24 }, { name: "Bi Villy", age: 25 }],
+    otherState: "Some other value",
+    showPerson: true
+  };
 
   switchNameHandler = () => {
     // console.log('Clickable!')
     // DONT'T DO THIS: this.state.persons[0].name = "Pham Cong Dinh"
     this.setState({
       persons: [
-        {name: "Pham Cong Dinh", age: 24},
-        {name: "Bi Villy", age: 26}
+        { name: "Pham Cong Dinh", age: 24 },
+        { name: "Bi Villy", age: 26 }
       ]
-    })
-  }
+    });
+  };
+
+  togglePersonHandler = () => {
+    const doesShow = this.state.showPerson;
+    this.setState({ showPerson: !doesShow });
+  };
 
   render() {
+    const list = this.state.persons.map(person => (
+      <Person key={person.name} name={person.name} age={person.age} />
+    ));
     return (
       <div className="App">
         <h1>Hi, I'm a React App</h1>
         <p>It's really working!!!</p>
-        <button className="switch-name" onClick={this.switchNameHandler}>Switch name</button>
-        <Person name={this.state.persons[0].name} age={this.state.persons[0].age}><small>My hobbies: Coding</small></Person>
-        <Person name={this.state.persons[1].name} age={this.state.persons[1].age} />
+        <button className="switch-name" onClick={this.togglePersonHandler}>
+          Switch name
+        </button>
+        {/* <Person
+          name={this.state.persons[0].name}
+          age={this.state.persons[0].age}
+          click={this.switchNameHandler}
+        >
+          <small>My hobbies: Coding</small>
+        </Person>
+        <Person
+          name={this.state.persons[1].name}
+          age={this.state.persons[1].age}
+        /> */}
+        {this.state.showPerson === true && list}
       </div>
     );
   }
 }
 
 export default App;
-
 
 // React Hooks alternative code for above
 
@@ -71,7 +88,6 @@ export default App;
 //       // otherState: personsState.otherState
 //     })
 //   }
-
 
 //   return (
 //     <div className="App">
