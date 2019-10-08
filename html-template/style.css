@@ -66,8 +66,8 @@ input {
   transition: all 0.25s linear;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -117,7 +117,7 @@ header .count {
   border-top: 1px solid #ddd;
 }
 
-.products>li {
+.products > li {
   padding: 1rem 0;
   border-bottom: 1px solid #ddd;
 }
@@ -174,7 +174,7 @@ header .count {
   height: 60px;
 }
 
-.quantity>input {
+.quantity > input {
   display: inline-block;
   width: 60px;
   height: 60px;
@@ -187,17 +187,15 @@ header .count {
   font: 600 1.5rem Helvetica, Arial, sans-serif;
 }
 
-.quantity>input:hover,
-.quantity>input:focus {
+.quantity > input:hover,
+.quantity > input:focus {
   border-color: #f58551;
 }
 
 .close {
   fill: #7d7d7d;
-  transition: color 150ms linear,
-    background-color 150ms linear,
-    fill 150ms linear,
-    150ms opacity linear;
+  transition: color 150ms linear, background-color 150ms linear,
+    fill 150ms linear, 150ms opacity linear;
   cursor: pointer;
 }
 
@@ -214,13 +212,13 @@ header .count {
   margin-top: 1.5rem;
 }
 
-.promotion>label {
+.promotion > label {
   float: left;
   width: 100%;
   margin-bottom: 1rem;
 }
 
-.promotion>input {
+.promotion > input {
   float: left;
   width: 80%;
   font-size: 1rem;
@@ -229,11 +227,11 @@ header .count {
   border-radius: 2rem 0 0 2rem;
 }
 
-.promotion:hover>input {
+.promotion:hover > input {
   border-color: #f58551;
 }
 
-.promotion>button {
+.promotion > button {
   float: left;
   width: 20%;
   padding: 0.6rem 0;
@@ -246,12 +244,12 @@ header .count {
   float: left;
 }
 
-.promotion:hover>button {
+.promotion:hover > button {
   border-color: #f58551;
   background-color: #f58551;
 }
 
-.promotion>button::after {
+.promotion > button::after {
   content: "\276f";
   font-size: 1rem;
 }
@@ -278,7 +276,7 @@ header .count {
   text-align: right;
 }
 
-.checkout>button {
+.checkout > button {
   font-size: 1.2rem;
   padding: 0.8rem 2.8rem;
   border-radius: 1.5rem;
@@ -288,7 +286,7 @@ header .count {
   text-align: center;
 }
 
-.empty-product>button {
+.empty-product > button {
   font-size: 1.3rem;
   padding: 10px 30px;
   border-radius: 5px;
@@ -300,7 +298,7 @@ header .count {
     display: none;
   }
 
-  .quantity>input {
+  .quantity > input {
     width: 40px;
     height: 40px;
     left: calc(50% - 20px);

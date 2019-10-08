@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Shopping Cart</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <body>
+    <div id="root"></div>
 
-<body>
-  <div id="root"></div>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel" src="./js/header.js"></script>
+    <script type="text/babel" src="./js/products.js"></script>
+    <script type="text/babel" src="./js/checkout.js"></script>
 
-  <script src="https://unpkg.com/react/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <script type="text/babel" src="./js/header.js"></script>
-  <script type="text/babel" src="./js/products.js"></script>
-  <script type="text/babel" src="./js/checkout.js"></script>
-
-  <script type="text/babel">
+    <script type="text/babel">
       function convertPrice(price) {
         return new Intl.NumberFormat("vi-VN", {
           style: "currency",
@@ -61,10 +60,10 @@
             promoCode: "",
             input: "",
             promoCodeList: {
-              "Autumn": 200000,
-              "Winter": 500000,
-              "Spring": 150000,
-              "Summer": 300000
+              Autumn: 200000,
+              Winter: 500000,
+              Spring: 150000,
+              Summer: 300000
             }
           };
           this.handleQuantity = this.handleQuantity.bind(this);
@@ -75,7 +74,7 @@
 
         handleQuantity = e => {
           let { value, min, max } = event.target;
-          let id = event.target.getAttribute('data-key');
+          let id = event.target.getAttribute("data-key");
           if (value < 0) event.target.value = 0;
           if (value > 20) event.target.value = 20;
           value = Math.max(Number(min), Math.min(Number(max), Number(value)));
@@ -84,42 +83,42 @@
             if (product.id == id) {
               product.quantity = Number(value);
             }
-            return product
-          })
+            return product;
+          });
           this.setState({
             products: products
-          })
+          });
         };
 
         removeProduct = e => {
-          let id = event.target.getAttribute('data-key');
+          let id = event.target.getAttribute("data-key");
           let products;
           if (confirm("Are you sure")) {
             products = this.state.products.filter(product => {
-            return product.id !== Number(id)
-          })
+              return product.id !== Number(id);
+            });
             this.setState({
-            products: products
-          })
+              products: products
+            });
           }
-        }
+        };
 
         componentDidMount() {
           this.setState({
             promoCode: undefined
-          })
+          });
         }
 
         handleChange(e) {
           this.setState({
             input: event.target.value
-          })
+          });
         }
 
         isPromoCodeValid() {
           this.setState({
             promoCode: this.state.input
-          })
+          });
         }
 
         render() {
@@ -132,17 +131,18 @@
                 handleQuantity={this.handleQuantity}
                 removeProduct={this.removeProduct}
               />
-              <Checkout products={this.state.products}
-              promoCode={this.state.promoCode}
-              promoCodeList={this.state.promoCodeList}
-              handleChange={this.handleChange}
-              isPromoCodeValid={this.isPromoCodeValid} />
+              <Checkout
+                products={this.state.products}
+                promoCode={this.state.promoCode}
+                promoCodeList={this.state.promoCodeList}
+                handleChange={this.handleChange}
+                isPromoCodeValid={this.isPromoCodeValid}
+              />
             </main>
           );
         }
       }
       ReactDOM.render(<ShoppingCart />, document.getElementById("root"));
     </script>
-</body>
-
+  </body>
 </html>
