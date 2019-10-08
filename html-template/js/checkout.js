@@ -3,7 +3,7 @@ class Checkout extends React.Component {
     super(props);
     this.state = {
       promoCode: "",
-      invalid: "",
+      input: "",
       promoCodeList: {
         "Autumn": 200000,
         "Winter": 500000,
@@ -15,24 +15,22 @@ class Checkout extends React.Component {
     this.handleChange = this.handleChange.bind(this)
   }
 
+  componentDidMount() {
+    this.setState({
+      promoCode: "launched"
+    })
+  }
+
   handleChange(e) {
     this.setState({
-      promoCode: event.target.value
+      input: event.target.value
     })
   }
 
   isPromoCodeValid() {
-    const promoCode = this.state.promoCode;
-    let promoCodeList = this.state.promoCodeList;
-    if (promoCodeList.hasOwnProperty(promoCode)) {
-      this.setState({
-        invalid: false
-      })
-    } else {
-      this.setState({
-        invalid: true
-      })
-    }
+    this.setState({
+      promoCode: this.state.input
+    })
   }
   render() {
     let products = this.props.products;
@@ -44,7 +42,7 @@ class Checkout extends React.Component {
     const currentPromoCode = this.state.promoCode;
     const promoCodeList = this.state.promoCodeList;
     let discountPrice = promoCodeList[currentPromoCode];
-    if (this.state.invalid === false && promoCodeList.hasOwnProperty(currentPromoCode)) {
+    if (promoCodeList.hasOwnProperty(currentPromoCode)) {
       totalPrice =
         <div>
           <li>Discount <span>{convertPrice(discountPrice)}</span></li>
@@ -73,7 +71,7 @@ class Checkout extends React.Component {
           <div className="promotion">
             <label htmlFor="promo-code">Have A Promo Code?</label>
             <input type="text" id="promo-code" onChange={this.handleChange} /> <button type="button" onClick={this.isPromoCodeValid} />
-            {this.state.invalid == true && invalidPromoCode}
+            {(!promoCodeList.hasOwnProperty(currentPromoCode) && currentPromoCode !== "launched") && invalidPromoCode}
           </div>
           <div className="summary">
             <ul>
