@@ -28,6 +28,7 @@ class Products extends React.Component {
               type="number"
               className="quantity"
               min="0"
+              max="20"
               step={1}
               defaultValue={product.quantity}
               onChange={this.props.handleQuantity}

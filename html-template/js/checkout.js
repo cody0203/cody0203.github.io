@@ -4,7 +4,12 @@ class Checkout extends React.Component {
     this.state = {
       promoCode: "",
       invalid: "",
-      promoDiscount: 200000
+      promoCodeList: {
+        "Autumn": 200000,
+        "Winter": 500000,
+        "Spring": 150000,
+        "Summer": 300000
+      }
     }
     this.isPromoCodeValid = this.isPromoCodeValid.bind(this);
     this.handleChange = this.handleChange.bind(this)
@@ -17,58 +22,76 @@ class Checkout extends React.Component {
   }
 
   isPromoCodeValid() {
-    if (this.state.promoCode !== "Autumn") {
+    const promoCode = this.state.promoCode;
+    let promoCodeList = this.state.promoCodeList;
+    if (promoCodeList.hasOwnProperty(promoCode)) {
       this.setState({
-        invalid: true
+        invalid: false
       })
     } else {
       this.setState({
-        invalid: false
+        invalid: true
       })
     }
   }
   render() {
-    const subTotal = this.props.products.reduce((a, b) => {
-      return (a + b.price) * b.quantity
+    let products = this.props.products;
+    const subTotal = products.reduce((a, b) => {
+      return a + b.price * b.quantity
     }, 0)
     const tax = 50000;
     let totalPrice;
-    if (this.state.invalid === false) {
-      totalPrice = <div>
-        <li>Subtotal <span>{convertPrice(this.state.promoDiscount)}</span></li>
-        < li className="total">
-          Total <span>{convertPrice(subTotal + tax - this.state.promoDiscount)}</span>
-        </li>
-      </div>
+    const currentPromoCode = this.state.promoCode;
+    const promoCodeList = this.state.promoCodeList;
+    let discountPrice = promoCodeList[currentPromoCode];
+    if (this.state.invalid === false && promoCodeList.hasOwnProperty(currentPromoCode)) {
+      totalPrice =
+        <div>
+          <li>Discount <span>{convertPrice(discountPrice)}</span></li>
+          < li className="total">
+            Total <span>{convertPrice(subTotal + tax - discountPrice)}</span>
+          </li>
+        </div>
     } else {
-      totalPrice = < li className="total">
-        Total <span>{convertPrice(subTotal + tax)}</span>
-      </li>
+      totalPrice =
+        <li className="total">
+          Total <span>{convertPrice(subTotal + tax)}</span>
+        </li>
     }
     let invalidPromoCode = <div className="invalid-message">Invalid Promo Code!!!</div>;
-    const checkout = (
-      <section className="container">
-        <div className="promotion">
-          <label htmlFor="promo-code">Have A Promo Code?</label>
-          <input type="text" id="promo-code" onChange={this.handleChange} /> <button type="button" onClick={this.isPromoCodeValid} />
-          {this.state.invalid == true && invalidPromoCode}
+    let checkout;
+    if (products.length == 0) {
+      checkout = (
+        <div className="empty-product">
+          <h3>There are no products in your cart.</h3>
+          <button>Shopping now</button>
         </div>
-        <div className="summary">
-          <ul>
-            <li>
-              Subtotal <span>{convertPrice(subTotal)}</span>
-            </li>
-            <li>
-              Tax <span>{convertPrice(tax)}</span>
-            </li>
-            {totalPrice}
-          </ul>
-        </div>
-        <div className="checkout">
-          <button type="button">Check Out</button>
-        </div>
-      </section >
-    );
+      )
+    } else {
+      checkout = (
+        <section className="container">
+          <div className="promotion">
+            <label htmlFor="promo-code">Have A Promo Code?</label>
+            <input type="text" id="promo-code" onChange={this.handleChange} /> <button type="button" onClick={this.isPromoCodeValid} />
+            {this.state.invalid == true && invalidPromoCode}
+          </div>
+          <div className="summary">
+            <ul>
+              <li>
+                Subtotal <span>{convertPrice(subTotal)}</span>
+              </li>
+              <li>
+                Tax <span>{convertPrice(tax)}</span>
+              </li>
+              {totalPrice}
+            </ul>
+          </div>
+          <div className="checkout">
+            <button type="button">Check Out</button>
+          </div>
+        </section >
+      );
+    }
     return checkout;
   }
 }

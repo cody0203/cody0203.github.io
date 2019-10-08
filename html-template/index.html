@@ -79,14 +79,16 @@
 
         removeProduct = e => {
           let id = event.target.getAttribute('data-key');
-          let products = this.state.products.filter(product => {
+          let products;
+          if (confirm("Are you sure")) {
+            products = this.state.products.filter(product => {
             return product.id !== Number(id)
           })
-          if (confirm("Are you sure")) {
             this.setState({
             products: products
           })
           }
+          console.log(products)
         }
 
         render() {
