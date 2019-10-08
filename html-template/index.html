@@ -69,7 +69,7 @@
           if (value < 0) event.target.value = 0;
           if (value > 20) event.target.value = 20;
           value = Math.max(Number(min), Math.min(Number(max), Number(value)));
-          
+
           let products = this.state.products.map(product => {
             if (product.id == id) {
               product.quantity = Number(value);
@@ -92,7 +92,6 @@
             products: products
           })
           }
-          console.log(products)
         }
 
         render() {
