@@ -42,7 +42,7 @@ class Checkout extends React.Component {
           <div className="promotion">
             <label htmlFor="promo-code">Have A Promo Code?</label>
             <input type="text" id="promo-code" onChange={this.props.handleChange} /> <button type="button" onClick={this.props.isPromoCodeValid} />
-            {(!promoCodeList.hasOwnProperty(promoCode) && promoCode !== "launched") && invalidPromoCode}
+            {(!promoCodeList.hasOwnProperty(promoCode) && promoCode !== undefined) && invalidPromoCode}
           </div>
           <div className="summary">
             <ul>
