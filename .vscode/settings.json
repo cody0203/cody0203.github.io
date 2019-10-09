@@ -1,4 +1,5 @@
 {
     "view-in-browser.customBrowser": "chrome",
-    "view-in-browser.default": "chrome"
+    "view-in-browser.default": "chrome",
+    "liveServer.settings.port": 5501
 }

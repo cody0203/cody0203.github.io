@@ -7,7 +7,7 @@ const Checkout = props => {
   let totalPrice;
   const promoCode = props.promoCode;
   const promoCodeList = props.promoCodeList;
-  let discountPrice = promoCodeList[promoCode];
+  let discountPrice = promoCodeList[promoCode] * subTotal;
   if (promoCodeList.hasOwnProperty(promoCode)) {
     totalPrice = (
       <div>
