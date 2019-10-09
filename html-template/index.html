@@ -68,9 +68,8 @@
           };
         }
 
-        handleQuantity = event => {
+        handleQuantity = id => {
           let { value, min, max } = event.target;
-          let id = event.target.getAttribute("data-key");
           if (value < 0) event.target.value = 0;
           if (value > 20) event.target.value = 20;
           value = Math.max(Number(min), Math.min(Number(max), Number(value)));
@@ -86,9 +85,9 @@
           });
         };
 
-        removeProduct = event => {
-          let id = event.target.getAttribute("data-key");
+        removeProduct = id => {
           let products;
+          console.log(id);
           if (confirm("Are you sure")) {
             products = this.state.products.filter(product => {
               return product.id !== Number(id);
