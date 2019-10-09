@@ -81,9 +81,7 @@
             return product;
           });
 
-          this.setState({
-            products: products
-          });
+          this.setState({ products });
         };
 
         removeProduct = id => {
@@ -92,9 +90,7 @@
             return product.id !== id;
           });
           if (confirm("Are you sure")) {
-            this.setState({
-              products: products
-            });
+            this.setState({ products });
           }
         };
 

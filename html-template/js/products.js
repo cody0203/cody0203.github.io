@@ -80,7 +80,6 @@ class Products extends React.Component {
         <div className="col right">
           <div className="quantity">
             <input
-              data-key={product.id}
               type="number"
               className="quantity"
               min="0"
