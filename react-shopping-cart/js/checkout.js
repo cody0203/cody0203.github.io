@@ -42,11 +42,7 @@ const Checkout = props => {
       <section className="container">
         <div className="promotion">
           <label htmlFor="promo-code">Have A Promo Code?</label>
-          <input
-            type="text"
-            id="promo-code"
-            onChange={props.handleChange}
-          />{" "}
+          <input type="text" id="promo-code" onChange={props.handleChange} />
           <button type="button" onClick={props.isPromoCodeValid} />
           {!promoCodeList.hasOwnProperty(promoCode) &&
             promoCode !== undefined &&

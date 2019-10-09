@@ -61,7 +61,7 @@
                 id: 3
               }
             ],
-            promoCode: "",
+            promoCode: undefined,
             input: "",
             promoCodeList: {
               Autumn: 0.1,
@@ -97,12 +97,6 @@
             this.setState({ products });
           }
         };
-
-        componentDidMount() {
-          this.setState({
-            promoCode: undefined
-          });
-        }
 
         handleChange = event => {
           this.setState({
