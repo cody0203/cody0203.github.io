@@ -66,7 +66,7 @@ class Products extends React.Component {
         <div className="col left">
           <div className="thumbnail">
             <a href="#">
-              <img src="https://via.placeholder.com/200x150" alt="img" />
+              <img src={product.image} alt="img" />
             </a>
           </div>
           <div className="detail">
