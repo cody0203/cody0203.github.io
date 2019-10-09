@@ -5,7 +5,7 @@ import React, { Component } from "react";
 
 import "./App.css";
 import Person from "./Person/Person";
-import Radium from "radium";
+import Radium, { StyleRoot } from "radium";
 
 class App extends Component {
   state = {
@@ -54,18 +54,20 @@ class App extends Component {
       <Person key={person.name} name={person.name} age={person.age} />
     ));
     return (
-      <div className="App">
-        <h1>Hi, I'm a React App</h1>
-        <p className={classes}>It's really working!!!</p>
-        <button
-          style={style}
-          className="switch-name"
-          onClick={this.togglePersonHandler}
-        >
-          Switch name
-        </button>
-        {this.state.showPerson === true && list}
-      </div>
+      <StyleRoot>
+        <div className="App">
+          <h1>Hi, I'm a React App</h1>
+          <p className={classes}>It's really working!!!</p>
+          <button
+            style={style}
+            className="switch-name"
+            onClick={this.togglePersonHandler}
+          >
+            Switch name
+          </button>
+          {this.state.showPerson === true && list}
+        </div>
+      </StyleRoot>
     );
   }
 }
