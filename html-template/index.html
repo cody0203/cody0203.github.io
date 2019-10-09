@@ -57,7 +57,6 @@
                 id: 3
               }
             ],
-            numberProduct: 0,
             promoCode: "",
             input: "",
             promoCodeList: {
@@ -82,47 +81,26 @@
             return product;
           });
 
-          let totalProductsInBag = this.state.numberProduct;
-          totalProductsInBag = products.reduce((a, b) => {
-            return a + b.quantity;
-          }, 0);
-
           this.setState({
-            products: products,
-            numberProduct: totalProductsInBag
+            products: products
           });
         };
 
-        removeProduct = async id => {
+        removeProduct = id => {
           let products = [...this.state.products];
           products = products.filter(product => {
             return product.id !== id;
           });
-          try {
-            if (confirm("Are you sure")) {
-              await this.setState({
-                products: products
-              });
-              let totalProductsInBag = this.state.products.reduce((a, b) => {
-                return a + b.quantity;
-              }, 0);
-              await this.setState({
-                numberProduct: totalProductsInBag
-              });
-            }
-          } catch (error) {
-            console.log(error);
+          if (confirm("Are you sure")) {
+            this.setState({
+              products: products
+            });
           }
         };
 
         componentDidMount() {
-          let totalProductsInBag = this.state.products.reduce((a, b) => {
-            return a + b.quantity;
-          }, 0);
-
           this.setState({
-            promoCode: undefined,
-            numberProduct: totalProductsInBag
+            promoCode: undefined
           });
         }
 
@@ -141,10 +119,7 @@
         render() {
           return (
             <main>
-              <ShoppingCartHeader
-                products={this.state.products}
-                numberProduct={this.state.numberProduct}
-              />
+              <ShoppingCartHeader products={this.state.products} />
               <Products
                 products={this.state.products}
                 numberProduct={this.state.numberProduct}
