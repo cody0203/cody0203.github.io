@@ -57,6 +57,7 @@
                 id: 3
               }
             ],
+            numberProduct: 0,
             promoCode: "",
             input: "",
             promoCodeList: {
@@ -80,8 +81,15 @@
             }
             return product;
           });
+
+          let totalProductsInBag = this.state.numberProduct;
+          totalProductsInBag = products.reduce((a, b) => {
+            return a + b.quantity;
+          }, 0);
+
           this.setState({
-            products: products
+            products: products,
+            numberProduct: totalProductsInBag
           });
         };
 
@@ -90,7 +98,6 @@
           products = products.filter(product => {
             return product.id !== Number(id);
           });
-          console.log(this.state.products);
           if (confirm("Are you sure")) {
             this.setState({
               products: products
@@ -99,8 +106,13 @@
         };
 
         componentDidMount() {
+          let totalProductsInBag = this.state.products.reduce((a, b) => {
+            return a + b.quantity;
+          }, 0);
+
           this.setState({
-            promoCode: undefined
+            promoCode: undefined,
+            numberProduct: totalProductsInBag
           });
         }
 
@@ -119,7 +131,10 @@
         render() {
           return (
             <main>
-              <ShoppingCartHeader products={this.state.products} />
+              <ShoppingCartHeader
+                products={this.state.products}
+                numberProduct={this.state.numberProduct}
+              />
               <Products
                 products={this.state.products}
                 totalProductsInBag={this.state.totalProductsInBag}
