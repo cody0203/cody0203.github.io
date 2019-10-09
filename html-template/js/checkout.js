@@ -3,7 +3,7 @@ const Checkout = props => {
   const subTotal = products.reduce((a, b) => {
     return a + b.price * b.quantity;
   }, 0);
-  const tax = 50000;
+  const vat = subTotal * 0.1;
   let totalPrice;
   const promoCode = props.promoCode;
   const promoCodeList = props.promoCodeList;
@@ -15,14 +15,14 @@ const Checkout = props => {
           Discount <span>{convertPrice(discountPrice)}</span>
         </li>
         <li className="total">
-          Total <span>{convertPrice(subTotal + tax - discountPrice)}</span>
+          Total <span>{convertPrice(subTotal + vat - discountPrice)}</span>
         </li>
       </div>
     );
   } else {
     totalPrice = (
       <li className="total">
-        Total <span>{convertPrice(subTotal + tax)}</span>
+        Total <span>{convertPrice(subTotal + vat)}</span>
       </li>
     );
   }
@@ -58,7 +58,7 @@ const Checkout = props => {
               Subtotal <span>{convertPrice(subTotal)}</span>
             </li>
             <li>
-              Tax <span>{convertPrice(tax)}</span>
+              VAT(10%) <span>{convertPrice(vat)}</span>
             </li>
             {totalPrice}
           </ul>
