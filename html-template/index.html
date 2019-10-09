@@ -86,12 +86,12 @@
         };
 
         removeProduct = id => {
-          let products;
-          console.log(id);
+          let products = [...this.state.products];
+          products = products.filter(product => {
+            return product.id !== Number(id);
+          });
+          console.log(this.state.products);
           if (confirm("Are you sure")) {
-            products = this.state.products.filter(product => {
-              return product.id !== Number(id);
-            });
             this.setState({
               products: products
             });
