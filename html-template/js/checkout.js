@@ -68,6 +68,6 @@ const Checkout = props => {
         </div>
       </section>
     );
-    return checkout;
   }
+  return checkout;
 };
