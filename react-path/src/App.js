@@ -5,6 +5,7 @@ import React, { Component } from "react";
 
 import "./App.css";
 import Person from "./Person/Person";
+import Radium from "radium";
 
 class App extends Component {
   state = {
@@ -30,34 +31,46 @@ class App extends Component {
   };
 
   render() {
+    let style = {
+      backgroundColor: "green",
+      color: "white",
+      padding: "8px",
+      cursor: "pointer",
+      ":hover": {
+        backgroundColor: "lightgreen",
+        color: "black"
+      }
+    };
+
+    const classes = [];
+
+    if (this.state.persons.length < 3) {
+      style.backgroundColor = "red";
+      style[":hover"].backgroundColor = "pink";
+      classes.push("red bold");
+    }
+
     const list = this.state.persons.map(person => (
       <Person key={person.name} name={person.name} age={person.age} />
     ));
     return (
       <div className="App">
         <h1>Hi, I'm a React App</h1>
-        <p>It's really working!!!</p>
-        <button className="switch-name" onClick={this.togglePersonHandler}>
+        <p className={classes}>It's really working!!!</p>
+        <button
+          style={style}
+          className="switch-name"
+          onClick={this.togglePersonHandler}
+        >
           Switch name
         </button>
-        {/* <Person
-          name={this.state.persons[0].name}
-          age={this.state.persons[0].age}
-          click={this.switchNameHandler}
-        >
-          <small>My hobbies: Coding</small>
-        </Person>
-        <Person
-          name={this.state.persons[1].name}
-          age={this.state.persons[1].age}
-        /> */}
         {this.state.showPerson === true && list}
       </div>
     );
   }
 }
 
-export default App;
+export default Radium(App);
 
 // React Hooks alternative code for above
 
