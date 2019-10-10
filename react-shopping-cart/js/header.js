@@ -14,3 +14,7 @@ const ShoppingCartHeader = props => {
   );
   return header;
 };
+
+ShoppingCartHeader.propTypes = {
+  products: PropTypes.array
+}

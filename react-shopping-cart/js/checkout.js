@@ -67,3 +67,11 @@ const Checkout = props => {
   }
   return checkout;
 };
+
+Checkout.propTypes = {
+  products: PropTypes.array,
+  promoCode: PropTypes.string,
+  promoCodeList: PropTypes.object,
+  handleChange: PropTypes.func,
+  isPromoCodeValid: PropTypes.func
+}
