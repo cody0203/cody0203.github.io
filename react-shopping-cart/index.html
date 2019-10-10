@@ -15,6 +15,7 @@
     <script src="https://unpkg.com/react/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/prop-types@15.6/prop-types.js"></script>
     <script type="text/babel" src="./js/header.js"></script>
     <script type="text/babel" src="./js/products.js"></script>
     <script type="text/babel" src="./js/checkout.js"></script>
@@ -116,7 +117,6 @@
               <ShoppingCartHeader products={this.state.products} />
               <Products
                 products={this.state.products}
-                numberProduct={this.state.numberProduct}
                 handleQuantity={this.handleQuantity}
                 removeProduct={this.removeProduct}
               />

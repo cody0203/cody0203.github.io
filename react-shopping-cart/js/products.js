@@ -115,3 +115,9 @@ class Products extends React.Component {
     );
   }
 }
+
+Products.propTypes = {
+  products: PropTypes.array,
+  handleQuantity: PropTypes.func,
+  removeProduct: PropTypes.func
+}
