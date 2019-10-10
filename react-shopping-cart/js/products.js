@@ -58,7 +58,13 @@
 class Products extends React.Component {
   constructor(props) {
     super(props);
+    this.inputComponentRef = React.createRef();
   }
+
+  componentDidMount() {
+    this.inputComponentRef.current.focus()
+  }
+
   render() {
     const products = this.props.products;
     const listProducts = products.map(product => (
@@ -84,6 +90,7 @@ class Products extends React.Component {
               className="quantity"
               min="0"
               max="20"
+              ref={this.inputComponentRef}
               step={1}
               defaultValue={product.quantity}
               onChange={this.props.handleQuantity.bind(null, product.id)}
