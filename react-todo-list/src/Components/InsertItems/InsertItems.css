@@ -1,0 +1,28 @@
+.InsertItems {
+  display: flex;
+  padding: 10px;
+  box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
+}
+
+.checkAllItem {
+  opacity: 0.2;
+}
+
+.checkAllItem.active {
+  opacity: 1;
+}
+
+.Input {
+  width: 100%;
+  margin-left: 20px;
+  font-size: 24px;
+  border: none;
+  background: rgba(0, 0, 0, 0.003);
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  color: #4d4d4d;
+}
+
+.Input:focus {
+  outline: 0;
+}
