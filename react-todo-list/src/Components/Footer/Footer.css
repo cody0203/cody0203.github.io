@@ -1,0 +1,18 @@
+.Footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+  color: #777;
+}
+
+.ClearCompleteBtn {
+  border: 1px solid rgba(175, 47, 47, 0.5);
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.ClearCompleteBtn:focus {
+  outline: 0;
+}
