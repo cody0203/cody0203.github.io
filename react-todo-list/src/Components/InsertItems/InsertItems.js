@@ -27,6 +27,7 @@ const insertItems = props => {
         onKeyUp={props.addItem}
         value={props.value}
         onChange={props.onChangeHandler}
+        ref={props.inputElem}
       />
     </div>
   );

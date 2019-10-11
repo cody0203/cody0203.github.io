@@ -14,6 +14,11 @@ class App extends Component {
       newItem: "",
       checkedAllItems: false
     };
+    this.inputElem = React.createRef();
+  }
+
+  componentDidMount() {
+    this.inputElem.current.focus()
   }
 
   onItemClicked = index => {
@@ -121,6 +126,7 @@ class App extends Component {
             checkAllItems={this.checkAllItems}
             checkedAllItems={this.state.checkedAllItems}
             TodoItems={this.state.TodoItems}
+            inputElem={this.inputElem}
           />
           {this.state.TodoItems.map((item, index) => (
             <TodoItems
