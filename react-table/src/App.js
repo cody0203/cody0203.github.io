@@ -199,9 +199,16 @@ class App extends Component {
       email: "",
       phone: ""
     };
+    const isValidObj = {
+      name: { status: false, message: "" },
+      birthYear: { status: false, message: "" },
+      email: { status: false, message: "" },
+      phone: { status: false, message: "" }
+    };
     this.setState({
       input: { ...freshObj },
-      newStudent: { ...freshObj }
+      newStudent: { ...freshObj },
+      isValid: { ...isValidObj }
     });
   };
 
