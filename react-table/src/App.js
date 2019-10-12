@@ -32,19 +32,7 @@ class App extends Component {
     super(props);
     this.state = {
       students: [],
-      input: {
-        name: "",
-        birthYear: "",
-        email: "",
-        phone: ""
-      },
-      newStudent: {
-        name: "",
-        birthYear: "",
-        email: "",
-        phone: ""
-      },
-      currentEditStudent: {
+      currentStudent: {
         name: "",
         birthYear: "",
         email: "",
@@ -73,6 +61,70 @@ class App extends Component {
     this.getData();
   }
 
+  nameValidate = (name, flag) => {
+    let isValid = true;
+    if (name === "") {
+      flag.status = true;
+      flag.message = "Họ tên không được để trống";
+      isValid = false;
+    } else {
+      flag.status = false;
+      flag.message = "";
+    }
+    return isValid;
+  };
+
+  birthYearValidate = (birthYear, flag) => {
+    let isValid = true;
+    const birthYearRegExp = /^\d{4}$/;
+
+    if (birthYear === "") {
+      flag.status = true;
+      flag.message = "Năm sinh không được để trống";
+      isValid = false;
+    } else if (birthYearRegExp.exec(birthYear) === null) {
+      flag.status = true;
+      flag.message = "Năm sinh không đúng định dạng";
+      isValid = false;
+    } else {
+      flag.status = false;
+      flag.message = "";
+    }
+    return isValid;
+  };
+
+  emailValidate = (email, flag) => {
+    let isValid = true;
+    const emailRegExp = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+
+    if (email === "") {
+      flag.status = true;
+      flag.message = "Email không được để trống";
+      isValid = false;
+    } else if (emailRegExp.exec(email) === null) {
+      flag.status = true;
+      flag.message = "Email không đúng định dạng";
+      isValid = false;
+    } else {
+      flag.status = false;
+      flag.message = "";
+    }
+    return isValid;
+  };
+
+  phoneValidate = (name, flag) => {
+    let isValid = true;
+    if (name === "") {
+      flag.status = true;
+      flag.message = "Số điện thoại không được để trống";
+      isValid = false;
+    } else {
+      flag.status = false;
+      flag.message = "";
+    }
+    return isValid;
+  };
+
   deleteStudent = id => {
     if (window.confirm("Are you sure?")) {
       axios
@@ -96,84 +148,44 @@ class App extends Component {
     const { name, value } = event.target;
 
     this.setState({
-      input: {
-        ...this.state.input,
-        [name]: value
-      },
-      newStudent: {
-        ...this.state.input,
+      currentStudent: {
+        ...this.state.currentStudent,
         [name]: value
       }
     });
   };
 
   addNewStudentHandler = async () => {
-    let isValidFlag = true;
-    const emailRegExp = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-    const birthYearRegExp = /^\d{4}$/;
+    let isValidFlag = [];
 
-    const { newStudent, isValid } = this.state;
+    const { currentStudent, isValid } = this.state;
 
-    // Name validate
+    isValidFlag.push(
+      // Name validate
 
-    if (newStudent.name === "") {
-      isValid.name.status = true;
-      isValid.name.message = "Họ tên không được để trống";
-      isValidFlag = false;
-    } else {
-      isValid.name.status = false;
-      isValid.name.message = "";
-    }
+      this.nameValidate(currentStudent.name, isValid.name),
 
-    // Birth Year validate
+      // Birth Year validate
 
-    if (newStudent.birthYear === "") {
-      isValid.birthYear.status = true;
-      isValid.birthYear.message = "Năm sinh không được để trống";
-      isValidFlag = false;
-    } else if (birthYearRegExp.exec(newStudent.birthYear) === null) {
-      isValid.birthYear.status = true;
-      isValid.birthYear.message = "Năm sinh không đúng định dạng";
-      isValidFlag = false;
-    } else {
-      isValid.birthYear.status = false;
-      isValid.birthYear.message = "";
-    }
+      this.birthYearValidate(currentStudent.birthYear, isValid.birthYear),
 
-    // Email validate
+      // Email validate
 
-    if (newStudent.email === "") {
-      isValid.email.status = true;
-      isValid.email.message = "Email không được để trống";
-      isValidFlag = false;
-    } else if (emailRegExp.exec(newStudent.email) === null) {
-      isValid.email.status = true;
-      isValid.email.message = "Email không đúng định dạng";
-      isValidFlag = false;
-    } else {
-      isValid.email.status = false;
-      isValid.email.message = "";
-    }
+      this.emailValidate(currentStudent.email, isValid.email),
 
-    // Phone validate
+      // Phone validate
 
-    if (newStudent.phone === "") {
-      isValid.phone.status = true;
-      isValid.phone.message = "Số điện thoại không được để trống";
-      isValidFlag = false;
-    } else {
-      isValid.phone.status = false;
-      isValid.phone.message = "";
-    }
+      this.phoneValidate(currentStudent.phone, isValid.phone)
+    );
 
     this.setState({
       isValid: { ...isValid }
     });
 
-    if (isValidFlag === true) {
+    if (!isValidFlag.includes(false)) {
       await axios
         .post(`https://student-rest-api.firebaseapp.com/api/v1/students`, {
-          ...this.state.newStudent
+          ...this.state.currentStudent
         })
         .then(res => {
           console.log(res);
@@ -188,7 +200,7 @@ class App extends Component {
     const students = [...this.state.students];
     const currentStudent = students.find(student => student.id === id);
     this.setState({
-      currentEditStudent: { ...currentStudent }
+      currentStudent: { ...currentStudent }
     });
   };
 
@@ -206,21 +218,55 @@ class App extends Component {
       phone: { status: false, message: "" }
     };
     this.setState({
-      input: { ...freshObj },
-      newStudent: { ...freshObj },
+      currentStudent: { ...freshObj },
       isValid: { ...isValidObj }
     });
   };
 
+  saveStudentInfo = async () => {
+    let isValidFlag = [];
+
+    const { currentStudent, isValid } = this.state;
+
+    isValidFlag.push(
+      // Name validate
+
+      this.nameValidate(currentStudent.name, isValid.name),
+
+      // Birth Year validate
+
+      this.birthYearValidate(currentStudent.birthYear, isValid.birthYear),
+
+      // Email validate
+
+      this.emailValidate(currentStudent.email, isValid.email),
+
+      // Phone validate
+
+      this.phoneValidate(currentStudent.phone, isValid.phone)
+    );
+
+    this.setState({
+      isValid: { ...isValid }
+    });
+
+    if (!isValidFlag.includes(false)) {
+      await axios
+        .put(
+          `https://student-rest-api.firebaseapp.com/api/v1/students/${currentStudent.id}`,
+          { ...currentStudent }
+        )
+        .then(res => {
+          console.log(res);
+          console.log(res.data);
+        });
+      await this.getData();
+      this.props.history.push("/");
+    }
+  };
+
   render() {
-    const {
-      students,
-      input,
-      newStudent,
-      currentEditStudent,
-      isValid,
-      redirect
-    } = this.state;
+    const { students, currentStudent, isValid, redirect } = this.state;
 
     return (
       <Container>
@@ -235,16 +281,20 @@ class App extends Component {
           </Route>
           <Route path="/add-new-student">
             <AddNewStudent
+              inputData={currentStudent}
               getInputValue={this.getInputValue}
-              inputData={input}
-              newStudentData={newStudent}
+              newStudentData={currentStudent}
               addNewStudentHandler={this.addNewStudentHandler}
               validation={isValid}
               redirect={redirect}
             />
           </Route>
           <Route path="/edit-student-info">
-            <EditStudentInfo currentEditStudent={currentEditStudent} />
+            <EditStudentInfo
+              currentStudent={currentStudent}
+              getInputValue={this.getInputValue}
+              saveStudentInfo={this.saveStudentInfo}
+            />
           </Route>
         </Switch>
       </Container>
