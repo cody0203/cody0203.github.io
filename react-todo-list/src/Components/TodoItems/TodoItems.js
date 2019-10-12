@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 
 import "./TodoItems.css";
 import classNames from "classnames";
@@ -22,8 +22,13 @@ class TodoItems extends Component {
         <img src={url} width={32} onClick={onClicked} alt="check" />
         <div className="TodoItemContent">
           <p> {item.title}</p>
-          <img src={close} width={16} alt="close" className="close"
-          onClick={deleteItem} />
+          <img
+            src={close}
+            width={16}
+            alt="close"
+            className="close"
+            onClick={deleteItem}
+          />
         </div>
       </div>
     );
@@ -37,6 +42,6 @@ TodoItems.propTypes = {
   }),
   onClicked: PropTypes.func.isRequired,
   deleteItem: PropTypes.func.isRequired
-}
+};
 
 export default TodoItems;
