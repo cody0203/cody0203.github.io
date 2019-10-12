@@ -1,0 +1,9 @@
+.Icon {
+  width: 20px;
+  display: none;
+  cursor: pointer;
+}
+
+.DetailRow:hover .Icon {
+  display: inline;
+}
