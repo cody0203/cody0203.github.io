@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import { Container } from "reactstrap";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, withRouter } from "react-router-dom";
 
 import StudentTable from "./Components/StudentTable";
 import AddNewStudent from "./Components/AddNewStudent/AddNewStudent";
@@ -32,13 +32,34 @@ class App extends Component {
     super(props);
     this.state = {
       students: [],
-      input: {},
-      newStudent: {},
-      currentEditStudent: {}
+      input: {
+        name: "",
+        birthYear: "",
+        email: "",
+        phone: ""
+      },
+      newStudent: {
+        name: "",
+        birthYear: "",
+        email: "",
+        phone: ""
+      },
+      currentEditStudent: {
+        name: "",
+        birthYear: "",
+        email: "",
+        phone: ""
+      },
+      isValid: {
+        name: { status: false, message: "" },
+        birthYear: { status: false, message: "" },
+        email: { status: false, message: "" },
+        phone: { status: false, message: "" }
+      }
     };
   }
 
-  componentDidMount() {
+  getData = () => {
     axios
       .get(`https://student-rest-api.firebaseapp.com/api/v1/students`)
       .then(res => {
@@ -46,6 +67,10 @@ class App extends Component {
         sortByTime(students);
         this.setState({ students });
       });
+  };
+
+  componentDidMount() {
+    this.getData();
   }
 
   deleteStudent = id => {
@@ -69,8 +94,13 @@ class App extends Component {
 
   getInputValue = event => {
     const { name, value } = event.target;
+
     this.setState({
       input: {
+        ...this.state.input,
+        [name]: value
+      },
+      newStudent: {
         ...this.state.input,
         [name]: value
       }
@@ -78,18 +108,80 @@ class App extends Component {
   };
 
   addNewStudentHandler = async () => {
-    const { input } = this.state;
+    let isValidFlag = true;
+    const emailRegExp = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+    const birthYearRegExp = /^\d{4}$/;
+
+    const { newStudent, isValid } = this.state;
+
+    // Name validate
+
+    if (newStudent.name === "") {
+      isValid.name.status = true;
+      isValid.name.message = "Họ tên không được để trống";
+      isValidFlag = false;
+    } else {
+      isValid.name.status = false;
+      isValid.name.message = "";
+    }
+
+    // Birth Year validate
+
+    if (newStudent.birthYear === "") {
+      isValid.birthYear.status = true;
+      isValid.birthYear.message = "Năm sinh không được để trống";
+      isValidFlag = false;
+    } else if (birthYearRegExp.exec(newStudent.birthYear) === null) {
+      isValid.birthYear.status = true;
+      isValid.birthYear.message = "Năm sinh không đúng định dạng";
+      isValidFlag = false;
+    } else {
+      isValid.birthYear.status = false;
+      isValid.birthYear.message = "";
+    }
+
+    // Email validate
+
+    if (newStudent.email === "") {
+      isValid.email.status = true;
+      isValid.email.message = "Email không được để trống";
+      isValidFlag = false;
+    } else if (emailRegExp.exec(newStudent.email) === null) {
+      isValid.email.status = true;
+      isValid.email.message = "Email không đúng định dạng";
+      isValidFlag = false;
+    } else {
+      isValid.email.status = false;
+      isValid.email.message = "";
+    }
+
+    // Phone validate
+
+    if (newStudent.phone === "") {
+      isValid.phone.status = true;
+      isValid.phone.message = "Số điện thoại không được để trống";
+      isValidFlag = false;
+    } else {
+      isValid.phone.status = false;
+      isValid.phone.message = "";
+    }
+
     this.setState({
-      newStudent: { ...input }
+      isValid: { ...isValid }
     });
-    await axios
-      .post(`https://student-rest-api.firebaseapp.com/api/v1/students`, {
-        ...this.state.newStudent
-      })
-      .then(res => {
-        console.log(res);
-        console.log(res.data);
-      });
+
+    if (isValidFlag === true) {
+      await axios
+        .post(`https://student-rest-api.firebaseapp.com/api/v1/students`, {
+          ...this.state.newStudent
+        })
+        .then(res => {
+          console.log(res);
+          console.log(res.data);
+        });
+      await this.getData();
+      this.props.history.push("/");
+    }
   };
 
   editStudent = id => {
@@ -100,8 +192,29 @@ class App extends Component {
     });
   };
 
+  navToAddNewStudent = () => {
+    const freshObj = {
+      name: "",
+      birthYear: "",
+      email: "",
+      phone: ""
+    };
+    this.setState({
+      input: { ...freshObj },
+      newStudent: { ...freshObj }
+    });
+  };
+
   render() {
-    const { students, input, newStudent, currentEditStudent } = this.state;
+    const {
+      students,
+      input,
+      newStudent,
+      currentEditStudent,
+      isValid,
+      redirect
+    } = this.state;
+
     return (
       <Container>
         <Switch>
@@ -110,6 +223,7 @@ class App extends Component {
               students={students}
               deleteStudent={this.deleteStudent}
               editStudent={this.editStudent}
+              navToAddNewStudent={this.navToAddNewStudent}
             />
           </Route>
           <Route path="/add-new-student">
@@ -118,6 +232,8 @@ class App extends Component {
               inputData={input}
               newStudentData={newStudent}
               addNewStudentHandler={this.addNewStudentHandler}
+              validation={isValid}
+              redirect={redirect}
             />
           </Route>
           <Route path="/edit-student-info">
@@ -129,4 +245,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

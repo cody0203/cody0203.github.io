@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import "./StudentTable.css";
 
 const StudentTable = props => {
-  const { students, deleteStudent, editStudent } = props;
+  const { students, deleteStudent, editStudent, navToAddNewStudent } = props;
   const tableBody = students.map((student, index) => {
     return (
       <tr className="DetailRow" key={student.id}>
@@ -40,7 +40,9 @@ const StudentTable = props => {
     <div>
       <div className="header d-flex align-items-center">
         <Link to="/add-new-student">
-          <Button color="primary">+ Thêm học viên</Button>
+          <Button color="primary" onClick={navToAddNewStudent}>
+            + Thêm học viên
+          </Button>
         </Link>
         <h1 className="text-center m-4" style={{ width: "70%" }}>
           Danh sách học viên
