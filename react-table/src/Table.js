@@ -42,7 +42,10 @@ class Table extends Component {
         birthYear: { status: false, message: "" },
         email: { status: false, message: "" },
         phone: { status: false, message: "" }
-      }
+      },
+      isLoading: true,
+      deletingStatus: "auto",
+      currentDeletingRow: ""
     };
   }
 
@@ -52,7 +55,7 @@ class Table extends Component {
       .then(res => {
         const students = convertData(res.data.students);
         sortByTime(students);
-        this.setState({ students });
+        this.setState({ students, isLoading: false });
       });
   };
 
@@ -155,6 +158,10 @@ class Table extends Component {
 
   deleteStudent = id => {
     if (window.confirm("Are you sure?")) {
+      this.setState({
+        deletingStatus: "none",
+        currentDeletingRow: id
+      });
       axios
         .delete(
           `https://student-rest-api.firebaseapp.com/api/v1/students/${id}`
@@ -162,7 +169,8 @@ class Table extends Component {
         .then(res => {
           this.setState(prevState => {
             return {
-              students: prevState.students.filter(student => student.id !== id)
+              students: prevState.students.filter(student => student.id !== id),
+              deletingStatus: "auto"
             };
           });
         })
@@ -195,11 +203,15 @@ class Table extends Component {
           console.log(res.data);
         });
       await this.getData();
-      this.props.history.push("/table");
+      this.setState({
+        isLoading: true
+      });
+      await this.props.history.push("/table");
     }
   };
 
   editStudent = id => {
+    this.navToAddNewStudent();
     const students = [...this.state.students];
     const currentStudent = students.find(student => student.id === id);
     this.setState({
@@ -227,32 +239,11 @@ class Table extends Component {
   };
 
   saveStudentInfo = async () => {
-    let isValidFlag = [];
+    let isValid = this.validateHandler();
 
-    const { currentStudent, isValid } = this.state;
-    isValidFlag.push(
-      // Name validate
+    const { currentStudent } = this.state;
 
-      this.nameValidate(currentStudent.name, isValid.name),
-
-      // Birth Year validate
-
-      this.birthYearValidate(currentStudent.birthYear, isValid.birthYear),
-
-      // Email validate
-
-      this.emailValidate(currentStudent.email, isValid.email),
-
-      // Phone validate
-
-      this.phoneValidate(currentStudent.phone, isValid.phone)
-    );
-
-    this.setState({
-      isValid: { ...isValid }
-    });
-
-    if (!isValidFlag.includes(false)) {
+    if (!isValid.includes(false)) {
       await axios
         .put(
           `https://student-rest-api.firebaseapp.com/api/v1/students/${currentStudent.id}`,
@@ -262,13 +253,23 @@ class Table extends Component {
           console.log(res);
           console.log(res.data);
         });
+      await this.setState({
+        isLoading: true
+      });
       await this.getData();
-      this.props.history.push("/table");
+      await this.props.history.push("/table");
     }
   };
 
   render() {
-    const { students, currentStudent, isValid } = this.state;
+    const {
+      students,
+      currentStudent,
+      isValid,
+      isLoading,
+      deletingStatus,
+      currentDeletingRow
+    } = this.state;
 
     return (
       <div>
@@ -279,6 +280,9 @@ class Table extends Component {
               deleteStudent={this.deleteStudent}
               editStudent={this.editStudent}
               navToAddNewStudent={this.navToAddNewStudent}
+              isLoading={isLoading}
+              deletingStatus={deletingStatus}
+              currentDeletingRow={currentDeletingRow}
             />
           </Route>
           <Route path="/table/add-new-student" exact>
@@ -288,6 +292,7 @@ class Table extends Component {
               newStudentData={currentStudent}
               addNewStudentHandler={this.addNewStudentHandler}
               validation={isValid}
+              isLoading={isLoading}
             />
           </Route>
           <Route path="/table/edit-student-info" exact>
@@ -296,6 +301,7 @@ class Table extends Component {
               getInputValue={this.getInputValue}
               saveStudentInfo={this.saveStudentInfo}
               validation={isValid}
+              isLoading={isLoading}
             />
           </Route>
           <Route component={NotFound} />

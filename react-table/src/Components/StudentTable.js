@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, Button } from "reactstrap";
+import { Table, Button, Spinner } from "reactstrap";
 import editIcon from "../assets/edit.svg";
 import removeIcon from "../assets/remove.svg";
 
@@ -8,34 +8,73 @@ import { Link } from "react-router-dom";
 import "./StudentTable.css";
 
 const StudentTable = props => {
-  const { students, deleteStudent, editStudent, navToAddNewStudent } = props;
-  const tableBody = students.map((student, index) => {
-    return (
-      <tr className="DetailRow" key={student.id}>
-        <td>{student.name || ""}</td>
-        <td>{student.birthYear || ""}</td>
-        <td>{student.email || ""}</td>
-        <td>{student.phone || ""}</td>
-        <td>
-          <Link to="/table/edit-student-info">
+  const {
+    students,
+    deleteStudent,
+    editStudent,
+    navToAddNewStudent,
+    isLoading,
+    deletingStatus,
+    currentDeletingRow
+  } = props;
+
+  let tableBody = null;
+
+  if (!isLoading) {
+    tableBody = students.map((student, index) => {
+      return (
+        <tr
+          className="DetailRow"
+          key={student.id}
+          style={
+            currentDeletingRow === student.id
+              ? {
+                  backgroundColor: "rgb(243, 131, 131)",
+                  transition: "all 1s ease"
+                }
+              : { backgroundColor: "initial" }
+          }
+        >
+          <td>{student.name || ""}</td>
+          <td>{student.birthYear || ""}</td>
+          <td>{student.email || ""}</td>
+          <td>{student.phone || ""}</td>
+          <td>
+            <Link
+              to="/table/edit-student-info"
+              style={{ pointerEvents: deletingStatus }}
+            >
+              <img
+                className="Icon"
+                src={editIcon}
+                style={{
+                  marginRight: 20
+                }}
+                onClick={editStudent.bind(null, student.id)}
+                alt="edit"
+              />
+            </Link>
             <img
+              onClick={deleteStudent.bind(null, student.id, index)}
               className="Icon"
-              src={editIcon}
-              style={{ marginRight: 20 }}
-              onClick={editStudent.bind(null, student.id)}
-              alt="edit"
+              src={removeIcon}
+              alt="delete"
+              style={{ pointerEvents: deletingStatus }}
             />
-          </Link>
-          <img
-            onClick={deleteStudent.bind(null, student.id)}
-            className="Icon"
-            src={removeIcon}
-            alt="delete"
-          />
+          </td>
+        </tr>
+      );
+    });
+  } else {
+    tableBody = (
+      <tr style={{ backgroundColor: "transparent", textAlign: "center" }}>
+        <td colSpan="5">
+          <Spinner />
         </td>
       </tr>
     );
-  });
+  }
+
   return (
     <div>
       <div className="header d-flex align-items-center">
