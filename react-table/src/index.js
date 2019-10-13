@@ -5,6 +5,7 @@ import "./index.css";
 import App from "./App";
 import Home from "./Home";
 import Login from "./Login";
+import NotFound from "./NotFound";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -17,9 +18,10 @@ ReactDOM.render(
       <Route path="/table">
         <App />
       </Route>
-      <Route path="/login">
+      <Route path="/login" exact>
         <Login />
       </Route>
+      <Route component={NotFound} />
     </Switch>
   </Router>,
   document.getElementById("root")

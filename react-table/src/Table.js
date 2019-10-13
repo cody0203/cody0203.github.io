@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Container } from "reactstrap";
 import { Switch, Route, withRouter } from "react-router-dom";
 
 import StudentTable from "./Components/StudentTable";
 import AddNewStudent from "./Components/AddNewStudent/AddNewStudent";
 import EditStudentInfo from "./Components/EditStudentInfo/EditStudentInfo";
+import NotFound from "./NotFound";
 
 function convertData(source) {
   let arr = [];
@@ -281,7 +281,7 @@ class Table extends Component {
               navToAddNewStudent={this.navToAddNewStudent}
             />
           </Route>
-          <Route path="/table/add-new-student">
+          <Route path="/table/add-new-student" exact>
             <AddNewStudent
               inputData={currentStudent}
               getInputValue={this.getInputValue}
@@ -290,7 +290,7 @@ class Table extends Component {
               validation={isValid}
             />
           </Route>
-          <Route path="/table/edit-student-info">
+          <Route path="/table/edit-student-info" exact>
             <EditStudentInfo
               currentStudent={currentStudent}
               getInputValue={this.getInputValue}
@@ -298,6 +298,7 @@ class Table extends Component {
               validation={isValid}
             />
           </Route>
+          <Route component={NotFound} />
         </Switch>
       </div>
     );
