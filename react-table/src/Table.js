@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import { Container } from "reactstrap";
 import { Switch, Route, withRouter } from "react-router-dom";

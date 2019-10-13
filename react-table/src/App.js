@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav, NavItem } from "reactstrap";
-import { Switch, Route, withRouter, Link } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 import Table from "./Table";
-import Login from "./Login";
-import Home from "./Home";
 
 class App extends Component {
   render() {
@@ -22,17 +20,8 @@ class App extends Component {
             </NavItem>
           </Nav>
         </Navbar>
-        <Switch>
-          <Route path="/" exact>
-            <Home />
-          </Route>
-          <Route path="/table">
-            <Table />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-        </Switch>
+
+        <Table />
       </div>
     );
   }
