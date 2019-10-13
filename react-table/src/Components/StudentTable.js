@@ -17,7 +17,7 @@ const StudentTable = props => {
         <td>{student.email || ""}</td>
         <td>{student.phone || ""}</td>
         <td>
-          <Link to="/edit-student-info">
+          <Link to="/table/edit-student-info">
             <img
               className="Icon"
               src={editIcon}
@@ -39,7 +39,7 @@ const StudentTable = props => {
   return (
     <div>
       <div className="header d-flex align-items-center">
-        <Link to="/add-new-student">
+        <Link to="/table/add-new-student">
           <Button color="primary" onClick={navToAddNewStudent}>
             + Thêm học viên
           </Button>

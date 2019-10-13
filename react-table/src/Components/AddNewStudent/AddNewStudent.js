@@ -70,7 +70,7 @@ const addNewStudent = props => {
         Thêm mới
       </Button>
 
-      <Link to="/">
+      <Link to="/table">
         <Button color="secondary ml-3">Quay lại</Button>
       </Link>
     </div>
