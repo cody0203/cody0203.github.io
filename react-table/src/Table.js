@@ -271,7 +271,7 @@ class Table extends Component {
     const { students, currentStudent, isValid } = this.state;
 
     return (
-      <Container>
+      <div>
         <Switch>
           <Route path="/table" exact>
             <StudentTable
@@ -299,7 +299,7 @@ class Table extends Component {
             />
           </Route>
         </Switch>
-      </Container>
+      </div>
     );
   }
 }

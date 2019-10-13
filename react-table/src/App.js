@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Navbar, Nav, NavItem } from "reactstrap";
+import { Navbar, Nav, NavItem, Container } from "reactstrap";
 import { withRouter, Link } from "react-router-dom";
 
 import Table from "./Table";
@@ -8,11 +8,11 @@ import Table from "./Table";
 class App extends Component {
   render() {
     return (
-      <div>
+      <Container>
         <Navbar color="light" light expand="md">
           <Link to="/">Home</Link>
           <Nav className="ml-auto" navbar>
-            <NavItem>
+            <NavItem className="mr-5">
               <Link to="/table">Danh sách sinh viên</Link>
             </NavItem>
             <NavItem>
@@ -22,7 +22,7 @@ class App extends Component {
         </Navbar>
 
         <Table />
-      </div>
+      </Container>
     );
   }
 }
