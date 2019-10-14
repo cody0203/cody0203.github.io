@@ -1,9 +1,9 @@
 import React from "react";
-import { Button, FormGroup, Label, Input } from "reactstrap";
+import { Button, FormGroup, Label, Input, FormFeedback } from "reactstrap";
 import { Link } from "react-router-dom";
 
 const editStudentInfo = props => {
-  const { getInputValue, currentEditStudent, addNewStudentHandler } = props;
+  const { getInputValue, currentStudent, saveStudentInfo, validation } = props;
 
   return (
     <div>
@@ -15,9 +15,12 @@ const editStudentInfo = props => {
           type="text"
           name="name"
           id="name"
-          value={currentEditStudent.name}
+          value={currentStudent.name}
           onChange={getInputValue}
+          invalid={validation.name.status}
         />
+        <FormFeedback>{validation.name.message}</FormFeedback>
+        <FormFeedback tooltip></FormFeedback>
       </FormGroup>
 
       <FormGroup>
@@ -26,9 +29,12 @@ const editStudentInfo = props => {
           type="text"
           name="birthYear"
           id="birthYear"
-          value={currentEditStudent.birthYear}
+          value={currentStudent.birthYear}
           onChange={getInputValue}
+          invalid={validation.birthYear.status}
         />
+        <FormFeedback>{validation.birthYear.message}</FormFeedback>
+        <FormFeedback tooltip></FormFeedback>
       </FormGroup>
 
       <FormGroup>
@@ -36,10 +42,13 @@ const editStudentInfo = props => {
         <Input
           type="email"
           name="email"
-          value={currentEditStudent.email}
+          value={currentStudent.email}
           id="email"
           onChange={getInputValue}
+          invalid={validation.email.status}
         />
+        <FormFeedback>{validation.email.message}</FormFeedback>
+        <FormFeedback tooltip></FormFeedback>
       </FormGroup>
 
       <FormGroup>
@@ -47,16 +56,19 @@ const editStudentInfo = props => {
         <Input
           type="text"
           name="phone"
-          value={currentEditStudent.phone}
+          value={currentStudent.phone}
           id="phone"
           onChange={getInputValue}
+          invalid={validation.phone.status}
         />
+        <FormFeedback>{validation.phone.message}</FormFeedback>
+        <FormFeedback tooltip></FormFeedback>
       </FormGroup>
 
-      <Button color="primary" onClick={addNewStudentHandler}>
-        Thêm mới
+      <Button color="primary" onClick={saveStudentInfo}>
+        Thay đổi
       </Button>
-      <Link to="/">
+      <Link to="/table">
         <Button color="secondary ml-3">Quay lại</Button>
       </Link>
     </div>

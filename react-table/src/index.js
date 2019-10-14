@@ -1,14 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import App from "./App";
+import Home from "./Home";
+import Login from "./Login";
+import NotFound from "./NotFound";
 import * as serviceWorker from "./serviceWorker";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <Router>
+    <Switch>
+      <Route path="/" exact>
+        <Home />
+      </Route>
+      <Route path="/table">
+        <App />
+      </Route>
+      <Route path="/login" exact>
+        <Login />
+      </Route>
+      <Route component={NotFound} />
+    </Switch>
+  </Router>,
   document.getElementById("root")
 );
 

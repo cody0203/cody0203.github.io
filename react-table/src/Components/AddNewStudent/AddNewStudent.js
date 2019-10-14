@@ -1,10 +1,11 @@
 import React from "react";
-import { Button, FormGroup, Label, Input } from "reactstrap";
+import { Button, FormGroup, Label, Input, FormFeedback } from "reactstrap";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const addNewStudent = props => {
-  const { getInputValue, inputData, addNewStudentHandler } = props;
+  const { getInputValue, inputData, addNewStudentHandler, validation } = props;
+
   return (
     <div>
       <h1 className="text-center m-4">Thêm học viên mới</h1>
@@ -17,7 +18,10 @@ const addNewStudent = props => {
           id="name"
           value={inputData.name || ""}
           onChange={getInputValue}
+          invalid={validation.name.status}
         />
+        <FormFeedback>{validation.name.message}</FormFeedback>
+        <FormFeedback tooltip></FormFeedback>
       </FormGroup>
 
       <FormGroup>
@@ -28,7 +32,10 @@ const addNewStudent = props => {
           id="birthYear"
           value={inputData.birthYear || ""}
           onChange={getInputValue}
+          invalid={validation.birthYear.status}
         />
+        <FormFeedback>{validation.birthYear.message}</FormFeedback>
+        <FormFeedback tooltip></FormFeedback>
       </FormGroup>
 
       <FormGroup>
@@ -39,7 +46,10 @@ const addNewStudent = props => {
           id="email"
           value={inputData.email || ""}
           onChange={getInputValue}
+          invalid={validation.email.status}
         />
+        <FormFeedback>{validation.email.message}</FormFeedback>
+        <FormFeedback tooltip></FormFeedback>
       </FormGroup>
 
       <FormGroup>
@@ -50,13 +60,17 @@ const addNewStudent = props => {
           id="phone"
           value={inputData.phone || ""}
           onChange={getInputValue}
+          invalid={validation.phone.status}
         />
+        <FormFeedback>{validation.phone.message}</FormFeedback>
+        <FormFeedback tooltip></FormFeedback>
       </FormGroup>
 
       <Button color="primary" onClick={addNewStudentHandler}>
         Thêm mới
       </Button>
-      <Link to="/">
+
+      <Link to="/table">
         <Button color="secondary ml-3">Quay lại</Button>
       </Link>
     </div>
