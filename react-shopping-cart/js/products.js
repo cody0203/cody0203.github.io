@@ -88,7 +88,7 @@ class Products extends React.Component {
             <input
               type="number"
               className="quantity"
-              min="0"
+              min="1"
               max="20"
               ref={this.inputComponentRef}
               step={1}

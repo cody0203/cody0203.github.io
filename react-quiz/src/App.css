@@ -1,0 +1,74 @@
+.App {
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.Box {
+  position: absolute;
+  background-color: white;
+  width: 900px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  max-width: calc(100% - 30px);
+}
+
+.BoxTransparent {
+  position: absolute;
+  width: 1200px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: calc(100% - 30px);
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  align-items: center;
+}
+
+.Heading {
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.Description {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.Button {
+  text-align: center;
+  background-color: #033042;
+  color: white;
+  padding: 20px 40px;
+  border: none;
+  width: 200px;
+  font-size: 26px;
+  font-weight: bold;
+  border-radius: 4px;
+  margin-top: 50px;
+  cursor: pointer;
+}
+
+.Button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.Button:hover,
+.btn-secondary:not(:disabled):not(.disabled).active,
+.btn-secondary:not(:disabled):not(.disabled):active,
+.show > .btn-secondary.dropdown-toggle {
+  background-color: #054862;
+}
