@@ -3,16 +3,18 @@ import Hero from "../Hero";
 import { HeroService } from "../hero.service";
 
 @Component({
-  selector: "app-heroes",
-  templateUrl: "./heroes.component.html",
-  styleUrls: ["./heroes.component.css"]
+  selector: "app-dashboard",
+  templateUrl: "./dashboard.component.html",
+  styleUrls: ["./dashboard.component.css"]
 })
-export class HeroesComponent implements OnInit {
+export class DashboardComponent implements OnInit {
   constructor(private heroService: HeroService) {}
   heroes: Hero[];
 
   getHero(): void {
-    this.heroService.getHeroes().subscribe(heroes => (this.heroes = heroes));
+    this.heroService
+      .getHeroes()
+      .subscribe(heroes => (this.heroes = heroes.slice(1, 5)));
   }
 
   ngOnInit() {
