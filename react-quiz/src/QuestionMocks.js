@@ -21,29 +21,26 @@ function shuffle(array) {
 let QuestionMocks = [
   {
     id: 1,
-    question:
-      "Which of the following is true about variable naming conventions in JavaScript?",
+    question: "Which of the following code creates an object?",
     answers: [
       {
         index: "A",
-        content:
-          "JavaScript variable names should not start with a numeral (0-9)."
+        content: "var book = Object();"
       },
       {
         index: "B",
-        content:
-          "You should not use any of the JavaScript reserved keyword as variable name."
+        content: "var book = new Object();"
       },
       {
         index: "C",
-        content: "None of the above."
+        content: "var book = new OBJECT();"
       },
       {
         index: "D",
-        content: "Both of the above."
+        content: "var book = new Book();"
       }
     ],
-    correctAnswer: "D"
+    correctAnswer: "B"
   },
   {
     id: 2,
@@ -88,7 +85,7 @@ let QuestionMocks = [
       },
       {
         index: "D",
-        content: "None of the above."
+        content: "Don't have correct answer."
       }
     ],
     correctAnswer: "C"
@@ -112,7 +109,7 @@ let QuestionMocks = [
       },
       {
         index: "D",
-        content: "None of the above."
+        content: "Don't have correct answer."
       }
     ],
     correctAnswer: "A"
