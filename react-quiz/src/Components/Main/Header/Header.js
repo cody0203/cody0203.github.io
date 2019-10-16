@@ -6,7 +6,8 @@ const header = props => {
     totalQuestions,
     currentQuestionIndex,
     lastQuestionIndex,
-    progress
+    progress,
+    timer
   } = props;
 
   const currentQuestionCount = () => {
@@ -36,7 +37,7 @@ const header = props => {
         </div>
       </div>
       <div className="RightSide">
-        <div className="Time">1:00</div>
+        <div className="Time">{timer}</div>
       </div>
     </div>
   );

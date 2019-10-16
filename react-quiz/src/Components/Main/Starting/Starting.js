@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
 
-const Starting = () => {
+const Starting = props => {
   return (
     <div className="BoxTransparent">
       <h1 className="Heading">Quiz!</h1>

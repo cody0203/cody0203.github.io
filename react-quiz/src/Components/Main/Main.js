@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Main.css";
 import { Switch, Route } from "react-router-dom";
 
@@ -29,7 +29,7 @@ function shuffle(array) {
 }
 const shuffleQuestionMocks = shuffle(QuestionMocks);
 
-let shuffleAnswer = shuffleQuestionMocks.map(question => {
+shuffleQuestionMocks.map(question => {
   return shuffle(question.answers);
 });
 
@@ -46,6 +46,18 @@ const Main = () => {
   const [progress] = useState(350);
   const [isEnded, setIsEnded] = useState(false);
   const [score, setScore] = useState(0);
+  const [timer, setTimer] = useState(10);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTimer(timer => timer - 1);
+    }, 1000);
+    if (timer <= 0) {
+      setTimer(0);
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval);
+  }, [timer]);
 
   const chooseAnswerHandler = (answer, index, correctAnswer) => {
     setAnswered({
@@ -64,7 +76,7 @@ const Main = () => {
   const nextQuestionHandler = () => {
     setcurrentQuestionIndex(currentQuestionIndex + 1);
     const answeredQ = { ...answered };
-
+    setTimer(10);
     setAnswered({
       index: null,
       answerIndex: "",
@@ -80,7 +92,7 @@ const Main = () => {
   };
 
   const resetStateHandler = () => {
-    shuffleAnswer = shuffleQuestionMocks.map(question => {
+    shuffleQuestionMocks.map(question => {
       return shuffle(question.answers);
     });
     setQuestions(shuffle(shuffleQuestionMocks));
@@ -108,6 +120,7 @@ const Main = () => {
             currentQuestionIndex={currentQuestionIndex}
             lastQuestionIndex={lastQuestionIndex}
             progress={progress}
+            timer={timer}
           />
           <Question
             questions={questions}
