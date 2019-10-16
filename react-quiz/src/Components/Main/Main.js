@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Main.css";
 import { Switch, Route } from "react-router-dom";
 
-import Starting from "./Starting/Starting";
+import Starting from "../Starting/Starting";
 import Header from "./Header/Header";
 import Question from "./Question/Question";
 import Ending from "./Ending/Ending";
@@ -121,36 +121,31 @@ const Main = () => {
   };
 
   return (
-    <Switch>
-      <Route path="/" exact>
-        <Starting />
-      </Route>
-      <Route path="/quiz">
-        {toEnding ? (
-          <Ending score={score} resetState={resetStateHandler} />
-        ) : (
-          <div className="Box">
-            <Header
-              totalQuestions={questions.length}
-              currentQuestionIndex={currentQuestionIndex}
-              lastQuestionIndex={lastQuestionIndex}
-              progress={progress}
-              timer={timer}
-            />
-            <Question
-              questions={questions}
-              currentQuestionIndex={currentQuestionIndex}
-              chooseAnswer={chooseAnswerHandler}
-              answered={answered}
-              isChose={isChose}
-              nextQuestion={nextQuestionHandler}
-              toEnding={toEndingHandler}
-              isEnded={isEnded}
-            />
-          </div>
-        )}
-      </Route>
-    </Switch>
+    <div>
+      {toEnding ? (
+        <Ending score={score} resetState={resetStateHandler} />
+      ) : (
+        <div className="Box">
+          <Header
+            totalQuestions={questions.length}
+            currentQuestionIndex={currentQuestionIndex}
+            lastQuestionIndex={lastQuestionIndex}
+            progress={progress}
+            timer={timer}
+          />
+          <Question
+            questions={questions}
+            currentQuestionIndex={currentQuestionIndex}
+            chooseAnswer={chooseAnswerHandler}
+            answered={answered}
+            isChose={isChose}
+            nextQuestion={nextQuestionHandler}
+            toEnding={toEndingHandler}
+            isEnded={isEnded}
+          />
+        </div>
+      )}
+    </div>
   );
 };
 

@@ -45,6 +45,7 @@
 .Description {
   font-size: 50px;
   font-weight: 700;
+  margin-bottom: 50px;
 }
 
 .Button {
@@ -57,7 +58,6 @@
   font-size: 26px;
   font-weight: bold;
   border-radius: 4px;
-  margin-top: 50px;
   cursor: pointer;
 }
 
