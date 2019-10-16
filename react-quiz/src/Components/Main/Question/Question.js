@@ -12,6 +12,7 @@ const Question = props => {
   } = props;
 
   let currentQuestion = questions[currentQuestionIndex];
+
   const AnswerIndex = ["A", "B", "C", "D"];
   const answerClass = (answerIndex, index) => {
     let classes = "Answer";
@@ -56,7 +57,6 @@ const Question = props => {
       Next Question
     </button>
   );
-  console.log(currentQuestionIndex, questions.length);
 
   if (currentQuestionIndex === questions.length - 1 && isChose === true) {
     Button = (

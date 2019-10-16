@@ -3,11 +3,10 @@ import "./Main.css";
 
 import Header from "./Header/Header";
 import Question from "./Question/Question";
-import { QuestionMocks } from "../../QuestionMocks";
+import { shuffleQuestionMocks } from "../../QuestionMocks";
 
 const Main = () => {
-  const questionMocks = QuestionMocks;
-  const [questions] = useState(questionMocks);
+  const [questions] = useState(shuffleQuestionMocks);
   const [currentQuestionIndex, setcurrentQuestionIndex] = useState(0);
   const [isChose, setIsChose] = useState(false);
   const [answered, setAnswered] = useState({
@@ -15,6 +14,8 @@ const Main = () => {
     answerIndex: "",
     correctAnswer: ""
   });
+  const [lastQuestionIndex, setLastQuestionIndex] = useState(null);
+  const [progress, setProgress] = useState(350);
 
   const chooseAnswerHandler = (answer, index, correctAnswer) => {
     setAnswered({
@@ -22,6 +23,10 @@ const Main = () => {
       answerIndex: answer,
       correctAnswer: correctAnswer
     });
+    if (currentQuestionIndex === questions.length - 1) {
+      setLastQuestionIndex(questions.length);
+    }
+
     setIsChose(true);
   };
 
@@ -37,7 +42,12 @@ const Main = () => {
 
   return (
     <div className="Box">
-      <Header />
+      <Header
+        totalQuestions={questions.length}
+        currentQuestionIndex={currentQuestionIndex}
+        lastQuestionIndex={lastQuestionIndex}
+        progress={progress}
+      />
       <Question
         questions={questions}
         currentQuestionIndex={currentQuestionIndex}
