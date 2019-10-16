@@ -1,6 +1,5 @@
 import React from "react";
 import "./Question.css";
-import { Link } from "react-router-dom";
 
 const Question = props => {
   const {
@@ -10,6 +9,7 @@ const Question = props => {
     answered,
     isChose,
     nextQuestion,
+    toEnding,
     isEnded
   } = props;
 
@@ -41,14 +41,12 @@ const Question = props => {
 
   if (currentQuestionIndex === questions.length - 1 && isEnded) {
     Button = (
-      <Link to="/ending">
-        <button
-          className="Button ButtonSmall btn btn-secondary"
-          onClick={nextQuestion}
-        >
-          Finish
-        </button>
-      </Link>
+      <button
+        className="Button ButtonSmall btn btn-secondary"
+        onClick={toEnding}
+      >
+        Finish
+      </button>
     );
   }
 

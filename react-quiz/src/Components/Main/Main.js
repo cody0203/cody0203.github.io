@@ -47,17 +47,25 @@ const Main = () => {
   const [isEnded, setIsEnded] = useState(false);
   const [score, setScore] = useState(0);
   const [timer, setTimer] = useState(10);
+  const [toEnding, setToEnding] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    let interval = setInterval(() => {
       setTimer(timer => timer - 1);
     }, 1000);
+    if (isChose || isEnded) {
+      clearInterval(interval);
+    }
     if (timer <= 0) {
       setTimer(0);
       clearInterval(interval);
+      setAnswered({
+        correctAnswer: questions[currentQuestionIndex].correctAnswer
+      });
+      setIsChose(true);
     }
     return () => clearInterval(interval);
-  }, [timer]);
+  }, [timer, isChose, isEnded]);
 
   const chooseAnswerHandler = (answer, index, correctAnswer) => {
     setAnswered({
@@ -65,7 +73,6 @@ const Main = () => {
       answerIndex: answer,
       correctAnswer: correctAnswer
     });
-
     if (answer === correctAnswer) {
       setScore(score + 1);
     }
@@ -91,6 +98,10 @@ const Main = () => {
     }
   };
 
+  const toEndingHandler = () => {
+    setToEnding(true);
+  };
+
   const resetStateHandler = () => {
     shuffleQuestionMocks.map(question => {
       return shuffle(question.answers);
@@ -105,6 +116,7 @@ const Main = () => {
     });
     setLastQuestionIndex(null);
     setIsEnded(false);
+    setToEnding(false);
     setScore(0);
   };
 
@@ -114,27 +126,29 @@ const Main = () => {
         <Starting />
       </Route>
       <Route path="/quiz">
-        <div className="Box">
-          <Header
-            totalQuestions={questions.length}
-            currentQuestionIndex={currentQuestionIndex}
-            lastQuestionIndex={lastQuestionIndex}
-            progress={progress}
-            timer={timer}
-          />
-          <Question
-            questions={questions}
-            currentQuestionIndex={currentQuestionIndex}
-            chooseAnswer={chooseAnswerHandler}
-            answered={answered}
-            isChose={isChose}
-            nextQuestion={nextQuestionHandler}
-            isEnded={isEnded}
-          />
-        </div>
-      </Route>
-      <Route path="/ending">
-        <Ending score={score} resetState={resetStateHandler} />
+        {toEnding ? (
+          <Ending score={score} resetState={resetStateHandler} />
+        ) : (
+          <div className="Box">
+            <Header
+              totalQuestions={questions.length}
+              currentQuestionIndex={currentQuestionIndex}
+              lastQuestionIndex={lastQuestionIndex}
+              progress={progress}
+              timer={timer}
+            />
+            <Question
+              questions={questions}
+              currentQuestionIndex={currentQuestionIndex}
+              chooseAnswer={chooseAnswerHandler}
+              answered={answered}
+              isChose={isChose}
+              nextQuestion={nextQuestionHandler}
+              toEnding={toEndingHandler}
+              isEnded={isEnded}
+            />
+          </div>
+        )}
       </Route>
     </Switch>
   );

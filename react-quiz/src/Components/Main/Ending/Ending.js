@@ -1,4 +1,5 @@
 import React from "react";
+import "./Ending.css";
 import { Link } from "react-router-dom";
 import retry from "../../../assets/refreshing.svg";
 
@@ -19,7 +20,7 @@ const Ending = props => {
       <h1 className="Heading">{message}</h1>
       <div className="Description">Your Score: {score}</div>
       <Link to="/" onClick={resetState}>
-        <img src={retry} style={{ width: 60 }} alt="ending" />
+        <img src={retry} className="Retry" alt="ending" />
       </Link>
     </div>
   );
