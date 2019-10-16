@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Main.css";
+import CorrectSound from "../../assets/correct.mp3";
+import WrongSound from "../../assets/wrong.mp3";
 
 import Header from "./Header/Header";
 import Question from "./Question/Question";
@@ -47,6 +49,8 @@ const Main = () => {
   const [timer, setTimer] = useState(10);
   const [toEnding, setToEnding] = useState(false);
 
+  let correctSound = new Audio(CorrectSound);
+  let wrongSound = new Audio(WrongSound);
   useEffect(() => {
     let interval = setInterval(() => {
       setTimer(timer => timer - 1);
@@ -54,16 +58,18 @@ const Main = () => {
     if (isChose || isEnded) {
       clearInterval(interval);
     }
-    if (timer <= 0) {
+    if (timer < 0) {
       setTimer(0);
+      wrongSound.play();
+
       clearInterval(interval);
       setAnswered({
         correctAnswer: questions[currentQuestionIndex].correctAnswer
       });
-      setIsChose(true);
+      setTimeout(() => setIsChose(true), 500);
     }
     return () => clearInterval(interval);
-  }, [timer, isChose, isEnded, currentQuestionIndex, questions]);
+  }, [timer, isChose, isEnded, currentQuestionIndex, questions, wrongSound]);
 
   const chooseAnswerHandler = (answer, index, correctAnswer) => {
     setAnswered({
@@ -72,10 +78,12 @@ const Main = () => {
       correctAnswer: correctAnswer
     });
     if (answer === correctAnswer) {
+      correctSound.play();
       setScore(score + 1);
+    } else {
+      wrongSound.play();
     }
-
-    setIsChose(true);
+    setTimeout(() => setIsChose(true), 500);
   };
 
   const nextQuestionHandler = () => {
