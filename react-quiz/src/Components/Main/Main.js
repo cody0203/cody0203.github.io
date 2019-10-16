@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Main.css";
 import CorrectSound from "../../assets/correct.mp3";
 import WrongSound from "../../assets/wrong.mp3";
+import BackgroundSound from "../../assets/background-sound.mp3";
 
 import Header from "./Header/Header";
 import Question from "./Question/Question";
@@ -49,8 +50,10 @@ const Main = () => {
   const [timer, setTimer] = useState(10);
   const [toEnding, setToEnding] = useState(false);
 
-  let correctSound = new Audio(CorrectSound);
-  let wrongSound = new Audio(WrongSound);
+  const correctSound = new Audio(CorrectSound);
+  const wrongSound = new Audio(WrongSound);
+  const backgroundSound = new Audio(BackgroundSound);
+
   useEffect(() => {
     let interval = setInterval(() => {
       setTimer(timer => timer - 1);
@@ -66,7 +69,7 @@ const Main = () => {
       setAnswered({
         correctAnswer: questions[currentQuestionIndex].correctAnswer
       });
-      setTimeout(() => setIsChose(true), 500);
+      setTimeout(() => setIsChose(true), 1000);
     }
     return () => clearInterval(interval);
   }, [timer, isChose, isEnded, currentQuestionIndex, questions, wrongSound]);
