@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Main.css";
-import { Switch, Route } from "react-router-dom";
 
-import Starting from "../Starting/Starting";
 import Header from "./Header/Header";
 import Question from "./Question/Question";
 import Ending from "./Ending/Ending";
@@ -65,7 +63,7 @@ const Main = () => {
       setIsChose(true);
     }
     return () => clearInterval(interval);
-  }, [timer, isChose, isEnded]);
+  }, [timer, isChose, isEnded, currentQuestionIndex, questions]);
 
   const chooseAnswerHandler = (answer, index, correctAnswer) => {
     setAnswered({
