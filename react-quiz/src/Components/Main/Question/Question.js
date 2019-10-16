@@ -8,13 +8,14 @@ const Question = props => {
     chooseAnswer,
     answered,
     isChose,
-    nextQuestion
+    nextQuestion,
+    isEnded
   } = props;
 
   let currentQuestion = questions[currentQuestionIndex];
 
   const AnswerIndex = ["A", "B", "C", "D"];
-  const answerClass = (answerIndex, index) => {
+  const answerClass = index => {
     let classes = "Answer";
 
     if (answered.index === index) {
@@ -27,10 +28,40 @@ const Question = props => {
     return classes;
   };
 
+  let Button = (
+    <button
+      className="Button ButtonSmall btn btn-secondary"
+      disabled={!isChose}
+      onClick={nextQuestion}
+    >
+      Submit
+    </button>
+  );
+
+  if (currentQuestionIndex === questions.length - 1 && isEnded) {
+    Button = (
+      <button
+        className="Button ButtonSmall btn btn-secondary"
+        onClick={nextQuestion}
+      >
+        Finish
+      </button>
+    );
+  }
+
+  const chooseAnswerHandler = () => {
+    if (isChose) {
+      return "none";
+    } else if (isEnded) {
+      return "none";
+    }
+    return "auto";
+  };
+
   const answer = currentQuestion.answers.map((answer, index) => {
     return (
       <div
-        className={`${answerClass(answer.index, index)} ${
+        className={`${answerClass(index)} ${
           answer.index === answered.correctAnswer ? "Choose True" : ""
         } `}
         key={index}
@@ -40,29 +71,13 @@ const Question = props => {
           index,
           currentQuestion.correctAnswer
         )}
-        style={{ pointerEvents: isChose ? "none" : "auto" }}
+        style={{ pointerEvents: chooseAnswerHandler() }}
       >
         <div className="AnswerIndex">{AnswerIndex[index]}</div>
         <div className="AnswerContent">{answer.content}</div>
       </div>
     );
   });
-
-  let Button = (
-    <button
-      className="Button ButtonSmall btn btn-secondary"
-      disabled={!isChose}
-      onClick={nextQuestion}
-    >
-      Next Question
-    </button>
-  );
-
-  if (currentQuestionIndex === questions.length - 1 && isChose === true) {
-    Button = (
-      <button className="Button ButtonSmall btn btn-secondary">Finish</button>
-    );
-  }
 
   return (
     <div className="Body">

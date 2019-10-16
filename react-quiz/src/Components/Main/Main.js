@@ -3,7 +3,7 @@ import "./Main.css";
 
 import Header from "./Header/Header";
 import Question from "./Question/Question";
-import { shuffleQuestionMocks } from "../../QuestionMocks";
+import shuffleQuestionMocks from "../../QuestionMocks";
 
 const Main = () => {
   const [questions] = useState(shuffleQuestionMocks);
@@ -15,7 +15,9 @@ const Main = () => {
     correctAnswer: ""
   });
   const [lastQuestionIndex, setLastQuestionIndex] = useState(null);
-  const [progress, setProgress] = useState(350);
+  const [progress] = useState(350);
+  const [isEnded, setIsEnded] = useState(false);
+  const [point, setPoint] = useState(0);
 
   const chooseAnswerHandler = (answer, index, correctAnswer) => {
     setAnswered({
@@ -23,8 +25,9 @@ const Main = () => {
       answerIndex: answer,
       correctAnswer: correctAnswer
     });
-    if (currentQuestionIndex === questions.length - 1) {
-      setLastQuestionIndex(questions.length);
+
+    if (answer === correctAnswer) {
+      setPoint(point + 1);
     }
 
     setIsChose(true);
@@ -32,12 +35,20 @@ const Main = () => {
 
   const nextQuestionHandler = () => {
     setcurrentQuestionIndex(currentQuestionIndex + 1);
+    const answeredQ = { ...answered };
+
     setAnswered({
       index: null,
       answerIndex: "",
       correctAnswer: ""
     });
     setIsChose(false);
+    if (currentQuestionIndex === questions.length - 1) {
+      setLastQuestionIndex(questions.length);
+      setcurrentQuestionIndex(currentQuestionIndex);
+      setAnswered(answeredQ);
+      setIsEnded(true);
+    }
   };
 
   return (
@@ -55,6 +66,7 @@ const Main = () => {
         answered={answered}
         isChose={isChose}
         nextQuestion={nextQuestionHandler}
+        isEnded={isEnded}
       />
     </div>
   );

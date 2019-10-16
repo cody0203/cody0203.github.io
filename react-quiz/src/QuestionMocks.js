@@ -263,4 +263,10 @@ let QuestionMocks = [
   }
 ];
 
-export const shuffleQuestionMocks = shuffle(QuestionMocks);
+const shuffleQuestionMocks = shuffle(QuestionMocks);
+
+const shuffleAnswer = shuffleQuestionMocks.map(question => {
+  return shuffle(question.answers);
+});
+
+export default shuffleQuestionMocks;
