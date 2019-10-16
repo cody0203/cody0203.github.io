@@ -9,15 +9,30 @@ const Main = () => {
   const questionMocks = QuestionMocks;
   const [questions] = useState(questionMocks);
   const [currentQuestionIndex, setcurrentQuestionIndex] = useState(0);
-  const [isCorrect, setIsCorrect] = useState(false);
-  const [answered, setAnswered] = useState("");
+  const [isChose, setIsChose] = useState(false);
+  const [answered, setAnswered] = useState({
+    index: null,
+    answerIndex: "",
+    correctAnswer: ""
+  });
 
-  const chooseAnswerHandler = answer => {
-    const correctAnswer = questions[currentQuestionIndex].correctAnswer;
-    setAnswered(answer);
-    if (answer === correctAnswer) {
-      setIsCorrect(true);
-    }
+  const chooseAnswerHandler = (answer, index, correctAnswer) => {
+    setAnswered({
+      index: index,
+      answerIndex: answer,
+      correctAnswer: correctAnswer
+    });
+    setIsChose(true);
+  };
+
+  const nextQuestionHandler = () => {
+    setcurrentQuestionIndex(currentQuestionIndex + 1);
+    setAnswered({
+      index: null,
+      answerIndex: "",
+      correctAnswer: ""
+    });
+    setIsChose(false);
   };
 
   return (
@@ -28,7 +43,8 @@ const Main = () => {
         currentQuestionIndex={currentQuestionIndex}
         chooseAnswer={chooseAnswerHandler}
         answered={answered}
-        isCorrect={isCorrect}
+        isChose={isChose}
+        nextQuestion={nextQuestionHandler}
       />
     </div>
   );

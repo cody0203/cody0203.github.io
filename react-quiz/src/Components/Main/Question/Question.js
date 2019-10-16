@@ -7,43 +7,68 @@ const Question = props => {
     questions,
     chooseAnswer,
     answered,
-    isCorrect
+    isChose,
+    nextQuestion
   } = props;
-  let currentQuestion = [...questions];
-  currentQuestion = currentQuestion[currentQuestionIndex];
+
+  let currentQuestion = questions[currentQuestionIndex];
   const AnswerIndex = ["A", "B", "C", "D"];
+  const answerClass = (answerIndex, index) => {
+    let classes = "Answer";
+
+    if (answered.index === index) {
+      classes += " Choose";
+      if (answered.answerIndex === currentQuestion.correctAnswer) {
+        classes += " True";
+      }
+    }
+
+    return classes;
+  };
 
   const answer = currentQuestion.answers.map((answer, index) => {
     return (
       <div
-        className="Answer"
+        className={`${answerClass(answer.index, index)} ${
+          answer.index === answered.correctAnswer ? "Choose True" : ""
+        } `}
         key={index}
-        onClick={chooseAnswer.bind(null, answer.index)}
-        style={{ pointerEvents: isCorrect ? "none" : "auto" }}
+        onClick={chooseAnswer.bind(
+          null,
+          answer.index,
+          index,
+          currentQuestion.correctAnswer
+        )}
+        style={{ pointerEvents: isChose ? "none" : "auto" }}
       >
-        <div
-          className={`AnswerIndex ${
-            answered === currentQuestion.correctAnswer ? "True" : ""
-          }`}
-        >
-          {AnswerIndex[index]}
-        </div>
+        <div className="AnswerIndex">{AnswerIndex[index]}</div>
         <div className="AnswerContent">{answer.content}</div>
       </div>
     );
   });
+
+  let Button = (
+    <button
+      className="Button ButtonSmall btn btn-secondary"
+      disabled={!isChose}
+      onClick={nextQuestion}
+    >
+      Next Question
+    </button>
+  );
+  console.log(currentQuestionIndex, questions.length);
+
+  if (currentQuestionIndex === questions.length - 1 && isChose === true) {
+    Button = (
+      <button className="Button ButtonSmall btn btn-secondary">Finish</button>
+    );
+  }
+
   return (
     <div className="Body">
-      <div className="Question">What gets logged when I try to log fetch?</div>
+      <div className="Question">{currentQuestion.question}</div>
       <div className="PossibleAnwsers">{answer}</div>
-      <div className="Footer">
-        <button
-          className="Button ButtonSmall btn btn-secondary"
-          disabled={!isCorrect}
-        >
-          Next Question
-        </button>
-      </div>
+      <div className="Footer">{Button}</div>
     </div>
   );
 };

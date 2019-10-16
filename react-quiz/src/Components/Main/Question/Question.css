@@ -34,17 +34,17 @@
   margin-top: 30px;
 }
 
-.True,
-.False {
+.Answer.Choose.True .AnswerIndex,
+.Answer.Choose .AnswerIndex {
   color: #fff;
   border: 1px solid transparent;
 }
 
-.False {
+.Answer.Choose .AnswerIndex {
   background-color: #bb4c47;
 }
 
-.True {
+.Answer.Choose.True .AnswerIndex {
   background-color: #008657;
 }
 
@@ -54,4 +54,11 @@
   margin: 0;
   width: auto;
   float: right;
+}
+
+.ButtonSmall:disabled {
+  cursor: not-allowed;
+}
+.ButtonSmall:disabled:hover {
+  background-color: #6c757d;
 }

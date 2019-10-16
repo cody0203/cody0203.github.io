@@ -26,263 +26,219 @@ export const QuestionMocks = [
     correctAnswer: "D"
   },
   {
-    id: 1,
+    id: 2,
     question:
-      "Which of the following is true about variable naming conventions in JavaScript?",
+      "Which of the following is the correct syntax to print a page using JavaScript?",
     answers: [
       {
         index: "A",
-        content:
-          "JavaScript variable names should not start with a numeral (0-9)."
+        content: "window.print();"
       },
       {
         index: "B",
-        content:
-          "You should not use any of the JavaScript reserved keyword as variable name."
+        content: "browser.print();"
       },
       {
         index: "C",
-        content: "None of the above."
+        content: "navigator.print();"
       },
       {
         index: "D",
-        content: "Both of the above."
+        content: "document.print();"
       }
     ],
-    correctAnswer: "D"
+    correctAnswer: "A"
   },
   {
-    id: 1,
+    id: 3,
     question:
-      "Which of the following is true about variable naming conventions in JavaScript?",
+      "Which built-in method removes the last element from an array and returns that element?",
     answers: [
       {
         index: "A",
-        content:
-          "JavaScript variable names should not start with a numeral (0-9)."
+        content: "last()"
       },
       {
         index: "B",
-        content:
-          "You should not use any of the JavaScript reserved keyword as variable name."
+        content: "get()"
       },
       {
         index: "C",
-        content: "None of the above."
+        content: "pop()"
       },
       {
         index: "D",
-        content: "Both of the above."
+        content: "None of the above."
       }
     ],
-    correctAnswer: "D"
+    correctAnswer: "C"
   },
   {
-    id: 1,
+    id: 4,
     question:
-      "Which of the following is true about variable naming conventions in JavaScript?",
+      "Which built-in method returns the characters in a string beginning at the specified location?",
     answers: [
       {
         index: "A",
-        content:
-          "JavaScript variable names should not start with a numeral (0-9)."
+        content: "substr()"
       },
       {
         index: "B",
-        content:
-          "You should not use any of the JavaScript reserved keyword as variable name."
+        content: "getSubstring()"
       },
       {
         index: "C",
-        content: "None of the above."
+        content: "slice()"
       },
       {
         index: "D",
-        content: "Both of the above."
+        content: "None of the above."
       }
     ],
-    correctAnswer: "D"
+    correctAnswer: "A"
   },
   {
-    id: 1,
+    id: 5,
     question:
-      "Which of the following is true about variable naming conventions in JavaScript?",
+      "Which of the following function of Number object returns the number's value?",
     answers: [
       {
         index: "A",
-        content:
-          "JavaScript variable names should not start with a numeral (0-9)."
+        content: "toString()"
       },
       {
         index: "B",
-        content:
-          "You should not use any of the JavaScript reserved keyword as variable name."
+        content: "valueOf()"
       },
       {
         index: "C",
-        content: "None of the above."
+        content: "toLocaleString()"
       },
       {
         index: "D",
-        content: "Both of the above."
+        content: "toPrecision()"
       }
     ],
-    correctAnswer: "D"
+    correctAnswer: "B"
   },
   {
-    id: 1,
+    id: 6,
     question:
-      "Which of the following is true about variable naming conventions in JavaScript?",
+      "Which of the following function of String object is used to find a match between a regular expression and a string, and to replace the matched substring with a new substring?",
     answers: [
       {
         index: "A",
-        content:
-          "JavaScript variable names should not start with a numeral (0-9)."
+        content: "concat()"
       },
       {
         index: "B",
-        content:
-          "You should not use any of the JavaScript reserved keyword as variable name."
+        content: "match()"
       },
       {
         index: "C",
-        content: "None of the above."
+        content: "replace()"
       },
       {
         index: "D",
-        content: "Both of the above."
+        content: "search()"
       }
     ],
-    correctAnswer: "D"
+    correctAnswer: "C"
   },
   {
-    id: 1,
+    id: 7,
     question:
-      "Which of the following is true about variable naming conventions in JavaScript?",
+      "Which of the following function of String object creates a string to be displayed in a big font as if it were in a <big> tag?",
     answers: [
       {
         index: "A",
-        content:
-          "JavaScript variable names should not start with a numeral (0-9)."
+        content: "anchor()"
       },
       {
         index: "B",
-        content:
-          "You should not use any of the JavaScript reserved keyword as variable name."
+        content: "big()"
       },
       {
         index: "C",
-        content: "None of the above."
+        content: "blink()"
       },
       {
         index: "D",
-        content: "Both of the above."
+        content: "italics()"
       }
     ],
-    correctAnswer: "D"
+    correctAnswer: "B"
   },
   {
-    id: 1,
+    id: 8,
     question:
-      "Which of the following is true about variable naming conventions in JavaScript?",
+      "Which of the following function of String object causes a string to be displayed as struck-out text, as if it were in a <strike> tag?",
     answers: [
       {
         index: "A",
-        content:
-          "JavaScript variable names should not start with a numeral (0-9)."
+        content: "sup()"
       },
       {
         index: "B",
-        content:
-          "You should not use any of the JavaScript reserved keyword as variable name."
+        content: "small()"
       },
       {
         index: "C",
-        content: "None of the above."
+        content: "strike()"
       },
       {
         index: "D",
-        content: "Both of the above."
+        content: "sub()"
       }
     ],
-    correctAnswer: "D"
+    correctAnswer: "C"
   },
   {
-    id: 1,
+    id: 9,
     question:
-      "Which of the following is true about variable naming conventions in JavaScript?",
+      "Which of the following function of Array object adds one or more elements to the end of an array and returns the new length of the array?",
     answers: [
       {
         index: "A",
-        content:
-          "JavaScript variable names should not start with a numeral (0-9)."
+        content: "pop()"
       },
       {
         index: "B",
-        content:
-          "You should not use any of the JavaScript reserved keyword as variable name."
+        content: "push()"
       },
       {
         index: "C",
-        content: "None of the above."
+        content: "join()"
       },
       {
         index: "D",
-        content: "Both of the above."
+        content: "map()"
       }
     ],
-    correctAnswer: "D"
+    correctAnswer: "B"
   },
   {
-    id: 1,
+    id: 10,
     question:
-      "Which of the following is true about variable naming conventions in JavaScript?",
+      "Which of the following function of Array object adds and/or removes elements from an array?",
     answers: [
       {
         index: "A",
-        content:
-          "JavaScript variable names should not start with a numeral (0-9)."
+        content: "toSource()"
       },
       {
         index: "B",
-        content:
-          "You should not use any of the JavaScript reserved keyword as variable name."
+        content: "sort()"
       },
       {
         index: "C",
-        content: "None of the above."
+        content: "splice()"
       },
       {
         index: "D",
-        content: "Both of the above."
+        content: "unshift()"
       }
     ],
-    correctAnswer: "D"
-  },
-  {
-    id: 1,
-    question:
-      "Which of the following is true about variable naming conventions in JavaScript?",
-    answers: [
-      {
-        index: "A",
-        content:
-          "JavaScript variable names should not start with a numeral (0-9)."
-      },
-      {
-        index: "B",
-        content:
-          "You should not use any of the JavaScript reserved keyword as variable name."
-      },
-      {
-        index: "C",
-        content: "None of the above."
-      },
-      {
-        index: "D",
-        content: "Both of the above."
-      }
-    ],
-    correctAnswer: "D"
+    correctAnswer: "C"
   }
 ];
