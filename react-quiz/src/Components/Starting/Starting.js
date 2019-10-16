@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "reactstrap";
+import { Link } from "react-router-dom";
 
 const Starting = props => {
   return (
@@ -8,7 +9,9 @@ const Starting = props => {
       <div className="Description">
         Learn JavaScript fundamentals through fun and challenging quizzes
       </div>
-      <Button className="Button">Let's Go!</Button>
+      <Link to="/quiz">
+        <Button className="Button">Let's Go!</Button>
+      </Link>
     </div>
   );
 };

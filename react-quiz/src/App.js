@@ -1,19 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 import Background from "./assets/quiz-background.svg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container } from "reactstrap";
 import "./App.css";
+import { Route, Switch } from "react-router-dom";
 
-import Starting from "./Components/Starting";
+import Starting from "./Components/Starting/Starting";
+import Main from "./Components/Main/Main";
 
 function App() {
-  const [isStating, setIsStarting] = useState(false);
-
   return (
-    <Container fluid={true} style={{ padding: "0" }}>
-      <div className="App" style={{ backgroundImage: `url(${Background})` }}>
-        <Starting isStating={isStating} />
-      </div>
+    <Container
+      fluid={true}
+      className="App"
+      style={{ backgroundImage: `url(${Background})`, padding: "0" }}
+    >
+      <Switch>
+        <Route path="/" exact>
+          <Starting />
+        </Route>
+        <Route path="/quiz">
+          <Main />
+        </Route>
+      </Switch>
     </Container>
   );
 }
