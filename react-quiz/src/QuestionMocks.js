@@ -1,22 +1,22 @@
-function shuffle(array) {
-  var currentIndex = array.length,
-    temporaryValue,
-    randomIndex;
+// function shuffle(array) {
+//   var currentIndex = array.length,
+//     temporaryValue,
+//     randomIndex;
 
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
+//   // While there remain elements to shuffle...
+//   while (0 !== currentIndex) {
+//     // Pick a remaining element...
+//     randomIndex = Math.floor(Math.random() * currentIndex);
+//     currentIndex -= 1;
 
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
+//     // And swap it with the current element.
+//     temporaryValue = array[currentIndex];
+//     array[currentIndex] = array[randomIndex];
+//     array[randomIndex] = temporaryValue;
+//   }
 
-  return array;
-}
+//   return array;
+// }
 
 let QuestionMocks = [
   {
@@ -260,10 +260,4 @@ let QuestionMocks = [
   }
 ];
 
-const shuffleQuestionMocks = shuffle(QuestionMocks);
-
-const shuffleAnswer = shuffleQuestionMocks.map(question => {
-  return shuffle(question.answers);
-});
-
-export default shuffleQuestionMocks;
+export default QuestionMocks;

@@ -1,12 +1,40 @@
 import React, { useState } from "react";
 import "./Main.css";
+import { Switch, Route } from "react-router-dom";
 
+import Starting from "./Starting/Starting";
 import Header from "./Header/Header";
 import Question from "./Question/Question";
-import shuffleQuestionMocks from "../../QuestionMocks";
+import Ending from "./Ending/Ending";
+import QuestionMocks from "../../QuestionMocks";
+
+function shuffle(array) {
+  var currentIndex = array.length,
+    temporaryValue,
+    randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+const shuffleQuestionMocks = shuffle(QuestionMocks);
+
+let shuffleAnswer = shuffleQuestionMocks.map(question => {
+  return shuffle(question.answers);
+});
 
 const Main = () => {
-  const [questions] = useState(shuffleQuestionMocks);
+  const [questions, setQuestions] = useState(shuffleQuestionMocks);
   const [currentQuestionIndex, setcurrentQuestionIndex] = useState(0);
   const [isChose, setIsChose] = useState(false);
   const [answered, setAnswered] = useState({
@@ -17,7 +45,7 @@ const Main = () => {
   const [lastQuestionIndex, setLastQuestionIndex] = useState(null);
   const [progress] = useState(350);
   const [isEnded, setIsEnded] = useState(false);
-  const [point, setPoint] = useState(0);
+  const [score, setScore] = useState(0);
 
   const chooseAnswerHandler = (answer, index, correctAnswer) => {
     setAnswered({
@@ -27,7 +55,7 @@ const Main = () => {
     });
 
     if (answer === correctAnswer) {
-      setPoint(point + 1);
+      setScore(score + 1);
     }
 
     setIsChose(true);
@@ -51,24 +79,51 @@ const Main = () => {
     }
   };
 
+  const resetStateHandler = () => {
+    shuffleAnswer = shuffleQuestionMocks.map(question => {
+      return shuffle(question.answers);
+    });
+    setQuestions(shuffle(shuffleQuestionMocks));
+    setcurrentQuestionIndex(0);
+    setIsChose(false);
+    setAnswered({
+      index: null,
+      answerIndex: "",
+      correctAnswer: ""
+    });
+    setLastQuestionIndex(null);
+    setIsEnded(false);
+    setScore(0);
+  };
+
   return (
-    <div className="Box">
-      <Header
-        totalQuestions={questions.length}
-        currentQuestionIndex={currentQuestionIndex}
-        lastQuestionIndex={lastQuestionIndex}
-        progress={progress}
-      />
-      <Question
-        questions={questions}
-        currentQuestionIndex={currentQuestionIndex}
-        chooseAnswer={chooseAnswerHandler}
-        answered={answered}
-        isChose={isChose}
-        nextQuestion={nextQuestionHandler}
-        isEnded={isEnded}
-      />
-    </div>
+    <Switch>
+      <Route path="/" exact>
+        <Starting />
+      </Route>
+      <Route path="/quiz">
+        <div className="Box">
+          <Header
+            totalQuestions={questions.length}
+            currentQuestionIndex={currentQuestionIndex}
+            lastQuestionIndex={lastQuestionIndex}
+            progress={progress}
+          />
+          <Question
+            questions={questions}
+            currentQuestionIndex={currentQuestionIndex}
+            chooseAnswer={chooseAnswerHandler}
+            answered={answered}
+            isChose={isChose}
+            nextQuestion={nextQuestionHandler}
+            isEnded={isEnded}
+          />
+        </div>
+      </Route>
+      <Route path="/ending">
+        <Ending score={score} resetState={resetStateHandler} />
+      </Route>
+    </Switch>
   );
 };
 
