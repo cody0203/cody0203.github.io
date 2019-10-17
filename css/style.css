@@ -56,6 +56,10 @@ html {
   transition: all 0.3s ease;
 }
 
+.sub-title {
+  margin-left: 10px;
+}
+
 .contact {
   animation: appearText 0.5s 0.5s both linear;
 }
