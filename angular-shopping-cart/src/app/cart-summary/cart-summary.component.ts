@@ -10,4 +10,5 @@ export class CartSummaryComponent {
 
   @Input() subTotal: number;
   @Input() tax: number;
+  @Input() discount: number;
 }

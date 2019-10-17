@@ -3,16 +3,31 @@
     <app-cart-header [totalQuantity]="totalQuantity"></app-cart-header>
   </header>
 
-  <section class="container">
-    <app-cart-products
-      [products]="products"
-      (quantityChangeHandler)="quantityChangeHandler($event)"
-      (removeProduct)="removeProduct($event)"
-    ></app-cart-products>
-  </section>
+  <div *ngIf="products.length > 0; then includeProducts; else emptyCart"></div>
+  <ng-template #includeProducts>
+    <section class="container">
+      <app-cart-products
+        [products]="products"
+        (quantityChangeHandler)="quantityChangeHandler($event)"
+        (removeProduct)="removeProduct($event)"
+      ></app-cart-products>
+    </section>
 
-  <section class="container">
-    <app-cart-promo-code></app-cart-promo-code>
-    <app-cart-summary [subTotal]="subTotal" [tax]="tax"></app-cart-summary>
-  </section>
+    <section class="container">
+      <app-cart-promo-code
+        (applyPromoCode)="applyPromoCode($event)"
+      ></app-cart-promo-code>
+      <app-cart-summary
+        [subTotal]="subTotal"
+        [tax]="tax"
+        [discount]="discount"
+      ></app-cart-summary>
+    </section>
+  </ng-template>
+  <ng-template #emptyCart>
+    <div class="empty-product">
+      <h3>There are no products in your cart.</h3>
+      <button>Shopping now</button>
+    </div>
+  </ng-template>
 </main>

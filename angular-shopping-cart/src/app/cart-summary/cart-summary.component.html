@@ -1,13 +1,16 @@
 <div class="summary">
   <ul>
     <li>
-      Subtotal <span>${{ subTotal }}</span>
+      Subtotal <span>{{ subTotal | currency }}</span>
+    </li>
+    <li *ngIf="discount > 0">
+      Discount <span>{{ discount | currency }}</span>
     </li>
     <li>
-      Tax <span>${{ tax }}</span>
+      Tax <span>{{ tax | currency }}</span>
     </li>
     <li class="total">
-      Total <span>${{ subTotal - tax }}</span>
+      Total <span>{{ subTotal + tax - discount | currency }}</span>
     </li>
   </ul>
 </div>

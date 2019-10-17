@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter } from "@angular/core";
 
 @Component({
-  selector: 'app-cart-promo-code',
-  templateUrl: './cart-promo-code.component.html',
-  styleUrls: ['./cart-promo-code.component.css']
+  selector: "app-cart-promo-code",
+  templateUrl: "./cart-promo-code.component.html",
+  styleUrls: ["./cart-promo-code.component.css"]
 })
-export class CartPromoCodeComponent implements OnInit {
+export class CartPromoCodeComponent {
+  promoCode: string;
 
-  constructor() { }
+  @Output() applyPromoCode = new EventEmitter();
 
-  ngOnInit() {
+  applyPromoCodeHandler() {
+    const code = this.promoCode;
+    if (code && code.trim() !== "") {
+      this.applyPromoCode.emit(code);
+    }
   }
-
 }

@@ -1,11 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 
-import { AppComponent } from './app.component';
-import { CartHeaderComponent } from './cart-header/cart-header.component';
-import { CartProductsComponent } from './cart-products/cart-products.component';
-import { CartSummaryComponent } from './cart-summary/cart-summary.component';
-import { CartPromoCodeComponent } from './cart-promo-code/cart-promo-code.component';
+import { AppComponent } from "./app.component";
+import { CartHeaderComponent } from "./cart-header/cart-header.component";
+import { CartProductsComponent } from "./cart-products/cart-products.component";
+import { CartSummaryComponent } from "./cart-summary/cart-summary.component";
+import { CartPromoCodeComponent } from "./cart-promo-code/cart-promo-code.component";
 
 @NgModule({
   declarations: [
@@ -15,10 +16,8 @@ import { CartPromoCodeComponent } from './cart-promo-code/cart-promo-code.compon
     CartSummaryComponent,
     CartPromoCodeComponent
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
