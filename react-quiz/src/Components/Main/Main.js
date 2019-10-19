@@ -55,6 +55,15 @@ const Main = () => {
   const backgroundSound = new Audio(BackgroundSound);
 
   useEffect(() => {
+    backgroundSound.play();
+    backgroundSound.volume = 0.7;
+    return () => {
+      backgroundSound.pause();
+      backgroundSound.currentTime = 0;
+    };
+  }, []);
+
+  useEffect(() => {
     let interval = setInterval(() => {
       setTimer(timer => timer - 1);
     }, 1000);
