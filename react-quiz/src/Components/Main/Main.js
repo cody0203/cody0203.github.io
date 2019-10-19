@@ -56,7 +56,7 @@ const Main = () => {
 
   useEffect(() => {
     backgroundSound.play();
-    backgroundSound.volume = 0.7;
+    backgroundSound.volume = 0.6;
     return () => {
       backgroundSound.pause();
       backgroundSound.currentTime = 0;
@@ -64,6 +64,9 @@ const Main = () => {
   }, []);
 
   useEffect(() => {
+    correctSound.volume = 0.8;
+    wrongSound.volume = 0.8;
+
     let interval = setInterval(() => {
       setTimer(timer => timer - 1);
     }, 1000);
@@ -81,7 +84,15 @@ const Main = () => {
       setTimeout(() => setIsChose(true), 1000);
     }
     return () => clearInterval(interval);
-  }, [timer, isChose, isEnded, currentQuestionIndex, questions, wrongSound]);
+  }, [
+    timer,
+    isChose,
+    isEnded,
+    currentQuestionIndex,
+    questions,
+    correctSound,
+    wrongSound
+  ]);
 
   const chooseAnswerHandler = (answer, index, correctAnswer) => {
     setAnswered({
