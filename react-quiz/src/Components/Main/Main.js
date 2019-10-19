@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Main.css";
 import CorrectSound from "../../assets/correct.mp3";
 import WrongSound from "../../assets/wrong.mp3";
@@ -38,34 +38,27 @@ const Main = () => {
   const [questions, setQuestions] = useState(shuffleQuestionMocks);
   const [currentQuestionIndex, setcurrentQuestionIndex] = useState(0);
   const [isChose, setIsChose] = useState(false);
+  const [isNext, setIsNext] = useState(false);
   const [answered, setAnswered] = useState({
     index: null,
     answerIndex: "",
     correctAnswer: ""
   });
   const [lastQuestionIndex, setLastQuestionIndex] = useState(null);
-  const [progress] = useState(350);
+  const [progress, setProgress] = useState(350);
   const [isEnded, setIsEnded] = useState(false);
   const [score, setScore] = useState(0);
   const [timer, setTimer] = useState(10);
   const [toEnding, setToEnding] = useState(false);
-
-  const correctSound = new Audio(CorrectSound);
-  const wrongSound = new Audio(WrongSound);
-  const backgroundSound = new Audio(BackgroundSound);
-
-  useEffect(() => {
-    backgroundSound.play();
-    backgroundSound.volume = 0.6;
-    return () => {
-      backgroundSound.pause();
-      backgroundSound.currentTime = 0;
-    };
-  }, []);
+  const backgroundSoundRef = useRef();
+  const wrongSoundRef = useRef();
+  const correctSoundRef = useRef();
 
   useEffect(() => {
-    correctSound.volume = 0.8;
-    wrongSound.volume = 0.8;
+    correctSoundRef.current.volume = 0.8;
+    wrongSoundRef.current.volume = 0.8;
+    wrongSoundRef.current.playbackRate = 2;
+    correctSoundRef.current.playbackRate = 2;
 
     let interval = setInterval(() => {
       setTimer(timer => timer - 1);
@@ -75,24 +68,56 @@ const Main = () => {
     }
     if (timer < 0) {
       setTimer(0);
-      wrongSound.play();
+      wrongSoundRef.current.play();
 
       clearInterval(interval);
       setAnswered({
         correctAnswer: questions[currentQuestionIndex].correctAnswer
       });
-      setTimeout(() => setIsChose(true), 1000);
+      setIsChose(true);
+      setTimeout(() => setIsNext(true), 500);
     }
-    return () => clearInterval(interval);
+
+    return () => {
+      clearInterval(interval);
+    };
   }, [
     timer,
     isChose,
+    isNext,
     isEnded,
     currentQuestionIndex,
     questions,
-    correctSound,
-    wrongSound
+    correctSoundRef,
+    wrongSoundRef
   ]);
+
+  const handleResize = () => {
+    if (window.innerWidth > 560) {
+      setProgress(350);
+    }
+    if (window.innerWidth < 560) {
+      setProgress(250);
+    }
+
+    if (window.innerWidth < 450) {
+      setProgress(130);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize());
+    return () => {
+      window.removeEventListener("resize", handleResize());
+    };
+  });
+
+  useEffect(() => {
+    backgroundSoundRef.current.play();
+    backgroundSoundRef.current.volume = 0.5;
+
+    return () => {};
+  });
 
   const chooseAnswerHandler = (answer, index, correctAnswer) => {
     setAnswered({
@@ -101,12 +126,13 @@ const Main = () => {
       correctAnswer: correctAnswer
     });
     if (answer === correctAnswer) {
-      correctSound.play();
+      correctSoundRef.current.play();
       setScore(score + 1);
     } else {
-      wrongSound.play();
+      wrongSoundRef.current.play();
     }
-    setTimeout(() => setIsChose(true), 500);
+    setIsChose(true);
+    setTimeout(() => setIsNext(true), 500);
   };
 
   const nextQuestionHandler = () => {
@@ -119,6 +145,7 @@ const Main = () => {
       correctAnswer: ""
     });
     setIsChose(false);
+    setIsNext(false);
     if (currentQuestionIndex === questions.length - 1) {
       setLastQuestionIndex(questions.length);
       setcurrentQuestionIndex(currentQuestionIndex);
@@ -138,6 +165,7 @@ const Main = () => {
     setQuestions(shuffle(shuffleQuestionMocks));
     setcurrentQuestionIndex(0);
     setIsChose(false);
+    setIsNext(false);
     setAnswered({
       index: null,
       answerIndex: "",
@@ -150,7 +178,11 @@ const Main = () => {
   };
 
   return (
-    <div>
+    <div className="Main">
+      <audio ref={backgroundSoundRef} id="beep" src={BackgroundSound} />
+      <audio ref={wrongSoundRef} id="beep" src={WrongSound} />
+      <audio ref={correctSoundRef} id="beep" src={CorrectSound} />
+
       {toEnding ? (
         <Ending score={score} resetState={resetStateHandler} />
       ) : (
@@ -168,6 +200,7 @@ const Main = () => {
             chooseAnswer={chooseAnswerHandler}
             answered={answered}
             isChose={isChose}
+            isNext={isNext}
             nextQuestion={nextQuestionHandler}
             toEnding={toEndingHandler}
             isEnded={isEnded}

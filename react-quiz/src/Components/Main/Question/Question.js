@@ -8,6 +8,7 @@ const Question = props => {
     chooseAnswer,
     answered,
     isChose,
+    isNext,
     nextQuestion,
     toEnding,
     isEnded
@@ -32,10 +33,10 @@ const Question = props => {
   let Button = (
     <button
       className="Button ButtonSmall btn btn-secondary"
-      disabled={!isChose}
+      disabled={!isNext}
       onClick={nextQuestion}
     >
-      Submit
+      Next
     </button>
   );
 
