@@ -2,11 +2,10 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
   selector: "app-cart-products",
-  templateUrl: "./cart-products.component.html",
-  styleUrls: ["./cart-products.component.css"]
+  templateUrl: "./cart-products.component.html"
 })
 export class CartProductsComponent {
-  @Input() products;
+  @Input() product;
 
   @Output() quantityChangeHandler = new EventEmitter();
   @Output() removeProduct = new EventEmitter();

@@ -6,11 +6,17 @@
   <div *ngIf="products.length > 0; then includeProducts; else emptyCart"></div>
   <ng-template #includeProducts>
     <section class="container">
-      <app-cart-products
-        [products]="products"
-        (quantityChangeHandler)="quantityChangeHandler($event)"
-        (removeProduct)="removeProduct($event)"
-      ></app-cart-products>
+      <ul>
+        <ng-container *ngFor="let product of products">
+          <li class="row">
+            <app-cart-products
+              [product]="product"
+              (quantityChangeHandler)="quantityChangeHandler($event)"
+              (removeProduct)="removeProduct($event)"
+            ></app-cart-products>
+          </li>
+        </ng-container>
+      </ul>
     </section>
 
     <section class="container">
