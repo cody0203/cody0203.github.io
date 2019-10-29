@@ -1,1 +1,40 @@
-@import"https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap";header{background-color:#333;padding:1.25rem 0px}.navbar{padding-top:0px;padding-bottom:0px}.navbar-light .navbar-nav .nav-link{color:#fff}.navbar-light .navbar-nav .nav-link:hover{color:#eee}.search-form{margin:0px .625rem;margin:auto}.navbar-expand-lg .navbar-nav .nav-link{padding:0px .9375rem .9375rem .9375rem;margin:0px .625rem;transition:all .3s ease;border-bottom:3px solid transparent}.navbar-expand-lg .navbar-nav .nav-link:hover{border-bottom:3px solid #fff}.navbar-light .navbar-toggler-icon{background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");color:#fff}.navbar-light .navbar-toggler{border-color:#fff}@media(max-width: 992px){.navbar-brand{margin-right:0px}}/*# sourceMappingURL=header.css.map */
+@import "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap";
+header {
+  background-color: #333;
+  padding: 1.25rem 0px;
+}
+.navbar {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: #fff;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #eee;
+}
+.search-form {
+  margin: 0px 0.625rem;
+  margin: auto;
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding: 0px 0.9375rem 0.9375rem 0.9375rem;
+  margin: 0px 0.625rem;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+.navbar-expand-lg .navbar-nav .nav-link:hover {
+  border-bottom: 3px solid #fff;
+}
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  color: #fff;
+}
+.navbar-light .navbar-toggler {
+  border-color: #fff;
+}
+@media (max-width: 992px) {
+  .navbar-brand {
+    margin-right: 0px;
+  }
+} /*# sourceMappingURL=header.css.map */
