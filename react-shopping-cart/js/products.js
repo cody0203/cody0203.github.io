@@ -88,7 +88,7 @@ class Products extends React.Component {
             <input
               type="number"
               className="quantity"
-              min="0"
+              min="1"
               max="20"
               ref={this.inputComponentRef}
               step={1}
@@ -112,8 +112,6 @@ class Products extends React.Component {
               <polygon points="38.936,23.561 36.814,21.439 30.562,27.691 24.311,21.439 22.189,23.561 28.441,29.812 22.189,36.064 24.311,38.186 30.562,31.934 36.814,38.186 38.936,36.064 32.684,29.812" />
             </svg>
           </div>
-          <div className="description">{product.description}</div>
-          <div className="price">{convertPrice(product.price)}</div>
         </div>
       </li>
     ));

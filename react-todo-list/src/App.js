@@ -4,13 +4,13 @@ import TodoItems from "./Components/TodoItems/TodoItems";
 import InsertItems from "./Components/InsertItems/InsertItems";
 import Footer from "./Components/Footer/Footer";
 import Aux from "./hoc/Aux";
+import { Switch, Route } from "react-router-dom";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      TodoItems: [
-      ],
+      TodoItems: [],
       newItem: "",
       checkedAllItems: false
     };
@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.inputElem.current.focus()
+    this.inputElem.current.focus();
   }
 
   onItemClicked = index => {
@@ -117,7 +117,9 @@ class App extends Component {
   render() {
     return (
       <Aux>
-        <h1 style={{textAlign: 'center', color: 'rgba(175, 47, 47, 0.5)'}}>React Todo List</h1>
+        <h1 style={{ textAlign: "center", color: "rgba(175, 47, 47, 0.5)" }}>
+          React Todo List
+        </h1>
         <div className="App">
           <InsertItems
             addItem={this.addItemHandler}
@@ -128,14 +130,45 @@ class App extends Component {
             TodoItems={this.state.TodoItems}
             inputElem={this.inputElem}
           />
-          {this.state.TodoItems.map((item, index) => (
-            <TodoItems
-              key={index}
-              item={item}
-              onClicked={this.onItemClicked(index)}
-              deleteItem={this.deleteItem(index)}
-            />
-          ))}
+          <Switch>
+            <Route path="/" exact>
+              {this.state.TodoItems.map((item, index) => (
+                <TodoItems
+                  key={index}
+                  item={item}
+                  onClicked={this.onItemClicked(index)}
+                  deleteItem={this.deleteItem(index)}
+                />
+              ))}
+            </Route>
+            <Route path="/active">
+              {this.state.TodoItems.map(
+                (item, index) =>
+                  !item.isComplete && (
+                    <TodoItems
+                      key={index}
+                      item={item}
+                      onClicked={this.onItemClicked(index)}
+                      deleteItem={this.deleteItem(index)}
+                    />
+                  )
+              )}
+            </Route>
+            <Route path="/completed">
+              {this.state.TodoItems.map((item, index) => {
+                return (
+                  item.isComplete && (
+                    <TodoItems
+                      key={index}
+                      item={item}
+                      onClicked={this.onItemClicked(index)}
+                      deleteItem={this.deleteItem(index)}
+                    />
+                  )
+                );
+              })}
+            </Route>
+          </Switch>
           <Footer
             TodoItems={this.state.TodoItems}
             ClearCompleteItems={this.ClearCompleteItems}

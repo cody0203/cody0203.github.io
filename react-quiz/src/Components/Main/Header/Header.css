@@ -1,0 +1,71 @@
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ProgressBar {
+  background-color: #bb4c47;
+  height: 10px;
+  border-radius: 999px;
+}
+
+.ProgressBar:before {
+  content: "";
+  width: 350px;
+  position: absolute;
+  height: 10px;
+  border-radius: 999px;
+  background-color: #eff3f4;
+  z-index: -1;
+}
+
+.Percent {
+  position: absolute;
+  left: 400px;
+  top: 34px;
+  font-size: 14px;
+}
+
+.RightSide {
+  width: 50px;
+  height: 50px;
+  background-color: #bb4c47;
+  border-radius: 999px;
+  text-align: center;
+}
+
+.Time {
+  line-height: 50px;
+  color: #fff;
+}
+
+@media (max-width: 560px) {
+  .ProgressBar:before {
+    width: 250px;
+  }
+
+  .Percent {
+    left: 300px;
+  }
+}
+
+@media (max-width: 450px) {
+  .ProgressBar:before {
+    width: 130px;
+  }
+
+  .Percent {
+    left: 180px;
+    top: 28px;
+  }
+
+  .RightSide {
+    width: 40px;
+    height: 40px;
+  }
+
+  .Time {
+    line-height: 40px;
+  }
+}

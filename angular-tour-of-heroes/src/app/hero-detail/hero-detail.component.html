@@ -1,0 +1,12 @@
+<div *ngIf="hero">
+  <h2>{{ hero.name | uppercase }}</h2>
+  <div><span>Id: </span>{{ hero.id }}</div>
+  <div>
+    <label
+      >Name:
+      <input [value]="hero.name" (input)="hero.name = $event.target.value" />
+    </label>
+  </div>
+
+  <button (click)="goBack()">go back</button>
+</div>

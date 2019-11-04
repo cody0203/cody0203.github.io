@@ -1,0 +1,111 @@
+.App {
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Box {
+  position: absolute;
+  background-color: white;
+  width: 900px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  max-width: calc(100% - 30px);
+}
+
+.BoxTransparent {
+  max-width: 1200px;
+  height: 500px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  align-items: center;
+}
+
+.Heading {
+  font-size: 100px;
+  font-weight: bold;
+  word-break: break-word;
+}
+
+.Description {
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.Button {
+  text-align: center;
+  background-color: #033042;
+  color: white;
+  padding: 20px 40px;
+  border: none;
+  width: 200px;
+  font-size: 26px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.Button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.Button:hover,
+.btn-secondary:not(:disabled):not(.disabled).active,
+.btn-secondary:not(:disabled):not(.disabled):active,
+.show > .btn-secondary.dropdown-toggle {
+  background-color: #054862;
+}
+
+@media (max-width: 560px) {
+  .Heading {
+    font-size: 70px;
+    font-weight: bold;
+  }
+
+  .Description {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 50px;
+  }
+
+  .Button {
+    text-align: center;
+    background-color: #033042;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    width: auto;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 450px) {
+  .Heading {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 320px) {
+  .App {
+    height: 123vh;
+  }
+}

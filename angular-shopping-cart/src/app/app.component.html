@@ -1,0 +1,39 @@
+<main>
+  <header class="container">
+    <app-cart-header [totalQuantity]="totalQuantity"></app-cart-header>
+  </header>
+
+  <div *ngIf="products.length > 0; then includeProducts; else emptyCart"></div>
+  <ng-template #includeProducts>
+    <section class="container">
+      <ul>
+        <ng-container *ngFor="let product of products">
+          <li class="row">
+            <app-cart-products
+              [product]="product"
+              (quantityChangeHandler)="quantityChangeHandler($event)"
+              (removeProduct)="removeProduct($event)"
+            ></app-cart-products>
+          </li>
+        </ng-container>
+      </ul>
+    </section>
+
+    <section class="container">
+      <app-cart-promo-code
+        (applyPromoCode)="applyPromoCode($event)"
+      ></app-cart-promo-code>
+      <app-cart-summary
+        [subTotal]="subTotal"
+        [tax]="tax"
+        [discount]="discount"
+      ></app-cart-summary>
+    </section>
+  </ng-template>
+  <ng-template #emptyCart>
+    <div class="empty-product">
+      <h3>There are no products in your cart.</h3>
+      <button>Shopping now</button>
+    </div>
+  </ng-template>
+</main>

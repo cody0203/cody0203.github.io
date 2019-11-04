@@ -4,15 +4,48 @@
   align-items: center;
   padding: 10px 10px;
   color: #777;
+  position: relative;
 }
 
 .ClearCompleteBtn {
-  border: 1px solid rgba(175, 47, 47, 0.5);
-  border-radius: 4px;
-  padding: 5px 10px;
+  border: none;
+  color: #777;
   cursor: pointer;
+  border-bottom: 2px solid transparent;
+  padding: 0;
+}
+
+.ClearCompleteBtn:hover {
+  border-bottom: 2px solid rgba(175, 47, 47, 0.5);
 }
 
 .ClearCompleteBtn:focus {
   outline: 0;
+}
+
+.Nav {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+
+.Nav > div:nth-child(2n) {
+  margin: 0 20px;
+}
+
+.Nav > div {
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.Nav > div:hover {
+  border-bottom: 2px solid rgba(175, 47, 47, 0.5);
+}
+
+.Nav > div > a {
+  color: inherit;
+  text-decoration: none;
+  padding-bottom: 5px;
 }

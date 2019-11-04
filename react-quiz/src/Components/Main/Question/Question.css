@@ -1,0 +1,64 @@
+.Question {
+  width: 100%;
+  background-color: #033042;
+  padding: 20px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.Answer {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+  color: #333;
+  cursor: pointer;
+}
+
+.AnswerIndex {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  text-align: center;
+  line-height: 40px;
+  margin-right: 20px;
+  border: 1px solid #e0e0e0;
+}
+
+.Answer:last-child {
+  border-bottom: none;
+}
+
+.Body {
+  margin-top: 30px;
+}
+
+.Answer.Choose.True .AnswerIndex,
+.Answer.Choose .AnswerIndex {
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+.Answer.Choose .AnswerIndex {
+  background-color: #bb4c47;
+}
+
+.Answer.Choose.True .AnswerIndex {
+  background-color: #008657;
+}
+
+.ButtonSmall {
+  font-size: 16px;
+  padding: 10px 16px;
+  margin: 0;
+  width: auto;
+  float: right;
+}
+
+.ButtonSmall:disabled {
+  cursor: not-allowed;
+}
+.ButtonSmall:disabled:hover {
+  background-color: #6c757d;
+}

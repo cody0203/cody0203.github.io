@@ -75,7 +75,7 @@
 
         handleQuantity = id => {
           let { value, min, max } = event.target;
-          if (value < 0) event.target.value = 0;
+          if (value < 0) event.target.value = 1;
           if (value > 20) event.target.value = 20;
           value = Math.max(Number(min), Math.min(Number(max), Number(value)));
 
