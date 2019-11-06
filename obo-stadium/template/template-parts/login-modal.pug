@@ -1,0 +1,39 @@
+#signInSignUp.modal.fade(tabindex='-1' role='dialog' aria-labelledby='signInSignUpLabel' aria-hidden='true')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        ul#pills-tab.nav.nav-pills(role='tablist')
+          li.nav-item
+            a#signIn-tab.nav-link.active(data-toggle='pill' href='#signIn' role='tab' aria-controls='signIn' aria-selected='true') Đăng nhập
+          li.nav-item
+            a#signUp-tab.nav-link(data-toggle='pill' href='#signUp' role='tab' aria-controls='signUp' aria-selected='false') Đăng ký
+
+      .modal-body
+        #pills-tabContent.tab-content
+          #signIn.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='signIn-tab')
+            form
+              input.form-control.sign-in-email(placeholder="Email" autocomplete)
+              .invalid-feedback 
+              input.form-control.sign-in-password(type="password" placeholder="Mật khẩu" autocomplete)
+              .invalid-feedback 
+              .forgot-password-wrapper
+              | Quên mật khẩu? Nhấn vào 
+              span.text-btn đây
+              .btn.btn-primary.red-btn.sign-in-btn Đăng nhập
+
+          #signUp.tab-pane.fade(role='tabpanel' aria-labelledby='signUp-tab')
+            form
+              input.form-control.sign-up-full-name(placeholder="Họ và tên *" autocomplete)
+              .invalid-feedback 
+              input.form-control.sign-up-phone(placeholder="Số điện thoại *" autocomplete)
+              .invalid-feedback 
+              input.form-control.sign-up-email(placeholder="Email *" autocomplete)
+              .invalid-feedback 
+              input.form-control.sign-up-password(type="password" placeholder="Mật khẩu *" autocomplete)
+              .invalid-feedback 
+              input.form-control.sign-up-confirm-password(type="password" placeholder="Xác nhận mật khẩu *" autocomplete)
+              .invalid-feedback 
+              .privacy-confirm
+              | Khi bạn nhấn Đăng ký, bạn đã đồng ý thực hiện mọi giao dịch mua bán theo 
+              span.text-btn điều kiện sử dụng và chính sách của OBO Stadium.
+              .btn.btn-primary.red-btn.sign-up-btn Đăng kí

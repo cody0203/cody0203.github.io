@@ -1,0 +1,325 @@
+extends ./common 
+
+block customizeCss
+  // Components CSS
+  link(rel="stylesheet" type="text/css" href="./css/components/products.css")
+  link(rel="stylesheet" type="text/css" href="./css/components/lastest-news.css")
+  link(rel="stylesheet" type="text/css" href="./css/components/index/index-newsletter.css")
+  link(rel="stylesheet" type="text/css" href="./css/components/index/index-category.css")
+  link(rel="stylesheet" type="text/css" href="./css/components/index/product-showcase.css")
+  
+  // Common CSS
+  link(rel="stylesheet" type="text/css" href="./css/main.css")
+  link(rel="stylesheet" type="text/css" href="./css/index.css")
+block title
+  title Trang Chủ
+
+block header
+  include ./template-parts/index-header
+
+block mainContent
+  section.products-showcase.best-seller.container
+    .row
+      .title.col-12
+        h2.h2 S&#x1EA3;n ph&#x1EA9;m b&aacute;n ch&#x1EA1;y
+        a.see-more-btn-text.text-uppercase(href='./shop.html') Xem Th&ecirc;m
+    .row.product-row.d-flex.justify-content-md-between
+      a.product.position-relative(href="./product-details.html")
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Adidas Yeezy Boost 350 V2 Lundmark (Non
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 7.200.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 1963 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+      .product.position-relative
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Jordan 4 Retro Cool Grey (2019)
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 4.810.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 1312 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+      .product.position-relative
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Jordan 1 Retro Low OG SP Travis Scott
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 20.790.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 2246 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+      .product.position-relative
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Air Jordan 1 Mid Yellow Toe Black
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 3.740.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 564 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+      .product.position-relative
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Nike SB Dunk Low Parra
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 6.620.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 1456 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+  // Break Banner
+  section.break-banner
+    a(href='./product-details.html')
+      img#promo-banner-1.img-fluid(src='./image/banner/promo-banner-1-lg.png' alt='promo-banner-1')
+  // Staff Selects
+  section.products-showcase.staffs-choose.container
+    .row
+      .title.col-12
+        h2.h2 OBO LỰA CHỌN
+        a.see-more-btn-text.text-uppercase(href='./shop.html') Xem Th&ecirc;m
+    .row.product-row.d-flex.justify-content-md-between
+      .product.position-relative
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Adidas Yeezy Boost 350 V2 Lundmark (Non
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 7.200.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 1963 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+      .product.position-relative
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Jordan 4 Retro Cool Grey (2019)
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 4.810.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 1312 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+      .product.position-relative
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Jordan 1 Retro Low OG SP Travis Scott
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 20.790.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 2246 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+      .product.position-relative
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Air Jordan 1 Mid Yellow Toe Black
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 3.740.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 564 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+      .product.position-relative
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Nike SB Dunk Low Parra
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 6.620.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 1456 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+  // Break Banner
+  section.break-banner
+    a(href='./product-details.html')
+      img#promo-banner-2.img-fluid(src='./image/banner/promo-banner-2-lg.png' alt='promo-banner-2')
+  // Under retails
+  section.products-showcase.under-retail.container
+    .row
+      .title.col-12
+        h2.h2 THẤP HƠN “GIÁ HÃNG”
+        a.see-more-btn-text.text-uppercase(href='./shop.html') Xem Th&ecirc;m
+    .row.product-row.d-flex.justify-content-md-between
+      .product.position-relative
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Adidas Yeezy Boost 350 V2 Lundmark (Non
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 7.200.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 1963 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+      .product.position-relative
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Jordan 4 Retro Cool Grey (2019)
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 4.810.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 1312 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+      .product.position-relative
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Jordan 1 Retro Low OG SP Travis Scott
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 20.790.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 2246 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+      .product.position-relative
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Air Jordan 1 Mid Yellow Toe Black
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 3.740.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 564 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+      .product.position-relative
+        .card
+          img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+          .card-body
+            h5.card-title Nike SB Dunk Low Parra
+            p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+            p.price 6.620.000 &#x20AB;
+            p.card-text.sold &Dstrok;&atilde; b&aacute;n 1456 &dstrok;&ocirc;i
+        .shadow.mx-auto.position-absolute
+  // Break Banner
+  section.break-banner
+    a(href='./product-details.html')
+      img#promo-banner-3.img-fluid(src='./image/banner/promo-banner-3-lg.png' alt='promo-banner-3')
+  // Category Section
+  section.categories-showcase.container
+    .row
+      .title.col-12
+        h2.h2 B&#x1ED9; S&#x1B0;u T&#x1EAD;p
+    .row.categories-row.d-flex.justify-content-md-between
+      .category.col-sm-4
+        a.category-wrap(href='./shop.html')
+          img.img-fluid(src='./image/categories/category-1.png' alt='category-1')
+          .tag TECH PERFORMANCE
+      .category.col-sm-4
+        a.category-wrap(href='./shop.html')
+          img.img-fluid(src=' ./image/categories/category-2.png' alt='category-2')
+          .tag OFF-WHITE
+      .category.col-sm-4
+        a.category-wrap(href='./shop.html')
+          img.img-fluid(src=' ./image/categories/category-3.png' alt='category-3')
+          .tag SUPREME
+      .category.col-sm-4
+        a.category-wrap(href='./shop.html')
+          img.img-fluid(src=' ./image/categories/category-4.png' alt='category-4')
+          .tag NBA
+      .category.col-sm-4
+        a.category-wrap(href='./shop.html')
+          img.img-fluid(src=' ./image/categories/category-5.png' alt='category-5')
+          .tag YEEZY
+      #last-category.category.col-sm-4
+        a.category-wrap(href='./shop.html')
+          img.img-fluid(src=' ./image/categories/category-6.png' alt='category-6')
+          .tag Comme Des Gar&ccedil;ons
+  // Newsletter Section
+  section.newsletter.container-fluid.d-flex.justify-content-center
+    .newsletter-form-wrapper
+      .title &Dstrok;&abreve;ng k&yacute; nh&#x1EAD;n b&#x1EA3;n tin OBO Stadium
+      .sub-title H&atilde;y &dstrok;&abreve;ng k&yacute; &dstrok;&#x1EC3; nh&#x1EAD;n tin m&#x1EDB;i nhanh nh&#x1EA5;t qua email
+      .newsletter-form.d-flex
+        form.d-flex.w-100.justify-content-between.flex-column.flex-md-row
+          input.form-control(type='text' placeholder='Nhập địa chỉ email của bạn')
+          button.btn.btn-primary.text-uppercase.red-btn(type='submit') &dstrok;&abreve;ng k&yacute;
+  // Lastest News Section
+  section.latest-news.container
+    .row
+      .title.col-12
+        h2.h2 B&agrave;i vi&#x1EBF;t m&#x1EDB;i
+        a.see-more-btn-text.text-uppercase(href='./news.html') Xem Th&ecirc;m
+    .carousel
+      a(href="./post.html").news.position-relative
+        .card
+          img.card-img-top(src='./image/news/news-1-thumnails.jpg' alt='news-1')
+          .card-body
+            h5.card-title Pack “Logo Sketch” với branding mộc mạc trên Air Max 97 và&nbsp;Air&nbsp;Max Plus
+            p.card-text.news-short-desc Cùng đến với mẫu branding kiểu phác thảo, đầy mộc mạc và “blend" hoàn hảo cùng tổng thể phối màu.
+            p.card-text.author
+              | By 
+              span.name Cody
+              |  &middot; 27/08/2019
+        .shadow.mx-auto.position-absolute
+      .news.position-relative
+        .card
+          img.card-img-top(src='./image/news/news-2-thumnails.jpg' alt='news-1')
+          .card-body
+            h5.card-title Nike Classic Cortez – Phối Màu Của Sự Tinh Tế
+            p.card-text.news-short-desc Bộ sưu tập Nike Classic Cortez với sự kết hợp của 2 tông màu: Hồng Hoa Đăng và màu Cam
+            p.card-text.author
+              | By 
+              span.name Cody
+              |  &middot; 21/08/2019
+        .shadow.mx-auto.position-absolute
+      .news.position-relative
+        .card
+          img.card-img-top(src='./image/news/news-3-thumnails.jpg' alt='news-3')
+          .card-body
+            h5.card-title Air Jordan 1 “Satin Black Toe” xuất hiện hình ảnh chi tiết
+            p.card-text.news-short-desc Air Jordan 1 “Black Toe” luôn là thiết kế đáng mua nhất, lại còn là satin nữa chứ?
+            p.card-text.author
+              | By 
+              span.name Cody
+              |  &middot; 18/08/2019
+        .shadow.mx-auto.position-absolute
+      .news.position-relative
+        .card
+          img.card-img-top(src='./image/news/news-4-thumnails.jpg' alt='news-4')
+          .card-body
+            h5.card-title HOT! Nike và Levi’s tái hợp với hàng loạt siêu phẩm mới
+            p.card-text.news-short-desc Đến hẹn lại lên, Nike và Levi’s lại tái hợp với nhau khiến các tín đồ thời trang mê mệt.
+            p.card-text.author
+              | By 
+              span.name Cody
+              |  &middot; 15/08/2019
+        .shadow.mx-auto.position-absolute
+      .news.position-relative
+        .card
+          img.card-img-top(src='./image/news/news-6-thumnails.jpg' alt='news-6')
+          .card-body
+            h5.card-title Nike tung ảnh chính thức phối màu Supreme x SB Dunk Low “Metallic Silver”
+            p.card-text.news-short-desc Mùa thu năm nay, lần collab thứ 3 của Supreme cùng dòng SB Dunk Low của Nike sẽ ra mắt.
+            p.card-text.author
+              | By 
+              span.name Cody
+              |  &middot; 11/08/2019
+        .shadow.mx-auto.position-absolute
+      .news.position-relative
+        .card
+          img.card-img-top(src='./image/news/news-5-thumnails.jpg' alt='news-5')
+          .card-body
+            h5.card-title Xuất hiện phối màu thứ 3 của Nike Air Force 1 Type N354
+            p.card-text.news-short-desc Nike N354 là tên dự án với những thiết kế lấy cảm hứng từ kho Archive khổng lồ của The Swoosh.
+            p.card-text.author
+              | By 
+              span.name Cody
+              |  &middot; 27/07/2019
+        .shadow.mx-auto.position-absolute
+      .news.position-relative
+        .card
+          img.card-img-top(src='./image/news/news-7-thumnails.jpg' alt='news-7')
+          .card-body
+            h5.card-title Red Wing kết hợp cùng New Balance chế tác mẫu 997 đầy&nbsp;tinh&nbsp;xảo
+            p.card-text.news-short-desc Trong lần collab này, Red Wing và New Balance sẽ mang đến dòng sneaker 997.
+            p.card-text.author
+              | By 
+              span.name Cody
+              |  &middot; 27/07/2019
+        .shadow.mx-auto.position-absolute
+
+block footer
+  include ./template-parts/footer
+
+block customizeScript
+  // Slick JS
+  script(type="text/javascript" src="./vendor/slick/slick.min.js")
+
+  // Currency
+  script(type="text/javascript" src="./vendor/currency/currency.min.js")
+  
+  // Common JS
+  script(type="text/javascript" src="./script/index.js")
+  script(type="text/javascript" src="./script/lastest-news.js")
+  

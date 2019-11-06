@@ -1,0 +1,196 @@
+#filterModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='filterModalLabel', aria-hidden='true')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        h5#filterModalLabel.modal-title Lọc sản phẩm
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') &times;
+      .modal-body
+        .filter-bar.small-size
+
+          .brand.content
+            .title(data-toggle="collapse" href="#brand-collapse" role="button" aria-expanded="false" aria-controls="brand-collapse")
+              .text
+                | Th&#x1B0;&#x1A1;ng hi&#x1EC7;u
+              i.fas.fa-chevron-up
+            .select-filter.collapse.show(id="brand-collapse")
+              .item
+                .pretty.p-svg.p-curve
+                  input.filter-checkbox(type='checkbox' name='nike' id='nike', data-id="Nike")
+                  .state.p-success
+                    svg.svg.svg-icon(viewbox='0 0 20 20')
+                      path(d='M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z' style='stroke: white;fill:white;')
+                    label.checkbox-label(for='nike') Nike
+              .item
+                .pretty.p-svg.p-curve
+                  input.filter-checkbox(type='checkbox' name='air-jordan' id='air-jordan', data-id="Air Jordan")
+                  .state.p-success
+                    svg.svg.svg-icon(viewbox='0 0 20 20')
+                      path(d='M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z' style='stroke: white;fill:white;')
+                    label.checkbox-label(for='air-jordan') Air Jordan
+              .item
+                .pretty.p-svg.p-curve
+                  input.filter-checkbox(type='checkbox' name='adidas' id='adidas', data-id="Adidas")
+                  .state.p-success
+                    svg.svg.svg-icon(viewbox='0 0 20 20')
+                      path(d='M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z' style='stroke: white;fill:white;')
+                    label.checkbox-label(for='adidas') Adidas
+              .item
+                .pretty.p-svg.p-curve
+                  input.filter-checkbox(type='checkbox' name='converse' id='converse', data-id="Converse")
+                  .state.p-success
+                    svg.svg.svg-icon(viewbox='0 0 20 20')
+                      path(d='M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z' style='stroke: white;fill:white;')
+                    label.checkbox-label(for='converse') Converse
+              #see-more-dropdown
+                .item
+                  .pretty.p-svg.p-curve
+                    input.filter-checkbox(type='checkbox' name='asics' id='asics', data-id="Asics")
+                    .state.p-success
+                      svg.svg.svg-icon(viewbox='0 0 20 20')
+                        path(d='M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z' style='stroke: white;fill:white;')
+                      label.checkbox-label(for='asics') Asics
+                .item
+                  .pretty.p-svg.p-curve
+                    input.filter-checkbox(type='checkbox' name='vans' id='vans', data-id="Vans")
+                    .state.p-success
+                      svg.svg.svg-icon(viewbox='0 0 20 20')
+                        path(d='M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z' style='stroke: white;fill:white;')
+                      label.checkbox-label(for='vans') Vans
+              .see-more#see-more-brand
+                | Xem th&ecirc;m
+          .break-line
+          .category.content
+            .title(data-toggle="collapse" href="#categories-collapse" role="button" aria-expanded="false" aria-controls="categories-collapse")
+              .text
+                | Danh m&#x1EE5;c
+              i.fas.fa-chevron-up
+            .select-filter.collapse.show(id="categories-collapse")
+              .item
+                .pretty.p-svg.p-curve
+                  input.filter-checkbox(type='checkbox' name='male' id='male', data-id="Male")
+                  .state.p-success
+                    svg.svg.svg-icon(viewbox='0 0 20 20')
+                      path(d='M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z' style='stroke: white;fill:white;')
+                    label.checkbox-label(for='male') Nam
+              .item
+                .pretty.p-svg.p-curve
+                  input.filter-checkbox(type='checkbox' name='female' id='female', data-id="Female")
+                  .state.p-success
+                    svg.svg.svg-icon(viewbox='0 0 20 20')
+                      path(d='M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z' style='stroke: white;fill:white;')
+                    label.checkbox-label(for='female') N&#x1EEF;
+              .item
+                .pretty.p-svg.p-curve
+                  input.filter-checkbox(type='checkbox' name='youth' id='youth', data-id="Youth")
+                  .state.p-success
+                    svg.svg.svg-icon(viewbox='0 0 20 20')
+                      path(d='M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z' style='stroke: white;fill:white;')
+                    label.checkbox-label(for='youth') Thi&#x1EBF;u ni&ecirc;n
+              .item
+                .pretty.p-svg.p-curve
+                  input.filter-checkbox(type='checkbox' name='toddler' id='toddler', data-id="Toddler")
+                  .state.p-success
+                    svg.svg.svg-icon(viewbox='0 0 20 20')
+                      path(d='M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z' style='stroke: white;fill:white;')
+                    label.checkbox-label(for='toddler') S&#x1A1; sinh
+          .break-line
+          .size.content
+            .title(data-toggle="collapse" href="#size-collapse" role="button" aria-expanded="false" aria-controls="size-collapse")
+              .text
+                | Size
+              i.fas.fa-chevron-up
+            .select-filter.collapse.show(id="size-collapse")
+          .break-line
+          .price-range.content
+            .title
+              .text
+                | Kho&#x1EA3;ng gi&aacute;
+            input.form-control.price-input#from-price-small(type='text' placeholder='Từ' onkeypress='return priceInputValidate(event)')
+            input.form-control.price-input#to-price-small(type='text' placeholder='Đến' pattern='[0-9]' onkeypress='return priceInputValidate(event)')
+          .break-line
+          .release-date.content
+            .title(data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample")
+              .text
+                | N&abreve;m ra m&#x1EAF;t
+              i.fas.fa-chevron-up
+            .select-filter.collapse.show(id="collapseExample")
+              .date-row
+                .item
+                  .pretty.p-svg.p-curve
+                    input.filter-checkbox(type='checkbox' name='under-2010' id='under-2010', data-id="2010")
+                    .state.p-success
+                      svg.svg.svg-icon(viewbox='0 0 20 20')
+                        path(d='M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z' style='stroke: white;fill:white;')
+                      label.checkbox-label(for='under-2010') < 2010
+                .item
+                  .pretty.p-svg.p-curve
+                    input.filter-checkbox(type='checkbox' name='2011' id='2011', data-id="2011")
+                    .state.p-success
+                      svg.svg.svg-icon(viewbox='0 0 20 20')
+                        path(d='M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z' style='stroke: white;fill:white;')
+                      label.checkbox-label(for='2011') 2011
+              .date-row
+                .item
+                  .pretty.p-svg.p-curve
+                    input.filter-checkbox(type='checkbox' name='2012' id='2012', data-id="2012")
+                    .state.p-success
+                      svg.svg.svg-icon(viewbox='0 0 20 20')
+                        path(d='M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z' style='stroke: white;fill:white;')
+                      label.checkbox-label(for='2012') 2012
+                .item
+                  .pretty.p-svg.p-curve
+                    input.filter-checkbox(type='checkbox' name='2013' id='2013', data-id="2013")
+                    .state.p-success
+                      svg.svg.svg-icon(viewbox='0 0 20 20')
+                        path(d='M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z' style='stroke: white;fill:white;')
+                      label.checkbox-label(for='2013') 2013
+              .date-row
+                .item
+                  .pretty.p-svg.p-curve
+                    input.filter-checkbox(type='checkbox' name='2014' id='2014', data-id="2014")
+                    .state.p-success
+                      svg.svg.svg-icon(viewbox='0 0 20 20')
+                        path(d='M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z' style='stroke: white;fill:white;')
+                      label.checkbox-label(for='2014') 2014
+                .item
+                  .pretty.p-svg.p-curve
+                    input.filter-checkbox(type='checkbox' name='2015' id='2015', data-id="2015")
+                    .state.p-success
+                      svg.svg.svg-icon(viewbox='0 0 20 20')
+                        path(d='M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z' style='stroke: white;fill:white;')
+                      label.checkbox-label(for='2015') 2015
+              .date-row
+                .item
+                  .pretty.p-svg.p-curve
+                    input.filter-checkbox(type='checkbox' name='2016' id='2016', data-id="2016")
+                    .state.p-success
+                      svg.svg.svg-icon(viewbox='0 0 20 20')
+                        path(d='M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z' style='stroke: white;fill:white;')
+                      label.checkbox-label(for='2016') 2016
+                .item
+                  .pretty.p-svg.p-curve
+                    input.filter-checkbox(type='checkbox' name='2017' id='2017', data-id="2017")
+                    .state.p-success
+                      svg.svg.svg-icon(viewbox='0 0 20 20')
+                        path(d='M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z' style='stroke: white;fill:white;')
+                      label.checkbox-label(for='2017') 2017
+              .date-row
+                .item
+                  .pretty.p-svg.p-curve
+                    input.filter-checkbox(type='checkbox' name='2018' id='2018', data-id="2018")
+                    .state.p-success
+                      svg.svg.svg-icon(viewbox='0 0 20 20')
+                        path(d='M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z' style='stroke: white;fill:white;')
+                      label.checkbox-label(for='2018') 2018
+                .item
+                  .pretty.p-svg.p-curve
+                    input.filter-checkbox(type='checkbox' name='2019' id='2019', data-id="2019")
+                    .state.p-success
+                      svg.svg.svg-icon(viewbox='0 0 20 20')
+                        path(d='M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z' style='stroke: white;fill:white;')
+                      label.checkbox-label(for='2019') 2019
+      .modal-footer
+        button.clear-filter.btn.btn-primary(disabled) Bỏ lọc
+        button.btn.btn-primary.apply-price.small.red-btn Áp dụng
+|     &grave;

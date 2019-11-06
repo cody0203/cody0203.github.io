@@ -1,0 +1,165 @@
+extends ./common
+
+block customizeCss
+  //Vendor
+  link(rel="stylesheet" type="text/css" href="./vendor/pagination/jquery.paginate.css")
+
+  // Components CSS
+  link(rel='stylesheet' type='text/css' href='./css/index.css')
+  link(rel='stylesheet' type='text/css' href='./css/components/header.css')
+  link(rel='stylesheet' type='text/css' href='./css/components/pagination.css')
+
+  // Common CSS
+  link(rel='stylesheet' type='text/css' href='./css/main.css')
+  link(rel='stylesheet' type='text/css' href='./css/news.css')
+  link(rel='stylesheet' type='text/css' href='./css/except-home-page.css')
+
+block title
+  title Tin tức
+
+block header
+  - var pageTitle = 'Tin tức';
+  include ./template-parts/header-w-banner
+
+block mainContent
+  .breadcrumb.container
+    a.previous-page(href='./index.html') Trang ch&#x1EE7;
+    i.fas.fa-chevron-right.arrow
+    span.current-page Tin t&#x1EE9;c
+  section.news-wrapper.container
+    a.news.news-odd(href='post.html')
+      .row
+        .details.col-5.offset-1
+          .date
+            | 27/7/2019
+          .title
+            | Pack &ldquo;Logo Sketch&rdquo; v&#x1EDB;i branding m&#x1ED9;c m&#x1EA1;c tr&ecirc;n Air Max 97 v&agrave;
+            | Air Max Plus
+          .short-desc
+            | Trong pack n&agrave;y, ch&uacute;ng ta s&#x1EBD; &dstrok;&#x1EBF;n v&#x1EDB;i m&#x1EAB;u branding ki&#x1EC3;u ph&aacute;c th&#x1EA3;o, &dstrok;&#x1EA7;y m&#x1ED9;c m&#x1EA1;c v&agrave; &ldquo;blend&rdquo; ho&agrave;n h&#x1EA3;o c&ugrave;ng t&#x1ED5;ng th&#x1EC3; ph&#x1ED1;i m&agrave;u.
+        .thumbnail.col-lg-6.col-12
+          img.img-fluid(src='./image/news/news-1-thumnails.jpg' alt='')
+        .details-small.col-12
+          .date
+            | 27/7/2019
+          .title
+            | Pack &ldquo;Logo Sketch&rdquo; v&#x1EDB;i branding m&#x1ED9;c m&#x1EA1;c tr&ecirc;n Air Max 97 v&agrave;
+            | Air Max Plus
+          .short-desc
+            | Trong pack n&agrave;y, ch&uacute;ng ta s&#x1EBD; &dstrok;&#x1EBF;n v&#x1EDB;i m&#x1EAB;u branding ki&#x1EC3;u ph&aacute;c th&#x1EA3;o, &dstrok;&#x1EA7;y m&#x1ED9;c m&#x1EA1;c v&agrave; &ldquo;blend&rdquo; ho&agrave;n h&#x1EA3;o c&ugrave;ng t&#x1ED5;ng th&#x1EC3;
+            | ph&#x1ED1;i m&agrave;u.
+    a.news.news-even
+      .row
+        .thumbnail.col-lg-6.col-12
+          img.img-fluid(src='./image/news/news-2-thumnails.jpg' alt='')
+        .details.col-5.mx-1
+          .date
+            | 27/7/2019
+          .title
+            | Nike Classic Cortez &ndash; Ph&#x1ED1;i M&agrave;u C&#x1EE7;a S&#x1EF1; Tinh T&#x1EBF;
+          .short-desc
+            | Ph&#x1ED1;i m&agrave;u ti&#x1EBF;p theo gia nh&#x1EAD;p b&#x1ED9; s&#x1B0;u t&#x1EAD;p Nike Classic Cortez v&#x1EDB;i s&#x1EF1; k&#x1EBF;t h&#x1EE3;p c&#x1EE7;a 2
+            | t&ocirc;ng m&agrave;u: H&#x1ED3;ng Hoa &Dstrok;&abreve;ng v&agrave; m&agrave;u Cam
+        .details-small.col-12
+          .date
+            | 27/7/2019
+          .title
+            | Nike Classic Cortez &ndash; Ph&#x1ED1;i M&agrave;u C&#x1EE7;a S&#x1EF1; Tinh T&#x1EBF;
+          .short-desc
+            | Ph&#x1ED1;i m&agrave;u ti&#x1EBF;p theo gia nh&#x1EAD;p b&#x1ED9; s&#x1B0;u t&#x1EAD;p Nike Classic Cortez v&#x1EDB;i s&#x1EF1; k&#x1EBF;t h&#x1EE3;p c&#x1EE7;a 2
+            | t&ocirc;ng m&agrave;u: H&#x1ED3;ng Hoa &Dstrok;&abreve;ng v&agrave; m&agrave;u Cam
+    a.news.news-odd
+      .row
+        .details.col-5.offset-1
+          .date
+            | 27/7/2019
+          .title
+            | Air Jordan 1 &ldquo;Satin Black Toe&rdquo; xu&#x1EA5;t hi&#x1EC7;n h&igrave;nh &#x1EA3;nh chi ti&#x1EBF;t
+          .short-desc
+            | Air Jordan 1 &ldquo;Black Toe&rdquo; v&#x1EAB;n lu&ocirc;n l&agrave; thi&#x1EBF;t k&#x1EBF; Air Jordan 1 &dstrok;&aacute;ng mua nh&#x1EA5;t m&#x1ECD;i th&#x1EDD;i &dstrok;&#x1EA1;i. V&#x1EAD;y s&#x1EBD; th&#x1EBF; n&agrave;o n&#x1EBF;u ch&uacute;ng kho&aacute;c
+            | l&ecirc;n m&igrave;nh ch&#x1EA5;t li&#x1EC7;u satin?
+        .thumbnail.col-lg-6.col-12
+          img.img-fluid(src='./image/news/news-3-thumnails.jpg' alt='')
+        .details-small.col-12
+          .date
+            | 27/7/2019
+          .title
+            | Air Jordan 1 &ldquo;Satin Black Toe&rdquo; xu&#x1EA5;t hi&#x1EC7;n h&igrave;nh &#x1EA3;nh chi ti&#x1EBF;t
+          .short-desc
+            | Air Jordan 1 &ldquo;Black Toe&rdquo; v&#x1EAB;n lu&ocirc;n l&agrave; thi&#x1EBF;t k&#x1EBF; Air Jordan 1 &dstrok;&aacute;ng mua nh&#x1EA5;t m&#x1ECD;i th&#x1EDD;i &dstrok;&#x1EA1;i. V&#x1EAD;y s&#x1EBD; th&#x1EBF; n&agrave;o n&#x1EBF;u ch&uacute;ng
+            | kho&aacute;c
+            | l&ecirc;n m&igrave;nh ch&#x1EA5;t li&#x1EC7;u satin?
+    a.news.news-even
+      .row
+        .thumbnail.col-lg-6.col-12
+          img.img-fluid(src='./image/news/news-4-thumnails.jpg' alt='')
+        .details.col-5.mx-1
+          .date
+            | 27/7/2019
+          .title
+            | HOT! Nike v&agrave; Levi&rsquo;s t&aacute;i h&#x1EE3;p v&#x1EDB;i h&agrave;ng lo&#x1EA1;t si&ecirc;u ph&#x1EA9;m m&#x1EDB;i
+          .short-desc
+            | &Dstrok;&#x1EBF;n h&#x1EB9;n l&#x1EA1;i l&ecirc;n, Nike v&agrave; Levi&rsquo;s l&#x1EA1;i t&aacute;i h&#x1EE3;p v&#x1EDB;i nhau khi&#x1EBF;n c&aacute;c sneakerheads v&agrave; t&iacute;n &dstrok;&#x1ED3; th&#x1EDD;i trang m&ecirc; m&#x1EC7;t.
+        .details-small.col-12
+          .date
+            | 27/7/2019
+          .title
+            | HOT! Nike v&agrave; Levi&rsquo;s t&aacute;i h&#x1EE3;p v&#x1EDB;i h&agrave;ng lo&#x1EA1;t si&ecirc;u ph&#x1EA9;m m&#x1EDB;i
+          .short-desc
+            | &Dstrok;&#x1EBF;n h&#x1EB9;n l&#x1EA1;i l&ecirc;n, Nike v&agrave; Levi&rsquo;s l&#x1EA1;i t&aacute;i h&#x1EE3;p v&#x1EDB;i nhau khi&#x1EBF;n c&aacute;c sneakerheads v&agrave; t&iacute;n &dstrok;&#x1ED3; th&#x1EDD;i trang m&ecirc; m&#x1EC7;t.
+    a.news.news-odd
+      .row
+        .details.col-5.offset-1
+          .date
+            | 27/7/2019
+          .title
+            | Xu&#x1EA5;t hi&#x1EC7;n ph&#x1ED1;i m&agrave;u th&#x1EE9; 3 c&#x1EE7;a Nike Air Force 1 Type N354
+          .short-desc
+            | Nike N354 l&agrave; t&ecirc;n d&#x1EF1; &aacute;n v&#x1EDB;i nh&#x1EEF;ng thi&#x1EBF;t k&#x1EBF; l&#x1EA5;y c&#x1EA3;m h&#x1EE9;ng t&#x1EEB; kho Archive kh&#x1ED5;ng l&#x1ED3; c&#x1EE7;a The Swoosh. N&#x1ED5;i b&#x1EAD;t trong s&#x1ED1; &dstrok;&oacute; l&agrave; phi&ecirc;n b&#x1EA3;n Nike Air Force 1 Type.
+        .thumbnail.col-lg-6.col-12
+          img.img-fluid(src='./image/news/news-5-thumnails.jpg' alt='')
+        .details-small.col-12
+          .date
+            | 27/7/2019
+          .title
+            | Xu&#x1EA5;t hi&#x1EC7;n ph&#x1ED1;i m&agrave;u th&#x1EE9; 3 c&#x1EE7;a Nike Air Force 1 Type N354
+          .short-desc
+            | Nike N354 l&agrave; t&ecirc;n d&#x1EF1; &aacute;n v&#x1EDB;i nh&#x1EEF;ng thi&#x1EBF;t k&#x1EBF; l&#x1EA5;y c&#x1EA3;m h&#x1EE9;ng t&#x1EEB; kho Archive kh&#x1ED5;ng l&#x1ED3; c&#x1EE7;a The Swoosh. N&#x1ED5;i b&#x1EAD;t trong s&#x1ED1;
+            | &dstrok;&oacute; l&agrave; phi&ecirc;n b&#x1EA3;n Nike Air Force 1 Type.
+    a.news.news-even
+      .row
+        .thumbnail.col-lg-6.col-12
+          img.img-fluid(src='./image/news/news-6-thumnails.jpg' alt='')
+        .details.col-5.mx-1
+          .date
+            | 27/7/2019
+          .title Nike tung ảnh chính thức phối màu Supreme x SB Dunk Low “Metallic Silver”
+          .short-desc Mùa thu năm nay, lần collab thứ 3 của Supreme cùng dòng SB Dunk Low của Nike sẽ ra mắt.
+        .details-small.col-12
+          .date
+            | 27/7/2019
+          .title Nike tung ảnh chính thức phối màu Supreme x SB Dunk Low “Metallic Silver”
+          .short-desc Mùa thu năm nay, lần collab thứ 3 của Supreme cùng dòng SB Dunk Low của Nike sẽ ra mắt. 
+    a.news.news-odd
+      .row
+        .details.col-5.offset-1
+          .date
+            | 27/7/2019
+          .title Red Wing kết hợp cùng New Balance chế tác mẫu 997 đầy tinh xảo
+          .short-desc Trong lần collab này, Red Wing và New Balance sẽ mang đến dòng sneaker 997.
+        .thumbnail.col-lg-6.col-12
+          img.img-fluid(src='./image/news/news-7-thumnails.jpg' alt='')
+        .details-small.col-12
+          .date
+            | 27/7/2019
+          .title Red Wing kết hợp cùng New Balance chế tác mẫu 997 đầy tinh xảo
+          .short-desc Trong lần collab này, Red Wing và New Balance sẽ mang đến dòng sneaker 997.
+block footer
+  include ./template-parts/footer
+
+block customizeScript
+  // Pagination Js
+  script(type="text/javascript" src="./vendor/pagination/jquery.paginate.js")
+
+  script(src="./script/except-home-page.js")
+  script(src="./script/news.js")

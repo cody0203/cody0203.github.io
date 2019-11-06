@@ -1,0 +1,213 @@
+extends ./common
+
+block customizeCss
+  // Components CSS
+  link(rel="stylesheet" type="text/css" href="./css/components/header.css")
+  link(rel="stylesheet" type="text/css" href="./css/components/products.css")
+  link(rel="stylesheet" type="text/css" href="./css/components/index/product-showcase.css")
+  link(rel="stylesheet" type="text/css" href="./css/components/product-details/product-info.css")
+  link(rel="stylesheet" type="text/css" href="./css/components/product-details/size-choose.css")
+  link(rel="stylesheet" type="text/css" href="./css/components/product-details/size-guide-table.css")
+  
+  // Common CSS
+  link(rel="stylesheet" type="text/css" href="./css/main.css")
+  link(rel="stylesheet" type="text/css" href="./css/except-home-page.css")
+  link(rel="stylesheet" type="text/css" href="./css/product-details.css")
+  link(rel="stylesheet" type="text/css" href="./css/used-in-js.css")
+
+block title
+  title Chi tiết sản phẩm
+
+block header
+  include ./template-parts/header
+
+block mainContent
+  // Breadcrum Section
+  .breadcrumb.container
+    a.previous-page(href='./index.html') Trang ch&#x1EE7;
+    i.fas.fa-chevron-right.arrow
+    a.previous-page(href='./shop.html') S&#x1EA3;n ph&#x1EA9;m
+    i.fas.fa-chevron-right.arrow
+    span.current-page T&ecirc;n s&#x1EA3;n ph&#x1EA9;m
+  // Products Content Section
+  section.product-content-wrapper.container
+    .common-info
+      .brand
+        | Adidas
+      .name
+        | Adidas Yeezy Boost 700 Wave Runner Solid Grey
+      .style-code
+        | Style Code: B75571
+    .main-info.row
+      .product-image.col-lg-6
+        .slider.slider-for
+          .img-zoom-container
+            img.img-fluid(src='./image/product-details-image/1.jpg' alt='image-1')
+          .img-zoom-container
+            img.img-fluid(src='./image/product-details-image/2.jpg' alt='image-2')
+          .img-zoom-container
+            img.img-fluid(src='./image/product-details-image/3.jpg' alt='image-3')
+          .img-zoom-container
+            img.img-fluid(src='./image/product-details-image/4.jpg' alt='image-5')
+          .img-zoom-container
+            img.img-fluid(src='./image/product-details-image/5.jpg' alt='image-5')
+        .slider.slider-nav
+          div
+            img.img-fluid(src='./image/product-details-image/1.jpg' alt='image-1')
+          div
+            img.img-fluid(src='./image/product-details-image/2.jpg' alt='image-2')
+          div
+            img.img-fluid(src='./image/product-details-image/3.jpg' alt='image-3')
+          div
+            img.img-fluid(src='./image/product-details-image/4.jpg' alt='image-4')
+          div
+            img.img-fluid(src='./image/product-details-image/5.jpg' alt='image-5')
+      .product-info.col-lg-6
+        .title.h3
+          | M&ocirc; t&#x1EA3; s&#x1EA3;n ph&#x1EA9;m
+        .desc
+          p
+            | Trend &ldquo;dad shoes&rdquo; &dstrok;ang g&acirc;y b&atilde;o trong gi&#x1EDB;i tr&#x1EBB; hi&#x1EC7;n nay va&#x300; m&acirc;&#x303;u gi&agrave;y Yeezy 700 Wave Runner
+            | Solid Grey cu&#x303;ng go&#x301;p ph&acirc;&#x300;n
+            | ta&#x323;o n&ecirc;n s&#x1B0;&#x301;c hu&#x301;t cho c&#x1A1;n s&ocirc;&#x301;t na&#x300;y, khi&ecirc;&#x301;n gi&#x1A1;&#x301;i s&abreve;n gia&#x300;y &dstrok;&#x1B0;&#x301;ng ng&ocirc;&#x300;i kh&ocirc;ng y&ecirc;n. Ki&#x1EC3;u
+            | d&aacute;ng c&#x1EE7;a Yeezy 700 Wave Runner Solid Grey ch&#x1ECB;u s&#x1EF1; &#x1EA3;nh h&#x1B0;&#x1EDF;ng c&#x1EE7;a nh&#x1EEF;ng m&#x1EAB;u &ldquo;dad shoes&rdquo; v&agrave;
+            | cross-trainer, hi&#x1EC7;n &dstrok;ang
+            | l&agrave; 2 xu h&#x1B0;&#x1EDB;ng sneaker &dstrok;&#x1B0;&#x1EE3;c &#x1B0;a th&iacute;ch trong nh&#x1EEF;ng n&abreve;m g&#x1EA7;n &dstrok;&acirc;y. &Dstrok;&#x1EBF; gi&agrave;y &dstrok;&#x1EAD;m ch&#x1EA5;t chunky sneaker
+            | v&agrave; thi&#x1EBF;t k&#x1EBF; retro, &dstrok;i c&ugrave;ng
+            | b&#x1EA3;n ph&#x1ED1;i x&aacute;m / xanh / cam &dstrok;&atilde; d&#x1EC5; d&agrave;ng th&ocirc;&#x309;i &ldquo;bu&#x300;a y&ecirc;u&rdquo; va&#x300;o gi&#x1A1;&#x301;i y&ecirc;u gi&agrave;y.
+          p
+            | Ph&acirc;&#x300;n upper s&#x1B0;&#x309; du&#x323;ng ch&#x1EA5;t li&#x1EC7;u breathable mesh, suede v&agrave; nubuck. &Dstrok;i&ecirc;&#x309;m nh&acirc;&#x301;n &acirc;&#x301;n t&#x1B0;&#x1A1;&#x323;ng
+            | chi&#x301;nh la&#x300; thi&#x1EBF;t k&#x1EBF; l&agrave; d&acirc;y gi&agrave;y
+            | m&agrave;u neon &dstrok;i k&egrave;m m&#x1ED9;t s&#x1ED1; chi ti&#x1EBF;t &dstrok;&#x1B0;&#x1EE3;c l&agrave;m b&#x1EB1;ng ch&#x1EA5;t li&#x1EC7;u 3M ph&#x1EA3;n quang. V&#x1EDB;i b&#x1ED9; &dstrok;&#x1EBF; boost n&#x1ED5;i
+            | ti&#x1EBF;ng v&agrave; form gi&agrave;y r&#x1ED9;ng r&atilde;i, Yeezy 700 Wave Runner Solid Grey mang &dstrok;&ecirc;&#x301;n c&#x1EA3;m gi&aacute;c d&#x1EC5; ch&#x1ECB;u
+            | nh&#x1EA5;t cho
+            | ng&#x1B0;&#x1EDD;i mang. C&ocirc;&#x323;ng ngh&ecirc;&#x323; Boost v&#x1A1;&#x301;i t&acirc;&#x301;m &dstrok;&ecirc;&#x323;m lo&#x301;t &ldquo;th&acirc;&#x300;n tha&#x301;nh&rdquo; &ecirc;m a&#x301;i, ba&#x323;n c&oacute; th&#x1EC3; mang
+            | &dstrok;&ocirc;i gi&agrave;y n&agrave;y t&#x1EEB; s&aacute;ng &dstrok;&#x1EBF;n t&#x1ED1;i
+            | m&agrave; kh&ocirc;ng h&#x1EC1; c&oacute; c&#x1EA3;m gi&aacute;c kh&oacute; ch&#x1ECB;u hay bi&#x301; ba&#x301;ch. Kh&ocirc;ng nh&#x1EEF;ng hype m&agrave; c&ograve;n comfy n&#x1EEF;a.
+        .desc-sub
+          span.desc-sub-title Ph&#x1ED1;i m&agrave;u: 
+          span Solid grey/Chalk white/Core black
+        .desc-sub
+          span.desc-sub-title Gi&aacute; b&aacute;n l&#x1EBB; khi ra m&#x1EAF;t:
+          span &nbsp;7.350.000&#x20AB;
+        .desc-sub
+          span.desc-sub-title Ng&agrave;y ra m&#x1EAF;t:
+          span &nbsp;11/01/2017
+        .btns
+          .size-btn(data-toggle="modal" data-target="#sizeChooseModal")
+            button.btn.btn-primary.size.trans-btn
+              span.size-text Size
+              span.size-details 9US | 42.5VN | 26.2CM
+              i.fas.fa-chevron-down.dropdown-arrow
+          a.buy-btn(href='./buy-page.html')
+            button.btn.btn-primary.buy.green-btn
+              .ask-text.left-content
+                .ask-price.main-content
+                  | 9.555.000 &#x20AB;
+                .ask-desc.sub-content
+                  | Gi&aacute; &dstrok;&#x1EB7;t b&aacute;n th&#x1EA5;p nh&#x1EA5;t
+              .buy-text.right-content
+                .buy-now.main-content
+                  | Mua ngay
+                .bid.sub-content
+                  | ho&#x1EB7;c &dstrok;&#x1EA5;u gi&aacute;
+          a.sell-btn(href='./sell-page.html')
+            button.btn.btn-primary.sell.red-btn
+              .ask-text.left-content
+                .bid-price.main-content
+                  | 9.310.000 &#x20AB;
+                .ask-desc.sub-content
+                  | Gi&aacute; &dstrok;&#x1EB7;t mua cao nh&#x1EA5;t
+              .sell-text.right-content
+                .buy-now.main-content
+                  | B&aacute;n ngay
+                .bid.sub-content
+                  | ho&#x1EB7;c &dstrok;&#x1EB7;t gi&aacute; b&aacute;n
+  .break-section.container-fluid
+  .instagram-image.container
+    .row
+      .col-12
+        .title
+          h2.h2 H&igrave;nh &#x1EA3;nh on feet
+          p.sub-title H&atilde;y tag ch&uacute;ng t&ocirc;i @obostadium
+        .slide-btn
+    #instafeed
+  .break-section.container-fluid
+  section.products-showcase.container
+    .row
+      .title.col-12
+        h2.h2 SẢN PHẨM LIÊN QUAN
+    .row.product-row.d-flex.justify-content-md-between
+      //- .product.position-relative
+      //-   .card
+      //-     img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+      //-     .card-body
+      //-       h5.card-title
+      //-         | Adidas Yeezy Boost 350
+      //-         | V2 Lundmark (Non
+      //-       p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+      //-       p.price 7.200.000 &#x20AB;
+      //-       p.card-text.sold &Dstrok;&atilde; b&aacute;n 1963 &dstrok;&ocirc;i
+      //-   .shadow.mx-auto.position-absolute
+      //- .product.position-relative
+      //-   .card
+      //-     img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+      //-     .card-body
+      //-       h5.card-title Jordan 4 Retro Cool Grey (2019)
+      //-       p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+      //-       p.price 4.810.000 &#x20AB;
+      //-       p.card-text.sold &Dstrok;&atilde; b&aacute;n 1312 &dstrok;&ocirc;i
+      //-   .shadow.mx-auto.position-absolute
+      //- .product.position-relative
+      //-   .card
+      //-     img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+      //-     .card-body
+      //-       h5.card-title Jordan 1 Retro Low OG SP Travis Scott
+      //-       p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+      //-       p.price 20.790.000 &#x20AB;
+      //-       p.card-text.sold &Dstrok;&atilde; b&aacute;n 2246 &dstrok;&ocirc;i
+      //-   .shadow.mx-auto.position-absolute
+      //- .product.position-relative
+      //-   .card
+      //-     img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+      //-     .card-body
+      //-       h5.card-title Air Jordan 1 Mid Yellow Toe Black
+      //-       p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+      //-       p.price 3.740.000 &#x20AB;
+      //-       p.card-text.sold &Dstrok;&atilde; b&aacute;n 564 &dstrok;&ocirc;i
+      //-   .shadow.mx-auto.position-absolute
+      //- .product.position-relative
+      //-   .card
+      //-     img.card-img-top(src='./image/product/adidas-Yeezy-Boost-350-V2-Lundmark-Product.png' alt='adidas-Yeezy-Boost-350-V2-Lundmark')
+      //-     .card-body
+      //-       h5.card-title Nike SB Dunk Low Parra
+      //-       p.card-text.price-desc Gi&aacute; th&#x1EA5;p nh&#x1EA5;t hi&#x1EC7;n t&#x1EA1;i
+      //-       p.price 6.620.000 &#x20AB;
+      //-       p.card-text.sold &Dstrok;&atilde; b&aacute;n 1456 &dstrok;&ocirc;i
+      //-   .shadow.mx-auto.position-absolute
+
+  // Modals
+  include ./template-parts/size-choose-modal
+  include ./template-parts/size-guide-modal
+
+block footer
+  include ./template-parts/footer
+
+block customizeScript
+  // Image Zoom Js
+  script(src="./vendor/zoom-master/jquery.zoom.min.js" type="text/javascript")
+
+    // Currency
+  script(type="text/javascript" src="./vendor/currency/currency.min.js")
+
+  // Slick Js
+  script(type="text/javascript" src="./vendor/slick/slick.min.js")
+
+  //Instafeed Js
+  script(type="text/javascript" src="./vendor/instafeed/instafeed.min.js")
+
+  // Common Js
+  script(src="./script/except-home-page.js")
+  script(src="./script/size-render.js")
+  script(src="./script/size-choose.js")
+  script(src="./script/product-details.js")

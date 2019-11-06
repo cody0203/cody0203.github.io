@@ -1,0 +1,42 @@
+ul#sellTab.nav.nav-tabs(role='tablist')
+  li.nav-item
+    button.asks-btn.btn.btn-primary.red-btn#bid.nav-link.active(data-toggle='tab', href='#asks', role='tab', aria-controls='asks', aria-selected='true') Đặt giá bán
+  li.nav-item
+    button.sell-btn.btn.btn-primary.trans-btn#buy-now.nav-link(data-toggle='tab', href='#sell', role='tab', aria-controls='sell', aria-selected='false') Bán ngay
+#sellTabContent.tab-content
+  form#asks.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='bid')
+    input.price-input.form-control(type='text' placeholder='Đặt giá mua ...' onkeypress="return priceInputValidate(event)" maxlength="10")
+    .invalid-feedback 
+    .sub-price.price-include
+      .text Giá sản phẩm
+      .sub-price-showing.asks
+        | 
+    .process-price.price-include
+      .text
+        | Phí vận hành 
+        i.fas.fa-question-circle(data-toggle="tooltip" data-placement="top" title="Phí vận hành bằng 3% giá bán của sản phẩm")
+      .process-price-showing.asks
+        | 
+    .total-price.price-include
+      .text
+        | Tổng thanh toán
+      .total-price-showing.asks
+        | 
+  #sell.tab-pane.fade(role='tabpanel', aria-labelledby='sell-now')
+    input.price-input.sell-now.form-control.sell-now(type='text' disabled="true")
+    .invalid-feedback Giá đặt mua phải lớn hơn 100,000 ₫
+    .sub-price.price-include
+      .text Giá sản phẩm
+      .sub-price-showing.sell-now
+        | 
+    .process-price.price-include
+      .text
+        | Phí vận hành 
+        i.fas.fa-question-circle(data-toggle="tooltip" data-placement="top" title="Phí vận hành bằng 5% giá bán của sản phẩm")
+      .process-price-showing.sell-now
+        | 
+    .total-price.price-include
+      .text
+        | Tổng thanh toán
+      .total-price-showing.sell-now
+        | 

@@ -1,0 +1,44 @@
+ul#buyTab.nav.nav-tabs(role='tablist')
+  li.nav-item
+    button.bid-btn.btn.btn-primary.green-btn#bid.nav-link.active(data-toggle='tab', href='#home', role='tab', aria-controls='home', aria-selected='true') Đặt giá mua
+  li.nav-item
+    button.buy-btn.btn.btn-primary.trans-btn#buy-now.nav-link(data-toggle='tab', href='#profile', role='tab', aria-controls='profile', aria-selected='false') Mua ngay
+#buyTabContent.tab-content
+  form#home.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='bid')
+    input.price-input.form-control(type='text' placeholder='Đặt giá mua ...' onkeypress="return priceInputValidate(event)" maxlength="10")
+    .invalid-feedback 
+    .sub-price.price-include
+      .text Giá sản phẩm
+      .sub-price-showing.bid
+    .shipping-price.price-include
+      .text
+        | Phí vận chuyển
+      .shipping-price-showing.bid
+        | 50,000 &#x20AB;
+    .coupon.price-include
+      .text
+        | Mã giảm giá
+      input.form-control(type='text' placeholder='Nhập mã giảm giá ...')
+    .total-price.price-include
+      .text
+        | Tổng thanh toán
+      .total-price-showing.bid
+  #profile.tab-pane.fade(role='tabpanel', aria-labelledby='buy-now')
+    input.price-input.buy-now.form-control(type='text' disabled="true")
+    .invalid-feedback Giá đặt mua phải lớn hơn 100,000 ₫
+    .sub-price.price-include
+      .text Giá sản phẩm
+      .sub-price-showing.buy-now
+    .shipping-price.price-include
+      .text
+        | Phí vận chuyển
+      .shipping-price-showing.buy-now
+        | 50,000 &#x20AB;
+    .coupon.price-include
+      .text
+        | Mã giảm giá
+      input.form-control(type='text' placeholder='Nhập mã giảm giá ...')
+    .total-price.price-include
+      .text
+        | Tổng thanh toán
+      .total-price-showing.buy-now 
