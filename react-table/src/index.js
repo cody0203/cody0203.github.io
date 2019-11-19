@@ -8,11 +8,12 @@ import Login from "./Login";
 import NotFound from "./NotFound";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import routes from "./routes.js";
 
 ReactDOM.render(
   <Router>
     <Switch>
-      <Route path="/" exact>
+      {/* <Route path="/" exact>
         <Home />
       </Route>
       <Route path="/table">
@@ -21,7 +22,16 @@ ReactDOM.render(
       <Route path="/login" exact>
         <Login />
       </Route>
-      <Route component={NotFound} />
+      <Route component={NotFound} /> */}
+
+      {routes.map(route => (
+        <Route
+          path={route.path}
+          exact
+          key={route.path}
+          component={route.components}
+        />
+      ))}
     </Switch>
   </Router>,
   document.getElementById("root")
