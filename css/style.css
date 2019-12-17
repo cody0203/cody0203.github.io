@@ -77,6 +77,11 @@ ul {
   padding-inline-start: 30px;
 }
 
+.special {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
 .h3 {
   margin: 0;
 }
