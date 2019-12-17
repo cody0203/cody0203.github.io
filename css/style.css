@@ -1,10 +1,7 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,900&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,900&display=swap');
 
 * {
-  font-family: "Roboto", sans-serif;
-}
-
-html {
+  font-family: 'Roboto', sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -20,6 +17,7 @@ html {
 
 #first-part {
   background-color: #fafafa;
+  overflow-y: auto;
 }
 
 #second-part {
@@ -51,6 +49,42 @@ html {
   color: #2c9688;
 }
 
+.text-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.text-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.text-link:hover .anchor-icon {
+  visibility: visible;
+}
+
+.anchor-icon {
+  font-size: 12px;
+  position: absolute;
+  left: -16px;
+  visibility: hidden;
+}
+
+ul {
+  padding-inline-start: 30px;
+}
+
+.h3 {
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
 .info:hover .github {
   color: #289fb6;
 }
@@ -58,10 +92,6 @@ html {
 .info .contact-icon,
 .info .contact-text {
   transition: all 0.3s ease;
-}
-
-.sub-title {
-  margin-left: 10px;
 }
 
 .contact {
@@ -274,13 +304,17 @@ html {
   background-color: #7a2a2c;
 }
 
-.project-seven {
-  background-color: #0f2d3e;
+.project-eight {
+  color: #444;
 }
 
 .project-six:hover .project-img-six {
   transition: all 15s ease;
   transform: translateY(-70%);
+}
+
+.project-seven {
+  background-color: #0f2d3e;
 }
 
 .project-sub-title {
