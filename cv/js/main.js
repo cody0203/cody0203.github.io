@@ -13,6 +13,10 @@ function changeUiFirstPart() {
 }
 changeUiFirstPart();
 
+$('.nav-link').on('click', () => {
+  $('.navbar-collapse').removeClass('show');
+});
+
 function autoTyping() {
   let typed = new Typed('.typing', {
     strings: [` `, `Hi, I'm Cody`],
