@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,900&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,900&display=swap");
 
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -320,6 +320,10 @@ li {
 
 .project-seven {
   background-color: #0f2d3e;
+}
+
+.project-nine {
+  background-color: #bfa5a5;
 }
 
 .project-sub-title {
