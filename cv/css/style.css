@@ -357,10 +357,6 @@ li {
   top: 20px;
   z-index: 100;
   background-color: white;
-  opacity: 0.5;
-}
-
-.navbar-light .navbar-toggler:hover {
   opacity: 1;
 }
 
