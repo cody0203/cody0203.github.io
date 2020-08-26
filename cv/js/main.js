@@ -1,34 +1,34 @@
 $(window).resize(changeUiFirstPart);
 
 function changeUiFirstPart() {
-  if (window.matchMedia && window.matchMedia('(max-width: 991px)').matches) {
-    $('#first-part').removeClass('fixed-position');
+  if (window.matchMedia && window.matchMedia("(max-width: 991px)").matches) {
+    $("#first-part").removeClass("fixed-position");
   } else {
-    $('#first-part').addClass('fixed-position');
+    $("#first-part").addClass("fixed-position");
   }
-  if (window.matchMedia && window.matchMedia('(max-width: 320px)').matches) {
-    $('.content').removeClass('ml-5');
-    $('.content').addClass('justify-content-center');
+  if (window.matchMedia && window.matchMedia("(max-width: 320px)").matches) {
+    $(".content").removeClass("ml-5");
+    $(".content").addClass("justify-content-center");
   }
 }
 changeUiFirstPart();
 
-$('.nav-link').on('click', () => {
-  $('.navbar-collapse').removeClass('show');
+$(document).on("click", (e) => {
+  $(".navbar-collapse").collapse("hide");
 });
 
 function autoTyping() {
-  let typed = new Typed('.typing', {
+  let typed = new Typed(".typing", {
     strings: [` `, `Hi, I'm Cody`],
     typeSpeed: 40,
-    showCursor: false
+    showCursor: false,
   });
 
-  let typed2 = new Typed('.typing2', {
+  let typed2 = new Typed(".typing2", {
     strings: [` `, `Front-end website developer based in Hanoi`],
     typeSpeed: 40,
     startDelay: 1500,
-    showCursor: false
+    showCursor: false,
   });
 }
 autoTyping();
